@@ -1,0 +1,21 @@
+-R . Triage
+
+SK.v
+terms.v
+rewriting_theorems.v
+types.v
+subtypes.v
+derive.v
+typed_lambda.v
+typed_recursion.v
+typed_triage.v
+typed_evaluator.v
+classify.v
+classify_derive.v
+reduction_preserves_typing.v
+
+
+#  coq_makefile -f _CoqProject -o CoqMakefile
+
+
+

@@ -1,0 +1,3707 @@
+DIGEST d319dde0fa0d3a393dda2ab72545d915
+FTriage.types
+R2197:2202 Coq.Strings.String <> <> lib
+R2204:2208 Coq.Arith.Arith <> <> lib
+R2210:2212 Coq.micromega.Lia <> <> lib
+R2214:2217 Coq.Bool.Bool <> <> lib
+R2219:2222 Coq.Lists.List <> <> lib
+R2224:2226 Coq.Init.Nat <> <> lib
+R2228:2236 Coq.Init.Datatypes <> <> lib
+R2254:2258 Triage.terms <> <> lib
+ind 2354:2358 <> dtype
+constr 2371:2373 <> Var
+constr 2436:2440 <> Quant
+constr 2461:2465 <> Funty
+constr 2496:2499 <> Leaf
+constr 2511:2514 <> Stem
+constr 2535:2538 <> Fork
+constr 2568:2570 <> Asf
+R2381:2384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2385:2389 Triage.types <> dtype:1 ind
+R2378:2380 Coq.Init.Datatypes <> nat ind
+R2449:2452 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2453:2457 Triage.types <> dtype:1 ind
+R2444:2448 Triage.types <> dtype:1 ind
+R2474:2477 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2483:2486 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2487:2491 Triage.types <> dtype:1 ind
+R2478:2482 Triage.types <> dtype:1 ind
+R2469:2473 Triage.types <> dtype:1 ind
+R2503:2507 Triage.types <> dtype:1 ind
+R2523:2526 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2527:2531 Triage.types <> dtype:1 ind
+R2518:2522 Triage.types <> dtype:1 ind
+R2547:2550 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2556:2559 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2560:2564 Triage.types <> dtype:1 ind
+R2551:2555 Triage.types <> dtype:1 ind
+R2542:2546 Triage.types <> dtype:1 ind
+R2579:2582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2583:2587 Triage.types <> dtype:1 ind
+R2574:2578 Triage.types <> dtype:1 ind
+def 2683:2694 <> program_type
+binder 2696:2696 <> p:3
+R2709:2709 Triage.types <> p:3 var
+R2720:2723 Triage.terms <> Node constr
+R2728:2731 Triage.types <> Leaf constr
+R2739:2741 Triage.terms <> ::tree_scope:x_'@'_x not
+R2758:2769 Triage.types <> program_type:4 def
+R2785:2788 Triage.types <> Leaf constr
+R2793:2796 Triage.types <> Stem constr
+R2799:2810 Triage.types <> program_type:4 def
+R2822:2825 Triage.types <> Stem constr
+R2834:2837 Triage.types <> Fork constr
+R2844:2855 Triage.types <> program_type:4 def
+R2872:2876 Triage.types <> Funty constr
+R2883:2886 Triage.types <> Leaf constr
+R2878:2881 Triage.types <> Leaf constr
+R2925:2929 Triage.types <> Funty constr
+R2936:2939 Triage.types <> Leaf constr
+R2931:2934 Triage.types <> Leaf constr
+def 3073:3076 <> test
+R3093:3095 Coq.Init.Datatypes <> nat ind
+binder 3087:3087 <> n:6
+binder 3089:3089 <> m:7
+R3098:3098 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3105:3109 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3115:3115 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3100:3103 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R3099:3099 Triage.types <> n:6 var
+R3104:3104 Triage.types <> m:7 var
+R3111:3113 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R3110:3110 Triage.types <> n:6 var
+R3114:3114 Triage.types <> m:7 var
+def 3286:3290 <> le_lt
+R3307:3309 Coq.Init.Datatypes <> nat ind
+binder 3301:3301 <> n:8
+binder 3303:3303 <> m:9
+R3318:3321 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3322:3322 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3328:3332 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3338:3338 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3324:3326 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R3323:3323 Triage.types <> n:8 var
+R3327:3327 Triage.types <> m:9 var
+R3334:3336 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3333:3333 Triage.types <> n:8 var
+R3337:3337 Triage.types <> m:9 var
+R3313:3316 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R3312:3312 Triage.types <> n:8 var
+R3317:3317 Triage.types <> m:9 var
+def 3513:3519 <> compare
+R3536:3538 Coq.Init.Datatypes <> nat ind
+binder 3530:3530 <> n:10
+binder 3532:3532 <> m:11
+R3558:3561 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R3567:3567 Coq.Init.Specif <> ::type_scope:x_'+'_'{'_x_'}' not
+R3541:3541 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3547:3551 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3557:3557 Coq.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R3543:3545 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R3542:3542 Triage.types <> n:10 var
+R3546:3546 Triage.types <> m:11 var
+R3553:3555 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3552:3552 Triage.types <> n:10 var
+R3556:3556 Triage.types <> m:11 var
+R3563:3565 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R3562:3562 Triage.types <> n:10 var
+R3566:3566 Triage.types <> m:11 var
+R3595:3598 Triage.types <> test def
+R3595:3598 Triage.types <> test def
+R3635:3639 Triage.types <> le_lt def
+R3635:3639 Triage.types <> le_lt def
+def 3698:3705 <> relocate
+R3716:3718 Coq.Init.Datatypes <> nat ind
+binder 3708:3708 <> i:12
+binder 3710:3710 <> k:13
+binder 3712:3712 <> n:14
+R3732:3735 Triage.types <> test def
+R3739:3739 Triage.types <> i:12 var
+R3737:3737 Triage.types <> k:13 var
+R3762:3765 Coq.Init.Specif <> left constr
+R3773:3773 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R3772:3772 Triage.types <> n:14 var
+R3774:3774 Triage.types <> i:12 var
+R3797:3797 Triage.types <> i:12 var
+prf 3813:3825 <> relocate_null
+R3844:3846 Coq.Init.Datatypes <> nat ind
+binder 3837:3837 <> n:15
+binder 3839:3840 <> n0:16
+R3865:3867 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3850:3857 Triage.types <> relocate def
+R3861:3862 Triage.types <> n0:16 var
+R3859:3859 Triage.types <> n:15 var
+R3868:3868 Triage.types <> n:15 var
+R3893:3900 Triage.types <> relocate def
+R3909:3912 Triage.types <> test def
+R3909:3912 Triage.types <> test def
+prf 3957:3973 <> relocate_lessthan
+binder 3984:3984 <> m:17
+binder 3986:3986 <> n:18
+binder 3988:3988 <> k:19
+R3995:3998 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4013:4016 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4020:4020 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3999:4006 Triage.types <> relocate def
+R4012:4012 Triage.types <> n:18 var
+R4010:4010 Triage.types <> m:17 var
+R4008:4008 Triage.types <> k:19 var
+R4018:4018 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R4017:4017 Triage.types <> n:18 var
+R4019:4019 Triage.types <> k:19 var
+R3992:3993 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R3991:3991 Triage.types <> m:17 var
+R3994:3994 Triage.types <> k:19 var
+R4046:4053 Triage.types <> relocate def
+R4061:4064 Triage.types <> test def
+R4061:4064 Triage.types <> test def
+prf 4104:4123 <> relocate_greaterthan
+binder 4134:4134 <> m:20
+binder 4136:4136 <> n:21
+binder 4138:4138 <> k:22
+R4144:4147 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4162:4164 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4148:4155 Triage.types <> relocate def
+R4161:4161 Triage.types <> n:21 var
+R4159:4159 Triage.types <> m:20 var
+R4157:4157 Triage.types <> k:22 var
+R4165:4165 Triage.types <> k:22 var
+R4142:4142 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R4141:4141 Triage.types <> m:20 var
+R4143:4143 Triage.types <> k:22 var
+R4191:4198 Triage.types <> relocate def
+R4206:4209 Triage.types <> test def
+R4206:4209 Triage.types <> test def
+R4278:4294 Triage.types <> relocate_lessthan thm
+R4334:4353 Triage.types <> relocate_greaterthan thm
+R4391:4403 Triage.types <> relocate_null thm
+prf 4416:4433 <> relocate_zero_succ
+binder 4444:4444 <> n:23
+binder 4446:4446 <> k:24
+R4467:4469 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4449:4456 Triage.types <> relocate def
+R4466:4466 Triage.types <> k:24 var
+R4461:4461 Coq.Init.Datatypes <> S constr
+R4463:4463 Triage.types <> n:23 var
+prf 4499:4511 <> relocate_succ
+binder 4522:4522 <> n:25
+binder 4524:4525 <> n0:26
+binder 4527:4527 <> k:27
+R4553:4555 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4530:4537 Triage.types <> relocate def
+R4552:4552 Triage.types <> k:27 var
+R4546:4546 Coq.Init.Datatypes <> S constr
+R4548:4549 Triage.types <> n0:26 var
+R4540:4540 Coq.Init.Datatypes <> S constr
+R4542:4542 Triage.types <> n:25 var
+R4556:4556 Coq.Init.Datatypes <> S constr
+R4558:4565 Triage.types <> relocate def
+R4572:4572 Triage.types <> k:27 var
+R4569:4570 Triage.types <> n0:26 var
+R4567:4567 Triage.types <> n:25 var
+R4599:4606 Triage.types <> relocate def
+R4614:4617 Triage.types <> test def
+R4626:4626 Coq.Init.Datatypes <> S constr
+R4619:4619 Coq.Init.Datatypes <> S constr
+R4638:4641 Triage.types <> test def
+R4614:4617 Triage.types <> test def
+R4626:4626 Coq.Init.Datatypes <> S constr
+R4619:4619 Coq.Init.Datatypes <> S constr
+R4638:4641 Triage.types <> test def
+R4638:4641 Triage.types <> test def
+prf 4683:4695 <> relocate_mono
+binder 4706:4706 <> M:28
+binder 4708:4708 <> N:29
+binder 4710:4710 <> n:30
+binder 4712:4712 <> k:31
+R4746:4749 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4751:4751 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4750:4750 Triage.types <> M:28 var
+R4752:4752 Triage.types <> N:29 var
+R4729:4731 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4715:4722 Triage.types <> relocate def
+R4728:4728 Triage.types <> k:31 var
+R4726:4726 Triage.types <> n:30 var
+R4724:4724 Triage.types <> M:28 var
+R4732:4739 Triage.types <> relocate def
+R4745:4745 Triage.types <> k:31 var
+R4743:4743 Triage.types <> n:30 var
+R4741:4741 Triage.types <> N:29 var
+R4786:4793 Triage.types <> relocate def
+R4801:4804 Triage.types <> test def
+R4817:4820 Triage.types <> test def
+R4801:4804 Triage.types <> test def
+R4817:4820 Triage.types <> test def
+R4817:4820 Triage.types <> test def
+prf 4860:4873 <> relocate_null2
+binder 4884:4884 <> n:32
+binder 4886:4886 <> k:33
+R4907:4909 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4889:4896 Triage.types <> relocate def
+R4906:4906 Triage.types <> k:33 var
+R4901:4901 Coq.Init.Datatypes <> S constr
+R4903:4903 Triage.types <> n:32 var
+def 4959:4968 <> relocatek1
+binder 4970:4970 <> k:34
+binder 4972:4972 <> i:35
+R4977:4984 Triage.types <> relocate def
+R4988:4988 Triage.types <> k:34 var
+R4986:4986 Triage.types <> i:35 var
+prf 5002:5012 <> relocatek10
+binder 5023:5027 <> fixed:36
+R5054:5056 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5030:5032 Coq.Lists.List <> map def
+R5049:5053 Triage.types <> fixed:36 var
+R5035:5044 Triage.types <> relocatek1 def
+R5057:5059 Coq.Lists.List <> map def
+R5063:5067 Triage.types <> fixed:36 var
+R5061:5061 Coq.Init.Datatypes <> S constr
+R5129:5138 Triage.types <> relocatek1 def
+R5149:5165 Triage.types <> relocate_lessthan thm
+R5149:5165 Triage.types <> relocate_lessthan thm
+R5149:5165 Triage.types <> relocate_lessthan thm
+R5149:5165 Triage.types <> relocate_lessthan thm
+R5256:5275 Triage.types <> relocate_greaterthan thm
+R5213:5229 Triage.types <> relocate_lessthan thm
+prf 5297:5308 <> map_relocate
+binder 5318:5319 <> ns:37
+binder 5321:5321 <> k:38
+R5325:5325 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5364:5367 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5326:5328 Coq.Lists.List <> map def
+R5362:5363 Triage.types <> ns:37 var
+R5339:5341 Coq.Init.Datatypes <> nat ind
+binder 5335:5335 <> i:39
+R5346:5353 Triage.types <> relocate def
+R5359:5359 Triage.types <> k:38 var
+R5355:5355 Triage.types <> i:39 var
+R5368:5370 Coq.Lists.List <> map def
+R5380:5381 Triage.types <> ns:37 var
+R5373:5375 Coq.Init.Nat <> add def
+R5377:5377 Triage.types <> k:38 var
+R5444:5460 Triage.types <> relocate_lessthan thm
+R5444:5460 Triage.types <> relocate_lessthan thm
+R5444:5460 Triage.types <> relocate_lessthan thm
+R5444:5460 Triage.types <> relocate_lessthan thm
+def 5488:5495 <> lift_rec
+R5502:5506 Triage.types <> dtype ind
+binder 5498:5498 <> L:40
+R5514:5517 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5521:5524 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5525:5529 Triage.types <> dtype ind
+R5518:5520 Coq.Init.Datatypes <> nat ind
+R5511:5513 Coq.Init.Datatypes <> nat ind
+binder 5540:5540 <> k:42
+binder 5542:5542 <> n:43
+R5556:5556 Triage.types <> L:40 var
+R5567:5569 Triage.types <> Var constr
+R5576:5578 Triage.types <> Var constr
+R5581:5588 Triage.types <> relocate def
+R5594:5594 Triage.types <> n:43 var
+R5592:5592 Triage.types <> k:42 var
+R5601:5604 Triage.types <> Leaf constr
+R5609:5612 Triage.types <> Leaf constr
+R5618:5621 Triage.types <> Stem constr
+R5629:5632 Triage.types <> Stem constr
+R5635:5642 Triage.types <> lift_rec:41 def
+R5649:5649 Triage.types <> n:43 var
+R5647:5647 Triage.types <> k:42 var
+R5656:5659 Triage.types <> Fork constr
+R5672:5675 Triage.types <> Fork constr
+R5697:5704 Triage.types <> lift_rec:41 def
+R5712:5712 Triage.types <> n:43 var
+R5710:5710 Triage.types <> k:42 var
+R5678:5685 Triage.types <> lift_rec:41 def
+R5693:5693 Triage.types <> n:43 var
+R5691:5691 Triage.types <> k:42 var
+R5719:5723 Triage.types <> Funty constr
+R5736:5740 Triage.types <> Funty constr
+R5762:5769 Triage.types <> lift_rec:41 def
+R5777:5777 Triage.types <> n:43 var
+R5775:5775 Triage.types <> k:42 var
+R5743:5750 Triage.types <> lift_rec:41 def
+R5758:5758 Triage.types <> n:43 var
+R5756:5756 Triage.types <> k:42 var
+R5784:5788 Triage.types <> Quant constr
+R5796:5800 Triage.types <> Quant constr
+R5803:5810 Triage.types <> lift_rec:41 def
+R5821:5821 Triage.types <> n:43 var
+R5816:5816 Coq.Init.Datatypes <> S constr
+R5818:5818 Triage.types <> k:42 var
+R5828:5830 Triage.types <> Asf constr
+R5838:5840 Triage.types <> Asf constr
+R5843:5850 Triage.types <> lift_rec:41 def
+R5857:5857 Triage.types <> n:43 var
+R5855:5855 Triage.types <> k:42 var
+def 5880:5883 <> lift
+R5890:5892 Coq.Init.Datatypes <> nat ind
+binder 5886:5886 <> n:45
+R5901:5905 Triage.types <> dtype ind
+binder 5896:5897 <> ty:46
+R5911:5918 Triage.types <> lift_rec def
+R5925:5925 Triage.types <> n:45 var
+R5920:5921 Triage.types <> ty:46 var
+prf 5959:5970 <> restore_lift
+binder 5980:5981 <> ty:47
+binder 5983:5983 <> k:48
+R6001:6003 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5986:5993 Triage.types <> lift_rec def
+R6000:6000 Triage.types <> k:48 var
+R5995:5996 Triage.types <> ty:47 var
+R6004:6007 Triage.types <> lift def
+R6011:6012 Triage.types <> ty:47 var
+R6009:6009 Triage.types <> k:48 var
+prf 6041:6049 <> lift_stem
+binder 6059:6059 <> k:49
+binder 6061:6062 <> ty:50
+R6081:6083 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6065:6068 Triage.types <> lift def
+R6073:6076 Triage.types <> Stem constr
+R6078:6079 Triage.types <> ty:50 var
+R6070:6070 Triage.types <> k:49 var
+R6084:6087 Triage.types <> Stem constr
+R6090:6093 Triage.types <> lift def
+R6097:6098 Triage.types <> ty:50 var
+R6095:6095 Triage.types <> k:49 var
+prf 6129:6146 <> lift_rec_null_term
+R6163:6167 Triage.types <> dtype ind
+binder 6159:6159 <> U:51
+R6173:6175 Coq.Init.Datatypes <> nat ind
+binder 6170:6170 <> n:52
+R6193:6195 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6179:6186 Triage.types <> lift_rec def
+R6190:6190 Triage.types <> n:52 var
+R6188:6188 Triage.types <> U:51 var
+R6196:6196 Triage.types <> U:51 var
+prf 6288:6292 <> lift1
+R6309:6313 Triage.types <> dtype ind
+binder 6305:6305 <> U:53
+R6325:6327 Coq.Init.Datatypes <> nat ind
+binder 6317:6317 <> j:54
+binder 6319:6319 <> i:55
+binder 6321:6321 <> k:56
+R6367:6369 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6332:6339 Triage.types <> lift_rec def
+R6366:6366 Triage.types <> k:56 var
+R6360:6362 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6359:6359 Triage.types <> j:54 var
+R6363:6363 Triage.types <> i:55 var
+R6342:6349 Triage.types <> lift_rec def
+R6355:6355 Triage.types <> j:54 var
+R6353:6353 Triage.types <> i:55 var
+R6351:6351 Triage.types <> U:53 var
+R6370:6377 Triage.types <> lift_rec def
+R6385:6387 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6384:6384 Triage.types <> j:54 var
+R6388:6388 Triage.types <> k:56 var
+R6381:6381 Triage.types <> i:55 var
+R6379:6379 Triage.types <> U:53 var
+R6465:6472 Triage.types <> relocate def
+R6482:6485 Triage.types <> test def
+R6499:6502 Triage.types <> test def
+R6512:6513 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6506:6506 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6482:6485 Triage.types <> test def
+R6499:6502 Triage.types <> test def
+R6512:6513 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6506:6506 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6499:6502 Triage.types <> test def
+R6512:6513 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6506:6506 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6543:6546 Triage.types <> test def
+R6550:6552 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6543:6546 Triage.types <> test def
+R6550:6552 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6590:6590 Coq.Init.Datatypes <> S constr
+R6593:6593 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6605:6608 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6612:6612 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6609:6609 Coq.Init.Datatypes <> S constr
+R6590:6590 Coq.Init.Datatypes <> S constr
+R6593:6593 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6605:6608 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6612:6612 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6609:6609 Coq.Init.Datatypes <> S constr
+prf 6655:6667 <> lift_lift_rec
+R6684:6688 Triage.types <> dtype ind
+binder 6680:6680 <> U:57
+R6702:6704 Coq.Init.Datatypes <> nat ind
+binder 6692:6692 <> k:58
+binder 6694:6694 <> p:59
+binder 6696:6696 <> n:60
+binder 6698:6698 <> i:61
+R6715:6719 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6755:6757 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6720:6727 Triage.types <> lift_rec def
+R6754:6754 Triage.types <> k:58 var
+R6748:6750 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6747:6747 Triage.types <> p:59 var
+R6751:6751 Triage.types <> n:60 var
+R6730:6737 Triage.types <> lift_rec def
+R6743:6743 Triage.types <> p:59 var
+R6741:6741 Triage.types <> i:61 var
+R6739:6739 Triage.types <> U:57 var
+R6758:6765 Triage.types <> lift_rec def
+R6786:6786 Triage.types <> p:59 var
+R6784:6784 Triage.types <> i:61 var
+R6768:6775 Triage.types <> lift_rec def
+R6781:6781 Triage.types <> k:58 var
+R6779:6779 Triage.types <> n:60 var
+R6777:6777 Triage.types <> U:57 var
+R6710:6713 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R6709:6709 Triage.types <> i:61 var
+R6714:6714 Triage.types <> n:60 var
+R6873:6880 Triage.types <> relocate def
+R6888:6891 Triage.types <> test def
+R6888:6891 Triage.types <> test def
+R6922:6925 Triage.types <> test def
+R6922:6925 Triage.types <> test def
+R6957:6960 Triage.types <> test def
+R6971:6971 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6964:6964 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6957:6960 Triage.types <> test def
+R6971:6971 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R6964:6964 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7000:7003 Triage.types <> test def
+R7009:7009 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7000:7003 Triage.types <> test def
+R7009:7009 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7047:7049 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7041:7042 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7046:7046 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7044:7044 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7051:7053 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7057:7057 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7055:7055 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7047:7049 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7041:7042 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7046:7046 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7044:7044 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7051:7053 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7057:7057 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7055:7055 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7093:7096 Triage.types <> test def
+R7107:7107 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7100:7100 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7093:7096 Triage.types <> test def
+R7107:7107 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7100:7100 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7136:7139 Triage.types <> test def
+R7136:7139 Triage.types <> test def
+R7170:7173 Triage.types <> test def
+R7170:7173 Triage.types <> test def
+R7205:7208 Triage.types <> test def
+R7212:7212 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7205:7208 Triage.types <> test def
+R7212:7212 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7244:7247 Triage.types <> test def
+R7244:7247 Triage.types <> test def
+R7282:7282 Coq.Init.Datatypes <> S constr
+R7286:7286 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7298:7301 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7305:7305 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7302:7302 Coq.Init.Datatypes <> S constr
+R7282:7282 Coq.Init.Datatypes <> S constr
+R7286:7286 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7298:7301 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7305:7305 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7302:7302 Coq.Init.Datatypes <> S constr
+prf 7353:7366 <> lift_lift_term
+R7383:7387 Triage.types <> dtype ind
+binder 7379:7379 <> U:62
+R7399:7401 Coq.Init.Datatypes <> nat ind
+binder 7391:7391 <> k:63
+binder 7393:7393 <> p:64
+binder 7395:7395 <> n:65
+R7434:7436 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7406:7413 Triage.types <> lift_rec def
+R7433:7433 Triage.types <> k:63 var
+R7428:7429 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7427:7427 Triage.types <> p:64 var
+R7430:7430 Triage.types <> n:65 var
+R7416:7419 Triage.types <> lift def
+R7423:7423 Triage.types <> U:62 var
+R7421:7421 Triage.types <> p:64 var
+R7437:7440 Triage.types <> lift def
+R7445:7452 Triage.types <> lift_rec def
+R7458:7458 Triage.types <> k:63 var
+R7456:7456 Triage.types <> n:65 var
+R7454:7454 Triage.types <> U:62 var
+R7442:7442 Triage.types <> p:64 var
+R7476:7479 Triage.types <> lift def
+R7504:7516 Triage.types <> lift_lift_rec thm
+R7504:7516 Triage.types <> lift_lift_rec thm
+prf 7551:7558 <> liftrecO
+R7574:7578 Triage.types <> dtype ind
+binder 7570:7570 <> U:66
+R7586:7588 Coq.Init.Datatypes <> nat ind
+binder 7582:7582 <> n:67
+R7606:7608 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7592:7599 Triage.types <> lift_rec def
+R7603:7603 Triage.types <> n:67 var
+R7601:7601 Triage.types <> U:66 var
+R7609:7609 Triage.types <> U:66 var
+prf 7708:7712 <> liftO
+R7728:7732 Triage.types <> dtype ind
+binder 7724:7724 <> U:68
+R7745:7747 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7737:7740 Triage.types <> lift def
+R7744:7744 Triage.types <> U:68 var
+R7748:7748 Triage.types <> U:68 var
+R7765:7768 Triage.types <> lift def
+R7793:7800 Triage.types <> liftrecO thm
+R7793:7800 Triage.types <> liftrecO thm
+prf 7815:7831 <> lift_rec_lift_rec
+R7848:7852 Triage.types <> dtype ind
+binder 7844:7844 <> U:69
+R7866:7868 Coq.Init.Datatypes <> nat ind
+binder 7856:7856 <> n:70
+binder 7858:7858 <> p:71
+binder 7860:7860 <> k:72
+binder 7862:7862 <> i:73
+R7883:7887 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7894:7897 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7927:7929 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7898:7905 Triage.types <> lift_rec def
+R7926:7926 Triage.types <> p:71 var
+R7924:7924 Triage.types <> k:72 var
+R7908:7915 Triage.types <> lift_rec def
+R7921:7921 Triage.types <> n:70 var
+R7919:7919 Triage.types <> i:73 var
+R7917:7917 Triage.types <> U:69 var
+R7930:7937 Triage.types <> lift_rec def
+R7945:7947 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7944:7944 Triage.types <> p:71 var
+R7948:7948 Triage.types <> n:70 var
+R7941:7941 Triage.types <> i:73 var
+R7939:7939 Triage.types <> U:69 var
+R7889:7892 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R7888:7888 Triage.types <> i:73 var
+R7893:7893 Triage.types <> k:72 var
+R7874:7877 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R7873:7873 Triage.types <> k:72 var
+R7879:7881 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R7878:7878 Triage.types <> i:73 var
+R7882:7882 Triage.types <> n:70 var
+R8028:8035 Triage.types <> relocate def
+R8044:8047 Triage.types <> test def
+R8044:8047 Triage.types <> test def
+R8078:8081 Triage.types <> test def
+R8088:8090 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8078:8081 Triage.types <> test def
+R8088:8090 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8118:8121 Triage.types <> test def
+R8118:8121 Triage.types <> test def
+prf 8204:8216 <> lift_rec_lift
+R8233:8237 Triage.types <> dtype ind
+binder 8229:8229 <> U:74
+R8252:8254 Coq.Init.Datatypes <> nat ind
+binder 8242:8242 <> n:75
+binder 8244:8244 <> p:76
+binder 8246:8246 <> k:77
+binder 8248:8248 <> i:78
+R8265:8268 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8294:8296 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8269:8276 Triage.types <> lift_rec def
+R8293:8293 Triage.types <> p:76 var
+R8291:8291 Triage.types <> k:77 var
+R8279:8282 Triage.types <> lift def
+R8287:8287 Triage.types <> U:74 var
+R8285:8285 Triage.types <> n:75 var
+R8297:8300 Triage.types <> lift def
+R8310:8310 Triage.types <> U:74 var
+R8304:8306 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8303:8303 Triage.types <> p:76 var
+R8307:8307 Triage.types <> n:75 var
+R8260:8263 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R8259:8259 Triage.types <> k:77 var
+R8264:8264 Triage.types <> n:75 var
+R8327:8330 Triage.types <> lift def
+R8357:8373 Triage.types <> lift_rec_lift_rec thm
+R8357:8373 Triage.types <> lift_rec_lift_rec thm
+R8357:8373 Triage.types <> lift_rec_lift_rec thm
+R8357:8373 Triage.types <> lift_rec_lift_rec thm
+R8357:8373 Triage.types <> lift_rec_lift_rec thm
+prf 8408:8421 <> lift_rec_lift2
+binder 8433:8433 <> M:79
+binder 8435:8435 <> n:80
+binder 8437:8437 <> k:81
+R8467:8469 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8440:8447 Triage.types <> lift_rec def
+R8466:8466 Triage.types <> k:81 var
+R8461:8461 Coq.Init.Datatypes <> S constr
+R8463:8463 Triage.types <> n:80 var
+R8450:8453 Triage.types <> lift def
+R8457:8457 Triage.types <> M:79 var
+R8470:8473 Triage.types <> lift def
+R8478:8485 Triage.types <> lift_rec def
+R8491:8491 Triage.types <> k:81 var
+R8489:8489 Triage.types <> n:80 var
+R8487:8487 Triage.types <> M:79 var
+R8517:8520 Triage.types <> lift def
+R8533:8533 Coq.Init.Datatypes <> S constr
+R8545:8545 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8533:8533 Coq.Init.Datatypes <> S constr
+R8545:8545 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8565:8577 Triage.types <> lift_lift_rec thm
+R8565:8577 Triage.types <> lift_lift_rec thm
+R8565:8577 Triage.types <> lift_lift_rec thm
+R8565:8577 Triage.types <> lift_lift_rec thm
+prf 8603:8616 <> lift_rec_funty
+binder 8628:8628 <> M:82
+binder 8630:8630 <> N:83
+binder 8632:8632 <> n:84
+binder 8634:8634 <> k:85
+R8661:8663 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8637:8644 Triage.types <> lift_rec def
+R8660:8660 Triage.types <> k:85 var
+R8658:8658 Triage.types <> n:84 var
+R8647:8651 Triage.types <> Funty constr
+R8655:8655 Triage.types <> N:83 var
+R8653:8653 Triage.types <> M:82 var
+R8664:8668 Triage.types <> Funty constr
+R8688:8695 Triage.types <> lift_rec def
+R8701:8701 Triage.types <> k:85 var
+R8699:8699 Triage.types <> n:84 var
+R8697:8697 Triage.types <> N:83 var
+R8671:8678 Triage.types <> lift_rec def
+R8684:8684 Triage.types <> k:85 var
+R8682:8682 Triage.types <> n:84 var
+R8680:8680 Triage.types <> M:82 var
+prf 8731:8742 <> lift_rec_var
+binder 8752:8752 <> i:86
+binder 8754:8754 <> n:87
+binder 8756:8756 <> k:88
+R8779:8781 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8759:8766 Triage.types <> lift_rec def
+R8778:8778 Triage.types <> k:88 var
+R8776:8776 Triage.types <> n:87 var
+R8769:8771 Triage.types <> Var constr
+R8773:8773 Triage.types <> i:86 var
+R8782:8784 Triage.types <> Var constr
+R8787:8794 Triage.types <> relocate def
+R8800:8800 Triage.types <> k:88 var
+R8798:8798 Triage.types <> n:87 var
+R8796:8796 Triage.types <> i:86 var
+prf 8832:8844 <> lift_rec_null
+R8861:8865 Triage.types <> dtype ind
+binder 8857:8857 <> U:89
+R8872:8874 Coq.Init.Datatypes <> nat ind
+binder 8869:8869 <> n:90
+R8892:8894 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8878:8885 Triage.types <> lift_rec def
+R8889:8889 Triage.types <> n:90 var
+R8887:8887 Triage.types <> U:89 var
+R8895:8895 Triage.types <> U:89 var
+R8963:8975 Triage.types <> relocate_null thm
+R8963:8975 Triage.types <> relocate_null thm
+R8963:8975 Triage.types <> relocate_null thm
+R9025:9038 Triage.types <> lift_rec_funty thm
+R9051:9062 Triage.types <> lift_rec_var thm
+prf 9086:9098 <> lift_rec_fork
+binder 9110:9112 <> uty:91
+binder 9114:9116 <> vty:92
+binder 9118:9118 <> n:93
+binder 9120:9120 <> k:94
+R9150:9152 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9123:9130 Triage.types <> lift_rec def
+R9149:9149 Triage.types <> k:94 var
+R9147:9147 Triage.types <> n:93 var
+R9133:9136 Triage.types <> Fork constr
+R9142:9144 Triage.types <> vty:92 var
+R9138:9140 Triage.types <> uty:91 var
+R9153:9156 Triage.types <> Fork constr
+R9178:9185 Triage.types <> lift_rec def
+R9193:9193 Triage.types <> k:94 var
+R9191:9191 Triage.types <> n:93 var
+R9187:9189 Triage.types <> vty:92 var
+R9159:9166 Triage.types <> lift_rec def
+R9174:9174 Triage.types <> k:94 var
+R9172:9172 Triage.types <> n:93 var
+R9168:9170 Triage.types <> uty:91 var
+prf 9224:9244 <> lift_rec_program_type
+binder 9256:9256 <> p:95
+R9268:9271 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 9279:9279 <> n:96
+binder 9281:9281 <> k:97
+R9313:9315 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9284:9291 Triage.types <> lift_rec def
+R9312:9312 Triage.types <> k:97 var
+R9310:9310 Triage.types <> n:96 var
+R9294:9305 Triage.types <> program_type def
+R9307:9307 Triage.types <> p:95 var
+R9316:9327 Triage.types <> program_type def
+R9329:9329 Triage.types <> p:95 var
+R9259:9265 Triage.terms <> program ind
+R9267:9267 Triage.types <> p:95 var
+def 9438:9447 <> insert_Var
+R9454:9458 Triage.types <> dtype ind
+binder 9450:9450 <> N:98
+R9468:9470 Coq.Init.Datatypes <> nat ind
+binder 9462:9462 <> i:99
+binder 9464:9464 <> k:100
+R9484:9490 Triage.types <> compare def
+R9494:9494 Triage.types <> i:99 var
+R9492:9492 Triage.types <> k:100 var
+R9519:9524 Coq.Init.Specif <> inleft constr
+R9527:9530 Coq.Init.Specif <> left constr
+R9538:9540 Triage.types <> Var constr
+R9543:9550 Coq.Arith.PeanoNat Nat pred def
+R9552:9552 Triage.types <> i:99 var
+R9570:9575 Coq.Init.Specif <> inleft constr
+R9582:9585 Triage.types <> lift def
+R9589:9589 Triage.types <> N:98 var
+R9587:9587 Triage.types <> k:100 var
+R9611:9613 Triage.types <> Var constr
+R9615:9615 Triage.types <> i:99 var
+prf 9633:9645 <> insert_Var_lt
+binder 9656:9656 <> M:101
+binder 9658:9658 <> n:102
+binder 9660:9660 <> k:103
+R9667:9670 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9687:9689 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9671:9680 Triage.types <> insert_Var def
+R9686:9686 Triage.types <> k:103 var
+R9684:9684 Triage.types <> n:102 var
+R9682:9682 Triage.types <> M:101 var
+R9690:9692 Triage.types <> Var constr
+R9694:9694 Triage.types <> n:102 var
+R9664:9665 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R9663:9663 Triage.types <> n:102 var
+R9666:9666 Triage.types <> k:103 var
+R9724:9733 Triage.types <> insert_Var def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+R9752:9758 Triage.types <> compare def
+R9776:9782 Triage.types <> compare def
+prf 9846:9858 <> insert_Var_eq
+binder 9869:9869 <> M:104
+binder 9871:9871 <> n:105
+binder 9873:9873 <> k:106
+R9880:9883 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9900:9902 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9884:9893 Triage.types <> insert_Var def
+R9899:9899 Triage.types <> k:106 var
+R9897:9897 Triage.types <> n:105 var
+R9895:9895 Triage.types <> M:104 var
+R9903:9906 Triage.types <> lift def
+R9910:9910 Triage.types <> M:104 var
+R9908:9908 Triage.types <> k:106 var
+R9877:9878 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9876:9876 Triage.types <> n:105 var
+R9879:9879 Triage.types <> k:106 var
+R9940:9949 Triage.types <> insert_Var def
+R10000:10006 Triage.types <> compare def
+R9977:9983 Triage.types <> compare def
+R10073:10076 Triage.types <> lift def
+R10079:10086 Triage.types <> lift_rec def
+R10089:10096 Triage.types <> relocate def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+R9977:9983 Triage.types <> compare def
+R10000:10006 Triage.types <> compare def
+R10104:10107 Triage.types <> test def
+prf 10155:10167 <> insert_Var_gt
+binder 10178:10178 <> M:107
+binder 10180:10180 <> n:108
+binder 10182:10182 <> k:109
+R10189:10192 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10209:10211 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10193:10202 Triage.types <> insert_Var def
+R10208:10208 Triage.types <> k:109 var
+R10206:10206 Triage.types <> n:108 var
+R10204:10204 Triage.types <> M:107 var
+R10212:10214 Triage.types <> Var constr
+R10217:10224 Coq.Arith.PeanoNat Nat pred def
+R10226:10226 Triage.types <> n:108 var
+R10186:10187 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R10185:10185 Triage.types <> n:108 var
+R10188:10188 Triage.types <> k:109 var
+R10257:10266 Triage.types <> insert_Var def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10290:10296 Triage.types <> compare def
+R10313:10319 Triage.types <> compare def
+R10427:10439 Triage.types <> insert_Var_lt thm
+R10451:10458 Triage.types <> relocate def
+R10512:10524 Triage.types <> insert_Var_eq thm
+R10536:10543 Triage.types <> relocate def
+R10597:10609 Triage.types <> insert_Var_gt thm
+R10621:10628 Triage.types <> relocate def
+def 10680:10688 <> subst_rec
+R10695:10699 Triage.types <> dtype ind
+binder 10691:10691 <> L:110
+R10709:10712 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10716:10719 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10720:10724 Triage.types <> dtype ind
+R10713:10715 Coq.Init.Datatypes <> nat ind
+R10704:10708 Triage.types <> dtype ind
+R10740:10744 Triage.types <> dtype ind
+binder 10736:10736 <> N:112
+R10752:10754 Coq.Init.Datatypes <> nat ind
+binder 10748:10748 <> k:113
+R10768:10768 Triage.types <> L:110 var
+R10779:10781 Triage.types <> Var constr
+R10788:10797 Triage.types <> insert_Var def
+R10803:10803 Triage.types <> k:113 var
+R10799:10799 Triage.types <> N:112 var
+R10809:10812 Triage.types <> Leaf constr
+R10817:10820 Triage.types <> Leaf constr
+R10826:10829 Triage.types <> Stem constr
+R10836:10839 Triage.types <> Stem constr
+R10842:10850 Triage.types <> subst_rec:111 def
+R10856:10856 Triage.types <> k:113 var
+R10854:10854 Triage.types <> N:112 var
+R10863:10866 Triage.types <> Fork constr
+R10876:10879 Triage.types <> Fork constr
+R10900:10908 Triage.types <> subst_rec:111 def
+R10915:10915 Triage.types <> k:113 var
+R10913:10913 Triage.types <> N:112 var
+R10882:10890 Triage.types <> subst_rec:111 def
+R10896:10896 Triage.types <> k:113 var
+R10894:10894 Triage.types <> N:112 var
+R10943:10947 Triage.types <> Funty constr
+R10957:10961 Triage.types <> Funty constr
+R10982:10990 Triage.types <> subst_rec:111 def
+R10997:10997 Triage.types <> k:113 var
+R10995:10995 Triage.types <> N:112 var
+R10964:10972 Triage.types <> subst_rec:111 def
+R10978:10978 Triage.types <> k:113 var
+R10976:10976 Triage.types <> N:112 var
+R11004:11008 Triage.types <> Quant constr
+R11015:11019 Triage.types <> Quant constr
+R11022:11030 Triage.types <> subst_rec:111 def
+R11037:11037 Coq.Init.Datatypes <> S constr
+R11039:11039 Triage.types <> k:113 var
+R11034:11034 Triage.types <> N:112 var
+R11047:11049 Triage.types <> Asf constr
+R11056:11058 Triage.types <> Asf constr
+R11061:11069 Triage.types <> subst_rec:111 def
+R11075:11075 Triage.types <> k:113 var
+R11073:11073 Triage.types <> N:112 var
+prf 11092:11104 <> subst_rec_var
+binder 11114:11114 <> i:115
+binder 11116:11116 <> N:116
+binder 11118:11118 <> k:117
+R11143:11145 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11122:11130 Triage.types <> subst_rec def
+R11142:11142 Triage.types <> k:117 var
+R11140:11140 Triage.types <> N:116 var
+R11133:11135 Triage.types <> Var constr
+R11137:11137 Triage.types <> i:115 var
+R11146:11155 Triage.types <> insert_Var def
+R11161:11161 Triage.types <> k:117 var
+R11159:11159 Triage.types <> i:115 var
+R11157:11157 Triage.types <> N:116 var
+prf 11245:11259 <> subst_rec_funty
+binder 11272:11273 <> M1:118
+binder 11275:11276 <> M2:119
+binder 11278:11278 <> N:120
+binder 11280:11280 <> k:121
+R11314:11316 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11287:11295 Triage.types <> subst_rec def
+R11313:11313 Triage.types <> k:121 var
+R11311:11311 Triage.types <> N:120 var
+R11298:11302 Triage.types <> Funty constr
+R11307:11308 Triage.types <> M2:119 var
+R11304:11305 Triage.types <> M1:118 var
+R11317:11321 Triage.types <> Funty constr
+R11343:11351 Triage.types <> subst_rec def
+R11358:11358 Triage.types <> k:121 var
+R11356:11356 Triage.types <> N:120 var
+R11353:11354 Triage.types <> M2:119 var
+R11324:11332 Triage.types <> subst_rec def
+R11339:11339 Triage.types <> k:121 var
+R11337:11337 Triage.types <> N:120 var
+R11334:11335 Triage.types <> M1:118 var
+prf 11389:11402 <> subst_rec_fork
+binder 11414:11416 <> ty1:122
+binder 11418:11420 <> ty2:123
+binder 11422:11424 <> uty:124
+binder 11426:11426 <> k:125
+R11459:11461 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11429:11437 Triage.types <> subst_rec def
+R11458:11458 Triage.types <> k:125 var
+R11454:11456 Triage.types <> uty:124 var
+R11440:11443 Triage.types <> Fork constr
+R11449:11451 Triage.types <> ty2:123 var
+R11445:11447 Triage.types <> ty1:122 var
+R11462:11465 Triage.types <> Fork constr
+R11490:11498 Triage.types <> subst_rec def
+R11508:11508 Triage.types <> k:125 var
+R11504:11506 Triage.types <> uty:124 var
+R11500:11502 Triage.types <> ty2:123 var
+R11468:11476 Triage.types <> subst_rec def
+R11486:11486 Triage.types <> k:125 var
+R11482:11484 Triage.types <> uty:124 var
+R11478:11480 Triage.types <> ty1:122 var
+def 11544:11548 <> subst
+R11557:11561 Triage.types <> dtype ind
+binder 11551:11551 <> M:126
+binder 11553:11553 <> N:127
+R11567:11575 Triage.types <> subst_rec def
+R11579:11579 Triage.types <> N:127 var
+R11577:11577 Triage.types <> M:126 var
+prf 11647:11654 <> subst_eq
+R11673:11677 Triage.types <> dtype ind
+binder 11667:11667 <> M:128
+binder 11669:11669 <> U:129
+R11685:11687 Coq.Init.Datatypes <> nat ind
+binder 11681:11681 <> n:130
+R11712:11714 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11691:11699 Triage.types <> subst_rec def
+R11711:11711 Triage.types <> n:130 var
+R11709:11709 Triage.types <> U:129 var
+R11702:11704 Triage.types <> Var constr
+R11706:11706 Triage.types <> n:130 var
+R11715:11718 Triage.types <> lift def
+R11722:11722 Triage.types <> U:129 var
+R11720:11720 Triage.types <> n:130 var
+R11755:11764 Triage.types <> insert_Var def
+R11790:11796 Triage.types <> compare def
+R11790:11796 Triage.types <> compare def
+prf 11896:11903 <> subst_gt
+R11922:11926 Triage.types <> dtype ind
+binder 11916:11916 <> M:131
+binder 11918:11918 <> U:132
+R11936:11938 Coq.Init.Datatypes <> nat ind
+binder 11930:11930 <> n:133
+binder 11932:11932 <> p:134
+R11948:11951 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11973:11975 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11952:11960 Triage.types <> subst_rec def
+R11972:11972 Triage.types <> p:134 var
+R11970:11970 Triage.types <> U:132 var
+R11963:11965 Triage.types <> Var constr
+R11967:11967 Triage.types <> n:133 var
+R11976:11978 Triage.types <> Var constr
+R11981:11988 Coq.Arith.PeanoNat Nat pred def
+R11990:11990 Triage.types <> n:133 var
+R11944:11946 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R11943:11943 Triage.types <> n:133 var
+R11947:11947 Triage.types <> p:134 var
+R12023:12032 Triage.types <> insert_Var def
+R12057:12063 Triage.types <> compare def
+R12057:12063 Triage.types <> compare def
+R12126:12128 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R12126:12128 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R12193:12195 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R12193:12195 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+prf 12230:12237 <> subst_lt
+R12256:12260 Triage.types <> dtype ind
+binder 12250:12250 <> M:135
+binder 12252:12252 <> U:136
+R12270:12272 Coq.Init.Datatypes <> nat ind
+binder 12264:12264 <> n:137
+binder 12266:12266 <> p:138
+R12281:12284 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12306:12308 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12285:12293 Triage.types <> subst_rec def
+R12305:12305 Triage.types <> p:138 var
+R12303:12303 Triage.types <> U:136 var
+R12296:12298 Triage.types <> Var constr
+R12300:12300 Triage.types <> n:137 var
+R12309:12311 Triage.types <> Var constr
+R12313:12313 Triage.types <> n:137 var
+R12277:12279 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R12276:12276 Triage.types <> p:138 var
+R12280:12280 Triage.types <> n:137 var
+R12345:12354 Triage.types <> insert_Var def
+R12379:12385 Triage.types <> compare def
+R12379:12385 Triage.types <> compare def
+R12431:12433 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R12431:12433 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+prf 12563:12580 <> lift_rec_subst_rec
+R12599:12603 Triage.types <> dtype ind
+binder 12593:12593 <> V:139
+binder 12595:12595 <> U:140
+R12615:12617 Coq.Init.Datatypes <> nat ind
+binder 12607:12607 <> k:141
+binder 12609:12609 <> p:142
+binder 12611:12611 <> n:143
+R12658:12661 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12622:12629 Triage.types <> lift_rec def
+R12657:12657 Triage.types <> k:141 var
+R12651:12653 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12650:12650 Triage.types <> p:142 var
+R12654:12654 Triage.types <> n:143 var
+R12632:12640 Triage.types <> subst_rec def
+R12646:12646 Triage.types <> p:142 var
+R12644:12644 Triage.types <> U:140 var
+R12642:12642 Triage.types <> V:139 var
+R12662:12670 Triage.types <> subst_rec def
+R12716:12716 Triage.types <> p:142 var
+R12700:12707 Triage.types <> lift_rec def
+R12713:12713 Triage.types <> k:141 var
+R12711:12711 Triage.types <> n:143 var
+R12709:12709 Triage.types <> U:140 var
+R12673:12680 Triage.types <> lift_rec def
+R12696:12696 Triage.types <> k:141 var
+R12685:12685 Coq.Init.Datatypes <> S constr
+R12689:12691 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12688:12688 Triage.types <> p:142 var
+R12692:12692 Triage.types <> n:143 var
+R12682:12682 Triage.types <> V:139 var
+R12787:12796 Triage.types <> insert_Var def
+R12799:12806 Triage.types <> relocate def
+R12815:12818 Triage.types <> test def
+R12821:12821 Coq.Init.Datatypes <> S constr
+R12824:12826 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12842:12848 Triage.types <> compare def
+R12815:12818 Triage.types <> test def
+R12821:12821 Coq.Init.Datatypes <> S constr
+R12824:12826 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12842:12848 Triage.types <> compare def
+R12842:12848 Triage.types <> compare def
+R12877:12883 Triage.types <> compare def
+R12889:12889 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12877:12883 Triage.types <> compare def
+R12889:12889 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12877:12883 Triage.types <> compare def
+R12889:12889 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12945:12952 Triage.types <> relocate def
+R12961:12964 Triage.types <> test def
+R12974:12981 Coq.Arith.PeanoNat Nat pred def
+R12968:12968 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R12961:12964 Triage.types <> test def
+R12974:12981 Coq.Arith.PeanoNat Nat pred def
+R12968:12968 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13025:13027 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13028:13035 Coq.Arith.PeanoNat Nat pred def
+R13046:13053 Coq.Arith.PeanoNat Nat pred def
+R13057:13059 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13025:13027 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13028:13035 Coq.Arith.PeanoNat Nat pred def
+R13046:13053 Coq.Arith.PeanoNat Nat pred def
+R13057:13059 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13123:13130 Triage.types <> relocate def
+R13138:13141 Triage.types <> test def
+R13150:13157 Coq.Arith.PeanoNat Nat pred def
+R13144:13144 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13138:13141 Triage.types <> test def
+R13150:13157 Coq.Arith.PeanoNat Nat pred def
+R13144:13144 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13195:13198 Triage.types <> lift def
+R13209:13221 Triage.types <> lift_lift_rec thm
+R13209:13221 Triage.types <> lift_lift_rec thm
+R13209:13221 Triage.types <> lift_lift_rec thm
+R13209:13221 Triage.types <> lift_lift_rec thm
+R13254:13261 Triage.types <> relocate def
+R13270:13273 Triage.types <> test def
+R13277:13277 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13270:13273 Triage.types <> test def
+R13277:13277 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13322:13322 Coq.Init.Datatypes <> S constr
+R13326:13326 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13340:13342 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13337:13337 Coq.Init.Datatypes <> S constr
+R13322:13322 Coq.Init.Datatypes <> S constr
+R13326:13326 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13340:13342 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13337:13337 Coq.Init.Datatypes <> S constr
+prf 13406:13415 <> lift_subst
+R13434:13438 Triage.types <> dtype ind
+binder 13428:13428 <> U:144
+binder 13430:13430 <> V:145
+R13448:13450 Coq.Init.Datatypes <> nat ind
+binder 13442:13442 <> k:146
+binder 13444:13444 <> n:147
+R13479:13482 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13455:13462 Triage.types <> lift_rec def
+R13478:13478 Triage.types <> k:146 var
+R13476:13476 Triage.types <> n:147 var
+R13465:13469 Triage.types <> subst def
+R13473:13473 Triage.types <> V:145 var
+R13471:13471 Triage.types <> U:144 var
+R13483:13487 Triage.types <> subst def
+R13511:13518 Triage.types <> lift_rec def
+R13524:13524 Triage.types <> k:146 var
+R13522:13522 Triage.types <> n:147 var
+R13520:13520 Triage.types <> V:145 var
+R13490:13497 Triage.types <> lift_rec def
+R13507:13507 Triage.types <> k:146 var
+R13502:13502 Coq.Init.Datatypes <> S constr
+R13504:13504 Triage.types <> n:147 var
+R13499:13499 Triage.types <> U:144 var
+R13542:13546 Triage.types <> subst def
+R13582:13584 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13582:13584 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13597:13614 Triage.types <> lift_rec_subst_rec thm
+R13597:13614 Triage.types <> lift_rec_subst_rec thm
+R13597:13614 Triage.types <> lift_rec_subst_rec thm
+R13763:13775 Triage.types <> insert_Var_gt thm
+R13724:13736 Triage.types <> insert_Var_eq thm
+R13685:13697 Triage.types <> insert_Var_lt thm
+R13798:13801 Triage.types <> lift def
+R13814:13826 Triage.types <> lift_rec_null thm
+prf 13838:13855 <> subst_rec_lift_rec
+R13874:13878 Triage.types <> dtype ind
+binder 13868:13868 <> U:148
+binder 13870:13870 <> V:149
+R13890:13892 Coq.Init.Datatypes <> nat ind
+binder 13882:13882 <> p:150
+binder 13884:13884 <> q:151
+binder 13886:13886 <> n:152
+R13907:13911 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13918:13921 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13956:13958 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13922:13930 Triage.types <> subst_rec def
+R13955:13955 Triage.types <> q:151 var
+R13953:13953 Triage.types <> V:149 var
+R13933:13940 Triage.types <> lift_rec def
+R13947:13947 Coq.Init.Datatypes <> S constr
+R13949:13949 Triage.types <> p:150 var
+R13944:13944 Triage.types <> n:152 var
+R13942:13942 Triage.types <> U:148 var
+R13959:13966 Triage.types <> lift_rec def
+R13972:13972 Triage.types <> p:150 var
+R13970:13970 Triage.types <> n:152 var
+R13968:13968 Triage.types <> U:148 var
+R13913:13916 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R13912:13912 Triage.types <> n:152 var
+R13917:13917 Triage.types <> q:151 var
+R13898:13901 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R13897:13897 Triage.types <> q:151 var
+R13903:13905 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13902:13902 Triage.types <> p:150 var
+R13906:13906 Triage.types <> n:152 var
+R14056:14065 Triage.types <> insert_Var def
+R14075:14082 Triage.types <> relocate def
+R14090:14093 Triage.types <> test def
+R14090:14093 Triage.types <> test def
+R14116:14122 Triage.types <> compare def
+R14130:14130 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R14127:14127 Coq.Init.Datatypes <> S constr
+R14116:14122 Triage.types <> compare def
+R14130:14130 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R14127:14127 Coq.Init.Datatypes <> S constr
+R14200:14206 Triage.types <> compare def
+R14200:14206 Triage.types <> compare def
+R14369:14373 Triage.types <> subst def
+R14376:14379 Triage.types <> lift def
+R14435:14452 Triage.types <> subst_rec_lift_rec thm
+R14530:14533 Triage.types <> lift def
+R14546:14558 Triage.types <> lift_rec_null thm
+prf 14570:14588 <> subst_rec_lift_rec0
+binder 14601:14602 <> ty:153
+binder 14604:14604 <> k:154
+binder 14606:14606 <> p:155
+R14654:14656 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14609:14617 Triage.types <> subst_rec def
+R14653:14653 Triage.types <> k:154 var
+R14646:14648 Triage.types <> Var constr
+R14620:14627 Triage.types <> lift_rec def
+R14639:14639 Coq.Init.Datatypes <> S constr
+R14641:14641 Triage.types <> p:155 var
+R14633:14633 Coq.Init.Datatypes <> S constr
+R14635:14635 Triage.types <> k:154 var
+R14629:14630 Triage.types <> ty:153 var
+R14657:14664 Triage.types <> lift_rec def
+R14675:14675 Triage.types <> p:155 var
+R14670:14670 Coq.Init.Datatypes <> S constr
+R14672:14672 Triage.types <> k:154 var
+R14666:14667 Triage.types <> ty:153 var
+R14748:14751 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R14743:14746 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14740:14740 Coq.Init.Datatypes <> S constr
+R14755:14757 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R14752:14752 Coq.Init.Datatypes <> S constr
+R14748:14751 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R14743:14746 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14740:14740 Coq.Init.Datatypes <> S constr
+R14755:14757 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R14752:14752 Coq.Init.Datatypes <> S constr
+R14853:14856 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R14849:14851 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14858:14860 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R14853:14856 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R14849:14851 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14858:14860 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+prf 14957:14975 <> subst_rec_lift_rec1
+R14994:14998 Triage.types <> dtype ind
+binder 14988:14988 <> U:156
+binder 14990:14990 <> V:157
+R15010:15012 Coq.Init.Datatypes <> nat ind
+binder 15002:15002 <> n:158
+binder 15004:15004 <> p:159
+binder 15006:15006 <> k:160
+R15023:15027 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R15064:15067 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R15028:15036 Triage.types <> subst_rec def
+R15059:15061 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15058:15058 Triage.types <> p:159 var
+R15062:15062 Triage.types <> n:158 var
+R15055:15055 Triage.types <> V:157 var
+R15039:15046 Triage.types <> lift_rec def
+R15052:15052 Triage.types <> p:159 var
+R15050:15050 Triage.types <> k:160 var
+R15048:15048 Triage.types <> U:156 var
+R15068:15075 Triage.types <> lift_rec def
+R15097:15097 Triage.types <> p:159 var
+R15095:15095 Triage.types <> k:160 var
+R15078:15086 Triage.types <> subst_rec def
+R15092:15092 Triage.types <> n:158 var
+R15090:15090 Triage.types <> V:157 var
+R15088:15088 Triage.types <> U:156 var
+R15018:15021 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R15017:15017 Triage.types <> k:160 var
+R15022:15022 Triage.types <> n:158 var
+R15184:15193 Triage.types <> insert_Var def
+R15196:15203 Triage.types <> relocate def
+R15212:15215 Triage.types <> test def
+R15212:15215 Triage.types <> test def
+R15237:15243 Triage.types <> compare def
+R15237:15243 Triage.types <> compare def
+R15302:15308 Triage.types <> compare def
+R15319:15319 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15312:15312 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15302:15308 Triage.types <> compare def
+R15319:15319 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15312:15312 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15381:15388 Triage.types <> relocate def
+R15397:15400 Triage.types <> test def
+R15405:15412 Coq.Arith.PeanoNat Nat pred def
+R15397:15400 Triage.types <> test def
+R15405:15412 Coq.Arith.PeanoNat Nat pred def
+R15465:15472 Triage.types <> relocate def
+R15487:15490 Triage.types <> test def
+R15495:15502 Coq.Arith.PeanoNat Nat pred def
+R15487:15490 Triage.types <> test def
+R15495:15502 Coq.Arith.PeanoNat Nat pred def
+R15539:15545 Triage.types <> compare def
+R15555:15555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15549:15549 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15539:15545 Triage.types <> compare def
+R15555:15555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15549:15549 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15604:15607 Triage.types <> lift def
+R15618:15634 Triage.types <> lift_rec_lift_rec thm
+R15618:15634 Triage.types <> lift_rec_lift_rec thm
+R15618:15634 Triage.types <> lift_rec_lift_rec thm
+R15618:15634 Triage.types <> lift_rec_lift_rec thm
+R15618:15634 Triage.types <> lift_rec_lift_rec thm
+R15669:15672 Triage.types <> lift def
+R15683:15699 Triage.types <> lift_rec_lift_rec thm
+R15683:15699 Triage.types <> lift_rec_lift_rec thm
+R15683:15699 Triage.types <> lift_rec_lift_rec thm
+R15683:15699 Triage.types <> lift_rec_lift_rec thm
+R15683:15699 Triage.types <> lift_rec_lift_rec thm
+R15726:15732 Triage.types <> compare def
+R15743:15743 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15736:15736 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15726:15732 Triage.types <> compare def
+R15743:15743 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15736:15736 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15806:15813 Triage.types <> relocate def
+R15822:15825 Triage.types <> test def
+R15822:15825 Triage.types <> test def
+R15862:15868 Triage.types <> compare def
+R15872:15872 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15862:15868 Triage.types <> compare def
+R15872:15872 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R15930:15936 Triage.types <> compare def
+R15930:15936 Triage.types <> compare def
+R16003:16010 Triage.types <> relocate def
+R16019:16022 Triage.types <> test def
+R16019:16022 Triage.types <> test def
+R16071:16071 Coq.Init.Datatypes <> S constr
+R16074:16074 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16086:16088 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16089:16089 Coq.Init.Datatypes <> S constr
+R16071:16071 Coq.Init.Datatypes <> S constr
+R16074:16074 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16086:16088 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16089:16089 Coq.Init.Datatypes <> S constr
+prf 16191:16205 <> subst_rec_lift1
+R16224:16228 Triage.types <> dtype ind
+binder 16218:16218 <> U:161
+binder 16220:16220 <> V:162
+R16238:16240 Coq.Init.Datatypes <> nat ind
+binder 16232:16232 <> n:163
+binder 16234:16234 <> p:164
+R16275:16277 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16245:16253 Triage.types <> subst_rec def
+R16270:16272 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16269:16269 Triage.types <> p:164 var
+R16273:16273 Triage.types <> n:163 var
+R16266:16266 Triage.types <> V:162 var
+R16256:16259 Triage.types <> lift def
+R16263:16263 Triage.types <> U:161 var
+R16261:16261 Triage.types <> p:164 var
+R16278:16281 Triage.types <> lift def
+R16286:16294 Triage.types <> subst_rec def
+R16300:16300 Triage.types <> n:163 var
+R16298:16298 Triage.types <> V:162 var
+R16296:16296 Triage.types <> U:161 var
+R16283:16283 Triage.types <> p:164 var
+R16318:16321 Triage.types <> lift def
+R16348:16366 Triage.types <> subst_rec_lift_rec1 thm
+R16348:16366 Triage.types <> subst_rec_lift_rec1 thm
+R16348:16366 Triage.types <> subst_rec_lift_rec1 thm
+R16348:16366 Triage.types <> subst_rec_lift_rec1 thm
+prf 16430:16448 <> subst_rec_subst_rec
+R16469:16473 Triage.types <> dtype ind
+binder 16461:16461 <> V:165
+binder 16463:16463 <> U:166
+binder 16465:16465 <> W:167
+R16482:16484 Coq.Init.Datatypes <> nat ind
+binder 16477:16477 <> p:168
+binder 16479:16479 <> q:169
+R16494:16499 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16531:16534 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16500:16508 Triage.types <> subst_rec def
+R16530:16530 Triage.types <> q:169 var
+R16528:16528 Triage.types <> W:167 var
+R16511:16519 Triage.types <> subst_rec def
+R16525:16525 Triage.types <> p:168 var
+R16523:16523 Triage.types <> U:166 var
+R16521:16521 Triage.types <> V:165 var
+R16535:16543 Triage.types <> subst_rec def
+R16589:16589 Triage.types <> p:168 var
+R16568:16576 Triage.types <> subst_rec def
+R16584:16584 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R16583:16583 Triage.types <> q:169 var
+R16585:16585 Triage.types <> p:168 var
+R16580:16580 Triage.types <> W:167 var
+R16578:16578 Triage.types <> U:166 var
+R16546:16554 Triage.types <> subst_rec def
+R16561:16561 Coq.Init.Datatypes <> S constr
+R16563:16563 Triage.types <> q:169 var
+R16558:16558 Triage.types <> W:167 var
+R16556:16556 Triage.types <> V:165 var
+R16489:16492 Coq.Init.Peano <> ::nat_scope:x_'>='_x not
+R16488:16488 Triage.types <> q:169 var
+R16493:16493 Triage.types <> p:168 var
+R16661:16664 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16658:16659 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R16668:16671 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16666:16666 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16673:16674 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R16661:16664 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16658:16659 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R16668:16671 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16666:16666 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16673:16674 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R16761:16764 Triage.types <> lift def
+R16784:16787 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16791:16791 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16789:16789 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R16784:16787 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16791:16791 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16789:16789 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R16810:16828 Triage.types <> subst_rec_lift_rec1 thm
+R16810:16828 Triage.types <> subst_rec_lift_rec1 thm
+R16810:16828 Triage.types <> subst_rec_lift_rec1 thm
+R16810:16828 Triage.types <> subst_rec_lift_rec1 thm
+R16882:16885 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16876:16878 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R16879:16879 Coq.Init.Datatypes <> S constr
+R16891:16894 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16887:16887 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16888:16888 Coq.Init.Datatypes <> S constr
+R16896:16898 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R16899:16899 Coq.Init.Datatypes <> S constr
+R16882:16885 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16876:16878 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R16879:16879 Coq.Init.Datatypes <> S constr
+R16891:16894 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R16887:16887 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16888:16888 Coq.Init.Datatypes <> S constr
+R16896:16898 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R16899:16899 Coq.Init.Datatypes <> S constr
+R16987:16990 Triage.types <> lift def
+R17002:17019 Triage.types <> subst_rec_lift_rec thm
+R17002:17019 Triage.types <> subst_rec_lift_rec thm
+R17002:17019 Triage.types <> subst_rec_lift_rec thm
+R17002:17019 Triage.types <> subst_rec_lift_rec thm
+R17002:17019 Triage.types <> subst_rec_lift_rec thm
+prf 17129:17145 <> subst_rec_subst_0
+R17166:17170 Triage.types <> dtype ind
+binder 17158:17158 <> U:170
+binder 17160:17160 <> V:171
+binder 17162:17162 <> W:172
+R17178:17180 Coq.Init.Datatypes <> nat ind
+binder 17174:17174 <> n:173
+R17216:17219 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17185:17193 Triage.types <> subst_rec def
+R17215:17215 Triage.types <> n:173 var
+R17213:17213 Triage.types <> W:172 var
+R17196:17204 Triage.types <> subst_rec def
+R17208:17208 Triage.types <> U:170 var
+R17206:17206 Triage.types <> V:171 var
+R17220:17228 Triage.types <> subst_rec def
+R17253:17261 Triage.types <> subst_rec def
+R17267:17267 Triage.types <> n:173 var
+R17265:17265 Triage.types <> W:172 var
+R17263:17263 Triage.types <> U:170 var
+R17231:17239 Triage.types <> subst_rec def
+R17246:17246 Coq.Init.Datatypes <> S constr
+R17248:17248 Triage.types <> n:173 var
+R17243:17243 Triage.types <> W:172 var
+R17241:17241 Triage.types <> V:171 var
+R17331:17333 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R17331:17333 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R17376:17394 Triage.types <> subst_rec_subst_rec thm
+R17376:17394 Triage.types <> subst_rec_subst_rec thm
+R17376:17394 Triage.types <> subst_rec_subst_rec thm
+R17376:17394 Triage.types <> subst_rec_subst_rec thm
+prf 17557:17568 <> substitution
+R17589:17593 Triage.types <> dtype ind
+binder 17581:17581 <> U:174
+binder 17583:17583 <> V:175
+binder 17585:17585 <> W:176
+R17601:17603 Coq.Init.Datatypes <> nat ind
+binder 17597:17597 <> n:177
+R17633:17636 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17608:17616 Triage.types <> subst_rec def
+R17632:17632 Triage.types <> n:177 var
+R17630:17630 Triage.types <> W:176 var
+R17619:17623 Triage.types <> subst def
+R17627:17627 Triage.types <> V:175 var
+R17625:17625 Triage.types <> U:174 var
+R17637:17641 Triage.types <> subst def
+R17666:17674 Triage.types <> subst_rec def
+R17680:17680 Triage.types <> n:177 var
+R17678:17678 Triage.types <> W:176 var
+R17676:17676 Triage.types <> V:175 var
+R17644:17652 Triage.types <> subst_rec def
+R17659:17659 Coq.Init.Datatypes <> S constr
+R17661:17661 Triage.types <> n:177 var
+R17656:17656 Triage.types <> W:176 var
+R17654:17654 Triage.types <> U:174 var
+R17698:17702 Triage.types <> subst def
+R17727:17743 Triage.types <> subst_rec_subst_0 thm
+R17727:17743 Triage.types <> subst_rec_subst_0 thm
+prf 17808:17822 <> subst_lift_null
+R17840:17844 Triage.types <> dtype ind
+binder 17834:17834 <> W:178
+binder 17836:17836 <> V:179
+R17851:17853 Coq.Init.Datatypes <> nat ind
+binder 17847:17847 <> n:180
+R17887:17889 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17857:17865 Triage.types <> subst_rec def
+R17886:17886 Triage.types <> n:180 var
+R17884:17884 Triage.types <> V:179 var
+R17868:17875 Triage.types <> lift_rec def
+R17879:17879 Triage.types <> n:180 var
+R17877:17877 Triage.types <> W:178 var
+R17890:17890 Triage.types <> W:178 var
+R17949:17958 Triage.types <> insert_Var def
+R17961:17968 Triage.types <> relocate def
+R17977:17980 Triage.types <> test def
+R17977:17980 Triage.types <> test def
+R18010:18016 Triage.types <> compare def
+R18022:18022 Coq.Init.Datatypes <> S constr
+R18010:18016 Triage.types <> compare def
+R18022:18022 Coq.Init.Datatypes <> S constr
+R18077:18083 Triage.types <> compare def
+R18077:18083 Triage.types <> compare def
+prf 18195:18209 <> subst_rec_lift2
+binder 18221:18221 <> M:181
+binder 18223:18223 <> N:182
+binder 18225:18225 <> n:183
+R18257:18260 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18229:18237 Triage.types <> subst_rec def
+R18253:18253 Coq.Init.Datatypes <> S constr
+R18255:18255 Triage.types <> n:183 var
+R18250:18250 Triage.types <> N:182 var
+R18240:18243 Triage.types <> lift def
+R18247:18247 Triage.types <> M:181 var
+R18261:18264 Triage.types <> lift def
+R18269:18277 Triage.types <> subst_rec def
+R18283:18283 Triage.types <> n:183 var
+R18281:18281 Triage.types <> N:182 var
+R18279:18279 Triage.types <> M:181 var
+R18309:18312 Triage.types <> lift def
+R18325:18325 Coq.Init.Datatypes <> S constr
+R18337:18337 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R18325:18325 Coq.Init.Datatypes <> S constr
+R18337:18337 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R18357:18375 Triage.types <> subst_rec_lift_rec1 thm
+R18357:18375 Triage.types <> subst_rec_lift_rec1 thm
+R18357:18375 Triage.types <> subst_rec_lift_rec1 thm
+R18357:18375 Triage.types <> subst_rec_lift_rec1 thm
+R18424:18428 Triage.types <> subst def
+R18442:18456 Triage.types <> subst_rec_funty thm
+R18469:18481 Triage.types <> subst_rec_var thm
+R18495:18512 Triage.types <> subst_rec_lift_rec thm
+R18534:18546 Triage.types <> lift_rec_null thm
+R18557:18565 Triage.types <> subst_rec def
+R18573:18581 Triage.types <> subst_rec def
+R18607:18614 Coq.Arith.PeanoNat Nat pred def
+prf 18627:18631 <> lift0
+binder 18641:18642 <> ty:184
+R18654:18656 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18645:18648 Triage.types <> lift def
+R18652:18653 Triage.types <> ty:184 var
+R18657:18658 Triage.types <> ty:184 var
+R18682:18685 Triage.types <> lift def
+R18696:18708 Triage.types <> lift_rec_null thm
+R18696:18708 Triage.types <> lift_rec_null thm
+R18696:18708 Triage.types <> lift_rec_null thm
+prf 18731:18749 <> lift_rec_subst_rec1
+binder 18761:18762 <> ty:185
+binder 18764:18764 <> u:186
+binder 18766:18766 <> n:187
+binder 18768:18768 <> k:188
+R18777:18780 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18811:18813 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18781:18788 Triage.types <> lift_rec def
+R18808:18808 Triage.types <> k:188 var
+R18790:18798 Triage.types <> subst_rec def
+R18805:18805 Triage.types <> n:187 var
+R18803:18803 Triage.types <> u:186 var
+R18800:18801 Triage.types <> ty:185 var
+R18814:18822 Triage.types <> subst_rec def
+R18845:18845 Coq.Init.Datatypes <> S constr
+R18847:18847 Triage.types <> n:187 var
+R18842:18842 Triage.types <> u:186 var
+R18825:18832 Triage.types <> lift_rec def
+R18837:18837 Triage.types <> k:188 var
+R18834:18835 Triage.types <> ty:185 var
+R18773:18775 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R18772:18772 Triage.types <> k:188 var
+R18776:18776 Triage.types <> n:187 var
+R19080:19083 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19075:19077 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R19089:19092 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19085:19086 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19094:19095 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R19080:19083 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19075:19077 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R19089:19092 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19085:19086 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19094:19095 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R19138:19150 Triage.types <> insert_Var_lt thm
+R19138:19150 Triage.types <> insert_Var_lt thm
+R19138:19150 Triage.types <> insert_Var_lt thm
+R19138:19150 Triage.types <> insert_Var_lt thm
+R19181:19184 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19177:19179 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R19186:19186 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R19181:19184 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R19177:19179 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R19186:19186 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R19224:19240 Triage.types <> relocate_lessthan thm
+R19224:19240 Triage.types <> relocate_lessthan thm
+R19224:19240 Triage.types <> relocate_lessthan thm
+R19224:19240 Triage.types <> relocate_lessthan thm
+R19224:19240 Triage.types <> relocate_lessthan thm
+R19259:19271 Triage.types <> insert_Var_lt thm
+R19259:19271 Triage.types <> insert_Var_lt thm
+R19259:19271 Triage.types <> insert_Var_lt thm
+R19259:19271 Triage.types <> insert_Var_lt thm
+R19297:19316 Triage.types <> relocate_greaterthan thm
+R19297:19316 Triage.types <> relocate_greaterthan thm
+R19297:19316 Triage.types <> relocate_greaterthan thm
+R19297:19316 Triage.types <> relocate_greaterthan thm
+R19297:19316 Triage.types <> relocate_greaterthan thm
+R19335:19347 Triage.types <> insert_Var_lt thm
+R19335:19347 Triage.types <> insert_Var_lt thm
+R19335:19347 Triage.types <> insert_Var_lt thm
+R19335:19347 Triage.types <> insert_Var_lt thm
+R19371:19383 Triage.types <> insert_Var_eq thm
+R19371:19383 Triage.types <> insert_Var_eq thm
+R19371:19383 Triage.types <> insert_Var_eq thm
+R19371:19383 Triage.types <> insert_Var_eq thm
+R19404:19420 Triage.types <> relocate_lessthan thm
+R19404:19420 Triage.types <> relocate_lessthan thm
+R19404:19420 Triage.types <> relocate_lessthan thm
+R19404:19420 Triage.types <> relocate_lessthan thm
+R19404:19420 Triage.types <> relocate_lessthan thm
+R19439:19451 Triage.types <> insert_Var_eq thm
+R19439:19451 Triage.types <> insert_Var_eq thm
+R19439:19451 Triage.types <> insert_Var_eq thm
+R19439:19451 Triage.types <> insert_Var_eq thm
+R19479:19491 Triage.types <> lift_rec_lift thm
+R19479:19491 Triage.types <> lift_rec_lift thm
+R19479:19491 Triage.types <> lift_rec_lift thm
+R19479:19491 Triage.types <> lift_rec_lift thm
+R19479:19491 Triage.types <> lift_rec_lift thm
+R19540:19556 Triage.types <> relocate_lessthan thm
+R19540:19556 Triage.types <> relocate_lessthan thm
+R19540:19556 Triage.types <> relocate_lessthan thm
+R19540:19556 Triage.types <> relocate_lessthan thm
+R19540:19556 Triage.types <> relocate_lessthan thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19587:19599 Triage.types <> insert_Var_gt thm
+R19642:19658 Triage.types <> relocate_lessthan thm
+R19642:19658 Triage.types <> relocate_lessthan thm
+R19642:19658 Triage.types <> relocate_lessthan thm
+R19642:19658 Triage.types <> relocate_lessthan thm
+R19642:19658 Triage.types <> relocate_lessthan thm
+prf 19706:19727 <> subst_rec_program_type
+binder 19739:19739 <> p:189
+R19751:19754 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 19762:19763 <> ty:190
+binder 19765:19765 <> k:191
+R19799:19801 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R19768:19776 Triage.types <> subst_rec def
+R19798:19798 Triage.types <> k:191 var
+R19795:19796 Triage.types <> ty:190 var
+R19779:19790 Triage.types <> program_type def
+R19792:19792 Triage.types <> p:189 var
+R19802:19813 Triage.types <> program_type def
+R19815:19815 Triage.types <> p:189 var
+R19742:19748 Triage.terms <> program ind
+R19750:19750 Triage.types <> p:189 var
+def 19918:19920 <> get
+binder 19922:19922 <> x:192
+R19932:19935 Coq.Init.Datatypes <> list ind
+R19944:19946 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R19938:19943 Coq.Strings.String <> string ind
+R19947:19951 Triage.types <> dtype ind
+binder 19925:19929 <> gamma:193
+R19966:19970 Triage.types <> gamma:193 var
+R19987:19988 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R19981:19981 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R19983:19983 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R19986:19986 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R20004:20007 Coq.Strings.String <> ::string_scope:x_'=?'_x not
+R20008:20008 Triage.types <> x:192 var
+R20036:20038 Triage.types <> get:194 def
+R20040:20040 Triage.types <> x:192 var
+R20023:20026 Coq.Init.Datatypes <> Some constr
+R20058:20061 Coq.Init.Datatypes <> None constr
+def 20082:20097 <> lift_rec_context
+binder 20099:20099 <> n:196
+binder 20101:20101 <> k:197
+R20106:20108 Coq.Lists.List <> map def
+R20124:20126 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R20118:20123 Coq.Strings.String <> string ind
+R20127:20131 Triage.types <> dtype ind
+binder 20116:20116 <> p:198
+R20138:20138 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R20144:20145 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R20166:20166 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R20139:20141 Coq.Init.Datatypes <> fst def
+R20143:20143 Triage.types <> p:198 var
+R20146:20153 Triage.types <> lift_rec def
+R20165:20165 Triage.types <> k:197 var
+R20163:20163 Triage.types <> n:196 var
+R20156:20158 Coq.Init.Datatypes <> snd def
+R20160:20160 Triage.types <> p:198 var
+def 20181:20192 <> lift_context
+R20197:20212 Triage.types <> lift_rec_context def
+prf 20225:20246 <> lift_lift_term_context
+binder 20258:20262 <> gamma:199
+R20273:20275 Coq.Init.Datatypes <> nat ind
+binder 20265:20265 <> k:200
+binder 20267:20267 <> p:201
+binder 20269:20269 <> n:202
+R20328:20360 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20279:20294 Triage.types <> lift_rec_context def
+R20307:20318 Triage.types <> lift_context def
+R20322:20326 Triage.types <> gamma:199 var
+R20320:20320 Triage.types <> p:201 var
+R20304:20304 Triage.types <> k:200 var
+R20298:20300 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20297:20297 Triage.types <> p:201 var
+R20301:20301 Triage.types <> n:202 var
+R20361:20372 Triage.types <> lift_context def
+R20377:20392 Triage.types <> lift_rec_context def
+R20398:20402 Triage.types <> gamma:199 var
+R20396:20396 Triage.types <> k:200 var
+R20394:20394 Triage.types <> n:202 var
+R20374:20374 Triage.types <> p:201 var
+R20498:20505 Triage.types <> lift_rec def
+R20526:20526 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20508:20515 Triage.types <> lift_rec def
+R20539:20546 Triage.types <> lift_rec def
+R20561:20561 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20549:20552 Triage.types <> lift def
+R20498:20505 Triage.types <> lift_rec def
+R20526:20526 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20508:20515 Triage.types <> lift_rec def
+R20539:20546 Triage.types <> lift_rec def
+R20561:20561 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20549:20552 Triage.types <> lift def
+R20587:20600 Triage.types <> lift_lift_term thm
+R20587:20600 Triage.types <> lift_lift_term thm
+R20587:20600 Triage.types <> lift_lift_term thm
+prf 20649:20669 <> lift_rec_lift_context
+binder 20684:20688 <> gamma:203
+R20700:20702 Coq.Init.Datatypes <> nat ind
+binder 20692:20692 <> n:204
+binder 20694:20694 <> p:205
+binder 20696:20696 <> k:206
+R20709:20712 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20719:20722 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20767:20819 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20723:20738 Triage.types <> lift_rec_context def
+R20746:20757 Triage.types <> lift_context def
+R20761:20765 Triage.types <> gamma:203 var
+R20759:20759 Triage.types <> n:204 var
+R20742:20742 Triage.types <> p:205 var
+R20740:20740 Triage.types <> k:206 var
+R20820:20831 Triage.types <> lift_context def
+R20841:20845 Triage.types <> gamma:203 var
+R20835:20837 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20834:20834 Triage.types <> p:205 var
+R20838:20838 Triage.types <> n:204 var
+R20714:20717 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R20713:20713 Triage.types <> k:206 var
+R20718:20718 Triage.types <> n:204 var
+R20706:20708 Coq.Init.Datatypes <> nat ind
+R20941:20948 Triage.types <> lift_rec def
+R20951:20958 Triage.types <> lift_rec def
+R20978:20985 Triage.types <> lift_rec def
+R20988:20991 Triage.types <> lift def
+R20941:20948 Triage.types <> lift_rec def
+R20951:20958 Triage.types <> lift_rec def
+R20978:20985 Triage.types <> lift_rec def
+R20988:20991 Triage.types <> lift def
+R21022:21034 Triage.types <> lift_rec_lift thm
+R21022:21034 Triage.types <> lift_rec_lift thm
+R21022:21034 Triage.types <> lift_rec_lift thm
+R21022:21034 Triage.types <> lift_rec_lift thm
+R21022:21034 Triage.types <> lift_rec_lift thm
+prf 21080:21101 <> lift_rec_lift2_context
+binder 21113:21117 <> gamma:207
+R21126:21128 Coq.Init.Datatypes <> nat ind
+binder 21120:21120 <> n:208
+binder 21122:21122 <> k:209
+R21179:21210 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21132:21147 Triage.types <> lift_rec_context def
+R21158:21169 Triage.types <> lift_context def
+R21173:21177 Triage.types <> gamma:207 var
+R21155:21155 Triage.types <> k:209 var
+R21150:21150 Coq.Init.Datatypes <> S constr
+R21152:21152 Triage.types <> n:208 var
+R21211:21222 Triage.types <> lift_context def
+R21227:21242 Triage.types <> lift_rec_context def
+R21248:21252 Triage.types <> gamma:207 var
+R21246:21246 Triage.types <> k:209 var
+R21244:21244 Triage.types <> n:208 var
+R21348:21355 Triage.types <> lift_rec def
+R21375:21375 Coq.Init.Datatypes <> S constr
+R21358:21365 Triage.types <> lift_rec def
+R21389:21396 Triage.types <> lift_rec def
+R21410:21410 Coq.Init.Datatypes <> S constr
+R21399:21402 Triage.types <> lift def
+R21348:21355 Triage.types <> lift_rec def
+R21375:21375 Coq.Init.Datatypes <> S constr
+R21358:21365 Triage.types <> lift_rec def
+R21389:21396 Triage.types <> lift_rec def
+R21410:21410 Coq.Init.Datatypes <> S constr
+R21399:21402 Triage.types <> lift def
+R21437:21450 Triage.types <> lift_rec_lift2 thm
+R21437:21450 Triage.types <> lift_rec_lift2 thm
+R21437:21450 Triage.types <> lift_rec_lift2 thm
+prf 21494:21510 <> lift_context_zero
+binder 21522:21526 <> gamma:210
+R21549:21551 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21529:21540 Triage.types <> lift_context def
+R21544:21548 Triage.types <> gamma:210 var
+R21552:21556 Triage.types <> gamma:210 var
+R21624:21627 Triage.types <> lift def
+R21638:21650 Triage.types <> lift_rec_null thm
+R21638:21650 Triage.types <> lift_rec_null thm
+R21638:21650 Triage.types <> lift_rec_null thm
+prf 21690:21706 <> lift_context_plus
+binder 21718:21722 <> gamma:211
+binder 21724:21724 <> m:212
+binder 21726:21726 <> n:213
+R21766:21768 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21729:21740 Triage.types <> lift_context def
+R21745:21756 Triage.types <> lift_context def
+R21760:21764 Triage.types <> gamma:211 var
+R21758:21758 Triage.types <> n:213 var
+R21742:21742 Triage.types <> m:212 var
+R21769:21780 Triage.types <> lift_context def
+R21788:21792 Triage.types <> gamma:211 var
+R21784:21784 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R21783:21783 Triage.types <> m:212 var
+R21785:21785 Triage.types <> n:213 var
+R21861:21877 Triage.types <> lift_rec_lift_rec thm
+R21861:21877 Triage.types <> lift_rec_lift_rec thm
+R21861:21877 Triage.types <> lift_rec_lift_rec thm
+R21861:21877 Triage.types <> lift_rec_lift_rec thm
+R21861:21877 Triage.types <> lift_rec_lift_rec thm
+def 21912:21928 <> subst_rec_context
+binder 21930:21932 <> uty:214
+binder 21934:21934 <> k:215
+R21939:21941 Coq.Lists.List <> map def
+R21957:21959 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R21951:21956 Coq.Strings.String <> string ind
+R21960:21964 Triage.types <> dtype ind
+binder 21949:21949 <> p:216
+R21971:21971 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R21977:21978 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R22002:22002 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R21972:21974 Coq.Init.Datatypes <> fst def
+R21976:21976 Triage.types <> p:216 var
+R21979:21987 Triage.types <> subst_rec def
+R22001:22001 Triage.types <> k:215 var
+R21997:21999 Triage.types <> uty:214 var
+R21990:21992 Coq.Init.Datatypes <> snd def
+R21994:21994 Triage.types <> p:216 var
+prf 22014:22039 <> subst_rec_lift_rec_context
+binder 22051:22055 <> gamma:217
+binder 22057:22057 <> V:218
+R22066:22068 Coq.Init.Datatypes <> nat ind
+binder 22060:22060 <> p:219
+binder 22062:22062 <> q:220
+R22078:22087 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22136:22138 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22088:22104 Triage.types <> subst_rec_context def
+R22111:22122 Triage.types <> lift_context def
+R22130:22134 Triage.types <> gamma:217 var
+R22125:22125 Coq.Init.Datatypes <> S constr
+R22127:22127 Triage.types <> p:219 var
+R22108:22108 Triage.types <> q:220 var
+R22106:22106 Triage.types <> V:218 var
+R22139:22150 Triage.types <> lift_context def
+R22154:22158 Triage.types <> gamma:217 var
+R22152:22152 Triage.types <> p:219 var
+R22073:22076 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R22072:22072 Triage.types <> q:220 var
+R22077:22077 Triage.types <> p:219 var
+R22210:22213 Triage.types <> lift def
+R22239:22256 Triage.types <> subst_rec_lift_rec thm
+R22239:22256 Triage.types <> subst_rec_lift_rec thm
+R22239:22256 Triage.types <> subst_rec_lift_rec thm
+R22239:22256 Triage.types <> subst_rec_lift_rec thm
+R22239:22256 Triage.types <> subst_rec_lift_rec thm
+prf 22287:22298 <> get_lift_rec
+binder 22310:22314 <> gamma:221
+binder 22316:22316 <> n:222
+binder 22318:22318 <> k:223
+binder 22320:22320 <> x:224
+R22357:22381 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22323:22325 Triage.types <> get def
+R22330:22345 Triage.types <> lift_rec_context def
+R22351:22355 Triage.types <> gamma:221 var
+R22349:22349 Triage.types <> k:223 var
+R22347:22347 Triage.types <> n:222 var
+R22327:22327 Triage.types <> x:224 var
+R22388:22390 Triage.types <> get def
+R22394:22398 Triage.types <> gamma:221 var
+R22392:22392 Triage.types <> x:224 var
+R22429:22432 Coq.Init.Datatypes <> Some constr
+R22440:22443 Coq.Init.Datatypes <> Some constr
+R22446:22453 Triage.types <> lift_rec def
+R22460:22460 Triage.types <> k:223 var
+R22458:22458 Triage.types <> n:222 var
+R22487:22490 Coq.Init.Datatypes <> None constr
+R22495:22498 Coq.Init.Datatypes <> None constr
+R22646:22647 Coq.Strings.String <> ::string_scope:x_'=?'_x not
+R22646:22647 Coq.Strings.String <> ::string_scope:x_'=?'_x not
+prf 22686:22698 <> get_subst_rec
+binder 22710:22714 <> gamma:225
+binder 22716:22716 <> u:226
+binder 22718:22718 <> k:227
+binder 22720:22720 <> x:228
+R22758:22785 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22723:22725 Triage.types <> get def
+R22730:22746 Triage.types <> subst_rec_context def
+R22752:22756 Triage.types <> gamma:225 var
+R22750:22750 Triage.types <> k:227 var
+R22748:22748 Triage.types <> u:226 var
+R22727:22727 Triage.types <> x:228 var
+R22792:22794 Triage.types <> get def
+R22798:22802 Triage.types <> gamma:225 var
+R22796:22796 Triage.types <> x:228 var
+R22836:22839 Coq.Init.Datatypes <> Some constr
+R22847:22850 Coq.Init.Datatypes <> Some constr
+R22853:22861 Triage.types <> subst_rec def
+R22868:22868 Triage.types <> k:227 var
+R22866:22866 Triage.types <> u:226 var
+R22903:22906 Coq.Init.Datatypes <> None constr
+R23057:23058 Coq.Strings.String <> ::string_scope:x_'=?'_x not
+R23057:23058 Coq.Strings.String <> ::string_scope:x_'=?'_x not
+def 23101:23111 <> normal_type
+binder 23113:23117 <> gamma:229
+binder 23119:23119 <> t:230
+R23132:23132 Triage.types <> t:230 var
+R23143:23145 Triage.terms <> Ref constr
+R23152:23154 Triage.types <> get def
+R23158:23162 Triage.types <> gamma:229 var
+R23168:23171 Triage.terms <> Node constr
+R23176:23179 Coq.Init.Datatypes <> Some constr
+R23181:23184 Triage.types <> Leaf constr
+R23194:23196 Triage.terms <> ::tree_scope:x_'@'_x not
+R23190:23193 Triage.terms <> Node constr
+R23209:23219 Triage.types <> normal_type:231 def
+R23221:23225 Triage.types <> gamma:229 var
+R23237:23240 Coq.Init.Datatypes <> Some constr
+R23248:23251 Coq.Init.Datatypes <> Some constr
+R23254:23257 Triage.types <> Stem constr
+R23270:23273 Coq.Init.Datatypes <> None constr
+R23292:23294 Triage.terms <> ::tree_scope:x_'@'_x not
+R23287:23289 Triage.terms <> ::tree_scope:x_'@'_x not
+R23283:23286 Triage.terms <> Node constr
+R23311:23311 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23332:23333 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23354:23354 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23312:23322 Triage.types <> normal_type:231 def
+R23324:23328 Triage.types <> gamma:229 var
+R23334:23344 Triage.types <> normal_type:231 def
+R23346:23350 Triage.types <> gamma:229 var
+R23367:23367 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23376:23377 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23386:23386 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23368:23371 Coq.Init.Datatypes <> Some constr
+R23378:23381 Coq.Init.Datatypes <> Some constr
+R23391:23394 Coq.Init.Datatypes <> Some constr
+R23397:23400 Triage.types <> Fork constr
+R23417:23417 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23419:23419 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23421:23421 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R23426:23429 Coq.Init.Datatypes <> None constr
+R23448:23451 Coq.Init.Datatypes <> None constr
+def 23497:23501 <> quant
+binder 23503:23503 <> n:233
+binder 23505:23506 <> ty:234
+R23519:23519 Triage.types <> n:233 var
+R23535:23536 Triage.types <> ty:234 var
+R23542:23542 Coq.Init.Datatypes <> S constr
+R23550:23554 Triage.types <> quant:235 def
+R23560:23564 Triage.types <> Quant constr
+R23566:23567 Triage.types <> ty:234 var
+prf 23585:23590 <> quant0
+binder 23600:23601 <> ty:237
+R23606:23608 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23604:23605 Triage.types <> ty:237 var
+R23609:23613 Triage.types <> quant def
+R23617:23618 Triage.types <> ty:237 var
+prf 23646:23655 <> quant_succ
+binder 23665:23665 <> n:238
+binder 23667:23668 <> ty:239
+R23689:23691 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23671:23675 Triage.types <> quant def
+R23680:23684 Triage.types <> Quant constr
+R23686:23687 Triage.types <> ty:239 var
+R23677:23677 Triage.types <> n:238 var
+R23692:23696 Triage.types <> Quant constr
+R23699:23703 Triage.types <> quant def
+R23707:23708 Triage.types <> ty:239 var
+R23705:23705 Triage.types <> n:238 var
+prf 23767:23776 <> quant_plus
+binder 23786:23786 <> m:240
+binder 23788:23788 <> n:241
+binder 23790:23791 <> ty:242
+R23808:23810 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23794:23798 Triage.types <> quant def
+R23806:23807 Triage.types <> ty:242 var
+R23802:23802 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R23801:23801 Triage.types <> m:240 var
+R23803:23803 Triage.types <> n:241 var
+R23811:23815 Triage.types <> quant def
+R23820:23824 Triage.types <> quant def
+R23828:23829 Triage.types <> ty:242 var
+R23826:23826 Triage.types <> n:241 var
+R23817:23817 Triage.types <> m:240 var
+R23896:23905 Triage.types <> quant_succ thm
+R23896:23905 Triage.types <> quant_succ thm
+R23896:23905 Triage.types <> quant_succ thm
+prf 23927:23937 <> quant_succ2
+binder 23947:23947 <> n:243
+binder 23949:23950 <> ty:244
+R23971:23973 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23953:23957 Triage.types <> Quant constr
+R23960:23964 Triage.types <> quant def
+R23968:23969 Triage.types <> ty:244 var
+R23966:23966 Triage.types <> n:243 var
+R23974:23978 Triage.types <> quant def
+R23986:23987 Triage.types <> ty:244 var
+R23981:23981 Coq.Init.Datatypes <> S constr
+R23983:23983 Triage.types <> n:243 var
+R24020:24029 Triage.types <> quant_succ thm
+R24020:24029 Triage.types <> quant_succ thm
+R24020:24029 Triage.types <> quant_succ thm
+prf 24052:24062 <> quant_succ3
+binder 24072:24072 <> k:245
+binder 24074:24075 <> ty:246
+R24096:24098 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24078:24082 Triage.types <> quant def
+R24087:24091 Triage.types <> Quant constr
+R24093:24094 Triage.types <> ty:246 var
+R24084:24084 Triage.types <> k:245 var
+R24099:24103 Triage.types <> quant def
+R24111:24112 Triage.types <> ty:246 var
+R24106:24106 Coq.Init.Datatypes <> S constr
+R24108:24108 Triage.types <> k:245 var
+prf 24143:24166 <> lift_rec_preserves_quant
+binder 24179:24179 <> n:247
+binder 24181:24182 <> ty:248
+binder 24184:24184 <> p:249
+binder 24186:24186 <> k:250
+R24214:24216 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24189:24196 Triage.types <> lift_rec def
+R24213:24213 Triage.types <> k:250 var
+R24211:24211 Triage.types <> p:249 var
+R24199:24203 Triage.types <> quant def
+R24207:24208 Triage.types <> ty:248 var
+R24205:24205 Triage.types <> n:247 var
+R24217:24221 Triage.types <> quant def
+R24226:24233 Triage.types <> lift_rec def
+R24244:24244 Triage.types <> k:250 var
+R24240:24240 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R24239:24239 Triage.types <> n:247 var
+R24241:24241 Triage.types <> p:249 var
+R24235:24236 Triage.types <> ty:248 var
+R24223:24223 Triage.types <> n:247 var
+R24301:24310 Triage.types <> quant_succ thm
+R24301:24310 Triage.types <> quant_succ thm
+R24301:24310 Triage.types <> quant_succ thm
+R24301:24310 Triage.types <> quant_succ thm
+R24301:24310 Triage.types <> quant_succ thm
+prf 24387:24411 <> subst_rec_preserves_quant
+binder 24424:24424 <> n:251
+binder 24426:24427 <> ty:252
+binder 24429:24431 <> uty:253
+binder 24433:24433 <> k:254
+R24464:24466 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24436:24444 Triage.types <> subst_rec def
+R24463:24463 Triage.types <> k:254 var
+R24459:24461 Triage.types <> uty:253 var
+R24447:24451 Triage.types <> quant def
+R24455:24456 Triage.types <> ty:252 var
+R24453:24453 Triage.types <> n:251 var
+R24467:24471 Triage.types <> quant def
+R24476:24484 Triage.types <> subst_rec def
+R24495:24495 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R24494:24494 Triage.types <> n:251 var
+R24496:24496 Triage.types <> k:254 var
+R24489:24491 Triage.types <> uty:253 var
+R24486:24487 Triage.types <> ty:252 var
+R24473:24473 Triage.types <> n:251 var
+R24554:24563 Triage.types <> quant_succ thm
+R24554:24563 Triage.types <> quant_succ thm
+R24554:24563 Triage.types <> quant_succ thm
+R24554:24563 Triage.types <> quant_succ thm
+R24554:24563 Triage.types <> quant_succ thm
+prf 24641:24661 <> subst_preserves_quant
+binder 24674:24674 <> n:255
+binder 24676:24677 <> ty:256
+binder 24679:24681 <> uty:257
+R24706:24708 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24684:24688 Triage.types <> subst def
+R24703:24705 Triage.types <> uty:257 var
+R24691:24695 Triage.types <> quant def
+R24699:24700 Triage.types <> ty:256 var
+R24697:24697 Triage.types <> n:255 var
+R24709:24713 Triage.types <> quant def
+R24718:24726 Triage.types <> subst_rec def
+R24735:24735 Triage.types <> n:255 var
+R24731:24733 Triage.types <> uty:257 var
+R24728:24729 Triage.types <> ty:256 var
+R24715:24715 Triage.types <> n:255 var
+R24761:24765 Triage.types <> subst def
+R24776:24800 Triage.types <> subst_rec_preserves_quant thm
+R24776:24800 Triage.types <> subst_rec_preserves_quant thm
+R24776:24800 Triage.types <> subst_rec_preserves_quant thm
+prf 24839:24848 <> quant_mono
+binder 24860:24860 <> m:258
+binder 24862:24862 <> n:259
+binder 24864:24866 <> ty1:260
+binder 24868:24870 <> ty2:261
+R24898:24935 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24936:24936 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R24967:24971 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R24942:24945 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R24938:24940 Coq.Init.Peano <> ::nat_scope:x_'>='_x not
+R24937:24937 Triage.types <> n:259 var
+R24941:24941 Triage.types <> m:258 var
+R24949:24951 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24946:24948 Triage.types <> ty1:260 var
+R24952:24956 Triage.types <> quant def
+R24964:24966 Triage.types <> ty2:261 var
+R24960:24960 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R24959:24959 Triage.types <> n:259 var
+R24961:24961 Triage.types <> m:258 var
+R24972:24978 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R24981:24982 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 24979:24980 <> ty:262
+R24986:24988 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24983:24985 Triage.types <> ty2:261 var
+R24989:24993 Triage.types <> Quant constr
+R24995:24996 Triage.types <> ty:262 var
+R24884:24886 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24873:24877 Triage.types <> quant def
+R24881:24883 Triage.types <> ty1:260 var
+R24879:24879 Triage.types <> m:258 var
+R24887:24891 Triage.types <> quant def
+R24895:24897 Triage.types <> ty2:261 var
+R24893:24893 Triage.types <> n:259 var
+R25105:25114 Triage.types <> quant_succ thm
+R25105:25114 Triage.types <> quant_succ thm
+R25105:25114 Triage.types <> quant_succ thm
+R25189:25198 Triage.types <> quant_succ thm
+R25189:25198 Triage.types <> quant_succ thm
+R25189:25198 Triage.types <> quant_succ thm
+prf 25298:25312 <> subst_rec_quant
+binder 25322:25322 <> n:263
+binder 25324:25325 <> ty:264
+binder 25327:25329 <> uty:265
+binder 25331:25331 <> k:266
+R25362:25364 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25334:25342 Triage.types <> subst_rec def
+R25361:25361 Triage.types <> k:266 var
+R25357:25359 Triage.types <> uty:265 var
+R25345:25349 Triage.types <> quant def
+R25353:25354 Triage.types <> ty:264 var
+R25351:25351 Triage.types <> n:263 var
+R25365:25369 Triage.types <> quant def
+R25374:25382 Triage.types <> subst_rec def
+R25393:25393 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R25392:25392 Triage.types <> n:263 var
+R25394:25394 Triage.types <> k:266 var
+R25387:25389 Triage.types <> uty:265 var
+R25384:25385 Triage.types <> ty:264 var
+R25371:25371 Triage.types <> n:263 var
+prf 25487:25497 <> subst_quant
+binder 25507:25507 <> n:267
+binder 25509:25510 <> ty:268
+binder 25512:25514 <> uty:269
+R25539:25541 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25517:25521 Triage.types <> subst def
+R25536:25538 Triage.types <> uty:269 var
+R25524:25528 Triage.types <> quant def
+R25532:25533 Triage.types <> ty:268 var
+R25530:25530 Triage.types <> n:267 var
+R25542:25546 Triage.types <> quant def
+R25551:25559 Triage.types <> subst_rec def
+R25568:25568 Triage.types <> n:267 var
+R25564:25566 Triage.types <> uty:269 var
+R25561:25562 Triage.types <> ty:268 var
+R25548:25548 Triage.types <> n:267 var
+R25594:25598 Triage.types <> subst def
+R25609:25623 Triage.types <> subst_rec_quant thm
+R25609:25623 Triage.types <> subst_rec_quant thm
+R25609:25623 Triage.types <> subst_rec_quant thm
+prf 25667:25677 <> quant_mono2
+binder 25689:25690 <> n2:270
+binder 25692:25694 <> ty2:271
+binder 25696:25697 <> n1:272
+binder 25699:25701 <> ty1:273
+R25735:25742 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25743:25743 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25770:25774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25775:25775 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25802:25810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25818:25821 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R25813:25815 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25811:25812 Triage.types <> n1:272 var
+R25816:25817 Triage.types <> n2:270 var
+R25825:25827 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25822:25824 Triage.types <> ty1:273 var
+R25828:25830 Triage.types <> ty2:271 var
+binder 25783:25784 <> ty:274
+R25790:25793 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R25787:25789 Triage.types <> ty2:271 var
+R25794:25798 Triage.types <> Quant constr
+R25800:25801 Triage.types <> ty:274 var
+binder 25751:25752 <> ty:275
+R25758:25761 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R25755:25757 Triage.types <> ty1:273 var
+R25762:25766 Triage.types <> Quant constr
+R25768:25769 Triage.types <> ty:275 var
+R25720:25722 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25708:25712 Triage.types <> quant def
+R25717:25719 Triage.types <> ty1:273 var
+R25714:25715 Triage.types <> n1:272 var
+R25723:25727 Triage.types <> quant def
+R25732:25734 Triage.types <> ty2:271 var
+R25729:25730 Triage.types <> n2:270 var
+R25933:25937 Triage.types <> quant def
+R25966:25975 Triage.types <> quant_succ thm
+R25933:25937 Triage.types <> quant def
+R25966:25975 Triage.types <> quant_succ thm
+R25966:25975 Triage.types <> quant_succ thm
+R26066:26069 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R26046:26050 Triage.types <> quant def
+R26056:26060 Triage.types <> Quant constr
+R26070:26074 Triage.types <> Quant constr
+R26077:26081 Triage.types <> quant def
+R26066:26069 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R26046:26050 Triage.types <> quant def
+R26056:26060 Triage.types <> Quant constr
+R26070:26074 Triage.types <> Quant constr
+R26077:26081 Triage.types <> quant def
+R26112:26121 Triage.types <> quant_succ thm
+R26112:26121 Triage.types <> quant_succ thm
+R26112:26121 Triage.types <> quant_succ thm
+R26151:26160 Triage.types <> quant_succ thm
+R26151:26160 Triage.types <> quant_succ thm
+R26151:26160 Triage.types <> quant_succ thm
+R26218:26227 Triage.types <> quant_succ thm
+R26218:26227 Triage.types <> quant_succ thm
+R26218:26227 Triage.types <> quant_succ thm
+R26298:26308 Triage.types <> quant_succ2 thm
+R26326:26336 Triage.types <> quant_mono2 thm
+prf 26449:26459 <> quant_plus2
+binder 26469:26469 <> m:276
+binder 26471:26471 <> n:277
+binder 26473:26474 <> ty:278
+R26491:26493 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26478:26482 Triage.types <> quant def
+R26489:26490 Triage.types <> ty:278 var
+R26485:26485 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R26484:26484 Triage.types <> m:276 var
+R26486:26486 Triage.types <> n:277 var
+R26494:26498 Triage.types <> quant def
+R26503:26507 Triage.types <> quant def
+R26511:26512 Triage.types <> ty:278 var
+R26509:26509 Triage.types <> m:276 var
+R26500:26500 Triage.types <> n:277 var
+R26541:26541 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R26552:26554 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R26573:26582 Triage.types <> quant_plus thm
+R26541:26541 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R26552:26554 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R26573:26582 Triage.types <> quant_plus thm
+R26651:26653 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26654:26658 Triage.types <> quant def
+R26651:26653 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26654:26658 Triage.types <> quant def
+R26765:26767 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26755:26759 Triage.types <> quant def
+R26765:26767 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26755:26759 Triage.types <> quant def
+R26825:26834 Triage.types <> quant_succ thm
+R26720:26729 Triage.types <> quant_succ thm
+def 26918:26923 <> quantf
+binder 26925:26925 <> n:279
+binder 26927:26928 <> ty:280
+R26941:26941 Triage.types <> n:279 var
+R26957:26958 Triage.types <> ty:280 var
+R26964:26964 Coq.Init.Datatypes <> S constr
+R26972:26977 Triage.types <> quantf:281 def
+R26983:26985 Triage.types <> Asf constr
+R26987:26988 Triage.types <> ty:280 var
+prf 27006:27012 <> quantf0
+binder 27022:27023 <> ty:283
+R27028:27030 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27026:27027 Triage.types <> ty:283 var
+R27031:27036 Triage.types <> quantf def
+R27040:27041 Triage.types <> ty:283 var
+prf 27069:27079 <> quantf_succ
+binder 27089:27089 <> n:284
+binder 27091:27092 <> ty:285
+R27112:27114 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27095:27100 Triage.types <> quantf def
+R27105:27107 Triage.types <> Asf constr
+R27109:27110 Triage.types <> ty:285 var
+R27102:27102 Triage.types <> n:284 var
+R27115:27117 Triage.types <> Asf constr
+R27120:27125 Triage.types <> quantf def
+R27129:27130 Triage.types <> ty:285 var
+R27127:27127 Triage.types <> n:284 var
+prf 27189:27199 <> quantf_plus
+binder 27209:27209 <> m:286
+binder 27211:27211 <> n:287
+binder 27213:27214 <> ty:288
+R27232:27234 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27217:27222 Triage.types <> quantf def
+R27230:27231 Triage.types <> ty:288 var
+R27226:27226 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R27225:27225 Triage.types <> m:286 var
+R27227:27227 Triage.types <> n:287 var
+R27235:27240 Triage.types <> quantf def
+R27245:27250 Triage.types <> quantf def
+R27254:27255 Triage.types <> ty:288 var
+R27252:27252 Triage.types <> n:287 var
+R27242:27242 Triage.types <> m:286 var
+R27322:27332 Triage.types <> quantf_succ thm
+R27322:27332 Triage.types <> quantf_succ thm
+R27322:27332 Triage.types <> quantf_succ thm
+prf 27354:27365 <> quantf_succ2
+binder 27375:27375 <> n:289
+binder 27377:27378 <> ty:290
+R27398:27400 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27381:27383 Triage.types <> Asf constr
+R27386:27391 Triage.types <> quantf def
+R27395:27396 Triage.types <> ty:290 var
+R27393:27393 Triage.types <> n:289 var
+R27401:27406 Triage.types <> quantf def
+R27414:27415 Triage.types <> ty:290 var
+R27409:27409 Coq.Init.Datatypes <> S constr
+R27411:27411 Triage.types <> n:289 var
+R27448:27458 Triage.types <> quantf_succ thm
+R27448:27458 Triage.types <> quantf_succ thm
+R27448:27458 Triage.types <> quantf_succ thm
+prf 27481:27492 <> quantf_succ3
+binder 27502:27502 <> k:291
+binder 27504:27505 <> ty:292
+R27525:27527 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27508:27513 Triage.types <> quantf def
+R27518:27520 Triage.types <> Asf constr
+R27522:27523 Triage.types <> ty:292 var
+R27515:27515 Triage.types <> k:291 var
+R27528:27533 Triage.types <> quantf def
+R27541:27542 Triage.types <> ty:292 var
+R27536:27536 Coq.Init.Datatypes <> S constr
+R27538:27538 Triage.types <> k:291 var
+prf 27573:27597 <> lift_rec_preserves_quantf
+binder 27610:27610 <> n:293
+binder 27612:27613 <> ty:294
+binder 27615:27615 <> p:295
+binder 27617:27617 <> k:296
+R27646:27648 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27620:27627 Triage.types <> lift_rec def
+R27645:27645 Triage.types <> k:296 var
+R27643:27643 Triage.types <> p:295 var
+R27630:27635 Triage.types <> quantf def
+R27639:27640 Triage.types <> ty:294 var
+R27637:27637 Triage.types <> n:293 var
+R27649:27654 Triage.types <> quantf def
+R27659:27666 Triage.types <> lift_rec def
+R27673:27673 Triage.types <> k:296 var
+R27671:27671 Triage.types <> p:295 var
+R27668:27669 Triage.types <> ty:294 var
+R27656:27656 Triage.types <> n:293 var
+R27730:27740 Triage.types <> quantf_succ thm
+R27730:27740 Triage.types <> quantf_succ thm
+R27730:27740 Triage.types <> quantf_succ thm
+R27730:27740 Triage.types <> quantf_succ thm
+R27730:27740 Triage.types <> quantf_succ thm
+prf 27817:27842 <> subst_rec_preserves_quantf
+binder 27855:27855 <> n:297
+binder 27857:27858 <> ty:298
+binder 27860:27862 <> uty:299
+binder 27864:27864 <> k:300
+R27896:27898 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27867:27875 Triage.types <> subst_rec def
+R27895:27895 Triage.types <> k:300 var
+R27891:27893 Triage.types <> uty:299 var
+R27878:27883 Triage.types <> quantf def
+R27887:27888 Triage.types <> ty:298 var
+R27885:27885 Triage.types <> n:297 var
+R27899:27904 Triage.types <> quantf def
+R27909:27917 Triage.types <> subst_rec def
+R27926:27926 Triage.types <> k:300 var
+R27922:27924 Triage.types <> uty:299 var
+R27919:27920 Triage.types <> ty:298 var
+R27906:27906 Triage.types <> n:297 var
+R27982:27992 Triage.types <> quantf_succ thm
+R27982:27992 Triage.types <> quantf_succ thm
+R27982:27992 Triage.types <> quantf_succ thm
+R27982:27992 Triage.types <> quantf_succ thm
+R27982:27992 Triage.types <> quantf_succ thm
+prf 28031:28052 <> subst_preserves_quantf
+binder 28065:28065 <> n:301
+binder 28067:28068 <> ty:302
+binder 28070:28072 <> uty:303
+R28098:28100 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28075:28079 Triage.types <> subst def
+R28095:28097 Triage.types <> uty:303 var
+R28082:28087 Triage.types <> quantf def
+R28091:28092 Triage.types <> ty:302 var
+R28089:28089 Triage.types <> n:301 var
+R28101:28106 Triage.types <> quantf def
+R28111:28115 Triage.types <> subst def
+R28120:28122 Triage.types <> uty:303 var
+R28117:28118 Triage.types <> ty:302 var
+R28108:28108 Triage.types <> n:301 var
+R28148:28152 Triage.types <> subst def
+R28163:28188 Triage.types <> subst_rec_preserves_quantf thm
+R28163:28188 Triage.types <> subst_rec_preserves_quantf thm
+R28163:28188 Triage.types <> subst_rec_preserves_quantf thm
+prf 28212:28222 <> quantf_mono
+binder 28234:28234 <> m:304
+binder 28236:28236 <> n:305
+binder 28238:28240 <> ty1:306
+binder 28242:28244 <> ty2:307
+R28274:28311 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28312:28312 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R28344:28348 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R28318:28321 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R28314:28316 Coq.Init.Peano <> ::nat_scope:x_'>='_x not
+R28313:28313 Triage.types <> n:305 var
+R28317:28317 Triage.types <> m:304 var
+R28325:28327 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28322:28324 Triage.types <> ty1:306 var
+R28328:28333 Triage.types <> quantf def
+R28341:28343 Triage.types <> ty2:307 var
+R28337:28337 Coq.Init.Peano <> ::nat_scope:x_'-'_x not
+R28336:28336 Triage.types <> n:305 var
+R28338:28338 Triage.types <> m:304 var
+R28349:28355 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R28358:28359 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 28356:28357 <> ty:308
+R28363:28365 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28360:28362 Triage.types <> ty2:307 var
+R28366:28368 Triage.types <> Asf constr
+R28370:28371 Triage.types <> ty:308 var
+R28259:28261 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28247:28252 Triage.types <> quantf def
+R28256:28258 Triage.types <> ty1:306 var
+R28254:28254 Triage.types <> m:304 var
+R28262:28267 Triage.types <> quantf def
+R28271:28273 Triage.types <> ty2:307 var
+R28269:28269 Triage.types <> n:305 var
+R28480:28490 Triage.types <> quantf_succ thm
+R28480:28490 Triage.types <> quantf_succ thm
+R28480:28490 Triage.types <> quantf_succ thm
+R28565:28575 Triage.types <> quantf_succ thm
+R28565:28575 Triage.types <> quantf_succ thm
+R28565:28575 Triage.types <> quantf_succ thm
+prf 28675:28686 <> quantf_mono2
+binder 28698:28699 <> n2:309
+binder 28701:28703 <> ty2:310
+binder 28705:28706 <> n1:311
+binder 28708:28710 <> ty1:312
+R28746:28753 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28754:28754 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28779:28783 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28784:28784 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28809:28817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R28825:28828 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R28820:28822 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28818:28819 Triage.types <> n1:311 var
+R28823:28824 Triage.types <> n2:309 var
+R28832:28834 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28829:28831 Triage.types <> ty1:312 var
+R28835:28837 Triage.types <> ty2:310 var
+binder 28792:28793 <> ty:313
+R28799:28802 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R28796:28798 Triage.types <> ty2:310 var
+R28803:28805 Triage.types <> Asf constr
+R28807:28808 Triage.types <> ty:313 var
+binder 28762:28763 <> ty:314
+R28769:28772 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R28766:28768 Triage.types <> ty1:312 var
+R28773:28775 Triage.types <> Asf constr
+R28777:28778 Triage.types <> ty:314 var
+R28730:28732 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R28717:28722 Triage.types <> quantf def
+R28727:28729 Triage.types <> ty1:312 var
+R28724:28725 Triage.types <> n1:311 var
+R28733:28738 Triage.types <> quantf def
+R28743:28745 Triage.types <> ty2:310 var
+R28740:28741 Triage.types <> n2:309 var
+R28940:28945 Triage.types <> quantf def
+R28974:28984 Triage.types <> quantf_succ thm
+R28940:28945 Triage.types <> quantf def
+R28974:28984 Triage.types <> quantf_succ thm
+R28974:28984 Triage.types <> quantf_succ thm
+R29074:29077 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R29055:29060 Triage.types <> quantf def
+R29066:29068 Triage.types <> Asf constr
+R29078:29080 Triage.types <> Asf constr
+R29083:29088 Triage.types <> quantf def
+R29074:29077 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R29055:29060 Triage.types <> quantf def
+R29066:29068 Triage.types <> Asf constr
+R29078:29080 Triage.types <> Asf constr
+R29083:29088 Triage.types <> quantf def
+R29119:29129 Triage.types <> quantf_succ thm
+R29119:29129 Triage.types <> quantf_succ thm
+R29119:29129 Triage.types <> quantf_succ thm
+R29159:29169 Triage.types <> quantf_succ thm
+R29159:29169 Triage.types <> quantf_succ thm
+R29159:29169 Triage.types <> quantf_succ thm
+R29227:29237 Triage.types <> quantf_succ thm
+R29227:29237 Triage.types <> quantf_succ thm
+R29227:29237 Triage.types <> quantf_succ thm
+R29309:29320 Triage.types <> quantf_succ2 thm
+R29338:29349 Triage.types <> quantf_mono2 thm
+R29516:29518 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29519:29524 Triage.types <> quantf def
+R29516:29518 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29519:29524 Triage.types <> quantf def
+R29633:29635 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29622:29627 Triage.types <> quantf def
+R29633:29635 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29622:29627 Triage.types <> quantf def
+R29693:29703 Triage.types <> quantf_succ thm
+R29586:29596 Triage.types <> quantf_succ thm
+prf 29778:29789 <> quanta_cases
+R29807:29810 Coq.Init.Datatypes <> list ind
+R29812:29815 Coq.Init.Datatypes <> bool ind
+binder 29803:29804 <> bs:315
+R29831:29834 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R29825:29827 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29823:29824 Triage.types <> bs:315 var
+R29828:29830 Coq.Init.Datatypes <> nil constr
+R29873:29876 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R29837:29839 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29835:29836 Triage.types <> bs:315 var
+R29840:29842 Coq.Init.Datatypes <> app def
+R29865:29868 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R29861:29864 Coq.Init.Datatypes <> true constr
+R29869:29871 Coq.Init.Datatypes <> nil constr
+R29845:29854 Coq.Lists.List <> removelast def
+R29856:29857 Triage.types <> bs:315 var
+R29879:29881 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29877:29878 Triage.types <> bs:315 var
+R29882:29884 Coq.Init.Datatypes <> app def
+R29908:29911 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R29903:29907 Coq.Init.Datatypes <> false constr
+R29912:29914 Coq.Init.Datatypes <> nil constr
+R29887:29896 Coq.Lists.List <> removelast def
+R29898:29899 Triage.types <> bs:315 var
+R29954:29957 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R29948:29950 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29951:29953 Coq.Init.Datatypes <> nil constr
+R29960:29962 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29963:29965 Coq.Init.Datatypes <> app def
+R29996:29999 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R29984:29987 Coq.Lists.List <> last def
+R29992:29995 Coq.Init.Datatypes <> true constr
+R30000:30002 Coq.Init.Datatypes <> nil constr
+R29968:29977 Coq.Lists.List <> removelast def
+R29954:29957 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R29948:29950 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29951:29953 Coq.Init.Datatypes <> nil constr
+R29960:29962 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29963:29965 Coq.Init.Datatypes <> app def
+R29996:29999 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R29984:29987 Coq.Lists.List <> last def
+R29992:29995 Coq.Init.Datatypes <> true constr
+R30000:30002 Coq.Init.Datatypes <> nil constr
+R29968:29977 Coq.Lists.List <> removelast def
+R30061:30079 Coq.Lists.List <> app_removelast_last thm
+R30061:30079 Coq.Lists.List <> app_removelast_last thm
+R30061:30079 Coq.Lists.List <> app_removelast_last thm
+R30061:30079 Coq.Lists.List <> app_removelast_last thm
+R30165:30168 Coq.Lists.List <> last def
+R30173:30176 Coq.Init.Datatypes <> true constr
+R30165:30168 Coq.Lists.List <> last def
+R30173:30176 Coq.Init.Datatypes <> true constr
+def 30240:30245 <> quanta
+binder 30247:30248 <> bs:316
+binder 30250:30251 <> ty:317
+R30264:30265 Triage.types <> bs:316 var
+R30276:30278 Coq.Init.Datatypes <> nil constr
+R30283:30284 Triage.types <> ty:317 var
+R30294:30297 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30290:30293 Coq.Init.Datatypes <> true constr
+R30305:30310 Triage.types <> quanta:318 def
+R30317:30321 Triage.types <> Quant constr
+R30323:30324 Triage.types <> ty:317 var
+R30336:30339 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30331:30335 Coq.Init.Datatypes <> false constr
+R30347:30352 Triage.types <> quanta:318 def
+R30359:30361 Triage.types <> Asf constr
+R30363:30364 Triage.types <> ty:317 var
+def 30384:30394 <> quant_count
+binder 30396:30397 <> bs:320
+R30410:30411 Triage.types <> bs:320 var
+R30422:30424 Coq.Init.Datatypes <> nil constr
+R30439:30442 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30435:30438 Coq.Init.Datatypes <> true constr
+R30450:30450 Coq.Init.Datatypes <> S constr
+R30453:30463 Triage.types <> quant_count:321 def
+R30479:30482 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30474:30478 Coq.Init.Datatypes <> false constr
+R30490:30500 Triage.types <> quant_count:321 def
+prf 30523:30537 <> quanta_is_quant
+binder 30549:30550 <> bs:323
+binder 30552:30554 <> uty:324
+binder 30556:30557 <> ty:325
+R30588:30591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30600:30636 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R30698:30698 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R30594:30596 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30592:30593 Triage.types <> bs:323 var
+R30597:30599 Coq.Init.Datatypes <> nil constr
+R30637:30643 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R30647:30648 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 30644:30646 <> bs1:326
+R30675:30678 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R30651:30653 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30649:30650 Triage.types <> bs:323 var
+R30654:30656 Coq.Init.Datatypes <> app def
+R30667:30670 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30663:30666 Coq.Init.Datatypes <> true constr
+R30671:30673 Coq.Init.Datatypes <> nil constr
+R30658:30660 Triage.types <> bs1:326 var
+R30682:30684 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30679:30681 Triage.types <> uty:324 var
+R30685:30690 Triage.types <> quanta def
+R30696:30697 Triage.types <> ty:325 var
+R30692:30694 Triage.types <> bs1:326 var
+R30573:30575 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30564:30568 Triage.types <> Quant constr
+R30570:30572 Triage.types <> uty:324 var
+R30576:30581 Triage.types <> quanta def
+R30586:30587 Triage.types <> ty:325 var
+R30583:30584 Triage.types <> bs:323 var
+R30857:30859 Coq.Init.Datatypes <> nil constr
+R30857:30859 Coq.Init.Datatypes <> nil constr
+R30902:30905 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30898:30901 Coq.Init.Datatypes <> true constr
+R30902:30905 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30898:30901 Coq.Init.Datatypes <> true constr
+R30973:30976 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30968:30972 Coq.Init.Datatypes <> false constr
+R30973:30976 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R30968:30972 Coq.Init.Datatypes <> false constr
+prf 31017:31029 <> quanta_is_asf
+binder 31041:31042 <> bs:327
+binder 31044:31046 <> uty:328
+binder 31048:31049 <> ty:329
+R31078:31081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R31090:31124 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R31187:31187 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R31084:31086 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31082:31083 Triage.types <> bs:327 var
+R31087:31089 Coq.Init.Datatypes <> nil constr
+R31125:31131 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R31135:31136 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 31132:31134 <> bs1:330
+R31164:31167 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R31139:31141 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31137:31138 Triage.types <> bs:327 var
+R31142:31144 Coq.Init.Datatypes <> app def
+R31156:31159 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31151:31155 Coq.Init.Datatypes <> false constr
+R31160:31162 Coq.Init.Datatypes <> nil constr
+R31146:31148 Triage.types <> bs1:330 var
+R31171:31173 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31168:31170 Triage.types <> uty:328 var
+R31174:31179 Triage.types <> quanta def
+R31185:31186 Triage.types <> ty:329 var
+R31181:31183 Triage.types <> bs1:330 var
+R31063:31065 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31056:31058 Triage.types <> Asf constr
+R31060:31062 Triage.types <> uty:328 var
+R31066:31071 Triage.types <> quanta def
+R31076:31077 Triage.types <> ty:329 var
+R31073:31074 Triage.types <> bs:327 var
+R31371:31374 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31367:31370 Coq.Init.Datatypes <> true constr
+R31371:31374 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31367:31370 Coq.Init.Datatypes <> true constr
+R31419:31421 Coq.Init.Datatypes <> nil constr
+R31419:31421 Coq.Init.Datatypes <> nil constr
+R31466:31469 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31461:31465 Coq.Init.Datatypes <> false constr
+R31466:31469 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31461:31465 Coq.Init.Datatypes <> false constr
+prf 31510:31524 <> quant_count_app
+binder 31534:31536 <> bs1:331
+binder 31538:31540 <> bs2:332
+R31567:31569 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31543:31553 Triage.types <> quant_count def
+R31559:31562 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R31556:31558 Triage.types <> bs1:331 var
+R31563:31565 Triage.types <> bs2:332 var
+R31585:31588 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R31604:31604 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R31570:31580 Triage.types <> quant_count def
+R31582:31584 Triage.types <> bs1:331 var
+R31589:31599 Triage.types <> quant_count def
+R31601:31603 Triage.types <> bs2:332 var
+prf 31716:31730 <> quanta_not_leaf
+binder 31740:31741 <> bs:333
+binder 31743:31745 <> ty2:334
+R31768:31771 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R31774:31776 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31772:31773 Triage.types <> bs:333 var
+R31777:31779 Coq.Init.Datatypes <> nil constr
+R31752:31754 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31748:31751 Triage.types <> Leaf constr
+R31755:31760 Triage.types <> quanta def
+R31765:31767 Triage.types <> ty2:334 var
+R31762:31763 Triage.types <> bs:333 var
+R31887:31889 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31890:31892 Coq.Init.Datatypes <> nil constr
+R31887:31889 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31890:31892 Coq.Init.Datatypes <> nil constr
+R31887:31889 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31890:31892 Coq.Init.Datatypes <> nil constr
+prf 31950:31964 <> quanta_not_stem
+binder 31974:31975 <> bs:335
+binder 31977:31979 <> ty1:336
+binder 31981:31983 <> ty2:337
+R32010:32013 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32016:32018 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32014:32015 Triage.types <> bs:335 var
+R32019:32021 Coq.Init.Datatypes <> nil constr
+R31994:31996 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31986:31989 Triage.types <> Stem constr
+R31991:31993 Triage.types <> ty1:336 var
+R31997:32002 Triage.types <> quanta def
+R32007:32009 Triage.types <> ty2:337 var
+R32004:32005 Triage.types <> bs:335 var
+R32129:32131 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32132:32134 Coq.Init.Datatypes <> nil constr
+R32129:32131 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32132:32134 Coq.Init.Datatypes <> nil constr
+R32129:32131 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32132:32134 Coq.Init.Datatypes <> nil constr
+prf 32192:32206 <> quanta_not_fork
+binder 32216:32217 <> bs:338
+binder 32219:32222 <> uty1:339
+binder 32224:32227 <> vty1:340
+binder 32229:32231 <> ty2:341
+R32264:32267 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32270:32272 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32268:32269 Triage.types <> bs:338 var
+R32273:32275 Coq.Init.Datatypes <> nil constr
+R32248:32250 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32234:32237 Triage.types <> Fork constr
+R32244:32247 Triage.types <> vty1:340 var
+R32239:32242 Triage.types <> uty1:339 var
+R32251:32256 Triage.types <> quanta def
+R32261:32263 Triage.types <> ty2:341 var
+R32258:32259 Triage.types <> bs:338 var
+R32383:32385 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32386:32388 Coq.Init.Datatypes <> nil constr
+R32383:32385 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32386:32388 Coq.Init.Datatypes <> nil constr
+R32383:32385 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32386:32388 Coq.Init.Datatypes <> nil constr
+prf 32446:32461 <> quanta_not_funty
+binder 32471:32472 <> bs:342
+binder 32474:32477 <> uty1:343
+binder 32479:32482 <> vty1:344
+binder 32484:32486 <> ty2:345
+R32520:32523 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32526:32528 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32524:32525 Triage.types <> bs:342 var
+R32529:32531 Coq.Init.Datatypes <> nil constr
+R32504:32506 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32489:32493 Triage.types <> Funty constr
+R32500:32503 Triage.types <> vty1:344 var
+R32495:32498 Triage.types <> uty1:343 var
+R32507:32512 Triage.types <> quanta def
+R32517:32519 Triage.types <> ty2:345 var
+R32514:32515 Triage.types <> bs:342 var
+R32639:32641 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32642:32644 Coq.Init.Datatypes <> nil constr
+R32639:32641 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32642:32644 Coq.Init.Datatypes <> nil constr
+R32639:32641 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32642:32644 Coq.Init.Datatypes <> nil constr
+R32759:32761 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32755:32758 Triage.types <> Leaf constr
+R32762:32767 Triage.types <> quanta def
+R32759:32761 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32755:32758 Triage.types <> Leaf constr
+R32762:32767 Triage.types <> quanta def
+R32869:32871 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32863:32866 Triage.types <> Stem constr
+R32872:32877 Triage.types <> quanta def
+R32869:32871 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32863:32866 Triage.types <> Stem constr
+R32872:32877 Triage.types <> quanta def
+R32981:32983 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32973:32976 Triage.types <> Fork constr
+R32984:32989 Triage.types <> quanta def
+R32981:32983 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32973:32976 Triage.types <> Fork constr
+R32984:32989 Triage.types <> quanta def
+R33094:33096 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33085:33089 Triage.types <> Funty constr
+R33097:33102 Triage.types <> quanta def
+R33094:33096 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33085:33089 Triage.types <> Funty constr
+R33097:33102 Triage.types <> quanta def
+R33128:33130 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33131:33133 Coq.Init.Datatypes <> nil constr
+R33147:33162 Triage.types <> quanta_not_funty thm
+R33015:33017 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33018:33020 Coq.Init.Datatypes <> nil constr
+R33034:33048 Triage.types <> quanta_not_fork thm
+R32903:32905 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32906:32908 Coq.Init.Datatypes <> nil constr
+R32922:32936 Triage.types <> quanta_not_stem thm
+R32793:32795 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32796:32798 Coq.Init.Datatypes <> nil constr
+R32812:32826 Triage.types <> quanta_not_leaf thm
+prf 33241:33265 <> lift_rec_preserves_quanta
+binder 33278:33279 <> bs:346
+binder 33281:33282 <> ty:347
+binder 33284:33284 <> p:348
+binder 33286:33286 <> k:349
+R33316:33318 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33289:33296 Triage.types <> lift_rec def
+R33315:33315 Triage.types <> k:349 var
+R33313:33313 Triage.types <> p:348 var
+R33299:33304 Triage.types <> quanta def
+R33309:33310 Triage.types <> ty:347 var
+R33306:33307 Triage.types <> bs:346 var
+R33319:33324 Triage.types <> quanta def
+R33330:33337 Triage.types <> lift_rec def
+R33362:33362 Triage.types <> k:349 var
+R33357:33358 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R33343:33353 Triage.types <> quant_count def
+R33355:33356 Triage.types <> bs:346 var
+R33359:33359 Triage.types <> p:348 var
+R33339:33340 Triage.types <> ty:347 var
+R33326:33327 Triage.types <> bs:346 var
+prf 33480:33505 <> subst_rec_preserves_quanta
+binder 33518:33519 <> bs:350
+binder 33521:33522 <> ty:351
+binder 33524:33526 <> uty:352
+binder 33528:33528 <> k:353
+R33561:33563 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33531:33539 Triage.types <> subst_rec def
+R33560:33560 Triage.types <> k:353 var
+R33556:33558 Triage.types <> uty:352 var
+R33542:33547 Triage.types <> quanta def
+R33552:33553 Triage.types <> ty:351 var
+R33549:33550 Triage.types <> bs:350 var
+R33564:33569 Triage.types <> quanta def
+R33575:33583 Triage.types <> subst_rec def
+R33607:33607 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R33593:33603 Triage.types <> quant_count def
+R33605:33606 Triage.types <> bs:350 var
+R33608:33608 Triage.types <> k:353 var
+R33588:33590 Triage.types <> uty:352 var
+R33585:33586 Triage.types <> ty:351 var
+R33571:33572 Triage.types <> bs:350 var
+prf 33726:33735 <> quanta_app
+binder 33745:33747 <> bs1:354
+binder 33749:33751 <> bs2:355
+binder 33753:33754 <> ty:356
+R33780:33782 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33757:33762 Triage.types <> quanta def
+R33778:33779 Triage.types <> ty:356 var
+R33768:33772 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R33765:33767 Triage.types <> bs1:354 var
+R33773:33775 Triage.types <> bs2:355 var
+R33783:33788 Triage.types <> quanta def
+R33795:33800 Triage.types <> quanta def
+R33806:33807 Triage.types <> ty:356 var
+R33802:33804 Triage.types <> bs1:354 var
+R33790:33792 Triage.types <> bs2:355 var
+prf 33915:33929 <> quant_as_quanta
+binder 33939:33939 <> n:357
+binder 33941:33942 <> ty:358
+R33955:33957 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33945:33949 Triage.types <> quant def
+R33953:33954 Triage.types <> ty:358 var
+R33951:33951 Triage.types <> n:357 var
+R33958:33963 Triage.types <> quanta def
+R33990:33991 Triage.types <> ty:358 var
+R33966:33969 Coq.Init.Nat <> iter def
+R33985:33987 Coq.Init.Datatypes <> nil constr
+R33974:33977 Coq.Init.Datatypes <> cons constr
+R33979:33982 Coq.Init.Datatypes <> true constr
+R33971:33971 Triage.types <> n:357 var
+prf 34050:34065 <> quantf_as_quanta
+binder 34075:34075 <> n:359
+binder 34077:34078 <> ty:360
+R34092:34094 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34081:34086 Triage.types <> quantf def
+R34090:34091 Triage.types <> ty:360 var
+R34088:34088 Triage.types <> n:359 var
+R34095:34100 Triage.types <> quanta def
+R34128:34129 Triage.types <> ty:360 var
+R34103:34106 Coq.Init.Nat <> iter def
+R34123:34125 Coq.Init.Datatypes <> nil constr
+R34111:34114 Coq.Init.Datatypes <> cons constr
+R34116:34120 Coq.Init.Datatypes <> false constr
+R34108:34108 Triage.types <> n:359 var
+prf 34188:34208 <> quant_count_iter_true
+binder 34218:34218 <> n:361
+R34257:34259 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34221:34231 Triage.types <> quant_count def
+R34234:34237 Coq.Init.Nat <> iter def
+R34253:34255 Coq.Init.Datatypes <> nil constr
+R34242:34245 Coq.Init.Datatypes <> cons constr
+R34247:34250 Coq.Init.Datatypes <> true constr
+R34239:34239 Triage.types <> n:361 var
+R34260:34260 Triage.types <> n:361 var
+prf 34319:34340 <> quant_count_iter_false
+binder 34350:34350 <> n:362
+R34390:34392 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34353:34363 Triage.types <> quant_count def
+R34366:34369 Coq.Init.Nat <> iter def
+R34386:34388 Coq.Init.Datatypes <> nil constr
+R34374:34377 Coq.Init.Datatypes <> cons constr
+R34379:34383 Coq.Init.Datatypes <> false constr
+R34371:34371 Triage.types <> n:362 var
+def 34451:34465 <> quant_to_quanta
+binder 34467:34467 <> n:363
+R34480:34480 Triage.types <> n:363 var
+R34496:34498 Coq.Init.Datatypes <> nil constr
+R34504:34504 Coq.Init.Datatypes <> S constr
+R34516:34520 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R34539:34539 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R34512:34515 Coq.Init.Datatypes <> true constr
+R34521:34535 Triage.types <> quant_to_quanta:364 def
+prf 34555:34581 <> quant_count_quant_to_quanta
+binder 34591:34591 <> n:366
+R34625:34627 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34594:34604 Triage.types <> quant_count def
+R34607:34621 Triage.types <> quant_to_quanta def
+R34623:34623 Triage.types <> n:366 var
+R34628:34628 Triage.types <> n:366 var
+prf 34685:34699 <> quanta_to_quant
+binder 34709:34709 <> n:367
+binder 34711:34712 <> ty:368
+R34744:34746 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34715:34720 Triage.types <> quanta def
+R34742:34743 Triage.types <> ty:368 var
+R34723:34737 Triage.types <> quant_to_quanta def
+R34739:34739 Triage.types <> n:367 var
+R34747:34751 Triage.types <> quant def
+R34755:34756 Triage.types <> ty:368 var
+R34753:34753 Triage.types <> n:367 var
+R34809:34818 Triage.types <> quant_succ thm
+def 34964:34970 <> variant
+binder 34972:34974 <> pos:369
+binder 34976:34976 <> k:370
+binder 34978:34979 <> ty:371
+R35108:35109 Triage.types <> ty:371 var
+R35120:35122 Triage.types <> Var constr
+R35133:35134 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R35132:35132 Triage.types <> k:370 var
+R35151:35154 Coq.Init.Datatypes <> true constr
+R35142:35144 Triage.types <> pos:369 var
+R35160:35164 Triage.types <> Quant constr
+R35173:35179 Triage.types <> variant:372 def
+R35186:35186 Coq.Init.Datatypes <> S constr
+R35188:35188 Triage.types <> k:370 var
+R35181:35183 Triage.types <> pos:369 var
+R35199:35203 Triage.types <> Funty constr
+R35240:35243 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R35216:35222 Triage.types <> variant:372 def
+R35235:35235 Triage.types <> k:370 var
+R35225:35228 Coq.Init.Datatypes <> negb def
+R35230:35232 Triage.types <> pos:369 var
+R35244:35250 Triage.types <> variant:372 def
+R35256:35256 Triage.types <> k:370 var
+R35252:35254 Triage.types <> pos:369 var
+R35266:35269 Triage.types <> Leaf constr
+R35274:35277 Coq.Init.Datatypes <> true constr
+R35283:35286 Triage.types <> Stem constr
+R35295:35301 Triage.types <> variant:372 def
+R35307:35307 Triage.types <> k:370 var
+R35303:35305 Triage.types <> pos:369 var
+R35317:35320 Triage.types <> Fork constr
+R35350:35353 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R35333:35339 Triage.types <> variant:372 def
+R35345:35345 Triage.types <> k:370 var
+R35341:35343 Triage.types <> pos:369 var
+R35354:35360 Triage.types <> variant:372 def
+R35366:35366 Triage.types <> k:370 var
+R35362:35364 Triage.types <> pos:369 var
+R35376:35378 Triage.types <> Asf constr
+R35387:35393 Triage.types <> variant:372 def
+R35399:35399 Triage.types <> k:370 var
+R35395:35397 Triage.types <> pos:369 var
+def 35426:35434 <> covariant
+binder 35436:35437 <> ty:374
+R35459:35461 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35442:35448 Triage.types <> variant def
+R35457:35458 Triage.types <> ty:374 var
+R35450:35453 Coq.Init.Datatypes <> true constr
+R35462:35465 Coq.Init.Datatypes <> true constr
+prf 35477:35502 <> lift_rec_preserves_variant
+binder 35514:35515 <> ty:375
+binder 35517:35519 <> pos:376
+binder 35521:35521 <> k:377
+binder 35523:35523 <> n:378
+binder 35525:35525 <> p:379
+R35574:35576 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35528:35534 Triage.types <> variant def
+R35558:35565 Triage.types <> lift_rec def
+R35572:35572 Triage.types <> p:379 var
+R35570:35570 Triage.types <> n:378 var
+R35567:35568 Triage.types <> ty:375 var
+R35541:35548 Triage.types <> relocate def
+R35554:35554 Triage.types <> p:379 var
+R35552:35552 Triage.types <> n:378 var
+R35550:35550 Triage.types <> k:377 var
+R35536:35538 Triage.types <> pos:376 var
+R35577:35583 Triage.types <> variant def
+R35591:35592 Triage.types <> ty:375 var
+R35589:35589 Triage.types <> k:377 var
+R35585:35587 Triage.types <> pos:376 var
+R35665:35668 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R35650:35657 Triage.types <> relocate def
+R35669:35676 Triage.types <> relocate def
+R35665:35668 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R35650:35657 Triage.types <> relocate def
+R35669:35676 Triage.types <> relocate def
+R35720:35722 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35705:35712 Triage.types <> relocate def
+R35723:35730 Triage.types <> relocate def
+R35751:35760 Coq.Arith.PeanoNat Nat eqb_eq thm
+R35720:35722 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35705:35712 Triage.types <> relocate def
+R35723:35730 Triage.types <> relocate def
+R35751:35760 Coq.Arith.PeanoNat Nat eqb_eq thm
+R35780:35780 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35795:35807 Triage.types <> relocate_mono thm
+R35780:35780 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35795:35807 Triage.types <> relocate_mono thm
+R35833:35844 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35833:35844 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35833:35844 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35864:35865 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R35864:35865 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R35894:35894 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35908:35917 Coq.Arith.PeanoNat Nat eqb_eq thm
+R35894:35894 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35908:35917 Coq.Arith.PeanoNat Nat eqb_eq thm
+R35942:35953 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35942:35953 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35942:35953 Coq.Arith.PeanoNat Nat eqb_refl thm
+R35988:36000 Triage.types <> relocate_succ thm
+R35988:36000 Triage.types <> relocate_succ thm
+R35988:36000 Triage.types <> relocate_succ thm
+prf 36113:36139 <> lift_rec_preserves_variant2
+R36157:36161 Triage.types <> dtype ind
+binder 36152:36153 <> ty:380
+R36171:36174 Coq.Init.Datatypes <> bool ind
+binder 36165:36167 <> pos:381
+R36184:36186 Coq.Init.Datatypes <> nat ind
+binder 36178:36178 <> n:382
+binder 36180:36180 <> p:383
+R36227:36229 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36192:36198 Triage.types <> variant def
+R36207:36214 Triage.types <> lift_rec def
+R36222:36222 Coq.Init.Datatypes <> S constr
+R36224:36224 Triage.types <> p:383 var
+R36219:36219 Triage.types <> n:382 var
+R36216:36217 Triage.types <> ty:380 var
+R36204:36204 Triage.types <> n:382 var
+R36200:36202 Triage.types <> pos:381 var
+R36230:36233 Coq.Init.Datatypes <> true constr
+R36298:36301 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R36293:36296 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R36304:36306 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R36298:36301 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R36293:36296 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R36304:36306 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R36374:36376 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36360:36365 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36373:36373 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36369:36371 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R36366:36366 Coq.Init.Datatypes <> S constr
+R36377:36381 Coq.Init.Datatypes <> false constr
+R36374:36376 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36360:36365 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36373:36373 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36369:36371 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R36366:36366 Coq.Init.Datatypes <> S constr
+R36377:36381 Coq.Init.Datatypes <> false constr
+R36392:36402 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36392:36402 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36446:36448 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36440:36444 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36449:36453 Coq.Init.Datatypes <> false constr
+R36446:36448 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36440:36444 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36449:36453 Coq.Init.Datatypes <> false constr
+R36464:36474 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36464:36474 Coq.Arith.PeanoNat Nat eqb_neq thm
+prf 36598:36624 <> lift_rec_preserves_variant3
+R36642:36646 Triage.types <> dtype ind
+binder 36637:36638 <> ty:384
+R36656:36659 Coq.Init.Datatypes <> bool ind
+binder 36650:36652 <> pos:385
+R36672:36674 Coq.Init.Datatypes <> nat ind
+binder 36663:36663 <> k:386
+binder 36665:36665 <> p:387
+binder 36667:36667 <> n:388
+R36688:36691 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36699:36702 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36734:36736 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36703:36709 Triage.types <> variant def
+R36718:36725 Triage.types <> lift_rec def
+R36732:36732 Triage.types <> n:388 var
+R36730:36730 Triage.types <> p:387 var
+R36727:36728 Triage.types <> ty:384 var
+R36715:36715 Triage.types <> k:386 var
+R36711:36713 Triage.types <> pos:385 var
+R36737:36740 Coq.Init.Datatypes <> true constr
+R36693:36695 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R36692:36692 Triage.types <> k:386 var
+R36697:36697 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R36696:36696 Triage.types <> p:387 var
+R36698:36698 Triage.types <> n:388 var
+R36683:36686 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R36682:36682 Triage.types <> p:387 var
+R36687:36687 Triage.types <> k:386 var
+R36812:36815 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R36808:36810 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R36817:36817 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R36812:36815 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R36808:36810 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R36817:36817 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R36880:36882 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36870:36873 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36876:36878 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R36883:36887 Coq.Init.Datatypes <> false constr
+R36900:36910 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36880:36882 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36870:36873 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36876:36878 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R36883:36887 Coq.Init.Datatypes <> false constr
+R36900:36910 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36952:36954 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36948:36950 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36955:36959 Coq.Init.Datatypes <> false constr
+R36973:36983 Coq.Arith.PeanoNat Nat eqb_neq thm
+R36952:36954 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36948:36950 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R36955:36959 Coq.Init.Datatypes <> false constr
+R36973:36983 Coq.Arith.PeanoNat Nat eqb_neq thm
+prf 37195:37221 <> subst_rec_preserves_variant
+R37243:37247 Triage.types <> dtype ind
+binder 37234:37235 <> ty:389
+binder 37237:37239 <> uty:390
+R37257:37260 Coq.Init.Datatypes <> bool ind
+binder 37251:37253 <> pos:391
+R37270:37272 Coq.Init.Datatypes <> nat ind
+binder 37264:37264 <> k:392
+binder 37266:37266 <> p:393
+R37312:37315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37341:37344 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37371:37378 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37417:37419 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37379:37385 Triage.types <> variant def
+R37398:37406 Triage.types <> subst_rec def
+R37415:37415 Triage.types <> p:393 var
+R37411:37413 Triage.types <> uty:390 var
+R37408:37409 Triage.types <> ty:389 var
+R37393:37393 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37392:37392 Triage.types <> k:392 var
+R37394:37394 Triage.types <> p:393 var
+R37387:37389 Triage.types <> pos:391 var
+R37420:37423 Coq.Init.Datatypes <> true constr
+R37364:37366 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37345:37351 Triage.types <> variant def
+R37361:37363 Triage.types <> uty:390 var
+R37359:37359 Triage.types <> k:392 var
+R37353:37357 Coq.Init.Datatypes <> false constr
+R37367:37370 Coq.Init.Datatypes <> true constr
+R37334:37336 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37316:37322 Triage.types <> variant def
+R37331:37333 Triage.types <> uty:390 var
+R37329:37329 Triage.types <> k:392 var
+R37324:37327 Coq.Init.Datatypes <> true constr
+R37337:37340 Coq.Init.Datatypes <> true constr
+R37305:37307 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37280:37286 Triage.types <> variant def
+R37303:37304 Triage.types <> ty:389 var
+R37293:37293 Coq.Init.Datatypes <> S constr
+R37297:37298 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37296:37296 Triage.types <> k:392 var
+R37299:37299 Triage.types <> p:393 var
+R37288:37290 Triage.types <> pos:391 var
+R37308:37311 Coq.Init.Datatypes <> true constr
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37485:37497 Coq.Bool.Bool <> andb_true_iff thm
+R37537:37537 Coq.Init.Datatypes <> S constr
+R37541:37541 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37553:37555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37556:37556 Coq.Init.Datatypes <> S constr
+R37537:37537 Coq.Init.Datatypes <> S constr
+R37541:37541 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37553:37555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37556:37556 Coq.Init.Datatypes <> S constr
+R37618:37621 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R37616:37616 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R37625:37628 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R37623:37623 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37630:37630 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R37618:37621 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R37616:37616 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R37625:37628 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R37623:37623 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37630:37630 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R37746:37758 Triage.types <> lift_rec_null thm
+R37774:37781 Coq.Arith.Plus <> plus_0_r syndef
+R37746:37758 Triage.types <> lift_rec_null thm
+R37746:37758 Triage.types <> lift_rec_null thm
+R37774:37781 Coq.Arith.Plus <> plus_0_r syndef
+R37774:37781 Coq.Arith.Plus <> plus_0_r syndef
+R37839:37841 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37842:37842 Coq.Init.Datatypes <> S constr
+R37854:37861 Triage.types <> relocate def
+R37868:37868 Coq.Init.Datatypes <> S constr
+R37839:37841 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R37842:37842 Coq.Init.Datatypes <> S constr
+R37854:37861 Triage.types <> relocate def
+R37868:37868 Coq.Init.Datatypes <> S constr
+R37910:37935 Triage.types <> lift_rec_preserves_variant thm
+R37910:37935 Triage.types <> lift_rec_preserves_variant thm
+R37910:37935 Triage.types <> lift_rec_preserves_variant thm
+R37999:38001 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37994:37997 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R37992:37992 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38002:38006 Coq.Init.Datatypes <> false constr
+R38020:38030 Coq.Arith.PeanoNat Nat eqb_neq thm
+R37999:38001 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37994:37997 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R37992:37992 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38002:38006 Coq.Init.Datatypes <> false constr
+R38020:38030 Coq.Arith.PeanoNat Nat eqb_neq thm
+R38078:38080 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38070:38073 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R38068:38068 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38074:38074 Coq.Init.Datatypes <> S constr
+R38081:38085 Coq.Init.Datatypes <> false constr
+R38099:38109 Coq.Arith.PeanoNat Nat eqb_neq thm
+R38078:38080 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38070:38073 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R38068:38068 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38074:38074 Coq.Init.Datatypes <> S constr
+R38081:38085 Coq.Init.Datatypes <> false constr
+R38099:38109 Coq.Arith.PeanoNat Nat eqb_neq thm
+prf 38149:38176 <> subst_rec_preserves_variant2
+R38198:38202 Triage.types <> dtype ind
+binder 38189:38190 <> ty:394
+binder 38192:38194 <> uty:395
+R38212:38215 Coq.Init.Datatypes <> bool ind
+binder 38206:38208 <> pos:396
+R38225:38227 Coq.Init.Datatypes <> nat ind
+binder 38219:38219 <> k:397
+binder 38221:38221 <> p:398
+R38258:38266 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38308:38310 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38267:38273 Triage.types <> variant def
+R38282:38290 Triage.types <> subst_rec def
+R38301:38302 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38300:38300 Triage.types <> k:397 var
+R38303:38303 Coq.Init.Datatypes <> S constr
+R38305:38305 Triage.types <> p:398 var
+R38295:38297 Triage.types <> uty:395 var
+R38292:38293 Triage.types <> ty:394 var
+R38279:38279 Triage.types <> k:397 var
+R38275:38277 Triage.types <> pos:396 var
+R38311:38314 Coq.Init.Datatypes <> true constr
+R38251:38253 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38235:38241 Triage.types <> variant def
+R38249:38250 Triage.types <> ty:394 var
+R38247:38247 Triage.types <> k:397 var
+R38243:38245 Triage.types <> pos:396 var
+R38254:38257 Coq.Init.Datatypes <> true constr
+R38404:38404 Coq.Init.Datatypes <> S constr
+R38408:38409 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38410:38410 Coq.Init.Datatypes <> S constr
+R38425:38427 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38422:38422 Coq.Init.Datatypes <> S constr
+R38428:38428 Coq.Init.Datatypes <> S constr
+R38404:38404 Coq.Init.Datatypes <> S constr
+R38408:38409 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38410:38410 Coq.Init.Datatypes <> S constr
+R38425:38427 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38422:38422 Coq.Init.Datatypes <> S constr
+R38428:38428 Coq.Init.Datatypes <> S constr
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38495:38507 Coq.Bool.Bool <> andb_true_iff thm
+R38561:38564 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38559:38559 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R38553:38555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38556:38556 Coq.Init.Datatypes <> S constr
+R38574:38577 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38572:38572 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38566:38568 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38569:38569 Coq.Init.Datatypes <> S constr
+R38585:38585 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R38579:38581 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38582:38582 Coq.Init.Datatypes <> S constr
+R38561:38564 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38559:38559 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R38553:38555 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38556:38556 Coq.Init.Datatypes <> S constr
+R38574:38577 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38572:38572 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38566:38568 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38569:38569 Coq.Init.Datatypes <> S constr
+R38585:38585 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R38579:38581 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38582:38582 Coq.Init.Datatypes <> S constr
+R38661:38663 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38648:38650 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R38651:38658 Coq.Arith.PeanoNat Nat pred def
+R38664:38668 Coq.Init.Datatypes <> false constr
+R38682:38692 Coq.Arith.PeanoNat Nat eqb_neq thm
+R38661:38663 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38648:38650 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R38651:38658 Coq.Arith.PeanoNat Nat pred def
+R38664:38668 Coq.Init.Datatypes <> false constr
+R38682:38692 Coq.Arith.PeanoNat Nat eqb_neq thm
+R38729:38755 Triage.types <> lift_rec_preserves_variant3 thm
+R38729:38755 Triage.types <> lift_rec_preserves_variant3 thm
+R38729:38755 Triage.types <> lift_rec_preserves_variant3 thm
+R38729:38755 Triage.types <> lift_rec_preserves_variant3 thm
+R38729:38755 Triage.types <> lift_rec_preserves_variant3 thm
+prf 38794:38817 <> lift_rec_makes_invariant
+binder 38829:38830 <> ty:399
+binder 38832:38834 <> pos:400
+binder 38836:38836 <> n:401
+binder 38838:38838 <> p:402
+binder 38840:38840 <> k:403
+R38886:38888 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38843:38849 Triage.types <> variant def
+R38862:38869 Triage.types <> lift_rec def
+R38880:38882 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38877:38877 Coq.Init.Datatypes <> S constr
+R38879:38879 Triage.types <> n:401 var
+R38883:38883 Triage.types <> k:403 var
+R38874:38874 Triage.types <> p:402 var
+R38871:38872 Triage.types <> ty:399 var
+R38857:38857 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R38856:38856 Triage.types <> n:401 var
+R38858:38858 Triage.types <> p:402 var
+R38851:38853 Triage.types <> pos:400 var
+R38889:38892 Coq.Init.Datatypes <> true constr
+R38955:38958 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38950:38953 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R38960:38960 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R38955:38958 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R38950:38953 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R38960:38960 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R39034:39036 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39017:39020 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39014:39015 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39031:39032 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39021:39021 Coq.Init.Datatypes <> S constr
+R39026:39028 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39037:39041 Coq.Init.Datatypes <> false constr
+R39034:39036 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39017:39020 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39014:39015 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39031:39032 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39021:39021 Coq.Init.Datatypes <> S constr
+R39026:39028 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39037:39041 Coq.Init.Datatypes <> false constr
+R39052:39062 Coq.Arith.PeanoNat Nat eqb_neq thm
+R39052:39062 Coq.Arith.PeanoNat Nat eqb_neq thm
+R39108:39110 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39103:39106 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39100:39101 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39111:39115 Coq.Init.Datatypes <> false constr
+R39108:39110 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39103:39106 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39100:39101 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39111:39115 Coq.Init.Datatypes <> false constr
+R39126:39136 Coq.Arith.PeanoNat Nat eqb_neq thm
+R39126:39136 Coq.Arith.PeanoNat Nat eqb_neq thm
+R39174:39174 Coq.Init.Datatypes <> S constr
+R39178:39178 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39190:39192 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39193:39193 Coq.Init.Datatypes <> S constr
+R39174:39174 Coq.Init.Datatypes <> S constr
+R39178:39178 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39190:39192 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39193:39193 Coq.Init.Datatypes <> S constr
+R39284:39286 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39229:39235 Triage.types <> variant def
+R39257:39264 Triage.types <> lift_rec def
+R39273:39273 Coq.Init.Datatypes <> S constr
+R39277:39279 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39250:39252 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39238:39241 Coq.Init.Datatypes <> negb def
+R39287:39290 Coq.Init.Datatypes <> true constr
+R39284:39286 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39229:39235 Triage.types <> variant def
+R39257:39264 Triage.types <> lift_rec def
+R39273:39273 Coq.Init.Datatypes <> S constr
+R39277:39279 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39250:39252 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39238:39241 Coq.Init.Datatypes <> negb def
+R39287:39290 Coq.Init.Datatypes <> true constr
+R39335:39335 Coq.Init.Datatypes <> S constr
+R39339:39339 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39353:39355 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39350:39350 Coq.Init.Datatypes <> S constr
+R39335:39335 Coq.Init.Datatypes <> S constr
+R39339:39339 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39335:39335 Coq.Init.Datatypes <> S constr
+R39339:39339 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39335:39335 Coq.Init.Datatypes <> S constr
+R39339:39339 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39335:39335 Coq.Init.Datatypes <> S constr
+R39339:39339 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39353:39355 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39350:39350 Coq.Init.Datatypes <> S constr
+R39353:39355 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39350:39350 Coq.Init.Datatypes <> S constr
+R39353:39355 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39350:39350 Coq.Init.Datatypes <> S constr
+R39353:39355 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R39350:39350 Coq.Init.Datatypes <> S constr
+prf 39498:39526 <> subst_rec_preserves_invariant
+binder 39539:39540 <> ty:404
+binder 39542:39542 <> k:405
+binder 39544:39546 <> uty:406
+binder 39548:39550 <> vty:407
+R39581:39584 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39610:39613 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39632:39634 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39614:39622 Triage.types <> subst_rec def
+R39631:39631 Triage.types <> k:405 var
+R39627:39629 Triage.types <> uty:406 var
+R39624:39625 Triage.types <> ty:404 var
+R39635:39643 Triage.types <> subst_rec def
+R39652:39652 Triage.types <> k:405 var
+R39648:39650 Triage.types <> vty:407 var
+R39645:39646 Triage.types <> ty:404 var
+R39603:39605 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39585:39591 Triage.types <> variant def
+R39601:39602 Triage.types <> ty:404 var
+R39599:39599 Triage.types <> k:405 var
+R39593:39597 Coq.Init.Datatypes <> false constr
+R39606:39609 Coq.Init.Datatypes <> true constr
+R39574:39576 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39557:39563 Triage.types <> variant def
+R39572:39573 Triage.types <> ty:404 var
+R39570:39570 Triage.types <> k:405 var
+R39565:39568 Coq.Init.Datatypes <> true constr
+R39577:39580 Coq.Init.Datatypes <> true constr
+R39716:39717 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39716:39717 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R39778:39781 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R39776:39776 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R39785:39788 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R39783:39783 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39790:39790 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R39778:39781 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R39776:39776 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R39785:39788 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R39783:39783 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39790:39790 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R39869:39880 Coq.Arith.PeanoNat Nat eqb_refl thm
+R39869:39880 Coq.Arith.PeanoNat Nat eqb_refl thm
+R39869:39880 Coq.Arith.PeanoNat Nat eqb_refl thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+R39938:39950 Coq.Bool.Bool <> andb_true_iff thm
+prf 39999:40019 <> variant_lift_rec_miss
+binder 40029:40030 <> ty:408
+binder 40032:40034 <> pos:409
+binder 40036:40036 <> m:410
+binder 40038:40038 <> n:411
+binder 40040:40040 <> k:412
+R40087:40089 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40043:40049 Triage.types <> variant def
+R40062:40069 Triage.types <> lift_rec def
+R40077:40077 Coq.Init.Datatypes <> S constr
+R40081:40082 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40080:40080 Triage.types <> n:411 var
+R40083:40083 Triage.types <> k:412 var
+R40074:40074 Triage.types <> m:410 var
+R40071:40072 Triage.types <> ty:408 var
+R40057:40057 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40056:40056 Triage.types <> m:410 var
+R40058:40058 Triage.types <> k:412 var
+R40051:40053 Triage.types <> pos:409 var
+R40090:40093 Coq.Init.Datatypes <> true constr
+R40134:40138 Triage.types <> subst def
+R40169:40172 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40165:40167 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R40174:40175 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R40169:40172 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40165:40167 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R40174:40175 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R40235:40238 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40231:40233 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40249:40251 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40239:40239 Coq.Init.Datatypes <> S constr
+R40244:40246 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40287:40289 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40283:40285 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40300:40302 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40290:40290 Coq.Init.Datatypes <> S constr
+R40295:40297 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40317:40326 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40235:40238 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40231:40233 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40249:40251 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40239:40239 Coq.Init.Datatypes <> S constr
+R40244:40246 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40287:40289 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40283:40285 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40300:40302 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40290:40290 Coq.Init.Datatypes <> S constr
+R40295:40297 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40317:40326 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40359:40362 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40355:40357 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40398:40400 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40394:40396 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40415:40424 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40359:40362 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40355:40357 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40398:40400 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40394:40396 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40415:40424 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40452:40452 Coq.Init.Datatypes <> S constr
+R40456:40458 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40472:40474 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40469:40469 Coq.Init.Datatypes <> S constr
+R40452:40452 Coq.Init.Datatypes <> S constr
+R40456:40458 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40472:40474 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40469:40469 Coq.Init.Datatypes <> S constr
+prf 40597:40618 <> variant_subst_rec_miss
+binder 40630:40631 <> ty:413
+binder 40633:40635 <> pos:414
+binder 40637:40639 <> ty0:415
+binder 40641:40641 <> n:416
+binder 40643:40643 <> k:417
+R40673:40676 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R40719:40721 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40677:40683 Triage.types <> variant def
+R40692:40700 Triage.types <> subst_rec def
+R40710:40710 Coq.Init.Datatypes <> S constr
+R40714:40714 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40713:40713 Triage.types <> n:416 var
+R40715:40715 Triage.types <> k:417 var
+R40705:40707 Triage.types <> ty0:415 var
+R40702:40703 Triage.types <> ty:413 var
+R40689:40689 Triage.types <> k:417 var
+R40685:40687 Triage.types <> pos:414 var
+R40722:40725 Coq.Init.Datatypes <> true constr
+R40666:40668 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40650:40656 Triage.types <> variant def
+R40664:40665 Triage.types <> ty:413 var
+R40662:40662 Triage.types <> k:417 var
+R40658:40660 Triage.types <> pos:414 var
+R40669:40672 Coq.Init.Datatypes <> true constr
+R40799:40800 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40799:40800 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R40868:40868 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40883:40892 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40868:40868 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40883:40892 Coq.Arith.PeanoNat Nat eqb_eq thm
+R40981:40984 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40977:40979 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R40967:40967 Coq.Init.Datatypes <> S constr
+R40972:40974 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40997:41000 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40993:40995 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40985:40985 Coq.Init.Datatypes <> S constr
+R40990:40990 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41009:41011 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R41001:41001 Coq.Init.Datatypes <> S constr
+R41006:41006 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40981:40984 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40977:40979 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R40967:40967 Coq.Init.Datatypes <> S constr
+R40972:40974 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R40997:41000 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R40993:40995 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40985:40985 Coq.Init.Datatypes <> S constr
+R40990:40990 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41009:41011 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R41001:41001 Coq.Init.Datatypes <> S constr
+R41006:41006 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41089:41091 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41075:41078 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R41079:41086 Coq.Arith.PeanoNat Nat pred def
+R41092:41096 Coq.Init.Datatypes <> false constr
+R41089:41091 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41075:41078 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R41079:41086 Coq.Arith.PeanoNat Nat pred def
+R41092:41096 Coq.Init.Datatypes <> false constr
+R41107:41117 Coq.Arith.PeanoNat Nat eqb_neq thm
+R41107:41117 Coq.Arith.PeanoNat Nat eqb_neq thm
+R41162:41162 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41186:41206 Triage.types <> variant_lift_rec_miss thm
+R41162:41162 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41186:41206 Triage.types <> variant_lift_rec_miss thm
+R41256:41256 Coq.Init.Datatypes <> S constr
+R41260:41260 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41272:41274 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41275:41275 Coq.Init.Datatypes <> S constr
+R41256:41256 Coq.Init.Datatypes <> S constr
+R41260:41260 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41272:41274 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R41275:41275 Coq.Init.Datatypes <> S constr
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+R41335:41347 Coq.Bool.Bool <> andb_true_iff thm
+prf 41389:41408 <> variant_program_type
+binder 41418:41418 <> p:418
+binder 41420:41422 <> pos:419
+binder 41424:41424 <> k:420
+R41457:41459 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41427:41433 Triage.types <> variant def
+R41442:41453 Triage.types <> program_type def
+R41455:41455 Triage.types <> p:418 var
+R41439:41439 Triage.types <> k:420 var
+R41435:41437 Triage.types <> pos:419 var
+R41460:41463 Coq.Init.Datatypes <> true constr
+R41521:41532 Triage.types <> program_type def
+R41521:41532 Triage.types <> program_type def
+R41585:41595 Coq.Bool.Bool <> andb_true_r thm
+R41585:41595 Coq.Bool.Bool <> andb_true_r thm
+R41585:41595 Coq.Bool.Bool <> andb_true_r thm
+R41666:41677 Triage.types <> program_type def
+R41666:41677 Triage.types <> program_type def
+R41787:41789 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41749:41755 Triage.types <> variant def
+R41764:41767 Triage.types <> Stem constr
+R41770:41781 Triage.types <> program_type def
+R41790:41793 Coq.Init.Datatypes <> true constr
+R41787:41789 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41749:41755 Triage.types <> variant def
+R41764:41767 Triage.types <> Stem constr
+R41770:41781 Triage.types <> program_type def
+R41790:41793 Coq.Init.Datatypes <> true constr
