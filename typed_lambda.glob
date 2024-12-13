@@ -16,20 +16,14 @@ binder 2341:2345 <> gamma:1
 binder 2347:2347 <> M:2
 binder 2349:2350 <> ty:3
 R2370:2394 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2353:2358 Triage.derive <> derive ind
+R2360:2364 Triage.typed_lambda <> gamma:1 var
+R2366:2366 Triage.typed_lambda <> M:2 var
+R2368:2369 Triage.typed_lambda <> ty:3 var
 binder 2402:2402 <> x:4
 binder 2404:2406 <> uty:5
 binder 2408:2413 <> gamma1:6
 R2440:2443 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2462:2507 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2508:2513 Triage.derive <> derive ind
-R2524:2525 Triage.typed_lambda <> ty:3 var
-R2522:2522 Triage.typed_lambda <> M:2 var
-R2515:2520 Triage.typed_lambda <> gamma1:6 var
-R2454:2456 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2444:2449 Triage.terms <> occurs def
-R2453:2453 Triage.typed_lambda <> M:2 var
-R2451:2451 Triage.typed_lambda <> x:4 var
-R2457:2461 Coq.Init.Datatypes <> false constr
 R2421:2423 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R2416:2420 Triage.typed_lambda <> gamma:1 var
 R2431:2433 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
@@ -39,10 +33,16 @@ R2430:2430 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R2425:2425 Triage.typed_lambda <> x:4 var
 R2427:2429 Triage.typed_lambda <> uty:5 var
 R2434:2439 Triage.typed_lambda <> gamma1:6 var
-R2353:2358 Triage.derive <> derive ind
-R2368:2369 Triage.typed_lambda <> ty:3 var
-R2366:2366 Triage.typed_lambda <> M:2 var
-R2360:2364 Triage.typed_lambda <> gamma:1 var
+R2462:2507 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2454:2456 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2444:2449 Triage.terms <> occurs def
+R2451:2451 Triage.typed_lambda <> x:4 var
+R2453:2453 Triage.typed_lambda <> M:2 var
+R2457:2461 Coq.Init.Datatypes <> false constr
+R2508:2513 Triage.derive <> derive ind
+R2515:2520 Triage.typed_lambda <> gamma1:6 var
+R2522:2522 Triage.typed_lambda <> M:2 var
+R2524:2525 Triage.typed_lambda <> ty:3 var
 R2632:2641 Triage.derive <> derive_ref constr
 R2632:2641 Triage.derive <> derive_ref constr
 R2661:2673 Coq.Bool.Bool <> orb_false_iff thm
@@ -55,13 +55,23 @@ binder 2794:2798 <> gamma:7
 binder 2800:2800 <> M:8
 binder 2802:2803 <> ty:9
 R2823:2847 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2806:2811 Triage.derive <> derive ind
+R2813:2817 Triage.typed_lambda <> gamma:7 var
+R2819:2819 Triage.typed_lambda <> M:8 var
+R2821:2822 Triage.typed_lambda <> ty:9 var
 binder 2855:2855 <> x:10
 binder 2857:2859 <> uty:11
 R2880:2925 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2872:2874 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2862:2867 Triage.terms <> occurs def
+R2869:2869 Triage.typed_lambda <> x:10 var
+R2871:2871 Triage.typed_lambda <> M:8 var
+R2875:2879 Coq.Init.Datatypes <> false constr
 R2938:2941 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2931:2934 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R2926:2930 Triage.typed_lambda <> gamma:7 var
+R2935:2937 Coq.Init.Datatypes <> nil constr
 R2942:2947 Triage.derive <> derive ind
-R2969:2970 Triage.typed_lambda <> ty:9 var
-R2967:2967 Triage.typed_lambda <> M:8 var
 R2957:2959 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
 R2950:2950 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R2952:2952 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
@@ -69,18 +79,8 @@ R2956:2956 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R2951:2951 Triage.typed_lambda <> x:10 var
 R2953:2955 Triage.typed_lambda <> uty:11 var
 R2960:2964 Triage.typed_lambda <> gamma:7 var
-R2931:2934 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
-R2926:2930 Triage.typed_lambda <> gamma:7 var
-R2935:2937 Coq.Init.Datatypes <> nil constr
-R2872:2874 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R2862:2867 Triage.terms <> occurs def
-R2871:2871 Triage.typed_lambda <> M:8 var
-R2869:2869 Triage.typed_lambda <> x:10 var
-R2875:2879 Coq.Init.Datatypes <> false constr
-R2806:2811 Triage.derive <> derive ind
-R2821:2822 Triage.typed_lambda <> ty:9 var
-R2819:2819 Triage.typed_lambda <> M:8 var
-R2813:2817 Triage.typed_lambda <> gamma:7 var
+R2967:2967 Triage.typed_lambda <> M:8 var
+R2969:2970 Triage.typed_lambda <> ty:9 var
 R3062:3064 Triage.types <> get def
 R3081:3083 Triage.types <> get def
 R3097:3100 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
@@ -105,18 +105,14 @@ binder 3337:3341 <> gamma:12
 binder 3343:3343 <> M:13
 binder 3345:3346 <> ty:14
 R3370:3377 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3353:3358 Triage.derive <> derive ind
+R3360:3364 Triage.typed_lambda <> gamma:12 var
+R3366:3366 Triage.typed_lambda <> M:13 var
+R3368:3369 Triage.typed_lambda <> ty:14 var
 binder 3385:3385 <> s:15
 binder 3387:3389 <> uty:16
 binder 3391:3396 <> gamma1:17
 R3423:3426 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3436:3439 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3440:3446 Triage.subtypes <> subtype ind
-R3452:3453 Triage.typed_lambda <> ty:14 var
-R3448:3450 Triage.typed_lambda <> uty:16 var
-R3428:3430 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R3427:3427 Triage.typed_lambda <> M:13 var
-R3431:3433 Triage.terms <> Ref constr
-R3435:3435 Triage.typed_lambda <> s:15 var
 R3404:3406 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R3399:3403 Triage.typed_lambda <> gamma:12 var
 R3414:3416 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
@@ -126,10 +122,14 @@ R3413:3413 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R3408:3408 Triage.typed_lambda <> s:15 var
 R3410:3412 Triage.typed_lambda <> uty:16 var
 R3417:3422 Triage.typed_lambda <> gamma1:17 var
-R3353:3358 Triage.derive <> derive ind
-R3368:3369 Triage.typed_lambda <> ty:14 var
-R3366:3366 Triage.typed_lambda <> M:13 var
-R3360:3364 Triage.typed_lambda <> gamma:12 var
+R3436:3439 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3428:3430 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3427:3427 Triage.typed_lambda <> M:13 var
+R3431:3433 Triage.terms <> Ref constr
+R3435:3435 Triage.typed_lambda <> s:15 var
+R3440:3446 Triage.subtypes <> subtype ind
+R3448:3450 Triage.typed_lambda <> uty:16 var
+R3452:3453 Triage.typed_lambda <> ty:14 var
 R3576:3590 Coq.Strings.String <> eqb_refl thm
 R3576:3590 Coq.Strings.String <> eqb_refl thm
 R3576:3590 Coq.Strings.String <> eqb_refl thm
@@ -140,17 +140,7 @@ binder 3661:3661 <> x:20
 binder 3663:3665 <> uty:21
 binder 3667:3668 <> ty:22
 R3701:3704 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3705:3710 Triage.derive <> derive ind
-R3730:3734 Triage.types <> Funty constr
-R3740:3741 Triage.typed_lambda <> ty:22 var
-R3736:3738 Triage.typed_lambda <> uty:21 var
-R3719:3722 Triage.terms <> star def
-R3726:3726 Triage.typed_lambda <> M:18 var
-R3724:3724 Triage.typed_lambda <> x:20 var
-R3712:3716 Triage.typed_lambda <> gamma:19 var
 R3671:3676 Triage.derive <> derive ind
-R3699:3700 Triage.typed_lambda <> ty:22 var
-R3697:3697 Triage.typed_lambda <> M:18 var
 R3686:3689 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
 R3679:3679 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R3681:3681 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
@@ -158,22 +148,28 @@ R3685:3685 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R3680:3680 Triage.typed_lambda <> x:20 var
 R3682:3684 Triage.typed_lambda <> uty:21 var
 R3690:3694 Triage.typed_lambda <> gamma:19 var
+R3697:3697 Triage.typed_lambda <> M:18 var
+R3699:3700 Triage.typed_lambda <> ty:22 var
+R3705:3710 Triage.derive <> derive ind
+R3712:3716 Triage.typed_lambda <> gamma:19 var
+R3719:3722 Triage.terms <> star def
+R3724:3724 Triage.typed_lambda <> x:20 var
+R3726:3726 Triage.typed_lambda <> M:18 var
+R3730:3734 Triage.types <> Funty constr
+R3736:3738 Triage.typed_lambda <> uty:21 var
+R3740:3741 Triage.typed_lambda <> ty:22 var
 binder 3765:3765 <> M:23
 binder 3767:3772 <> gamma0:24
 binder 3774:3775 <> ty:25
 R3805:3817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3787:3792 Triage.derive <> derive ind
+R3794:3799 Triage.typed_lambda <> gamma0:24 var
+R3801:3801 Triage.typed_lambda <> M:23 var
+R3803:3804 Triage.typed_lambda <> ty:25 var
 binder 3825:3825 <> x:26
 binder 3827:3829 <> uty:27
 binder 3831:3835 <> gamma:28
 R3863:3866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3867:3872 Triage.derive <> derive ind
-R3892:3896 Triage.types <> Funty constr
-R3902:3903 Triage.typed_lambda <> ty:25 var
-R3898:3900 Triage.typed_lambda <> uty:27 var
-R3881:3884 Triage.terms <> star def
-R3888:3888 Triage.typed_lambda <> M:23 var
-R3886:3886 Triage.typed_lambda <> x:26 var
-R3874:3878 Triage.typed_lambda <> gamma:28 var
 R3844:3847 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R3862:3862 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R3838:3843 Triage.typed_lambda <> gamma0:24 var
@@ -184,26 +180,26 @@ R3854:3854 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R3849:3849 Triage.typed_lambda <> x:26 var
 R3851:3853 Triage.typed_lambda <> uty:27 var
 R3857:3861 Triage.typed_lambda <> gamma:28 var
-R3787:3792 Triage.derive <> derive ind
-R3803:3804 Triage.typed_lambda <> ty:25 var
-R3801:3801 Triage.typed_lambda <> M:23 var
-R3794:3799 Triage.typed_lambda <> gamma0:24 var
+R3867:3872 Triage.derive <> derive ind
+R3874:3878 Triage.typed_lambda <> gamma:28 var
+R3881:3884 Triage.terms <> star def
+R3886:3886 Triage.typed_lambda <> x:26 var
+R3888:3888 Triage.typed_lambda <> M:23 var
+R3892:3896 Triage.types <> Funty constr
+R3898:3900 Triage.typed_lambda <> uty:27 var
+R3902:3903 Triage.typed_lambda <> ty:25 var
 binder 3765:3765 <> M:29
 binder 3767:3772 <> gamma0:30
 binder 3774:3775 <> ty:31
 R3805:3817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3787:3792 Triage.derive <> derive ind
+R3794:3799 Triage.typed_lambda <> gamma0:30 var
+R3801:3801 Triage.typed_lambda <> M:29 var
+R3803:3804 Triage.typed_lambda <> ty:31 var
 binder 3825:3825 <> x:32
 binder 3827:3829 <> uty:33
 binder 3831:3835 <> gamma:34
 R3863:3866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3867:3872 Triage.derive <> derive ind
-R3892:3896 Triage.types <> Funty constr
-R3902:3903 Triage.typed_lambda <> ty:31 var
-R3898:3900 Triage.typed_lambda <> uty:33 var
-R3881:3884 Triage.terms <> star def
-R3888:3888 Triage.typed_lambda <> M:29 var
-R3886:3886 Triage.typed_lambda <> x:32 var
-R3874:3878 Triage.typed_lambda <> gamma:34 var
 R3844:3847 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R3862:3862 Coq.Init.Logic <> ::type_scope:x_'='_x not
 R3838:3843 Triage.typed_lambda <> gamma0:30 var
@@ -214,10 +210,14 @@ R3854:3854 Coq.Init.Datatypes <> ::core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R3849:3849 Triage.typed_lambda <> x:32 var
 R3851:3853 Triage.typed_lambda <> uty:33 var
 R3857:3861 Triage.typed_lambda <> gamma:34 var
-R3787:3792 Triage.derive <> derive ind
-R3803:3804 Triage.typed_lambda <> ty:31 var
-R3801:3801 Triage.typed_lambda <> M:29 var
-R3794:3799 Triage.typed_lambda <> gamma0:30 var
+R3867:3872 Triage.derive <> derive ind
+R3874:3878 Triage.typed_lambda <> gamma:34 var
+R3881:3884 Triage.terms <> star def
+R3886:3886 Triage.typed_lambda <> x:32 var
+R3888:3888 Triage.typed_lambda <> M:29 var
+R3892:3896 Triage.types <> Funty constr
+R3898:3900 Triage.typed_lambda <> uty:33 var
+R3902:3903 Triage.typed_lambda <> ty:31 var
 R4021:4022 Coq.Strings.String <> ::string_scope:x_'=?'_x not
 R4021:4022 Coq.Strings.String <> ::string_scope:x_'=?'_x not
 R4086:4099 Triage.derive <> derive_subtype thm

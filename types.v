@@ -792,7 +792,6 @@ Lemma subst_rec_preserves_quant :
   forall n ty uty k, subst_rec (quant n ty) uty k = quant n (subst_rec ty uty (n+k)).
 Proof.
   induction n; intros; simpl; auto; rewrite ! quant_succ; simpl; f_equal; auto.
-  rewrite IHn; f_equal; f_equal; lia. 
 Qed.
 
  
@@ -1171,7 +1170,7 @@ Proof.
   assert(p<n \/ p=n \/ p>n) by lia; disjunction_tac; insert_Var_tac;
     caseEq n; intros; subst; simpl; auto; try lia.
   (* 4 *)
-  rewrite lift_rec_null in *; rewrite plus_0_r; caseEq pos; intros; subst; auto.
+  rewrite lift_rec_null in *; rewrite <- plus_n_O; caseEq pos; intros; subst; auto.
   (* 3 *)
   replace (k + S n0) with (relocate k 0 (S n0)) by (relocate_tac; lia). 
   rewrite lift_rec_preserves_variant.  caseEq pos; intros; subst; auto.

@@ -23,7 +23,8 @@
 (**********************************************************************)
 
 (**********************************************************************)
-(*                 Typed Combinatory Logic                            *)
+(*            Reflective Programming in Tree Calculus                 *)
+(*         Chapter 8: Incompleteness of Combinatory Logic             *)
 (*                                                                    *)
 (*                     Barry Jay                                      *)
 (*                                                                    *)

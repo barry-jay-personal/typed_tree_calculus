@@ -538,7 +538,7 @@ Proof.
   no_quant2_tac. inv_out H0. 
   rewrite quant_succ.   subst_tac. rewrite subst_rec_preserves_quant. eapply sub_zero.
   split_all.
-  left; rewrite plus_0_r. eapply sub_quant. 
+  left; rewrite <- plus_n_O. eapply sub_quant. 
   clear. induction x; intros.  auto_t.
   simpl. eapply sub_trans; eauto. eapply subtype_quant. subst_tac; var_tac.
   (* 2 *)
@@ -556,13 +556,13 @@ Proof.
   simpl in *; inv_out H0. 
   rewrite quant_succ in H2. inv_out H2. no_quant2_tac. inv_out H2. 
   rewrite <- H4 in *.
-  rewrite ! plus_0_r . 
+  rewrite <- ! plus_n_O.
   rewrite subst_rec_lift_rec; try lia.
   rewrite subst_rec_lift_rec; try lia.
   erewrite lift_rec_lift_rec; try lia. simpl. 
   eapply sub_trans. eapply sub_lift.
   unfold lift. rewrite lift_rec_preserves_quant.
-  simpl. rewrite quant_succ. rewrite plus_0_r.  rewrite ! quant_succ; eapply sub_zero.
+  simpl. rewrite quant_succ. rewrite <- plus_n_O.  rewrite ! quant_succ; eapply sub_zero.
   Unshelve.
   all: apply Leaf.
 Qed.
@@ -643,7 +643,7 @@ Proof.
   no_quant2_tac. inv_out H0. 
   rewrite quant_succ.   subst_tac. rewrite subst_rec_preserves_quant. eapply sub_zero.
   split_all.
-  left; rewrite plus_0_r. eapply sub_quant. 
+  left; rewrite <- plus_n_O; eapply sub_quant. 
   clear. induction x; intros.  auto_t.
   simpl. eapply sub_trans; eauto. eapply subtype_quant. subst_tac; var_tac.
   (* 2 *)
@@ -662,26 +662,26 @@ Proof.
   simpl in *; inv_out H0. 
   rewrite quant_succ in H2. inv_out H2. no_quant2_tac. inv_out H2. 
   rewrite <- H4 in *.
-  rewrite ! plus_0_r . 
+  rewrite <- ! plus_n_O. 
   rewrite subst_rec_lift_rec; try lia.
   rewrite subst_rec_lift_rec; try lia.
   erewrite lift_rec_lift_rec; try lia. simpl. 
   eapply sub_trans. eapply sub_lift.
   unfold lift. rewrite lift_rec_preserves_quant.
-  simpl. rewrite quant_succ. rewrite plus_0_r.  rewrite ! quant_succ; eapply sub_zero.
+  simpl. rewrite quant_succ; rewrite <- plus_n_O.  rewrite ! quant_succ; eapply sub_zero.
   (* 1 *)
   unfold lift in *. rewrite subst_rec_preserves_quant in *. 
   rewrite lift_rec_preserves_quant in *.
   simpl in *; inv_out H0. 
   rewrite quant_succ in H2. inv_out H2. no_quant2_tac. inv_out H2. 
   rewrite <- H5 in *.
-  rewrite ! plus_0_r . 
+  rewrite <- ! plus_n_O . 
   rewrite subst_rec_lift_rec; try lia.
   rewrite subst_rec_lift_rec; try lia.
   erewrite lift_rec_lift_rec; try lia. simpl. 
   eapply sub_trans. eapply sub_lift.
   unfold lift. rewrite lift_rec_preserves_quant.
-  simpl. rewrite quant_succ. rewrite plus_0_r.  rewrite ! quant_succ; eapply sub_zero.
+  simpl. rewrite quant_succ. rewrite <- plus_n_O.  rewrite ! quant_succ; eapply sub_zero.
   Unshelve.
   all: apply Leaf.
 Qed.
@@ -1236,7 +1236,7 @@ Proof.
   rewrite <- chip_lift_trim. 
   eapply sub_trans. eapply sub_lift. eapply sub_quant.
   rewrite quant_succ3.   unfold lift; rewrite lift_rec_preserves_quant. simpl; var_tac.  
-  rewrite lift_lift_rec; try lia. rewrite plus_0_r. 
+  rewrite lift_lift_rec; try lia. rewrite <- plus_n_O. 
   eapply sub_trans. eapply subtype_quant. subst_tac.   dist_tac; var_tac. 
   eapply subtype_lift.
   eapply sub_trans. eapply subtype_quant_fork. eapply sub_fork. 
@@ -1252,8 +1252,8 @@ Proof.
   eelim IHs; intros; eauto; no_quanta; disjunction_tac.
   left; exists (app x0 (false :: nil)); repeat eexists. rewrite quanta_app; simpl; eauto .
   eauto.
-  rewrite ! quant_count_app; simpl; auto_t. rewrite ! plus_0_r; auto. 
-  right; rewrite quant_count_app; simpl; rewrite plus_0_r; eapply sub_trans; eauto; eapply sub_to_asf.
+  rewrite ! quant_count_app; simpl; auto_t. rewrite <- ! plus_n_O; auto. 
+  right; rewrite quant_count_app; simpl; rewrite <- plus_n_O; eapply sub_trans; eauto; eapply sub_to_asf.
   (* 11 *)
   eelim quanta_is_quant; intros; eauto; subst; simpl in *; auto; split_all.
   rewrite quanta_app in *; simpl in *; inv_out H.
@@ -1282,7 +1282,7 @@ Proof.
   left; exists (app x0 (true :: false :: nil)); repeat eexists. 
   rewrite quanta_app in *; simpl in *. auto.
   2: rewrite ! quant_count_app; simpl.
-  2: rewrite plus_0_r; instantiate(1:= 0); eapply chip_count_nil.
+  2: rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil.
   eapply sub_zero. 
   (* 9 *)
   eelim quanta_is_quant; intros; eauto; subst; simpl in *; auto; split_all.
@@ -1314,7 +1314,7 @@ Proof.
   (* 3 *)
   left; repeat eexists; simpl; auto. 
   instantiate(2:= app bs (false :: nil)); rewrite quanta_app; simpl; eauto.
-  2: rewrite quant_count_app; simpl; rewrite plus_0_r.
+  2: rewrite quant_count_app; simpl; rewrite <- plus_n_O.
   2: instantiate(1:= 0); eapply chip_count_nil.
   eapply sub_zero.
   (* 2 *)
@@ -1401,7 +1401,7 @@ Theorem subtype_from_quanta_funty:
   eelim IHs; intros; eauto; split_all.
   repeat eexists.   instantiate(3:= app x1 (false :: nil)).  
   rewrite quanta_app.   simpl. eauto.
-  rewrite ! quant_count_app.   simpl. rewrite ! plus_0_r; eauto. auto. auto.
+  rewrite ! quant_count_app.   simpl. rewrite <- ! plus_n_O; eauto. auto. auto.
   (* 12 *)
   inv_out H. exists 0; exists nil; repeat eexists. simpl; eapply chip_count_nil. 1,2: eauto. 
   (* 11 *)
@@ -1423,7 +1423,7 @@ Theorem subtype_from_quanta_funty:
   repeat eexists.
   instantiate(3:= (app x0 (true :: false :: nil))).
   rewrite quanta_app. simpl. eauto.
-  rewrite ! quant_count_app. simpl. rewrite plus_0_r; instantiate(1:= 0); eapply chip_count_nil.
+  rewrite ! quant_count_app. simpl. rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil.
   1,2: eapply sub_zero.
   (* 7 *)
   eelim quanta_is_quant; intros; eauto; subst; simpl in *; split_all. 
@@ -1452,7 +1452,7 @@ Theorem subtype_from_quanta_funty:
   (* 3 *)
   exists 0; exists (app bs (false :: nil)); repeat eexists; simpl; auto. 
   rewrite quanta_app in *; simpl in *; eauto.
-  rewrite quant_count_app; simpl; rewrite plus_0_r. eapply chip_count_nil. 
+  rewrite quant_count_app; simpl; rewrite <- plus_n_O. eapply chip_count_nil. 
   1,2: eapply sub_zero.  
   (* 2 *)
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; split_all.  no_quanta. inv_out H. 
@@ -1474,7 +1474,7 @@ Proof.
   2: instantiate(3:= quant_to_quanta n). 
   2: rewrite <- quanta_to_quant; eauto. 
   split_all. no_quanta. inv_out H1. 
-  rewrite quant_count_quant_to_quanta in *. rewrite plus_0_r in *.
+  rewrite quant_count_quant_to_quanta in *. rewrite <- plus_n_O in *.
   repeat eexists; eauto.
 Qed.
 
@@ -1546,7 +1546,7 @@ Proof.
   eapply sub_trans. 2: eapply H3.
   rewrite trim_fork.   eapply sub_trans. 2: eapply fork_quant_commute. eapply sub_fork. 2: eauto. 
   eapply sub_trans. eapply sub_lift.  replace Quant with (quant 1) by auto.
-  trim2_tac. rewrite plus_0_r; eapply sub_zero.
+  trim2_tac. rewrite <- plus_n_O; eapply sub_zero.
 Qed.
 
 
@@ -1584,7 +1584,7 @@ Proof.
   eelim quanta_is_quant; intros; eauto; subst; simpl in *; auto; split_all.
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all.
   exists 0; exists (app x0 (true :: false :: nil)); repeat eexists.
-  rewrite quanta_app; simpl; auto_t.  rewrite ! quant_count_app; simpl; rewrite ! plus_0_r.
+  rewrite quanta_app; simpl; auto_t.  rewrite ! quant_count_app; simpl; rewrite <- ! plus_n_O.
   eapply chip_count_nil.
   1-2:  simpl; eapply sub_zero.
   (* 10 *)
@@ -1610,7 +1610,7 @@ Proof.
   inv_out H0; inv_out H1.
   (* 6 *)
   exists 0; exists (app bs (false :: nil)); repeat eexists.
-  rewrite quanta_app; simpl; auto.  rewrite quant_count_app; simpl. rewrite plus_0_r; eapply chip_count_nil.
+  rewrite quanta_app; simpl; auto.  rewrite quant_count_app; simpl. rewrite <- plus_n_O; eapply chip_count_nil.
   1,2:  eapply sub_zero. 
   (* 5 *)
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all; no_quanta. 
@@ -1629,7 +1629,7 @@ Proof.
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all.
   eelim IHs; intros; eauto; clear IHs; split_all.
   exists x0; exists (app x1 (false :: nil)); repeat eexists. rewrite quanta_app; simpl; eauto.
-  rewrite 2 quant_count_app; simpl. rewrite ! plus_0_r; eauto.   
+  rewrite 2 quant_count_app; simpl. rewrite <- ! plus_n_O; eauto.   
   1,2: eauto.
   (* 2 *)
   all: cycle -1.
@@ -1686,7 +1686,7 @@ Proof.
   eelim quanta_is_quant; intros; eauto; subst; simpl in *; auto; split_all.
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all.
   left;  exists 0; exists (app x0 (true :: false :: nil)); repeat eexists.
-  rewrite quanta_app; simpl; auto_t.  rewrite ! quant_count_app; simpl; rewrite ! plus_0_r.
+  rewrite quanta_app; simpl; auto_t.  rewrite ! quant_count_app; simpl; rewrite <- ! plus_n_O.
   eapply chip_count_nil.
   1-2:  simpl; eapply sub_zero.
   (* 11 *)
@@ -1714,7 +1714,7 @@ Proof.
   inv_out H0; inv_out H1.
   (* 6 *)
   left; exists 0; exists (app bs (false :: nil)); repeat eexists.
-  rewrite quanta_app; simpl; auto.  rewrite quant_count_app; simpl. rewrite plus_0_r; eapply chip_count_nil.
+  rewrite quanta_app; simpl; auto.  rewrite quant_count_app; simpl. rewrite <- plus_n_O; eapply chip_count_nil.
   1,2:  eapply sub_zero. 
   (* 5 *)
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all; no_quanta. 
@@ -1739,9 +1739,9 @@ Proof.
   eelim quanta_is_asf; intros; eauto; subst; simpl in *; auto; split_all.
   eelim IHs; intros; eauto; clear IHs; split_all.
   left; exists x0; exists (app x1 (false :: nil)); repeat eexists. rewrite quanta_app; simpl; eauto.
-  rewrite 2 quant_count_app; simpl. rewrite ! plus_0_r; eauto.   
+  rewrite 2 quant_count_app; simpl. rewrite <- ! plus_n_O; eauto.   
   1,2: eauto.
-  right.  rewrite quant_count_app; simpl. rewrite plus_0_r. 
+  right.  rewrite quant_count_app; simpl. rewrite <- plus_n_O. 
   eapply sub_trans. eauto. eapply sub_to_asf.
   (* 2 *)
   all: cycle -1.
@@ -1823,7 +1823,7 @@ Proof.
   replace (lift_rec omega2_ty 0 k) with omega2_ty by (cbv; auto).
   rewrite lift_rec_preserves_quant; refold lift_rec.
   eapply sub_trans. eapply sub_recursion. repeat sub_fun_tac.
-  rewrite <- lift_rec_funty. rewrite plus_0_r. eapply subtype_lift4.
+  rewrite <- lift_rec_funty. rewrite <- plus_n_O. eapply subtype_lift4.
   Unshelve. apply Leaf.
 Qed.
 
@@ -1865,12 +1865,12 @@ Proof.
  eelim IHs; intros; eauto. left; auto_t. split_all; disjunction_tac. 
  right; repeat eexists. 
  rewrite quant_count_app; simpl.  instantiate(1:= app x4 (false :: nil)).
- rewrite quant_count_app; simpl; rewrite ! plus_0_r; eauto. eauto. eauto.
+ rewrite quant_count_app; simpl; rewrite <- ! plus_n_O; eauto. eauto. eauto.
  left; rewrite quanta_app; simpl; eauto.
  split_all.
  right; repeat eexists. 
  4: right; repeat eexists; instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl. rewrite ! plus_0_r; eauto. eauto. eauto.
+ rewrite ! quant_count_app; simpl. rewrite <- ! plus_n_O; eauto. eauto. eauto.
  (* 14 *)
  eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant. 
  eelim IHs; intros; eauto. left; auto_t. split_all; disjunction_tac. 
@@ -1896,14 +1896,14 @@ Proof.
  eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta. inv_out H2. 
  right; repeat eexists.
  4: left. 4: instantiate(4:= nil); simpl; rewrite quant_succ2; eauto.
- simpl; rewrite plus_0_r. eapply chip_count_nil.
+ simpl; rewrite <- plus_n_O. eapply chip_count_nil.
  instantiate(1:= 0); simpl.  rewrite quant_succ; eapply sub_zero. eapply sub_zero.
  (* 10 *)
  eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta.
  eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quant; no_quanta.
  right; repeat eexists.
  4: left. 4: instantiate(4:= app x0 (true :: false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl; rewrite plus_0_r.  instantiate(1:= 0); eapply chip_count_nil.
+ rewrite ! quant_count_app; simpl; rewrite <- plus_n_O.  instantiate(1:= 0); eapply chip_count_nil.
  instantiate(1:= 0); eapply sub_zero. eapply sub_zero. 
  (* 9 *)
  eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta. 
@@ -1941,7 +1941,7 @@ Proof.
  (* 4 *)
  right; repeat eexists.
  4: left. 4: instantiate(4:= app bs1 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite quant_count_app; simpl. rewrite plus_0_r; instantiate(1:= 0); eapply chip_count_nil.
+ rewrite quant_count_app; simpl. rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil.
  instantiate(1:= 0); simpl; eapply sub_zero.
  eapply sub_zero.
  (* 3 *)
@@ -2024,7 +2024,7 @@ Proof.
   no_quanta.
   no_quanta.   inv_out H7.
   exists x7; split. 
-  1,2: eapply sub_trans; [ rewrite quant0 at 1; trim2_tac; rewrite plus_0_r; eauto |]. 
+  1,2: eapply sub_trans; [ rewrite quant0 at 1; trim2_tac; rewrite <- plus_n_O; eauto |]. 
   2: eapply subtype_from_asf.
   clear. induction x1; intros; simpl; auto_t.
   eapply sub_trans. eapply subtype_preserves_bffs_aug; eauto.  eapply bffs_aug_of_binary_fun.
@@ -2080,7 +2080,7 @@ Proof.
  eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quanta. 
  right; repeat eexists.
  5: left; instantiate(5:= app x0 (true :: false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl; rewrite plus_0_r; instantiate(1:= 0); eapply chip_count_nil.
+ rewrite ! quant_count_app; simpl; rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil.
  2: instantiate(1:= 0). 1-3: simpl; eapply sub_zero.
  (* 14 *)
  eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quanta. 
@@ -2133,7 +2133,7 @@ Proof.
  (* 7 *)
  right; repeat eexists.
  5: left; instantiate(5:= app bs1 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite quant_count_app; simpl. rewrite plus_0_r; instantiate(1:= 0); eapply chip_count_nil.
+ rewrite quant_count_app; simpl. rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil.
  2: instantiate(1:= 0).  1-3: simpl; eapply sub_zero.
  (* 6 *)
  eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quant; no_quanta. 
@@ -2203,32 +2203,32 @@ Proof.
  right; repeat eexists.
  5: left. 5: instantiate(5:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto. 
  rewrite ! quant_count_app; simpl.
- rewrite ! plus_0_r; eauto. 
+ rewrite <- ! plus_n_O; eauto. 
  1-3: eauto.
  (* 6 *)
  right; repeat eexists.
  5: right; left; repeat eexists.
  5: instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl. rewrite ! plus_0_r; eauto.  
+ rewrite ! quant_count_app; simpl. rewrite <- ! plus_n_O; eauto.  
  1-4: eauto.
  (* 5 *)
  right; repeat eexists.
  5: do 2 right; left; repeat eexists.
  5: instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl. rewrite ! plus_0_r; eauto. 
+ rewrite ! quant_count_app; simpl. rewrite <- ! plus_n_O; eauto. 
  1-4: eauto.
  (* 4 *)
  right; repeat eexists.
  5: do 3 right; left; repeat eexists.
  5: instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl. rewrite ! plus_0_r; eauto. 
+ rewrite ! quant_count_app; simpl. rewrite <- ! plus_n_O; eauto. 
  1-4: eauto.
  (* 3 *)
  right; repeat eexists.
  5: do 4 right; repeat eexists.
  5: eauto.
  5: instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto.
- rewrite ! quant_count_app; simpl. rewrite ! plus_0_r; eauto. 
+ rewrite ! quant_count_app; simpl. rewrite <- ! plus_n_O; eauto. 
  1-4: auto_t.
  (* 2 *)
  all: cycle -1.
@@ -2417,7 +2417,7 @@ Proof.
   inv_out H0.
   split_all; disjunction_tac; split_all; no_quanta; rewrite ? plus_0_r in *.   
   (* 4 *)
-  inv_out H4; rewrite quant0 at 1; trim2_tac; rewrite plus_0_r; auto. 
+  inv_out H4; rewrite quant0 at 1; trim2_tac; rewrite <- plus_n_O; auto. 
   (* 3 *)
   inv_out H5. cut False. tauto.    eapply subtype_leafty_not_stemty. eapply H8. 1,2: auto_t.
   (* 2 *)
@@ -2427,7 +2427,7 @@ Proof.
   eelim subtype_from_quanta_funty; intros. 2: eapply H10. 2: eauto. split_all. no_quanta. inv_out H6. 
   eapply sub_trans; eauto.
   rewrite quant0 at 1; trim2_tac. rewrite quant_plus2. 
-  eapply sub_trans. eapply subtype_quant; eauto. trim2_tac. rewrite plus_0_r in *.
+  eapply sub_trans. eapply subtype_quant; eauto. trim2_tac. rewrite <- plus_n_O in *.
   eapply subtype_quant.
   unfold subst; replace x9 with (map (chip_lift 0) x9) by (rewrite chip_lift_zero; auto). (* good trick! *) 
   rewrite ! trim_preserves_subst_rec. 
@@ -2459,12 +2459,12 @@ Proof.
   inv_out H5. 
   eelim (subtype_from_stemty4); intros.   3: instantiate(3:= 0); simpl; eauto.
   inv_out H4. split_all. no_quant. 
-  rewrite plus_0_r in *.   rewrite quant0 at 1. trim2_tac. eapply sub_trans; eauto.
+  rewrite <- plus_n_O in *.   rewrite quant0 at 1. trim2_tac. eapply sub_trans; eauto.
   eapply sub_trans. eapply subtype_from_asf. sub_fun_tac. auto.
   (* 1 *)
   simpl in *. 
   eelim subtype_from_quanta_funty; intros. 2: eapply H10. 2: eauto. split_all. no_quanta. inv_out H6. 
-  rewrite plus_0_r in *; rewrite quant0 at 1; trim2_tac. rewrite quant_plus2. 
+  rewrite <- plus_n_O in *; rewrite quant0 at 1; trim2_tac. rewrite quant_plus2. 
   eapply sub_trans. eapply subtype_quant; eauto.
   eapply sub_trans. eapply subtype_quant.
   eapply sub_trans. eapply subtype_quantf_Quant.
@@ -2505,13 +2505,13 @@ Proof.
   inv_out H5.
   eelim (subtype_from_forkty4); intros.   3: instantiate(4:= 0); simpl; eauto.
   inv_out H4. split_all. no_quant. 
-  rewrite plus_0_r in *.   rewrite quant0 at 1. trim2_tac. eapply sub_trans; eauto.
+  rewrite <- plus_n_O in *.   rewrite quant0 at 1. trim2_tac. eapply sub_trans; eauto.
   eapply sub_trans. eapply  iter_bfff_aug_of_binary_fun.
   eapply sub_funty; eauto; sub_fun_tac; eauto.
   (* 1 *)
   simpl in *. 
   eelim subtype_from_quanta_funty; intros. 2: eapply H10. 2: eauto. split_all. no_quanta. inv_out H6. 
-  rewrite plus_0_r in *; rewrite quant0 at 1; trim2_tac. rewrite quant_plus2. 
+  rewrite <- plus_n_O in *; rewrite quant0 at 1; trim2_tac. rewrite quant_plus2. 
   eapply sub_trans. eapply subtype_quant; eauto.
   eapply sub_trans. eapply subtype_quant. eapply iter_bfff_aug_Quant.   rewrite quant_succ3. 
   eapply sub_trans. eapply subtype_quant. eapply iter_bfff_aug_Quant.   rewrite quant_succ3. 
