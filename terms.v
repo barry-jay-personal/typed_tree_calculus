@@ -34,11 +34,15 @@
 
 Require Import Arith Lia Bool List Nat Datatypes String.
 
-
 Set Default Proof Using "Type".
 
+(* Module TreeModule.*) 
+
 Open Scope string_scope.
- 
+Declare Scope tree_scope.
+Global Open Scope tree_scope.
+
+
 (* Generalities *) 
 
 Ltac refold r := unfold r; fold r.
@@ -60,11 +64,6 @@ Ltac disjunction_tac:=
   | _ => try lia
   end.
 
-Declare Scope tree_scope.
-Open Scope tree_scope.
-
-
-(* Tree Calculus *)
 
 Inductive Tree:  Set :=
   | Ref : string -> Tree  (* variables are indexed by strings *) 
@@ -72,7 +71,7 @@ Inductive Tree:  Set :=
   | App : Tree -> Tree -> Tree   
 .
 
-Hint Constructors Tree : TreeHintDb.
+Global Hint Constructors Tree : TreeHintDb.
 
 Notation "△" := Node : tree_scope.
 Notation "x @ y" := (App x y) (at level 65, left associativity) : tree_scope.
@@ -85,7 +84,6 @@ Definition I := S1 K @ K.
 Definition KI := K@I.
 
 Ltac unfold_op := unfold KI, I, K, S1.
-
 
 
 (* Programs *)
@@ -118,7 +116,7 @@ Inductive t_red1 : Tree -> Tree -> Prop :=
 | appl_red : forall M M' N, t_red1 M M' -> t_red1 (M@N) (M'@N)  
 | appr_red : forall M N N', t_red1 N N' -> t_red1 (M@N) (M@N')  
 .
-Hint Constructors t_red1 : TreeHintDb. 
+Global Hint Constructors t_red1 : TreeHintDb. 
 
 (* Multiple reduction steps *) 
 
@@ -127,7 +125,7 @@ Inductive multi_step : (Tree -> Tree -> Prop) -> Tree -> Tree -> Prop :=
   | succ_red : forall (red: Tree-> Tree -> Prop) M N P, 
                    red M N -> multi_step red N P -> multi_step red M P
 .
-Hint Constructors multi_step: TreeHintDb.  
+Global Hint Constructors multi_step: TreeHintDb.  
 
 
 
@@ -296,6 +294,15 @@ Qed.
 (* star abstraction *)
 
 
+Ltac aptac := eapply transitive_red; [ eapply preserves_app_t_red |].
+
+Ltac htac r :=
+  ((eapply transitive_red; [ eapply r |]) ||
+     (aptac; [ htac r; trtac | trtac | trtac ]) ||
+     (aptac; [ trtac | htac r; trtac | trtac ]))
+   ; trtac.
+
+
 Fixpoint occurs x M :=
   match M with
   | Ref y => eqb x y 
@@ -329,8 +336,9 @@ Proof.
   induction M as [s | | M1 ? M2]; intros x N; simpl;  auto.
   caseEq (x=?s); intros; tree_red . 
   tree_red. 
-  unfold S1; caseEq (occurs x M1 || occurs x M2); intros; trtac.  apply preserves_app_t_red; auto.
-  rewrite orb_false_iff in *; split_all;  rewrite ! substitute_occurs_false; auto; zerotac. 
+  unfold S1; caseEq (occurs x M1 || occurs x M2); intros; trtac.
+  htac IHM1; htac IHM2. 
+  rewrite orb_false_iff in *; split_all; rewrite ! substitute_occurs_false; auto; zerotac. 
 Qed.
 
 
@@ -347,7 +355,6 @@ match goal with
 | _ => auto_t
  end.
 
-Ltac aptac := eapply transitive_red; [ eapply preserves_app_t_red |].
 
 
 (* 4.2: Combinations versus Terms *)
@@ -356,7 +363,7 @@ Inductive combination : Tree -> Prop :=
 | is_Node : combination △
 | is_App : forall M N, combination M -> combination N -> combination (M@ N)
 .
-Hint Constructors combination: TreeHintDb.
+Global Hint Constructors combination: TreeHintDb.
 
 Ltac combination_tac := repeat (apply is_App || apply is_Node); auto. 
 
@@ -498,7 +505,8 @@ Proof. tree_red. Qed.
    
 Definition omega2 := \"w" (\"f" (Ref "f" @ (wait2 (Ref "w") (Ref "w") (Ref "f")))).
 
-
+Lemma omega2_red: forall w f, t_red (omega2@ w @ f) (f @ (wait2 w w f)).
+Proof. intros; unfold omega2; unfold wait2 at 1; startac "f"; startac "w"; trtac. Qed. 
 
 Definition omega21 := K @ (△ @ (△ @ I)). 
 Definition omega22 :=  \ "w" (\ "f" (wait2 (Ref "w") (Ref "w") (Ref "f"))).
@@ -510,11 +518,7 @@ Proof. cbv; auto. Qed.
 Definition Z f := wait2 omega2 omega2 f. 
 
 Theorem Z_red: forall f x, t_red (Z f @ x) (f @ (Z f) @ x).
-Proof.
-  intros; unfold Z. unfold wait2 at 1. trtac. 
-  unfold omega2.  startac "f"; startac "w". trtac. do 2 (eapply preserves_app_t_red; trtac).
-  unfold wait2.   startac "f"; startac "w". trtac.
-Qed.
+Proof. intros; unfold Z at 1; htac wait2_red; htac omega2_red. Qed.
 
 
 
@@ -554,6 +558,7 @@ Proof. intros; split; intro; [ program_tac | eapply transitive_red; [ eapply Z_r
 
 Definition triage f0 f1 f2 := Node @ (Node @ f0 @ f1) @ f2.
 
+
 Definition equal :=
   Yop2
     (triage
@@ -567,55 +572,43 @@ Definition equal :=
     ))))).
 
 Lemma equal_leaf: t_red (equal @ Node @ Node) K.
-Proof. aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e". trtac. Qed.
+Proof. htac Y2_red;  tree_red. Qed.
 
 Lemma equal_stem: forall x y, t_red (equal @ (Node @ x) @ (Node @ y)) (equal @ x @ y).
-Proof. intros. aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e"; startac "x". trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; trtac; startac "e"; startac "x"; trtac. Qed.
 
 Lemma equal_fork:
   forall x1 x2 y1 y2, t_red (equal @ (Node @ x1 @ x2) @ (Node @ y1 @ y2))
                             (equal @ x1 @ y1 @ (equal @ x2 @ y2) @ KI).
-Proof.
-  intros. aptac. eapply Y2_red.  trtac.
-  replace (   Yop2
-       (triage (\ "e" (triage K (K @ KI) (K @ (K @ KI))))
-          (\ "x" (\ "e" (triage KI (Ref "e" @ Ref "x") (K @ (K @ KI)))))
-          (\ "x1"
-             (\ "x2"
-                (\ "e"
-                   (triage KI (K @ KI)
-                      (\ "y1" (\ "y2" (Ref "e" @ Ref "x1" @ Ref "y1" @ (Ref "e" @ Ref "x2" @ Ref "y2") @ KI))))))))) with equal by (cbv; auto). 
-  unfold triage. trtac.  startac "y2"; startac "y1"; startac "e"; startac "x2"; startac "x1"; trtac.
-Qed.
+Proof. intros; htac Y2_red; unfold triage; trtac; startac "y2"; startac "y1"; startac "e"; startac "x2"; startac "x1"; trtac. Qed.
 
 Theorem equal_programs: forall M, program M -> t_red (equal @ M @ M) K.
 Proof.
   intros M pr; induction pr; intros. 
-  eapply equal_leaf.
-  eapply transitive_red; [ eapply equal_stem | eauto]. 
-  eapply transitive_red; [ eapply equal_fork |]. aptac. aptac. eauto. eauto. trtac. trtac. trtac. 
+  htac equal_leaf.
+  htac equal_stem. 
+  htac equal_fork; htac IHpr1. 
 Qed.
 
+
 Lemma equal_leaf_stem: forall y,  t_red (equal @ Node @ (Node @ y)) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e". trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; trtac; startac "e"; trtac. Qed.
 
 Lemma equal_leaf_fork: forall y1 y2,  t_red (equal @ Node @ (Node @ y1 @ y2)) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e". trtac. Qed.
-
+Proof. intros; htac Y2_red; unfold triage; startac "e"; trtac. Qed.
 
 Lemma equal_stem_leaf: forall x,  t_red (equal @ (Node @ x) @ Node) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e"; startac "x"; trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; startac "e"; startac "x"; trtac. Qed.
 
 Lemma equal_stem_fork: forall x y1 y2,  t_red (equal @ (Node @ x) @ (Node @ y1 @ y2)) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac. startac "e"; startac "x"; trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; startac "e"; startac "x"; trtac. Qed.
 
 Lemma equal_fork_leaf: forall x1 x2,  t_red (equal @ (Node @ x1 @ x2) @ Node) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac.
-       startac "e"; startac "x2"; startac "x1"; trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; startac "e"; startac "x2"; startac "x1"; trtac. Qed.
 
 Lemma equal_fork_stem: forall x1 x2 y,  t_red (equal @ (Node @ x1 @ x2) @ (Node @ y)) KI.
-Proof. intros; aptac. eapply Y2_red.  trtac.  unfold triage. trtac.
-       startac "e"; startac "x2"; startac "x1"; trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; startac "e"; startac "x2"; startac "x1"; trtac. Qed.
+
 
 
 Theorem unequal_programs: forall M, program M -> forall N, program N -> M <> N -> t_red (equal@ M @ N) KI.
@@ -639,6 +632,11 @@ Proof.
 
 Definition tt := K.
 Definition ff := KI.
+
+
+Lemma tt_red: forall x y, t_red (tt @ x @ y) x. Proof. tree_red. Qed. 
+Lemma ff_red: forall x y, t_red (ff @ x @ y) y. Proof. tree_red. Qed. 
+
 
 Theorem equality_of_programs:
   forall M, program M -> t_red (equal @ M @ M) tt /\ forall N, program N -> M <> N -> t_red (equal@ M @ N) ff.
@@ -698,7 +696,7 @@ Lemma Kn_red: forall xs g, t_red (fold_left App xs (Kn (List.length xs) @ g)) g.
 Proof.
   induction xs; intros; simpl; auto. repeat trtac. rewrite Kn_closed; simpl.  
   eapply transitive_red. eapply fold_left_app_preserves_red. 
-  aptac. trtac. trtac.  rewrite star_occurs_false; simpl.  2: eapply Kn_closed. trtac. 
+  trtac. rewrite star_occurs_false; simpl.  2: eapply Kn_closed. trtac. 
   eapply transitive_red. eapply fold_left_app_preserves_red. trtac. eapply IHxs. 
 Qed.
 
@@ -846,7 +844,6 @@ Proof.  tree_red. Qed.
 Theorem isZero_succ: forall n, t_red (isZero @ (succ1 @ n)) ff.
 Proof.  tree_red. Qed.
 
-
 Definition cond := I. 
 
 Theorem cond_false : forall x y, t_red (cond @ ff @ x @ y) y.
@@ -855,7 +852,7 @@ Proof. tree_red. Qed.
 Theorem cond_true : forall x y, t_red (cond @ tt @ x @ y) x.
 Proof. tree_red. Qed. 
 
-                              
+
 (*** The predecessor function  - underpinning primitive recursion *) 
   
 Definition PZero := pairL zero zero.  (*   \ (Var 0 @ (num 0) @ (num 0)). *)  
@@ -867,18 +864,13 @@ Proof. tree_red. Qed.
 
 
 Lemma pred_aux:  forall k, t_red (iter k (App PSucc) PZero) (pairL (num (Nat.pred k)) (num k)).
-Proof.
-  induction k; intros; repeat eexists; simpl; [
-    eapply zero_red |
-    aptac; [ trtac | eapply IHk | eapply PSucc_red]].
-Qed.
+Proof. induction k; intros; repeat eexists; simpl; [ eapply zero_red | htac IHk; htac PSucc_red]. Qed.
 
  
 Theorem pred_red: forall k,  t_red (predN @ (num k)) (num (pred k)). 
 Proof.
-  intros; unfold predN. repeat startac2.  unfold fstL; repeat startac2.
-  aptac. trtac. eapply transitive_red. eapply num_iterates.   eapply pred_aux.
-  unfold pairL. trtac.   
+  intros; unfold predN; repeat startac2;  unfold fstL; repeat startac2;
+  trtac;  htac num_iterates; htac pred_aux; tree_red.  
 Qed.
 
 
@@ -911,24 +903,12 @@ Definition primrec0 g h :=
 
 Lemma primrec0_red_zero :
   forall g h, t_red (primrec0 g h @ zero) g.
-Proof.
-  intros; unfold primrec0;  startac "y"; startac "x". eapply transitive_red.
-  eapply Y2_red. trtac. aptac. aptac.  aptac.  trtac.
-  trtac. eapply isZero_zero. trtac. trtac. trtac. trtac. 
-Qed. 
+Proof.  intros; unfold primrec0;  startac "y"; startac "x"; htac Y2_red; htac isZero_zero. Qed. 
 
 
 Lemma primrec0_red_succ :
   forall k g h, t_red (primrec0 g h @ (num (S k))) (h @ (num k) @ (primrec0 g h @ (num k))).
-Proof.
-  intros; unfold primrec0;  startac "y"; startac "x". eapply transitive_red.
-  eapply Y2_red.  trtac. 
-  aptac.  aptac. eapply isZero_succ. trtac. trtac. trtac. unfold ff. trtac.
-  eapply preserves_app_t_red. eapply preserves_app_t_red. trtac. 
-  eapply pred_red. 
-  eapply preserves_app_t_red. trtac. 
-  eapply pred_red. 
-Qed.
+Proof. intros; unfold primrec0; startac "y"; startac "x"; htac Y2_red;  htac isZero_succ; htac ff_red; repeat htac pred_red. Qed.
   
 
 Definition primrec g h xs := primrec0 (fold_left App xs g) (fold_left App xs h).
@@ -951,13 +931,13 @@ Definition prim_plus := \"n" (prim_plus0 (Ref "n")).
 
 Theorem prim_plus_zero: forall n, t_red (prim_plus @ n @ zero) n. 
 Proof.
-  intros.  aptac. eapply star_beta. trtac.
-  replace (substitute (prim_plus0 (Ref "n")) "n" n) with (prim_plus0 n) by (cbv; auto).
-  eapply transitive_red; [ eapply primrec_red_zero | tree_red].
+  intros; htac star_beta;
+  replace (substitute (prim_plus0 (Ref "n")) "n" n) with (prim_plus0 n) by (cbv; auto);
+  htac primrec_red_zero; tree_red.
 Qed.
 
 Theorem prim_plus0_succ1: forall m n, t_red (prim_plus0 m @ (num (S n))) (succ1 @ (prim_plus0 m @ (num n))). 
-Proof.  intros; eapply transitive_red; [ eapply primrec_red_succ | simpl; trtac]. Qed. 
+Proof.  intros; htac primrec_red_succ; simpl; trtac. Qed. 
   
 
 
@@ -993,20 +973,11 @@ Definition minrec0 f := Yop2   (  △ @
 
   
 Lemma minrec0_found: forall f n, t_red (f @ n) tt -> t_red (minrec0 f @ n) n. 
-Proof.
-  intros; eapply transitive_red; [ eapply Y2_red | trtac].
-  aptac. aptac. eauto. trtac. trtac. trtac. trtac. 
-Qed.
+Proof.  intros f n H; htac Y2_red; htac H. Qed.
 
 
 Lemma minrec0_next: forall f n, t_red (f @ n) ff -> t_red (minrec0 f @ n) (minrec0 f @ (succ1 @ n)).
-Proof.
-  intros; eapply transitive_red; [ eapply Y2_red |  trtac ].
-  aptac. aptac. eauto. trtac. trtac. trtac. unfold ff.  trtac. 
-  eapply preserves_app_t_red. trtac. tree_red.
-   Qed.
-
-
+Proof.  intros f n H; htac Y2_red; htac H; htac ff_red; eapply preserves_appr_t_red; tree_red. Qed.
 
 Definition minrec f xs := minrec0 (fold_left App xs f).
 
@@ -1071,7 +1042,7 @@ Inductive factorable: Tree -> Prop :=
 | factorable_fork: forall M N, factorable (△ @ M @ N)
 .
 
-Hint Constructors factorable :TreeHintDb. 
+Global Hint Constructors factorable :TreeHintDb. 
 
 
 
@@ -1126,7 +1097,7 @@ Inductive branch_first_eval: Tree -> Tree -> Tree -> Prop :=
     branch_first_eval (△ @ (△ @ w @ x) @ y) (Node @ z @ u) v
 .
               
-Hint Constructors branch_first_eval: TreeHintDb.
+Global Hint Constructors branch_first_eval: TreeHintDb.
 
 
 Theorem branch_first_reduces: forall M N P, branch_first_eval M N P -> t_red (M @ N) P. 
@@ -1171,12 +1142,7 @@ Qed.
 
 Theorem bf_fork_red:
   forall x y, t_red (bf @ (△ @ x @ y)) ((substitute bff "e" bf) @ x @ y).
-Proof.
-  intros; eapply transitive_red; [ apply Z_red |  
-  replace (  Z (\ "e" (triage Node Node bff))) with bf by auto; 
-  unfold triage; startac "e"; trtac; 
-  do 2 eapply preserves_appl_t_red; eapply star_beta].
-Qed. 
+Proof. intros; htac Z_red; unfold triage; startac "e"; trtac; htac star_beta. Qed. 
 
 
 Theorem bf_fork_leaf_red:  forall y z, t_red(bf @ (△@△@y) @ z) y.
@@ -1187,37 +1153,34 @@ Proof. intros; aptac; [ apply bf_fork_red | trtac | tree_red]. Qed.
 Theorem bf_fork_stem_red:
   forall x y z, t_red (bf @ (△@(△@x) @y) @ z) (eager @ (bf @ (bf @ x @ z)) @ (bf @ y @ z)). 
 Proof.
-  intros; aptac; [ apply bf_fork_red | trtac | unfold bff, triage, K; refold substitute; trtac].
-  unfold bffs; startac "y"; startac "x". unfold S1, K; refold substitute.
+  intros; htac bf_fork_red; unfold bff, bffs, triage, K; refold substitute; trtac;
+    startac "y"; startac "x"; unfold S1, K; refold substitute;
   rewrite ! substitute_occurs_false; [ rewrite ! String.eqb_refl;  trtac | |]; cbv; auto.
 Qed. 
 
 Theorem bf_fork_fork_red: forall w x y,
     t_red (bf @ (△@(△@w @x) @y)) (triage w (bf @ x) (S1 (K @ bf) @ (bf @ y))).
 Proof.
-  intros; eapply transitive_red; [ apply bf_fork_red | unfold bff, triage, K; refold substitute; trtac]. 
-  unfold bfff, triage; startac "y"; startac "x"; startac "w".
-  unfold S1, K, substitute; simpl. trtac.
+  intros; htac bf_fork_red; unfold bff, bfff, bfff_fork, triage, K; refold substitute; trtac;
+    startac "y"; startac "x"; startac "w"; unfold S1, K; refold substitute;
+      rewrite ! substitute_occurs_false; [ rewrite ! String.eqb_refl;  trtac | cbv; auto].
 Qed.
 
 
 Theorem bf_fork_fork_leaf_red: forall w x y,  t_red (bf @ (△@(△@w @x) @y) @ Node) w. 
 Proof.
-  intros; aptac;  [ apply bf_fork_fork_red | trtac|   
-  unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac].
+  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
 Qed. 
 
 Theorem bf_fork_fork_stem_red: forall w x y z,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z)) (bf @ x @ z). 
 Proof.
-  intros; aptac;  [ apply bf_fork_fork_red | trtac|
-                    unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac].
+  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
 Qed. 
 
 Theorem bf_fork_fork_fork_red:
   forall w x y z u,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z @ u)) (bf @ (bf @ y @ z) @ u).
-Proof.  intros; aptac;  [ apply bf_fork_fork_red | trtac|
-                          unfold bfff, triage; simpl;
-                          startac "u"; startac "z"; startac "y"; startac "x"; startac "w"; startac "e"; trtac].
+Proof.  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl;
+          startac "u"; startac "z"; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
 Qed.
 
 
@@ -1231,20 +1194,20 @@ Proof.
   apply bf_fork_leaf_red.
   (* 4 *) 
   inv_out prM. inv_out H1. 
-  eapply transitive_red. eapply bf_fork_stem_red.
-  aptac. aptac. trtac. aptac. trtac. eapply IHev1; auto. trtac. trtac. eapply IHev2; eauto. 
-  eapply transitive_red.   eapply eager_of_factorable. eapply programs_are_factorable.
+  htac bf_fork_stem_red.
+  htac IHev1; auto. htac IHev2; eauto. 
+  htac eager_of_factorable. eapply programs_are_factorable.
   eapply branch_first_program; eauto.  eapply IHev3; eauto.
   1,2: eapply branch_first_program; eauto.
   (* 3 *) 
   eapply bf_fork_fork_leaf_red.
   (* 2 *)
   inv_out prM. inv_out prN. inv_out H1.
-  eapply transitive_red. eapply bf_fork_fork_stem_red. eapply IHev; eauto.
+  htac bf_fork_fork_stem_red; eapply IHev; eauto.
   (* 1 *)
   inv_out prM. inv_out prN. inv_out H1.
-  eapply transitive_red. eapply bf_fork_fork_fork_red. aptac. aptac. trtac. eapply IHev1; eauto.
-  trtac.   trtac. eapply IHev2; eauto. eapply branch_first_program; eauto.
+  htac bf_fork_fork_fork_red. htac IHev1; eauto.
+  htac IHev2; eauto. eapply branch_first_program; eauto.
 Qed.
 
 (* the converse theorem is in rewriting_theorems.v *) 
@@ -1278,3 +1241,8 @@ Lemma ptt_bf: program_to_ternary bf =
       "2121212021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201200212120021201102121200212002120112002120112002120112010212011200212011200212011201120212011212022212110102002120112110102120102120021101021201120112110102120112010212120021200212010212002110102021101021101021201021101021212002120021201021200212002120102110102121200212002120102110102021101021201021212002120021201021101020211010212120021200212011200212011200212011201120021201120112002120112011201021201120112002120112120021200212010212002110102120102121200212002120102110102021101021201021201021212002120021201021212002120021201021200212002120102110102121200212002120102110102021101020211010211010" .
 Proof.  cbv; auto. Qed. 
 
+
+
+Close Scope tree_scope.
+
+(* End TreeModule. *) 

@@ -37,7 +37,7 @@ Set Default Proof Using "Type".
 
 Open Scope string_scope.
 
-
+Open Scope tree_scope. 
 (* new theorems that require rewriting *)
 
 
@@ -60,23 +60,23 @@ Inductive s_red1 : Tree -> Tree -> Prop :=
                                             s_red1 (△@(△@P@Q)@M@(Node @ N1 @ N2)) (M' @ N1' @ N2')
 | app_sred : forall M M' N N', s_red1 M M' -> s_red1 N N' -> s_red1 (M@N) (M'@N')  
 .
-Hint Constructors s_red1 : TreeHintDb. 
+Global Hint Constructors s_red1 : TreeHintDb. 
 
 Lemma s_red_refl: forall M, s_red1 M M.
 Proof. induction M; intros; auto with TreeHintDb. Qed. 
 
-Hint Resolve s_red_refl: TreeHintDb. 
+Global Hint Resolve s_red_refl: TreeHintDb. 
      
 Definition s_red := multi_step s_red1.
 
 Lemma preserves_appl_s_red : preserves_appl s_red.
-Proof. apply preserves_appl_multi_step. red; auto with *. Qed.
+Proof. apply preserves_appl_multi_step; cbv; auto_t. Qed.
 
 Lemma preserves_appr_s_red : preserves_appr s_red.
-Proof. apply preserves_appr_multi_step. red; auto with *. Qed.
+Proof. apply preserves_appr_multi_step; cbv; auto_t. Qed.
 
 Lemma preserves_app_s_red : preserves_app s_red.
-Proof. apply preserves_app_multi_step;  red; auto with *. Qed.
+Proof. apply preserves_app_multi_step; cbv; auto_t. Qed.
 
 
 Definition implies_red (red1 red2: Tree-> Tree-> Prop) := forall M N, red1 M N -> red2 M N. 
@@ -84,14 +84,14 @@ Definition implies_red (red1 red2: Tree-> Tree-> Prop) := forall M N, red1 M N -
 Lemma implies_red_multi_step: forall red1 red2, implies_red red1  (multi_step red2) -> 
                                                 implies_red (multi_step red1) (multi_step red2).
 Proof.
-  red. intros red1 red2 IR M N R; induction R; split_all. apply zero_red. apply transitive_red with N; auto.
+  intros red1 red2 IR M N R; induction R; split_all; auto_t; apply transitive_red with N; auto.
 Qed. 
 
 Definition diamond (red1 red2 : Tree -> Tree -> Prop) := 
 forall M N, red1 M N -> forall P, red2 M P -> exists Q, red2 N Q /\ red1 P Q. 
 
 Lemma diamond_flip: forall red1 red2, diamond red1 red2 -> diamond red2 red1. 
-Proof.  unfold diamond; intros red1 red2 d M N r1 P r2; elim (d M P r2 N r1); intros x ?. exists x; split_all.
+Proof.  unfold diamond; intros red1 red2 d M N r1 P r2; elim (d M P r2 N r1); intros x ?; exists x; split_all.
 Qed.
 
 Lemma diamond_strip : 
@@ -99,8 +99,8 @@ forall red1 red2, diamond red1 red2 -> diamond red1 (multi_step red2).
 Proof.
   intros red1 red2 d;  apply diamond_flip; 
     intros M N r; induction r; intros P0 r0; auto_t; 
-      elim (d M P0 r0 N); auto; intros x (?&?); elim(IHr d x); split_all.
-  exists x0; split; auto_t.
+    elim (d M P0 r0 N); auto; intros x (?&?); elim(IHr d x); split_all;
+    exists x0; split; auto_t.
 Qed. 
 
 
@@ -111,7 +111,8 @@ Lemma diamond_star_strip: forall red1 red2, diamond_star red1 red2 -> diamond (m
 Proof. 
   intros red1 red2 d M N r; induction r; intros P0 r0; auto_t;
     elim(d M P0 r0 N); auto; intros x (?&?);  
-      elim(IHr d x); auto; intros x0 (?&?).  exists x0; split; auto_t. eapply2 transitive_red.
+    elim(IHr d x); auto; intros x0 (?&?);
+    exists x0; split; auto_t; eapply2 transitive_red.
 Qed. 
 
 
@@ -123,7 +124,7 @@ Proof.
       elim(IHr d x); auto; intros x0 (?&?); exists x0; split; auto_t.
 Qed. 
 
-Hint Resolve diamond_tiling: TreeHintDb. 
+Global Hint Resolve diamond_tiling: TreeHintDb. 
 
 
 
@@ -150,87 +151,60 @@ match goal with
 
 Theorem diamond_s_red1_s_red1 : diamond s_red1 s_red1. 
 Proof.  
-  red; intros M N OR; induction OR; intros R s0.
-  (* 8 *) 
-  inv s_red1.
-  inv s_red1.
-  (* 6 *)
-  inv s_red1. eelim IHOR; intros. 2: eapply H8. split_all.   exists x; auto_t.
-  (* 5 *)
-  inv s_red1;
-  eelim IHOR1; intros; eauto;
-  eelim IHOR2; intros; eauto;
-  eelim IHOR3; intros; eauto;
-    split_all;   repeat eexists.
-  1-3:   repeat eapply app_sred; eauto.
-  auto_t. 
-  (* 4 *)
-  inversion s0; subst; clear s0.
-  eelim IHOR; intros; eauto.
-  inv_out H3.  clear OR; inv s_red1.  eelim IHOR; intros.  2: eauto. split_all. exists x; split; eauto; auto_t. 
-  (* 3 *)
-  clear OR1 OR2. inv s_red1.
-  eelim IHOR1; intros; eauto; split_all. 
-  eelim IHOR2; intros; eauto; split_all. exists (x @ x0); split; auto_t.
-  eelim IHOR1; intros; eauto; split_all. 
-  eelim IHOR2; intros; eauto; split_all. exists (x @ x0); split; auto_t.
-  (* 2 *) 
-  clear OR1 OR2 OR3. inv s_red1.
-  eelim IHOR1; intros; eauto; split_all. 
-  eelim IHOR2; intros; eauto; split_all.
-  eelim IHOR3; intros; eauto; split_all.
-  exists (x @ x0 @ x1); split; auto_t.
-  eelim IHOR1; intros; eauto; split_all. 
-  eelim IHOR2; intros; eauto; split_all.
-  eelim IHOR3; intros; eauto; split_all.
-  exists (x @ x0 @ x1); split; auto_t.
-  (* 1 *)
- inv_out s0. 
-  (* 6 *)
-  inv s_red1. 
-  eelim IHOR1; intros.  2: eapply app_sred. 2: auto_t. 2: eapply H2. split_all.
-  inv s_red1.   inv_out H14. exists N'1; eexists; eauto; auto_t.
-  (* 5 *)
-  inv s_red1. 
-  eelim IHOR1; intros.   2: eapply app_sred. 3: eapply H1.
-  2: eapply app_sred. 2: auto_t.
-  2: eapply app_sred. 2: auto_t.
-  2: eapply H4. 
-  split_all.
-  inv s_red1.   inv_out H21.
-  eelim IHOR2; intros.   2: eapply H2. split_all.
-  exists (N'5 @ x @ (N'2 @ x)); split; auto_t.
-  (* 4 *)
-  inv s_red1.
-  eelim IHOR1; intros. 2: eapply app_sred; eauto; eapply app_sred; eauto. 2: auto_t.
-  2: eapply app_sred; eauto; eapply app_sred. 2: auto_t. 2: eapply H2. split_all. inv s_red1. inv_out H24. 
-  exists N'5; split; auto_t.
-  (* 3 *)
-  eelim IHOR2; intros. 2: eapply app_sred; auto_t. split_all. inv s_red1. 
-  eelim IHOR1; intros. 2: repeat eapply app_sred; try eapply node_sred.  3: eapply H1. 2,3: eauto. split_all.
-  inv s_red1. inv_out H27. 
-  exists (N'7 @ N'1); split; auto_t.
-  (* 2 *)
-  eelim IHOR2; intros. 2: repeat eapply app_sred; try eapply node_sred;  eauto. split_all. inv s_red1. 
-  eelim IHOR1; intros. 2: repeat eapply app_sred; try eapply node_sred.  4: eapply H1. 2,3: eauto. split_all.
-  inv s_red1. inv_out H29. 
-  exists (N' @ N'1 @ N'0); split; auto_t.
-  (* 1 *)
-  eelim IHOR2; intros. 2: eapply H3. split_all. 
-  eelim IHOR1; intros. 2: eapply H1. split_all.
-  exists (x0 @ x); split; auto_t. 
+  unfold diamond; intros M N OR; induction OR; intros R s0.
+  - inv s_red1.
+  - inv s_red1.
+  - inv s_red1; eelim IHOR; intros; [ | eauto]; split_all;   exists x; auto_t.
+  - inv s_red1;
+      eelim IHOR1; intros; eauto;
+      eelim IHOR2; intros; eauto;
+      eelim IHOR3; intros; eauto;
+      split_all;   repeat eexists;
+      try (repeat eapply app_sred; eauto; fail);
+      auto_t. 
+  -  inversion s0; subst; clear s0; [
+         eelim IHOR; intros; eauto | inv s_red1];
+       eelim IHOR; intros; [ | eauto]; split_all; eexists; split; eauto; auto_t. 
+  - inv s_red1;
+      eelim IHOR1; intros; eauto; split_all;
+      eelim IHOR2; intros; eauto; split_all;
+      exists (x @ x0); split; auto_t.
+  -  inv s_red1;
+       eelim IHOR1; intros; eauto; split_all;
+       eelim IHOR2; intros; eauto; split_all;
+       eelim IHOR3; intros; eauto; split_all;
+       exists (x @ x0 @ x1); split; auto_t.
+- inv_out s0. 
+  + inv s_red1;   eelim IHOR1; intros; [ | eapply app_sred; [ eapply s_red_refl | eapply H2]]; split_all;
+      inv s_red1; inv_out H14; exists N'1; split; auto_t.
+  + inv s_red1;  eelim IHOR1; intros; [ 
+      | eapply app_sred; [ | eapply H1]; eapply app_sred; [ auto_t | ]; eapply app_sred; [ auto_t | eapply H4 ]];
+      split_all;  inv s_red1; inv_out H21;  eelim IHOR2; intros; [ | eapply H2]; split_all;
+      exists (N'5 @ x @ (N'2 @ x)); split; auto_t; do 2 (eapply app_sred; auto_t). 
+  + inv s_red1;  eelim IHOR1; intros; [ 
+      | eapply app_sred; [ | eapply H4]; eapply app_sred; [ auto_t | ]; eapply app_sred; [ | eauto]; eapply app_sred; [ auto_t | eapply H2]];
+      split_all;  inv s_red1; inv_out H24;
+      exists (N'5); split; auto_t; do 2 (eapply app_sred; auto_t). 
+  + inv s_red1;  eelim IHOR1; intros; [ |  eapply app_sred; eauto; eapply app_sred; [ auto_t | ]; 
+                                           eapply app_sred; [ | eapply H1]; eapply app_sred; [ auto_t | eapply H23]];
+      eelim IHOR2; intros; [ | eapply app_sred; [ auto_t | eapply H3]]; split_all; inv s_red1; inv_out H48; inv_out H28;
+      exists (N'6 @ N'12); split; auto_t.
+  + inv s_red1; eelim IHOR1; intros. 2: repeat eapply app_sred; try eapply node_sred. 2,3: eauto. 2: eapply H1.
+    eelim IHOR2; intros; [ | eapply app_sred; [ eapply app_sred; [ auto_t | eapply H2] | eapply H4]]; split_all; inv s_red1; inv_out H30; inv_out H54. 
+      exists (N' @ N'13 @ N'12); split; auto_t.
+  +  eelim IHOR2; intros; [ | eapply H3]; 
+       eelim IHOR1; intros; [ | eapply H1];
+       split_all; exists (x0 @ x); split; auto_t. 
 Qed.
 
   
-Hint Resolve diamond_s_red1_s_red1: TreeHintDb.
+Global Hint Resolve diamond_s_red1_s_red1: TreeHintDb.
 
 Lemma diamond_s_red1_s_red : diamond s_red1 s_red.
 Proof. apply diamond_strip; auto_t. Qed. 
 
 Lemma diamond_s_red : diamond s_red s_red.
 Proof.  apply diamond_tiling; auto_t. Qed. 
-Hint Resolve diamond_s_red: TreeHintDb.
-
 
 
 Lemma t_red1_to_s_red1 : implies_red t_red1 s_red1. 
@@ -252,30 +226,24 @@ Qed.
 Lemma s_red1_to_t_red: implies_red s_red1 t_red .
 Proof. 
   intros M N OR; induction OR; intros; zerotac;
-    try (apply preserves_app_t_red; auto; fail).  
-    eapply succ_red. auto_t. eauto. 
-    eapply transitive_red. repeat eapply preserves_app_t_red. 1,2: eapply zero_red. 1-3: eauto. auto_t.
-    eapply transitive_red. repeat eapply preserves_app_t_red. 1,2,4,5,6: eapply zero_red. eauto. auto_t.
-    eapply transitive_red. repeat eapply preserves_app_t_red. 1,2,3,5,6: eapply zero_red. 1,2: eauto. auto_t.
-    eapply transitive_red. repeat eapply preserves_app_t_red. 1,2,3,4,6: eapply zero_red. 1-3: eauto. auto_t.
+    try (apply preserves_app_t_red; auto; fail); 
+    try (eapply succ_red; [ auto_t | eauto]; fail);  
+    (eapply transitive_red; [ repeat eapply preserves_app_t_red |]); eauto; try eapply zero_red; auto_t. 
 Qed.
 
 
-Hint Resolve s_red1_to_t_red: TreeHintDb.
-
 Lemma s_red_to_t_red: implies_red s_red t_red. 
-Proof. eapply2 to_t_red_multi_step. Qed.
+Proof. eapply to_t_red_multi_step; eapply s_red1_to_t_red. Qed.
 
 
 Lemma diamond_t_red: diamond t_red t_red. 
 Proof. 
-red; intros. 
-assert(rMN: s_red M N) by (apply t_red_to_s_red; auto_t).  
-assert(s_red M P) by (apply t_red_to_s_red; auto_t).  
-elim(diamond_s_red M N rMN P); auto.  intros x (?&?); exists x; split; eapply s_red_to_t_red; auto.
+  unfold diamond; intros;
+    assert(rMN: s_red M N) by (apply t_red_to_s_red; auto_t);
+    assert(s_red M P) by (apply t_red_to_s_red; auto_t);
+    elim(diamond_s_red M N rMN P); auto;
+    intros x (?&?); exists x; split; eapply s_red_to_t_red; auto.
 Qed. 
-Hint Resolve diamond_t_red: TreeHintDb.
-
 
 
 (* Confluence *)
@@ -296,21 +264,22 @@ Proof. intros M n; induction n; intros; inv s_red1; repeat f_equal; auto. Qed.
 
 Lemma programs_are_stable2: forall M N, s_red M N -> program M -> N = M.
 Proof.
-  cut(forall red M N, multi_step red M N -> red = s_red1 -> program M -> N = M).
-  intro c; intros; eapply c; eauto.  
-  intros red M N r; induction r; intros; subst; zerotac. 
-  assert(N = M) by (eapply programs_are_stable; eauto); subst; auto. 
-  Qed.
+  cut(forall red M N, multi_step red M N -> red = s_red1 -> program M -> N = M); [
+  intro c; intros; eapply c; eauto |]; 
+  intros red M N r; induction r; intros; subst; zerotac; 
+    assert(N = M) by (eapply programs_are_stable; eauto); subst; auto. 
+Qed.
   
 Lemma t_red_preserves_stems:
   forall M N, t_red M N -> forall M0, M = △ @ M0 -> exists N0, N = △ @ N0 /\ t_red M0 N0.
 Proof.
   cut (forall red M N, multi_step red M N -> red = t_red1 ->
-                       forall M0, M = △ @ M0 -> exists N0, N = △ @ N0 /\ t_red M0 N0).
-  intro H; intros; eapply H; eauto. 
-  intros red M N r; induction r; intros e M0 eM; subst. 
-  exists M0; split; zerotac. 
-  inv t_red1. assert(H: exists N0, P = △ @ N0 /\ t_red N' N0) by (eapply IHr; eauto).
+                       forall M0, M = △ @ M0 -> exists N0, N = △ @ N0 /\ t_red M0 N0); [
+      intro H; intros; eapply H; eauto |]; 
+    intros red M N r; induction r; intros e M0 eM; subst; [ 
+  exists M0; split; zerotac | 
+    inv t_red1];
+    assert(H: exists N0, P = △ @ N0 /\ t_red N' N0) by (eapply IHr; eauto);
   elim H; clear H; intros ? (?&?); subst; eexists; split; [eauto | eapply2 succ_red].
 Qed.
 
@@ -320,35 +289,30 @@ Lemma t_red_preserves_forks:
 Proof.
   cut (forall red M N, multi_step red M N -> red = t_red1 ->
                        forall M0 M1, M = △ @ M0 @ M1 ->
-                                     exists N0 N1, N = △ @ N0 @ N1 /\ t_red M0 N0 /\ t_red M1 N1).
-  intro H; intros; eapply H; eauto. 
-  intros red M N r; induction r; intros e M0 M1 eM; subst. 
-  exists M0, M1; split_all; zerotac.
-  { assert (e: t_red1 = t_red1) by reflexivity;  inv t_red1. 
+                                     exists N0 N1, N = △ @ N0 @ N1 /\ t_red M0 N0 /\ t_red M1 N1); [
+  intro H; intros; eapply H; eauto | ];
+  intros red M N r; induction r; intros e M0 M1 eM; subst; [  
+  exists M0, M1; split_all; zerotac | ]; 
+  assert (e: t_red1 = t_red1) by reflexivity;  inv t_red1; [  
   match goal with | r1: t_red1 M0 ?M2 |- _ =>  elim (IHr e M2 M1); auto end;
     intros Q ex; elim ex; intros Q1 ([=] & r1 & r2); subst; 
-      exists Q, Q1; repeat split; zerotac;   succtac; zerotac.
+      exists Q, Q1; repeat split; zerotac;   succtac; zerotac |
   match goal with | r1: t_red1 M1 ?M2 |- _ =>  elim (IHr e M0 M2); auto end; 
     intros Q ex; elim ex; intros Q1 ([=] & r1 & r2); subst; 
-      exists Q, Q1; repeat split; zerotac;   succtac; zerotac.
-  }
+      exists Q, Q1; repeat split; zerotac;   succtac; zerotac].
 Qed.
 
 
 Lemma t_red_preserves_factorable: forall M N, t_red M N -> factorable M -> factorable N.
 Proof.
-  intros M N r fac; inversion fac; subst.
-  {
-  assert(N = △)  by (apply programs_are_stable2; [  apply t_red_to_s_red | apply pr_leaf]; auto);
-    subst; auto. 
-  }{
-  assert(ex: exists Q, N = △ @ Q /\ t_red M0 Q) by (eapply t_red_preserves_stems; eauto);
-    elim ex; intros Q (?&?); subst; auto_t. 
-  }{
-  assert(ex: exists Q1 Q2, N = △ @ Q1 @ Q2 /\ t_red M0 Q1 /\ t_red N0 Q2)
-    by (eapply t_red_preserves_forks; eauto); 
-    elim ex; split_all; subst; split_all. auto_t. 
-  }
+  intros M N r fac; inversion fac; subst; [
+      assert(N = △)  by (apply programs_are_stable2; [  apply t_red_to_s_red | apply pr_leaf]; auto);
+      subst; auto | 
+      assert(ex: exists Q, N = △ @ Q /\ t_red M0 Q) by (eapply t_red_preserves_stems; eauto);
+      elim ex; intros Q (?&?); subst; auto_t | 
+      assert(ex: exists Q1 Q2, N = △ @ Q1 @ Q2 /\ t_red M0 Q1 /\ t_red N0 Q2)
+      by (eapply t_red_preserves_forks; eauto); 
+      elim ex; split_all; subst; split_all; auto_t]. 
 Qed.  
 
 
@@ -361,7 +325,7 @@ Inductive multi_ranked : (Tree -> Tree -> Prop) -> (nat -> Tree -> Tree -> Prop)
     red M N -> multi_ranked red n N P -> multi_ranked red (S n) M P
 . 
 
-Hint Constructors multi_ranked : TreeHintDb.
+Global Hint Constructors multi_ranked : TreeHintDb.
 
 Lemma multi_ranked_trans:
   forall red n M N, multi_ranked red n M N -> forall p P, multi_ranked red p N P -> multi_ranked red (n+p) M P. 
@@ -372,25 +336,26 @@ Proof.  induction n; intros M N rN p P rP; intros; inversion rN; subst; eauto; e
 Lemma multi_ranked_iff_multi_red :
   forall (red : Tree -> Tree -> Prop) M N, multi_step red M N <-> exists n, multi_ranked red n M N.
 Proof.
-  intros red M N; split; intro r. 
-  induction r. exists 0; auto_t.
-  elim IHr; intro k; exists (S k); eapply2 succ_ranked. 
-  elim r; intros k r1.    generalize M N r1; clear.
-  induction k ; intros; inversion r1; subst;  zerotac;   eapply2 succ_red.
+  intros red M N; split; intro r; [
+  induction r; [
+      exists 0; auto_t |
+        elim IHr; intro k; exists (S k); eapply2 succ_ranked] |
+  elim r; intros k r1;    generalize M N r1; clear;
+  induction k ; intros; inversion r1; subst;  zerotac;   eapply2 succ_red].
 Qed.
 
 
 Lemma diamond_multi_ranked:
   forall red1 red2, diamond red1 red2 -> forall n, diamond (multi_ranked red1 n) red2.
 Proof.
-  intros red1 red2 d; induction n as [| n']; red; intros M N r P rP; inversion r; subst.
-  exists P; auto_t.
-  match goal with | Hr : red1 M ?N0 |- _ => elim (d M N0 Hr P rP); auto; intros x (Hx & ?); intros end.  
-  match goal with
-  | Hr : multi_ranked red1 n' ?N0 N, Hx : red2 ?N0 _ |- _ =>
-    elim(IHn' _ _ Hr  _ Hx); auto; intro x1; intros (?&?)
-  end. 
-  exists x1; split; auto_t; eapply2 succ_ranked. 
+  intros red1 red2 d; induction n as [| n']; red; intros M N r P rP; inversion r; subst; [
+      exists P; auto_t | ]; 
+    match goal with | Hr : red1 M ?N0 |- _ => elim (d M N0 Hr P rP); auto; intros x (Hx & ?); intros end;  
+    match goal with
+    | Hr : multi_ranked red1 n' ?N0 N, Hx : red2 ?N0 _ |- _ =>
+        elim(IHn' _ _ Hr  _ Hx); auto; intro x1; intros (?&?)
+    end;
+    exists x1; split; auto_t; eapply2 succ_ranked. 
 Qed.
 
 Lemma diamond_multi_ranked2:
@@ -414,33 +379,27 @@ Ltac stable_tac := inv1 program; match goal with | H : s_red1 ?Q ?R |- _ =>   as
 Lemma omega_omega_doesn't_halt:
   forall n h M, h < n -> multi_ranked s_red1 h (omega@ omega) M -> factorable M -> False.
 Proof.
-  induction n as [| n0]; intros h M hn r fac.  lia.
-  inversion r; clear r; subst.
-  unfold omega at 1 in fac; inv1 factorable. 
-  match goal with | H : s_red1 (omega@omega) _ |- _ =>   unfold omega at 1 in H; inv s_red1 end.
-  repeat stable_tac; subst. auto. 
-  assert(r1: exists Q, s_red M Q /\ multi_ranked s_red1 n (omega@omega) Q). 
-  eapply2 diamond_multi_ranked. eapply2 diamond_strip. 
-  apply t_red_to_s_red;  trtac. elim r1;  intros Q (r2 & r3).   
-  eapply2 (IHn0 n Q); eapply t_red_preserves_factorable; [  eapply2 s_red_to_t_red | auto].  
-  {
-  repeat stable_tac; subst.
-  assert(r1: exists Q, s_red M Q /\ multi_ranked s_red1 n (omega@omega) Q). 
-  eapply2 diamond_multi_ranked. eapply2 diamond_strip. eauto. 
-  eapply t_red_to_s_red; trtac.
- elim r1;  intros Q (r2 & r3).   
- eapply2 (IHn0 n Q); eapply t_red_preserves_factorable; [eapply2 s_red_to_t_red | auto].
- }
+  induction n as [| n0]; intros h M hn r fac; [ lia |];
+    inversion r; clear r; subst; [ 
+  unfold omega at 1 in fac; inv1 factorable |]; 
+  match goal with | H : s_red1 (omega@omega) _ |- _ =>   unfold omega at 1 in H; inv s_red1 end; 
+  (repeat stable_tac; subst; auto;
+    assert(r1: exists Q, s_red M Q /\ multi_ranked s_red1 n (omega@omega) Q); [  
+      eapply2 diamond_multi_ranked; [
+        eapply2 diamond_strip |
+        apply t_red_to_s_red;  trtac] |
+      elim r1;  intros Q (r2 & r3);
+      eapply2 (IHn0 n Q); eapply t_red_preserves_factorable; [  eapply2 s_red_to_t_red | auto]]).  
 Qed.
 
 
 
 Lemma omega_omega_has_no_value: ~(valuable (omega @ omega)).
 Proof.
-  unfold valuable; intro v; elim v; clear v; intro P; intros (?&?).
-  assert(ex:exists n, multi_ranked s_red1 n (omega @ omega) P). 
-  apply multi_ranked_iff_multi_red; auto.   apply t_red_to_s_red; auto.
-  elim ex; intros n r.   eapply omega_omega_doesn't_halt; eauto. apply programs_are_factorable; auto.
+  unfold valuable; intro v; elim v; clear v; intro P; intros (?&?);
+    assert(ex:exists n, multi_ranked s_red1 n (omega @ omega) P); [ 
+  apply multi_ranked_iff_multi_red; auto;  apply t_red_to_s_red; auto |
+  elim ex; intros n r; eapply omega_omega_doesn't_halt; eauto; apply programs_are_factorable; auto].
 Qed.
 
 
@@ -452,39 +411,38 @@ Definition self_negation :=  \"h" (\"f" ((Ref "h")@ ((Ref "f") @ (Ref "f")) @ (o
 
 Theorem halting_problem_insoluble : forall h, ~(halting h).
 Proof.
-  unfold halting; intro h; intro halt.
-  assert(h1: t_red (h @ K) K /\ valuable K \/ t_red (h @ K) KI /\ ~ valuable K) by   apply halt. 
-  inversion h1 as [ (r&v) | (r &nv) ]; clear h1.
-  2: apply nv; unfold valuable; exists K; split; [zerotac | program_tac].
-
-  assert(h2: t_red (h @ (omega @ omega)) K
-             /\ valuable (omega @ omega) \/ t_red (h @ (omega @ omega)) KI
-                                            /\ ~ valuable (omega @ omega)) by   apply halt. 
-  inversion h2 as [ (r2&v2) | (r2 &nv2) ]; clear h2; intros. 
-  apply  omega_omega_has_no_value; auto.
-
-  assert (h3: (t_red (h @ (self_negation @ h @ (self_negation @ h))) K /\ valuable (self_negation @ h @ (self_negation @ h))) \/ (t_red (h @ (self_negation @ h @ (self_negation @ h))) KI /\ ~ (valuable (self_negation @ h @ (self_negation @ h))))) by 
-  apply halt. 
-  inversion h3 as [ (r3&v3) | (r3 &nv3) ]; clear h3; intros. 
-  assert(h4: t_red ((self_negation @ h @ (self_negation @ h))) (omega@omega)).
-  unfold self_negation at 1. starstac ("f" :: "h" :: nil). 
-  assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) KI). 
-  aptac. zerotac. eauto. eauto. 
-  assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red.
-  elim h5; clear h5; intros Q (?&?). 
-  assert(Q = K).  apply programs_are_stable2.  apply t_red_to_s_red; auto. program_tac. 
-  assert(Q = KI).  apply programs_are_stable2.  apply t_red_to_s_red; auto. program_tac. 
-  subst; discriminate. 
- 
-  assert( t_red ((self_negation @ h @ (self_negation @ h))) K).
-  unfold self_negation at 1. starstac ("f" :: "h" :: nil). 
-  assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) K). 
-  aptac. zerotac.   eauto. eauto. 
-  assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red.
-  elim h5; intros Q (?&?). 
-  assert(Q = K) .  apply programs_are_stable2.  eapply2 t_red_to_s_red. program_tac. 
-  assert(Q = KI) .  apply programs_are_stable2.  eapply2 t_red_to_s_red. program_tac. 
-  subst; discriminate. 
+  unfold halting; intro h; intro halt;
+    assert(h1: t_red (h @ K) K /\ valuable K \/ t_red (h @ K) KI /\ ~ valuable K) by   apply halt;
+    inversion h1 as [ (r&v) | (r &nv) ]; clear h1; [ |
+                                                     apply nv; unfold valuable; exists K; split; [zerotac | program_tac]]; 
+    assert(h2: t_red (h @ (omega @ omega)) K
+               /\ valuable (omega @ omega) \/ t_red (h @ (omega @ omega)) KI
+                                              /\ ~ valuable (omega @ omega)) by   apply halt;
+    inversion h2 as [ (r2&v2) | (r2 &nv2) ]; clear h2; intros; [  
+      apply  omega_omega_has_no_value; auto |]; 
+    assert (h3: (t_red (h @ (self_negation @ h @ (self_negation @ h))) K /\ valuable (self_negation @ h @ (self_negation @ h)))
+                \/ (t_red (h @ (self_negation @ h @ (self_negation @ h))) KI /\ ~ (valuable (self_negation @ h @ (self_negation @ h))))) by 
+    apply halt;
+    inversion h3 as [ (r3&v3) | (r3 &nv3) ]; clear h3; intros; [ 
+      assert(h4: t_red ((self_negation @ h @ (self_negation @ h))) (omega@omega))
+      by (unfold self_negation at 1; starstac ("f" :: "h" :: nil)); 
+      assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) KI)  
+        by (aptac; [ zerotac | eauto | eauto]);
+      assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red;
+      elim h5; clear h5; intros Q (?&?);
+      assert(Q = K) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
+      assert(Q = KI) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
+      subst; discriminate
+    |
+      assert( t_red ((self_negation @ h @ (self_negation @ h))) K) by 
+      (unfold self_negation at 1; starstac ("f" :: "h" :: nil));
+      assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) K) by 
+        (aptac; [ zerotac |  eauto | eauto]);
+      assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red;
+      elim h5; intros Q (?&?);
+      assert(Q = K) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
+      assert(Q = KI) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
+      subst; discriminate]. 
 Qed.
 
 
@@ -519,22 +477,23 @@ Proof. intros M prM; induction prM; intro; intro; auto; inv t_red1.  Qed.
 
 Lemma irreducible_no_redexes: forall N, irreducible N -> redexes N = 0.
 Proof.
-  induction N; intro irr; subst; simpl; auto_t.
-  caseEq N1; intros; subst; simpl; auto_t; try (apply IHN2; intro; intro; eapply2 irr). 
-  caseEq t; intros; subst; simpl in *; rewrite IHN1; rewrite ? IHN2; auto;
-    try (intro; intro; eapply irr; auto_t).
-  caseEq t1; intros; subst; simpl in *; auto.
-  caseEq t2; intros; subst; simpl in *; auto.
-  cut False; [ tauto | eapply irr; auto_t]. 
-  caseEq t; intros; subst; simpl in *; auto.
-  cut False; [ tauto | eapply irr; auto_t]. 
-  caseEq t2; intros; subst; simpl in *; auto.
-  caseEq N2; intros; subst; simpl in *; auto.
-  cut False; [ tauto | eapply irr; auto_t]. 
-  caseEq t; intros; subst; simpl in *; auto.
-  cut False; [ tauto | eapply irr; auto_t]. 
-  caseEq t4; intros; subst; simpl in *; auto.
-  cut False; [ tauto | eapply irr; auto_t]. 
+  induction N; intro irr; subst; simpl; auto_t;
+    caseEq N1; intros; subst; simpl; auto_t; try (apply IHN2; intro; intro; eapply2 irr); 
+    caseEq t; intros; subst; simpl in *; rewrite IHN1; rewrite ? IHN2; auto;
+    try (intro; intro; eapply irr; auto_t);
+    caseEq t1; intros; subst; simpl in *; auto;
+    caseEq t2; intros; subst; simpl in *; auto; [
+      cut False; [ tauto | eapply irr; auto_t] |]; 
+    caseEq t; intros; subst; simpl in *; auto; [ 
+      cut False; [ tauto | eapply irr; auto_t] |];
+    caseEq t2; intros; subst; simpl in *; auto;
+    
+    caseEq N2; intros; subst; simpl in *; auto; [
+      cut False; [ tauto | eapply irr; auto_t] |];
+    caseEq t; intros; subst; simpl in *; auto; [ 
+      cut False; [ tauto | eapply irr; auto_t] |]; 
+    caseEq t4; intros; subst; simpl in *; auto;
+    cut False; [ tauto | eapply irr; auto_t]. 
 Qed.
 
 
@@ -546,50 +505,48 @@ Lemma quaternary_redexes:
   forall M, combination M -> forall N P Q R, M = N @ P @ Q @ R -> redexes  M >0.
 Proof.
   cut (forall p M, term_size M < p -> combination M ->
-                   forall N P Q R, M = N@P@Q@R -> redexes  M >0).
-  intro H; intros; eapply H; eauto. 
-  induction p; intros M s c N P Q R e; subst. lia. 
-  assert(cN:combination N) by (inv1 combination).
-  inversion cN as [ | P1 Q1 d1 d2]; subst.
- (* 2 *)
-  assert(cP: combination P) by (inv1 combination).
-  inversion cP as [| M0 N0 c1 c2]; subst; auto. simpl; lia.
-  inversion c1 as [ | M1 N1 c3 c4]; subst; auto. simpl; lia. 
-  inversion c3 as [ | M2 N2]; subst; auto.
-  assert(cR: combination R) by (inv1 combination).
-  inversion cR as [| R0 R1 c5 c6]; subst; auto. simpl; lia.
-  inversion c5 as [ | R2 R3 c7 c8]; subst; auto. simpl; lia. 
-  inversion c7 as [ | R4 R5]; subst; auto. simpl; lia. 
-  assert(redexes (R4 @ R5 @ R3 @ R1) >0). eapply IHp. simpl in *; lia.  auto. eauto. 
-  simpl in *; lia.
-  assert(redexes (M2 @ N2 @ N1 @ N0) >0) by ( eapply IHp; eauto; simpl in *; lia).
-  simpl in *; lia.
-  (* 1 *)
+                   forall N P Q R, M = N@P@Q@R -> redexes  M >0); [
+  intro H; intros; eapply H; eauto |]; 
+  induction p; intros M s c N P Q R e; subst; [ lia |];
+    assert(cN:combination N) by (inv1 combination);
+    inversion cN as [ | P1 Q1 d1 d2]; subst; [
+  assert(cP: combination P) by (inv1 combination);
+  inversion cP as [| M0 N0 c1 c2]; subst; auto; [  simpl; lia |];
+  inversion c1 as [ | M1 N1 c3 c4]; subst; auto; [ simpl; lia |];
+  inversion c3 as [ | M2 N2]; subst; auto; [
+  assert(cR: combination R) by (inv1 combination);
+    inversion cR as [| R0 R1 c5 c6]; subst; auto; [ simpl; lia |];
+  inversion c5 as [ | R2 R3 c7 c8]; subst; auto; [ simpl; lia |]; 
+    inversion c7 as [ | R4 R5]; subst; auto; [ simpl; lia |];
+    assert(redexes (R4 @ R5 @ R3 @ R1) >0); [
+      eapply IHp; [ simpl in *; lia | auto | eauto] | 
+  simpl in *; lia] |
+  assert(redexes (M2 @ N2 @ N1 @ N0) >0) by ( eapply IHp; eauto; simpl in *; lia);
+  simpl in *; lia]
+    |
   assert(redexes (P1 @ Q1 @ P @ Q @ R) >= redexes (P1 @ Q1 @ P @ Q) + redexes R)
-    by (simpl; lia). 
-  assert(term_size R >0).
-  clear. induction R; intros; auto_t; simpl; lia.
-    assert(redexes (P1 @ Q1 @ P @ Q) > 0) .  eapply IHp; auto_t.  simpl in *; lia. 
-  combination_tac; inv1 combination.  
-  lia.
+    by (simpl; lia);
+    assert(term_size R >0) by (clear; induction R; intros; auto_t; simpl; lia);
+    assert(redexes (P1 @ Q1 @ P @ Q) > 0) by
+    (eapply IHp; auto_t; [ simpl in *; lia | combination_tac; inv1 combination]);
+    lia].
 Qed. 
 
 
 
 Lemma no_redexes_program: forall N, redexes N = 0 -> combination N -> program N. 
 Proof.
-  induction N; intros; subst; auto; subst.
-  (* 3 *)
-  inv1 combination. 
-  apply pr_leaf.
-  (* 1 *)
-  assert(cN1: combination N1) by inv1 combination.
-  inversion cN1 as [| M0 N0 c1 c2]; subst. apply pr_stem. apply IHN2. simpl in *; lia.   inv1 combination.
-  (* 1 *)
-  inversion c1 as [| M1 N1 c3 c4]; subst. apply pr_fork. 
-  assert(program (△ @ N0)). apply IHN1. simpl in *; lia. eauto.  inv1 program.
-  apply IHN2. simpl in *; lia. inv1 combination. 
-  assert(redexes (M1 @ N1 @ N0 @ N2) >0) . eapply quaternary_redexes; eauto. lia. 
+  induction N; intros; subst; auto; subst; [ 
+  inv1 combination |
+  apply pr_leaf |
+  assert(cN1: combination N1) by inv1 combination;
+    inversion cN1 as [| M0 N0 c1 c2]; subst; [ 
+  apply pr_stem; apply IHN2; [ simpl in *; lia |  inv1 combination] |];
+    inversion c1 as [| M1 N1 c3 c4]; subst; [
+      apply pr_fork; [
+        assert(program (△ @ N0)) by ( apply IHN1; [ simpl in *; lia | eauto]); inv1 program |
+        apply IHN2; [ simpl in *; lia | inv1 combination]] |
+  assert(redexes (M1 @ N1 @ N0 @ N2) >0) by (eapply quaternary_redexes; eauto); lia]]. 
 Qed.
 
 
@@ -606,34 +563,36 @@ Inductive ready : Tree -> Prop :=
 | fork_fork_ready : forall M N P Q R, ready (△ @ (△ @ M @ N) @ P @ (Node @ Q @ R))
 .
 
-Hint Constructors ready :TreeHintDb.
+Global Hint Constructors ready :TreeHintDb.
 
 
 Lemma ready_or_not: forall M, ready M \/ ~(ready M).
 Proof.
-  induction M; intros; subst; auto; try (right; intro H; inversion H; fail); subst. 
-  inversion IHM1. right; intro. inv1 ready; subst; inv1 ready. 
-  (* 1 *)
-  case M1; intros; try (right; intro; inv1 ready; fail). 
-  case t; intros; try (right; intro; inv1 ready; fail). 
-  case t1; intros; try (right; intro; inv1 ready; fail). 
-  case t2; intros; try (right; intro; inv1 ready; fail). left; auto_t. 
-  case t3; intros; try (right; intro; inv1 ready; fail). left; auto_t. 
-  case t5; intros; try (right; intro; inv1 ready; fail).
-  eelim (factorable_or_not M2); intros.
-  left; inv_out H0; auto_t.
-  right; intro aux; inv_out aux;  eapply H0; auto_t. 
+  induction M; intros; subst; auto; try (right; intro H; inversion H; fail); subst;
+    inversion IHM1; [ right; intro; inv1 ready; subst; inv1 ready |];
+    case M1; intros; try (right; intro; inv1 ready; fail);
+    case t; intros; try (right; intro; inv1 ready; fail);
+    case t1; intros; try (right; intro; inv1 ready; fail);
+    case t2; intros; try (right; intro; inv1 ready; fail); [ left; auto_t |]; 
+    case t3; intros; try (right; intro; inv1 ready; fail); [ left; auto_t |];
+    case t5; intros; try (right; intro; inv1 ready; fail);
+    eelim (factorable_or_not M2); intros; [ 
+      left; inv_out H0; auto_t |
+      right; intro aux; inv_out aux;  eapply H0; auto_t]. 
 Qed.
 
 Lemma t_red_preserves_leaf: forall M N red, multi_step red M N -> red = t_red1 -> M = Node -> N = Node.
-Proof. intros M N red r; induction r; intros; subst; auto_t. inv_out H; auto. Qed.
+Proof. intros M N red r; induction r; intros; subst; auto_t; inv_out H; auto. Qed.
 
 Lemma t_red_preserves_stem:
   forall M N red, multi_step red M N -> red = t_red1 ->
                   forall M1, M = Node @ M1 -> exists N1,  N = Node @ N1 /\ t_red M1 N1.
 Proof.
-  intros M N red r; induction r; intros; subst; auto_t. inv_out H.  inv_out H3; auto.
-  eelim IHr; intros.  2,3: eauto. split_all; exists x; split; auto_t; eapply succ_red; eauto.
+  intros M N red r; induction r; intros; subst; [ 
+      repeat eexists; zerotac |
+      inv_out H; [
+        inv_out H3; auto |
+        eelim IHr; intros; [ | eauto | eauto]; split_all; exists x; split; auto_t; eapply succ_red; eauto]].
 Qed.
 
 
@@ -642,11 +601,10 @@ Lemma t_red_preserves_fork:
                   forall M1 M2, M = Node @ M1 @ M2 ->
                                 exists N1 N2,  N = Node @ N1 @ N2 /\ t_red M1 N1 /\ t_red M2 N2.
 Proof.
-  intros M N red r; induction r; intros; subst; auto_t.
-  repeat eexists; auto_t.
-  inv_out H.  inv_out H3.  inv_out H2.
-  eelim IHr; intros.  2,3: eauto.  split_all.  repeat eexists. eapply succ_red; eauto.   eauto.
-  eelim IHr; intros.  2,3: eauto.  split_all.  repeat eexists. eauto. eapply succ_red; eauto.   
+  intros M N red r; induction r; intros; subst; auto_t; [
+      repeat eexists; auto_t; eapply zero_red |]; 
+    inv_out H; [ inv_out H3; [inv_out H2 |] |];
+    ( eelim IHr; intros; [ | eauto | eauto];  split_all; repeat eexists; eauto; eapply succ_red; auto_t).   
 Qed.
 
 
@@ -654,28 +612,15 @@ Qed.
 Lemma t_red_preserves_ready:
   forall M N, ready (M @ N) -> forall M' N', t_red M M' -> t_red N N' -> ready (M' @ N'). 
 Proof.
-  intros; inv_out H.
-  (* 5 *) 
-  eelim t_red_preserves_fork; intros.  2: eapply H0. 2,3: eauto. split_all. inv_out H2. auto_t.
-  inv_out H.
-  (* 4 *)
-  eelim t_red_preserves_fork; intros.  2: eapply H0. 2,3: eauto. split_all.
-  eelim t_red_preserves_stem; intros.  2: eapply H2. 2,3: eauto. split_all.
-  auto_t.
-  (* 3 *)
-  eelim t_red_preserves_fork; intros.  2: eapply H0. 2,3: eauto. split_all.
-  eelim t_red_preserves_fork; intros.  2: eapply H2. 2,3: eauto. split_all.
-  assert(N' = Node). eapply t_red_preserves_leaf; eauto. subst. auto_t.
-  (* 2 *)
-  eelim t_red_preserves_fork; intros.  2: eapply H0. 2,3: eauto. split_all.
-  eelim t_red_preserves_fork; intros.  2: eapply H2. 2,3: eauto. split_all.
-  eelim t_red_preserves_stem; intros.  2: eapply H1. 2,3: eauto. split_all.
-  auto_t.
-  (* 1 *)
-  eelim t_red_preserves_fork; intros.  2: eapply H0. 2,3: eauto. split_all.
-  eelim t_red_preserves_fork; intros.  2: eapply H2. 2,3: eauto. split_all.
-  eelim t_red_preserves_fork; intros.  2: eapply H1. 2,3: eauto. split_all.
-  auto_t.
+  intros; inv_out H; (eelim t_red_preserves_fork; intros; [ | eapply H0 | |]; eauto; split_all).
+  - inv_out H2; auto_t;  inv_out H.
+  - eelim t_red_preserves_stem; intros; [ | eapply H2 | |]; eauto; split_all;  auto_t.
+  - eelim t_red_preserves_fork; intros; [ | eapply H2 | |]; eauto; split_all;  auto_t.
+    inv_out H1; auto_t; inv_out H.
+  -  eelim t_red_preserves_stem; intros; [ | eapply H1 | |]; eauto; split_all;  auto_t;
+       eelim t_red_preserves_fork; intros; [ | eapply H2 | |]; eauto; split_all;  auto_t.
+  -  eelim t_red_preserves_fork; intros; [ | eapply H1 | |]; eauto; split_all;  auto_t;
+       eelim t_red_preserves_fork; intros; [ | eapply H2 | |]; eauto; split_all;  auto_t.
 Qed.
 
 Lemma redexes_ready: forall M N, ready (M @ N) -> redexes (M @ N) = S (redexes M  + redexes N).
@@ -683,23 +628,23 @@ Proof.  intros M N r; inv_out r; simpl; lia. Qed.
   
 Lemma redexes_unready: forall M N, ~ ready (M @ N) -> redexes (M @ N) = redexes M  + redexes N.
 Proof.
-  intros M N r; simpl.
-  caseEq M; intros; subst; try lia.
-  caseEq t; intros; subst; try lia.
-  caseEq t1; intros; subst; try lia.
-  caseEq t2; intros; subst; simpl; try lia.
-  cut False; [ tauto | eapply r; auto_t].
-  caseEq t; intros; subst; try lia.
-  cut False; [ tauto | eapply r; auto_t].
-  caseEq t2; intros; subst; try lia.
-  caseEq N; intros; subst; try lia.
-  cut False; [ tauto | eapply r; auto_t].
-  caseEq t; intros; subst; simpl; try lia.
-  cut False; [ tauto | eapply r; auto_t].
-  caseEq t4; intros; subst; try lia.
-  cut False; [ tauto | eapply r; auto_t].
+  intros M N r; simpl;
+    caseEq M; intros; subst; try lia;
+    caseEq t; intros; subst; try lia;
+    caseEq t1; intros; subst; try lia;
+    caseEq t2; intros; subst; simpl; try lia; [
+      cut False; [ tauto | eapply r; auto_t] |];
+    caseEq t; intros; subst; try lia; [
+      cut False; [ tauto | eapply r; auto_t] |];
+    caseEq t2; intros; subst; try lia;
+    caseEq N; intros; subst; try lia; [
+      cut False; [ tauto | eapply r; auto_t] |];
+    caseEq t; intros; subst; simpl; try lia; [
+      cut False; [ tauto | eapply r; auto_t] |];
+    caseEq t4; intros; subst; try lia;
+    cut False; [ tauto | eapply r; auto_t].
 Qed.
-  
+
 
 
 (* t_nred1 tags reductions with the number of overlooked reductions on the left *) 
@@ -733,12 +678,11 @@ Inductive seq_red : nat -> Tree -> Tree -> Prop :=
 
 Definition l_red := seq_red 0.
 
-Hint Constructors ready t_nred1 seq_red :TreeHintDb.
+Global Hint Constructors ready t_nred1 seq_red :TreeHintDb.
 
 Lemma seq_red_to_t_red : forall n M N, seq_red n M N -> t_red M N.
 Proof.
-  intros n M N r; induction r; intros; zerotac. 
-  eapply succ_red; eauto. eapply t_nred1_to_t_red1; eauto.
+  intros n M N r; induction r; intros; zerotac;   eapply succ_red; eauto; eapply t_nred1_to_t_red1; eauto.
 Qed. 
 
 Theorem l_red_to_t_red: forall M N, l_red M N -> t_red M N.
@@ -746,10 +690,9 @@ Proof. apply seq_red_to_t_red. Qed.
   
 Lemma l_red_transitive: forall M N, l_red M N -> forall P, l_red N P -> l_red M P.
 Proof.
-  cut (forall n M N, seq_red n M N -> n = 0 -> forall P, l_red N P -> l_red M P).
-  intro H; intros; auto. eapply H; eauto. 
-  intros n M N r; induction r; intros; subst; auto.  
-  eapply2 succ_seq_red; eapply2 IHr.
+  cut (forall n M N, seq_red n M N -> n = 0 -> forall P, l_red N P -> l_red M P); [
+  intro H; intros; auto; eapply H; eauto |]; 
+  intros n M N r; induction r; intros; subst; auto;  eapply2 succ_seq_red; eapply2 IHr.
 Qed.
 
   
@@ -767,8 +710,8 @@ Proof.  intros n M N r; induction r; auto. Qed.
 
 Lemma seq_red_preserves_factorable: forall n M N, seq_red n M N -> factorable M -> factorable N.
 Proof.
-  intros n M N r; induction r as [r1 | ? ? ? ? ? ? tr]; intro rdy; auto. apply IHr.  clear - rdy tr.
-  inversion rdy; subst; inv (t_nred1 n); inv1 ready; inv (t_nred1 n1); inv1 ready. 
+  intros n M N r; induction r as [r1 | ? ? ? ? ? ? tr]; intro rdy; auto; apply IHr; clear - rdy tr;
+    inversion rdy; subst; inv (t_nred1 n); inv1 ready; inv (t_nred1 n1); inv1 ready. 
 Qed.
 
   
@@ -777,32 +720,37 @@ Lemma seq_red_app:
                forall N N1, seq_red (redexes N1) N N1 ->
                             seq_red (redexes (M1 @ N1)) (M@N) (M1 @ N1).
 Proof.
-  intros M M1 s; induction s as [| n1 n2 M N P lt r1 s0];  intros N0 N1 s1; subst; auto.
-  (* 2 *)
-  induction s1 as [| n0 n1 N P Q]; subst; auto_t.
-  assert (n1 <= redexes Q) by (eapply seq_red_redexes; eauto). 
-  eelim (ready_or_not (M@N)); intros.
-  eapply succ_seq_red. 3: eauto. 2: eapply appr_ready; eauto.
-  rewrite redexes_ready. 2: eapply t_red_preserves_ready; eauto. 2: zerotac. 2: eapply seq_red_to_t_red; auto_t.
-  lia.
-  eapply succ_seq_red. 3: eauto. 2: eapply appr_unready; eauto.
-  assert(redexes M + redexes Q <= redexes (M@Q)).  2: lia.
-  eelim (ready_or_not (M@Q)); intros.
-  rewrite redexes_ready; auto; lia.
-  rewrite redexes_unready; auto; lia.
-  (* 1 *)
-  eelim (ready_or_not (M@N0)); intros.
-  eapply succ_seq_red. 3: eauto. 2: eapply appl_ready; eauto.
-  rewrite redexes_ready.
-  assert(n2 <= redexes P). eapply seq_red_redexes. eapply succ_seq_red. 3: eauto. 2: eauto. auto . lia.
-  eapply t_red_preserves_ready; eauto. 1,2: eapply seq_red_to_t_red; auto_t.
-  eapply succ_seq_red. 3: eauto. 2: eapply appl_unready; eauto.
-  assert(redexes P + redexes N1 <= redexes (P@N1)).  
-  eelim (ready_or_not (P@N1)); intros.
-  rewrite redexes_ready; auto; lia.
-  rewrite redexes_unready; auto; lia.
-  (* 1 *)
-  assert(n2 <= redexes P). eapply seq_red_redexes. eauto. lia.
+  intros M M1 s; induction s as [| n1 n2 M N P lt r1 s0];  intros N0 N1 s1; subst; auto; [
+  induction s1 as [| n0 n1 N P Q]; subst; auto_t;
+    assert (n1 <= redexes Q) by (eapply seq_red_redexes; eauto);
+    eelim (ready_or_not (M@N)); intros; [
+      eapply succ_seq_red; [ | | eauto]; [| eapply appr_ready; eauto];
+      rewrite redexes_ready; [
+      |
+        eapply t_red_preserves_ready; eauto; [ zerotac | eapply seq_red_to_t_red; auto_t]];
+      lia |
+      eapply succ_seq_red; [ | | eauto]; [ | eapply appr_unready; eauto];
+      assert(redexes M + redexes Q <= redexes (M@Q)); try lia;
+      eelim (ready_or_not (M@Q)); intros; [
+        rewrite redexes_ready; auto |
+        rewrite redexes_unready; auto];
+      lia]
+    |
+  eelim (ready_or_not (M@N0)); intros; [ 
+  eapply succ_seq_red; [ | | eauto]; [ | eapply appl_ready; eauto];
+    rewrite redexes_ready; [ 
+      assert(n2 <= redexes P); [
+        eapply seq_red_redexes; eapply succ_seq_red; [ | | eauto]; [ | eauto]; auto  |
+        lia] |
+        eapply t_red_preserves_ready; eauto; eapply seq_red_to_t_red; auto_t]
+    |
+  eapply succ_seq_red; [ | | eauto]; [ | eapply appl_unready; eauto];
+    assert(redexes P + redexes N1 <= redexes (P@N1)); [  
+  eelim (ready_or_not (P@N1)); intros; [
+      rewrite redexes_ready; auto |
+      rewrite redexes_unready; auto];
+    lia |
+  assert(n2 <= redexes P) by ( eapply seq_red_redexes; eauto); lia]]].
 Qed.
 
 
@@ -840,7 +788,7 @@ Inductive st_red : Tree -> Tree -> Prop :=
 .
 
 
-Hint Constructors  hap1 st_red :TreeHintDb.
+Global Hint Constructors  hap1 st_red :TreeHintDb.
 
 Lemma hap_preserves_appr: forall M N P, hap M N -> hap (M@ P) (N@ P).
 Proof.
@@ -883,130 +831,75 @@ Proof.
      (eapply transitive_red; [ eexact H |]; auto_t). 
 Qed.
 
-
+Ltac haptac := repeat ( eapply transitive_red; [ repeat eapply hap_preserves_appr; eassumption |]).
+Ltac hap1tac := eapply transitive_red; [ eapply hap_inner1_multi; repeat eapply hap_preserves_appr; eassumption |]. 
+Ltac hap2tac := eapply transitive_red; [ eapply hap_inner2_multi; eauto | ].
+ 
 Lemma st_kernel_red :
   forall M N P,  st_red M (△ @ △ @ N @ P) -> st_red M N.
-Proof.
-  intros M N P st; inv st_red. 
-  eapply hap_then_st_red. 2: eassumption. 
-  eapply transitive_red. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. apply hap_inner1_multi; eauto. auto_t. 
-Qed.
+Proof. intros; inv st_red; eapply hap_then_st_red;  [ | eassumption]; haptac; hap1tac; auto_t. Qed.
 
 Lemma st_stem_red :
   forall M N P Q,  st_red M (△ @ (△ @ N) @ P @ Q) -> st_red M (N@Q @(P@Q)).
 Proof.
-  intros M N P Q H.  inv st_red.   eapply hap_then_st_red.
-  (* 2 *)
-  eapply transitive_red. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_inner1_multi. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eassumption.
-  eapply succ_red;  auto_t.
-  (* 1 *)
-  eapply st_app. zerotac. eapply st_app. zerotac. auto. auto. eapply st_app. zerotac. auto. auto.
+ intros; inv st_red; eapply hap_then_st_red; haptac; [ 
+     repeat hap1tac; eapply succ_red;  auto_t |  
+     eapply st_app; [ zerotac | |]; (eapply st_app; [ zerotac | auto | auto])]. 
 Qed.
 
 Lemma st_fork_leaf_red :
   forall M N R P,  st_red M (App (App (△ @ (△ @ N @ R)) P) Node) -> st_red M N.
-Proof.
-  intros M N R P H; inv st_red.   eapply hap_then_st_red.
-  (* 2 *)
-  eapply transitive_red. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_inner1_multi. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. do 2 eapply hap_preserves_appr. eassumption.
-  eapply transitive_red. eapply hap_inner2_multi. eassumption.
-  eapply succ_red. auto_t. zerotac. auto. 
-Qed.
+Proof.  intros; inv st_red; eapply hap_then_st_red; haptac; eauto; do 3 hap1tac; hap2tac; auto_t. Qed.
 
 Lemma st_fork_stem_red :
   forall M N R P Q,  st_red M (App (App (△ @ (△ @ N @ R)) P) (Node @ Q)) -> st_red M (R @ Q).
 Proof.
-  intros M N R P Q H; inv st_red.   eapply hap_then_st_red.
-  (* 2 *)
-  eapply transitive_red. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_inner1_multi. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eassumption.
-  eapply transitive_red. eapply hap_inner2_multi. eapply transitive_red. eauto.
-  eapply hap_preserves_appr. eauto. 
-  eapply succ_red. auto_t. zerotac. 
-  (* 1 *)
-  eapply st_app. zerotac. eauto. eauto. 
+  intros; inv st_red; eapply hap_then_st_red; haptac; [ | eapply st_app; [ zerotac | eauto | eauto]];
+    do 3 hap1tac; do 2 hap2tac; [
+      eapply hap_preserves_appr; auto_t |
+      eapply succ_red; auto_t].
 Qed.
 
 Lemma st_fork_fork_red :
   forall M N R P Q1 Q2,  st_red M (App (App (△ @ (△ @ N @ R)) P) (Node @ Q1 @ Q2)) -> st_red M (P @ Q1 @ Q2).
 Proof.
-  intros M N R P Q1 Q2 H; inv st_red.   eapply hap_then_st_red.
-  (* 2 *)
-  eapply transitive_red. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eapply hap_preserves_appr. eassumption. 
-  eapply transitive_red. eapply hap_inner1_multi. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eassumption.
-  eapply transitive_red. eapply hap_inner1_multi. eapply hap_preserves_appr. eapply hap_preserves_appr.
-  eassumption.
-  eapply transitive_red. eapply hap_inner2_multi. eapply transitive_red. eauto.
-  eapply transitive_red. eapply hap_preserves_appr. eauto.
-  eapply hap_preserves_appr. eapply hap_preserves_appr.  eassumption.
-  eapply2 succ_red.
-  (* 1 *)
-  eapply st_app. zerotac. eapply st_app. zerotac. all: auto. 
+  intros; inv st_red; eapply hap_then_st_red; haptac; [ | repeat (eapply st_app; [ zerotac | eauto | eauto])]; 
+    do 3 hap1tac; do 2 hap2tac; [ 
+      eapply hap_preserves_appr; auto_t |];
+    hap2tac; [ do 2 eapply hap_preserves_appr; eauto | auto_t]. 
 Qed.
+
 
 
 (* comparing and combining the relations *) 
 
 Lemma hap1_implies_t_nred1: forall M N, hap1 M N -> t_nred1 0 M N.
 Proof.
-  intros M N h; induction h; simpl; split_all; try (auto_t; fail).
-  apply appl_unready; auto. intro r; inversion r; subst; inversion h; subst; inv hap1.
-  apply appl_unready; auto. apply appl_unready; auto.
-  replace 0 with (0+ (redexes △)) by auto.
-  apply appr_unready; auto.
-  1-3: intro r; inversion r; subst; inv hap1.   
+  intros M N h; induction h; simpl; split_all; try (auto_t; fail); [ 
+  apply appl_unready; auto; intro r; inversion r; subst; inversion h; subst; inv hap1 |];
+  apply appl_unready; auto; [ 
+      apply appl_unready; auto; replace 0 with (0+ (redexes △)) by auto; [
+        apply appr_unready; auto |] |];
+    intro r; inversion r; subst; inv hap1.   
 Qed.
 
 Lemma hap_implies_l_red: forall M N, hap M N -> l_red M N.
 Proof.
-  cut(forall red M N, multi_step red M N  -> red = hap1 -> l_red M N).
-  intro H; intros; eapply H; eauto.
-  intros red M N r; induction r; simpl; subst; intros; auto; subst.
-  (* 2 *)
-  apply zero_seq_red; lia.
-  (* 1 *) 
-  eapply succ_seq_red; [| eapply hap1_implies_t_nred1; eauto | eauto]; [lia | eapply2 IHr]. 
+  cut(forall red M N, multi_step red M N  -> red = hap1 -> l_red M N); [
+      intro H; intros; eapply H; eauto |];
+    intros red M N r; induction r; simpl; subst; intros; auto; subst; [
+      apply zero_seq_red; lia |
+      eapply succ_seq_red; [| eapply hap1_implies_t_nred1; eauto | eauto]; [lia | eapply2 IHr]]. 
 Qed.
 
 
 Lemma hap_then_seq_red: forall M N,  hap M N -> forall n P, seq_red n N P -> seq_red n M P.
 Proof.
   cut(forall red M N, multi_step red M N -> red = hap1 ->
-                      forall n P, seq_red n N P -> seq_red n M P).
-
-  intro H; intros; eapply H; eauto.
-  intros red M N r; induction r; intros; subst; auto. 
-  eapply succ_seq_red; [| | eapply2 IHr]; [| eapply2 hap1_implies_t_nred1]; lia. 
+                      forall n P, seq_red n N P -> seq_red n M P); [
+  intro H; intros; eapply H; eauto |];
+    intros red M N r; induction r; intros; subst; auto;
+    eapply succ_seq_red; [| | eapply2 IHr]; [| eapply2 hap1_implies_t_nred1]; lia. 
   Qed.
 
 Lemma st_red_implies_seq_red: forall M N, st_red M N -> seq_red (redexes N) M N.
@@ -1048,53 +941,41 @@ Inductive t_red_rev : Tree -> Tree -> Prop :=
 | zero_t_red : forall M, t_red_rev M M
 | succ_t_red : forall M N n P, t_red_rev M N -> t_nred1 n N P -> t_red_rev M P.
 
-Hint Constructors t_red_rev :TreeHintDb.
+Global Hint Constructors t_red_rev :TreeHintDb.
 
 
 Lemma transitive_t_red_rev :
   forall N P,  t_red_rev N P -> forall M, t_red_rev M N -> t_red_rev M P. 
-Proof.
-intros N P r; induction r; intros; auto. 
-eapply succ_t_red. eapply IHr; auto. eauto.
-Qed.
+Proof. intros N P r; induction r; intros; auto; eapply succ_t_red; [ eapply IHr; auto | eauto]. Qed.
 
 Lemma t_red1_implies_t_nred1:
   forall M N, t_red1 M N -> exists n, t_nred1 n M N.
 Proof.
-  induction M; intros N r; auto; inversion r; subst; auto_t. 
-   (* 2 *)
-  assert(ex: exists n, t_nred1 n M1 M') by (eapply IHM1; eauto). 
-  inversion ex; subst. 
-  assert(rM: ready (M1@ M2) \/ ~(ready (M1@ M2))) by apply ready_or_not.
-  inversion rM; auto_t.  
-  (* 1 *)
-  assert(ex: exists n, t_nred1 n M2 N') by (eapply IHM2; eauto). 
-  inversion ex; subst.
+  induction M; intros N r; auto; inversion r; subst; auto_t; [
+  assert(ex: exists n, t_nred1 n M1 M') by (eapply IHM1; eauto);   inversion ex; subst;
+    assert(rM: ready (M1@ M2) \/ ~(ready (M1@ M2))) by apply ready_or_not;
+    inversion rM; auto_t |
+  assert(ex: exists n, t_nred1 n M2 N') by (eapply IHM2; eauto); 
+  inversion ex; subst;
   match goal with | H : t_red1 (?M1 @ ?N1) _ |- _ =>
                     assert(rM1: ready (M1@ N1) \/ ~(ready (M1@ N1))) by apply ready_or_not;
                       inversion rM1; auto_t
-  end.
+  end].
 Qed.
 
 Lemma t_red_implies_t_red_rev:
   forall M N, t_red M N -> t_red_rev M N.
 Proof.
-  cut (forall red M N, multi_step red M N -> red = t_red1 -> t_red_rev M N).
-  intro H; intros; eapply H; auto_t.        
-  intros red M N r; induction r; intros; subst; auto_t. eapply transitive_t_red_rev. 
-  eapply IHr. auto. 
-  assert(ex: exists n, t_nred1 n M N) by (eapply t_red1_implies_t_nred1; eauto). 
-  inversion ex; auto_t.
+  cut (forall red M N, multi_step red M N -> red = t_red1 -> t_red_rev M N); [
+      intro H; intros; eapply H; auto_t |];
+  intros red M N r; induction r; intros; subst; auto_t; eapply transitive_t_red_rev; [
+  eapply IHr; auto |
+  assert(ex: exists n, t_nred1 n M N) by (eapply t_red1_implies_t_nred1; eauto); 
+  inversion ex; auto_t ].
 Qed.
 
 Lemma t_red_rev_st_red : forall M N, t_red_rev M N -> st_red M N.
-Proof.
-  intros M N r; induction r; intros; subst; auto. 
-  (* 2 *)
-  apply st_red_refl. 
-  (* 1 *) 
-  eapply st_red_then_t_nred1; eauto. 
-Qed.
+Proof.  intros M N r; induction r; intros; subst; auto; [  apply st_red_refl | eapply st_red_then_t_nred1; eauto]. Qed.
 
 Lemma t_red_st_red : forall M N, t_red M N -> st_red M N.
 Proof.  intros; apply t_red_rev_st_red;  apply t_red_implies_t_red_rev; auto. Qed.
@@ -1110,33 +991,30 @@ Proof.  intros; apply st_red_implies_seq_red; apply t_red_st_red; auto. Qed.
 Corollary leftmost_reduction:
   forall M N, t_red M N -> program N -> l_red M N. 
 Proof.
-  intros M N r pr.
-  assert(seq_red (redexes N) M N) by (eapply standardization; eauto).
-  assert(r0: redexes N = 0) by (eapply program_no_redexes; eauto).
-  rewrite r0 in *; auto. 
+  intros M N r pr;   assert(seq_red (redexes N) M N) by (eapply standardization; eauto);
+    assert(r0: redexes N = 0) by (eapply program_no_redexes; eauto);
+    rewrite r0 in *; auto. 
 Qed. 
 
 Theorem head_reduction_to_factorable_form:
   forall M N, t_red M N -> factorable N -> exists Q, hap M Q /\ factorable Q /\ t_red Q N. 
 Proof.
-  intros M N r fac.
-  assert(st: st_red M N) by (eapply t_red_rev_st_red; eapply t_red_implies_t_red_rev; eauto). 
-  inversion st; subst; inv1 factorable; subst.
-  (* 2 *)
-  match goal with | st: st_red _ Node |- _ =>  inversion st; subst end.
-  exists (△ @P); repeat split_all.
-  eapply transitive_red. eassumption. apply hap_preserves_appr; auto. auto_t. 
-  apply preserves_app_t_red. zerotac.
-  eapply seq_red_to_t_red. apply st_red_implies_seq_red; auto_t.
-  (* 1 *) 
-  match goal with | st: st_red _ (Node @ _) |- _ =>  inversion st; subst end.
-  match goal with | st: st_red _ Node |- _ =>  inversion st; subst end.
-  match goal with | hap1: hap M (?N0 @ ?P), hap2: hap ?N0 (N@ ?P0) |- _ => exists (△ @P0@P) end.
-  repeat split_all.
-  eapply transitive_red. eassumption. apply hap_preserves_appr.
-  eapply transitive_red. eassumption.  apply hap_preserves_appr; auto. auto_t. 
-  repeat apply preserves_app_t_red; eapply seq_red_to_t_red;
-    apply st_red_implies_seq_red; auto_t. apply st_node; zerotac. 
+  intros M N r fac;
+    assert(st: st_red M N) by (eapply t_red_rev_st_red; eapply t_red_implies_t_red_rev; eauto); 
+    inversion st; subst; inv1 factorable; subst; [
+      exists Node; split_all; auto_t; zerotac |
+        match goal with | st: st_red _ Node |- _ =>  inversion st; subst end;
+        exists (△ @P); repeat split_all; [
+          eapply transitive_red; [ eassumption | apply hap_preserves_appr; auto] |
+          auto_t |
+          apply preserves_app_t_red; [zerotac | eapply seq_red_to_t_red; apply st_red_implies_seq_red; auto_t]] |
+        inv st_red;
+        match goal with | hap1: hap M (?N0 @ ?P), hap2: hap ?N0 (_ @ ?P0) |- _ => exists (△ @P0@P) end;
+        repeat split_all; [
+          haptac; zerotac |
+          auto_t |
+          repeat apply preserves_app_t_red; eapply seq_red_to_t_red;
+          apply st_red_implies_seq_red; auto_t; apply st_node; zerotac]]. 
 Qed.
 
 
@@ -1200,9 +1078,8 @@ Lemma program_application2_s_red1 :
   forall M N, s_red1 M N ->
               forall M1 M2 M3, M = M1 @ M2 @ M3 -> program M1 -> program M2 -> program M3 -> M= N \/ hap1 M N.
 Proof.
-  intros M N r; induction r; intros M1 M2 M3 e pr1 pr2 pr3; invsub; inv1 program; subst; s_red_program_tac; subst;  auto_t; repeat stable_tac; subst; auto_t.
-  eelim program_application_s_red1; intros. 3: eapply r1. 3,4,5: eauto. subst. auto. 
-  right; auto_t.
+  intros M N r; induction r; intros M1 M2 M3 e pr1 pr2 pr3; invsub; inv1 program; subst; s_red_program_tac; subst;  auto_t; repeat stable_tac; subst; auto_t;
+  eelim program_application_s_red1; intros; [ | | eapply r1 | | |]; eauto; subst; auto; right; auto_t.
 Qed.
 
 Lemma program_application3_s_red1 :
@@ -1210,9 +1087,8 @@ Lemma program_application3_s_red1 :
               forall M1 M2 M3 M4, M = M1 @ M2 @ M3 @ M4 ->
                                   program M1 -> program M2 -> program M3 -> program M4 -> M= N \/ hap1 M N.
 Proof.
-  intros M N r; induction r; intros M1 M2 M3 e pr1 pr2 pr3; invsub; inv1 program; subst; s_red_program_tac; subst;  auto_t; repeat stable_tac; subst; auto_t.
-  eelim program_application2_s_red1; intros. 3: eapply r1. 3-6: eauto. subst. auto. 
-  right; auto_t.
+  intros M N r; induction r; intros M1 M2 M3 e pr1 pr2 pr3; invsub; inv1 program; subst; s_red_program_tac; subst;  auto_t; repeat stable_tac; subst; auto_t;
+  eelim program_application2_s_red1; intros; [ | | eapply r1 | | | |]; eauto; subst; auto; right; auto_t. 
  Qed.
 
 
@@ -1221,14 +1097,14 @@ Lemma program_application_multi :
                 forall M1 M2, M = M1 @ M2 -> program M1 -> program M2 ->
                               M= N \/ exists Q, hap1 M Q /\ multi_ranked s_red1 n Q N.
 Proof.
-  induction n; intros M N r M1 M2 e prM1 prM2; subst.
+  induction n; intros M N r M1 M2 e prM1 prM2; subst; [
     inversion r as [ | ? ? P0 ? ? s0 s1]; clear r; inversion s1; subst; 
-      elim(program_application_s_red1 _ _ s0 M1 M2); auto; intro h;  inversion h; subst; auto_t.
-    inversion r as [ | ? ? P ? ? s0 s1]; clear r; subst. 
- elim(program_application_s_red1 _ _ s0 M1 M2); intros; subst; auto.
-  elim(IHn _ _ s1 M1 M2);  auto_t;  intros ex.  elim ex; intros Q (?&?).
-  right; exists Q; repeat eexists. auto. eapply2 succ_ranked.
-  right; exists P; repeat eexists; auto.
+      elim(program_application_s_red1 _ _ s0 M1 M2); auto; intro h;  inversion h; subst; auto_t |
+    inversion r as [ | ? ? P ? ? s0 s1]; clear r; subst; 
+ elim(program_application_s_red1 _ _ s0 M1 M2); intros; subst; auto; [
+    elim(IHn _ _ s1 M1 M2);  auto_t;  intros ex; elim ex; intros Q (?&?);
+      right; exists Q; repeat eexists; [ auto | eapply2 succ_ranked] |
+  right; exists P; repeat eexists; auto]].
  Qed.
 
 Lemma program_application2_multi :
@@ -1239,13 +1115,15 @@ Proof.
   induction n; intros M N r M1 M2 M3 e prM1 prM2 prM3; subst.
     inversion r as [ | ? ? P0 ? ? s0 s1]; clear r; inversion s1; subst; 
       elim(program_application2_s_red1 _ _ s0 M1 M2 M3); auto; intro h;  inversion h; subst; auto_t.
-    inversion r as [ | ? ? P ? ? s0 s1]; clear r; inversion s1; subst. 
+    inversion r as [ | ? ? P ? ? s0 s1]; clear r; inversion s1; subst; 
     elim(program_application2_s_red1 _ _ s0 M1 M2 M3); intros; subst; auto.
-  elim(IHn _ _ s1 M1 M2 M3);  auto_t.  intro ex; elim ex; intros Q (?&?).
+    elim(IHn _ _ s1 M1 M2 M3);  auto_t; intro ex; elim ex; intros Q (?&?);
+      
   right; exists Q; repeat eexists; eauto; eapply2 succ_ranked.
   right; exists P; repeat eexists; eauto.
  Qed.
 
+(* from now on, proofs will use hooks instead of [ , , ] *) 
 Lemma program_application3_multi :
   forall n M N, multi_ranked s_red1 (S n) M N ->
                 forall M1 M2 M3 M4, M = M1 @ M2 @ M3 @ M4 ->
@@ -1253,13 +1131,13 @@ Lemma program_application3_multi :
                                  M= N \/ exists Q, hap1 M Q /\ multi_ranked s_red1 n Q N.
 Proof.
   induction n; intros M N r M1 M2 M3 M4 e prM1 prM2 prM3 prM4; subst.
-    inversion r as [ | ? ? P0 ? ? s0 s1]; clear r; inversion s1; subst; 
+  - inversion r as [ | ? ? P0 ? ? s0 s1]; clear r; inversion s1; subst; 
       elim(program_application3_s_red1 _ _ s0 M1 M2 M3 M4); auto; intro h;  inversion h; subst; auto_t.
-    inversion r as [ | ? ? P ? ? s0 s1]; clear r; inversion s1; subst. 
+  - inversion r as [ | ? ? P ? ? s0 s1]; clear r; inversion s1; subst; 
     elim(program_application3_s_red1 _ _ s0 M1 M2 M3 M4); intros; subst; auto.
-  elim(IHn _ _ s1 M1 M2 M3 M4);  auto_t.  intro ex; elim ex; intros Q (?&?).
-  right; exists Q; repeat eexists; eauto; eapply2 succ_ranked.
-  right; exists P; repeat eexists; eauto. 
+    +   elim(IHn _ _ s1 M1 M2 M3 M4);  auto_t; intro ex; elim ex; intros Q (?&?);
+          right; exists Q; repeat eexists; eauto; eapply2 succ_ranked.
+    + right; exists P; repeat eexists; eauto. 
  Qed.
 
 
@@ -1268,8 +1146,8 @@ Proof.
 Lemma factorable_decidable:  forall M, factorable M \/ ~ factorable M.
 Proof.
   intro; caseEq M; intros; subst; auto_t; [  right; intro; inv1 factorable |]. 
-  caseEq t; intros; subst; auto_t;[  right; intro; inv1 factorable |]. 
-  caseEq t1; intros; subst; auto_t; right; intro; inv1 factorable.
+  -  caseEq t; intros; subst; auto_t;[  right; intro; inv1 factorable |]; 
+       caseEq t1; intros; subst; auto_t; right; intro; inv1 factorable.
 Qed.
 
 
@@ -1282,11 +1160,12 @@ Lemma substitution_preserves_s_red:
 Proof.
   cut(forall n M N, multi_ranked s_red1 n M N ->
                     forall x U, multi_ranked s_red1 n (substitute M x U) (substitute N x U)).
-  intro H; intros.
-  assert(ex: exists n, multi_ranked s_red1 n M N) by (eapply multi_ranked_iff_multi_red; eauto).  
-   elim ex; intros; eauto.  eapply multi_ranked_iff_multi_red; eauto; eapply H; eauto. 
-   induction n; intros M N r; inversion r; clear r; subst; split_all. auto_t.  
-   eapply succ_ranked; eauto. apply substitution_preserves_s_red1. auto.
+  - intro H; intros;
+      assert(ex: exists n, multi_ranked s_red1 n M N) by (eapply multi_ranked_iff_multi_red; eauto);
+      elim ex; intros; eauto; eapply multi_ranked_iff_multi_red; eauto; eapply H; eauto. 
+  - induction n; intros M N r; inversion r; clear r; subst; split_all.
+    + auto_t.  
+    + eapply succ_ranked; eauto; apply substitution_preserves_s_red1; auto.
 Qed.
 
 Definition reflexive (red: Tree -> Tree -> Prop) := forall M, red M M.
@@ -1295,9 +1174,9 @@ Lemma multi_ranked_of_reflexive:
   forall red, reflexive red ->
               forall n m, m <= n -> forall M N, multi_ranked red m M N -> multi_ranked red n M N.
 Proof.
-  intros red refl; induction n; intros m rel M N r; subst; inversion r; clear r; subst; auto_t.
-  lia.   eapply succ_ranked; auto_t. apply IHn with 0. lia. auto_t.
-   eapply succ_ranked; eauto. apply IHn with n0; auto.  lia. 
+  intros red refl; induction n; intros m rel M N r; subst; inversion r; clear r; subst; auto_t; try lia.
+  + eapply succ_ranked; auto_t; apply IHn with 0; try lia; auto_t.
+  + eapply succ_ranked; eauto; apply IHn with n0; auto;  lia. 
 Qed. 
 
 
@@ -1314,7 +1193,7 @@ Inductive active : Tree -> Tree -> Prop :=
 | active_succ: forall R P M,  next R P -> active P M -> active R M
 .
 
-Hint Constructors next active: TreeHintDb.
+Global Hint Constructors next active: TreeHintDb.
 
 Lemma active_app: forall M N, active M N -> forall P, active (M@P) N.
 Proof.
@@ -1350,8 +1229,9 @@ Proof.  intros R M nx; induction nx; intro c; inv1 combination.  Qed.
 
 Lemma active_combination: forall R M, active R M -> combination R -> combination M. 
 Proof.
-  intros R M nx; induction nx; intro c; inv1 combination. eapply next_combination; auto_t.
-  apply IHnx.  eapply next_combination; eauto. 
+  intros R M nx; induction nx; intro c; inv1 combination.
+  - eapply next_combination; auto_t.
+  - apply IHnx; eapply next_combination; eauto. 
 Qed.
 
 
@@ -1377,12 +1257,11 @@ Fixpoint head_term M :=
 Lemma  s_red_preserves_head_ref: forall M N s, s_red M N -> head_term M = Ref s -> head_term N = Ref s.
 Proof.
   cut(forall n s M N, multi_ranked s_red1 n M N -> head_term M = Ref s -> head_term N = Ref s).
-  intro H; intros; eauto.
-  assert(ex: exists n, multi_ranked s_red1 n M N) by (eapply multi_ranked_iff_multi_red; eauto).
-  elim ex; intros; eapply H; eauto.
-  induction n; intros s M N r h; inversion r; subst; eauto.
-  eapply IHn; eauto. 
-  match goal with
+  - intro H; intros; eauto;
+      assert(ex: exists n, multi_ranked s_red1 n M N) by (eapply multi_ranked_iff_multi_red; eauto);
+      elim ex; intros; eapply H; eauto.
+  - induction n; intros s M N r h; inversion r; subst; eauto; eapply IHn; eauto;
+      match goal with
   | s1: s_red1 M ?N0 |- _ => clear - h s1; induction s1; intros; simpl in *; auto;  discriminate end.
 Qed.
 
@@ -1396,11 +1275,10 @@ Proof.  intros R M nx; induction nx; intros; eapply next_head; eauto. Qed.
 Lemma next_s_red1:
   forall R M,  next R M -> forall R1, s_red1 R R1 -> factorable M \/ exists M1, s_red1 M M1 /\ next R1 M1. 
 Proof.
-  intros R M nx; induction nx; intros R1 r; inversion r; clear r; subst; try (left; auto_t; fail).
-  (* 8 *) 
-  1-2: inv s_red1.
-  1-5: inv next. 
-  elim(IHnx M'); eauto; intro ex; elim ex; intros Q (?&?); right; exists Q; split; auto_t. 
+  intros R M nx; induction nx; intros R1 r; inversion r; clear r; subst; try (left; auto_t; fail);
+    try (inv s_red1; fail); 
+    try (inv next; fail); 
+    elim(IHnx M'); eauto; intro ex; elim ex; intros Q (?&?); right; exists Q; split; auto_t. 
 Qed.
 
 Lemma active_s_red1:
@@ -1408,23 +1286,17 @@ Lemma active_s_red1:
                                         factorable M \/ exists M1, s_red1 M M1 /\ active R1 M1. 
 Proof.
   intros R M nx; induction nx as [ N N0 nx0 | ]; intros R1 r.
-   (* 2 *)
-  eelim(next_s_red1); [ | | eassumption | eassumption]; auto_t; 
-  intro ex; elim ex; intros Q (?&?);
-    right; exists Q; split; auto; eapply active_one; auto_t.
-  (* 1 *)
-  inversion r; subst; inv next.
-  (* 11 *)
-  inv s_red1; inv active;  inv next. 
-  all: try (inv active; inv next; fail).
-  (* 3 *)
-  1,2: clear r; inv s_red1; eelim IHnx; [ | |  eauto]; split_all; auto_t. 
-  (* 1 *)
-  eelim(next_s_red1 M0 P);  [ | | assumption | eassumption]; auto_t. 
-  intro; absurd(factorable P); auto; eapply2 active_not_factorable.
-  intro ex; elim ex; intros M1 (?&?); elim(IHnx M1); auto;
-  intro ex1; elim ex1; intros M2 (?&?);
-    right; exists M2; split; auto; eapply active_app; eapply active_succ; eauto.
+  - eelim(next_s_red1); [ | | eassumption | eassumption]; auto_t; 
+      intro ex; elim ex; intros Q (?&?);
+      right; exists Q; split; auto; eapply active_one; auto_t.
+  - inversion r; subst; inv next;
+      try (inv active; inv next; fail);
+      try (clear r; inv s_red1; eelim IHnx; [ | |  eauto]; split_all; auto_t; fail); 
+    eelim(next_s_red1 M0 P);  [ | | assumption | eassumption]; auto_t. 
+    +  intro; absurd(factorable P); auto; eapply2 active_not_factorable.
+    +  intro ex; elim ex; intros M1 (?&?); elim(IHnx M1); auto;
+         intro ex1; elim ex1; intros M2 (?&?);
+         right; exists M2; split; auto; eapply active_app; eapply active_succ; eauto.
 Qed. 
   
 
@@ -1433,15 +1305,15 @@ Lemma active_s_red_factorable:
                     exists M1 , multi_ranked s_red1 n M M1 /\ factorable M1 . 
 Proof.
   induction n; intros R M Q r nx fac; inversion r; clear r; subst.
-  absurd (factorable Q); auto; eapply active_not_factorable; eauto. 
-  assert(or1: factorable M \/ exists M1, s_red1 M M1 /\ active N M1) by (eapply active_s_red1; eauto). 
-  inversion or1 as [facM | ex]; clear or1; intros.
-  exists M; split; eauto; eapply succ_ranked; auto_t.
-  eapply (multi_ranked_of_reflexive s_red1 s_red_refl n 0); auto_t; lia.
-  elim ex; intros M0 (s&a).
-  assert(ex2 : exists (M1 : Tree) , multi_ranked s_red1 n M0 M1 /\ factorable M1) by (eapply IHn; eauto).
-  elim(ex2); intros M2 (s2 & facM1). 
-  exists M2; split; eauto; eapply succ_ranked; eauto. 
+  - absurd (factorable Q); auto; eapply active_not_factorable; eauto. 
+  - assert(or1: factorable M \/ exists M1, s_red1 M M1 /\ active N M1) by (eapply active_s_red1; eauto);
+      inversion or1 as [facM | ex]; clear or1; intros.
+    + exists M; split; eauto; eapply succ_ranked; auto_t;
+        eapply (multi_ranked_of_reflexive s_red1 s_red_refl n 0); auto_t; lia.
+    + elim ex; intros M0 (s&a);
+        assert(ex2 : exists (M1 : Tree) , multi_ranked s_red1 n M0 M1 /\ factorable M1) by (eapply IHn; eauto);
+        elim(ex2); intros M2 (s2 & facM1);
+        exists M2; split; eauto; eapply succ_ranked; eauto. 
 Qed.
 
 
@@ -1457,8 +1329,8 @@ Qed.
 
 Lemma needy_app: forall R M, needs R M -> forall N, needs (R@ N) M.
 Proof.
-  intros R M nd; induction nd as [x (s&a)]; intro N; eauto.
-  exists (x@N); split; [ apply preserves_app_s_red; zerotac| apply active_app; auto]. 
+  intros R M nd; induction nd as [x (s&a)]; intro N; eauto;
+    exists (x@N); split; [ apply preserves_app_s_red; zerotac| apply active_app; auto]. 
 Qed.   
 
 
@@ -1466,14 +1338,16 @@ Lemma needy_s_red_factorable:
   forall n R M Q, multi_ranked s_red1 n R Q -> factorable Q -> needs R M ->
                   exists  M1,  multi_ranked s_red1 n M M1 /\ factorable M1. 
 Proof.
-  intros n R M Q r fac nd; unfold needs in nd. elim nd; intros N (s&a). 
-  assert(ex: exists Q1, s_red Q Q1  /\ multi_ranked s_red1 n N Q1)  by  
-  (eapply diamond_multi_ranked ; eauto; eapply diamond_s_red1_s_red; eauto); intros.
-  elim ex; intros Q1 (s1&s2).
-  assert(ex2: exists M1, multi_ranked s_red1 n M M1 /\ factorable M1 ) 
+  intros n R M Q r fac nd; unfold needs in nd;
+    elim nd; intros N (s&a); 
+    assert(ex: exists Q1, s_red Q Q1  /\ multi_ranked s_red1 n N Q1)  by  
+    (eapply diamond_multi_ranked ; eauto; eapply diamond_s_red1_s_red; eauto); intros;
+    elim ex; intros Q1 (s1&s2);
+    assert(ex2: exists M1, multi_ranked s_red1 n M M1 /\ factorable M1 ) 
     by (eapply active_s_red_factorable;  eauto; eapply t_red_preserves_factorable;
-        [eapply s_red_to_t_red |]; eauto).
-elim ex2; intros M1 (s3 & facM).    exists M1; eauto.
+        [eapply s_red_to_t_red |]; eauto);
+    elim ex2; intros M1 (s3 & facM);
+    exists M1; eauto.
 Qed.
 
 
@@ -1494,187 +1368,178 @@ Theorem bf_to_branch_first_eval:
 Proof.
   (* need to control the rank   *) 
   cut(forall n h M N P, multi_ranked s_red1 h (bf @ M @ N) P ->
-                            program M -> program N -> factorable P -> h<n -> 
-                            exists Q, branch_first_eval M N Q /\ s_red P Q) ;
-  [intros ? M N P r prM prN fac;
-  assert(mr1: exists n, multi_ranked s_red1 n  (bf @ M @ N) P) by 
-  (apply multi_ranked_iff_multi_red; eapply2 t_red_to_s_red);
-  elim mr1; intros n mr2;  assert(n < S n) by lia;  elim(H (S n) n _ _ _ mr2); auto;
-  intros val (b&s); exists val; split; eauto; eapply s_red_to_t_red; eauto
-  |].
- 
-  induction n; intros h M N P r prM prN fac hn; [lia |]. 
-  inversion prM as [| | M0 M1 prM0 prM1]; clear prM.
-  { (* M is a leaf *)
-  assert(bf1: t_red (bf @ M @ N) (M @ N)) by (subst; apply bf_leaf_red).  
-  assert(dp1: exists Q, s_red P Q /\ s_red (M @ N) Q) by
-  (eapply diamond_s_red; [eapply2 multi_ranked_iff_multi_red | eapply2 t_red_to_s_red]);
-  elim dp1; clear dp1; intros P1 (?&?);
-    assert(P1 = M @ N) by (subst; apply programs_are_stable2; eauto; eapply pr_stem; eauto);
-    subst;  exists (△ @ N); split; auto_t.
-  }{ (* M is a stem *) 
-  assert(bf1: t_red (bf @ M @ N) (M @ N)) by (subst; eapply bf_stem_red);   
-  assert(dp1: exists Q, s_red P Q /\ s_red (△ @ M0 @ N) Q) by
-  (subst; eapply diamond_s_red; [eapply2 multi_ranked_iff_multi_red | eapply2 t_red_to_s_red]);
-  elim dp1; clear dp1; intros P1 (?&?);
-  assert(P1 = △ @ M0 @ N) by  (apply programs_are_stable2; auto; apply pr_fork; auto); subst;
-    exists (△ @ M0 @ N); split; auto_t.
-  }{ (* M is a fork, so examine its left branch. First, prepare induction. *) 
-   caseEq h;
-     [ intros [=] | intros h' [=]]; inversion r; subst; clear r; inv1 factorable; [lia | invsub].
-   inversion prM0  as [| M2 prM2 | M2 M3 prM2 prM3]; clear prM0; subst; auto_t. 
-  { (* fork of leaf *) 
-  exists M1; split; auto_t.  
-  assert(dp1: exists Q, s_red P Q /\ s_red M1 Q) by  
-      (eapply diamond_s_red;
-       [eapply multi_ranked_iff_multi_red | eapply t_red_to_s_red; apply bf_fork_leaf_red]; auto_t); 
-    elim dp1; clear dp1; intros P1 (?&?);  
-  assert(P1 = M1) by (apply programs_are_stable2; auto); subst; auto. 
-  }
-  { (*  fork of stem  *)
-  (* the upper square in Figure 7.5 *) 
-  assert(bf1: t_red (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)))
-    by apply bf_fork_stem_red.
- assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N))) 
-    by (eapply multi_ranked_iff_multi_red; eauto).
-  elim mr1; clear mr1; intros k mr2. 
-  caseEq k; intros; subst; [ inversion mr2 | inversion mr2 as [ | ? ? Q0 ? ? ?]]; clear mr2; subst.  
-  assert(hap1 (bf @ (△ @ (△ @ M2) @ M1) @ N) Q0). eapply2 program_application2_t_red1. 
-  1,2: program_tac.
-  elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2) @ M1) N);  intros; clear H0; eauto; subst; 
-    [eapply2 IHn; program_tac |  | program_tac | program_tac].
-  assert(Q0 = N0) by eapply2 hap1_functional; subst. 
-  assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)) Q). 
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. apply t_red_to_s_red.
-  apply multi_ranked_iff_multi_red; eauto.
-  elim dp1; clear dp1; intros P1 (?&?). 
-  assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red). 
-(* the middle square in Figure 7.5 *) 
-  assert(nd1: exists M3, multi_ranked s_red1 h' (bf @ M1 @ N) M3 /\ factorable M3) by
-  (eapply needy_s_red_factorable;  eauto; apply eager_needy).
-  elim nd1; clear nd1; intros P_MN (?&?).
-  assert(eval1: exists Q : Tree, branch_first_eval M1 N Q /\ s_red P_MN Q) by (eapply2 IHn; lia). 
-  elim eval1; clear eval1; intros Q2 (?&?).
-  assert(t_red (bf@M1 @ N) Q2) by eapply2 branch_first_eval_to_bf.
-  assert(program Q2) by eapply2 branch_first_program. 
-  assert(dp2: exists Q, s_red P1 Q /\ multi_ranked s_red1 h'  (bf @ (bf @ M2 @ N) @ Q2) Q).
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. 
-  apply t_red_to_s_red. aptac. trtac. eauto. apply eager_of_factorable; eapply2 programs_are_factorable.  
-  elim dp2; clear dp2; intros P2 (?&?). 
-  assert(factorable P2) by (eapply t_red_preserves_factorable; [ apply s_red_to_t_red | ]; eauto). 
-  (* the lower square in Figure 7.5  *)
-  assert(nd2: exists  Q, multi_ranked s_red1 h' (bf @ M2 @ N) Q /\ factorable Q) . 
-  eapply needy_s_red_factorable; eauto; apply bf_needy.
-  elim nd2; clear nd2; intros Q (?&?). 
-  assert(eval2: exists Q3 : Tree, branch_first_eval M2 N Q3 /\ s_red Q Q3) by (eapply2 IHn; lia). 
-  elim eval2; clear eval2; intros Q3 (?&?).
-  assert(t_red (bf @ M2 @ N) Q3) by (eapply branch_first_eval_to_bf; eauto).
-  assert(program Q3) by (eapply branch_first_program; eauto).
-  assert(dp3: exists Q, s_red P2 Q /\ multi_ranked s_red1 h'  (bf @ Q3 @ Q2) Q).
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. 
-  eapply t_red_to_s_red. aptac. aptac. zerotac. eauto. zerotac. zerotac. zerotac. 
-  elim dp3; clear dp3; intros P3 (?&?).
-  (* Finally ... *)
-  assert(eval3: exists Q : Tree, branch_first_eval Q3 Q2 Q /\ s_red P3 Q)  by
-  (eapply2 IHn; eapply t_red_preserves_factorable; [ eapply2 s_red_to_t_red | auto]). 
-  elim eval3; clear eval3; intros val (?&?).
-  exists val; split; eauto; [ eapply2 e_fork_stem | repeat eapply2 transitive_red].
-  }
-  { (* Fork of fork. the upper square in Figure 7.4 *)
-    inversion prN; subst.
-    (* 3 *) 
-    eelim (diamond_t_red (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ △)  M2 _ P); intros. 
-    2: eapply s_red_to_t_red; eapply multi_ranked_iff_multi_red; auto_t.
-    split_all. 
-    assert(x = M2) . apply programs_are_stable2. eapply t_red_to_s_red; eauto. auto. subst.
-    exists M2; split; auto_t. eapply t_red_to_s_red; eauto.
-    (* 2 *)
-    assert(bf1: t_red (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M)) (bf @ M3 @ M))
-      by eapply bf_fork_fork_stem_red.
-    assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M)) (bf @ M3 @ M))
-    by (eapply multi_ranked_iff_multi_red; eauto).
-  elim mr1; clear mr1; intros k mr2. 
-  caseEq k; intros; subst.
-  assert(forall red t1 t2, multi_ranked red 0 t1 t2 -> t1 = t2) by (intros red t1 t2 aux; inversion aux; auto). 
-  assert((bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (△ @ M)) = (bf @ M3 @ M)) by (eapply H1; eauto). 
-  inv_out H3.
-  assert(forall M, Node @ M <> M). clear. induction M; try discriminate. 
-  intro.   inv_out H. tauto.
-  cut False; [ tauto | eapply H3; eauto].
-  (* 2 *)
-  inversion mr2; subst; clear mr2. 
-  assert(hap1 (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (Node @ M)) N). eapply2 program_application2_t_red1. 
-  1,2: program_tac.
-  elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2 @ M3) @ M1) (Node @ M));  intros; clear H0; eauto; subst; 
-    [eapply2 IHn; program_tac |  | program_tac | program_tac].
-  assert(N = N0) by eapply2 hap1_functional; subst. 
-  assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h' (bf @ M3 @ M) Q).
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. apply t_red_to_s_red.
-  apply multi_ranked_iff_multi_red; eauto.
-  elim dp1; clear dp1; intros P1 (?&?). 
-  assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red). 
-(* the middle square in Figure 7.5 *) 
-  assert(eval1: exists Q : Tree, branch_first_eval M3 M Q /\ s_red P1 Q) by (eapply2 IHn; lia). 
-  elim eval1; clear eval1; intros Q2 (?&?).
-  assert(t_red (bf@M3 @ M) Q2) by eapply2 branch_first_eval_to_bf.
-  assert(program Q2) by eapply2 branch_first_program.
-  exists Q2; split; auto_t. eapply transitive_red; eauto. 
-  (* 1 *)
-  assert(bf1: t_red (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M @ N1)) (bf @ (bf @ M1 @ M) @ N1))
-      by eapply bf_fork_fork_fork_red.
-  assert(mr1: exists n, multi_ranked t_red1 n  (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M @ N1)) (bf @ (bf @ M1 @ M) @ N1))
-    by (eapply multi_ranked_iff_multi_red; eauto). (* ; eapply t_red_to_s_red; eauto). *)  split_all.
-  clear bf1. 
-  caseEq x; intros; subst.
-  assert(forall red t1 t2, multi_ranked red 0 t1 t2 -> t1 = t2) by (intros red t1 t2 aux; inversion aux; auto). 
-  assert((bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (△ @ M @ N1)) = (bf @ (bf @ M1 @ M) @ N1)) by (eapply H4; eauto). 
-  inv_out H5.
-  (* 1 *)
-  inversion H3; subst; clear H3.
-  assert(hap1 (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (Node @ M @ N1)) N).  eapply2 program_application2_t_red1. 
-  1,2: program_tac.
-  elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2 @ M3) @ M1) (Node @ M @ N1));  intros; clear H0; eauto; subst; 
-    [eapply2 IHn; program_tac |  | program_tac | program_tac].
-  assert(N = N0) by eapply2 hap1_functional; subst. 
-  assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (bf @ (bf @ M1 @ M) @ N1) Q).
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. apply t_red_to_s_red.
-  apply multi_ranked_iff_multi_red; eauto.
-  elim dp1; clear dp1; intros P1 (?&?). 
-  assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red). 
-  (* the middle square in Figure 7.5 *)
-  clear prN H5.
-  eelim needy_s_red_factorable; intros.
-  2: eapply H6. 2: eauto. 2: eapply bf_needy. split_all.
-  eelim IHn; intros.   2: eapply H9. 2-4: eauto. 2: lia. split_all.
-  assert(t_red (bf@M1 @ M) x0) by eapply2 branch_first_eval_to_bf.
-  assert(program x0) by eapply2 branch_first_program. 
-  assert(eval2: exists Q3 : Tree, branch_first_eval M1 M Q3 /\ s_red x Q3) by eapply2 IHn.
-  elim eval2; clear eval2; intros Q3 (?&?).
-  assert(t_red (bf @ M1 @ M) Q3) by (eapply branch_first_eval_to_bf; eauto).
-  assert(program Q3) by (eapply branch_first_program; eauto).
-  assert(dp3: exists Q, s_red P1 Q /\ multi_ranked s_red1 h'  (bf @ Q3 @ N1) Q).
-  eapply diamond_multi_ranked. apply diamond_s_red1_s_red. eauto. 
-  eapply t_red_to_s_red. aptac. aptac. zerotac. eauto. zerotac. zerotac. zerotac. 
-  elim dp3; clear dp3; intros P3 (?&?).
-  (* Finally ... *)
-  assert(eval3: exists Q : Tree, branch_first_eval Q3 N1 Q /\ s_red P3 Q)  by
-  (eapply2 IHn; eapply t_red_preserves_factorable; [ eapply2 s_red_to_t_red | auto]). 
-  elim eval3; clear eval3; intros val (?&?).
-  exists val; split; eauto; [ eapply2 e_fork_fork_fork | repeat eapply2 transitive_red].
-  Unshelve.
-  eapply bf_fork_fork_leaf_red. 
-  }
-  }
+                        program M -> program N -> factorable P -> h<n -> 
+                        exists Q, branch_first_eval M N Q /\ s_red P Q) ;
+    [intros ? M N P r prM prN fac;
+     assert(mr1: exists n, multi_ranked s_red1 n  (bf @ M @ N) P) by 
+       (apply multi_ranked_iff_multi_red; eapply2 t_red_to_s_red);
+     elim mr1; intros n mr2;  assert(n < S n) by lia;  elim(H (S n) n _ _ _ mr2); auto;
+     intros val (b&s); exists val; split; eauto; eapply s_red_to_t_red; eauto
+    |]; 
+    induction n; intros h M N P r prM prN fac hn; [lia |];
+    inversion prM as [| | M0 M1 prM0 prM1]; clear prM.
+  - (* M is a leaf *)
+    assert(bf1: t_red (bf @ M @ N) (M @ N)) by (subst; apply bf_leaf_red);  
+      assert(dp1: exists Q, s_red P Q /\ s_red (M @ N) Q) by
+      (eapply diamond_s_red; [eapply2 multi_ranked_iff_multi_red | eapply2 t_red_to_s_red]);
+      elim dp1; clear dp1; intros P1 (?&?);
+      assert(P1 = M @ N) by (subst; apply programs_are_stable2; eauto; eapply pr_stem; eauto);
+      subst;  exists (△ @ N); split; auto_t.
+  -  (* M is a stem *) 
+    assert(bf1: t_red (bf @ M @ N) (M @ N)) by (subst; eapply bf_stem_red);   
+      assert(dp1: exists Q, s_red P Q /\ s_red (△ @ M0 @ N) Q) by
+      (subst; eapply diamond_s_red; [eapply2 multi_ranked_iff_multi_red | eapply2 t_red_to_s_red]);
+      elim dp1; clear dp1; intros P1 (?&?);
+      assert(P1 = △ @ M0 @ N) by  (apply programs_are_stable2; auto; apply pr_fork; auto); subst;
+      exists (△ @ M0 @ N); split; auto_t.
+  - (* M is a fork, so examine its left branch. First, prepare induction. *) 
+    caseEq h;
+      [ intros [=] | intros h' [=]]; inversion r; subst; clear r; inv1 factorable; [lia | invsub];
+      inversion prM0  as [| M2 prM2 | M2 M3 prM2 prM3]; clear prM0; subst; auto_t.
+    +  (* fork of leaf *) 
+      exists M1; split; auto_t;
+        assert(dp1: exists Q, s_red P Q /\ s_red M1 Q) by  
+        (eapply diamond_s_red;
+         [eapply multi_ranked_iff_multi_red | eapply t_red_to_s_red; apply bf_fork_leaf_red]; auto_t); 
+        elim dp1; clear dp1; intros P1 (?&?);  
+        assert(P1 = M1) by (apply programs_are_stable2; auto); subst; auto. 
+    +  (*  fork of stem  *)
+      (* the upper square in Figure 7.5 *) 
+      assert(bf1: t_red (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)))
+        by apply bf_fork_stem_red;
+        assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N))) 
+        by (eapply multi_ranked_iff_multi_red; eauto);
+        elim mr1; clear mr1; intros k mr2;
+        caseEq k; intros; subst; [ inversion mr2 | inversion mr2 as [ | ? ? Q0 ? ? ?]]; clear mr2; subst;
+        assert(hap1 (bf @ (△ @ (△ @ M2) @ M1) @ N) Q0).
+      * eapply2 program_application2_t_red1; program_tac.
+      * elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2) @ M1) N);  intros; clear H0; eauto; subst; 
+          [eapply2 IHn; program_tac |  | program_tac | program_tac];
+          assert(Q0 = N0) by eapply2 hap1_functional; subst; 
+          assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)) Q); [  
+            eapply diamond_multi_ranked; [ apply diamond_s_red1_s_red |
+                                           eauto |
+                                           apply t_red_to_s_red; apply multi_ranked_iff_multi_red; eauto] |];
+          elim dp1; clear dp1; intros P1 (?&?);
+          assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red);
+          (* the middle square in Figure 7.5 *) 
+          assert(nd1: exists M3, multi_ranked s_red1 h' (bf @ M1 @ N) M3 /\ factorable M3) by
+          (eapply needy_s_red_factorable;  eauto; apply eager_needy);
+          elim nd1; clear nd1; intros P_MN (?&?);
+          assert(eval1: exists Q : Tree, branch_first_eval M1 N Q /\ s_red P_MN Q) by (eapply2 IHn; lia);
+          elim eval1; clear eval1; intros Q2 (?&?);
+          assert(t_red (bf@M1 @ N) Q2) by eapply2 branch_first_eval_to_bf;
+          assert(program Q2) by eapply2 branch_first_program; 
+          assert(dp2: exists Q, s_red P1 Q /\ multi_ranked s_red1 h'  (bf @ (bf @ M2 @ N) @ Q2) Q); [
+            eapply diamond_multi_ranked; [apply diamond_s_red1_s_red | eauto | apply t_red_to_s_red];
+            aptac; [ trtac | eauto | apply eager_of_factorable; eapply2 programs_are_factorable] |];  
+          elim dp2; clear dp2; intros P2 (?&?);
+          assert(factorable P2) by (eapply t_red_preserves_factorable; [ apply s_red_to_t_red | ]; eauto);
+          (* the lower square in Figure 7.5  *)
+          assert(nd2: exists  Q, multi_ranked s_red1 h' (bf @ M2 @ N) Q /\ factorable Q) by 
+          (eapply needy_s_red_factorable; eauto; apply bf_needy);
+          elim nd2; clear nd2; intros Q (?&?);
+          assert(eval2: exists Q3 : Tree, branch_first_eval M2 N Q3 /\ s_red Q Q3) by (eapply2 IHn; lia);
+          elim eval2; clear eval2; intros Q3 (?&?);
+          assert(t_red (bf @ M2 @ N) Q3) by (eapply branch_first_eval_to_bf; eauto);
+          assert(program Q3) by (eapply branch_first_program; eauto);
+          assert(dp3: exists Q, s_red P2 Q /\ multi_ranked s_red1 h'  (bf @ Q3 @ Q2) Q) by  
+          (eapply diamond_multi_ranked; [
+              apply diamond_s_red1_s_red |
+              eauto |
+              eapply t_red_to_s_red; aptac; [ aptac; [ zerotac | eauto | zerotac] | zerotac | zerotac]]); 
+          elim dp3; clear dp3; intros P3 (?&?);
+          (* Finally ... *)
+          assert(eval3: exists Q : Tree, branch_first_eval Q3 Q2 Q /\ s_red P3 Q)  by
+          (eapply2 IHn; eapply t_red_preserves_factorable; [ eapply2 s_red_to_t_red | auto]); 
+          elim eval3; clear eval3; intros val (?&?);
+          exists val; split; eauto; [ eapply2 e_fork_stem | repeat eapply2 transitive_red].
+    +  (* Fork of fork. the upper square in Figure 7.4 *)
+      inversion prN; subst.
+      * eelim (diamond_t_red (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ △)  M2 _ P); intros; [
+          |
+            eapply s_red_to_t_red; eapply multi_ranked_iff_multi_red; auto_t];
+          split_all; 
+          assert(x = M2) by (apply programs_are_stable2; [ eapply t_red_to_s_red; eauto | auto]); subst;
+          exists M2; split; auto_t; eapply t_red_to_s_red; eauto.
+      * assert(bf1: t_red (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M)) (bf @ M3 @ M))
+          by eapply bf_fork_fork_stem_red;
+          assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M)) (bf @ M3 @ M))
+          by (eapply multi_ranked_iff_multi_red; eauto);
+          elim mr1; clear mr1; intros k mr2;
+          caseEq k; intros; subst; [
+            assert(forall red t1 t2, multi_ranked red 0 t1 t2 -> t1 = t2) by (intros red t1 t2 aux; inversion aux; auto);
+            assert((bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (△ @ M)) = (bf @ M3 @ M)) by (eapply H1; eauto);
+            inv_out H3;  assert(forall M, Node @ M <> M); [
+              clear; induction M; try discriminate; intro; inv_out H; tauto |
+              cut False; [ tauto | eapply H3; eauto]] |];
+          inversion mr2; subst; clear mr2;
+          assert(hap1 (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (Node @ M)) N) by 
+          (eapply2 program_application2_t_red1; program_tac);
+          elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2 @ M3) @ M1) (Node @ M));  intros; clear H0; eauto; subst; 
+          [eapply2 IHn; program_tac |  | program_tac | program_tac];
+          assert(N = N0) by eapply2 hap1_functional; subst;
+          assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h' (bf @ M3 @ M) Q) by
+          (eapply diamond_multi_ranked; [ apply diamond_s_red1_s_red | eauto | apply t_red_to_s_red];
+           apply multi_ranked_iff_multi_red; eauto);
+          elim dp1; clear dp1; intros P1 (?&?);
+          assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red);
+          (* the middle square in Figure 7.5 *) 
+          assert(eval1: exists Q : Tree, branch_first_eval M3 M Q /\ s_red P1 Q) by (eapply2 IHn; lia);
+          elim eval1; clear eval1; intros Q2 (?&?);
+          assert(t_red (bf@M3 @ M) Q2) by eapply2 branch_first_eval_to_bf;
+          assert(program Q2) by eapply2 branch_first_program;
+          exists Q2; split; auto_t; eapply transitive_red; eauto.
+      * assert(bf1: t_red (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M @ N1)) (bf @ (bf @ M1 @ M) @ N1))
+          by eapply bf_fork_fork_fork_red;
+          assert(mr1: exists n, multi_ranked t_red1 n  (bf @ (△ @ (△@ M2 @ M3) @ M1) @ (Node @ M @ N1)) (bf @ (bf @ M1 @ M) @ N1))
+          by (eapply multi_ranked_iff_multi_red; eauto); (* ; eapply t_red_to_s_red; eauto). *)  split_all;  clear bf1;
+          caseEq x; intros; subst; [
+            assert(forall red t1 t2, multi_ranked red 0 t1 t2 -> t1 = t2) by (intros red t1 t2 aux; inversion aux; auto);
+            assert((bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (△ @ M @ N1)) = (bf @ (bf @ M1 @ M) @ N1)) by (eapply H4; eauto);
+            inv_out H5 |];
+          inversion H3; subst; clear H3;
+          assert(hap1 (bf @ (△ @ (△ @ M2 @ M3) @ M1) @ (Node @ M @ N1)) N) by (eapply2 program_application2_t_red1; program_tac);
+          elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2 @ M3) @ M1) (Node @ M @ N1));  intros; clear H0; eauto; subst; 
+          [eapply2 IHn; program_tac |  | program_tac | program_tac];
+          assert(N = N0) by eapply2 hap1_functional; subst;
+          assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (bf @ (bf @ M1 @ M) @ N1) Q) by
+          (eapply diamond_multi_ranked; [ apply diamond_s_red1_s_red | eauto | apply t_red_to_s_red];
+           apply multi_ranked_iff_multi_red; eauto);
+          elim dp1; clear dp1; intros P1 (?&?);
+          assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red);
+          (* the middle square in Figure 7.5 *)
+          clear prN H5;
+          eelim needy_s_red_factorable; intros; [ | eapply H6 | eauto | eapply bf_needy]; split_all;
+          eelim IHn; intros; [ | eapply H9 | | | |]; eauto; try lia; split_all;
+          assert(t_red (bf@M1 @ M) x0) by eapply2 branch_first_eval_to_bf;
+          assert(program x0) by eapply2 branch_first_program;
+          assert(eval2: exists Q3 : Tree, branch_first_eval M1 M Q3 /\ s_red x Q3) by eapply2 IHn;
+          elim eval2; clear eval2; intros Q3 (?&?);
+          assert(t_red (bf @ M1 @ M) Q3) by (eapply branch_first_eval_to_bf; eauto);
+          assert(program Q3) by (eapply branch_first_program; eauto);
+          assert(dp3: exists Q, s_red P1 Q /\ multi_ranked s_red1 h'  (bf @ Q3 @ N1) Q); [
+            eapply diamond_multi_ranked; [ apply diamond_s_red1_s_red | eauto | 
+                                           eapply t_red_to_s_red; aptac; [ aptac; [ zerotac | eauto | zerotac] | zerotac | zerotac]] |];
+          elim dp3; clear dp3; intros P3 (?&?);
+          (* Finally ... *)
+          assert(eval3: exists Q : Tree, branch_first_eval Q3 N1 Q /\ s_red P3 Q)  by
+          (eapply2 IHn; eapply t_red_preserves_factorable; [ eapply2 s_red_to_t_red | auto]);
+          elim eval3; clear eval3; intros val (?&?);
+          exists val; split; eauto; [ eapply2 e_fork_fork_fork | repeat eapply2 transitive_red].
+        Unshelve.
+        eapply bf_fork_fork_leaf_red. 
 Qed.
 
 
 Theorem branch_first_eval_iff_bf:
   forall M N P, program M -> program N -> program P -> (branch_first_eval M N P <-> t_red (bf @ M @ N) P).
 Proof.
-  intros; split; [ apply branch_first_eval_to_bf; auto | ]. 
-  intros; eelim bf_to_branch_first_eval; intros; eauto.
-  2: eapply programs_are_factorable; eauto.
-  split_all.
-  replace P with x; auto.
-  eapply programs_are_stable2; auto. eapply t_red_to_s_red; eauto.
+  intros; split; [ apply branch_first_eval_to_bf; auto | ];
+    intros; eelim bf_to_branch_first_eval; intros; eauto; [
+    | eapply programs_are_factorable; eauto];
+    split_all;
+    replace P with x; auto;
+    eapply programs_are_stable2; auto; eapply t_red_to_s_red; eauto.
 Qed.
+ 

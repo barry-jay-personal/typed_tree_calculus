@@ -37,7 +37,7 @@ Set Default Proof Using "Type".
 
 Ltac refold r := unfold r; fold r.
 Ltac caseEq f := generalize (refl_equal f); pattern f at -1; case f. 
-Ltac auto_t := eauto with TreeHintDb. 
+Ltac auto_t := eauto with SKHintDb. 
 Ltac eapply2 H := eapply H; auto_t; try lia.
 Ltac split_all := intros; 
 match goal with 
@@ -61,9 +61,8 @@ match goal with
 | _ => intros; subst
 end. 
 
-
-(* 8.2: SK-Calculus *) 
-
+Section SK.
+ 
 
 Inductive SK:  Set :=
   | Ref : string -> SK  (* variables are indexed by strings *) 
@@ -72,7 +71,7 @@ Inductive SK:  Set :=
   | App : SK -> SK -> SK   
 .
 
-Hint Constructors SK : TreeHintDb.
+Hint Constructors SK : SKHintDb.
 
 Open Scope string_scope. 
 Declare Scope sk_scope.
@@ -90,7 +89,7 @@ Inductive combination : SK -> Prop :=
 | is_K : combination Kop 
 | is_App : forall M N, combination M -> combination N -> combination (M@ N)
 .
-Hint Constructors combination : TreeHintDb. 
+Hint Constructors combination : SKHintDb. 
 
 (* SK-reduction *) 
 Inductive sk_red1 : SK -> SK -> Prop :=
@@ -99,7 +98,7 @@ Inductive sk_red1 : SK -> SK -> Prop :=
 | appl_red : forall M M' N, sk_red1 M M' -> sk_red1 (M@ N) (M' @ N)  
 | appr_red : forall M N N', sk_red1 N N' -> sk_red1 (M@ N) (M@ N')  
 .
-Hint Constructors sk_red1 : TreeHintDb. 
+Hint Constructors sk_red1 : SKHintDb. 
 
 (* Multiple reduction steps *) 
 
@@ -108,7 +107,7 @@ Inductive multi_step : (SK -> SK -> Prop) -> SK -> SK -> Prop :=
   | succ_red : forall (red: SK-> SK -> Prop) M N P, 
                    red M N -> multi_step red N P -> multi_step red M P
 .
-Hint Constructors multi_step : TreeHintDb.
+Hint Constructors multi_step : SKHintDb.
 
 
 Definition transitive red := forall (M N P: SK), red M N -> red N P -> red M P. 
@@ -127,11 +126,11 @@ forall M M', red M M' -> forall N N', red N N' -> red (M@ N) (M' @ N').
 
 Lemma preserves_appl_multi_step : 
 forall (red: SK -> SK -> Prop), preserves_appl red -> preserves_appl (multi_step red). 
-Proof. red; intros red hy M N M' r; induction r; auto with TreeHintDb; eapply succ_red; eauto. Qed.
+Proof. red; intros red hy M N M' r; induction r; auto_t; eapply succ_red; eauto. Qed.
 
 Lemma preserves_appr_multi_step : 
 forall (red: SK -> SK -> Prop), preserves_appr red -> preserves_appr (multi_step red). 
-Proof. red; intros red hy M N M' r; induction r; auto with TreeHintDb; eapply succ_red; eauto. Qed.
+Proof. red; intros red hy M N M' r; induction r; auto_t; eapply succ_red; eauto. Qed.
 
 
 Lemma preserves_app_multi_step : 
@@ -140,8 +139,8 @@ preserves_appl red -> preserves_appr red ->
 preserves_app (multi_step red). 
 Proof.
 red; intros red pl pr M M' rM N N' rN;  
-  apply transitive_red with (M' @ N); [ apply preserves_appl_multi_step | apply preserves_appr_multi_step] ;
-    auto.
+  apply transitive_red with (M' @ N); [ apply preserves_appl_multi_step
+                                      | apply preserves_appr_multi_step] ; auto.
 Qed.
 
 
@@ -151,7 +150,7 @@ Qed.
 Definition sk_red := multi_step sk_red1.
 
 Lemma sk_red_refl: forall M, sk_red M M. Proof. intros; apply zero_red. Qed.
-Hint Resolve sk_red_refl : TreeHintDb. 
+Hint Resolve sk_red_refl : SKHintDb. 
 
 Lemma preserves_appl_sk_red : preserves_appl sk_red.
 Proof. apply preserves_appl_multi_step. red; auto_t. Qed.
@@ -204,7 +203,15 @@ Ltac ap2tac:=
               | _ => idtac
               end. 
 
-Ltac trtac := unfold Iop; succtac;  zerotac. 
+Ltac trtac := unfold Iop; succtac;  zerotac.
+
+
+Ltac head_red r :=
+  ((eapply transitive_red; [ eapply r |]) ||
+     (aptac; [ head_red r; trtac | trtac | trtac ]) ||
+     (aptac; [ trtac | head_red r; trtac | trtac ]))
+   ; trtac.
+
 
 Lemma i_red: forall M, sk_red (Iop @ M) M.
 Proof. eval_tac. Qed. 
@@ -255,7 +262,7 @@ Definition implies_red (red1 red2: SK-> SK-> Prop) := forall M N, red1 M N -> re
 Lemma implies_red_multi_step: forall red1 red2, implies_red red1  (multi_step red2) -> 
                                                 implies_red (multi_step red1) (multi_step red2).
 Proof. red. 
-intros red1 red2 IR M N R; induction R; intros; auto with TreeHintDb. 
+intros red1 red2 IR M N R; induction R; intros; auto_t. 
 apply transitive_red with N; auto. 
 Qed. 
 
@@ -263,10 +270,10 @@ Qed.
 Lemma to_sk_red_multi_step: forall red, implies_red red sk_red -> implies_red (multi_step red) sk_red. 
 Proof. 
 red.  intros red B M N R; induction R; intros.
-red; intros; auto with TreeHintDb. 
+red; intros; auto_t. 
 assert(sk_red M N) by (apply B; auto). 
 apply transitive_red with N; auto. 
-apply IHR; auto with TreeHintDb. 
+apply IHR; auto_t. 
 Qed.
 
 
@@ -284,12 +291,12 @@ Inductive s_red1 : SK -> SK -> Prop :=
   | k_s_red : forall M  M' N,  s_red1 M M' -> s_red1 (Kop @ M @ N) M' 
 .
 
-Hint Constructors s_red1 : TreeHintDb.
+Hint Constructors s_red1 : SKHintDb.
 
 Lemma s_red_refl: forall M, s_red1 M M.
-Proof. induction M; intros; auto with TreeHintDb. Qed. 
+Proof. induction M; intros; auto_t. Qed. 
 
-Hint Resolve s_red_refl : TreeHintDb. 
+Hint Resolve s_red_refl : SKHintDb. 
      
 Definition s_red := multi_step s_red1.
 
@@ -304,7 +311,7 @@ Proof. apply preserves_app_multi_step;  red; auto_t. Qed.
 
 
 Lemma sk_red1_to_s_red1 : implies_red sk_red1 s_red1.
-Proof. red; intros M N B; induction B; intros; auto with TreeHintDb. Qed. 
+Proof. red; intros M N B; induction B; intros; auto_t. Qed. 
 
 
 Lemma sk_red_to_s_red: implies_red sk_red s_red.
@@ -321,10 +328,10 @@ Proof.
   all: ap2tac; zerotac. 
 Qed.
 
-Hint Resolve s_red1_to_sk_red: TreeHintDb.
+Hint Resolve s_red1_to_sk_red: SKHintDb.
 
 Lemma s_red_to_sk_red: implies_red s_red sk_red. 
-Proof. apply to_sk_red_multi_step; auto with TreeHintDb. Qed.
+Proof. apply to_sk_red_multi_step; auto_t. Qed.
 
 
 Ltac exist x := exists x; split_all; auto_t.
@@ -412,7 +419,7 @@ Qed.
 
 
 
-Hint Resolve diamond_s_red1: TreeHintDb.
+Hint Resolve diamond_s_red1: SKHintDb.
 
 Lemma diamond_s_red1_s_red : diamond s_red1 s_red.
 Proof. eapply diamond_strip; auto_t. Qed. 
@@ -443,7 +450,7 @@ Proof.
                     elim(diamond_s_red x y py z); auto_t end.
   intros x0 (?&?); exists x0; split; auto_t; apply s_red_to_sk_red; auto_t. 
 Qed. 
-Hint Resolve confluence_sk_red: TreeHintDb.
+Hint Resolve confluence_sk_red: SKHintDb.
 
 (* programs *)
 
@@ -454,7 +461,7 @@ Inductive program : SK -> Prop :=
 | pr_K0 : program Kop
 | pr_K1 : forall M, program M -> program (Kop @ M) .
 
-Hint Constructors program: TreeHintDb.
+Hint Constructors program: SKHintDb.
 
 
 Ltac program_tac :=
@@ -480,7 +487,7 @@ Inductive normal : SK -> Prop :=
 .
 
 
-Hint Constructors active normal : TreeHintDb.
+Hint Constructors active normal : SKHintDb.
 
 
 Lemma active_sk_red1 :
@@ -674,19 +681,7 @@ Definition omega := Sop @ (Kop @ (Sop @ Iop)) @ (Sop @ Iop @ Iop).
 Definition Yop := App omega omega. 
 
 Lemma y_red: forall f, sk_red (Yop @ f) (f @ (Yop @ f)).
-Proof.
-  (* delicate proof since rhs is not normal *)
-  intros; unfold Yop at 1; unfold omega at 1.
-  aptac. eapply2 succ_red. zerotac.
-  aptac;
-    [ aptac;
-      [ eapply2 succ_red
-      | instantiate(1:= Yop); eapply2 succ_red; aptac; eval_tac
-      | zerotac]
-    | zerotac
-    |  eapply2 succ_red; aptac; [  eval_tac | zerotac | aptac; [ succtac | |]; zerotac]
-    ]. 
-Qed. 
+Proof. intros; unfold Yop at 1; unfold omega at 1; trtac. Qed. 
   
 
 (* Waiting *) 
@@ -735,6 +730,8 @@ Definition KI := Kop @ Iop.
 Definition tt := Kop.
 Definition ff := KI.
 
+Lemma tt_red: forall x y, sk_red (tt @ x @ y) x. Proof. eval_tac. Qed. 
+Lemma ff_red: forall x y, sk_red (ff @ x @ y) y. Proof. eval_tac. Qed. 
 
 (*** Pairing and projections *)
 
@@ -785,9 +782,9 @@ Proof.  induction n; intros; simpl; auto; rewrite  IHn; simpl; auto. Qed.
   
 Lemma Kn_red: forall xs g, sk_red (fold_left App xs (Kn (List.length xs) @ g)) g. 
 Proof.
-  induction xs; intros; simpl; auto. repeat trtac. rewrite Kn_closed; simpl.  
-  eapply transitive_red. eapply fold_left_app_preserves_red. 
-  aptac. trtac. trtac.  trtac. eapply IHxs. 
+  induction xs; intros; simpl; auto. trtac. rewrite Kn_closed; simpl.  
+  eapply transitive_red. eapply fold_left_app_preserves_red. trtac. 
+  eapply IHxs. 
 Qed.
 
 
@@ -805,7 +802,7 @@ Proposition compose1_red:
 Proof.
   induction xs; intros; simpl; auto. trtac.
   rewrite compose1_closed.  refold orb. 
-  eapply transitive_red. eapply fold_left_app_preserves_red. 
+  eapply transitive_red. eapply fold_left_app_preserves_red.
   rewrite (star_occurs_false _ "x"); eauto. 2: eapply compose1_closed.
   rewrite eta_red. 2: simpl; rewrite compose1_closed; auto.
   rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 2: discriminate. 
@@ -876,7 +873,7 @@ Definition num k := iter k (fun x => succ1 @ x) zero.
  
 Lemma num_iterates: forall m f x, sk_red (num m @ f @ x) (iter m (App f) x).
 Proof.
-  induction m; intros; unfold num; fold num; simpl; eauto; repeat trtac.    eval_tac.
+  induction m; intros; simpl; eauto; repeat trtac. eval_tac.
   unfold succ1 at 1; trtac.  eapply preserves_appr_sk_red; eapply IHm.
 Qed.
 
@@ -919,8 +916,7 @@ Proof. eval_tac. Qed.
 Lemma pred_aux:  forall k, sk_red (iter k (App PSucc) PZero) (pairL (num (Nat.pred k)) (num k)).
 Proof.
   induction k; intros; repeat eexists; simpl; [
-    eapply zero_red |
-    aptac; [ trtac | eapply IHk | eapply PSucc_red]].
+    eapply zero_red | head_red IHk; head_red PSucc_red].
 Qed.
 
  
@@ -928,14 +924,12 @@ Theorem pred_red: forall k,  sk_red (predN @ (num k)) (num (pred k)).
 Proof.
   intros; unfold predN.
   rewrite star_occurs_true. 2: simpl; auto. 2: discriminate. trtac.
-  startac "n". trtac. unfold fstL. trtac.
+  rewrite star_occurs_false. 2: cbv; auto.
   rewrite star_occurs_true. 2: simpl; auto. 2: discriminate. trtac.
-  rewrite star_occurs_true. 2: simpl; auto. 2: discriminate. trtac.
-  rewrite star_id.   trtac.
+  rewrite star_occurs_true. 2: simpl; auto. 2: discriminate.
+  rewrite star_id.
   rewrite ! star_occurs_false. 2,3: cbv; auto.
-  aptac. aptac.  aptac. trtac. trtac. trtac. trtac. trtac. trtac.
-  aptac. eapply num_iterates. trtac. aptac. eapply pred_aux. trtac. 
-  unfold pairL. trtac.   
+  unfold fstL; trtac. head_red num_iterates. head_red pred_aux. eval_tac. 
 Qed.
 
 
@@ -956,30 +950,7 @@ Definition primrec0_abs :=
 Lemma primrec0_val:
   primrec0_abs =    Sop @ (Kop @ (Sop @ (Sop @ isZero @ (Kop @ Ref "g")))) @
   (Sop @ (Kop @ (Sop @ (Sop @ (Kop @ Ref "h") @ predN))) @ (Sop @ (Sop @ (Kop @ Sop) @ Kop) @ (Kop @ predN))).
-Proof.
-  unfold primrec0_abs.
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_false. 2: cbv; auto. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite eta_red.   2: cbv; auto.
-  rewrite star_occurs_false. 2: cbv; auto. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_false. 2: cbv; auto. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite eta_red.   2: cbv; auto.
-  rewrite star_occurs_false. 2: cbv; auto. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_false. 2: cbv; auto. 
-  rewrite (star_occurs_false _ "n"). 2: cbv; auto. 
-  rewrite eta_red.   2: cbv; auto.
-  rewrite eta_red.   2: cbv; auto.
-  rewrite star_occurs_false. 2: cbv; auto. 
-  auto.
-Qed.
+Proof. eval_tac. Qed.
 
 
 Definition primrec0 g h :=
@@ -989,22 +960,15 @@ Definition primrec0 g h :=
 
 Lemma primrec0_red_zero :
   forall g h, sk_red (primrec0 g h @ zero) g.
-Proof.
-  intros; unfold primrec0. eapply transitive_red. eapply Z_red. trtac. aptac. aptac. cbv; trtac.
-  trtac. trtac. trtac. trtac. 
-Qed. 
+Proof. intros; head_red Z_red; head_red isZero_zero. Qed. 
 
 
 Lemma primrec0_red_succ :
   forall k g h, sk_red (primrec0 g h @ (num (S k))) (h @ (num k) @ (primrec0 g h @ (num k))).
 Proof.
-  intros; unfold primrec0.  eapply transitive_red. eapply Z_red. trtac. aptac. aptac. cbv; trtac.
-  trtac. trtac. trtac. trtac. 
-  eapply preserves_app_sk_red. eapply preserves_app_sk_red. trtac. 
-  eapply pred_red. 
-  eapply preserves_app_sk_red. trtac. 
-  eapply pred_red. 
-Qed.
+  intros; head_red Z_red; head_red isZero_succ; head_red ff_red;
+    repeat head_red pred_red.
+Qed. 
   
 
 Definition primrec g h xs := primrec0 (fold_left App xs g) (fold_left App xs h).
@@ -1031,14 +995,7 @@ Lemma min_rec_abs_val :
   minrec_abs = Sop @ (Kop @ (Sop @ (Sop @ Ref "f" @ Iop))) @
   (Sop @ (Sop @ (Kop @ Sop) @ Kop) @ (Kop @ (Sop @ (Sop @ (Kop @ Sop) @ Kop)))).
 
-Proof.
-  unfold minrec_abs.
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_true. 2: cbv; auto. 2: discriminate. 
-  rewrite star_occurs_false. 2: cbv; auto.
-  unfold star at 1; rewrite String.eqb_refl; simpl.
-  auto. 
- Qed. 
+Proof. eval_tac.  Qed. 
 
 
   
@@ -1048,17 +1005,12 @@ Definition minrec0 f := Z   ( Sop @ (Kop @ (Sop @ (Sop @ f @ Iop))) @
 
   
 Lemma minrec0_found: forall f n, sk_red (f @ n) tt -> sk_red (minrec0 f @ n) n. 
-Proof.
-  intros; eapply transitive_red; [ eapply Z_red | trtac].
-  aptac. aptac. eauto. trtac. trtac. trtac. trtac. 
-Qed.
+Proof.  intros f n H; head_red Z_red; head_red H. Qed.
 
 
 Lemma minrec0_next: forall f n, sk_red (f @ n) ff -> sk_red (minrec0 f @ n) (minrec0 f @ (succ1 @ n)).
-Proof.
-  intros; eapply transitive_red; [ eapply Z_red |  trtac ].
-  aptac. aptac. eauto. trtac. trtac. trtac. unfold ff, KI.  trtac. 
-Qed.
+Proof.  intros f n H; head_red Z_red; head_red H; head_red ff_red. Qed.
+
 
 
 
@@ -1127,7 +1079,7 @@ Inductive derive: list (string * sktype) -> SK -> sktype -> Prop :=
 | derive_app: forall gamma M N ty u, derive gamma M (Funty u ty) -> derive gamma N u -> derive gamma (M@N) ty
 .
 
-Hint Constructors subtype derive: TreeHintDb.
+Hint Constructors subtype derive: SKHintDb.
 
 
 
@@ -1493,63 +1445,4 @@ Proof.
   eapply derive_app. eauto. eapply IHd2; eauto.
 Qed.
 
-(* 
-Fixpoint is_subtype n ty1 ty2 :=
-  match n with
-  | 0 => false
-  | S n1 => 
-    match ty1 with
-    | Bool =>
-      match ty2 with
-      | Bool => true
-      | Funty uty2 (Funty vty2 wty2) => is_subtype n1 uty2 wty2 && is_subtype n1 vty2 wty2
-      | _ => false
-      end
-    | Nat =>
-      match ty2 with
-      | Nat => true
-      | Funty uty2 (Funty vty2 wty2) => is_subtype n1 uty2 (Funty wty2 wty2) && is_subtype n1 vty2 wty2
-      | _ => false
-      end
-     | Omega2 =>
-      match ty2 with
-      | Omega2 => true
-      | Funty uty2 (Funty vty2 (Funty wty2 xty2) =>
-        is_subtype n1 uty2 Omega2 &&
-        is_subtype n1 vty2 (Funty (Funty wty2 wty3) (Funty wty2 wty3)) &&
-        is_subtype n1 (Funty uty3 vty3) wty2 
-      | _ => false
-      end
-     | Funty uty1 vty1 =>
-       match ty2 with
-       | Funty uty2 vty2 => is_subtype n1 uty2 uty1 && is_subtype n1 vty1 vty2
-       | _ => false
-       end
-    end
-  end.
-
-Lemma is_subtype_is_subtype: forall n ty1 ty2, is_subtype n ty1 ty2 = true -> subtype ty1 ty2. 
-Proof.
-  induction n; intros; inv_out H. 
-    caseEq ty1; caseEq ty2; intros; subst; try discriminate; auto_t;  
-      caseEq s0; intros; subst; try discriminate. 
-    (* 7 *)
-    rewrite andb_true_iff in *; split_all.
-    eapply sub_trans. eapply sub_bool.
-    eapply sub_funty. 2: eapply sub_funty. 3: eapply sub_zero. 1,2:  eapply IHn; eauto.
-    (* 6 *) 
-    rewrite andb_true_iff in *; split_all.
-    eapply sub_trans. eapply sub_nat.
-    eapply sub_funty. 2: eapply sub_funty. 3: eapply sub_zero. 1,2:  eapply IHn; eauto.
-    (* 5 *) 
-   rewrite andb_true_iff in *; split_all.
-    eapply sub_trans. eapply sub_omega2.
-    eapply sub_funty. 2: eapply sub_funty. 3: eapply sub_zero. 1,2:  eapply IHn; eauto.
-    (* 5 *) 
-    (* 3 *)
-    sub_fun_tac. eapp
-Theorem subtype_decidable: forall ty1 ty2, subtype ty1 ty2 \/ ~ subtype ty1 ty2.
-Proof.
-  induction ty1; intros; subst. 
-
-*) 
+End SK.

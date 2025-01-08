@@ -1,4 +1,4 @@
-DIGEST ba24555390ff685b8da81db3af6cb87c
+DIGEST a58ba3c872b09cbc9aab8cb1cb5e8e5b
 FTriage.derive
 R2157:2162 Coq.Strings.String <> <> lib
 R2164:2168 Coq.Arith.Arith <> <> lib
@@ -76,840 +76,841 @@ R2699:2699 Triage.terms <> ::tree_scope:x_'@'_x not
 R2698:2698 Triage.derive <> M:10 var
 R2700:2700 Triage.derive <> N:11 var
 R2691:2695 Triage.derive <> gamma:9 var
-scheme 2356:2361 <> derive_ind
-scheme 2356:2361 <> derive_sind
-R2727:2732 Triage.derive <> derive ind
-prf 2758:2771 <> derive_subtype
-binder 2783:2787 <> gamma:14
-binder 2789:2789 <> M:15
-binder 2791:2793 <> ty1:16
-R2814:2817 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2796:2801 Triage.derive <> derive ind
-R2803:2807 Triage.derive <> gamma:14 var
-R2809:2809 Triage.derive <> M:15 var
-R2811:2813 Triage.derive <> ty1:16 var
-binder 2825:2827 <> ty2:17
-R2845:2848 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2830:2836 Triage.subtypes <> subtype ind
-R2838:2840 Triage.derive <> ty1:16 var
-R2842:2844 Triage.derive <> ty2:17 var
-R2849:2854 Triage.derive <> derive ind
-R2856:2860 Triage.derive <> gamma:14 var
-R2862:2862 Triage.derive <> M:15 var
-R2864:2866 Triage.derive <> ty2:17 var
-prf 2941:2965 <> lift_rec_preserves_derive
-binder 2977:2981 <> gamma:18
-binder 2983:2983 <> M:19
-binder 2985:2986 <> ty:20
-R3006:3009 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2989:2994 Triage.derive <> derive ind
-R2996:3000 Triage.derive <> gamma:18 var
-R3002:3002 Triage.derive <> M:19 var
-R3004:3005 Triage.derive <> ty:20 var
-binder 3017:3017 <> n:21
-binder 3019:3019 <> k:22
-R3023:3028 Triage.derive <> derive ind
-R3031:3046 Triage.types <> lift_rec_context def
-R3048:3048 Triage.derive <> n:21 var
-R3050:3050 Triage.derive <> k:22 var
-R3052:3056 Triage.derive <> gamma:18 var
-R3059:3059 Triage.derive <> M:19 var
-R3062:3069 Triage.types <> lift_rec def
-R3071:3072 Triage.derive <> ty:20 var
-R3074:3074 Triage.derive <> n:21 var
-R3076:3076 Triage.derive <> k:22 var
-R3156:3165 Triage.derive <> derive_ref constr
-R3156:3165 Triage.derive <> derive_ref constr
-R3190:3201 Triage.types <> get_lift_rec thm
-R3190:3201 Triage.types <> get_lift_rec thm
-R3190:3201 Triage.types <> get_lift_rec thm
-R3232:3257 Triage.subtypes <> lift_rec_preserves_subtype thm
-R3232:3257 Triage.subtypes <> lift_rec_preserves_subtype thm
-R3276:3286 Triage.derive <> derive_node constr
-R3276:3286 Triage.derive <> derive_node constr
-R3299:3302 Triage.types <> Leaf constr
-R3310:3317 Triage.types <> lift_rec def
-R3319:3322 Triage.types <> Leaf constr
-R3345:3370 Triage.subtypes <> lift_rec_preserves_subtype thm
-R3299:3302 Triage.types <> Leaf constr
-R3310:3317 Triage.types <> lift_rec def
-R3319:3322 Triage.types <> Leaf constr
-R3345:3370 Triage.subtypes <> lift_rec_preserves_subtype thm
-prf 3404:3419 <> derive_subst_rec
-binder 3431:3435 <> gamma:23
-binder 3437:3437 <> M:24
-binder 3439:3440 <> ty:25
-R3464:3471 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3447:3452 Triage.derive <> derive ind
-R3454:3458 Triage.derive <> gamma:23 var
-R3460:3460 Triage.derive <> M:24 var
-R3462:3463 Triage.derive <> ty:25 var
-binder 3479:3479 <> u:26
-binder 3481:3481 <> k:27
-R3484:3489 Triage.derive <> derive ind
-R3492:3508 Triage.types <> subst_rec_context def
-R3510:3510 Triage.derive <> u:26 var
-R3512:3512 Triage.derive <> k:27 var
-R3514:3518 Triage.derive <> gamma:23 var
-R3521:3521 Triage.derive <> M:24 var
-R3524:3532 Triage.types <> subst_rec def
-R3534:3535 Triage.derive <> ty:25 var
-R3537:3537 Triage.derive <> u:26 var
-R3539:3539 Triage.derive <> k:27 var
-R3618:3627 Triage.derive <> derive_ref constr
-R3618:3627 Triage.derive <> derive_ref constr
-R3644:3656 Triage.types <> get_subst_rec thm
-R3644:3656 Triage.types <> get_subst_rec thm
-R3644:3656 Triage.types <> get_subst_rec thm
-R3686:3712 Triage.subtypes <> subst_rec_preserves_subtype thm
-R3686:3712 Triage.subtypes <> subst_rec_preserves_subtype thm
-R3731:3741 Triage.derive <> derive_node constr
-R3731:3741 Triage.derive <> derive_node constr
-R3754:3757 Triage.types <> Leaf constr
-R3765:3773 Triage.types <> subst_rec def
-R3775:3778 Triage.types <> Leaf constr
-R3801:3827 Triage.subtypes <> subst_rec_preserves_subtype thm
-R3754:3757 Triage.types <> Leaf constr
-R3765:3773 Triage.types <> subst_rec def
-R3775:3778 Triage.types <> Leaf constr
-R3801:3827 Triage.subtypes <> subst_rec_preserves_subtype thm
-prf 3852:3872 <> derive_generalisation
-binder 3884:3888 <> gamma:28
-binder 3890:3890 <> M:29
-binder 3892:3892 <> T:30
-R3929:3932 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3895:3900 Triage.derive <> derive ind
-R3903:3914 Triage.types <> lift_context def
-R3918:3922 Triage.derive <> gamma:28 var
-R3926:3926 Triage.derive <> M:29 var
-R3928:3928 Triage.derive <> T:30 var
-R3933:3938 Triage.derive <> derive ind
-R3940:3944 Triage.derive <> gamma:28 var
-R3946:3946 Triage.derive <> M:29 var
-R3949:3953 Triage.types <> Quant constr
-R3955:3955 Triage.derive <> T:30 var
-binder 3979:3983 <> gamma:31
-binder 3985:3985 <> M:32
-binder 3987:3987 <> T:33
-R4007:4030 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3990:3995 Triage.derive <> derive ind
-R3997:4001 Triage.derive <> gamma:31 var
-R4004:4004 Triage.derive <> M:32 var
-R4006:4006 Triage.derive <> T:33 var
-binder 4038:4043 <> gamma1:34
-R4078:4081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4052:4055 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4077:4077 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4047:4051 Triage.derive <> gamma:31 var
-R4056:4067 Triage.types <> lift_context def
-R4071:4076 Triage.derive <> gamma1:34 var
-R4082:4087 Triage.derive <> derive ind
-R4089:4094 Triage.derive <> gamma1:34 var
-R4096:4096 Triage.derive <> M:32 var
-R4099:4103 Triage.types <> Quant constr
-R4105:4105 Triage.derive <> T:33 var
-binder 3979:3983 <> gamma:35
-binder 3985:3985 <> M:36
-binder 3987:3987 <> T:37
-R4007:4030 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3990:3995 Triage.derive <> derive ind
-R3997:4001 Triage.derive <> gamma:35 var
-R4004:4004 Triage.derive <> M:36 var
-R4006:4006 Triage.derive <> T:37 var
-binder 4038:4043 <> gamma1:38
-R4078:4081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4052:4055 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4077:4077 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R4047:4051 Triage.derive <> gamma:35 var
-R4056:4067 Triage.types <> lift_context def
-R4071:4076 Triage.derive <> gamma1:38 var
-R4082:4087 Triage.derive <> derive ind
-R4089:4094 Triage.derive <> gamma1:38 var
-R4096:4096 Triage.derive <> M:36 var
-R4099:4103 Triage.types <> Quant constr
-R4105:4105 Triage.derive <> T:37 var
-R4212:4223 Triage.types <> lift_context def
-R4239:4250 Triage.types <> get_lift_rec thm
-R4239:4250 Triage.types <> get_lift_rec thm
-R4239:4250 Triage.types <> get_lift_rec thm
-R4269:4271 Triage.types <> get def
-R4269:4271 Triage.types <> get def
-R4317:4326 Triage.derive <> derive_ref constr
-R4317:4326 Triage.derive <> derive_ref constr
-R4356:4364 Triage.subtypes <> sub_trans constr
-R4356:4364 Triage.subtypes <> sub_trans constr
-R4374:4381 Triage.subtypes <> sub_lift constr
-R4374:4381 Triage.subtypes <> sub_lift constr
-R4391:4399 Triage.subtypes <> sub_quant constr
-R4391:4399 Triage.subtypes <> sub_quant constr
-R4443:4453 Triage.derive <> derive_node constr
-R4443:4453 Triage.derive <> derive_node constr
-R4465:4473 Triage.subtypes <> sub_trans constr
-R4465:4473 Triage.subtypes <> sub_trans constr
-R4483:4490 Triage.subtypes <> sub_lift constr
-R4483:4490 Triage.subtypes <> sub_lift constr
-R4500:4508 Triage.subtypes <> sub_quant constr
-R4500:4508 Triage.subtypes <> sub_quant constr
-R4543:4552 Triage.derive <> derive_app constr
-R4543:4552 Triage.derive <> derive_app constr
-R4562:4575 Triage.derive <> derive_subtype thm
-R4562:4575 Triage.derive <> derive_subtype thm
-R4603:4610 Triage.subtypes <> sub_dist constr
-R4603:4610 Triage.subtypes <> sub_dist constr
-prf 4648:4670 <> derive_generalisation_q
-binder 4682:4682 <> k:39
-binder 4684:4688 <> gamma:40
-binder 4690:4690 <> M:41
-binder 4692:4692 <> T:42
-R4729:4732 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R4695:4700 Triage.derive <> derive ind
-R4703:4714 Triage.types <> lift_context def
-R4716:4716 Triage.derive <> k:39 var
-R4718:4722 Triage.derive <> gamma:40 var
-R4726:4726 Triage.derive <> M:41 var
-R4728:4728 Triage.derive <> T:42 var
-R4733:4738 Triage.derive <> derive ind
-R4740:4744 Triage.derive <> gamma:40 var
-R4746:4746 Triage.derive <> M:41 var
-R4749:4753 Triage.types <> quant def
-R4755:4755 Triage.derive <> k:39 var
-R4757:4757 Triage.derive <> T:42 var
-R4801:4817 Triage.types <> lift_context_zero thm
-R4801:4817 Triage.types <> lift_context_zero thm
-R4801:4817 Triage.types <> lift_context_zero thm
-R4849:4849 Coq.Init.Datatypes <> S constr
-R4861:4861 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R4849:4849 Coq.Init.Datatypes <> S constr
-R4861:4861 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R4893:4913 Triage.types <> lift_rec_lift_context thm
-R4893:4913 Triage.types <> lift_rec_lift_context thm
-R4893:4913 Triage.types <> lift_rec_lift_context thm
-R4893:4913 Triage.types <> lift_rec_lift_context thm
-R4893:4913 Triage.types <> lift_rec_lift_context thm
-R4942:4962 Triage.derive <> derive_generalisation thm
-R4942:4962 Triage.derive <> derive_generalisation thm
-R4973:4984 Triage.types <> lift_context def
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R4996:5016 Triage.types <> lift_rec_lift_context thm
-R5036:5036 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R5047:5047 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R5036:5036 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R5047:5047 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-prf 5141:5162 <> derive_generalisation2
-binder 5174:5178 <> gamma:43
-binder 5180:5180 <> M:44
-binder 5182:5182 <> T:45
-R5209:5212 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5185:5190 Triage.derive <> derive ind
-R5192:5196 Triage.derive <> gamma:43 var
-R5198:5198 Triage.derive <> M:44 var
-R5201:5205 Triage.types <> Quant constr
-R5207:5207 Triage.derive <> T:45 var
-R5213:5218 Triage.derive <> derive ind
-R5221:5232 Triage.types <> lift_context def
-R5236:5240 Triage.derive <> gamma:43 var
-R5244:5244 Triage.derive <> M:44 var
-R5246:5246 Triage.derive <> T:45 var
-R5273:5286 Triage.derive <> derive_subtype thm
-R5273:5286 Triage.derive <> derive_subtype thm
-R5296:5320 Triage.derive <> lift_rec_preserves_derive thm
-R5296:5320 Triage.derive <> lift_rec_preserves_derive thm
-R5361:5379 Triage.types <> subst_rec_lift_rec0 thm
-R5361:5379 Triage.types <> subst_rec_lift_rec0 thm
-R5361:5379 Triage.types <> subst_rec_lift_rec0 thm
-R5390:5402 Triage.types <> lift_rec_null thm
-R5390:5402 Triage.types <> lift_rec_null thm
-R5390:5402 Triage.types <> lift_rec_null thm
-R5412:5419 Triage.subtypes <> sub_zero constr
-R5412:5419 Triage.subtypes <> sub_zero constr
-prf 5439:5462 <> derive_generalisation2_q
-binder 5474:5474 <> k:46
-binder 5476:5480 <> gamma:47
-binder 5482:5482 <> M:48
-binder 5484:5484 <> T:49
-R5513:5516 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5487:5492 Triage.derive <> derive ind
-R5494:5498 Triage.derive <> gamma:47 var
-R5500:5500 Triage.derive <> M:48 var
-R5503:5507 Triage.types <> quant def
-R5509:5509 Triage.derive <> k:46 var
-R5511:5511 Triage.derive <> T:49 var
-R5517:5522 Triage.derive <> derive ind
-R5525:5536 Triage.types <> lift_context def
-R5538:5538 Triage.derive <> k:46 var
-R5540:5544 Triage.derive <> gamma:47 var
-R5548:5548 Triage.derive <> M:48 var
-R5550:5550 Triage.derive <> T:49 var
-R5603:5619 Triage.types <> lift_context_zero thm
-R5603:5619 Triage.types <> lift_context_zero thm
-R5603:5619 Triage.types <> lift_context_zero thm
-R5637:5642 Triage.derive <> derive ind
-R5645:5656 Triage.types <> lift_context def
-R5670:5674 Triage.types <> Quant constr
-R5637:5642 Triage.derive <> derive ind
-R5645:5656 Triage.types <> lift_context def
-R5670:5674 Triage.types <> Quant constr
-R5712:5712 Coq.Init.Datatypes <> S constr
-R5724:5724 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R5712:5712 Coq.Init.Datatypes <> S constr
-R5724:5724 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R5748:5768 Triage.types <> lift_rec_lift_context thm
-R5748:5768 Triage.types <> lift_rec_lift_context thm
-R5748:5768 Triage.types <> lift_rec_lift_context thm
-R5748:5768 Triage.types <> lift_rec_lift_context thm
-R5748:5768 Triage.types <> lift_rec_lift_context thm
-R5800:5821 Triage.derive <> derive_generalisation2 thm
-R5800:5821 Triage.derive <> derive_generalisation2 thm
-prf 5865:5872 <> derive_K
-binder 5882:5886 <> gamma:50
-binder 5888:5890 <> uty:51
-binder 5892:5894 <> vty:52
-R5897:5902 Triage.derive <> derive ind
-R5904:5908 Triage.derive <> gamma:50 var
-R5910:5910 Triage.terms <> K def
-R5913:5917 Triage.types <> Funty constr
-R5919:5921 Triage.derive <> uty:51 var
-R5924:5928 Triage.types <> Funty constr
-R5930:5932 Triage.derive <> vty:52 var
-R5934:5936 Triage.derive <> uty:51 var
-R5966:5979 Triage.derive <> derive_subtype thm
-R5995:6004 Triage.derive <> derive_app constr
-R6014:6024 Triage.derive <> derive_node constr
-R6036:6047 Triage.subtypes <> sub_leaf_fun constr
-R6058:6065 Triage.subtypes <> sub_zero constr
-R5966:5979 Triage.derive <> derive_subtype thm
-R5995:6004 Triage.derive <> derive_app constr
-R6014:6024 Triage.derive <> derive_node constr
-R6014:6024 Triage.derive <> derive_node constr
-R6036:6047 Triage.subtypes <> sub_leaf_fun constr
-R6058:6065 Triage.subtypes <> sub_zero constr
-prf 6094:6102 <> derive_K1
-binder 6112:6116 <> gamma:53
-binder 6118:6118 <> M:54
-binder 6120:6122 <> uty:55
-binder 6124:6126 <> vty:56
-R6147:6150 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6129:6134 Triage.derive <> derive ind
-R6136:6140 Triage.derive <> gamma:53 var
-R6142:6142 Triage.derive <> M:54 var
-R6144:6146 Triage.derive <> uty:55 var
-R6151:6156 Triage.derive <> derive ind
-R6158:6162 Triage.derive <> gamma:53 var
-R6166:6166 Triage.terms <> ::tree_scope:x_'@'_x not
-R6165:6165 Triage.terms <> K def
-R6167:6167 Triage.derive <> M:54 var
-R6171:6175 Triage.types <> Funty constr
-R6177:6179 Triage.derive <> vty:56 var
-R6181:6183 Triage.derive <> uty:55 var
-R6211:6220 Triage.derive <> derive_app constr
-R6232:6239 Triage.derive <> derive_K thm
-R6211:6220 Triage.derive <> derive_app constr
-R6232:6239 Triage.derive <> derive_K thm
-prf 6267:6275 <> derive_S1
-binder 6287:6291 <> gamma:57
-binder 6293:6293 <> f:58
-binder 6295:6297 <> uty:59
-binder 6299:6301 <> vty:60
-binder 6303:6305 <> wty:61
-R6354:6362 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6312:6317 Triage.derive <> derive ind
-R6319:6323 Triage.derive <> gamma:57 var
-R6325:6325 Triage.derive <> f:58 var
-R6328:6332 Triage.types <> Funty constr
-R6334:6336 Triage.derive <> uty:59 var
-R6339:6343 Triage.types <> Funty constr
-R6345:6347 Triage.derive <> vty:60 var
-R6349:6351 Triage.derive <> wty:61 var
-R6363:6368 Triage.derive <> derive ind
-R6370:6374 Triage.derive <> gamma:57 var
-R6377:6378 Triage.terms <> S1 def
-R6380:6380 Triage.derive <> f:58 var
-R6384:6388 Triage.types <> Funty constr
-R6391:6395 Triage.types <> Funty constr
-R6397:6399 Triage.derive <> uty:59 var
-R6401:6403 Triage.derive <> vty:60 var
-R6407:6411 Triage.types <> Funty constr
-R6413:6415 Triage.derive <> uty:59 var
-R6417:6419 Triage.derive <> wty:61 var
-R6450:6459 Triage.derive <> derive_app constr
-R6450:6459 Triage.derive <> derive_app constr
-R6475:6484 Triage.derive <> derive_app constr
-R6501:6511 Triage.derive <> derive_node constr
-R6528:6539 Triage.subtypes <> sub_leaf_fun constr
-R6475:6484 Triage.derive <> derive_app constr
-R6501:6511 Triage.derive <> derive_node constr
-R6528:6539 Triage.subtypes <> sub_leaf_fun constr
-R6551:6561 Triage.derive <> derive_node constr
-R6551:6561 Triage.derive <> derive_node constr
-R6571:6579 Triage.subtypes <> sub_trans constr
-R6571:6579 Triage.subtypes <> sub_trans constr
-R6589:6605 Triage.subtypes <> subtype_leaf_fork thm
-R6589:6605 Triage.subtypes <> subtype_leaf_fork thm
-prf 6658:6666 <> derive_S2
-binder 6678:6682 <> gamma:62
-binder 6684:6684 <> f:63
-binder 6686:6686 <> g:64
-binder 6688:6690 <> uty:65
-binder 6692:6694 <> vty:66
-binder 6696:6698 <> wty:67
-R6747:6750 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6705:6710 Triage.derive <> derive ind
-R6712:6716 Triage.derive <> gamma:62 var
-R6718:6718 Triage.derive <> f:63 var
-R6721:6725 Triage.types <> Funty constr
-R6727:6729 Triage.derive <> uty:65 var
-R6732:6736 Triage.types <> Funty constr
-R6738:6740 Triage.derive <> vty:66 var
-R6742:6744 Triage.derive <> wty:67 var
-R6781:6789 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6751:6756 Triage.derive <> derive ind
-R6758:6762 Triage.derive <> gamma:62 var
-R6764:6764 Triage.derive <> g:64 var
-R6767:6771 Triage.types <> Funty constr
-R6773:6775 Triage.derive <> uty:65 var
-R6777:6779 Triage.derive <> vty:66 var
-R6790:6795 Triage.derive <> derive ind
-R6797:6801 Triage.derive <> gamma:62 var
-R6808:6810 Triage.terms <> ::tree_scope:x_'@'_x not
-R6804:6805 Triage.terms <> S1 def
-R6807:6807 Triage.derive <> f:63 var
-R6811:6811 Triage.derive <> g:64 var
-R6815:6819 Triage.types <> Funty constr
-R6821:6823 Triage.derive <> uty:65 var
-R6825:6827 Triage.derive <> wty:67 var
-R6855:6864 Triage.derive <> derive_app constr
-R6881:6889 Triage.derive <> derive_S1 thm
-R6855:6864 Triage.derive <> derive_app constr
-R6881:6889 Triage.derive <> derive_S1 thm
-prf 6914:6921 <> derive_S
-binder 6933:6937 <> gamma:68
-binder 6939:6941 <> uty:69
-binder 6943:6945 <> vty:70
-binder 6947:6949 <> wty:71
-R6956:6961 Triage.derive <> derive ind
-R6963:6967 Triage.derive <> gamma:68 var
-R6969:6971 Triage.terms <> Sop def
-R6974:6978 Triage.types <> Funty constr
-R6981:6985 Triage.types <> Funty constr
-R6987:6989 Triage.derive <> uty:69 var
-R6992:6996 Triage.types <> Funty constr
-R6998:7000 Triage.derive <> vty:70 var
-R7002:7004 Triage.derive <> wty:71 var
-R7009:7013 Triage.types <> Funty constr
-R7016:7020 Triage.types <> Funty constr
-R7022:7024 Triage.derive <> uty:69 var
-R7026:7028 Triage.derive <> vty:70 var
-R7032:7036 Triage.types <> Funty constr
-R7038:7040 Triage.derive <> uty:69 var
-R7042:7044 Triage.derive <> wty:71 var
-R7075:7083 Triage.derive <> derive_S2 thm
-R7075:7083 Triage.derive <> derive_S2 thm
-R7093:7101 Triage.derive <> derive_K1 thm
-R7093:7101 Triage.derive <> derive_K1 thm
-R7116:7126 Triage.derive <> derive_node constr
-R7116:7126 Triage.derive <> derive_node constr
-R7116:7126 Triage.derive <> derive_node constr
-R7142:7153 Triage.subtypes <> sub_leaf_fun constr
-R7142:7153 Triage.subtypes <> sub_leaf_fun constr
-R7165:7173 Triage.subtypes <> sub_trans constr
-R7165:7173 Triage.subtypes <> sub_trans constr
-R7183:7199 Triage.subtypes <> subtype_leaf_fork thm
-R7183:7199 Triage.subtypes <> subtype_leaf_fork thm
-prf 7250:7257 <> derive_I
-binder 7267:7271 <> gamma:72
-binder 7273:7275 <> uty:73
-R7278:7283 Triage.derive <> derive ind
-R7285:7289 Triage.derive <> gamma:72 var
-R7291:7291 Triage.terms <> I def
-R7294:7298 Triage.types <> Funty constr
-R7300:7302 Triage.derive <> uty:73 var
-R7304:7306 Triage.derive <> uty:73 var
-R7334:7342 Triage.derive <> derive_S2 thm
-R7352:7359 Triage.derive <> derive_K thm
-R7334:7342 Triage.derive <> derive_S2 thm
-R7352:7359 Triage.derive <> derive_K thm
-R7352:7359 Triage.derive <> derive_K thm
-R7379:7382 Triage.types <> Leaf constr
-R7379:7382 Triage.types <> Leaf constr
-prf 7403:7413 <> derive_swap
-binder 7425:7429 <> gamma:74
-binder 7431:7431 <> f:75
-binder 7433:7433 <> u:76
-binder 7435:7435 <> v:77
-binder 7437:7437 <> w:78
-R7476:7479 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7440:7445 Triage.derive <> derive ind
-R7447:7451 Triage.derive <> gamma:74 var
-R7453:7453 Triage.derive <> f:75 var
-R7456:7460 Triage.types <> Funty constr
-R7462:7462 Triage.derive <> u:76 var
-R7465:7469 Triage.types <> Funty constr
-R7471:7471 Triage.derive <> v:77 var
-R7473:7473 Triage.derive <> w:78 var
-R7480:7485 Triage.derive <> derive ind
-R7487:7491 Triage.derive <> gamma:74 var
-R7494:7497 Triage.terms <> swap def
-R7499:7499 Triage.derive <> f:75 var
-R7503:7507 Triage.types <> Funty constr
-R7509:7509 Triage.derive <> v:77 var
-R7512:7516 Triage.types <> Funty constr
-R7518:7518 Triage.derive <> u:76 var
-R7520:7520 Triage.derive <> w:78 var
-R7549:7552 Triage.terms <> swap def
-R7562:7570 Triage.derive <> derive_S2 thm
-R7562:7570 Triage.derive <> derive_S2 thm
-R7583:7591 Triage.derive <> derive_K1 thm
-R7583:7591 Triage.derive <> derive_K1 thm
-R7601:7609 Triage.derive <> derive_S1 thm
-R7601:7609 Triage.derive <> derive_S1 thm
-R7626:7633 Triage.derive <> derive_K thm
-R7626:7633 Triage.derive <> derive_K thm
-prf 7651:7661 <> derive_wait
-binder 7673:7677 <> gamma:79
-binder 7679:7679 <> M:80
-binder 7681:7681 <> N:81
-binder 7683:7685 <> uty:82
-binder 7687:7687 <> k:83
-binder 7689:7691 <> vty:84
-binder 7693:7695 <> wty:85
-R7754:7757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7702:7707 Triage.derive <> derive ind
-R7709:7713 Triage.derive <> gamma:79 var
-R7715:7715 Triage.derive <> M:80 var
-R7718:7722 Triage.types <> Funty constr
-R7724:7726 Triage.derive <> uty:82 var
-R7729:7733 Triage.types <> quant def
-R7735:7735 Triage.derive <> k:83 var
+R2734:2739 Triage.derive <> derive ind
+prf 2765:2778 <> derive_subtype
+binder 2790:2794 <> gamma:14
+binder 2796:2796 <> M:15
+binder 2798:2800 <> ty1:16
+R2821:2824 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2803:2808 Triage.derive <> derive ind
+R2810:2814 Triage.derive <> gamma:14 var
+R2816:2816 Triage.derive <> M:15 var
+R2818:2820 Triage.derive <> ty1:16 var
+binder 2832:2834 <> ty2:17
+R2852:2855 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2837:2843 Triage.subtypes <> subtype ind
+R2845:2847 Triage.derive <> ty1:16 var
+R2849:2851 Triage.derive <> ty2:17 var
+R2856:2861 Triage.derive <> derive ind
+R2863:2867 Triage.derive <> gamma:14 var
+R2869:2869 Triage.derive <> M:15 var
+R2871:2873 Triage.derive <> ty2:17 var
+prf 2948:2972 <> lift_rec_preserves_derive
+binder 2984:2988 <> gamma:18
+binder 2990:2990 <> M:19
+binder 2992:2993 <> ty:20
+R3013:3016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2996:3001 Triage.derive <> derive ind
+R3003:3007 Triage.derive <> gamma:18 var
+R3009:3009 Triage.derive <> M:19 var
+R3011:3012 Triage.derive <> ty:20 var
+binder 3024:3024 <> n:21
+binder 3026:3026 <> k:22
+R3030:3035 Triage.derive <> derive ind
+R3038:3053 Triage.types <> lift_rec_context def
+R3055:3055 Triage.derive <> n:21 var
+R3057:3057 Triage.derive <> k:22 var
+R3059:3063 Triage.derive <> gamma:18 var
+R3066:3066 Triage.derive <> M:19 var
+R3069:3076 Triage.types <> lift_rec def
+R3078:3079 Triage.derive <> ty:20 var
+R3081:3081 Triage.derive <> n:21 var
+R3083:3083 Triage.derive <> k:22 var
+R3165:3174 Triage.derive <> derive_ref constr
+R3209:3220 Triage.types <> get_lift_rec thm
+R3257:3282 Triage.subtypes <> lift_rec_preserves_subtype thm
+R3165:3174 Triage.derive <> derive_ref constr
+R3209:3220 Triage.types <> get_lift_rec thm
+R3209:3220 Triage.types <> get_lift_rec thm
+R3257:3282 Triage.subtypes <> lift_rec_preserves_subtype thm
+R3304:3314 Triage.derive <> derive_node constr
+R3331:3334 Triage.types <> Leaf constr
+R3342:3349 Triage.types <> lift_rec def
+R3351:3354 Triage.types <> Leaf constr
+R3377:3402 Triage.subtypes <> lift_rec_preserves_subtype thm
+R3304:3314 Triage.derive <> derive_node constr
+R3331:3334 Triage.types <> Leaf constr
+R3342:3349 Triage.types <> lift_rec def
+R3351:3354 Triage.types <> Leaf constr
+R3377:3402 Triage.subtypes <> lift_rec_preserves_subtype thm
+prf 3436:3451 <> derive_subst_rec
+binder 3463:3467 <> gamma:23
+binder 3469:3469 <> M:24
+binder 3471:3472 <> ty:25
+R3496:3503 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3479:3484 Triage.derive <> derive ind
+R3486:3490 Triage.derive <> gamma:23 var
+R3492:3492 Triage.derive <> M:24 var
+R3494:3495 Triage.derive <> ty:25 var
+binder 3511:3511 <> u:26
+binder 3513:3513 <> k:27
+R3516:3521 Triage.derive <> derive ind
+R3524:3540 Triage.types <> subst_rec_context def
+R3542:3542 Triage.derive <> u:26 var
+R3544:3544 Triage.derive <> k:27 var
+R3546:3550 Triage.derive <> gamma:23 var
+R3553:3553 Triage.derive <> M:24 var
+R3556:3564 Triage.types <> subst_rec def
+R3566:3567 Triage.derive <> ty:25 var
+R3569:3569 Triage.derive <> u:26 var
+R3571:3571 Triage.derive <> k:27 var
+R3652:3661 Triage.derive <> derive_ref constr
+R3688:3700 Triage.types <> get_subst_rec thm
+R3735:3761 Triage.subtypes <> subst_rec_preserves_subtype thm
+R3652:3661 Triage.derive <> derive_ref constr
+R3688:3700 Triage.types <> get_subst_rec thm
+R3688:3700 Triage.types <> get_subst_rec thm
+R3735:3761 Triage.subtypes <> subst_rec_preserves_subtype thm
+R3783:3793 Triage.derive <> derive_node constr
+R3810:3813 Triage.types <> Leaf constr
+R3821:3829 Triage.types <> subst_rec def
+R3831:3834 Triage.types <> Leaf constr
+R3857:3883 Triage.subtypes <> subst_rec_preserves_subtype thm
+R3783:3793 Triage.derive <> derive_node constr
+R3810:3813 Triage.types <> Leaf constr
+R3821:3829 Triage.types <> subst_rec def
+R3831:3834 Triage.types <> Leaf constr
+R3857:3883 Triage.subtypes <> subst_rec_preserves_subtype thm
+prf 3908:3928 <> derive_generalisation
+binder 3940:3944 <> gamma:28
+binder 3946:3946 <> M:29
+binder 3948:3948 <> T:30
+R3985:3988 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3951:3956 Triage.derive <> derive ind
+R3959:3970 Triage.types <> lift_context def
+R3974:3978 Triage.derive <> gamma:28 var
+R3982:3982 Triage.derive <> M:29 var
+R3984:3984 Triage.derive <> T:30 var
+R3989:3994 Triage.derive <> derive ind
+R3996:4000 Triage.derive <> gamma:28 var
+R4002:4002 Triage.derive <> M:29 var
+R4005:4009 Triage.types <> Quant constr
+R4011:4011 Triage.derive <> T:30 var
+binder 4035:4039 <> gamma:31
+binder 4041:4041 <> M:32
+binder 4043:4043 <> T:33
+R4063:4090 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4046:4051 Triage.derive <> derive ind
+R4053:4057 Triage.derive <> gamma:31 var
+R4060:4060 Triage.derive <> M:32 var
+R4062:4062 Triage.derive <> T:33 var
+binder 4098:4103 <> gamma1:34
+R4138:4141 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4112:4115 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4137:4137 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4107:4111 Triage.derive <> gamma:31 var
+R4116:4127 Triage.types <> lift_context def
+R4131:4136 Triage.derive <> gamma1:34 var
+R4142:4147 Triage.derive <> derive ind
+R4149:4154 Triage.derive <> gamma1:34 var
+R4156:4156 Triage.derive <> M:32 var
+R4159:4163 Triage.types <> Quant constr
+R4165:4165 Triage.derive <> T:33 var
+binder 4035:4039 <> gamma:35
+binder 4041:4041 <> M:36
+binder 4043:4043 <> T:37
+R4063:4090 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4046:4051 Triage.derive <> derive ind
+R4053:4057 Triage.derive <> gamma:35 var
+R4060:4060 Triage.derive <> M:36 var
+R4062:4062 Triage.derive <> T:37 var
+binder 4098:4103 <> gamma1:38
+R4138:4141 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4112:4115 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4137:4137 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4107:4111 Triage.derive <> gamma:35 var
+R4116:4127 Triage.types <> lift_context def
+R4131:4136 Triage.derive <> gamma1:38 var
+R4142:4147 Triage.derive <> derive ind
+R4149:4154 Triage.derive <> gamma1:38 var
+R4156:4156 Triage.derive <> M:36 var
+R4159:4163 Triage.types <> Quant constr
+R4165:4165 Triage.derive <> T:37 var
+R4273:4284 Triage.types <> lift_context def
+R4300:4311 Triage.types <> get_lift_rec thm
+R4333:4335 Triage.types <> get def
+R4300:4311 Triage.types <> get_lift_rec thm
+R4300:4311 Triage.types <> get_lift_rec thm
+R4333:4335 Triage.types <> get def
+R4386:4395 Triage.derive <> derive_ref constr
+R4424:4432 Triage.subtypes <> sub_trans constr
+R4444:4451 Triage.subtypes <> sub_lift constr
+R4472:4480 Triage.subtypes <> sub_quant constr
+R4386:4395 Triage.derive <> derive_ref constr
+R4424:4432 Triage.subtypes <> sub_trans constr
+R4444:4451 Triage.subtypes <> sub_lift constr
+R4472:4480 Triage.subtypes <> sub_quant constr
+R4522:4532 Triage.derive <> derive_node constr
+R4542:4550 Triage.subtypes <> sub_trans constr
+R4562:4569 Triage.subtypes <> sub_lift constr
+R4580:4588 Triage.subtypes <> sub_quant constr
+R4522:4532 Triage.derive <> derive_node constr
+R4542:4550 Triage.subtypes <> sub_trans constr
+R4562:4569 Triage.subtypes <> sub_lift constr
+R4580:4588 Triage.subtypes <> sub_quant constr
+R4616:4625 Triage.derive <> derive_app constr
+R4637:4650 Triage.derive <> derive_subtype thm
+R4681:4688 Triage.subtypes <> sub_dist constr
+R4616:4625 Triage.derive <> derive_app constr
+R4637:4650 Triage.derive <> derive_subtype thm
+R4681:4688 Triage.subtypes <> sub_dist constr
+prf 4729:4751 <> derive_generalisation_q
+binder 4763:4763 <> k:39
+binder 4765:4769 <> gamma:40
+binder 4771:4771 <> M:41
+binder 4773:4773 <> T:42
+R4810:4813 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4776:4781 Triage.derive <> derive ind
+R4784:4795 Triage.types <> lift_context def
+R4797:4797 Triage.derive <> k:39 var
+R4799:4803 Triage.derive <> gamma:40 var
+R4807:4807 Triage.derive <> M:41 var
+R4809:4809 Triage.derive <> T:42 var
+R4814:4819 Triage.derive <> derive ind
+R4821:4825 Triage.derive <> gamma:40 var
+R4827:4827 Triage.derive <> M:41 var
+R4830:4834 Triage.types <> quant def
+R4836:4836 Triage.derive <> k:39 var
+R4838:4838 Triage.derive <> T:42 var
+R4884:4900 Triage.types <> lift_context_zero thm
+R4884:4900 Triage.types <> lift_context_zero thm
+R4884:4900 Triage.types <> lift_context_zero thm
+R4934:4934 Coq.Init.Datatypes <> S constr
+R4946:4946 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R4977:4997 Triage.types <> lift_rec_lift_context thm
+R5030:5050 Triage.derive <> derive_generalisation thm
+R5060:5071 Triage.types <> lift_context def
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R4934:4934 Coq.Init.Datatypes <> S constr
+R4946:4946 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R4977:4997 Triage.types <> lift_rec_lift_context thm
+R4977:4997 Triage.types <> lift_rec_lift_context thm
+R4977:4997 Triage.types <> lift_rec_lift_context thm
+R4977:4997 Triage.types <> lift_rec_lift_context thm
+R5030:5050 Triage.derive <> derive_generalisation thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5082:5102 Triage.types <> lift_rec_lift_context thm
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5126:5126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5137:5137 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+prf 5201:5222 <> derive_generalisation2
+binder 5234:5238 <> gamma:43
+binder 5240:5240 <> M:44
+binder 5242:5242 <> T:45
+R5269:5272 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5245:5250 Triage.derive <> derive ind
+R5252:5256 Triage.derive <> gamma:43 var
+R5258:5258 Triage.derive <> M:44 var
+R5261:5265 Triage.types <> Quant constr
+R5267:5267 Triage.derive <> T:45 var
+R5273:5278 Triage.derive <> derive ind
+R5281:5292 Triage.types <> lift_context def
+R5296:5300 Triage.derive <> gamma:43 var
+R5304:5304 Triage.derive <> M:44 var
+R5306:5306 Triage.derive <> T:45 var
+R5333:5346 Triage.derive <> derive_subtype thm
+R5333:5346 Triage.derive <> derive_subtype thm
+R5360:5384 Triage.derive <> lift_rec_preserves_derive thm
+R5360:5384 Triage.derive <> lift_rec_preserves_derive thm
+R5425:5443 Triage.types <> subst_rec_lift_rec0 thm
+R5454:5466 Triage.types <> lift_rec_null thm
+R5476:5483 Triage.subtypes <> sub_zero constr
+R5425:5443 Triage.types <> subst_rec_lift_rec0 thm
+R5425:5443 Triage.types <> subst_rec_lift_rec0 thm
+R5454:5466 Triage.types <> lift_rec_null thm
+R5454:5466 Triage.types <> lift_rec_null thm
+R5476:5483 Triage.subtypes <> sub_zero constr
+prf 5503:5526 <> derive_generalisation2_q
+binder 5538:5538 <> k:46
+binder 5540:5544 <> gamma:47
+binder 5546:5546 <> M:48
+binder 5548:5548 <> T:49
+R5577:5580 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5551:5556 Triage.derive <> derive ind
+R5558:5562 Triage.derive <> gamma:47 var
+R5564:5564 Triage.derive <> M:48 var
+R5567:5571 Triage.types <> quant def
+R5573:5573 Triage.derive <> k:46 var
+R5575:5575 Triage.derive <> T:49 var
+R5581:5586 Triage.derive <> derive ind
+R5589:5600 Triage.types <> lift_context def
+R5602:5602 Triage.derive <> k:46 var
+R5604:5608 Triage.derive <> gamma:47 var
+R5612:5612 Triage.derive <> M:48 var
+R5614:5614 Triage.derive <> T:49 var
+R5671:5687 Triage.types <> lift_context_zero thm
+R5671:5687 Triage.types <> lift_context_zero thm
+R5671:5687 Triage.types <> lift_context_zero thm
+R5707:5712 Triage.derive <> derive ind
+R5715:5726 Triage.types <> lift_context def
+R5740:5744 Triage.types <> Quant constr
+R5707:5712 Triage.derive <> derive ind
+R5715:5726 Triage.types <> lift_context def
+R5740:5744 Triage.types <> Quant constr
+R5787:5787 Coq.Init.Datatypes <> S constr
+R5799:5799 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5824:5844 Triage.types <> lift_rec_lift_context thm
+R5878:5899 Triage.derive <> derive_generalisation2 thm
+R5787:5787 Coq.Init.Datatypes <> S constr
+R5799:5799 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R5824:5844 Triage.types <> lift_rec_lift_context thm
+R5824:5844 Triage.types <> lift_rec_lift_context thm
+R5824:5844 Triage.types <> lift_rec_lift_context thm
+R5824:5844 Triage.types <> lift_rec_lift_context thm
+R5878:5899 Triage.derive <> derive_generalisation2 thm
+prf 5945:5952 <> derive_K
+binder 5962:5966 <> gamma:50
+binder 5968:5970 <> uty:51
+binder 5972:5974 <> vty:52
+R5977:5982 Triage.derive <> derive ind
+R5984:5988 Triage.derive <> gamma:50 var
+R5990:5990 Triage.terms <> K def
+R5993:5997 Triage.types <> Funty constr
+R5999:6001 Triage.derive <> uty:51 var
+R6004:6008 Triage.types <> Funty constr
+R6010:6012 Triage.derive <> vty:52 var
+R6014:6016 Triage.derive <> uty:51 var
+R6046:6059 Triage.derive <> derive_subtype thm
+R6075:6084 Triage.derive <> derive_app constr
+R6094:6104 Triage.derive <> derive_node constr
+R6116:6127 Triage.subtypes <> sub_leaf_fun constr
+R6138:6145 Triage.subtypes <> sub_zero constr
+R6046:6059 Triage.derive <> derive_subtype thm
+R6075:6084 Triage.derive <> derive_app constr
+R6094:6104 Triage.derive <> derive_node constr
+R6094:6104 Triage.derive <> derive_node constr
+R6116:6127 Triage.subtypes <> sub_leaf_fun constr
+R6138:6145 Triage.subtypes <> sub_zero constr
+prf 6174:6182 <> derive_K1
+binder 6192:6196 <> gamma:53
+binder 6198:6198 <> M:54
+binder 6200:6202 <> uty:55
+binder 6204:6206 <> vty:56
+R6227:6230 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6209:6214 Triage.derive <> derive ind
+R6216:6220 Triage.derive <> gamma:53 var
+R6222:6222 Triage.derive <> M:54 var
+R6224:6226 Triage.derive <> uty:55 var
+R6231:6236 Triage.derive <> derive ind
+R6238:6242 Triage.derive <> gamma:53 var
+R6246:6246 Triage.terms <> ::tree_scope:x_'@'_x not
+R6245:6245 Triage.terms <> K def
+R6247:6247 Triage.derive <> M:54 var
+R6251:6255 Triage.types <> Funty constr
+R6257:6259 Triage.derive <> vty:56 var
+R6261:6263 Triage.derive <> uty:55 var
+R6291:6300 Triage.derive <> derive_app constr
+R6312:6319 Triage.derive <> derive_K thm
+R6291:6300 Triage.derive <> derive_app constr
+R6312:6319 Triage.derive <> derive_K thm
+prf 6347:6355 <> derive_S1
+binder 6367:6371 <> gamma:57
+binder 6373:6373 <> f:58
+binder 6375:6377 <> uty:59
+binder 6379:6381 <> vty:60
+binder 6383:6385 <> wty:61
+R6434:6442 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6392:6397 Triage.derive <> derive ind
+R6399:6403 Triage.derive <> gamma:57 var
+R6405:6405 Triage.derive <> f:58 var
+R6408:6412 Triage.types <> Funty constr
+R6414:6416 Triage.derive <> uty:59 var
+R6419:6423 Triage.types <> Funty constr
+R6425:6427 Triage.derive <> vty:60 var
+R6429:6431 Triage.derive <> wty:61 var
+R6443:6448 Triage.derive <> derive ind
+R6450:6454 Triage.derive <> gamma:57 var
+R6457:6458 Triage.terms <> S1 def
+R6460:6460 Triage.derive <> f:58 var
+R6464:6468 Triage.types <> Funty constr
+R6471:6475 Triage.types <> Funty constr
+R6477:6479 Triage.derive <> uty:59 var
+R6481:6483 Triage.derive <> vty:60 var
+R6487:6491 Triage.types <> Funty constr
+R6493:6495 Triage.derive <> uty:59 var
+R6497:6499 Triage.derive <> wty:61 var
+R6530:6539 Triage.derive <> derive_app constr
+R6530:6539 Triage.derive <> derive_app constr
+R6554:6564 Triage.derive <> derive_node constr
+R6574:6582 Triage.subtypes <> sub_trans constr
+R6594:6610 Triage.subtypes <> subtype_leaf_fork thm
+R6554:6564 Triage.derive <> derive_node constr
+R6574:6582 Triage.subtypes <> sub_trans constr
+R6594:6610 Triage.subtypes <> subtype_leaf_fork thm
+R6662:6671 Triage.derive <> derive_app constr
+R6688:6698 Triage.derive <> derive_node constr
+R6715:6726 Triage.subtypes <> sub_leaf_fun constr
+R6662:6671 Triage.derive <> derive_app constr
+R6688:6698 Triage.derive <> derive_node constr
+R6715:6726 Triage.subtypes <> sub_leaf_fun constr
+prf 6744:6752 <> derive_S2
+binder 6764:6768 <> gamma:62
+binder 6770:6770 <> f:63
+binder 6772:6772 <> g:64
+binder 6774:6776 <> uty:65
+binder 6778:6780 <> vty:66
+binder 6782:6784 <> wty:67
+R6833:6836 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6791:6796 Triage.derive <> derive ind
+R6798:6802 Triage.derive <> gamma:62 var
+R6804:6804 Triage.derive <> f:63 var
+R6807:6811 Triage.types <> Funty constr
+R6813:6815 Triage.derive <> uty:65 var
+R6818:6822 Triage.types <> Funty constr
+R6824:6826 Triage.derive <> vty:66 var
+R6828:6830 Triage.derive <> wty:67 var
+R6867:6875 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6837:6842 Triage.derive <> derive ind
+R6844:6848 Triage.derive <> gamma:62 var
+R6850:6850 Triage.derive <> g:64 var
+R6853:6857 Triage.types <> Funty constr
+R6859:6861 Triage.derive <> uty:65 var
+R6863:6865 Triage.derive <> vty:66 var
+R6876:6881 Triage.derive <> derive ind
+R6883:6887 Triage.derive <> gamma:62 var
+R6894:6896 Triage.terms <> ::tree_scope:x_'@'_x not
+R6890:6891 Triage.terms <> S1 def
+R6893:6893 Triage.derive <> f:63 var
+R6897:6897 Triage.derive <> g:64 var
+R6901:6905 Triage.types <> Funty constr
+R6907:6909 Triage.derive <> uty:65 var
+R6911:6913 Triage.derive <> wty:67 var
+R6941:6950 Triage.derive <> derive_app constr
+R6967:6975 Triage.derive <> derive_S1 thm
+R6941:6950 Triage.derive <> derive_app constr
+R6967:6975 Triage.derive <> derive_S1 thm
+prf 7000:7007 <> derive_S
+binder 7019:7023 <> gamma:68
+binder 7025:7027 <> uty:69
+binder 7029:7031 <> vty:70
+binder 7033:7035 <> wty:71
+R7042:7047 Triage.derive <> derive ind
+R7049:7053 Triage.derive <> gamma:68 var
+R7055:7057 Triage.terms <> Sop def
+R7060:7064 Triage.types <> Funty constr
+R7067:7071 Triage.types <> Funty constr
+R7073:7075 Triage.derive <> uty:69 var
+R7078:7082 Triage.types <> Funty constr
+R7084:7086 Triage.derive <> vty:70 var
+R7088:7090 Triage.derive <> wty:71 var
+R7095:7099 Triage.types <> Funty constr
+R7102:7106 Triage.types <> Funty constr
+R7108:7110 Triage.derive <> uty:69 var
+R7112:7114 Triage.derive <> vty:70 var
+R7118:7122 Triage.types <> Funty constr
+R7124:7126 Triage.derive <> uty:69 var
+R7128:7130 Triage.derive <> wty:71 var
+R7161:7169 Triage.derive <> derive_S2 thm
+R7161:7169 Triage.derive <> derive_S2 thm
+R7183:7191 Triage.derive <> derive_K1 thm
+R7201:7211 Triage.derive <> derive_node constr
+R7183:7191 Triage.derive <> derive_K1 thm
+R7201:7211 Triage.derive <> derive_node constr
+R7233:7243 Triage.derive <> derive_node constr
+R7233:7243 Triage.derive <> derive_node constr
+prf 7269:7276 <> derive_I
+binder 7286:7290 <> gamma:72
+binder 7292:7294 <> uty:73
+R7297:7302 Triage.derive <> derive ind
+R7304:7308 Triage.derive <> gamma:72 var
+R7310:7310 Triage.terms <> I def
+R7313:7317 Triage.types <> Funty constr
+R7319:7321 Triage.derive <> uty:73 var
+R7323:7325 Triage.derive <> uty:73 var
+R7353:7361 Triage.derive <> derive_S2 thm
+R7371:7378 Triage.derive <> derive_K thm
+R7353:7361 Triage.derive <> derive_S2 thm
+R7371:7378 Triage.derive <> derive_K thm
+R7371:7378 Triage.derive <> derive_K thm
+R7398:7401 Triage.types <> Leaf constr
+R7398:7401 Triage.types <> Leaf constr
+prf 7422:7432 <> derive_swap
+binder 7444:7448 <> gamma:74
+binder 7450:7450 <> f:75
+binder 7452:7452 <> u:76
+binder 7454:7454 <> v:77
+binder 7456:7456 <> w:78
+R7495:7498 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7459:7464 Triage.derive <> derive ind
+R7466:7470 Triage.derive <> gamma:74 var
+R7472:7472 Triage.derive <> f:75 var
+R7475:7479 Triage.types <> Funty constr
+R7481:7481 Triage.derive <> u:76 var
+R7484:7488 Triage.types <> Funty constr
+R7490:7490 Triage.derive <> v:77 var
+R7492:7492 Triage.derive <> w:78 var
+R7499:7504 Triage.derive <> derive ind
+R7506:7510 Triage.derive <> gamma:74 var
+R7513:7516 Triage.terms <> swap def
+R7518:7518 Triage.derive <> f:75 var
+R7522:7526 Triage.types <> Funty constr
+R7528:7528 Triage.derive <> v:77 var
+R7531:7535 Triage.types <> Funty constr
+R7537:7537 Triage.derive <> u:76 var
+R7539:7539 Triage.derive <> w:78 var
+R7568:7571 Triage.terms <> swap def
+R7581:7589 Triage.derive <> derive_S2 thm
+R7601:7609 Triage.derive <> derive_K1 thm
+R7619:7627 Triage.derive <> derive_S1 thm
+R7645:7652 Triage.derive <> derive_K thm
+R7581:7589 Triage.derive <> derive_S2 thm
+R7601:7609 Triage.derive <> derive_K1 thm
+R7619:7627 Triage.derive <> derive_S1 thm
+R7645:7652 Triage.derive <> derive_K thm
+prf 7671:7681 <> derive_wait
+binder 7693:7697 <> gamma:79
+binder 7699:7699 <> M:80
+binder 7701:7701 <> N:81
+binder 7703:7705 <> uty:82
+binder 7707:7707 <> k:83
+binder 7709:7711 <> vty:84
+binder 7713:7715 <> wty:85
+R7774:7777 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7722:7727 Triage.derive <> derive ind
+R7729:7733 Triage.derive <> gamma:79 var
+R7735:7735 Triage.derive <> M:80 var
 R7738:7742 Triage.types <> Funty constr
-R7744:7746 Triage.derive <> vty:84 var
-R7748:7750 Triage.derive <> wty:85 var
-R7776:7784 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7758:7763 Triage.derive <> derive ind
-R7765:7769 Triage.derive <> gamma:79 var
-R7771:7771 Triage.derive <> N:81 var
-R7773:7775 Triage.derive <> uty:82 var
-R7785:7790 Triage.derive <> derive ind
-R7792:7796 Triage.derive <> gamma:79 var
-R7799:7802 Triage.terms <> wait def
-R7804:7804 Triage.derive <> M:80 var
-R7806:7806 Triage.derive <> N:81 var
-R7810:7814 Triage.types <> quant def
-R7816:7816 Triage.derive <> k:83 var
-R7819:7823 Triage.types <> Funty constr
-R7825:7827 Triage.derive <> vty:84 var
-R7829:7831 Triage.derive <> wty:85 var
-R7859:7862 Triage.terms <> wait def
-R7875:7897 Triage.derive <> derive_generalisation_q thm
-R7875:7897 Triage.derive <> derive_generalisation_q thm
-R7907:7915 Triage.derive <> derive_S2 thm
-R7907:7915 Triage.derive <> derive_S2 thm
-R7928:7935 Triage.derive <> derive_I thm
-R7928:7935 Triage.derive <> derive_I thm
-R7946:7954 Triage.derive <> derive_S2 thm
-R7964:7972 Triage.derive <> derive_K1 thm
-R7982:8005 Triage.derive <> derive_generalisation2_q thm
-R8015:8028 Triage.derive <> derive_subtype thm
-R7946:7954 Triage.derive <> derive_S2 thm
-R7964:7972 Triage.derive <> derive_K1 thm
-R7964:7972 Triage.derive <> derive_K1 thm
-R7982:8005 Triage.derive <> derive_generalisation2_q thm
-R7982:8005 Triage.derive <> derive_generalisation2_q thm
-R8015:8028 Triage.derive <> derive_subtype thm
-R8015:8028 Triage.derive <> derive_subtype thm
-R8050:8061 Triage.subtypes <> subtype_lift thm
-R8050:8061 Triage.subtypes <> subtype_lift thm
-R8071:8079 Triage.subtypes <> sub_trans constr
-R8071:8079 Triage.subtypes <> sub_trans constr
-R8089:8100 Triage.subtypes <> subtype_lift thm
-R8089:8100 Triage.subtypes <> subtype_lift thm
-R8110:8122 Triage.subtypes <> subtype_quant thm
-R8110:8122 Triage.subtypes <> subtype_quant thm
-R8132:8135 Triage.types <> lift def
-R8165:8177 Triage.subtypes <> subtype_lift3 thm
-R8165:8177 Triage.subtypes <> subtype_lift3 thm
-prf 8197:8208 <> derive_wait2
-binder 8220:8224 <> gamma:86
-binder 8226:8226 <> M:87
-binder 8228:8228 <> N:88
-binder 8230:8230 <> P:89
-binder 8232:8233 <> u1:90
-binder 8235:8236 <> u2:91
-binder 8238:8239 <> u3:92
-binder 8241:8242 <> ty:93
-R8299:8306 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8249:8254 Triage.derive <> derive ind
-R8256:8260 Triage.derive <> gamma:86 var
-R8262:8262 Triage.derive <> M:87 var
-R8265:8269 Triage.types <> Funty constr
-R8271:8272 Triage.derive <> u1:90 var
-R8275:8279 Triage.types <> Funty constr
-R8281:8282 Triage.derive <> u2:91 var
-R8285:8289 Triage.types <> Funty constr
-R8291:8292 Triage.derive <> u3:92 var
-R8294:8295 Triage.derive <> ty:93 var
-R8324:8327 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8307:8312 Triage.derive <> derive ind
-R8314:8318 Triage.derive <> gamma:86 var
-R8320:8320 Triage.derive <> N:88 var
-R8322:8323 Triage.derive <> u1:90 var
-R8345:8348 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8328:8333 Triage.derive <> derive ind
-R8335:8339 Triage.derive <> gamma:86 var
-R8341:8341 Triage.derive <> P:89 var
-R8343:8344 Triage.derive <> u2:91 var
-R8349:8354 Triage.derive <> derive ind
-R8356:8360 Triage.derive <> gamma:86 var
-R8363:8367 Triage.terms <> wait2 def
-R8369:8369 Triage.derive <> M:87 var
-R8371:8371 Triage.derive <> N:88 var
-R8373:8373 Triage.derive <> P:89 var
-R8377:8381 Triage.types <> Funty constr
-R8383:8384 Triage.derive <> u3:92 var
-R8386:8387 Triage.derive <> ty:93 var
-R8415:8423 Triage.derive <> derive_S2 thm
-R8415:8423 Triage.derive <> derive_S2 thm
-R8436:8443 Triage.derive <> derive_I thm
-R8436:8443 Triage.derive <> derive_I thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8481:8489 Triage.derive <> derive_K1 thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8463:8471 Triage.derive <> derive_S2 thm
-R8481:8489 Triage.derive <> derive_K1 thm
-R8481:8489 Triage.derive <> derive_K1 thm
-R8481:8489 Triage.derive <> derive_K1 thm
-prf 8514:8525 <> derive_basic
-R8530:8530 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R8595:8601 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 8538:8542 <> gamma:94
-binder 8544:8546 <> uty:95
-binder 8548:8550 <> vty:96
-R8553:8558 Triage.derive <> derive ind
-R8560:8564 Triage.derive <> gamma:94 var
-R8566:8566 Triage.terms <> K def
-R8569:8573 Triage.types <> Funty constr
-R8575:8577 Triage.derive <> uty:95 var
-R8580:8584 Triage.types <> Funty constr
-R8586:8588 Triage.derive <> vty:96 var
-R8590:8592 Triage.derive <> uty:95 var
-R8602:8602 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R8727:8733 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 8610:8614 <> gamma:97
-binder 8616:8618 <> uty:98
-binder 8620:8622 <> vty:99
-binder 8624:8626 <> wty:100
-R8635:8640 Triage.derive <> derive ind
-R8642:8646 Triage.derive <> gamma:97 var
-R8648:8650 Triage.terms <> Sop def
-R8653:8657 Triage.types <> Funty constr
-R8660:8664 Triage.types <> Funty constr
-R8666:8668 Triage.derive <> uty:98 var
-R8671:8675 Triage.types <> Funty constr
-R8677:8679 Triage.derive <> vty:99 var
-R8681:8683 Triage.derive <> wty:100 var
-R8688:8692 Triage.types <> Funty constr
-R8695:8699 Triage.types <> Funty constr
-R8701:8703 Triage.derive <> uty:98 var
-R8705:8707 Triage.derive <> vty:99 var
-R8711:8715 Triage.types <> Funty constr
-R8717:8719 Triage.derive <> uty:98 var
-R8721:8723 Triage.derive <> wty:100 var
-R8734:8734 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R8783:8790 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 8742:8746 <> gamma:101
-binder 8748:8750 <> uty:102
-R8753:8758 Triage.derive <> derive ind
-R8760:8764 Triage.derive <> gamma:101 var
-R8766:8766 Triage.terms <> I def
-R8769:8773 Triage.types <> Funty constr
-R8775:8777 Triage.derive <> uty:102 var
-R8779:8781 Triage.derive <> uty:102 var
-R8791:8791 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R8897:8903 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 8799:8803 <> gamma:103
-binder 8805:8805 <> f:104
-binder 8807:8807 <> u:105
-binder 8809:8809 <> v:106
-binder 8811:8811 <> w:107
-R8850:8853 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8814:8819 Triage.derive <> derive ind
-R8821:8825 Triage.derive <> gamma:103 var
-R8827:8827 Triage.derive <> f:104 var
-R8830:8834 Triage.types <> Funty constr
-R8836:8836 Triage.derive <> u:105 var
-R8839:8843 Triage.types <> Funty constr
-R8845:8845 Triage.derive <> v:106 var
-R8847:8847 Triage.derive <> w:107 var
-R8854:8859 Triage.derive <> derive ind
-R8861:8865 Triage.derive <> gamma:103 var
-R8868:8871 Triage.terms <> swap def
-R8873:8873 Triage.derive <> f:104 var
-R8877:8881 Triage.types <> Funty constr
-R8883:8883 Triage.derive <> v:106 var
-R8886:8890 Triage.types <> Funty constr
-R8892:8892 Triage.derive <> u:105 var
-R8894:8894 Triage.derive <> w:107 var
-R8904:8904 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R9073:9080 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R9257:9257 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 8912:8916 <> gamma:108
-binder 8918:8918 <> M:109
-binder 8920:8920 <> N:110
-binder 8922:8924 <> uty:111
-binder 8926:8926 <> k:112
-binder 8928:8930 <> vty:113
-binder 8932:8934 <> wty:114
-R8993:8996 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8941:8946 Triage.derive <> derive ind
-R8948:8952 Triage.derive <> gamma:108 var
-R8954:8954 Triage.derive <> M:109 var
-R8957:8961 Triage.types <> Funty constr
-R8963:8965 Triage.derive <> uty:111 var
-R8968:8972 Triage.types <> quant def
-R8974:8974 Triage.derive <> k:112 var
-R8977:8981 Triage.types <> Funty constr
-R8983:8985 Triage.derive <> vty:113 var
-R8987:8989 Triage.derive <> wty:114 var
-R9015:9023 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R8997:9002 Triage.derive <> derive ind
-R9004:9008 Triage.derive <> gamma:108 var
-R9010:9010 Triage.derive <> N:110 var
-R9012:9014 Triage.derive <> uty:111 var
-R9024:9029 Triage.derive <> derive ind
-R9031:9035 Triage.derive <> gamma:108 var
-R9038:9041 Triage.terms <> wait def
-R9043:9043 Triage.derive <> M:109 var
-R9045:9045 Triage.derive <> N:110 var
-R9049:9053 Triage.types <> quant def
-R9055:9055 Triage.derive <> k:112 var
-R9058:9062 Triage.types <> Funty constr
-R9064:9066 Triage.derive <> vty:113 var
-R9068:9070 Triage.derive <> wty:114 var
-binder 9088:9092 <> gamma:115
-binder 9094:9094 <> M:116
-binder 9096:9096 <> N:117
-binder 9098:9098 <> P:118
-binder 9100:9101 <> u1:119
-binder 9103:9104 <> u2:120
-binder 9106:9107 <> u3:121
-binder 9109:9110 <> ty:122
-R9167:9174 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9117:9122 Triage.derive <> derive ind
-R9124:9128 Triage.derive <> gamma:115 var
-R9130:9130 Triage.derive <> M:116 var
-R9133:9137 Triage.types <> Funty constr
-R9139:9140 Triage.derive <> u1:119 var
-R9143:9147 Triage.types <> Funty constr
-R9149:9150 Triage.derive <> u2:120 var
-R9153:9157 Triage.types <> Funty constr
-R9159:9160 Triage.derive <> u3:121 var
-R9162:9163 Triage.derive <> ty:122 var
-R9192:9195 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9175:9180 Triage.derive <> derive ind
-R9182:9186 Triage.derive <> gamma:115 var
-R9188:9188 Triage.derive <> N:117 var
-R9190:9191 Triage.derive <> u1:119 var
-R9213:9216 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9196:9201 Triage.derive <> derive ind
-R9203:9207 Triage.derive <> gamma:115 var
-R9209:9209 Triage.derive <> P:118 var
-R9211:9212 Triage.derive <> u2:120 var
-R9217:9222 Triage.derive <> derive ind
-R9224:9228 Triage.derive <> gamma:115 var
-R9231:9235 Triage.terms <> wait2 def
-R9237:9237 Triage.derive <> M:116 var
-R9239:9239 Triage.derive <> N:117 var
-R9241:9241 Triage.derive <> P:118 var
-R9245:9249 Triage.types <> Funty constr
-R9251:9252 Triage.derive <> u3:121 var
-R9254:9255 Triage.derive <> ty:122 var
-R9291:9298 Triage.derive <> derive_K thm
-R9309:9316 Triage.derive <> derive_S thm
-R9327:9334 Triage.derive <> derive_I thm
-R9345:9355 Triage.derive <> derive_swap thm
-R9383:9393 Triage.derive <> derive_wait thm
-R9404:9415 Triage.derive <> derive_wait2 thm
-R9291:9298 Triage.derive <> derive_K thm
-R9309:9316 Triage.derive <> derive_S thm
-R9327:9334 Triage.derive <> derive_I thm
-R9345:9355 Triage.derive <> derive_swap thm
-R9383:9393 Triage.derive <> derive_wait thm
-R9404:9415 Triage.derive <> derive_wait2 thm
-prf 9436:9454 <> programs_have_types
-binder 9464:9464 <> p:123
-binder 9466:9470 <> gamma:124
-R9482:9485 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9473:9479 Triage.terms <> program ind
-R9481:9481 Triage.derive <> p:123 var
-R9486:9491 Triage.derive <> derive ind
-R9493:9497 Triage.derive <> gamma:124 var
-R9499:9499 Triage.derive <> p:123 var
-R9502:9513 Triage.types <> program_type def
-R9515:9515 Triage.derive <> p:123 var
-binder 9540:9540 <> n:125
-binder 9542:9542 <> p:126
-binder 9544:9548 <> gamma:127
-R9566:9569 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9562:9564 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
-R9551:9559 Triage.terms <> term_size def
-R9561:9561 Triage.derive <> p:126 var
-R9565:9565 Triage.derive <> n:125 var
-R9579:9582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9570:9576 Triage.terms <> program ind
-R9578:9578 Triage.derive <> p:126 var
-R9583:9588 Triage.derive <> derive ind
-R9590:9594 Triage.derive <> gamma:127 var
-R9596:9596 Triage.derive <> p:126 var
-R9599:9610 Triage.types <> program_type def
-R9612:9612 Triage.derive <> p:126 var
-binder 9540:9540 <> n:128
-binder 9542:9542 <> p:129
-binder 9544:9548 <> gamma:130
-R9566:9569 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9562:9564 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
-R9551:9559 Triage.terms <> term_size def
-R9561:9561 Triage.derive <> p:129 var
-R9565:9565 Triage.derive <> n:128 var
-R9579:9582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9570:9576 Triage.terms <> program ind
-R9578:9578 Triage.derive <> p:129 var
-R9583:9588 Triage.derive <> derive ind
-R9590:9594 Triage.derive <> gamma:130 var
-R9596:9596 Triage.derive <> p:129 var
-R9599:9610 Triage.types <> program_type def
-R9612:9612 Triage.derive <> p:129 var
-R9737:9742 Triage.derive <> derive ind
-R9753:9764 Triage.types <> program_type def
-R9737:9742 Triage.derive <> derive ind
-R9753:9764 Triage.types <> program_type def
-R9805:9814 Triage.derive <> derive_app constr
-R9805:9814 Triage.derive <> derive_app constr
-R9831:9841 Triage.derive <> derive_node constr
-R9831:9841 Triage.derive <> derive_node constr
-R9851:9862 Triage.subtypes <> sub_leaf_fun constr
-R9851:9862 Triage.subtypes <> sub_leaf_fun constr
-R9884:9889 Triage.derive <> derive ind
-R9900:9911 Triage.types <> program_type def
-R9884:9889 Triage.derive <> derive ind
-R9900:9911 Triage.types <> program_type def
-R9952:9957 Triage.derive <> derive ind
-R9968:9979 Triage.types <> program_type def
-R9952:9957 Triage.derive <> derive ind
-R9968:9979 Triage.types <> program_type def
-R10028:10037 Triage.derive <> derive_app constr
-R10028:10037 Triage.derive <> derive_app constr
-R10028:10037 Triage.derive <> derive_app constr
-R10028:10037 Triage.derive <> derive_app constr
-R10028:10037 Triage.derive <> derive_app constr
-R10028:10037 Triage.derive <> derive_app constr
-R10054:10064 Triage.derive <> derive_node constr
-R10054:10064 Triage.derive <> derive_node constr
-R10074:10090 Triage.subtypes <> subtype_leaf_fork thm
-R10074:10090 Triage.subtypes <> subtype_leaf_fork thm
+R7744:7746 Triage.derive <> uty:82 var
+R7749:7753 Triage.types <> quant def
+R7755:7755 Triage.derive <> k:83 var
+R7758:7762 Triage.types <> Funty constr
+R7764:7766 Triage.derive <> vty:84 var
+R7768:7770 Triage.derive <> wty:85 var
+R7796:7804 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7778:7783 Triage.derive <> derive ind
+R7785:7789 Triage.derive <> gamma:79 var
+R7791:7791 Triage.derive <> N:81 var
+R7793:7795 Triage.derive <> uty:82 var
+R7805:7810 Triage.derive <> derive ind
+R7812:7816 Triage.derive <> gamma:79 var
+R7819:7822 Triage.terms <> wait def
+R7824:7824 Triage.derive <> M:80 var
+R7826:7826 Triage.derive <> N:81 var
+R7830:7834 Triage.types <> quant def
+R7836:7836 Triage.derive <> k:83 var
+R7839:7843 Triage.types <> Funty constr
+R7845:7847 Triage.derive <> vty:84 var
+R7849:7851 Triage.derive <> wty:85 var
+R7881:7884 Triage.terms <> wait def
+R7894:7916 Triage.derive <> derive_generalisation_q thm
+R7926:7934 Triage.derive <> derive_S2 thm
+R7948:7955 Triage.derive <> derive_I thm
+R7971:7979 Triage.derive <> derive_S2 thm
+R7989:7997 Triage.derive <> derive_K1 thm
+R8007:8030 Triage.derive <> derive_generalisation2_q thm
+R8044:8057 Triage.derive <> derive_subtype thm
+R8079:8090 Triage.subtypes <> subtype_lift thm
+R8105:8113 Triage.subtypes <> sub_trans constr
+R8125:8136 Triage.subtypes <> subtype_lift thm
+R8153:8165 Triage.subtypes <> subtype_quant thm
+R8175:8178 Triage.types <> lift def
+R8208:8220 Triage.subtypes <> subtype_lift3 thm
+R7894:7916 Triage.derive <> derive_generalisation_q thm
+R7926:7934 Triage.derive <> derive_S2 thm
+R7948:7955 Triage.derive <> derive_I thm
+R7971:7979 Triage.derive <> derive_S2 thm
+R7989:7997 Triage.derive <> derive_K1 thm
+R7989:7997 Triage.derive <> derive_K1 thm
+R8007:8030 Triage.derive <> derive_generalisation2_q thm
+R8007:8030 Triage.derive <> derive_generalisation2_q thm
+R8044:8057 Triage.derive <> derive_subtype thm
+R8044:8057 Triage.derive <> derive_subtype thm
+R8079:8090 Triage.subtypes <> subtype_lift thm
+R8105:8113 Triage.subtypes <> sub_trans constr
+R8125:8136 Triage.subtypes <> subtype_lift thm
+R8153:8165 Triage.subtypes <> subtype_quant thm
+R8208:8220 Triage.subtypes <> subtype_lift3 thm
+prf 8240:8251 <> derive_wait2
+binder 8263:8267 <> gamma:86
+binder 8269:8269 <> M:87
+binder 8271:8271 <> N:88
+binder 8273:8273 <> P:89
+binder 8275:8276 <> u1:90
+binder 8278:8279 <> u2:91
+binder 8281:8282 <> u3:92
+binder 8284:8285 <> ty:93
+R8342:8349 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8292:8297 Triage.derive <> derive ind
+R8299:8303 Triage.derive <> gamma:86 var
+R8305:8305 Triage.derive <> M:87 var
+R8308:8312 Triage.types <> Funty constr
+R8314:8315 Triage.derive <> u1:90 var
+R8318:8322 Triage.types <> Funty constr
+R8324:8325 Triage.derive <> u2:91 var
+R8328:8332 Triage.types <> Funty constr
+R8334:8335 Triage.derive <> u3:92 var
+R8337:8338 Triage.derive <> ty:93 var
+R8367:8370 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8350:8355 Triage.derive <> derive ind
+R8357:8361 Triage.derive <> gamma:86 var
+R8363:8363 Triage.derive <> N:88 var
+R8365:8366 Triage.derive <> u1:90 var
+R8388:8391 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8371:8376 Triage.derive <> derive ind
+R8378:8382 Triage.derive <> gamma:86 var
+R8384:8384 Triage.derive <> P:89 var
+R8386:8387 Triage.derive <> u2:91 var
+R8392:8397 Triage.derive <> derive ind
+R8399:8403 Triage.derive <> gamma:86 var
+R8406:8410 Triage.terms <> wait2 def
+R8412:8412 Triage.derive <> M:87 var
+R8414:8414 Triage.derive <> N:88 var
+R8416:8416 Triage.derive <> P:89 var
+R8420:8424 Triage.types <> Funty constr
+R8426:8427 Triage.derive <> u3:92 var
+R8429:8430 Triage.derive <> ty:93 var
+R8458:8466 Triage.derive <> derive_S2 thm
+R8480:8487 Triage.derive <> derive_I thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8526:8534 Triage.derive <> derive_K1 thm
+R8458:8466 Triage.derive <> derive_S2 thm
+R8480:8487 Triage.derive <> derive_I thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8508:8516 Triage.derive <> derive_S2 thm
+R8526:8534 Triage.derive <> derive_K1 thm
+R8526:8534 Triage.derive <> derive_K1 thm
+R8526:8534 Triage.derive <> derive_K1 thm
+prf 8559:8570 <> derive_basic
+R8575:8575 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8640:8646 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 8583:8587 <> gamma:94
+binder 8589:8591 <> uty:95
+binder 8593:8595 <> vty:96
+R8598:8603 Triage.derive <> derive ind
+R8605:8609 Triage.derive <> gamma:94 var
+R8611:8611 Triage.terms <> K def
+R8614:8618 Triage.types <> Funty constr
+R8620:8622 Triage.derive <> uty:95 var
+R8625:8629 Triage.types <> Funty constr
+R8631:8633 Triage.derive <> vty:96 var
+R8635:8637 Triage.derive <> uty:95 var
+R8647:8647 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8772:8778 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 8655:8659 <> gamma:97
+binder 8661:8663 <> uty:98
+binder 8665:8667 <> vty:99
+binder 8669:8671 <> wty:100
+R8680:8685 Triage.derive <> derive ind
+R8687:8691 Triage.derive <> gamma:97 var
+R8693:8695 Triage.terms <> Sop def
+R8698:8702 Triage.types <> Funty constr
+R8705:8709 Triage.types <> Funty constr
+R8711:8713 Triage.derive <> uty:98 var
+R8716:8720 Triage.types <> Funty constr
+R8722:8724 Triage.derive <> vty:99 var
+R8726:8728 Triage.derive <> wty:100 var
+R8733:8737 Triage.types <> Funty constr
+R8740:8744 Triage.types <> Funty constr
+R8746:8748 Triage.derive <> uty:98 var
+R8750:8752 Triage.derive <> vty:99 var
+R8756:8760 Triage.types <> Funty constr
+R8762:8764 Triage.derive <> uty:98 var
+R8766:8768 Triage.derive <> wty:100 var
+R8779:8779 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8828:8835 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 8787:8791 <> gamma:101
+binder 8793:8795 <> uty:102
+R8798:8803 Triage.derive <> derive ind
+R8805:8809 Triage.derive <> gamma:101 var
+R8811:8811 Triage.terms <> I def
+R8814:8818 Triage.types <> Funty constr
+R8820:8822 Triage.derive <> uty:102 var
+R8824:8826 Triage.derive <> uty:102 var
+R8836:8836 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8942:8948 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 8844:8848 <> gamma:103
+binder 8850:8850 <> f:104
+binder 8852:8852 <> u:105
+binder 8854:8854 <> v:106
+binder 8856:8856 <> w:107
+R8895:8898 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8859:8864 Triage.derive <> derive ind
+R8866:8870 Triage.derive <> gamma:103 var
+R8872:8872 Triage.derive <> f:104 var
+R8875:8879 Triage.types <> Funty constr
+R8881:8881 Triage.derive <> u:105 var
+R8884:8888 Triage.types <> Funty constr
+R8890:8890 Triage.derive <> v:106 var
+R8892:8892 Triage.derive <> w:107 var
+R8899:8904 Triage.derive <> derive ind
+R8906:8910 Triage.derive <> gamma:103 var
+R8913:8916 Triage.terms <> swap def
+R8918:8918 Triage.derive <> f:104 var
+R8922:8926 Triage.types <> Funty constr
+R8928:8928 Triage.derive <> v:106 var
+R8931:8935 Triage.types <> Funty constr
+R8937:8937 Triage.derive <> u:105 var
+R8939:8939 Triage.derive <> w:107 var
+R8949:8949 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9118:9125 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9302:9302 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 8957:8961 <> gamma:108
+binder 8963:8963 <> M:109
+binder 8965:8965 <> N:110
+binder 8967:8969 <> uty:111
+binder 8971:8971 <> k:112
+binder 8973:8975 <> vty:113
+binder 8977:8979 <> wty:114
+R9038:9041 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8986:8991 Triage.derive <> derive ind
+R8993:8997 Triage.derive <> gamma:108 var
+R8999:8999 Triage.derive <> M:109 var
+R9002:9006 Triage.types <> Funty constr
+R9008:9010 Triage.derive <> uty:111 var
+R9013:9017 Triage.types <> quant def
+R9019:9019 Triage.derive <> k:112 var
+R9022:9026 Triage.types <> Funty constr
+R9028:9030 Triage.derive <> vty:113 var
+R9032:9034 Triage.derive <> wty:114 var
+R9060:9068 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9042:9047 Triage.derive <> derive ind
+R9049:9053 Triage.derive <> gamma:108 var
+R9055:9055 Triage.derive <> N:110 var
+R9057:9059 Triage.derive <> uty:111 var
+R9069:9074 Triage.derive <> derive ind
+R9076:9080 Triage.derive <> gamma:108 var
+R9083:9086 Triage.terms <> wait def
+R9088:9088 Triage.derive <> M:109 var
+R9090:9090 Triage.derive <> N:110 var
+R9094:9098 Triage.types <> quant def
+R9100:9100 Triage.derive <> k:112 var
+R9103:9107 Triage.types <> Funty constr
+R9109:9111 Triage.derive <> vty:113 var
+R9113:9115 Triage.derive <> wty:114 var
+binder 9133:9137 <> gamma:115
+binder 9139:9139 <> M:116
+binder 9141:9141 <> N:117
+binder 9143:9143 <> P:118
+binder 9145:9146 <> u1:119
+binder 9148:9149 <> u2:120
+binder 9151:9152 <> u3:121
+binder 9154:9155 <> ty:122
+R9212:9219 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9162:9167 Triage.derive <> derive ind
+R9169:9173 Triage.derive <> gamma:115 var
+R9175:9175 Triage.derive <> M:116 var
+R9178:9182 Triage.types <> Funty constr
+R9184:9185 Triage.derive <> u1:119 var
+R9188:9192 Triage.types <> Funty constr
+R9194:9195 Triage.derive <> u2:120 var
+R9198:9202 Triage.types <> Funty constr
+R9204:9205 Triage.derive <> u3:121 var
+R9207:9208 Triage.derive <> ty:122 var
+R9237:9240 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9220:9225 Triage.derive <> derive ind
+R9227:9231 Triage.derive <> gamma:115 var
+R9233:9233 Triage.derive <> N:117 var
+R9235:9236 Triage.derive <> u1:119 var
+R9258:9261 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9241:9246 Triage.derive <> derive ind
+R9248:9252 Triage.derive <> gamma:115 var
+R9254:9254 Triage.derive <> P:118 var
+R9256:9257 Triage.derive <> u2:120 var
+R9262:9267 Triage.derive <> derive ind
+R9269:9273 Triage.derive <> gamma:115 var
+R9276:9280 Triage.terms <> wait2 def
+R9282:9282 Triage.derive <> M:116 var
+R9284:9284 Triage.derive <> N:117 var
+R9286:9286 Triage.derive <> P:118 var
+R9290:9294 Triage.types <> Funty constr
+R9296:9297 Triage.derive <> u3:121 var
+R9299:9300 Triage.derive <> ty:122 var
+R9336:9343 Triage.derive <> derive_K thm
+R9354:9361 Triage.derive <> derive_S thm
+R9372:9379 Triage.derive <> derive_I thm
+R9390:9400 Triage.derive <> derive_swap thm
+R9428:9438 Triage.derive <> derive_wait thm
+R9449:9460 Triage.derive <> derive_wait2 thm
+R9336:9343 Triage.derive <> derive_K thm
+R9354:9361 Triage.derive <> derive_S thm
+R9372:9379 Triage.derive <> derive_I thm
+R9390:9400 Triage.derive <> derive_swap thm
+R9428:9438 Triage.derive <> derive_wait thm
+R9449:9460 Triage.derive <> derive_wait2 thm
+prf 9481:9499 <> programs_have_types
+binder 9509:9509 <> p:123
+binder 9511:9515 <> gamma:124
+R9527:9530 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9518:9524 Triage.terms <> program ind
+R9526:9526 Triage.derive <> p:123 var
+R9531:9536 Triage.derive <> derive ind
+R9538:9542 Triage.derive <> gamma:124 var
+R9544:9544 Triage.derive <> p:123 var
+R9547:9558 Triage.types <> program_type def
+R9560:9560 Triage.derive <> p:123 var
+binder 9585:9585 <> n:125
+binder 9587:9587 <> p:126
+binder 9589:9593 <> gamma:127
+R9611:9614 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9607:9609 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R9596:9604 Triage.terms <> term_size def
+R9606:9606 Triage.derive <> p:126 var
+R9610:9610 Triage.derive <> n:125 var
+R9624:9627 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9615:9621 Triage.terms <> program ind
+R9623:9623 Triage.derive <> p:126 var
+R9628:9633 Triage.derive <> derive ind
+R9635:9639 Triage.derive <> gamma:127 var
+R9641:9641 Triage.derive <> p:126 var
+R9644:9655 Triage.types <> program_type def
+R9657:9657 Triage.derive <> p:126 var
+binder 9585:9585 <> n:128
+binder 9587:9587 <> p:129
+binder 9589:9593 <> gamma:130
+R9611:9614 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9607:9609 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R9596:9604 Triage.terms <> term_size def
+R9606:9606 Triage.derive <> p:129 var
+R9610:9610 Triage.derive <> n:128 var
+R9624:9627 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9615:9621 Triage.terms <> program ind
+R9623:9623 Triage.derive <> p:129 var
+R9628:9633 Triage.derive <> derive ind
+R9635:9639 Triage.derive <> gamma:130 var
+R9641:9641 Triage.derive <> p:129 var
+R9644:9655 Triage.types <> program_type def
+R9657:9657 Triage.derive <> p:129 var
+R9784:9789 Triage.derive <> derive ind
+R9800:9811 Triage.types <> program_type def
+R9871:9880 Triage.derive <> derive_app constr
+R9897:9907 Triage.derive <> derive_node constr
+R9917:9928 Triage.subtypes <> sub_leaf_fun constr
+R9784:9789 Triage.derive <> derive ind
+R9800:9811 Triage.types <> program_type def
+R9871:9880 Triage.derive <> derive_app constr
+R9897:9907 Triage.derive <> derive_node constr
+R9917:9928 Triage.subtypes <> sub_leaf_fun constr
+R9943:9948 Triage.derive <> derive ind
+R9959:9970 Triage.types <> program_type def
+R10027:10032 Triage.derive <> derive ind
+R10043:10054 Triage.types <> program_type def
+R10110:10119 Triage.derive <> derive_app constr
+R10136:10146 Triage.derive <> derive_node constr
+R10156:10172 Triage.subtypes <> subtype_leaf_fork thm
+R9943:9948 Triage.derive <> derive ind
+R9959:9970 Triage.types <> program_type def
+R10027:10032 Triage.derive <> derive ind
+R10043:10054 Triage.types <> program_type def
+R10110:10119 Triage.derive <> derive_app constr
+R10110:10119 Triage.derive <> derive_app constr
+R10110:10119 Triage.derive <> derive_app constr
+R10110:10119 Triage.derive <> derive_app constr
+R10110:10119 Triage.derive <> derive_app constr
+R10136:10146 Triage.derive <> derive_node constr
+R10156:10172 Triage.subtypes <> subtype_leaf_fork thm

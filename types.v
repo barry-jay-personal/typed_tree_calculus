@@ -38,6 +38,7 @@ Require Import terms.
 
 Open Scope string_scope.
 Open Scope nat_scope.
+Open Scope tree_scope.
 
 Set Default Proof Using "Type".
 
@@ -75,22 +76,22 @@ Fixpoint  program_type p :=
 
 Definition test : forall n m : nat, {n <= m} + {n > m}.
 Proof.
-simple induction n; simple induction m; simpl in |- *; auto with arith.
+simple induction n; simple induction m; simpl in |- *; auto with arith;
 intros m' H'; elim (H m'); auto with arith.
 Defined.
 (* Transparent test. *)
 
 Definition le_lt : forall n m : nat, n <= m -> {n < m} + {n = m}.
 Proof.
-simple induction n; simple induction m; simpl in |- *; auto with arith.
-intros m' H1 H2; elim (H m'); auto with arith.
+  simple induction n; simple induction m; simpl in |- *; auto with arith;
+    intros m' H1 H2; elim (H m'); auto with arith.
 Defined.
 (* Transparent le_lt. *)
 
 Definition compare : forall n m : nat, {n < m} + {n = m} + {n > m}.
 Proof.
-intros n m; elim (test n m); auto with arith.
-left; apply le_lt; trivial with arith.
+  intros n m; elim (test n m); auto with arith;
+    left; apply le_lt; trivial with arith.
 Defined.
 
 (* Lifting *)
@@ -106,10 +107,10 @@ forall (n n0 : nat), relocate n n0 0 = n.
 Proof. intros; unfold relocate; case (test n0 n); intro; auto with arith. Qed.
 
 Lemma relocate_lessthan : forall m n k, m<=k -> relocate k m n = (n+k). 
-Proof. intros; unfold relocate. elim(test m k); intros; auto. lia.  Qed.
+Proof. intros; unfold relocate. elim(test m k); intros; auto; lia.  Qed.
 
 Lemma relocate_greaterthan : forall m n k, m>k -> relocate k m n = k. 
-Proof. intros; unfold relocate. elim(test m k); intros; auto; lia.  Qed. 
+Proof. intros; unfold relocate; elim(test m k); intros; auto; lia.  Qed. 
 
 Ltac relocate_lt := 
 try (rewrite relocate_lessthan; [| lia]; relocate_lt); 
@@ -124,7 +125,7 @@ Proof.  auto. Qed.
 Lemma relocate_succ :
 forall n n0 k, relocate (S n) (S n0) k = S(relocate n n0 k).
 Proof. 
-intros; unfold relocate. elim(test(S n0) (S n)); elim(test n0 n); intros; auto; lia. 
+intros; unfold relocate; elim(test(S n0) (S n)); elim(test n0 n); intros; auto; lia. 
 Qed. 
 
 Lemma relocate_mono : forall M N n k, relocate M n k = relocate N n k -> M=N. 
@@ -183,10 +184,9 @@ Lemma lift1 :
  lift_rec (lift_rec U i j) (j + i) k = lift_rec U i (j + k).
 Proof.
 simple induction U; intros; simpl in |- *; f_equal; auto. 
-unfold relocate. 
-elim (test i n); elim (test (j+i) (j+ n)); intros; try lia. 
-elim (test (j + i) n); split_all; try lia. 
-replace (S(j+i)) with (j + (S i)) by lia. rewrite H;  auto. 
+- unfold relocate; elim (test i n); elim (test (j+i) (j+ n)); intros; try lia;
+    elim (test (j + i) n); split_all; try lia. 
+- replace (S(j+i)) with (j + (S i)) by lia; rewrite H;  auto. 
 Qed. 
 
 Lemma lift_lift_rec :
@@ -195,20 +195,18 @@ Lemma lift_lift_rec :
  lift_rec (lift_rec U i p) (p + n) k = lift_rec (lift_rec U n k) i p.
 Proof.
 simple induction U; simpl in |- *;  intros; f_equal; auto.
-(* Var *) 
-unfold relocate.
-elim(test i n); intros; try lia. 
-elim(test n0 n); intros; try lia. 
-elim(test (p+n0) (p+n)); intros; try lia. 
-elim(test i (k+n)); intros; try lia. 
-assert(k+(p+n) = p+ (k+n)) by lia. 
-rewrite H0; auto. 
-elim(test (p+n0) (p+n)); intros; try lia. 
-elim(test i n); intros; try lia. 
-elim(test n0 n); intros; try lia. 
-elim(test (p+n0) n); intros; try lia. 
-elim(test i n); intros; try lia. 
-replace (S (p+n)) with (p + (S n)) by lia. rewrite H; auto; lia. 
+- unfold relocate;
+    elim(test i n); intros; try lia. 
+  + elim(test n0 n); intros; try lia. 
+    * elim(test (p+n0) (p+n)); intros; try lia;
+        elim(test i (k+n)); intros; try lia. 
+    * assert(k+(p+n) = p+ (k+n)) by lia;
+        rewrite H0; auto;
+        elim(test (p+n0) (p+n)); intros; try lia; elim(test i n); intros; try lia. 
+  +  elim(test n0 n); intros; try lia;
+  elim(test (p+n0) n); intros; try lia;
+  elim(test i n); intros; try lia. 
+- replace (S (p+n)) with (p + (S n)) by lia; rewrite H; auto; lia. 
 Qed. 
 
 
@@ -791,7 +789,8 @@ Qed.
 Lemma subst_rec_preserves_quant :
   forall n ty uty k, subst_rec (quant n ty) uty k = quant n (subst_rec ty uty (n+k)).
 Proof.
-  induction n; intros; simpl; auto; rewrite ! quant_succ; simpl; f_equal; auto.
+  induction n; intros; simpl; auto; rewrite ! quant_succ; simpl; 
+    rewrite IHn; repeat f_equal; lia.
 Qed.
 
  

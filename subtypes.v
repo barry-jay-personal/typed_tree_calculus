@@ -120,7 +120,7 @@ Inductive subtype : dtype -> dtype -> Prop :=
 .
 
 
-Hint Constructors subtype : TreeHintDb.
+Global Hint Constructors subtype : TreeHintDb.
 
 
 Ltac var_tac :=
@@ -163,26 +163,26 @@ Lemma lift_rec_preserves_subtype:
 Proof.
   intros ty1 ty2 s; induction s; intros; refold lift_rec; try relocate_tac;
     unfold lift; rewrite ? lift_lift_rec; try lia; eauto 2 with TreeHintDb.  
-  (* 5 *)
-  subst_tac; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; var_tac. 
-  (* 4 *)
-  replace (lift_rec omega2_ty n k0) with omega2_ty by (cbv; auto).
-  rewrite ! lift_rec_preserves_quant. eapply sub_recursion.
-  (* 3 *)
-  var_tac. eapply sub_trans. eapply sub_trans. 2: eapply sub_tree. 3: sub_funty_tac. 
-  3: unfold subst; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; eapply sub_zero.
-  2: unfold covariant in *; simpl; replace 0 with (relocate 0 (S n) k) by auto;
-    rewrite lift_rec_preserves_variant; auto. eapply sub_fork.   eapply sub_fork.
-  simpl; unfold subst; replace n with (0+n) at 1 by lia; rewrite lift_rec_subst_rec; eapply sub_zero.
-  simpl; var_tac. replace (S n) with (0+ S n) at 1 by lia.
-  rewrite lift_rec_subst_rec; try lia; simpl.  rewrite (lift_lift_rec); try lia. var_tac.
-  unfold subst; simpl; var_tac; replace (S (S n)) with (0+ S (S n)) at 1 by lia.
-  rewrite lift_rec_subst_rec; try lia; simpl.  var_tac.
-  replace (S (S (S n))) with (2 + S n) by lia; rewrite (lift_lift_rec); try lia. var_tac.
-  (* 2 *)
-  1,2: unfold bffs_aug, bfff_aug; simpl; var_tac.
-  eapply sub_bffs.
-  eapply sub_bfff. 
+  - subst_tac; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; var_tac. 
+  - replace (lift_rec omega2_ty n k0) with omega2_ty by (cbv; auto);
+      rewrite ! lift_rec_preserves_quant; eapply sub_recursion.
+  - var_tac;
+      eapply sub_trans; [
+        eapply sub_trans; [ | eapply sub_tree] |
+        sub_funty_tac; unfold subst; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; eapply sub_zero]; [
+      |
+        unfold covariant in *; simpl; replace 0 with (relocate 0 (S n) k) by auto;
+        rewrite lift_rec_preserves_variant; auto];
+      eapply sub_fork; [ eapply sub_fork; [  
+  simpl; unfold subst; replace n with (0+n) at 1 by lia; rewrite lift_rec_subst_rec; eapply sub_zero |
+  simpl; var_tac; replace (S n) with (0+ S n) at 1 by lia; 
+  rewrite lift_rec_subst_rec; try lia; simpl;
+  rewrite (lift_lift_rec); try lia; var_tac] | ];
+  unfold subst; simpl; var_tac; replace (S (S n)) with (0+ S (S n)) at 1 by lia; 
+      rewrite lift_rec_subst_rec; try lia; simpl; var_tac;
+      replace (S (S (S n))) with (2 + S n) by lia; rewrite (lift_lift_rec); try lia; var_tac.
+  - unfold bffs_aug, bfff_aug; simpl; var_tac;  eapply sub_bffs.
+  - unfold bffs_aug, bfff_aug; simpl; var_tac;  eapply sub_bfff.
 Qed.
 
 
@@ -191,66 +191,68 @@ Lemma subst_rec_preserves_subtype:
 Proof.
   intros ty1 ty2 s; induction s; intros; unfold lift;
     refold subst_rec; try insert_Var_tac; 
-      unfold lift; rewrite ? subst_rec_lift_rec1; try lia; eauto 2 with TreeHintDb.
-   (* 5 *)
-  subst_tac; eapply sub_trans; [ | rewrite subst_rec_subst_rec; try lia]; eapply sub_zero. 
-  (* 4 *)
-  replace (subst_rec omega2_ty ty k0) with omega2_ty by (cbv; auto).
-  rewrite ! subst_rec_preserves_quant. eapply sub_recursion.
-  (* 3 *)
-  unfold subst; rewrite subst_rec_subst_rec; try lia. replace (k-0) with k by lia.
-  eapply sub_trans. eapply sub_trans. 2: eapply sub_tree.
-  eapply sub_fork.   eapply sub_fork.
-  simpl; eapply sub_zero.
-  simpl; var_tac.   rewrite subst_rec_subst_rec; try lia.  simpl; var_tac. 
-  rewrite subst_rec_lift_rec1; try lia; simpl.  eapply sub_zero.
-  simpl; var_tac.
-  rewrite subst_rec_subst_rec; try lia.  simpl; var_tac. 
-  replace (S (S (S k))) with (2 + S k) by lia.
-  rewrite subst_rec_lift_rec1; try lia; simpl. eapply sub_zero. 
-  unfold covariant in *; replace k with (k+0) by lia; rewrite variant_subst_rec_miss; auto.
-  sub_funty_tac.   unfold subst; rewrite (subst_rec_subst_rec _ uty); try lia.
-  replace (k-0) with k by lia; eapply sub_zero.
-  (* 2 *)
-  1,2: unfold bffs_aug, bfff_aug; simpl; var_tac.
-  eapply sub_bffs.
-  eapply sub_bfff. 
+    unfold lift; rewrite ? subst_rec_lift_rec1; try lia; eauto 2 with TreeHintDb.
+  - subst_tac; eapply sub_trans; [ | rewrite subst_rec_subst_rec; try lia]; eapply sub_zero. 
+  - replace (subst_rec omega2_ty ty k0) with omega2_ty by (cbv; auto);
+      rewrite ! subst_rec_preserves_quant; eapply sub_recursion.
+  - unfold subst; rewrite subst_rec_subst_rec; try lia;
+      replace (k-0) with k by lia;
+      eapply sub_trans; [ eapply sub_trans; [ | eapply sub_tree] |]; [
+        eapply sub_fork; [
+          eapply sub_fork; [
+            simpl; eapply sub_zero |
+            simpl; var_tac; rewrite subst_rec_subst_rec; try lia; simpl; var_tac;
+            rewrite subst_rec_lift_rec1; try lia; simpl; eapply sub_zero] |];
+        simpl; var_tac;  rewrite subst_rec_subst_rec; try lia; simpl; var_tac;
+        replace (S (S (S k))) with (2 + S k) by lia;
+        rewrite subst_rec_lift_rec1; try lia; simpl; eapply sub_zero | 
+        unfold covariant in *; replace k with (k+0) by lia; rewrite variant_subst_rec_miss; auto |
+        sub_funty_tac; unfold subst; rewrite (subst_rec_subst_rec _ uty); try lia;
+        replace (k-0) with k by lia; eapply sub_zero].
+  - unfold bffs_aug, bfff_aug; simpl; var_tac;  eapply sub_bffs.
+  - unfold bffs_aug, bfff_aug; simpl; var_tac;  eapply sub_bfff.
  Qed.
 
 
 Lemma subtype_lift: forall n ty, subtype ty (quant n (lift n ty)).
 Proof.
   induction n; intros; subst; simpl.
-  unfold lift; rewrite lift_rec_null; auto_t.
-  replace (S n) with (1+n) by auto. eapply sub_trans. eapply sub_lift.
-  replace (quant n (Quant (lift (1+n) ty))) with (quant n (lift n (Quant (lift 1 ty)))).
-  eapply IHn. unfold lift; simpl.   rewrite lift_rec_lift_rec; try lia.   repeat f_equal; lia.
+  - unfold lift; rewrite lift_rec_null; auto_t.
+  - replace (S n) with (1+n) by auto; eapply sub_trans; [
+        eapply sub_lift | ];
+      replace (quant n (Quant (lift (1+n) ty))) with (quant n (lift n (Quant (lift 1 ty)))); [ 
+        eapply IHn |
+        unfold lift; simpl; rewrite lift_rec_lift_rec; try lia; repeat f_equal; lia].
 Qed. 
 
 
 Lemma subtype_lift2 : forall n ty, subtype (quant n (lift n ty)) ty.
 Proof.
   induction n; intros.
-  unfold lift; rewrite lift_rec_null; simpl; apply sub_zero. 
-  unfold lift; simpl; replace (S n) with (1+n) by lia; erewrite <- lift_rec_lift_rec. 
-  instantiate(1:= 0). all: try lia. eapply sub_trans. eapply subtype_quant.
-  eapply sub_inst. unfold subst; rewrite subst_rec_lift_rec; try lia.
-  rewrite lift_rec_null. eapply  IHn. 
-  Unshelve. apply Leaf.
+  - unfold lift; rewrite lift_rec_null; simpl; apply sub_zero. 
+  - unfold lift; simpl; replace (S n) with (1+n) by lia; erewrite <- lift_rec_lift_rec. 
+    + instantiate(1:= 0); eapply sub_trans; [ eapply subtype_quant; eapply sub_inst |];
+        unfold subst; rewrite subst_rec_lift_rec; try lia.
+      rewrite lift_rec_null; eapply  IHn.
+    + lia.  
+    + lia.
+Unshelve. apply Leaf.
 Qed.
 
 
 Lemma subtype_lift3: forall (n : nat) (ty : dtype), subtype (lift n (quant n ty)) ty. 
 Proof.
   induction n; intros; unfold lift; simpl.
-  rewrite lift_rec_null; apply sub_zero.
-  replace (S n) with (1+n) by lia.
-  erewrite <- lift_rec_lift_rec.
-  replace (1+n) with (n+1) by lia.
-  eapply sub_trans. 
-  eapply lift_rec_preserves_subtype. eapply IHn. 
-  simpl.   eapply sub_trans. eapply sub_inst. unfold subst; simpl. rewrite subst_rec_lift_rec0; try lia.
-  rewrite lift_rec_null; apply sub_zero. all: lia.
+  - rewrite lift_rec_null; apply sub_zero.
+  - replace (S n) with (1+n) by lia;
+      erewrite <- lift_rec_lift_rec.
+    + replace (1+n) with (n+1) by lia;  eapply sub_trans; [
+          eapply lift_rec_preserves_subtype; eapply IHn |]. 
+      simpl; eapply sub_trans; [ eapply sub_inst | ];
+        unfold subst; simpl; rewrite subst_rec_lift_rec0; try lia;
+        rewrite lift_rec_null; apply sub_zero.
+    + lia.
+    + lia.
 Qed.
 
 Lemma subtype_lift4 : forall n ty,  subtype (quant n (lift_rec ty n n)) ty.
@@ -264,8 +266,9 @@ Qed.
 
 Lemma  subtype_quant_stem: forall k uty, subtype (quant k (Stem uty)) (Stem (quant k uty)). 
 Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  eapply sub_trans; [ eapply subtype_quant; eapply sub_quant_stem | eauto].
+  induction k; intros; simpl.
+  - eapply sub_zero.
+  - eapply sub_trans; [ eapply subtype_quant; eapply sub_quant_stem | eauto].
 Qed.
 
 
@@ -280,29 +283,29 @@ Qed.
 
 Lemma asf_Quant_commute: forall ty, subtype (Asf (Quant ty)) (Quant (Asf ty)) .
 Proof.
-  intros; eapply sub_trans. eapply sub_lift. eapply sub_quant. unfold lift; simpl.
-  eapply sub_asf. eapply sub_trans. eapply sub_inst.
-  unfold subst. simpl.  erewrite subst_rec_lift_rec0; rewrite lift_rec_null.  apply sub_zero. 
+  intros; eapply sub_trans; [ eapply sub_lift |];
+    eapply sub_quant; unfold lift; simpl;
+    eapply sub_asf; eapply sub_trans; [ eapply sub_inst |];
+    unfold subst; simpl;  erewrite subst_rec_lift_rec0; rewrite lift_rec_null;  apply sub_zero. 
 Qed.
 
 Lemma subtype_asf_quanta: forall bs ty, subtype (Asf (quanta bs ty)) (quanta bs (Asf ty)).
 Proof.
-  induction bs; intros; simpl; auto_t. caseEq a; intros; simpl. 
-  eapply sub_trans. eapply IHbs.   eapply subtype_quanta. eapply asf_Quant_commute.
-  eapply IHbs.
+  induction bs; intros; simpl; auto_t; caseEq a; intros; simpl; [
+      eapply sub_trans; [ eapply IHbs |]; eapply subtype_quanta; eapply asf_Quant_commute |
+  eapply IHbs].
   Qed. 
   
 Lemma subtype_quanta_asf: forall bs ty, subtype (quanta bs (Asf ty))  (Asf (quanta bs ty)) .
 Proof.
-  induction bs; intros; simpl; auto_t. caseEq a; intros; simpl. 
-  eapply sub_trans. 2: eapply IHbs.   eapply subtype_quanta. eapply sub_quant_asf. 
-  eapply IHbs.
+  induction bs; intros; simpl; auto_t; caseEq a; intros; simpl; [
+      eapply sub_trans; [ | eapply IHbs]; eapply subtype_quanta; eapply sub_quant_asf |
+  eapply IHbs].
   Qed. 
   
 Lemma subtype_quant_asf: forall n ty, subtype (quant n (Asf ty))  (Asf (quant n ty)) .
 Proof.
-  induction n; intros; simpl; auto_t. 
-  eapply sub_trans. 2: eapply IHn.   eapply subtype_quant. eapply sub_quant_asf. 
+  induction n; intros; simpl; auto_t; eapply sub_trans; [ | eapply IHn]; eapply subtype_quant; eapply sub_quant_asf. 
   Qed. 
   
 Lemma subtype_quanta_to_quant_count:
@@ -310,19 +313,22 @@ Lemma subtype_quanta_to_quant_count:
     subtype (quanta bs (quanta bs2 (Funty uty vty))) (quant (quant_count bs) (quanta bs2 (Funty uty vty))).
 Proof.
   induction bs; intros; simpl; auto_t; caseEq a; intros; subst; simpl.
-  replace (Quant (quanta bs2 (Funty uty vty))) with (quanta (app bs2 (true :: nil)) (Funty uty vty)) by
-      (rewrite quanta_app; simpl; auto). eapply IHbs.
-  replace (Asf (quanta bs2 (Funty uty vty))) with (quanta (app bs2 (false :: nil)) (Funty uty vty)) by
-      (rewrite quanta_app; simpl; auto).
-  eapply sub_trans. eapply IHbs. eapply subtype_quant. rewrite quanta_app; simpl.
-  eapply sub_trans. eapply subtype_asf_quanta. eapply subtype_quanta; auto_t. 
+  - replace (Quant (quanta bs2 (Funty uty vty))) with (quanta (app bs2 (true :: nil)) (Funty uty vty)) by
+      (rewrite quanta_app; simpl; auto); eapply IHbs.
+  - replace (Asf (quanta bs2 (Funty uty vty))) with (quanta (app bs2 (false :: nil)) (Funty uty vty)) by
+      (rewrite quanta_app; simpl; auto);
+      eapply sub_trans; [ eapply IHbs |];
+      eapply subtype_quant; rewrite quanta_app; simpl;
+      eapply sub_trans; [ eapply subtype_asf_quanta | eapply subtype_quanta; auto_t]. 
 Qed.
 
 Lemma quanta_leaf: forall bs, subtype Leaf (quanta bs Leaf).
 Proof.
-  induction bs; intros; simpl in *. eapply sub_zero.
-  caseEq a; intros; subst; (eapply sub_trans; [ eapply IHbs | eapply subtype_quanta]).
-  replace Leaf with (lift 1 Leaf) at 2 by auto. eapply sub_lift. auto_t. 
+  induction bs; intros; simpl in *.
+  - eapply sub_zero.
+  - caseEq a; intros; subst; (eapply sub_trans; [ eapply IHbs | eapply subtype_quanta]).
+    + replace Leaf with (lift 1 Leaf) at 2 by auto;  eapply sub_lift.
+    + auto_t. 
 Qed.
 
 Lemma subtype_quant_to_quanta2: forall n ty, quant n ty = quanta (iter n (cons true) nil) ty.
@@ -330,10 +336,11 @@ Proof. induction n; intros; simpl; auto.   Qed.
 
 Lemma subtype_quant_quantf: forall m n ty,  subtype (quant m (quantf n ty)) (quantf n (quant m ty)).
 Proof.
-  induction m; intros; simpl; auto_t.
-  eapply sub_trans. 2: eapply IHm.  eapply subtype_quant. 
-  clear; induction n; intros; simpl; auto_t. rewrite 2 quantf_succ. 
-eapply sub_trans. eapply sub_quant_asf. eapply sub_asf; eauto. 
+  induction m; intros; simpl; auto_t;  eapply sub_trans; [ | eapply IHm];
+    eapply subtype_quant;
+    clear; induction n; intros; simpl; auto_t;
+    rewrite 2 quantf_succ;
+    eapply sub_trans; [ eapply sub_quant_asf | eapply sub_asf; eauto]. 
 Qed.
 
 Lemma subtype_quantf: forall n ty1 ty2, subtype ty1 ty2 -> subtype (quantf n ty1) (quantf n ty2).
@@ -341,9 +348,11 @@ Proof.  induction n; intros; simpl; auto_t. Qed.
   
 Lemma subtype_quantf_Quant: forall n ty,  subtype (quantf n (Quant  ty)) (Quant (quantf n ty)).
 Proof.
-  intros.  eapply sub_trans. eapply sub_lift. eapply sub_quant. 
-  unfold lift; rewrite lift_rec_preserves_quantf.   eapply subtype_quantf.
-  replace Quant with (quant 1) by auto. eapply subtype_lift3. 
+  intros; eapply sub_trans; [ eapply sub_lift |];
+    eapply sub_quant;
+    unfold lift; rewrite lift_rec_preserves_quantf; eapply subtype_quantf;
+    replace Quant with (quant 1) by auto;
+    eapply subtype_lift3. 
 Qed.
 
 
@@ -392,33 +401,36 @@ Ltac sub_fork2_tac :=
 
 Lemma stem_Quant_commute: forall ty, subtype (Stem (Quant ty)) (Quant (Stem ty)) .
 Proof.
-  intros; eapply sub_trans. eapply sub_lift. eapply sub_quant. unfold lift; simpl.
-  eapply sub_stem. eapply sub_trans. eapply sub_inst.
-  unfold subst. simpl.  erewrite subst_rec_lift_rec0. rewrite lift_rec_null. apply sub_zero. 
+  intros; eapply sub_trans; [ eapply sub_lift |];
+    eapply sub_quant; unfold lift; simpl;
+    eapply sub_stem;
+    eapply sub_trans; [ eapply sub_inst |];
+    unfold subst; simpl; erewrite subst_rec_lift_rec0; rewrite lift_rec_null; apply sub_zero. 
 Qed.
 
 
 Lemma stem_quant_commute: forall k ty, subtype (Stem (quant k ty)) (quant k (Stem ty)) .
 Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  rewrite ! quant_succ.  
-  eapply sub_trans. eapply stem_Quant_commute. 
-  eapply sub_quant.    eauto.
+  induction k; intros; simpl; try eapply sub_zero;
+    rewrite ! quant_succ;
+    eapply sub_trans; [ eapply stem_Quant_commute |];
+    eapply sub_quant;   eauto.
 Qed.
 
 
 Lemma asf_quant_commute: forall k ty, subtype (Asf (quant k ty)) (quant k (Asf ty)) .
 Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  rewrite ! quant_succ.  
-  eapply sub_trans. eapply asf_Quant_commute. 
-  eapply sub_quant.    eauto.
+  induction k; intros; simpl; try eapply sub_zero;
+    rewrite ! quant_succ;
+    eapply sub_trans; [ eapply asf_Quant_commute |];
+    eapply sub_quant;   eauto.
 Qed.
 
 
 Lemma fork_Quant_commute: forall ty1 ty2, subtype (Fork (Quant ty1) (Quant ty2)) (Quant (Fork ty1 ty2)) .
 Proof.
-  intros; eapply sub_trans. eapply sub_lift. eapply sub_quant. unfold lift; simpl.
+  intros; eapply sub_trans; [ eapply sub_lift |];
+    eapply sub_quant; unfold lift; simpl;
   eapply sub_fork; (eapply sub_trans; [ eapply sub_inst |
   unfold subst;  erewrite subst_rec_lift_rec0; rewrite lift_rec_null; apply sub_zero]).
 Qed. 
@@ -427,25 +439,26 @@ Qed.
 Lemma fork_quant_commute:
   forall k ty1 ty2, subtype (Fork(quant k ty1)(quant k ty2)) (quant k (Fork ty1 ty2)).
 Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  rewrite ! quant_succ.  replace (S (k + S k)) with (2 + (k+k)) by lia.
-  eapply sub_trans. eapply fork_Quant_commute. 
-  eapply sub_quant.   eauto.
+  induction k; intros; simpl; try eapply sub_zero;
+    rewrite ! quant_succ;
+    replace (S (k + S k)) with (2 + (k+k)) by lia;
+    eapply sub_trans; [ eapply fork_Quant_commute |]; 
+    eapply sub_quant;   eauto.
 Qed.
 
 
 Lemma subtype_quant_leaf: forall k, subtype (quant k Leaf) Leaf.
 Proof.
-  induction k; intros; simpl. eapply sub_zero. 
-  replace (S k) with (1+k) by lia; eapply sub_trans; [ eapply subtype_quant; eapply sub_inst |
+  induction k; intros; simpl; try eapply sub_zero;
+    replace (S k) with (1+k) by lia; eapply sub_trans; [ eapply subtype_quant; eapply sub_inst |
   unfold subst; simpl; eauto]. 
   Unshelve. apply Leaf.
 Qed.
 
 Lemma subtype_leaf_quant: forall k, subtype Leaf (quant k Leaf).
 Proof.
-  induction k; intros; simpl. eapply sub_zero. 
-  replace (S k) with (k+1) by lia; eapply sub_trans; [  eapply IHk | eapply subtype_quant; 
+  induction k; intros; simpl; try eapply sub_zero;
+    replace (S k) with (k+1) by lia; eapply sub_trans; [  eapply IHk | eapply subtype_quant; 
   eapply sub_trans; [ eapply sub_lift | unfold lift; simpl; eapply sub_zero]]. 
 Qed.
 

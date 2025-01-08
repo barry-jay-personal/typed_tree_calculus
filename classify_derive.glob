@@ -174,9 +174,6 @@ R3534:3558 Triage.classify <> subtype_from_quanta_funty thm
 R3607:3610 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
 R3603:3606 Coq.Init.Datatypes <> true constr
 R3611:3613 Coq.Init.Datatypes <> nil constr
-R3607:3610 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R3603:3606 Coq.Init.Datatypes <> true constr
-R3611:3613 Coq.Init.Datatypes <> nil constr
 R3669:3677 Triage.subtypes <> sub_trans constr
 R3669:3677 Triage.subtypes <> sub_trans constr
 R3696:3704 Triage.subtypes <> sub_trans constr
@@ -365,9 +362,6 @@ R5022:5041 Triage.classify <> subtype_from_leafty2 thm
 R5043:5045 Coq.Init.Datatypes <> nil constr
 R5095:5119 Triage.classify <> subtype_from_quanta_funty thm
 R5095:5119 Triage.classify <> subtype_from_quanta_funty thm
-R5168:5171 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R5164:5167 Coq.Init.Datatypes <> true constr
-R5172:5174 Coq.Init.Datatypes <> nil constr
 R5168:5171 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
 R5164:5167 Coq.Init.Datatypes <> true constr
 R5172:5174 Coq.Init.Datatypes <> nil constr
