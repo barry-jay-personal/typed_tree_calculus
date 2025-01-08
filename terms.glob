@@ -1,4 +1,4 @@
-DIGEST edfc119d9bccb7e8c2bfb045f8a667de
+DIGEST 3805c1544c837f9aa75572b90e0a07fd
 FTriage.terms
 R2302:2306 Coq.Arith.Arith <> <> lib
 R2308:2310 Coq.micromega.Lia <> <> lib
@@ -2240,1959 +2240,1955 @@ R25618:25618 Triage.terms <> f:236 var
 R25615:25616 Triage.terms <> xs:234 var
 R25611:25613 Triage.terms <> App constr
 R25581:25583 Triage.terms <> App constr
-R25727:25753 Triage.terms <> fold_left_app_preserves_red thm
-R25727:25753 Triage.terms <> fold_left_app_preserves_red thm
-R25793:25807 Triage.terms <> compose0_closed thm
-R25793:25807 Triage.terms <> compose0_closed thm
-R25793:25807 Triage.terms <> compose0_closed thm
-R25793:25807 Triage.terms <> compose0_closed thm
-R25820:25834 Triage.terms <> compose1_closed thm
-R25820:25834 Triage.terms <> compose1_closed thm
-R25820:25834 Triage.terms <> compose1_closed thm
-R25820:25834 Triage.terms <> compose1_closed thm
-R25844:25846 Coq.Init.Datatypes <> orb def
-R25860:25873 Triage.terms <> transitive_red thm
-R25860:25873 Triage.terms <> transitive_red thm
-R25883:25909 Triage.terms <> fold_left_app_preserves_red thm
-R25883:25909 Triage.terms <> fold_left_app_preserves_red thm
-R25919:25945 Triage.terms <> fold_left_app_preserves_red thm
-R25919:25945 Triage.terms <> fold_left_app_preserves_red thm
-R25959:25975 Triage.terms <> star_occurs_false thm
-R25959:25975 Triage.terms <> star_occurs_false thm
-R25959:25975 Triage.terms <> star_occurs_false thm
-R25959:25975 Triage.terms <> star_occurs_false thm
-R25995:26009 Triage.terms <> compose0_closed thm
-R25995:26009 Triage.terms <> compose0_closed thm
-R26021:26022 Triage.terms <> S1 def
-R26033:26048 Triage.terms <> star_occurs_true thm
-R26033:26048 Triage.terms <> star_occurs_true thm
-R26033:26048 Triage.terms <> star_occurs_true thm
-R26033:26048 Triage.terms <> star_occurs_true thm
-R26071:26080 Coq.Bool.Bool <> orb_true_r thm
-R26071:26080 Coq.Bool.Bool <> orb_true_r thm
-R26071:26080 Coq.Bool.Bool <> orb_true_r thm
-R26071:26080 Coq.Bool.Bool <> orb_true_r thm
-R26071:26080 Coq.Bool.Bool <> orb_true_r thm
-R26100:26116 Triage.terms <> star_occurs_false thm
-R26100:26116 Triage.terms <> star_occurs_false thm
-R26100:26116 Triage.terms <> star_occurs_false thm
-R26100:26116 Triage.terms <> star_occurs_false thm
-R26136:26150 Triage.terms <> compose0_closed thm
-R26136:26150 Triage.terms <> compose0_closed thm
-R26163:26164 Triage.terms <> S1 def
-R26175:26190 Triage.terms <> star_occurs_true thm
-R26175:26190 Triage.terms <> star_occurs_true thm
-R26175:26190 Triage.terms <> star_occurs_true thm
-R26175:26190 Triage.terms <> star_occurs_true thm
-R26213:26222 Coq.Bool.Bool <> orb_true_r thm
-R26213:26222 Coq.Bool.Bool <> orb_true_r thm
-R26213:26222 Coq.Bool.Bool <> orb_true_r thm
-R26213:26222 Coq.Bool.Bool <> orb_true_r thm
-R26242:26257 Triage.terms <> star_occurs_true thm
-R26242:26257 Triage.terms <> star_occurs_true thm
-R26242:26257 Triage.terms <> star_occurs_true thm
-R26242:26257 Triage.terms <> star_occurs_true thm
-R26280:26289 Coq.Bool.Bool <> orb_true_r thm
-R26280:26289 Coq.Bool.Bool <> orb_true_r thm
-R26280:26289 Coq.Bool.Bool <> orb_true_r thm
-R26280:26289 Coq.Bool.Bool <> orb_true_r thm
-R26308:26309 Triage.terms <> S1 def
-R26320:26335 Triage.terms <> star_occurs_true thm
-R26320:26335 Triage.terms <> star_occurs_true thm
-R26320:26335 Triage.terms <> star_occurs_true thm
-R26320:26335 Triage.terms <> star_occurs_true thm
-R26358:26367 Coq.Bool.Bool <> orb_true_r thm
-R26358:26367 Coq.Bool.Bool <> orb_true_r thm
-R26358:26367 Coq.Bool.Bool <> orb_true_r thm
-R26358:26367 Coq.Bool.Bool <> orb_true_r thm
+R25719:25745 Triage.terms <> fold_left_app_preserves_red thm
+R25719:25745 Triage.terms <> fold_left_app_preserves_red thm
+R25777:25791 Triage.terms <> compose0_closed thm
+R25804:25818 Triage.terms <> compose1_closed thm
+R25828:25830 Coq.Init.Datatypes <> orb def
+R25846:25859 Triage.terms <> transitive_red thm
+R25891:25904 Triage.terms <> transitive_red thm
+R25930:25956 Triage.terms <> fold_left_app_preserves_red thm
+R25967:25978 Triage.terms <> compose1_red thm
+R25996:26022 Triage.terms <> fold_left_app_preserves_red thm
+R26038:26064 Triage.terms <> fold_left_app_preserves_red thm
+R26082:26098 Triage.terms <> star_occurs_false thm
+R26119:26133 Triage.terms <> compose0_closed thm
+R26150:26151 Triage.terms <> S1 def
+R26162:26177 Triage.terms <> star_occurs_true thm
+R26201:26210 Coq.Bool.Bool <> orb_true_r thm
+R26234:26250 Triage.terms <> star_occurs_false thm
+R26271:26285 Triage.terms <> compose0_closed thm
+R26302:26303 Triage.terms <> S1 def
+R26314:26329 Triage.terms <> star_occurs_true thm
+R26353:26362 Coq.Bool.Bool <> orb_true_r thm
+R26387:26402 Triage.terms <> star_occurs_true thm
+R26426:26435 Coq.Bool.Bool <> orb_true_r thm
+R26458:26459 Triage.terms <> S1 def
+R26470:26485 Triage.terms <> star_occurs_true thm
+R26509:26518 Coq.Bool.Bool <> orb_true_r thm
+R26542:26557 Triage.terms <> star_occurs_true thm
+R26581:26590 Coq.Bool.Bool <> orb_true_r thm
+R26615:26631 Triage.terms <> star_occurs_false thm
+R26653:26654 Triage.terms <> S1 def
+R26665:26680 Triage.terms <> star_occurs_true thm
+R26704:26713 Coq.Bool.Bool <> orb_true_r thm
+R26738:26754 Triage.terms <> star_occurs_false thm
+R26778:26794 Triage.terms <> star_occurs_false thm
+R26808:26822 Triage.terms <> compose1_closed thm
+R26840:26846 Triage.terms <> star_id thm
+R26863:26879 Triage.terms <> star_occurs_false thm
+R25777:25791 Triage.terms <> compose0_closed thm
+R25777:25791 Triage.terms <> compose0_closed thm
+R25777:25791 Triage.terms <> compose0_closed thm
+R25804:25818 Triage.terms <> compose1_closed thm
+R25804:25818 Triage.terms <> compose1_closed thm
+R25804:25818 Triage.terms <> compose1_closed thm
+R25846:25859 Triage.terms <> transitive_red thm
+R25891:25904 Triage.terms <> transitive_red thm
+R25930:25956 Triage.terms <> fold_left_app_preserves_red thm
+R25967:25978 Triage.terms <> compose1_red thm
+R25996:26022 Triage.terms <> fold_left_app_preserves_red thm
+R26038:26064 Triage.terms <> fold_left_app_preserves_red thm
+R26082:26098 Triage.terms <> star_occurs_false thm
+R26082:26098 Triage.terms <> star_occurs_false thm
+R26082:26098 Triage.terms <> star_occurs_false thm
+R26119:26133 Triage.terms <> compose0_closed thm
+R26162:26177 Triage.terms <> star_occurs_true thm
+R26162:26177 Triage.terms <> star_occurs_true thm
+R26162:26177 Triage.terms <> star_occurs_true thm
+R26201:26210 Coq.Bool.Bool <> orb_true_r thm
+R26201:26210 Coq.Bool.Bool <> orb_true_r thm
+R26201:26210 Coq.Bool.Bool <> orb_true_r thm
+R26201:26210 Coq.Bool.Bool <> orb_true_r thm
+R26234:26250 Triage.terms <> star_occurs_false thm
+R26234:26250 Triage.terms <> star_occurs_false thm
+R26234:26250 Triage.terms <> star_occurs_false thm
+R26271:26285 Triage.terms <> compose0_closed thm
+R26314:26329 Triage.terms <> star_occurs_true thm
+R26314:26329 Triage.terms <> star_occurs_true thm
+R26314:26329 Triage.terms <> star_occurs_true thm
+R26353:26362 Coq.Bool.Bool <> orb_true_r thm
+R26353:26362 Coq.Bool.Bool <> orb_true_r thm
+R26353:26362 Coq.Bool.Bool <> orb_true_r thm
 R26387:26402 Triage.terms <> star_occurs_true thm
 R26387:26402 Triage.terms <> star_occurs_true thm
 R26387:26402 Triage.terms <> star_occurs_true thm
-R26387:26402 Triage.terms <> star_occurs_true thm
-R26425:26434 Coq.Bool.Bool <> orb_true_r thm
-R26425:26434 Coq.Bool.Bool <> orb_true_r thm
-R26425:26434 Coq.Bool.Bool <> orb_true_r thm
-R26425:26434 Coq.Bool.Bool <> orb_true_r thm
-R26454:26470 Triage.terms <> star_occurs_false thm
-R26454:26470 Triage.terms <> star_occurs_false thm
-R26454:26470 Triage.terms <> star_occurs_false thm
-R26454:26470 Triage.terms <> star_occurs_false thm
-R26492:26493 Triage.terms <> S1 def
-R26504:26519 Triage.terms <> star_occurs_true thm
-R26504:26519 Triage.terms <> star_occurs_true thm
-R26504:26519 Triage.terms <> star_occurs_true thm
-R26504:26519 Triage.terms <> star_occurs_true thm
-R26542:26551 Coq.Bool.Bool <> orb_true_r thm
-R26542:26551 Coq.Bool.Bool <> orb_true_r thm
-R26542:26551 Coq.Bool.Bool <> orb_true_r thm
-R26542:26551 Coq.Bool.Bool <> orb_true_r thm
-R26571:26587 Triage.terms <> star_occurs_false thm
-R26571:26587 Triage.terms <> star_occurs_false thm
-R26571:26587 Triage.terms <> star_occurs_false thm
-R26571:26587 Triage.terms <> star_occurs_false thm
-R26610:26626 Triage.terms <> star_occurs_false thm
-R26610:26626 Triage.terms <> star_occurs_false thm
-R26610:26626 Triage.terms <> star_occurs_false thm
-R26610:26626 Triage.terms <> star_occurs_false thm
-R26639:26653 Triage.terms <> compose1_closed thm
-R26639:26653 Triage.terms <> compose1_closed thm
-R26666:26672 Triage.terms <> star_id thm
-R26666:26672 Triage.terms <> star_id thm
-R26666:26672 Triage.terms <> star_id thm
-R26685:26701 Triage.terms <> star_occurs_false thm
-R26685:26701 Triage.terms <> star_occurs_false thm
-R26685:26701 Triage.terms <> star_occurs_false thm
-R26685:26701 Triage.terms <> star_occurs_false thm
-R26732:26745 Triage.terms <> transitive_red thm
-R26732:26745 Triage.terms <> transitive_red thm
-R26768:26794 Triage.terms <> fold_left_app_preserves_red thm
-R26768:26794 Triage.terms <> fold_left_app_preserves_red thm
-R26807:26818 Triage.terms <> compose1_red thm
-R26807:26818 Triage.terms <> compose1_red thm
-prf 26836:26846 <> compose_red
-binder 26858:26859 <> fs:237
-binder 26861:26862 <> xs:238
-binder 26864:26864 <> g:239
-R26871:26875 Triage.terms <> t_red def
-R26878:26886 Coq.Lists.List <> fold_left def
-R26896:26904 Coq.Lists.List <> fold_left def
-R26955:26957 Triage.terms <> ::tree_scope:x_'@'_x not
-R26914:26920 Triage.terms <> compose def
-R26923:26933 Coq.Lists.List <> length syndef
-R26935:26936 Triage.terms <> fs:237 var
-R26940:26950 Coq.Lists.List <> length syndef
-R26952:26953 Triage.terms <> xs:238 var
-R26958:26958 Triage.terms <> g:239 var
-R26910:26911 Triage.terms <> fs:237 var
-R26906:26908 Triage.terms <> App constr
-R26892:26893 Triage.terms <> xs:238 var
-R26888:26890 Triage.terms <> App constr
-R26975:26983 Coq.Lists.List <> fold_left def
-R27030:27030 Triage.terms <> g:239 var
-R26990:26992 Coq.Lists.List <> map def
-R27026:27027 Triage.terms <> fs:237 var
-binder 26999:26999 <> f:240
-R27005:27013 Coq.Lists.List <> fold_left def
-R27022:27022 Triage.terms <> f:240 var
-R27019:27020 Triage.terms <> xs:238 var
-R27015:27017 Triage.terms <> App constr
-R26985:26987 Triage.terms <> App constr
-R27058:27064 Triage.terms <> compose def
-R27074:27087 Triage.terms <> transitive_red thm
-R27074:27087 Triage.terms <> transitive_red thm
-R27097:27123 Triage.terms <> fold_left_app_preserves_red thm
-R27097:27123 Triage.terms <> fold_left_app_preserves_red thm
-R27136:27162 Triage.terms <> fold_left_app_preserves_red thm
-R27136:27162 Triage.terms <> fold_left_app_preserves_red thm
-R27175:27188 Triage.terms <> transitive_red thm
-R27175:27188 Triage.terms <> transitive_red thm
-R27216:27229 Triage.terms <> transitive_red thm
-R27216:27229 Triage.terms <> transitive_red thm
-R27239:27250 Triage.terms <> compose0_red thm
-R27239:27250 Triage.terms <> compose0_red thm
-R27267:27293 Triage.terms <> fold_left_app_preserves_red thm
-R27267:27293 Triage.terms <> fold_left_app_preserves_red thm
-R27303:27308 Triage.terms <> Kn_red thm
-R27303:27308 Triage.terms <> Kn_red thm
-def 27384:27387 <> zero
-R27392:27393 Triage.terms <> KI def
-def 27409:27413 <> succ1
-R27418:27419 Triage.terms <> S1 def
-R27435:27438 Triage.terms <> ::tree_scope:x_'@'_x not
-R27456:27456 Triage.terms <> ::tree_scope:x_'@'_x not
-R27422:27423 Triage.terms <> S1 def
-R27427:27429 Triage.terms <> ::tree_scope:x_'@'_x not
-R27426:27426 Triage.terms <> K def
-R27430:27433 Triage.terms <> Node constr
-R27452:27454 Triage.terms <> ::tree_scope:x_'@'_x not
-R27439:27440 Triage.terms <> S1 def
-R27444:27446 Triage.terms <> ::tree_scope:x_'@'_x not
-R27443:27443 Triage.terms <> K def
-R27447:27450 Triage.terms <> Node constr
-R27455:27455 Triage.terms <> K def
-prf 27470:27478 <> succ1_red
-binder 27488:27488 <> n:241
-binder 27490:27490 <> f:242
-binder 27492:27492 <> x:243
-R27495:27499 Triage.terms <> t_red def
-R27515:27517 Triage.terms <> ::tree_scope:x_'@'_x not
-R27511:27513 Triage.terms <> ::tree_scope:x_'@'_x not
-R27507:27509 Triage.terms <> ::tree_scope:x_'@'_x not
-R27502:27506 Triage.terms <> succ1 def
-R27510:27510 Triage.terms <> n:241 var
-R27514:27514 Triage.terms <> f:242 var
-R27518:27518 Triage.terms <> x:243 var
-R27523:27526 Triage.terms <> ::tree_scope:x_'@'_x not
-R27536:27536 Triage.terms <> ::tree_scope:x_'@'_x not
-R27522:27522 Triage.terms <> f:242 var
-R27532:27534 Triage.terms <> ::tree_scope:x_'@'_x not
-R27528:27530 Triage.terms <> ::tree_scope:x_'@'_x not
-R27527:27527 Triage.terms <> n:241 var
-R27531:27531 Triage.terms <> f:242 var
-R27535:27535 Triage.terms <> x:243 var
-def 27578:27580 <> num
-binder 27582:27582 <> k:244
-R27587:27590 Coq.Init.Nat <> iter def
-R27615:27618 Triage.terms <> zero def
-binder 27599:27599 <> x:245
-R27609:27611 Triage.terms <> ::tree_scope:x_'@'_x not
-R27604:27608 Triage.terms <> succ1 def
-R27612:27612 Triage.terms <> x:245 var
-R27592:27592 Triage.terms <> k:244 var
-prf 27630:27641 <> num_iterates
-binder 27651:27651 <> m:246
-binder 27653:27653 <> f:247
-binder 27655:27655 <> x:248
-R27658:27662 Triage.terms <> t_red def
-R27674:27676 Triage.terms <> ::tree_scope:x_'@'_x not
-R27670:27672 Triage.terms <> ::tree_scope:x_'@'_x not
-R27665:27667 Triage.terms <> num def
-R27669:27669 Triage.terms <> m:246 var
-R27673:27673 Triage.terms <> f:247 var
-R27677:27677 Triage.terms <> x:248 var
-R27681:27684 Coq.Init.Nat <> iter def
-R27696:27696 Triage.terms <> x:248 var
-R27689:27691 Triage.terms <> App constr
-R27693:27693 Triage.terms <> f:247 var
-R27686:27686 Triage.terms <> m:246 var
-R27737:27739 Triage.terms <> num def
-R27747:27749 Triage.terms <> num def
-R27747:27749 Triage.terms <> num def
-R27747:27749 Triage.terms <> num def
-R27802:27806 Triage.terms <> succ1 def
-R27829:27848 Triage.terms <> preserves_appr_t_red thm
-R27829:27848 Triage.terms <> preserves_appr_t_red thm
-prf 27876:27887 <> num_succ_red
-binder 27897:27897 <> k:249
-R27900:27904 Triage.terms <> t_red def
-R27907:27909 Triage.terms <> num def
-R27912:27912 Coq.Init.Datatypes <> S constr
-R27914:27914 Triage.terms <> k:249 var
-R27924:27927 Triage.terms <> ::tree_scope:x_'@'_x not
-R27933:27933 Triage.terms <> ::tree_scope:x_'@'_x not
-R27919:27923 Triage.terms <> succ1 def
-R27928:27930 Triage.terms <> num def
-R27932:27932 Triage.terms <> k:249 var
-def 28017:28022 <> isZero
-R28027:28056 Triage.terms <> ::tree_scope:'\' not
-R28051:28053 Triage.terms <> ::tree_scope:x_'@'_x not
-R28040:28043 Triage.terms <> ::tree_scope:x_'@'_x not
-R28050:28050 Triage.terms <> ::tree_scope:x_'@'_x not
-R28033:28035 Triage.terms <> Ref constr
-R28045:28047 Triage.terms <> ::tree_scope:x_'@'_x not
-R28044:28044 Triage.terms <> K def
-R28048:28049 Triage.terms <> ff def
-R28054:28055 Triage.terms <> tt def
-prf 28069:28079 <> isZero_zero
-R28082:28086 Triage.terms <> t_red def
-R28095:28097 Triage.terms <> ::tree_scope:x_'@'_x not
-R28089:28094 Triage.terms <> isZero def
-R28098:28101 Triage.terms <> zero def
-R28104:28105 Triage.terms <> tt def
-prf 28140:28150 <> isZero_succ
-binder 28160:28160 <> n:250
-R28163:28167 Triage.terms <> t_red def
-R28176:28179 Triage.terms <> ::tree_scope:x_'@'_x not
-R28189:28189 Triage.terms <> ::tree_scope:x_'@'_x not
-R28170:28175 Triage.terms <> isZero def
-R28185:28187 Triage.terms <> ::tree_scope:x_'@'_x not
-R28180:28184 Triage.terms <> succ1 def
-R28188:28188 Triage.terms <> n:250 var
-R28192:28193 Triage.terms <> ff def
-def 28231:28234 <> cond
-R28239:28239 Triage.terms <> I def
-prf 28252:28261 <> cond_false
-binder 28272:28272 <> x:251
-binder 28274:28274 <> y:252
-R28277:28281 Triage.terms <> t_red def
-R28297:28299 Triage.terms <> ::tree_scope:x_'@'_x not
-R28293:28295 Triage.terms <> ::tree_scope:x_'@'_x not
-R28288:28290 Triage.terms <> ::tree_scope:x_'@'_x not
-R28284:28287 Triage.terms <> cond def
-R28291:28292 Triage.terms <> ff def
-R28296:28296 Triage.terms <> x:251 var
-R28300:28300 Triage.terms <> y:252 var
-R28303:28303 Triage.terms <> y:252 var
-prf 28338:28346 <> cond_true
-binder 28357:28357 <> x:253
-binder 28359:28359 <> y:254
-R28362:28366 Triage.terms <> t_red def
-R28382:28384 Triage.terms <> ::tree_scope:x_'@'_x not
-R28378:28380 Triage.terms <> ::tree_scope:x_'@'_x not
-R28373:28375 Triage.terms <> ::tree_scope:x_'@'_x not
-R28369:28372 Triage.terms <> cond def
-R28376:28377 Triage.terms <> tt def
-R28381:28381 Triage.terms <> x:253 var
-R28385:28385 Triage.terms <> y:254 var
-R28388:28388 Triage.terms <> x:253 var
-def 28500:28504 <> PZero
-R28509:28513 Triage.terms <> pairL def
-R28515:28518 Triage.terms <> zero def
-R28520:28523 Triage.terms <> zero def
-def 28579:28583 <> PSucc
-R28588:28643 Triage.terms <> ::tree_scope:'\' not
-R28594:28598 Triage.terms <> pairL def
-R28605:28607 Triage.terms <> ::tree_scope:x_'@'_x not
-R28601:28604 Triage.terms <> sndL def
-R28608:28610 Triage.terms <> Ref constr
-R28623:28626 Triage.terms <> ::tree_scope:x_'@'_x not
-R28641:28641 Triage.terms <> ::tree_scope:x_'@'_x not
-R28618:28622 Triage.terms <> succ1 def
-R28631:28633 Triage.terms <> ::tree_scope:x_'@'_x not
-R28627:28630 Triage.terms <> sndL def
-R28634:28636 Triage.terms <> Ref constr
-def 28658:28662 <> predN
-R28667:28705 Triage.terms <> ::tree_scope:'\' not
-R28677:28680 Triage.terms <> ::tree_scope:x_'@'_x not
-R28704:28704 Triage.terms <> ::tree_scope:x_'@'_x not
-R28673:28676 Triage.terms <> fstL def
-R28696:28698 Triage.terms <> ::tree_scope:x_'@'_x not
-R28688:28690 Triage.terms <> ::tree_scope:x_'@'_x not
-R28681:28683 Triage.terms <> Ref constr
-R28691:28695 Triage.terms <> PSucc def
-R28699:28703 Triage.terms <> PZero def
-prf 28715:28723 <> PSucc_red
-binder 28733:28733 <> m:255
-binder 28735:28735 <> n:256
-R28739:28743 Triage.terms <> t_red def
-R28751:28754 Triage.terms <> ::tree_scope:x_'@'_x not
-R28764:28764 Triage.terms <> ::tree_scope:x_'@'_x not
-R28746:28750 Triage.terms <> PSucc def
-R28755:28759 Triage.terms <> pairL def
-R28761:28761 Triage.terms <> m:255 var
-R28763:28763 Triage.terms <> n:256 var
-R28768:28772 Triage.terms <> pairL def
-R28774:28774 Triage.terms <> n:256 var
-R28782:28784 Triage.terms <> ::tree_scope:x_'@'_x not
-R28777:28781 Triage.terms <> succ1 def
-R28785:28785 Triage.terms <> n:256 var
-prf 28820:28827 <> pred_aux
-binder 28838:28838 <> k:257
-R28841:28845 Triage.terms <> t_red def
-R28848:28851 Coq.Init.Nat <> iter def
-R28867:28871 Triage.terms <> PZero def
-R28856:28858 Triage.terms <> App constr
-R28860:28864 Triage.terms <> PSucc def
-R28853:28853 Triage.terms <> k:257 var
-R28875:28879 Triage.terms <> pairL def
-R28882:28884 Triage.terms <> num def
-R28887:28894 Coq.Arith.PeanoNat Nat pred def
+R26426:26435 Coq.Bool.Bool <> orb_true_r thm
+R26426:26435 Coq.Bool.Bool <> orb_true_r thm
+R26426:26435 Coq.Bool.Bool <> orb_true_r thm
+R26470:26485 Triage.terms <> star_occurs_true thm
+R26470:26485 Triage.terms <> star_occurs_true thm
+R26470:26485 Triage.terms <> star_occurs_true thm
+R26509:26518 Coq.Bool.Bool <> orb_true_r thm
+R26509:26518 Coq.Bool.Bool <> orb_true_r thm
+R26509:26518 Coq.Bool.Bool <> orb_true_r thm
+R26542:26557 Triage.terms <> star_occurs_true thm
+R26542:26557 Triage.terms <> star_occurs_true thm
+R26542:26557 Triage.terms <> star_occurs_true thm
+R26581:26590 Coq.Bool.Bool <> orb_true_r thm
+R26581:26590 Coq.Bool.Bool <> orb_true_r thm
+R26581:26590 Coq.Bool.Bool <> orb_true_r thm
+R26615:26631 Triage.terms <> star_occurs_false thm
+R26615:26631 Triage.terms <> star_occurs_false thm
+R26615:26631 Triage.terms <> star_occurs_false thm
+R26665:26680 Triage.terms <> star_occurs_true thm
+R26665:26680 Triage.terms <> star_occurs_true thm
+R26665:26680 Triage.terms <> star_occurs_true thm
+R26704:26713 Coq.Bool.Bool <> orb_true_r thm
+R26704:26713 Coq.Bool.Bool <> orb_true_r thm
+R26704:26713 Coq.Bool.Bool <> orb_true_r thm
+R26738:26754 Triage.terms <> star_occurs_false thm
+R26738:26754 Triage.terms <> star_occurs_false thm
+R26738:26754 Triage.terms <> star_occurs_false thm
+R26778:26794 Triage.terms <> star_occurs_false thm
+R26778:26794 Triage.terms <> star_occurs_false thm
+R26778:26794 Triage.terms <> star_occurs_false thm
+R26808:26822 Triage.terms <> compose1_closed thm
+R26840:26846 Triage.terms <> star_id thm
+R26840:26846 Triage.terms <> star_id thm
+R26863:26879 Triage.terms <> star_occurs_false thm
+R26863:26879 Triage.terms <> star_occurs_false thm
+R26863:26879 Triage.terms <> star_occurs_false thm
+prf 26921:26931 <> compose_red
+binder 26943:26944 <> fs:237
+binder 26946:26947 <> xs:238
+binder 26949:26949 <> g:239
+R26956:26960 Triage.terms <> t_red def
+R26963:26971 Coq.Lists.List <> fold_left def
+R26981:26989 Coq.Lists.List <> fold_left def
+R27040:27042 Triage.terms <> ::tree_scope:x_'@'_x not
+R26999:27005 Triage.terms <> compose def
+R27008:27018 Coq.Lists.List <> length syndef
+R27020:27021 Triage.terms <> fs:237 var
+R27025:27035 Coq.Lists.List <> length syndef
+R27037:27038 Triage.terms <> xs:238 var
+R27043:27043 Triage.terms <> g:239 var
+R26995:26996 Triage.terms <> fs:237 var
+R26991:26993 Triage.terms <> App constr
+R26977:26978 Triage.terms <> xs:238 var
+R26973:26975 Triage.terms <> App constr
+R27056:27064 Coq.Lists.List <> fold_left def
+R27111:27111 Triage.terms <> g:239 var
+R27071:27073 Coq.Lists.List <> map def
+R27107:27108 Triage.terms <> fs:237 var
+binder 27080:27080 <> f:240
+R27086:27094 Coq.Lists.List <> fold_left def
+R27103:27103 Triage.terms <> f:240 var
+R27100:27101 Triage.terms <> xs:238 var
+R27096:27098 Triage.terms <> App constr
+R27066:27068 Triage.terms <> App constr
+R27139:27145 Triage.terms <> compose def
+R27155:27168 Triage.terms <> transitive_red thm
+R27191:27217 Triage.terms <> fold_left_app_preserves_red thm
+R27241:27254 Triage.terms <> transitive_red thm
+R27274:27285 Triage.terms <> compose0_red thm
+R27307:27333 Triage.terms <> fold_left_app_preserves_red thm
+R27343:27348 Triage.terms <> Kn_red thm
+R27155:27168 Triage.terms <> transitive_red thm
+R27191:27217 Triage.terms <> fold_left_app_preserves_red thm
+R27191:27217 Triage.terms <> fold_left_app_preserves_red thm
+R27241:27254 Triage.terms <> transitive_red thm
+R27274:27285 Triage.terms <> compose0_red thm
+R27307:27333 Triage.terms <> fold_left_app_preserves_red thm
+R27343:27348 Triage.terms <> Kn_red thm
+def 27426:27429 <> zero
+R27434:27435 Triage.terms <> KI def
+def 27451:27455 <> succ1
+R27460:27461 Triage.terms <> S1 def
+R27477:27480 Triage.terms <> ::tree_scope:x_'@'_x not
+R27498:27498 Triage.terms <> ::tree_scope:x_'@'_x not
+R27464:27465 Triage.terms <> S1 def
+R27469:27471 Triage.terms <> ::tree_scope:x_'@'_x not
+R27468:27468 Triage.terms <> K def
+R27472:27475 Triage.terms <> Node constr
+R27494:27496 Triage.terms <> ::tree_scope:x_'@'_x not
+R27481:27482 Triage.terms <> S1 def
+R27486:27488 Triage.terms <> ::tree_scope:x_'@'_x not
+R27485:27485 Triage.terms <> K def
+R27489:27492 Triage.terms <> Node constr
+R27497:27497 Triage.terms <> K def
+prf 27512:27520 <> succ1_red
+binder 27530:27530 <> n:241
+binder 27532:27532 <> f:242
+binder 27534:27534 <> x:243
+R27537:27541 Triage.terms <> t_red def
+R27557:27559 Triage.terms <> ::tree_scope:x_'@'_x not
+R27553:27555 Triage.terms <> ::tree_scope:x_'@'_x not
+R27549:27551 Triage.terms <> ::tree_scope:x_'@'_x not
+R27544:27548 Triage.terms <> succ1 def
+R27552:27552 Triage.terms <> n:241 var
+R27556:27556 Triage.terms <> f:242 var
+R27560:27560 Triage.terms <> x:243 var
+R27565:27568 Triage.terms <> ::tree_scope:x_'@'_x not
+R27578:27578 Triage.terms <> ::tree_scope:x_'@'_x not
+R27564:27564 Triage.terms <> f:242 var
+R27574:27576 Triage.terms <> ::tree_scope:x_'@'_x not
+R27570:27572 Triage.terms <> ::tree_scope:x_'@'_x not
+R27569:27569 Triage.terms <> n:241 var
+R27573:27573 Triage.terms <> f:242 var
+R27577:27577 Triage.terms <> x:243 var
+def 27620:27622 <> num
+binder 27624:27624 <> k:244
+R27629:27632 Coq.Init.Nat <> iter def
+R27657:27660 Triage.terms <> zero def
+binder 27641:27641 <> x:245
+R27651:27653 Triage.terms <> ::tree_scope:x_'@'_x not
+R27646:27650 Triage.terms <> succ1 def
+R27654:27654 Triage.terms <> x:245 var
+R27634:27634 Triage.terms <> k:244 var
+prf 27672:27683 <> num_iterates
+binder 27693:27693 <> m:246
+binder 27695:27695 <> f:247
+binder 27697:27697 <> x:248
+R27700:27704 Triage.terms <> t_red def
+R27716:27718 Triage.terms <> ::tree_scope:x_'@'_x not
+R27712:27714 Triage.terms <> ::tree_scope:x_'@'_x not
+R27707:27709 Triage.terms <> num def
+R27711:27711 Triage.terms <> m:246 var
+R27715:27715 Triage.terms <> f:247 var
+R27719:27719 Triage.terms <> x:248 var
+R27723:27726 Coq.Init.Nat <> iter def
+R27738:27738 Triage.terms <> x:248 var
+R27731:27733 Triage.terms <> App constr
+R27735:27735 Triage.terms <> f:247 var
+R27728:27728 Triage.terms <> m:246 var
+R27779:27781 Triage.terms <> num def
+R27789:27791 Triage.terms <> num def
+R27845:27849 Triage.terms <> succ1 def
+R27871:27890 Triage.terms <> preserves_appr_t_red thm
+R27789:27791 Triage.terms <> num def
+R27789:27791 Triage.terms <> num def
+R27871:27890 Triage.terms <> preserves_appr_t_red thm
+prf 27919:27930 <> num_succ_red
+binder 27940:27940 <> k:249
+R27943:27947 Triage.terms <> t_red def
+R27950:27952 Triage.terms <> num def
+R27955:27955 Coq.Init.Datatypes <> S constr
+R27957:27957 Triage.terms <> k:249 var
+R27967:27970 Triage.terms <> ::tree_scope:x_'@'_x not
+R27976:27976 Triage.terms <> ::tree_scope:x_'@'_x not
+R27962:27966 Triage.terms <> succ1 def
+R27971:27973 Triage.terms <> num def
+R27975:27975 Triage.terms <> k:249 var
+def 28060:28065 <> isZero
+R28070:28099 Triage.terms <> ::tree_scope:'\' not
+R28094:28096 Triage.terms <> ::tree_scope:x_'@'_x not
+R28083:28086 Triage.terms <> ::tree_scope:x_'@'_x not
+R28093:28093 Triage.terms <> ::tree_scope:x_'@'_x not
+R28076:28078 Triage.terms <> Ref constr
+R28088:28090 Triage.terms <> ::tree_scope:x_'@'_x not
+R28087:28087 Triage.terms <> K def
+R28091:28092 Triage.terms <> ff def
+R28097:28098 Triage.terms <> tt def
+prf 28112:28122 <> isZero_zero
+R28125:28129 Triage.terms <> t_red def
+R28138:28140 Triage.terms <> ::tree_scope:x_'@'_x not
+R28132:28137 Triage.terms <> isZero def
+R28141:28144 Triage.terms <> zero def
+R28147:28148 Triage.terms <> tt def
+prf 28183:28193 <> isZero_succ
+binder 28203:28203 <> n:250
+R28206:28210 Triage.terms <> t_red def
+R28219:28222 Triage.terms <> ::tree_scope:x_'@'_x not
+R28232:28232 Triage.terms <> ::tree_scope:x_'@'_x not
+R28213:28218 Triage.terms <> isZero def
+R28228:28230 Triage.terms <> ::tree_scope:x_'@'_x not
+R28223:28227 Triage.terms <> succ1 def
+R28231:28231 Triage.terms <> n:250 var
+R28235:28236 Triage.terms <> ff def
+def 28274:28277 <> cond
+R28282:28282 Triage.terms <> I def
+prf 28295:28304 <> cond_false
+binder 28315:28315 <> x:251
+binder 28317:28317 <> y:252
+R28320:28324 Triage.terms <> t_red def
+R28340:28342 Triage.terms <> ::tree_scope:x_'@'_x not
+R28336:28338 Triage.terms <> ::tree_scope:x_'@'_x not
+R28331:28333 Triage.terms <> ::tree_scope:x_'@'_x not
+R28327:28330 Triage.terms <> cond def
+R28334:28335 Triage.terms <> ff def
+R28339:28339 Triage.terms <> x:251 var
+R28343:28343 Triage.terms <> y:252 var
+R28346:28346 Triage.terms <> y:252 var
+prf 28381:28389 <> cond_true
+binder 28400:28400 <> x:253
+binder 28402:28402 <> y:254
+R28405:28409 Triage.terms <> t_red def
+R28425:28427 Triage.terms <> ::tree_scope:x_'@'_x not
+R28421:28423 Triage.terms <> ::tree_scope:x_'@'_x not
+R28416:28418 Triage.terms <> ::tree_scope:x_'@'_x not
+R28412:28415 Triage.terms <> cond def
+R28419:28420 Triage.terms <> tt def
+R28424:28424 Triage.terms <> x:253 var
+R28428:28428 Triage.terms <> y:254 var
+R28431:28431 Triage.terms <> x:253 var
+def 28543:28547 <> PZero
+R28552:28556 Triage.terms <> pairL def
+R28558:28561 Triage.terms <> zero def
+R28563:28566 Triage.terms <> zero def
+def 28622:28626 <> PSucc
+R28631:28686 Triage.terms <> ::tree_scope:'\' not
+R28637:28641 Triage.terms <> pairL def
+R28648:28650 Triage.terms <> ::tree_scope:x_'@'_x not
+R28644:28647 Triage.terms <> sndL def
+R28651:28653 Triage.terms <> Ref constr
+R28666:28669 Triage.terms <> ::tree_scope:x_'@'_x not
+R28684:28684 Triage.terms <> ::tree_scope:x_'@'_x not
+R28661:28665 Triage.terms <> succ1 def
+R28674:28676 Triage.terms <> ::tree_scope:x_'@'_x not
+R28670:28673 Triage.terms <> sndL def
+R28677:28679 Triage.terms <> Ref constr
+def 28701:28705 <> predN
+R28710:28748 Triage.terms <> ::tree_scope:'\' not
+R28720:28723 Triage.terms <> ::tree_scope:x_'@'_x not
+R28747:28747 Triage.terms <> ::tree_scope:x_'@'_x not
+R28716:28719 Triage.terms <> fstL def
+R28739:28741 Triage.terms <> ::tree_scope:x_'@'_x not
+R28731:28733 Triage.terms <> ::tree_scope:x_'@'_x not
+R28724:28726 Triage.terms <> Ref constr
+R28734:28738 Triage.terms <> PSucc def
+R28742:28746 Triage.terms <> PZero def
+prf 28758:28766 <> PSucc_red
+binder 28776:28776 <> m:255
+binder 28778:28778 <> n:256
+R28782:28786 Triage.terms <> t_red def
+R28794:28797 Triage.terms <> ::tree_scope:x_'@'_x not
+R28807:28807 Triage.terms <> ::tree_scope:x_'@'_x not
+R28789:28793 Triage.terms <> PSucc def
+R28798:28802 Triage.terms <> pairL def
+R28804:28804 Triage.terms <> m:255 var
+R28806:28806 Triage.terms <> n:256 var
+R28811:28815 Triage.terms <> pairL def
+R28817:28817 Triage.terms <> n:256 var
+R28825:28827 Triage.terms <> ::tree_scope:x_'@'_x not
+R28820:28824 Triage.terms <> succ1 def
+R28828:28828 Triage.terms <> n:256 var
+prf 28863:28870 <> pred_aux
+binder 28881:28881 <> k:257
+R28884:28888 Triage.terms <> t_red def
+R28891:28894 Coq.Init.Nat <> iter def
+R28910:28914 Triage.terms <> PZero def
+R28899:28901 Triage.terms <> App constr
+R28903:28907 Triage.terms <> PSucc def
 R28896:28896 Triage.terms <> k:257 var
-R28901:28903 Triage.terms <> num def
-R28905:28905 Triage.terms <> k:257 var
-R28970:28977 Triage.terms <> zero_red constr
-R28970:28977 Triage.terms <> zero_red constr
-R28996:29004 Triage.terms <> PSucc_red thm
-prf 29024:29031 <> pred_red
-binder 29041:29041 <> k:258
-R29045:29049 Triage.terms <> t_red def
-R29057:29060 Triage.terms <> ::tree_scope:x_'@'_x not
-R29066:29066 Triage.terms <> ::tree_scope:x_'@'_x not
-R29052:29056 Triage.terms <> predN def
-R29061:29063 Triage.terms <> num def
-R29065:29065 Triage.terms <> k:258 var
-R29070:29072 Triage.terms <> num def
-R29075:29078 Coq.Init.Nat <> pred def
-R29080:29080 Triage.terms <> k:258 var
-R29110:29114 Triage.terms <> predN def
-R29142:29145 Triage.terms <> fstL def
-R29180:29191 Triage.terms <> num_iterates thm
-R29199:29206 Triage.terms <> pred_aux thm
-def 29271:29282 <> primrec0_abs
-R29289:29485 Triage.terms <> ::tree_scope:'\' not
-R29305:29484 Triage.terms <> ::tree_scope:'\' not
-R29371:29394 Triage.terms <> ::tree_scope:x_'@'_x not
-R29454:29454 Triage.terms <> ::tree_scope:x_'@'_x not
-R29341:29363 Triage.terms <> ::tree_scope:x_'@'_x not
-R29329:29332 Triage.terms <> ::tree_scope:x_'@'_x not
-R29340:29340 Triage.terms <> ::tree_scope:x_'@'_x not
-R29323:29328 Triage.terms <> isZero def
-R29333:29335 Triage.terms <> Ref constr
-R29364:29366 Triage.terms <> Ref constr
-R29422:29425 Triage.terms <> ::tree_scope:x_'@'_x not
-R29453:29453 Triage.terms <> ::tree_scope:x_'@'_x not
-R29402:29405 Triage.terms <> ::tree_scope:x_'@'_x not
-R29421:29421 Triage.terms <> ::tree_scope:x_'@'_x not
-R29395:29397 Triage.terms <> Ref constr
-R29411:29413 Triage.terms <> ::tree_scope:x_'@'_x not
-R29406:29410 Triage.terms <> predN def
-R29414:29416 Triage.terms <> Ref constr
-R29433:29436 Triage.terms <> ::tree_scope:x_'@'_x not
-R29452:29452 Triage.terms <> ::tree_scope:x_'@'_x not
-R29426:29428 Triage.terms <> Ref constr
-R29442:29444 Triage.terms <> ::tree_scope:x_'@'_x not
-R29437:29441 Triage.terms <> predN def
-R29445:29447 Triage.terms <> Ref constr
-prf 29495:29506 <> primrec0_val
-R29523:29527 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R29511:29522 Triage.terms <> primrec0_abs def
-R29622:29627 Triage.terms <> ::tree_scope:x_'@'_x not
-R29793:29793 Triage.terms <> ::tree_scope:x_'@'_x not
-R29528:29529 Triage.terms <> S1 def
-R29544:29547 Triage.terms <> ::tree_scope:x_'@'_x not
-R29620:29620 Triage.terms <> ::tree_scope:x_'@'_x not
-R29532:29533 Triage.terms <> S1 def
-R29537:29539 Triage.terms <> ::tree_scope:x_'@'_x not
-R29536:29536 Triage.terms <> K def
-R29540:29542 Triage.terms <> ::tree_scope:'△' not
-R29560:29563 Triage.terms <> ::tree_scope:x_'@'_x not
-R29619:29619 Triage.terms <> ::tree_scope:x_'@'_x not
-R29548:29549 Triage.terms <> S1 def
-R29553:29555 Triage.terms <> ::tree_scope:x_'@'_x not
-R29552:29552 Triage.terms <> K def
-R29556:29558 Triage.terms <> ::tree_scope:'△' not
-R29574:29577 Triage.terms <> ::tree_scope:x_'@'_x not
-R29618:29618 Triage.terms <> ::tree_scope:x_'@'_x not
-R29564:29565 Triage.terms <> S1 def
-R29569:29571 Triage.terms <> ::tree_scope:x_'@'_x not
-R29568:29568 Triage.terms <> K def
-R29572:29572 Triage.terms <> K def
-R29602:29605 Triage.terms <> ::tree_scope:x_'@'_x not
-R29617:29617 Triage.terms <> ::tree_scope:x_'@'_x not
-R29578:29579 Triage.terms <> S1 def
-R29597:29599 Triage.terms <> ::tree_scope:x_'@'_x not
-R29582:29583 Triage.terms <> S1 def
-R29587:29589 Triage.terms <> ::tree_scope:x_'@'_x not
-R29586:29586 Triage.terms <> K def
-R29590:29595 Triage.terms <> isZero def
-R29600:29600 Triage.terms <> I def
-R29607:29609 Triage.terms <> ::tree_scope:x_'@'_x not
-R29606:29606 Triage.terms <> K def
-R29610:29612 Triage.terms <> Ref constr
-R29721:29727 Triage.terms <> ::tree_scope:x_'@'_x not
-R29792:29792 Triage.terms <> ::tree_scope:x_'@'_x not
-R29628:29629 Triage.terms <> S1 def
-R29644:29647 Triage.terms <> ::tree_scope:x_'@'_x not
-R29719:29719 Triage.terms <> ::tree_scope:x_'@'_x not
-R29632:29633 Triage.terms <> S1 def
-R29637:29639 Triage.terms <> ::tree_scope:x_'@'_x not
-R29636:29636 Triage.terms <> K def
-R29640:29642 Triage.terms <> ::tree_scope:'△' not
-R29660:29663 Triage.terms <> ::tree_scope:x_'@'_x not
-R29718:29718 Triage.terms <> ::tree_scope:x_'@'_x not
-R29648:29649 Triage.terms <> S1 def
-R29653:29655 Triage.terms <> ::tree_scope:x_'@'_x not
-R29652:29652 Triage.terms <> K def
-R29656:29658 Triage.terms <> ::tree_scope:'△' not
-R29674:29677 Triage.terms <> ::tree_scope:x_'@'_x not
-R29717:29717 Triage.terms <> ::tree_scope:x_'@'_x not
-R29664:29665 Triage.terms <> S1 def
-R29669:29671 Triage.terms <> ::tree_scope:x_'@'_x not
-R29668:29668 Triage.terms <> K def
-R29672:29672 Triage.terms <> K def
-R29694:29697 Triage.terms <> ::tree_scope:x_'@'_x not
-R29716:29716 Triage.terms <> ::tree_scope:x_'@'_x not
-R29678:29679 Triage.terms <> S1 def
-R29683:29685 Triage.terms <> ::tree_scope:x_'@'_x not
-R29682:29682 Triage.terms <> K def
-R29686:29688 Triage.terms <> Ref constr
+R28918:28922 Triage.terms <> pairL def
+R28925:28927 Triage.terms <> num def
+R28930:28937 Coq.Arith.PeanoNat Nat pred def
+R28939:28939 Triage.terms <> k:257 var
+R28944:28946 Triage.terms <> num def
+R28948:28948 Triage.terms <> k:257 var
+R29013:29020 Triage.terms <> zero_red constr
+R29013:29020 Triage.terms <> zero_red constr
+R29039:29047 Triage.terms <> PSucc_red thm
+prf 29067:29074 <> pred_red
+binder 29084:29084 <> k:258
+R29088:29092 Triage.terms <> t_red def
+R29100:29103 Triage.terms <> ::tree_scope:x_'@'_x not
+R29109:29109 Triage.terms <> ::tree_scope:x_'@'_x not
+R29095:29099 Triage.terms <> predN def
+R29104:29106 Triage.terms <> num def
+R29108:29108 Triage.terms <> k:258 var
+R29113:29115 Triage.terms <> num def
+R29118:29121 Coq.Init.Nat <> pred def
+R29123:29123 Triage.terms <> k:258 var
+R29153:29157 Triage.terms <> predN def
+R29185:29188 Triage.terms <> fstL def
+R29223:29234 Triage.terms <> num_iterates thm
+R29242:29249 Triage.terms <> pred_aux thm
+def 29314:29325 <> primrec0_abs
+R29332:29528 Triage.terms <> ::tree_scope:'\' not
+R29348:29527 Triage.terms <> ::tree_scope:'\' not
+R29414:29437 Triage.terms <> ::tree_scope:x_'@'_x not
+R29497:29497 Triage.terms <> ::tree_scope:x_'@'_x not
+R29384:29406 Triage.terms <> ::tree_scope:x_'@'_x not
+R29372:29375 Triage.terms <> ::tree_scope:x_'@'_x not
+R29383:29383 Triage.terms <> ::tree_scope:x_'@'_x not
+R29366:29371 Triage.terms <> isZero def
+R29376:29378 Triage.terms <> Ref constr
+R29407:29409 Triage.terms <> Ref constr
+R29465:29468 Triage.terms <> ::tree_scope:x_'@'_x not
+R29496:29496 Triage.terms <> ::tree_scope:x_'@'_x not
+R29445:29448 Triage.terms <> ::tree_scope:x_'@'_x not
+R29464:29464 Triage.terms <> ::tree_scope:x_'@'_x not
+R29438:29440 Triage.terms <> Ref constr
+R29454:29456 Triage.terms <> ::tree_scope:x_'@'_x not
+R29449:29453 Triage.terms <> predN def
+R29457:29459 Triage.terms <> Ref constr
+R29476:29479 Triage.terms <> ::tree_scope:x_'@'_x not
+R29495:29495 Triage.terms <> ::tree_scope:x_'@'_x not
+R29469:29471 Triage.terms <> Ref constr
+R29485:29487 Triage.terms <> ::tree_scope:x_'@'_x not
+R29480:29484 Triage.terms <> predN def
+R29488:29490 Triage.terms <> Ref constr
+prf 29538:29549 <> primrec0_val
+R29566:29570 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R29554:29565 Triage.terms <> primrec0_abs def
+R29665:29670 Triage.terms <> ::tree_scope:x_'@'_x not
+R29836:29836 Triage.terms <> ::tree_scope:x_'@'_x not
+R29571:29572 Triage.terms <> S1 def
+R29587:29590 Triage.terms <> ::tree_scope:x_'@'_x not
+R29663:29663 Triage.terms <> ::tree_scope:x_'@'_x not
+R29575:29576 Triage.terms <> S1 def
+R29580:29582 Triage.terms <> ::tree_scope:x_'@'_x not
+R29579:29579 Triage.terms <> K def
+R29583:29585 Triage.terms <> ::tree_scope:'△' not
+R29603:29606 Triage.terms <> ::tree_scope:x_'@'_x not
+R29662:29662 Triage.terms <> ::tree_scope:x_'@'_x not
+R29591:29592 Triage.terms <> S1 def
+R29596:29598 Triage.terms <> ::tree_scope:x_'@'_x not
+R29595:29595 Triage.terms <> K def
+R29599:29601 Triage.terms <> ::tree_scope:'△' not
+R29617:29620 Triage.terms <> ::tree_scope:x_'@'_x not
+R29661:29661 Triage.terms <> ::tree_scope:x_'@'_x not
+R29607:29608 Triage.terms <> S1 def
+R29612:29614 Triage.terms <> ::tree_scope:x_'@'_x not
+R29611:29611 Triage.terms <> K def
+R29615:29615 Triage.terms <> K def
+R29645:29648 Triage.terms <> ::tree_scope:x_'@'_x not
+R29660:29660 Triage.terms <> ::tree_scope:x_'@'_x not
+R29621:29622 Triage.terms <> S1 def
+R29640:29642 Triage.terms <> ::tree_scope:x_'@'_x not
+R29625:29626 Triage.terms <> S1 def
+R29630:29632 Triage.terms <> ::tree_scope:x_'@'_x not
+R29629:29629 Triage.terms <> K def
+R29633:29638 Triage.terms <> isZero def
+R29643:29643 Triage.terms <> I def
+R29650:29652 Triage.terms <> ::tree_scope:x_'@'_x not
+R29649:29649 Triage.terms <> K def
+R29653:29655 Triage.terms <> Ref constr
+R29764:29770 Triage.terms <> ::tree_scope:x_'@'_x not
+R29835:29835 Triage.terms <> ::tree_scope:x_'@'_x not
+R29671:29672 Triage.terms <> S1 def
+R29687:29690 Triage.terms <> ::tree_scope:x_'@'_x not
+R29762:29762 Triage.terms <> ::tree_scope:x_'@'_x not
+R29675:29676 Triage.terms <> S1 def
+R29680:29682 Triage.terms <> ::tree_scope:x_'@'_x not
+R29679:29679 Triage.terms <> K def
+R29683:29685 Triage.terms <> ::tree_scope:'△' not
+R29703:29706 Triage.terms <> ::tree_scope:x_'@'_x not
+R29761:29761 Triage.terms <> ::tree_scope:x_'@'_x not
+R29691:29692 Triage.terms <> S1 def
+R29696:29698 Triage.terms <> ::tree_scope:x_'@'_x not
+R29695:29695 Triage.terms <> K def
+R29699:29701 Triage.terms <> ::tree_scope:'△' not
+R29717:29720 Triage.terms <> ::tree_scope:x_'@'_x not
+R29760:29760 Triage.terms <> ::tree_scope:x_'@'_x not
+R29707:29708 Triage.terms <> S1 def
 R29712:29714 Triage.terms <> ::tree_scope:x_'@'_x not
-R29698:29699 Triage.terms <> S1 def
-R29703:29705 Triage.terms <> ::tree_scope:x_'@'_x not
-R29702:29702 Triage.terms <> K def
-R29706:29710 Triage.terms <> predN def
-R29715:29715 Triage.terms <> I def
-R29754:29757 Triage.terms <> ::tree_scope:x_'@'_x not
-R29791:29791 Triage.terms <> ::tree_scope:x_'@'_x not
-R29728:29729 Triage.terms <> S1 def
-R29733:29736 Triage.terms <> ::tree_scope:x_'@'_x not
-R29752:29752 Triage.terms <> ::tree_scope:x_'@'_x not
-R29732:29732 Triage.terms <> K def
-R29740:29743 Triage.terms <> ::tree_scope:x_'@'_x not
-R29751:29751 Triage.terms <> ::tree_scope:x_'@'_x not
-R29737:29739 Triage.terms <> ::tree_scope:'△' not
-R29747:29749 Triage.terms <> ::tree_scope:x_'@'_x not
-R29744:29746 Triage.terms <> ::tree_scope:'△' not
-R29750:29750 Triage.terms <> I def
-R29768:29771 Triage.terms <> ::tree_scope:x_'@'_x not
-R29790:29790 Triage.terms <> ::tree_scope:x_'@'_x not
-R29758:29759 Triage.terms <> S1 def
-R29763:29765 Triage.terms <> ::tree_scope:x_'@'_x not
-R29762:29762 Triage.terms <> K def
-R29766:29766 Triage.terms <> K def
-R29786:29788 Triage.terms <> ::tree_scope:x_'@'_x not
-R29772:29773 Triage.terms <> S1 def
-R29777:29779 Triage.terms <> ::tree_scope:x_'@'_x not
-R29776:29776 Triage.terms <> K def
-R29780:29784 Triage.terms <> predN def
-R29789:29789 Triage.terms <> I def
-R29812:29823 Triage.terms <> primrec0_abs def
-def 29877:29884 <> primrec0
-binder 29886:29886 <> g:259
-binder 29888:29888 <> h:260
-R29897:29900 Triage.terms <> Yop2 def
-R29993:29998 Triage.terms <> ::tree_scope:x_'@'_x not
-R30160:30160 Triage.terms <> ::tree_scope:x_'@'_x not
-R29903:29904 Triage.terms <> S1 def
-R29920:29923 Triage.terms <> ::tree_scope:x_'@'_x not
-R29991:29991 Triage.terms <> ::tree_scope:x_'@'_x not
-R29907:29908 Triage.terms <> S1 def
-R29912:29914 Triage.terms <> ::tree_scope:x_'@'_x not
-R29911:29911 Triage.terms <> K def
-R29915:29918 Triage.terms <> Node constr
-R29937:29940 Triage.terms <> ::tree_scope:x_'@'_x not
-R29990:29990 Triage.terms <> ::tree_scope:x_'@'_x not
-R29924:29925 Triage.terms <> S1 def
-R29929:29931 Triage.terms <> ::tree_scope:x_'@'_x not
-R29928:29928 Triage.terms <> K def
-R29932:29935 Triage.terms <> Node constr
-R29951:29954 Triage.terms <> ::tree_scope:x_'@'_x not
-R29989:29989 Triage.terms <> ::tree_scope:x_'@'_x not
-R29941:29942 Triage.terms <> S1 def
-R29946:29948 Triage.terms <> ::tree_scope:x_'@'_x not
-R29945:29945 Triage.terms <> K def
-R29949:29949 Triage.terms <> K def
-R29979:29982 Triage.terms <> ::tree_scope:x_'@'_x not
-R29988:29988 Triage.terms <> ::tree_scope:x_'@'_x not
-R29955:29956 Triage.terms <> S1 def
-R29974:29976 Triage.terms <> ::tree_scope:x_'@'_x not
-R29959:29960 Triage.terms <> S1 def
-R29964:29966 Triage.terms <> ::tree_scope:x_'@'_x not
-R29963:29963 Triage.terms <> K def
-R29967:29972 Triage.terms <> isZero def
-R29977:29977 Triage.terms <> I def
-R29984:29986 Triage.terms <> ::tree_scope:x_'@'_x not
-R29983:29983 Triage.terms <> K def
-R29987:29987 Triage.terms <> g:259 var
-R30087:30093 Triage.terms <> ::tree_scope:x_'@'_x not
-R30159:30159 Triage.terms <> ::tree_scope:x_'@'_x not
-R29999:30000 Triage.terms <> S1 def
-R30015:30018 Triage.terms <> ::tree_scope:x_'@'_x not
-R30085:30085 Triage.terms <> ::tree_scope:x_'@'_x not
-R30003:30004 Triage.terms <> S1 def
-R30008:30010 Triage.terms <> ::tree_scope:x_'@'_x not
-R30007:30007 Triage.terms <> K def
-R30011:30013 Triage.terms <> ::tree_scope:'△' not
-R30032:30035 Triage.terms <> ::tree_scope:x_'@'_x not
-R30084:30084 Triage.terms <> ::tree_scope:x_'@'_x not
-R30019:30020 Triage.terms <> S1 def
-R30024:30026 Triage.terms <> ::tree_scope:x_'@'_x not
-R30023:30023 Triage.terms <> K def
-R30027:30030 Triage.terms <> Node constr
-R30046:30049 Triage.terms <> ::tree_scope:x_'@'_x not
-R30083:30083 Triage.terms <> ::tree_scope:x_'@'_x not
-R30036:30037 Triage.terms <> S1 def
-R30041:30043 Triage.terms <> ::tree_scope:x_'@'_x not
-R30040:30040 Triage.terms <> K def
-R30044:30044 Triage.terms <> K def
-R30060:30063 Triage.terms <> ::tree_scope:x_'@'_x not
-R30082:30082 Triage.terms <> ::tree_scope:x_'@'_x not
-R30050:30051 Triage.terms <> S1 def
-R30055:30057 Triage.terms <> ::tree_scope:x_'@'_x not
-R30054:30054 Triage.terms <> K def
-R30058:30058 Triage.terms <> h:260 var
-R30078:30080 Triage.terms <> ::tree_scope:x_'@'_x not
-R30064:30065 Triage.terms <> S1 def
-R30069:30071 Triage.terms <> ::tree_scope:x_'@'_x not
-R30068:30068 Triage.terms <> K def
-R30072:30076 Triage.terms <> predN def
-R30081:30081 Triage.terms <> I def
-R30121:30124 Triage.terms <> ::tree_scope:x_'@'_x not
-R30158:30158 Triage.terms <> ::tree_scope:x_'@'_x not
-R30094:30095 Triage.terms <> S1 def
-R30099:30102 Triage.terms <> ::tree_scope:x_'@'_x not
-R30119:30119 Triage.terms <> ::tree_scope:x_'@'_x not
-R30098:30098 Triage.terms <> K def
-R30107:30110 Triage.terms <> ::tree_scope:x_'@'_x not
-R30118:30118 Triage.terms <> ::tree_scope:x_'@'_x not
-R30103:30106 Triage.terms <> Node constr
-R30114:30116 Triage.terms <> ::tree_scope:x_'@'_x not
-R30111:30113 Triage.terms <> ::tree_scope:'△' not
-R30117:30117 Triage.terms <> I def
-R30135:30138 Triage.terms <> ::tree_scope:x_'@'_x not
-R30157:30157 Triage.terms <> ::tree_scope:x_'@'_x not
-R30125:30126 Triage.terms <> S1 def
-R30130:30132 Triage.terms <> ::tree_scope:x_'@'_x not
-R30129:30129 Triage.terms <> K def
-R30133:30133 Triage.terms <> K def
-R30153:30155 Triage.terms <> ::tree_scope:x_'@'_x not
-R30139:30140 Triage.terms <> S1 def
-R30144:30146 Triage.terms <> ::tree_scope:x_'@'_x not
-R30143:30143 Triage.terms <> K def
-R30147:30151 Triage.terms <> predN def
-R30156:30156 Triage.terms <> I def
-prf 30173:30189 <> primrec0_red_zero
-binder 30202:30202 <> g:261
-binder 30204:30204 <> h:262
-R30207:30211 Triage.terms <> t_red def
-R30226:30228 Triage.terms <> ::tree_scope:x_'@'_x not
-R30214:30221 Triage.terms <> primrec0 def
-R30223:30223 Triage.terms <> g:261 var
-R30225:30225 Triage.terms <> h:262 var
-R30229:30232 Triage.terms <> zero def
-R30235:30235 Triage.terms <> g:261 var
-R30261:30268 Triage.terms <> primrec0 def
-R30303:30308 Triage.terms <> Y2_red thm
-R30316:30326 Triage.terms <> isZero_zero thm
-prf 30343:30359 <> primrec0_red_succ
-binder 30372:30372 <> k:263
-binder 30374:30374 <> g:264
-binder 30376:30376 <> h:265
-R30379:30383 Triage.terms <> t_red def
-R30398:30401 Triage.terms <> ::tree_scope:x_'@'_x not
-R30411:30411 Triage.terms <> ::tree_scope:x_'@'_x not
-R30386:30393 Triage.terms <> primrec0 def
-R30395:30395 Triage.terms <> g:264 var
-R30397:30397 Triage.terms <> h:265 var
-R30402:30404 Triage.terms <> num def
-R30407:30407 Coq.Init.Datatypes <> S constr
-R30409:30409 Triage.terms <> k:263 var
-R30426:30429 Triage.terms <> ::tree_scope:x_'@'_x not
-R30452:30452 Triage.terms <> ::tree_scope:x_'@'_x not
-R30416:30419 Triage.terms <> ::tree_scope:x_'@'_x not
-R30425:30425 Triage.terms <> ::tree_scope:x_'@'_x not
-R30415:30415 Triage.terms <> h:265 var
-R30420:30422 Triage.terms <> num def
-R30424:30424 Triage.terms <> k:263 var
-R30442:30445 Triage.terms <> ::tree_scope:x_'@'_x not
-R30451:30451 Triage.terms <> ::tree_scope:x_'@'_x not
-R30430:30437 Triage.terms <> primrec0 def
-R30439:30439 Triage.terms <> g:264 var
-R30441:30441 Triage.terms <> h:265 var
-R30446:30448 Triage.terms <> num def
-R30450:30450 Triage.terms <> k:263 var
-R30478:30485 Triage.terms <> primrec0 def
-R30519:30524 Triage.terms <> Y2_red thm
-R30533:30543 Triage.terms <> isZero_succ thm
-R30551:30556 Triage.terms <> ff_red thm
-R30571:30578 Triage.terms <> pred_red thm
-R30571:30578 Triage.terms <> pred_red thm
-def 30601:30607 <> primrec
-binder 30609:30609 <> g:266
-binder 30611:30611 <> h:267
-binder 30613:30614 <> xs:268
-R30619:30626 Triage.terms <> primrec0 def
-R30629:30637 Coq.Lists.List <> fold_left def
-R30646:30646 Triage.terms <> g:266 var
-R30643:30644 Triage.terms <> xs:268 var
-R30639:30641 Triage.terms <> App constr
-R30650:30658 Coq.Lists.List <> fold_left def
-R30667:30667 Triage.terms <> h:267 var
-R30664:30665 Triage.terms <> xs:268 var
-R30660:30662 Triage.terms <> App constr
-prf 30681:30696 <> primrec_red_zero
-binder 30708:30709 <> xs:269
-binder 30711:30711 <> g:270
-binder 30713:30713 <> h:271
-R30716:30720 Triage.terms <> t_red def
-R30737:30739 Triage.terms <> ::tree_scope:x_'@'_x not
-R30723:30729 Triage.terms <> primrec def
-R30731:30731 Triage.terms <> g:270 var
-R30733:30733 Triage.terms <> h:271 var
-R30735:30736 Triage.terms <> xs:269 var
-R30740:30743 Triage.terms <> zero def
-R30747:30755 Coq.Lists.List <> fold_left def
-R30764:30764 Triage.terms <> g:270 var
-R30761:30762 Triage.terms <> xs:269 var
-R30757:30759 Triage.terms <> App constr
-R30792:30808 Triage.terms <> primrec0_red_zero thm
-R30792:30808 Triage.terms <> primrec0_red_zero thm
-prf 30827:30842 <> primrec_red_succ
-binder 30854:30855 <> xs:272
-binder 30857:30857 <> g:273
-binder 30859:30859 <> h:274
-binder 30861:30861 <> k:275
-R30868:30872 Triage.terms <> t_red def
-R30889:30892 Triage.terms <> ::tree_scope:x_'@'_x not
-R30902:30902 Triage.terms <> ::tree_scope:x_'@'_x not
-R30875:30881 Triage.terms <> primrec def
-R30883:30883 Triage.terms <> g:273 var
-R30885:30885 Triage.terms <> h:274 var
-R30887:30888 Triage.terms <> xs:272 var
-R30893:30895 Triage.terms <> num def
-R30898:30898 Coq.Init.Datatypes <> S constr
-R30900:30900 Triage.terms <> k:275 var
-R30934:30937 Triage.terms <> ::tree_scope:x_'@'_x not
-R30962:30962 Triage.terms <> ::tree_scope:x_'@'_x not
-R30924:30927 Triage.terms <> ::tree_scope:x_'@'_x not
-R30933:30933 Triage.terms <> ::tree_scope:x_'@'_x not
-R30906:30914 Coq.Lists.List <> fold_left def
-R30923:30923 Triage.terms <> h:274 var
-R30920:30921 Triage.terms <> xs:272 var
-R30916:30918 Triage.terms <> App constr
-R30928:30930 Triage.terms <> num def
-R30932:30932 Triage.terms <> k:275 var
-R30952:30955 Triage.terms <> ::tree_scope:x_'@'_x not
-R30961:30961 Triage.terms <> ::tree_scope:x_'@'_x not
-R30938:30944 Triage.terms <> primrec def
-R30946:30946 Triage.terms <> g:273 var
-R30948:30948 Triage.terms <> h:274 var
-R30950:30951 Triage.terms <> xs:272 var
-R30956:30958 Triage.terms <> num def
-R30960:30960 Triage.terms <> k:275 var
-R31003:31019 Triage.terms <> primrec0_red_succ thm
-R31003:31019 Triage.terms <> primrec0_red_succ thm
-def 31041:31050 <> prim_plus0
-binder 31052:31052 <> n:276
-R31057:31063 Triage.terms <> primrec def
-R31065:31065 Triage.terms <> I def
-R31069:31072 Triage.terms <> ::tree_scope:x_'@'_x not
-R31103:31103 Triage.terms <> ::tree_scope:x_'@'_x not
-R31068:31068 Triage.terms <> K def
-R31074:31077 Triage.terms <> ::tree_scope:x_'@'_x not
-R31102:31102 Triage.terms <> ::tree_scope:x_'@'_x not
-R31073:31073 Triage.terms <> K def
-R31078:31101 Triage.terms <> ::tree_scope:'\' not
-R31089:31092 Triage.terms <> ::tree_scope:x_'@'_x not
-R31100:31100 Triage.terms <> ::tree_scope:x_'@'_x not
-R31084:31088 Triage.terms <> succ1 def
-R31093:31095 Triage.terms <> Ref constr
-R31108:31109 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R31107:31107 Triage.terms <> n:276 var
-R31110:31112 Coq.Init.Datatypes <> nil constr
-def 31129:31137 <> prim_plus
-R31142:31168 Triage.terms <> ::tree_scope:'\' not
-R31148:31157 Triage.terms <> prim_plus0 def
-R31160:31162 Triage.terms <> Ref constr
-prf 31181:31194 <> prim_plus_zero
-binder 31204:31204 <> n:277
-R31207:31211 Triage.terms <> t_red def
-R31227:31229 Triage.terms <> ::tree_scope:x_'@'_x not
-R31223:31225 Triage.terms <> ::tree_scope:x_'@'_x not
-R31214:31222 Triage.terms <> prim_plus def
-R31226:31226 Triage.terms <> n:277 var
-R31230:31233 Triage.terms <> zero def
-R31236:31236 Triage.terms <> n:277 var
-R31284:31293 Triage.terms <> substitute def
-R31296:31305 Triage.terms <> prim_plus0 def
-R31308:31310 Triage.terms <> Ref constr
-R31331:31340 Triage.terms <> prim_plus0 def
-R31262:31270 Triage.terms <> star_beta thm
-R31284:31293 Triage.terms <> substitute def
-R31296:31305 Triage.terms <> prim_plus0 def
-R31308:31310 Triage.terms <> Ref constr
-R31331:31340 Triage.terms <> prim_plus0 def
-R31368:31383 Triage.terms <> primrec_red_zero thm
-prf 31410:31425 <> prim_plus0_succ1
-binder 31435:31435 <> m:278
-binder 31437:31437 <> n:279
-R31440:31444 Triage.terms <> t_red def
-R31459:31462 Triage.terms <> ::tree_scope:x_'@'_x not
-R31472:31472 Triage.terms <> ::tree_scope:x_'@'_x not
-R31447:31456 Triage.terms <> prim_plus0 def
-R31458:31458 Triage.terms <> m:278 var
-R31463:31465 Triage.terms <> num def
-R31468:31468 Coq.Init.Datatypes <> S constr
-R31470:31470 Triage.terms <> n:279 var
-R31481:31484 Triage.terms <> ::tree_scope:x_'@'_x not
-R31507:31507 Triage.terms <> ::tree_scope:x_'@'_x not
-R31476:31480 Triage.terms <> succ1 def
-R31497:31500 Triage.terms <> ::tree_scope:x_'@'_x not
-R31506:31506 Triage.terms <> ::tree_scope:x_'@'_x not
-R31485:31494 Triage.terms <> prim_plus0 def
-R31496:31496 Triage.terms <> m:278 var
-R31501:31503 Triage.terms <> num def
-R31505:31505 Triage.terms <> n:279 var
-R31533:31548 Triage.terms <> primrec_red_succ thm
-def 31613:31622 <> minrec_abs
-R31627:31707 Triage.terms <> ::tree_scope:'\' not
-R31634:31706 Triage.terms <> ::tree_scope:'\' not
-R31670:31673 Triage.terms <> ::tree_scope:x_'@'_x not
-R31705:31705 Triage.terms <> ::tree_scope:x_'@'_x not
-R31659:31661 Triage.terms <> ::tree_scope:x_'@'_x not
-R31648:31650 Triage.terms <> ::tree_scope:x_'@'_x not
-R31641:31643 Triage.terms <> Ref constr
-R31651:31653 Triage.terms <> Ref constr
-R31662:31664 Triage.terms <> Ref constr
-R31682:31685 Triage.terms <> ::tree_scope:x_'@'_x not
-R31704:31704 Triage.terms <> ::tree_scope:x_'@'_x not
-R31674:31676 Triage.terms <> Ref constr
-R31691:31694 Triage.terms <> ::tree_scope:x_'@'_x not
-R31703:31703 Triage.terms <> ::tree_scope:x_'@'_x not
-R31686:31690 Triage.terms <> succ1 def
-R31695:31697 Triage.terms <> Ref constr
-prf 31717:31731 <> min_rec_abs_val
-R31747:31750 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R31737:31746 Triage.terms <> minrec_abs def
-R32049:32054 Triage.terms <> ::tree_scope:x_'@'_x not
-R32176:32176 Triage.terms <> ::tree_scope:x_'@'_x not
-R31754:31759 Triage.terms <> ::tree_scope:x_'@'_x not
-R32048:32048 Triage.terms <> ::tree_scope:x_'@'_x not
-R31751:31753 Triage.terms <> ::tree_scope:'△' not
-R31763:31769 Triage.terms <> ::tree_scope:x_'@'_x not
-R32047:32047 Triage.terms <> ::tree_scope:x_'@'_x not
-R31760:31762 Triage.terms <> ::tree_scope:'△' not
-R31801:31808 Triage.terms <> ::tree_scope:x_'@'_x not
-R32046:32046 Triage.terms <> ::tree_scope:x_'@'_x not
-R31773:31776 Triage.terms <> ::tree_scope:x_'@'_x not
-R31800:31800 Triage.terms <> ::tree_scope:x_'@'_x not
-R31770:31772 Triage.terms <> ::tree_scope:'△' not
-R31780:31783 Triage.terms <> ::tree_scope:x_'@'_x not
-R31799:31799 Triage.terms <> ::tree_scope:x_'@'_x not
-R31777:31779 Triage.terms <> ::tree_scope:'△' not
-R31793:31795 Triage.terms <> ::tree_scope:x_'@'_x not
-R31787:31789 Triage.terms <> ::tree_scope:x_'@'_x not
-R31784:31786 Triage.terms <> ::tree_scope:'△' not
-R31790:31792 Triage.terms <> ::tree_scope:'△' not
-R31796:31798 Triage.terms <> ::tree_scope:'△' not
-R31840:31848 Triage.terms <> ::tree_scope:x_'@'_x not
-R32045:32045 Triage.terms <> ::tree_scope:x_'@'_x not
-R31812:31815 Triage.terms <> ::tree_scope:x_'@'_x not
-R31839:31839 Triage.terms <> ::tree_scope:x_'@'_x not
-R31809:31811 Triage.terms <> ::tree_scope:'△' not
-R31819:31822 Triage.terms <> ::tree_scope:x_'@'_x not
-R31838:31838 Triage.terms <> ::tree_scope:x_'@'_x not
-R31816:31818 Triage.terms <> ::tree_scope:'△' not
-R31832:31834 Triage.terms <> ::tree_scope:x_'@'_x not
-R31826:31828 Triage.terms <> ::tree_scope:x_'@'_x not
-R31823:31825 Triage.terms <> ::tree_scope:'△' not
-R31829:31831 Triage.terms <> ::tree_scope:'△' not
-R31835:31837 Triage.terms <> ::tree_scope:'△' not
-R31888:31897 Triage.terms <> ::tree_scope:x_'@'_x not
-R32044:32044 Triage.terms <> ::tree_scope:x_'@'_x not
-R31852:31855 Triage.terms <> ::tree_scope:x_'@'_x not
-R31887:31887 Triage.terms <> ::tree_scope:x_'@'_x not
-R31849:31851 Triage.terms <> ::tree_scope:'△' not
-R31859:31862 Triage.terms <> ::tree_scope:x_'@'_x not
-R31886:31886 Triage.terms <> ::tree_scope:x_'@'_x not
-R31856:31858 Triage.terms <> ::tree_scope:'△' not
-R31872:31875 Triage.terms <> ::tree_scope:x_'@'_x not
-R31885:31885 Triage.terms <> ::tree_scope:x_'@'_x not
-R31866:31868 Triage.terms <> ::tree_scope:x_'@'_x not
-R31863:31865 Triage.terms <> ::tree_scope:'△' not
-R31869:31871 Triage.terms <> ::tree_scope:'△' not
-R31879:31881 Triage.terms <> ::tree_scope:x_'@'_x not
-R31876:31878 Triage.terms <> ::tree_scope:'△' not
-R31882:31884 Triage.terms <> ::tree_scope:'△' not
-R31993:32003 Triage.terms <> ::tree_scope:x_'@'_x not
-R32043:32043 Triage.terms <> ::tree_scope:x_'@'_x not
-R31901:31904 Triage.terms <> ::tree_scope:x_'@'_x not
-R31992:31992 Triage.terms <> ::tree_scope:x_'@'_x not
-R31898:31900 Triage.terms <> ::tree_scope:'△' not
-R31908:31911 Triage.terms <> ::tree_scope:x_'@'_x not
-R31991:31991 Triage.terms <> ::tree_scope:x_'@'_x not
-R31905:31907 Triage.terms <> ::tree_scope:'△' not
-R31947:31950 Triage.terms <> ::tree_scope:x_'@'_x not
-R31990:31990 Triage.terms <> ::tree_scope:x_'@'_x not
+R29711:29711 Triage.terms <> K def
+R29715:29715 Triage.terms <> K def
+R29737:29740 Triage.terms <> ::tree_scope:x_'@'_x not
+R29759:29759 Triage.terms <> ::tree_scope:x_'@'_x not
+R29721:29722 Triage.terms <> S1 def
+R29726:29728 Triage.terms <> ::tree_scope:x_'@'_x not
+R29725:29725 Triage.terms <> K def
+R29729:29731 Triage.terms <> Ref constr
+R29755:29757 Triage.terms <> ::tree_scope:x_'@'_x not
+R29741:29742 Triage.terms <> S1 def
+R29746:29748 Triage.terms <> ::tree_scope:x_'@'_x not
+R29745:29745 Triage.terms <> K def
+R29749:29753 Triage.terms <> predN def
+R29758:29758 Triage.terms <> I def
+R29797:29800 Triage.terms <> ::tree_scope:x_'@'_x not
+R29834:29834 Triage.terms <> ::tree_scope:x_'@'_x not
+R29771:29772 Triage.terms <> S1 def
+R29776:29779 Triage.terms <> ::tree_scope:x_'@'_x not
+R29795:29795 Triage.terms <> ::tree_scope:x_'@'_x not
+R29775:29775 Triage.terms <> K def
+R29783:29786 Triage.terms <> ::tree_scope:x_'@'_x not
+R29794:29794 Triage.terms <> ::tree_scope:x_'@'_x not
+R29780:29782 Triage.terms <> ::tree_scope:'△' not
+R29790:29792 Triage.terms <> ::tree_scope:x_'@'_x not
+R29787:29789 Triage.terms <> ::tree_scope:'△' not
+R29793:29793 Triage.terms <> I def
+R29811:29814 Triage.terms <> ::tree_scope:x_'@'_x not
+R29833:29833 Triage.terms <> ::tree_scope:x_'@'_x not
+R29801:29802 Triage.terms <> S1 def
+R29806:29808 Triage.terms <> ::tree_scope:x_'@'_x not
+R29805:29805 Triage.terms <> K def
+R29809:29809 Triage.terms <> K def
+R29829:29831 Triage.terms <> ::tree_scope:x_'@'_x not
+R29815:29816 Triage.terms <> S1 def
+R29820:29822 Triage.terms <> ::tree_scope:x_'@'_x not
+R29819:29819 Triage.terms <> K def
+R29823:29827 Triage.terms <> predN def
+R29832:29832 Triage.terms <> I def
+R29855:29866 Triage.terms <> primrec0_abs def
+def 29920:29927 <> primrec0
+binder 29929:29929 <> g:259
+binder 29931:29931 <> h:260
+R29940:29943 Triage.terms <> Yop2 def
+R30036:30041 Triage.terms <> ::tree_scope:x_'@'_x not
+R30203:30203 Triage.terms <> ::tree_scope:x_'@'_x not
+R29946:29947 Triage.terms <> S1 def
+R29963:29966 Triage.terms <> ::tree_scope:x_'@'_x not
+R30034:30034 Triage.terms <> ::tree_scope:x_'@'_x not
+R29950:29951 Triage.terms <> S1 def
+R29955:29957 Triage.terms <> ::tree_scope:x_'@'_x not
+R29954:29954 Triage.terms <> K def
+R29958:29961 Triage.terms <> Node constr
+R29980:29983 Triage.terms <> ::tree_scope:x_'@'_x not
+R30033:30033 Triage.terms <> ::tree_scope:x_'@'_x not
+R29967:29968 Triage.terms <> S1 def
+R29972:29974 Triage.terms <> ::tree_scope:x_'@'_x not
+R29971:29971 Triage.terms <> K def
+R29975:29978 Triage.terms <> Node constr
+R29994:29997 Triage.terms <> ::tree_scope:x_'@'_x not
+R30032:30032 Triage.terms <> ::tree_scope:x_'@'_x not
+R29984:29985 Triage.terms <> S1 def
+R29989:29991 Triage.terms <> ::tree_scope:x_'@'_x not
+R29988:29988 Triage.terms <> K def
+R29992:29992 Triage.terms <> K def
+R30022:30025 Triage.terms <> ::tree_scope:x_'@'_x not
+R30031:30031 Triage.terms <> ::tree_scope:x_'@'_x not
+R29998:29999 Triage.terms <> S1 def
+R30017:30019 Triage.terms <> ::tree_scope:x_'@'_x not
+R30002:30003 Triage.terms <> S1 def
+R30007:30009 Triage.terms <> ::tree_scope:x_'@'_x not
+R30006:30006 Triage.terms <> K def
+R30010:30015 Triage.terms <> isZero def
+R30020:30020 Triage.terms <> I def
+R30027:30029 Triage.terms <> ::tree_scope:x_'@'_x not
+R30026:30026 Triage.terms <> K def
+R30030:30030 Triage.terms <> g:259 var
+R30130:30136 Triage.terms <> ::tree_scope:x_'@'_x not
+R30202:30202 Triage.terms <> ::tree_scope:x_'@'_x not
+R30042:30043 Triage.terms <> S1 def
+R30058:30061 Triage.terms <> ::tree_scope:x_'@'_x not
+R30128:30128 Triage.terms <> ::tree_scope:x_'@'_x not
+R30046:30047 Triage.terms <> S1 def
+R30051:30053 Triage.terms <> ::tree_scope:x_'@'_x not
+R30050:30050 Triage.terms <> K def
+R30054:30056 Triage.terms <> ::tree_scope:'△' not
+R30075:30078 Triage.terms <> ::tree_scope:x_'@'_x not
+R30127:30127 Triage.terms <> ::tree_scope:x_'@'_x not
+R30062:30063 Triage.terms <> S1 def
+R30067:30069 Triage.terms <> ::tree_scope:x_'@'_x not
+R30066:30066 Triage.terms <> K def
+R30070:30073 Triage.terms <> Node constr
+R30089:30092 Triage.terms <> ::tree_scope:x_'@'_x not
+R30126:30126 Triage.terms <> ::tree_scope:x_'@'_x not
+R30079:30080 Triage.terms <> S1 def
+R30084:30086 Triage.terms <> ::tree_scope:x_'@'_x not
+R30083:30083 Triage.terms <> K def
+R30087:30087 Triage.terms <> K def
+R30103:30106 Triage.terms <> ::tree_scope:x_'@'_x not
+R30125:30125 Triage.terms <> ::tree_scope:x_'@'_x not
+R30093:30094 Triage.terms <> S1 def
+R30098:30100 Triage.terms <> ::tree_scope:x_'@'_x not
+R30097:30097 Triage.terms <> K def
+R30101:30101 Triage.terms <> h:260 var
+R30121:30123 Triage.terms <> ::tree_scope:x_'@'_x not
+R30107:30108 Triage.terms <> S1 def
+R30112:30114 Triage.terms <> ::tree_scope:x_'@'_x not
+R30111:30111 Triage.terms <> K def
+R30115:30119 Triage.terms <> predN def
+R30124:30124 Triage.terms <> I def
+R30164:30167 Triage.terms <> ::tree_scope:x_'@'_x not
+R30201:30201 Triage.terms <> ::tree_scope:x_'@'_x not
+R30137:30138 Triage.terms <> S1 def
+R30142:30145 Triage.terms <> ::tree_scope:x_'@'_x not
+R30162:30162 Triage.terms <> ::tree_scope:x_'@'_x not
+R30141:30141 Triage.terms <> K def
+R30150:30153 Triage.terms <> ::tree_scope:x_'@'_x not
+R30161:30161 Triage.terms <> ::tree_scope:x_'@'_x not
+R30146:30149 Triage.terms <> Node constr
+R30157:30159 Triage.terms <> ::tree_scope:x_'@'_x not
+R30154:30156 Triage.terms <> ::tree_scope:'△' not
+R30160:30160 Triage.terms <> I def
+R30178:30181 Triage.terms <> ::tree_scope:x_'@'_x not
+R30200:30200 Triage.terms <> ::tree_scope:x_'@'_x not
+R30168:30169 Triage.terms <> S1 def
+R30173:30175 Triage.terms <> ::tree_scope:x_'@'_x not
+R30172:30172 Triage.terms <> K def
+R30176:30176 Triage.terms <> K def
+R30196:30198 Triage.terms <> ::tree_scope:x_'@'_x not
+R30182:30183 Triage.terms <> S1 def
+R30187:30189 Triage.terms <> ::tree_scope:x_'@'_x not
+R30186:30186 Triage.terms <> K def
+R30190:30194 Triage.terms <> predN def
+R30199:30199 Triage.terms <> I def
+prf 30216:30232 <> primrec0_red_zero
+binder 30245:30245 <> g:261
+binder 30247:30247 <> h:262
+R30250:30254 Triage.terms <> t_red def
+R30269:30271 Triage.terms <> ::tree_scope:x_'@'_x not
+R30257:30264 Triage.terms <> primrec0 def
+R30266:30266 Triage.terms <> g:261 var
+R30268:30268 Triage.terms <> h:262 var
+R30272:30275 Triage.terms <> zero def
+R30278:30278 Triage.terms <> g:261 var
+R30304:30311 Triage.terms <> primrec0 def
+R30346:30351 Triage.terms <> Y2_red thm
+R30359:30369 Triage.terms <> isZero_zero thm
+prf 30386:30402 <> primrec0_red_succ
+binder 30415:30415 <> k:263
+binder 30417:30417 <> g:264
+binder 30419:30419 <> h:265
+R30422:30426 Triage.terms <> t_red def
+R30441:30444 Triage.terms <> ::tree_scope:x_'@'_x not
+R30454:30454 Triage.terms <> ::tree_scope:x_'@'_x not
+R30429:30436 Triage.terms <> primrec0 def
+R30438:30438 Triage.terms <> g:264 var
+R30440:30440 Triage.terms <> h:265 var
+R30445:30447 Triage.terms <> num def
+R30450:30450 Coq.Init.Datatypes <> S constr
+R30452:30452 Triage.terms <> k:263 var
+R30469:30472 Triage.terms <> ::tree_scope:x_'@'_x not
+R30495:30495 Triage.terms <> ::tree_scope:x_'@'_x not
+R30459:30462 Triage.terms <> ::tree_scope:x_'@'_x not
+R30468:30468 Triage.terms <> ::tree_scope:x_'@'_x not
+R30458:30458 Triage.terms <> h:265 var
+R30463:30465 Triage.terms <> num def
+R30467:30467 Triage.terms <> k:263 var
+R30485:30488 Triage.terms <> ::tree_scope:x_'@'_x not
+R30494:30494 Triage.terms <> ::tree_scope:x_'@'_x not
+R30473:30480 Triage.terms <> primrec0 def
+R30482:30482 Triage.terms <> g:264 var
+R30484:30484 Triage.terms <> h:265 var
+R30489:30491 Triage.terms <> num def
+R30493:30493 Triage.terms <> k:263 var
+R30521:30528 Triage.terms <> primrec0 def
+R30562:30567 Triage.terms <> Y2_red thm
+R30576:30586 Triage.terms <> isZero_succ thm
+R30594:30599 Triage.terms <> ff_red thm
+R30614:30621 Triage.terms <> pred_red thm
+R30614:30621 Triage.terms <> pred_red thm
+def 30644:30650 <> primrec
+binder 30652:30652 <> g:266
+binder 30654:30654 <> h:267
+binder 30656:30657 <> xs:268
+R30662:30669 Triage.terms <> primrec0 def
+R30672:30680 Coq.Lists.List <> fold_left def
+R30689:30689 Triage.terms <> g:266 var
+R30686:30687 Triage.terms <> xs:268 var
+R30682:30684 Triage.terms <> App constr
+R30693:30701 Coq.Lists.List <> fold_left def
+R30710:30710 Triage.terms <> h:267 var
+R30707:30708 Triage.terms <> xs:268 var
+R30703:30705 Triage.terms <> App constr
+prf 30724:30739 <> primrec_red_zero
+binder 30751:30752 <> xs:269
+binder 30754:30754 <> g:270
+binder 30756:30756 <> h:271
+R30759:30763 Triage.terms <> t_red def
+R30780:30782 Triage.terms <> ::tree_scope:x_'@'_x not
+R30766:30772 Triage.terms <> primrec def
+R30774:30774 Triage.terms <> g:270 var
+R30776:30776 Triage.terms <> h:271 var
+R30778:30779 Triage.terms <> xs:269 var
+R30783:30786 Triage.terms <> zero def
+R30790:30798 Coq.Lists.List <> fold_left def
+R30807:30807 Triage.terms <> g:270 var
+R30804:30805 Triage.terms <> xs:269 var
+R30800:30802 Triage.terms <> App constr
+R30835:30851 Triage.terms <> primrec0_red_zero thm
+R30835:30851 Triage.terms <> primrec0_red_zero thm
+prf 30870:30885 <> primrec_red_succ
+binder 30897:30898 <> xs:272
+binder 30900:30900 <> g:273
+binder 30902:30902 <> h:274
+binder 30904:30904 <> k:275
+R30911:30915 Triage.terms <> t_red def
+R30932:30935 Triage.terms <> ::tree_scope:x_'@'_x not
+R30945:30945 Triage.terms <> ::tree_scope:x_'@'_x not
+R30918:30924 Triage.terms <> primrec def
+R30926:30926 Triage.terms <> g:273 var
+R30928:30928 Triage.terms <> h:274 var
+R30930:30931 Triage.terms <> xs:272 var
+R30936:30938 Triage.terms <> num def
+R30941:30941 Coq.Init.Datatypes <> S constr
+R30943:30943 Triage.terms <> k:275 var
+R30977:30980 Triage.terms <> ::tree_scope:x_'@'_x not
+R31005:31005 Triage.terms <> ::tree_scope:x_'@'_x not
+R30967:30970 Triage.terms <> ::tree_scope:x_'@'_x not
+R30976:30976 Triage.terms <> ::tree_scope:x_'@'_x not
+R30949:30957 Coq.Lists.List <> fold_left def
+R30966:30966 Triage.terms <> h:274 var
+R30963:30964 Triage.terms <> xs:272 var
+R30959:30961 Triage.terms <> App constr
+R30971:30973 Triage.terms <> num def
+R30975:30975 Triage.terms <> k:275 var
+R30995:30998 Triage.terms <> ::tree_scope:x_'@'_x not
+R31004:31004 Triage.terms <> ::tree_scope:x_'@'_x not
+R30981:30987 Triage.terms <> primrec def
+R30989:30989 Triage.terms <> g:273 var
+R30991:30991 Triage.terms <> h:274 var
+R30993:30994 Triage.terms <> xs:272 var
+R30999:31001 Triage.terms <> num def
+R31003:31003 Triage.terms <> k:275 var
+R31046:31062 Triage.terms <> primrec0_red_succ thm
+R31046:31062 Triage.terms <> primrec0_red_succ thm
+def 31084:31093 <> prim_plus0
+binder 31095:31095 <> n:276
+R31100:31106 Triage.terms <> primrec def
+R31108:31108 Triage.terms <> I def
+R31112:31115 Triage.terms <> ::tree_scope:x_'@'_x not
+R31146:31146 Triage.terms <> ::tree_scope:x_'@'_x not
+R31111:31111 Triage.terms <> K def
+R31117:31120 Triage.terms <> ::tree_scope:x_'@'_x not
+R31145:31145 Triage.terms <> ::tree_scope:x_'@'_x not
+R31116:31116 Triage.terms <> K def
+R31121:31144 Triage.terms <> ::tree_scope:'\' not
+R31132:31135 Triage.terms <> ::tree_scope:x_'@'_x not
+R31143:31143 Triage.terms <> ::tree_scope:x_'@'_x not
+R31127:31131 Triage.terms <> succ1 def
+R31136:31138 Triage.terms <> Ref constr
+R31151:31152 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R31150:31150 Triage.terms <> n:276 var
+R31153:31155 Coq.Init.Datatypes <> nil constr
+def 31172:31180 <> prim_plus
+R31185:31211 Triage.terms <> ::tree_scope:'\' not
+R31191:31200 Triage.terms <> prim_plus0 def
+R31203:31205 Triage.terms <> Ref constr
+prf 31224:31237 <> prim_plus_zero
+binder 31247:31247 <> n:277
+R31250:31254 Triage.terms <> t_red def
+R31270:31272 Triage.terms <> ::tree_scope:x_'@'_x not
+R31266:31268 Triage.terms <> ::tree_scope:x_'@'_x not
+R31257:31265 Triage.terms <> prim_plus def
+R31269:31269 Triage.terms <> n:277 var
+R31273:31276 Triage.terms <> zero def
+R31279:31279 Triage.terms <> n:277 var
+R31327:31336 Triage.terms <> substitute def
+R31339:31348 Triage.terms <> prim_plus0 def
+R31351:31353 Triage.terms <> Ref constr
+R31374:31383 Triage.terms <> prim_plus0 def
+R31305:31313 Triage.terms <> star_beta thm
+R31327:31336 Triage.terms <> substitute def
+R31339:31348 Triage.terms <> prim_plus0 def
+R31351:31353 Triage.terms <> Ref constr
+R31374:31383 Triage.terms <> prim_plus0 def
+R31411:31426 Triage.terms <> primrec_red_zero thm
+prf 31453:31468 <> prim_plus0_succ1
+binder 31478:31478 <> m:278
+binder 31480:31480 <> n:279
+R31483:31487 Triage.terms <> t_red def
+R31502:31505 Triage.terms <> ::tree_scope:x_'@'_x not
+R31515:31515 Triage.terms <> ::tree_scope:x_'@'_x not
+R31490:31499 Triage.terms <> prim_plus0 def
+R31501:31501 Triage.terms <> m:278 var
+R31506:31508 Triage.terms <> num def
+R31511:31511 Coq.Init.Datatypes <> S constr
+R31513:31513 Triage.terms <> n:279 var
+R31524:31527 Triage.terms <> ::tree_scope:x_'@'_x not
+R31550:31550 Triage.terms <> ::tree_scope:x_'@'_x not
+R31519:31523 Triage.terms <> succ1 def
+R31540:31543 Triage.terms <> ::tree_scope:x_'@'_x not
+R31549:31549 Triage.terms <> ::tree_scope:x_'@'_x not
+R31528:31537 Triage.terms <> prim_plus0 def
+R31539:31539 Triage.terms <> m:278 var
+R31544:31546 Triage.terms <> num def
+R31548:31548 Triage.terms <> n:279 var
+R31576:31591 Triage.terms <> primrec_red_succ thm
+def 31656:31665 <> minrec_abs
+R31670:31750 Triage.terms <> ::tree_scope:'\' not
+R31677:31749 Triage.terms <> ::tree_scope:'\' not
+R31713:31716 Triage.terms <> ::tree_scope:x_'@'_x not
+R31748:31748 Triage.terms <> ::tree_scope:x_'@'_x not
+R31702:31704 Triage.terms <> ::tree_scope:x_'@'_x not
+R31691:31693 Triage.terms <> ::tree_scope:x_'@'_x not
+R31684:31686 Triage.terms <> Ref constr
+R31694:31696 Triage.terms <> Ref constr
+R31705:31707 Triage.terms <> Ref constr
+R31725:31728 Triage.terms <> ::tree_scope:x_'@'_x not
+R31747:31747 Triage.terms <> ::tree_scope:x_'@'_x not
+R31717:31719 Triage.terms <> Ref constr
+R31734:31737 Triage.terms <> ::tree_scope:x_'@'_x not
+R31746:31746 Triage.terms <> ::tree_scope:x_'@'_x not
+R31729:31733 Triage.terms <> succ1 def
+R31738:31740 Triage.terms <> Ref constr
+prf 31760:31774 <> min_rec_abs_val
+R31790:31793 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31780:31789 Triage.terms <> minrec_abs def
+R32092:32097 Triage.terms <> ::tree_scope:x_'@'_x not
+R32219:32219 Triage.terms <> ::tree_scope:x_'@'_x not
+R31797:31802 Triage.terms <> ::tree_scope:x_'@'_x not
+R32091:32091 Triage.terms <> ::tree_scope:x_'@'_x not
+R31794:31796 Triage.terms <> ::tree_scope:'△' not
+R31806:31812 Triage.terms <> ::tree_scope:x_'@'_x not
+R32090:32090 Triage.terms <> ::tree_scope:x_'@'_x not
+R31803:31805 Triage.terms <> ::tree_scope:'△' not
+R31844:31851 Triage.terms <> ::tree_scope:x_'@'_x not
+R32089:32089 Triage.terms <> ::tree_scope:x_'@'_x not
+R31816:31819 Triage.terms <> ::tree_scope:x_'@'_x not
+R31843:31843 Triage.terms <> ::tree_scope:x_'@'_x not
+R31813:31815 Triage.terms <> ::tree_scope:'△' not
+R31823:31826 Triage.terms <> ::tree_scope:x_'@'_x not
+R31842:31842 Triage.terms <> ::tree_scope:x_'@'_x not
+R31820:31822 Triage.terms <> ::tree_scope:'△' not
+R31836:31838 Triage.terms <> ::tree_scope:x_'@'_x not
+R31830:31832 Triage.terms <> ::tree_scope:x_'@'_x not
+R31827:31829 Triage.terms <> ::tree_scope:'△' not
+R31833:31835 Triage.terms <> ::tree_scope:'△' not
+R31839:31841 Triage.terms <> ::tree_scope:'△' not
+R31883:31891 Triage.terms <> ::tree_scope:x_'@'_x not
+R32088:32088 Triage.terms <> ::tree_scope:x_'@'_x not
+R31855:31858 Triage.terms <> ::tree_scope:x_'@'_x not
+R31882:31882 Triage.terms <> ::tree_scope:x_'@'_x not
+R31852:31854 Triage.terms <> ::tree_scope:'△' not
+R31862:31865 Triage.terms <> ::tree_scope:x_'@'_x not
+R31881:31881 Triage.terms <> ::tree_scope:x_'@'_x not
+R31859:31861 Triage.terms <> ::tree_scope:'△' not
+R31875:31877 Triage.terms <> ::tree_scope:x_'@'_x not
+R31869:31871 Triage.terms <> ::tree_scope:x_'@'_x not
+R31866:31868 Triage.terms <> ::tree_scope:'△' not
+R31872:31874 Triage.terms <> ::tree_scope:'△' not
+R31878:31880 Triage.terms <> ::tree_scope:'△' not
+R31931:31940 Triage.terms <> ::tree_scope:x_'@'_x not
+R32087:32087 Triage.terms <> ::tree_scope:x_'@'_x not
+R31895:31898 Triage.terms <> ::tree_scope:x_'@'_x not
+R31930:31930 Triage.terms <> ::tree_scope:x_'@'_x not
+R31892:31894 Triage.terms <> ::tree_scope:'△' not
+R31902:31905 Triage.terms <> ::tree_scope:x_'@'_x not
+R31929:31929 Triage.terms <> ::tree_scope:x_'@'_x not
+R31899:31901 Triage.terms <> ::tree_scope:'△' not
 R31915:31918 Triage.terms <> ::tree_scope:x_'@'_x not
-R31946:31946 Triage.terms <> ::tree_scope:x_'@'_x not
+R31928:31928 Triage.terms <> ::tree_scope:x_'@'_x not
+R31909:31911 Triage.terms <> ::tree_scope:x_'@'_x not
+R31906:31908 Triage.terms <> ::tree_scope:'△' not
 R31912:31914 Triage.terms <> ::tree_scope:'△' not
-R31922:31925 Triage.terms <> ::tree_scope:x_'@'_x not
-R31945:31945 Triage.terms <> ::tree_scope:x_'@'_x not
+R31922:31924 Triage.terms <> ::tree_scope:x_'@'_x not
 R31919:31921 Triage.terms <> ::tree_scope:'△' not
-R31935:31937 Triage.terms <> ::tree_scope:x_'@'_x not
-R31929:31931 Triage.terms <> ::tree_scope:x_'@'_x not
-R31926:31928 Triage.terms <> ::tree_scope:'△' not
-R31932:31934 Triage.terms <> ::tree_scope:'△' not
-R31938:31940 Triage.terms <> Ref constr
-R31976:31979 Triage.terms <> ::tree_scope:x_'@'_x not
+R31925:31927 Triage.terms <> ::tree_scope:'△' not
+R32036:32046 Triage.terms <> ::tree_scope:x_'@'_x not
+R32086:32086 Triage.terms <> ::tree_scope:x_'@'_x not
+R31944:31947 Triage.terms <> ::tree_scope:x_'@'_x not
+R32035:32035 Triage.terms <> ::tree_scope:x_'@'_x not
+R31941:31943 Triage.terms <> ::tree_scope:'△' not
+R31951:31954 Triage.terms <> ::tree_scope:x_'@'_x not
+R32034:32034 Triage.terms <> ::tree_scope:x_'@'_x not
+R31948:31950 Triage.terms <> ::tree_scope:'△' not
+R31990:31993 Triage.terms <> ::tree_scope:x_'@'_x not
+R32033:32033 Triage.terms <> ::tree_scope:x_'@'_x not
+R31958:31961 Triage.terms <> ::tree_scope:x_'@'_x not
 R31989:31989 Triage.terms <> ::tree_scope:x_'@'_x not
-R31954:31957 Triage.terms <> ::tree_scope:x_'@'_x not
-R31975:31975 Triage.terms <> ::tree_scope:x_'@'_x not
-R31951:31953 Triage.terms <> ::tree_scope:'△' not
-R31961:31964 Triage.terms <> ::tree_scope:x_'@'_x not
-R31974:31974 Triage.terms <> ::tree_scope:x_'@'_x not
-R31958:31960 Triage.terms <> ::tree_scope:'△' not
-R31968:31970 Triage.terms <> ::tree_scope:x_'@'_x not
-R31965:31967 Triage.terms <> ::tree_scope:'△' not
-R31971:31973 Triage.terms <> ::tree_scope:'△' not
-R31983:31985 Triage.terms <> ::tree_scope:x_'@'_x not
-R31980:31982 Triage.terms <> ::tree_scope:'△' not
-R31986:31988 Triage.terms <> ::tree_scope:'△' not
-R32029:32032 Triage.terms <> ::tree_scope:x_'@'_x not
-R32042:32042 Triage.terms <> ::tree_scope:x_'@'_x not
-R32007:32010 Triage.terms <> ::tree_scope:x_'@'_x not
-R32028:32028 Triage.terms <> ::tree_scope:x_'@'_x not
-R32004:32006 Triage.terms <> ::tree_scope:'△' not
-R32014:32017 Triage.terms <> ::tree_scope:x_'@'_x not
-R32027:32027 Triage.terms <> ::tree_scope:x_'@'_x not
-R32011:32013 Triage.terms <> ::tree_scope:'△' not
-R32021:32023 Triage.terms <> ::tree_scope:x_'@'_x not
-R32018:32020 Triage.terms <> ::tree_scope:'△' not
-R32024:32026 Triage.terms <> ::tree_scope:'△' not
-R32036:32038 Triage.terms <> ::tree_scope:x_'@'_x not
-R32033:32035 Triage.terms <> ::tree_scope:'△' not
-R32039:32041 Triage.terms <> ::tree_scope:'△' not
-R32140:32142 Triage.terms <> ::tree_scope:x_'@'_x not
-R32058:32061 Triage.terms <> ::tree_scope:x_'@'_x not
-R32139:32139 Triage.terms <> ::tree_scope:x_'@'_x not
-R32055:32057 Triage.terms <> ::tree_scope:'△' not
-R32065:32068 Triage.terms <> ::tree_scope:x_'@'_x not
-R32138:32138 Triage.terms <> ::tree_scope:x_'@'_x not
-R32062:32064 Triage.terms <> ::tree_scope:'△' not
-R32078:32081 Triage.terms <> ::tree_scope:x_'@'_x not
-R32137:32137 Triage.terms <> ::tree_scope:x_'@'_x not
-R32072:32074 Triage.terms <> ::tree_scope:x_'@'_x not
-R32069:32071 Triage.terms <> ::tree_scope:'△' not
-R32075:32077 Triage.terms <> ::tree_scope:'△' not
-R32085:32088 Triage.terms <> ::tree_scope:x_'@'_x not
-R32136:32136 Triage.terms <> ::tree_scope:x_'@'_x not
+R31955:31957 Triage.terms <> ::tree_scope:'△' not
+R31965:31968 Triage.terms <> ::tree_scope:x_'@'_x not
+R31988:31988 Triage.terms <> ::tree_scope:x_'@'_x not
+R31962:31964 Triage.terms <> ::tree_scope:'△' not
+R31978:31980 Triage.terms <> ::tree_scope:x_'@'_x not
+R31972:31974 Triage.terms <> ::tree_scope:x_'@'_x not
+R31969:31971 Triage.terms <> ::tree_scope:'△' not
+R31975:31977 Triage.terms <> ::tree_scope:'△' not
+R31981:31983 Triage.terms <> Ref constr
+R32019:32022 Triage.terms <> ::tree_scope:x_'@'_x not
+R32032:32032 Triage.terms <> ::tree_scope:x_'@'_x not
+R31997:32000 Triage.terms <> ::tree_scope:x_'@'_x not
+R32018:32018 Triage.terms <> ::tree_scope:x_'@'_x not
+R31994:31996 Triage.terms <> ::tree_scope:'△' not
+R32004:32007 Triage.terms <> ::tree_scope:x_'@'_x not
+R32017:32017 Triage.terms <> ::tree_scope:x_'@'_x not
+R32001:32003 Triage.terms <> ::tree_scope:'△' not
+R32011:32013 Triage.terms <> ::tree_scope:x_'@'_x not
+R32008:32010 Triage.terms <> ::tree_scope:'△' not
+R32014:32016 Triage.terms <> ::tree_scope:'△' not
+R32026:32028 Triage.terms <> ::tree_scope:x_'@'_x not
+R32023:32025 Triage.terms <> ::tree_scope:'△' not
+R32029:32031 Triage.terms <> ::tree_scope:'△' not
+R32072:32075 Triage.terms <> ::tree_scope:x_'@'_x not
+R32085:32085 Triage.terms <> ::tree_scope:x_'@'_x not
+R32050:32053 Triage.terms <> ::tree_scope:x_'@'_x not
+R32071:32071 Triage.terms <> ::tree_scope:x_'@'_x not
+R32047:32049 Triage.terms <> ::tree_scope:'△' not
+R32057:32060 Triage.terms <> ::tree_scope:x_'@'_x not
+R32070:32070 Triage.terms <> ::tree_scope:x_'@'_x not
+R32054:32056 Triage.terms <> ::tree_scope:'△' not
+R32064:32066 Triage.terms <> ::tree_scope:x_'@'_x not
+R32061:32063 Triage.terms <> ::tree_scope:'△' not
+R32067:32069 Triage.terms <> ::tree_scope:'△' not
+R32079:32081 Triage.terms <> ::tree_scope:x_'@'_x not
+R32076:32078 Triage.terms <> ::tree_scope:'△' not
 R32082:32084 Triage.terms <> ::tree_scope:'△' not
-R32092:32095 Triage.terms <> ::tree_scope:x_'@'_x not
-R32135:32135 Triage.terms <> ::tree_scope:x_'@'_x not
-R32089:32091 Triage.terms <> ::tree_scope:'△' not
+R32183:32185 Triage.terms <> ::tree_scope:x_'@'_x not
+R32101:32104 Triage.terms <> ::tree_scope:x_'@'_x not
+R32182:32182 Triage.terms <> ::tree_scope:x_'@'_x not
+R32098:32100 Triage.terms <> ::tree_scope:'△' not
+R32108:32111 Triage.terms <> ::tree_scope:x_'@'_x not
+R32181:32181 Triage.terms <> ::tree_scope:x_'@'_x not
+R32105:32107 Triage.terms <> ::tree_scope:'△' not
 R32121:32124 Triage.terms <> ::tree_scope:x_'@'_x not
-R32134:32134 Triage.terms <> ::tree_scope:x_'@'_x not
-R32099:32102 Triage.terms <> ::tree_scope:x_'@'_x not
-R32120:32120 Triage.terms <> ::tree_scope:x_'@'_x not
-R32096:32098 Triage.terms <> ::tree_scope:'△' not
-R32106:32109 Triage.terms <> ::tree_scope:x_'@'_x not
-R32119:32119 Triage.terms <> ::tree_scope:x_'@'_x not
-R32103:32105 Triage.terms <> ::tree_scope:'△' not
-R32113:32115 Triage.terms <> ::tree_scope:x_'@'_x not
-R32110:32112 Triage.terms <> ::tree_scope:'△' not
-R32116:32118 Triage.terms <> ::tree_scope:'△' not
-R32128:32130 Triage.terms <> ::tree_scope:x_'@'_x not
+R32180:32180 Triage.terms <> ::tree_scope:x_'@'_x not
+R32115:32117 Triage.terms <> ::tree_scope:x_'@'_x not
+R32112:32114 Triage.terms <> ::tree_scope:'△' not
+R32118:32120 Triage.terms <> ::tree_scope:'△' not
+R32128:32131 Triage.terms <> ::tree_scope:x_'@'_x not
+R32179:32179 Triage.terms <> ::tree_scope:x_'@'_x not
 R32125:32127 Triage.terms <> ::tree_scope:'△' not
-R32131:32133 Triage.terms <> ::tree_scope:'△' not
-R32143:32175 Triage.terms <> ::tree_scope:'\' not
-R32152:32155 Triage.terms <> ::tree_scope:x_'@'_x not
-R32174:32174 Triage.terms <> ::tree_scope:x_'@'_x not
-R32151:32151 Triage.terms <> K def
-R32161:32164 Triage.terms <> ::tree_scope:x_'@'_x not
-R32173:32173 Triage.terms <> ::tree_scope:x_'@'_x not
-R32156:32160 Triage.terms <> succ1 def
-R32165:32167 Triage.terms <> Ref constr
-R32195:32204 Triage.terms <> minrec_abs def
-def 32247:32253 <> minrec0
-binder 32255:32255 <> f:280
-R32260:32263 Triage.terms <> Yop2 def
-R32562:32567 Triage.terms <> ::tree_scope:x_'@'_x not
-R32689:32689 Triage.terms <> ::tree_scope:x_'@'_x not
-R32273:32278 Triage.terms <> ::tree_scope:x_'@'_x not
-R32561:32561 Triage.terms <> ::tree_scope:x_'@'_x not
-R32270:32272 Triage.terms <> ::tree_scope:'△' not
-R32282:32288 Triage.terms <> ::tree_scope:x_'@'_x not
-R32560:32560 Triage.terms <> ::tree_scope:x_'@'_x not
-R32279:32281 Triage.terms <> ::tree_scope:'△' not
-R32320:32327 Triage.terms <> ::tree_scope:x_'@'_x not
-R32559:32559 Triage.terms <> ::tree_scope:x_'@'_x not
-R32292:32295 Triage.terms <> ::tree_scope:x_'@'_x not
-R32319:32319 Triage.terms <> ::tree_scope:x_'@'_x not
-R32289:32291 Triage.terms <> ::tree_scope:'△' not
-R32299:32302 Triage.terms <> ::tree_scope:x_'@'_x not
-R32318:32318 Triage.terms <> ::tree_scope:x_'@'_x not
-R32296:32298 Triage.terms <> ::tree_scope:'△' not
-R32312:32314 Triage.terms <> ::tree_scope:x_'@'_x not
-R32306:32308 Triage.terms <> ::tree_scope:x_'@'_x not
-R32303:32305 Triage.terms <> ::tree_scope:'△' not
-R32309:32311 Triage.terms <> ::tree_scope:'△' not
-R32315:32317 Triage.terms <> ::tree_scope:'△' not
-R32359:32367 Triage.terms <> ::tree_scope:x_'@'_x not
-R32558:32558 Triage.terms <> ::tree_scope:x_'@'_x not
-R32331:32334 Triage.terms <> ::tree_scope:x_'@'_x not
-R32358:32358 Triage.terms <> ::tree_scope:x_'@'_x not
-R32328:32330 Triage.terms <> ::tree_scope:'△' not
-R32338:32341 Triage.terms <> ::tree_scope:x_'@'_x not
-R32357:32357 Triage.terms <> ::tree_scope:x_'@'_x not
-R32335:32337 Triage.terms <> ::tree_scope:'△' not
-R32351:32353 Triage.terms <> ::tree_scope:x_'@'_x not
-R32345:32347 Triage.terms <> ::tree_scope:x_'@'_x not
-R32342:32344 Triage.terms <> ::tree_scope:'△' not
-R32348:32350 Triage.terms <> ::tree_scope:'△' not
-R32354:32356 Triage.terms <> ::tree_scope:'△' not
-R32407:32416 Triage.terms <> ::tree_scope:x_'@'_x not
-R32557:32557 Triage.terms <> ::tree_scope:x_'@'_x not
-R32371:32374 Triage.terms <> ::tree_scope:x_'@'_x not
-R32406:32406 Triage.terms <> ::tree_scope:x_'@'_x not
-R32368:32370 Triage.terms <> ::tree_scope:'△' not
-R32378:32381 Triage.terms <> ::tree_scope:x_'@'_x not
-R32405:32405 Triage.terms <> ::tree_scope:x_'@'_x not
-R32375:32377 Triage.terms <> ::tree_scope:'△' not
-R32391:32394 Triage.terms <> ::tree_scope:x_'@'_x not
-R32404:32404 Triage.terms <> ::tree_scope:x_'@'_x not
-R32385:32387 Triage.terms <> ::tree_scope:x_'@'_x not
-R32382:32384 Triage.terms <> ::tree_scope:'△' not
-R32388:32390 Triage.terms <> ::tree_scope:'△' not
-R32398:32400 Triage.terms <> ::tree_scope:x_'@'_x not
-R32395:32397 Triage.terms <> ::tree_scope:'△' not
-R32401:32403 Triage.terms <> ::tree_scope:'△' not
-R32506:32516 Triage.terms <> ::tree_scope:x_'@'_x not
-R32556:32556 Triage.terms <> ::tree_scope:x_'@'_x not
-R32420:32423 Triage.terms <> ::tree_scope:x_'@'_x not
-R32505:32505 Triage.terms <> ::tree_scope:x_'@'_x not
-R32417:32419 Triage.terms <> ::tree_scope:'△' not
-R32427:32430 Triage.terms <> ::tree_scope:x_'@'_x not
-R32504:32504 Triage.terms <> ::tree_scope:x_'@'_x not
-R32424:32426 Triage.terms <> ::tree_scope:'△' not
-R32460:32463 Triage.terms <> ::tree_scope:x_'@'_x not
-R32503:32503 Triage.terms <> ::tree_scope:x_'@'_x not
+R32135:32138 Triage.terms <> ::tree_scope:x_'@'_x not
+R32178:32178 Triage.terms <> ::tree_scope:x_'@'_x not
+R32132:32134 Triage.terms <> ::tree_scope:'△' not
+R32164:32167 Triage.terms <> ::tree_scope:x_'@'_x not
+R32177:32177 Triage.terms <> ::tree_scope:x_'@'_x not
+R32142:32145 Triage.terms <> ::tree_scope:x_'@'_x not
+R32163:32163 Triage.terms <> ::tree_scope:x_'@'_x not
+R32139:32141 Triage.terms <> ::tree_scope:'△' not
+R32149:32152 Triage.terms <> ::tree_scope:x_'@'_x not
+R32162:32162 Triage.terms <> ::tree_scope:x_'@'_x not
+R32146:32148 Triage.terms <> ::tree_scope:'△' not
+R32156:32158 Triage.terms <> ::tree_scope:x_'@'_x not
+R32153:32155 Triage.terms <> ::tree_scope:'△' not
+R32159:32161 Triage.terms <> ::tree_scope:'△' not
+R32171:32173 Triage.terms <> ::tree_scope:x_'@'_x not
+R32168:32170 Triage.terms <> ::tree_scope:'△' not
+R32174:32176 Triage.terms <> ::tree_scope:'△' not
+R32186:32218 Triage.terms <> ::tree_scope:'\' not
+R32195:32198 Triage.terms <> ::tree_scope:x_'@'_x not
+R32217:32217 Triage.terms <> ::tree_scope:x_'@'_x not
+R32194:32194 Triage.terms <> K def
+R32204:32207 Triage.terms <> ::tree_scope:x_'@'_x not
+R32216:32216 Triage.terms <> ::tree_scope:x_'@'_x not
+R32199:32203 Triage.terms <> succ1 def
+R32208:32210 Triage.terms <> Ref constr
+R32238:32247 Triage.terms <> minrec_abs def
+def 32290:32296 <> minrec0
+binder 32298:32298 <> f:280
+R32303:32306 Triage.terms <> Yop2 def
+R32605:32610 Triage.terms <> ::tree_scope:x_'@'_x not
+R32732:32732 Triage.terms <> ::tree_scope:x_'@'_x not
+R32316:32321 Triage.terms <> ::tree_scope:x_'@'_x not
+R32604:32604 Triage.terms <> ::tree_scope:x_'@'_x not
+R32313:32315 Triage.terms <> ::tree_scope:'△' not
+R32325:32331 Triage.terms <> ::tree_scope:x_'@'_x not
+R32603:32603 Triage.terms <> ::tree_scope:x_'@'_x not
+R32322:32324 Triage.terms <> ::tree_scope:'△' not
+R32363:32370 Triage.terms <> ::tree_scope:x_'@'_x not
+R32602:32602 Triage.terms <> ::tree_scope:x_'@'_x not
+R32335:32338 Triage.terms <> ::tree_scope:x_'@'_x not
+R32362:32362 Triage.terms <> ::tree_scope:x_'@'_x not
+R32332:32334 Triage.terms <> ::tree_scope:'△' not
+R32342:32345 Triage.terms <> ::tree_scope:x_'@'_x not
+R32361:32361 Triage.terms <> ::tree_scope:x_'@'_x not
+R32339:32341 Triage.terms <> ::tree_scope:'△' not
+R32355:32357 Triage.terms <> ::tree_scope:x_'@'_x not
+R32349:32351 Triage.terms <> ::tree_scope:x_'@'_x not
+R32346:32348 Triage.terms <> ::tree_scope:'△' not
+R32352:32354 Triage.terms <> ::tree_scope:'△' not
+R32358:32360 Triage.terms <> ::tree_scope:'△' not
+R32402:32410 Triage.terms <> ::tree_scope:x_'@'_x not
+R32601:32601 Triage.terms <> ::tree_scope:x_'@'_x not
+R32374:32377 Triage.terms <> ::tree_scope:x_'@'_x not
+R32401:32401 Triage.terms <> ::tree_scope:x_'@'_x not
+R32371:32373 Triage.terms <> ::tree_scope:'△' not
+R32381:32384 Triage.terms <> ::tree_scope:x_'@'_x not
+R32400:32400 Triage.terms <> ::tree_scope:x_'@'_x not
+R32378:32380 Triage.terms <> ::tree_scope:'△' not
+R32394:32396 Triage.terms <> ::tree_scope:x_'@'_x not
+R32388:32390 Triage.terms <> ::tree_scope:x_'@'_x not
+R32385:32387 Triage.terms <> ::tree_scope:'△' not
+R32391:32393 Triage.terms <> ::tree_scope:'△' not
+R32397:32399 Triage.terms <> ::tree_scope:'△' not
+R32450:32459 Triage.terms <> ::tree_scope:x_'@'_x not
+R32600:32600 Triage.terms <> ::tree_scope:x_'@'_x not
+R32414:32417 Triage.terms <> ::tree_scope:x_'@'_x not
+R32449:32449 Triage.terms <> ::tree_scope:x_'@'_x not
+R32411:32413 Triage.terms <> ::tree_scope:'△' not
+R32421:32424 Triage.terms <> ::tree_scope:x_'@'_x not
+R32448:32448 Triage.terms <> ::tree_scope:x_'@'_x not
+R32418:32420 Triage.terms <> ::tree_scope:'△' not
 R32434:32437 Triage.terms <> ::tree_scope:x_'@'_x not
-R32459:32459 Triage.terms <> ::tree_scope:x_'@'_x not
+R32447:32447 Triage.terms <> ::tree_scope:x_'@'_x not
+R32428:32430 Triage.terms <> ::tree_scope:x_'@'_x not
+R32425:32427 Triage.terms <> ::tree_scope:'△' not
 R32431:32433 Triage.terms <> ::tree_scope:'△' not
-R32441:32444 Triage.terms <> ::tree_scope:x_'@'_x not
-R32458:32458 Triage.terms <> ::tree_scope:x_'@'_x not
+R32441:32443 Triage.terms <> ::tree_scope:x_'@'_x not
 R32438:32440 Triage.terms <> ::tree_scope:'△' not
-R32454:32456 Triage.terms <> ::tree_scope:x_'@'_x not
-R32448:32450 Triage.terms <> ::tree_scope:x_'@'_x not
-R32445:32447 Triage.terms <> ::tree_scope:'△' not
-R32451:32453 Triage.terms <> ::tree_scope:'△' not
-R32457:32457 Triage.terms <> f:280 var
-R32489:32492 Triage.terms <> ::tree_scope:x_'@'_x not
+R32444:32446 Triage.terms <> ::tree_scope:'△' not
+R32549:32559 Triage.terms <> ::tree_scope:x_'@'_x not
+R32599:32599 Triage.terms <> ::tree_scope:x_'@'_x not
+R32463:32466 Triage.terms <> ::tree_scope:x_'@'_x not
+R32548:32548 Triage.terms <> ::tree_scope:x_'@'_x not
+R32460:32462 Triage.terms <> ::tree_scope:'△' not
+R32470:32473 Triage.terms <> ::tree_scope:x_'@'_x not
+R32547:32547 Triage.terms <> ::tree_scope:x_'@'_x not
+R32467:32469 Triage.terms <> ::tree_scope:'△' not
+R32503:32506 Triage.terms <> ::tree_scope:x_'@'_x not
+R32546:32546 Triage.terms <> ::tree_scope:x_'@'_x not
+R32477:32480 Triage.terms <> ::tree_scope:x_'@'_x not
 R32502:32502 Triage.terms <> ::tree_scope:x_'@'_x not
-R32467:32470 Triage.terms <> ::tree_scope:x_'@'_x not
-R32488:32488 Triage.terms <> ::tree_scope:x_'@'_x not
-R32464:32466 Triage.terms <> ::tree_scope:'△' not
-R32474:32477 Triage.terms <> ::tree_scope:x_'@'_x not
-R32487:32487 Triage.terms <> ::tree_scope:x_'@'_x not
-R32471:32473 Triage.terms <> ::tree_scope:'△' not
-R32481:32483 Triage.terms <> ::tree_scope:x_'@'_x not
-R32478:32480 Triage.terms <> ::tree_scope:'△' not
-R32484:32486 Triage.terms <> ::tree_scope:'△' not
-R32496:32498 Triage.terms <> ::tree_scope:x_'@'_x not
-R32493:32495 Triage.terms <> ::tree_scope:'△' not
-R32499:32501 Triage.terms <> ::tree_scope:'△' not
-R32542:32545 Triage.terms <> ::tree_scope:x_'@'_x not
-R32555:32555 Triage.terms <> ::tree_scope:x_'@'_x not
-R32520:32523 Triage.terms <> ::tree_scope:x_'@'_x not
-R32541:32541 Triage.terms <> ::tree_scope:x_'@'_x not
-R32517:32519 Triage.terms <> ::tree_scope:'△' not
-R32527:32530 Triage.terms <> ::tree_scope:x_'@'_x not
-R32540:32540 Triage.terms <> ::tree_scope:x_'@'_x not
-R32524:32526 Triage.terms <> ::tree_scope:'△' not
-R32534:32536 Triage.terms <> ::tree_scope:x_'@'_x not
-R32531:32533 Triage.terms <> ::tree_scope:'△' not
-R32537:32539 Triage.terms <> ::tree_scope:'△' not
-R32549:32551 Triage.terms <> ::tree_scope:x_'@'_x not
-R32546:32548 Triage.terms <> ::tree_scope:'△' not
-R32552:32554 Triage.terms <> ::tree_scope:'△' not
-R32653:32655 Triage.terms <> ::tree_scope:x_'@'_x not
-R32571:32574 Triage.terms <> ::tree_scope:x_'@'_x not
-R32652:32652 Triage.terms <> ::tree_scope:x_'@'_x not
-R32568:32570 Triage.terms <> ::tree_scope:'△' not
-R32578:32581 Triage.terms <> ::tree_scope:x_'@'_x not
-R32651:32651 Triage.terms <> ::tree_scope:x_'@'_x not
-R32575:32577 Triage.terms <> ::tree_scope:'△' not
-R32591:32594 Triage.terms <> ::tree_scope:x_'@'_x not
-R32650:32650 Triage.terms <> ::tree_scope:x_'@'_x not
-R32585:32587 Triage.terms <> ::tree_scope:x_'@'_x not
-R32582:32584 Triage.terms <> ::tree_scope:'△' not
-R32588:32590 Triage.terms <> ::tree_scope:'△' not
-R32598:32601 Triage.terms <> ::tree_scope:x_'@'_x not
-R32649:32649 Triage.terms <> ::tree_scope:x_'@'_x not
+R32474:32476 Triage.terms <> ::tree_scope:'△' not
+R32484:32487 Triage.terms <> ::tree_scope:x_'@'_x not
+R32501:32501 Triage.terms <> ::tree_scope:x_'@'_x not
+R32481:32483 Triage.terms <> ::tree_scope:'△' not
+R32497:32499 Triage.terms <> ::tree_scope:x_'@'_x not
+R32491:32493 Triage.terms <> ::tree_scope:x_'@'_x not
+R32488:32490 Triage.terms <> ::tree_scope:'△' not
+R32494:32496 Triage.terms <> ::tree_scope:'△' not
+R32500:32500 Triage.terms <> f:280 var
+R32532:32535 Triage.terms <> ::tree_scope:x_'@'_x not
+R32545:32545 Triage.terms <> ::tree_scope:x_'@'_x not
+R32510:32513 Triage.terms <> ::tree_scope:x_'@'_x not
+R32531:32531 Triage.terms <> ::tree_scope:x_'@'_x not
+R32507:32509 Triage.terms <> ::tree_scope:'△' not
+R32517:32520 Triage.terms <> ::tree_scope:x_'@'_x not
+R32530:32530 Triage.terms <> ::tree_scope:x_'@'_x not
+R32514:32516 Triage.terms <> ::tree_scope:'△' not
+R32524:32526 Triage.terms <> ::tree_scope:x_'@'_x not
+R32521:32523 Triage.terms <> ::tree_scope:'△' not
+R32527:32529 Triage.terms <> ::tree_scope:'△' not
+R32539:32541 Triage.terms <> ::tree_scope:x_'@'_x not
+R32536:32538 Triage.terms <> ::tree_scope:'△' not
+R32542:32544 Triage.terms <> ::tree_scope:'△' not
+R32585:32588 Triage.terms <> ::tree_scope:x_'@'_x not
+R32598:32598 Triage.terms <> ::tree_scope:x_'@'_x not
+R32563:32566 Triage.terms <> ::tree_scope:x_'@'_x not
+R32584:32584 Triage.terms <> ::tree_scope:x_'@'_x not
+R32560:32562 Triage.terms <> ::tree_scope:'△' not
+R32570:32573 Triage.terms <> ::tree_scope:x_'@'_x not
+R32583:32583 Triage.terms <> ::tree_scope:x_'@'_x not
+R32567:32569 Triage.terms <> ::tree_scope:'△' not
+R32577:32579 Triage.terms <> ::tree_scope:x_'@'_x not
+R32574:32576 Triage.terms <> ::tree_scope:'△' not
+R32580:32582 Triage.terms <> ::tree_scope:'△' not
+R32592:32594 Triage.terms <> ::tree_scope:x_'@'_x not
+R32589:32591 Triage.terms <> ::tree_scope:'△' not
 R32595:32597 Triage.terms <> ::tree_scope:'△' not
-R32605:32608 Triage.terms <> ::tree_scope:x_'@'_x not
-R32648:32648 Triage.terms <> ::tree_scope:x_'@'_x not
-R32602:32604 Triage.terms <> ::tree_scope:'△' not
+R32696:32698 Triage.terms <> ::tree_scope:x_'@'_x not
+R32614:32617 Triage.terms <> ::tree_scope:x_'@'_x not
+R32695:32695 Triage.terms <> ::tree_scope:x_'@'_x not
+R32611:32613 Triage.terms <> ::tree_scope:'△' not
+R32621:32624 Triage.terms <> ::tree_scope:x_'@'_x not
+R32694:32694 Triage.terms <> ::tree_scope:x_'@'_x not
+R32618:32620 Triage.terms <> ::tree_scope:'△' not
 R32634:32637 Triage.terms <> ::tree_scope:x_'@'_x not
-R32647:32647 Triage.terms <> ::tree_scope:x_'@'_x not
-R32612:32615 Triage.terms <> ::tree_scope:x_'@'_x not
-R32633:32633 Triage.terms <> ::tree_scope:x_'@'_x not
-R32609:32611 Triage.terms <> ::tree_scope:'△' not
-R32619:32622 Triage.terms <> ::tree_scope:x_'@'_x not
-R32632:32632 Triage.terms <> ::tree_scope:x_'@'_x not
-R32616:32618 Triage.terms <> ::tree_scope:'△' not
-R32626:32628 Triage.terms <> ::tree_scope:x_'@'_x not
-R32623:32625 Triage.terms <> ::tree_scope:'△' not
-R32629:32631 Triage.terms <> ::tree_scope:'△' not
-R32641:32643 Triage.terms <> ::tree_scope:x_'@'_x not
+R32693:32693 Triage.terms <> ::tree_scope:x_'@'_x not
+R32628:32630 Triage.terms <> ::tree_scope:x_'@'_x not
+R32625:32627 Triage.terms <> ::tree_scope:'△' not
+R32631:32633 Triage.terms <> ::tree_scope:'△' not
+R32641:32644 Triage.terms <> ::tree_scope:x_'@'_x not
+R32692:32692 Triage.terms <> ::tree_scope:x_'@'_x not
 R32638:32640 Triage.terms <> ::tree_scope:'△' not
-R32644:32646 Triage.terms <> ::tree_scope:'△' not
-R32656:32688 Triage.terms <> ::tree_scope:'\' not
-R32665:32668 Triage.terms <> ::tree_scope:x_'@'_x not
-R32687:32687 Triage.terms <> ::tree_scope:x_'@'_x not
-R32664:32664 Triage.terms <> K def
-R32674:32677 Triage.terms <> ::tree_scope:x_'@'_x not
-R32686:32686 Triage.terms <> ::tree_scope:x_'@'_x not
-R32669:32673 Triage.terms <> succ1 def
-R32678:32680 Triage.terms <> Ref constr
-prf 32704:32716 <> minrec0_found
-binder 32726:32726 <> f:281
-binder 32728:32728 <> n:282
-R32747:32750 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R32731:32735 Triage.terms <> t_red def
-R32739:32741 Triage.terms <> ::tree_scope:x_'@'_x not
-R32738:32738 Triage.terms <> f:281 var
-R32742:32742 Triage.terms <> n:282 var
-R32745:32746 Triage.terms <> tt def
-R32751:32755 Triage.terms <> t_red def
-R32767:32769 Triage.terms <> ::tree_scope:x_'@'_x not
-R32758:32764 Triage.terms <> minrec0 def
-R32766:32766 Triage.terms <> f:281 var
-R32770:32770 Triage.terms <> n:282 var
-R32773:32773 Triage.terms <> n:282 var
-R32804:32809 Triage.terms <> Y2_red thm
-prf 32833:32844 <> minrec0_next
-binder 32854:32854 <> f:283
-binder 32856:32856 <> n:284
-R32875:32878 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R32859:32863 Triage.terms <> t_red def
-R32867:32869 Triage.terms <> ::tree_scope:x_'@'_x not
-R32866:32866 Triage.terms <> f:283 var
-R32870:32870 Triage.terms <> n:284 var
-R32873:32874 Triage.terms <> ff def
-R32879:32883 Triage.terms <> t_red def
-R32895:32897 Triage.terms <> ::tree_scope:x_'@'_x not
-R32886:32892 Triage.terms <> minrec0 def
-R32894:32894 Triage.terms <> f:283 var
-R32898:32898 Triage.terms <> n:284 var
-R32911:32914 Triage.terms <> ::tree_scope:x_'@'_x not
-R32924:32924 Triage.terms <> ::tree_scope:x_'@'_x not
-R32902:32908 Triage.terms <> minrec0 def
-R32910:32910 Triage.terms <> f:283 var
-R32920:32922 Triage.terms <> ::tree_scope:x_'@'_x not
-R32915:32919 Triage.terms <> succ1 def
-R32923:32923 Triage.terms <> n:284 var
-R32991:33010 Triage.terms <> preserves_appr_t_red thm
-R32955:32960 Triage.terms <> Y2_red thm
-R32976:32981 Triage.terms <> ff_red thm
-R32991:33010 Triage.terms <> preserves_appr_t_red thm
-def 33040:33045 <> minrec
-binder 33047:33047 <> f:285
-binder 33049:33050 <> xs:286
-R33055:33061 Triage.terms <> minrec0 def
-R33064:33072 Coq.Lists.List <> fold_left def
-R33081:33081 Triage.terms <> f:285 var
-R33078:33079 Triage.terms <> xs:286 var
-R33074:33076 Triage.terms <> App constr
-prf 33095:33106 <> minrec_found
-binder 33118:33118 <> f:287
-binder 33120:33121 <> xs:288
-binder 33123:33123 <> n:289
-R33159:33162 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R33126:33130 Triage.terms <> t_red def
-R33151:33153 Triage.terms <> ::tree_scope:x_'@'_x not
-R33133:33141 Coq.Lists.List <> fold_left def
-R33150:33150 Triage.terms <> f:287 var
-R33147:33148 Triage.terms <> xs:288 var
-R33143:33145 Triage.terms <> App constr
-R33154:33154 Triage.terms <> n:289 var
-R33157:33158 Triage.terms <> tt def
-R33163:33167 Triage.terms <> t_red def
-R33181:33183 Triage.terms <> ::tree_scope:x_'@'_x not
-R33170:33175 Triage.terms <> minrec def
-R33177:33177 Triage.terms <> f:287 var
-R33179:33180 Triage.terms <> xs:288 var
-R33184:33184 Triage.terms <> n:289 var
-R33187:33187 Triage.terms <> n:289 var
-R33213:33225 Triage.terms <> minrec0_found thm
-R33213:33225 Triage.terms <> minrec0_found thm
-prf 33249:33259 <> minrec_next
-binder 33271:33271 <> f:290
-binder 33273:33274 <> xs:291
-binder 33276:33276 <> n:292
-R33312:33315 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R33279:33283 Triage.terms <> t_red def
-R33304:33306 Triage.terms <> ::tree_scope:x_'@'_x not
-R33286:33294 Coq.Lists.List <> fold_left def
-R33303:33303 Triage.terms <> f:290 var
-R33300:33301 Triage.terms <> xs:291 var
-R33296:33298 Triage.terms <> App constr
-R33307:33307 Triage.terms <> n:292 var
-R33310:33311 Triage.terms <> ff def
-R33316:33320 Triage.terms <> t_red def
-R33334:33336 Triage.terms <> ::tree_scope:x_'@'_x not
-R33323:33328 Triage.terms <> minrec def
-R33330:33330 Triage.terms <> f:290 var
-R33332:33333 Triage.terms <> xs:291 var
-R33337:33337 Triage.terms <> n:292 var
-R33352:33355 Triage.terms <> ::tree_scope:x_'@'_x not
-R33365:33365 Triage.terms <> ::tree_scope:x_'@'_x not
-R33341:33346 Triage.terms <> minrec def
-R33348:33348 Triage.terms <> f:290 var
-R33350:33351 Triage.terms <> xs:291 var
-R33361:33363 Triage.terms <> ::tree_scope:x_'@'_x not
-R33356:33360 Triage.terms <> succ1 def
-R33364:33364 Triage.terms <> n:292 var
-R33391:33402 Triage.terms <> minrec0_next thm
-R33391:33402 Triage.terms <> minrec0_next thm
-def 33485:33498 <> prim_succ_plus
-R33503:33557 Triage.terms <> ::tree_scope:'\' not
-R33509:33556 Triage.terms <> ::tree_scope:'\' not
-R33520:33523 Triage.terms <> ::tree_scope:x_'@'_x not
-R33555:33555 Triage.terms <> ::tree_scope:x_'@'_x not
-R33515:33519 Triage.terms <> succ1 def
-R33545:33547 Triage.terms <> ::tree_scope:x_'@'_x not
-R33533:33536 Triage.terms <> ::tree_scope:x_'@'_x not
-R33544:33544 Triage.terms <> ::tree_scope:x_'@'_x not
-R33524:33532 Triage.terms <> prim_plus def
-R33537:33539 Triage.terms <> Ref constr
-R33548:33550 Triage.terms <> Ref constr
-def 33573:33581 <> size_loop
-R33588:33763 Triage.terms <> ::tree_scope:'\' not
-R33600:33605 Triage.terms <> triage def
-R33622:33624 Triage.terms <> ::tree_scope:x_'@'_x not
-R33617:33621 Triage.terms <> succ1 def
-R33625:33628 Triage.terms <> zero def
-R33641:33675 Triage.terms <> ::tree_scope:'\' not
-R33652:33655 Triage.terms <> ::tree_scope:x_'@'_x not
-R33674:33674 Triage.terms <> ::tree_scope:x_'@'_x not
-R33647:33651 Triage.terms <> succ1 def
-R33663:33666 Triage.terms <> ::tree_scope:x_'@'_x not
-R33656:33658 Triage.terms <> Ref constr
-R33667:33669 Triage.terms <> Ref constr
-R33688:33761 Triage.terms <> ::tree_scope:'\' not
-R33694:33760 Triage.terms <> ::tree_scope:'\' not
-R33737:33740 Triage.terms <> ::tree_scope:x_'@'_x not
-R33759:33759 Triage.terms <> ::tree_scope:x_'@'_x not
-R33714:33717 Triage.terms <> ::tree_scope:x_'@'_x not
-R33736:33736 Triage.terms <> ::tree_scope:x_'@'_x not
-R33700:33713 Triage.terms <> prim_succ_plus def
-R33725:33728 Triage.terms <> ::tree_scope:x_'@'_x not
-R33718:33720 Triage.terms <> Ref constr
-R33729:33731 Triage.terms <> Ref constr
-R33748:33751 Triage.terms <> ::tree_scope:x_'@'_x not
-R33741:33743 Triage.terms <> Ref constr
-R33752:33754 Triage.terms <> Ref constr
-def 33778:33781 <> size
-R33786:33786 Triage.terms <> Z def
-R33788:33796 Triage.terms <> size_loop def
-def 33829:33831 <> tag
-binder 33833:33833 <> t:293
-binder 33835:33835 <> i:294
-R33840:33843 Triage.terms <> wait def
-R33847:33849 Triage.terms <> ::tree_scope:x_'@'_x not
-R33846:33846 Triage.terms <> K def
-R33850:33850 Triage.terms <> t:293 var
-R33853:33853 Triage.terms <> i:294 var
-prf 33863:33879 <> tag_is_functional
-binder 33889:33889 <> t:295
-binder 33891:33891 <> i:296
-binder 33893:33893 <> x:297
-R33896:33900 Triage.terms <> t_red def
-R33910:33912 Triage.terms <> ::tree_scope:x_'@'_x not
-R33903:33905 Triage.terms <> tag def
-R33907:33907 Triage.terms <> t:295 var
-R33909:33909 Triage.terms <> i:296 var
-R33913:33913 Triage.terms <> x:297 var
-R33918:33919 Triage.terms <> ::tree_scope:x_'@'_x not
-R33917:33917 Triage.terms <> t:295 var
-R33920:33920 Triage.terms <> x:297 var
-def 33966:33970 <> untag
-R33977:33982 Triage.terms <> triage def
-R33984:33987 Triage.terms <> Node constr
-R33989:33992 Triage.terms <> Node constr
-R34004:34009 Triage.terms <> triage def
-R34011:34014 Triage.terms <> Node constr
-R34034:34039 Triage.terms <> triage def
-R34041:34044 Triage.terms <> Node constr
-R34046:34049 Triage.terms <> Node constr
-R34052:34057 Triage.terms <> triage def
-R34059:34062 Triage.terms <> Node constr
-R34064:34065 Triage.terms <> KI def
-R34067:34070 Triage.terms <> Node constr
-R34091:34094 Triage.terms <> Node constr
-prf 34105:34116 <> untag_untags
-binder 34126:34126 <> t:298
-binder 34128:34128 <> i:299
-R34131:34135 Triage.terms <> t_red def
-R34143:34146 Triage.terms <> ::tree_scope:x_'@'_x not
-R34154:34154 Triage.terms <> ::tree_scope:x_'@'_x not
-R34138:34142 Triage.terms <> untag def
-R34147:34149 Triage.terms <> tag def
-R34151:34151 Triage.terms <> t:298 var
-R34153:34153 Triage.terms <> i:299 var
-R34157:34157 Triage.terms <> i:299 var
-ind 34241:34250 <> factorable
-constr 34271:34285 <> factorable_leaf
-constr 34306:34320 <> factorable_stem
-constr 34356:34370 <> factorable_fork
-R34257:34260 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34253:34256 Triage.terms <> Tree ind
-R34289:34298 Triage.terms <> factorable:300 ind
-R34300:34302 Triage.terms <> ::tree_scope:'△' not
-binder 34330:34330 <> M:302
-R34333:34342 Triage.terms <> factorable:300 ind
-R34348:34350 Triage.terms <> ::tree_scope:x_'@'_x not
-R34345:34347 Triage.terms <> ::tree_scope:'△' not
-R34351:34351 Triage.terms <> M:302 var
-binder 34380:34380 <> M:303
-binder 34382:34382 <> N:304
-R34385:34394 Triage.terms <> factorable:300 ind
-R34404:34406 Triage.terms <> ::tree_scope:x_'@'_x not
-R34400:34402 Triage.terms <> ::tree_scope:x_'@'_x not
-R34397:34399 Triage.terms <> ::tree_scope:'△' not
-R34403:34403 Triage.terms <> M:303 var
-R34407:34407 Triage.terms <> N:304 var
-R34438:34447 Triage.terms <> factorable ind
-prf 34472:34488 <> factorable_or_not
-binder 34498:34498 <> M:305
-R34514:34517 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
-R34502:34511 Triage.terms <> factorable ind
-R34513:34513 Triage.terms <> M:305 var
-R34518:34520 Coq.Init.Logic <> ::type_scope:'~'_x not
-R34533:34533 Coq.Init.Logic <> ::type_scope:'~'_x not
-R34521:34530 Triage.terms <> factorable ind
-R34532:34532 Triage.terms <> M:305 var
-R34595:34604 Triage.terms <> factorable ind
-R34656:34665 Triage.terms <> factorable ind
-R34714:34723 Triage.terms <> factorable ind
-R34714:34723 Triage.terms <> factorable ind
-prf 34739:34761 <> programs_are_factorable
-binder 34771:34771 <> p:306
-R34783:34786 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R34774:34780 Triage.terms <> program ind
-R34782:34782 Triage.terms <> p:306 var
-R34787:34796 Triage.terms <> factorable ind
-R34798:34798 Triage.terms <> p:306 var
-def 34862:34868 <> eager_s
-R34875:34880 Triage.terms <> triage def
-R34887:34907 Triage.terms <> ::tree_scope:'\' not
-R34900:34902 Triage.terms <> ::tree_scope:x_'@'_x not
-R34893:34895 Triage.terms <> Ref constr
-R34903:34906 Triage.terms <> Node constr
-R34915:34954 Triage.terms <> ::tree_scope:'\' not
-R34921:34953 Triage.terms <> ::tree_scope:'\' not
-R34934:34937 Triage.terms <> ::tree_scope:x_'@'_x not
-R34952:34952 Triage.terms <> ::tree_scope:x_'@'_x not
-R34927:34929 Triage.terms <> Ref constr
-R34942:34944 Triage.terms <> ::tree_scope:x_'@'_x not
-R34938:34941 Triage.terms <> Node constr
-R34945:34947 Triage.terms <> Ref constr
-R34962:35018 Triage.terms <> ::tree_scope:'\' not
-R34968:35017 Triage.terms <> ::tree_scope:'\' not
-R34974:35016 Triage.terms <> ::tree_scope:'\' not
-R34987:34990 Triage.terms <> ::tree_scope:x_'@'_x not
-R35015:35015 Triage.terms <> ::tree_scope:x_'@'_x not
-R34980:34982 Triage.terms <> Ref constr
-R35005:35007 Triage.terms <> ::tree_scope:x_'@'_x not
-R34995:34997 Triage.terms <> ::tree_scope:x_'@'_x not
-R34991:34994 Triage.terms <> Node constr
-R34998:35000 Triage.terms <> Ref constr
-R35008:35010 Triage.terms <> Ref constr
-prf 35030:35050 <> eager_s_of_factorable
-binder 35061:35061 <> M:307
-binder 35063:35063 <> N:308
-R35078:35081 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35066:35075 Triage.terms <> factorable ind
-R35077:35077 Triage.terms <> N:308 var
-R35082:35086 Triage.terms <> t_red def
-R35100:35102 Triage.terms <> ::tree_scope:x_'@'_x not
-R35096:35098 Triage.terms <> ::tree_scope:x_'@'_x not
-R35089:35095 Triage.terms <> eager_s def
-R35099:35099 Triage.terms <> N:308 var
-R35103:35103 Triage.terms <> M:307 var
-R35109:35111 Triage.terms <> ::tree_scope:x_'@'_x not
-R35108:35108 Triage.terms <> M:307 var
-R35112:35112 Triage.terms <> N:308 var
-def 35192:35196 <> eager
-R35201:35241 Triage.terms <> ::tree_scope:'\' not
-R35207:35240 Triage.terms <> ::tree_scope:'\' not
-R35230:35232 Triage.terms <> ::tree_scope:x_'@'_x not
-R35220:35222 Triage.terms <> ::tree_scope:x_'@'_x not
-R35213:35219 Triage.terms <> eager_s def
-R35223:35225 Triage.terms <> Ref constr
-R35233:35235 Triage.terms <> Ref constr
-prf 35253:35271 <> eager_of_factorable
-binder 35282:35282 <> M:309
-binder 35284:35284 <> N:310
-R35299:35302 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35287:35296 Triage.terms <> factorable ind
-R35298:35298 Triage.terms <> N:310 var
-R35303:35307 Triage.terms <> t_red def
-R35319:35321 Triage.terms <> ::tree_scope:x_'@'_x not
-R35315:35317 Triage.terms <> ::tree_scope:x_'@'_x not
-R35310:35314 Triage.terms <> eager def
-R35318:35318 Triage.terms <> M:309 var
-R35322:35322 Triage.terms <> N:310 var
-R35328:35330 Triage.terms <> ::tree_scope:x_'@'_x not
-R35327:35327 Triage.terms <> M:309 var
-R35331:35331 Triage.terms <> N:310 var
-ind 35443:35459 <> branch_first_eval
-constr 35496:35501 <> e_leaf
-constr 35551:35556 <> e_stem
-constr 35618:35628 <> e_fork_leaf
-constr 35683:35693 <> e_fork_stem
-constr 35858:35873 <> e_fork_fork_leaf
-constr 35943:35958 <> e_fork_fork_stem
-constr 36077:36092 <> e_fork_fork_fork
-R35466:35469 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35462:35465 Triage.terms <> Tree ind
-R35474:35477 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35470:35473 Triage.terms <> Tree ind
-R35482:35485 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35478:35481 Triage.terms <> Tree ind
-binder 35512:35512 <> x:313
-R35515:35531 Triage.terms <> branch_first_eval:311 ind
-R35543:35545 Triage.terms <> ::tree_scope:x_'@'_x not
-R35540:35542 Triage.terms <> ::tree_scope:'△' not
-R35546:35546 Triage.terms <> x:313 var
-R35537:35537 Triage.terms <> x:313 var
-R35533:35535 Triage.terms <> ::tree_scope:'△' not
-binder 35567:35567 <> x:314
-binder 35569:35569 <> y:315
-R35572:35588 Triage.terms <> branch_first_eval:311 ind
-R35610:35612 Triage.terms <> ::tree_scope:x_'@'_x not
-R35606:35608 Triage.terms <> ::tree_scope:x_'@'_x not
-R35603:35605 Triage.terms <> ::tree_scope:'△' not
-R35609:35609 Triage.terms <> x:314 var
-R35613:35613 Triage.terms <> y:315 var
-R35600:35600 Triage.terms <> y:315 var
-R35594:35596 Triage.terms <> ::tree_scope:x_'@'_x not
-R35591:35593 Triage.terms <> ::tree_scope:'△' not
-R35597:35597 Triage.terms <> x:314 var
-binder 35638:35638 <> y:316
-binder 35640:35640 <> z:317
-R35643:35659 Triage.terms <> branch_first_eval:311 ind
-R35679:35679 Triage.terms <> y:316 var
-R35677:35677 Triage.terms <> z:317 var
-R35671:35673 Triage.terms <> ::tree_scope:x_'@'_x not
+R32648:32651 Triage.terms <> ::tree_scope:x_'@'_x not
+R32691:32691 Triage.terms <> ::tree_scope:x_'@'_x not
+R32645:32647 Triage.terms <> ::tree_scope:'△' not
+R32677:32680 Triage.terms <> ::tree_scope:x_'@'_x not
+R32690:32690 Triage.terms <> ::tree_scope:x_'@'_x not
+R32655:32658 Triage.terms <> ::tree_scope:x_'@'_x not
+R32676:32676 Triage.terms <> ::tree_scope:x_'@'_x not
+R32652:32654 Triage.terms <> ::tree_scope:'△' not
+R32662:32665 Triage.terms <> ::tree_scope:x_'@'_x not
+R32675:32675 Triage.terms <> ::tree_scope:x_'@'_x not
+R32659:32661 Triage.terms <> ::tree_scope:'△' not
+R32669:32671 Triage.terms <> ::tree_scope:x_'@'_x not
+R32666:32668 Triage.terms <> ::tree_scope:'△' not
+R32672:32674 Triage.terms <> ::tree_scope:'△' not
+R32684:32686 Triage.terms <> ::tree_scope:x_'@'_x not
+R32681:32683 Triage.terms <> ::tree_scope:'△' not
+R32687:32689 Triage.terms <> ::tree_scope:'△' not
+R32699:32731 Triage.terms <> ::tree_scope:'\' not
+R32708:32711 Triage.terms <> ::tree_scope:x_'@'_x not
+R32730:32730 Triage.terms <> ::tree_scope:x_'@'_x not
+R32707:32707 Triage.terms <> K def
+R32717:32720 Triage.terms <> ::tree_scope:x_'@'_x not
+R32729:32729 Triage.terms <> ::tree_scope:x_'@'_x not
+R32712:32716 Triage.terms <> succ1 def
+R32721:32723 Triage.terms <> Ref constr
+prf 32747:32759 <> minrec0_found
+binder 32769:32769 <> f:281
+binder 32771:32771 <> n:282
+R32790:32793 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32774:32778 Triage.terms <> t_red def
+R32782:32784 Triage.terms <> ::tree_scope:x_'@'_x not
+R32781:32781 Triage.terms <> f:281 var
+R32785:32785 Triage.terms <> n:282 var
+R32788:32789 Triage.terms <> tt def
+R32794:32798 Triage.terms <> t_red def
+R32810:32812 Triage.terms <> ::tree_scope:x_'@'_x not
+R32801:32807 Triage.terms <> minrec0 def
+R32809:32809 Triage.terms <> f:281 var
+R32813:32813 Triage.terms <> n:282 var
+R32816:32816 Triage.terms <> n:282 var
+R32847:32852 Triage.terms <> Y2_red thm
+prf 32876:32887 <> minrec0_next
+binder 32897:32897 <> f:283
+binder 32899:32899 <> n:284
+R32918:32921 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32902:32906 Triage.terms <> t_red def
+R32910:32912 Triage.terms <> ::tree_scope:x_'@'_x not
+R32909:32909 Triage.terms <> f:283 var
+R32913:32913 Triage.terms <> n:284 var
+R32916:32917 Triage.terms <> ff def
+R32922:32926 Triage.terms <> t_red def
+R32938:32940 Triage.terms <> ::tree_scope:x_'@'_x not
+R32929:32935 Triage.terms <> minrec0 def
+R32937:32937 Triage.terms <> f:283 var
+R32941:32941 Triage.terms <> n:284 var
+R32954:32957 Triage.terms <> ::tree_scope:x_'@'_x not
+R32967:32967 Triage.terms <> ::tree_scope:x_'@'_x not
+R32945:32951 Triage.terms <> minrec0 def
+R32953:32953 Triage.terms <> f:283 var
+R32963:32965 Triage.terms <> ::tree_scope:x_'@'_x not
+R32958:32962 Triage.terms <> succ1 def
+R32966:32966 Triage.terms <> n:284 var
+R33034:33053 Triage.terms <> preserves_appr_t_red thm
+R32998:33003 Triage.terms <> Y2_red thm
+R33019:33024 Triage.terms <> ff_red thm
+R33034:33053 Triage.terms <> preserves_appr_t_red thm
+def 33083:33088 <> minrec
+binder 33090:33090 <> f:285
+binder 33092:33093 <> xs:286
+R33098:33104 Triage.terms <> minrec0 def
+R33107:33115 Coq.Lists.List <> fold_left def
+R33124:33124 Triage.terms <> f:285 var
+R33121:33122 Triage.terms <> xs:286 var
+R33117:33119 Triage.terms <> App constr
+prf 33138:33149 <> minrec_found
+binder 33161:33161 <> f:287
+binder 33163:33164 <> xs:288
+binder 33166:33166 <> n:289
+R33202:33205 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33169:33173 Triage.terms <> t_red def
+R33194:33196 Triage.terms <> ::tree_scope:x_'@'_x not
+R33176:33184 Coq.Lists.List <> fold_left def
+R33193:33193 Triage.terms <> f:287 var
+R33190:33191 Triage.terms <> xs:288 var
+R33186:33188 Triage.terms <> App constr
+R33197:33197 Triage.terms <> n:289 var
+R33200:33201 Triage.terms <> tt def
+R33206:33210 Triage.terms <> t_red def
+R33224:33226 Triage.terms <> ::tree_scope:x_'@'_x not
+R33213:33218 Triage.terms <> minrec def
+R33220:33220 Triage.terms <> f:287 var
+R33222:33223 Triage.terms <> xs:288 var
+R33227:33227 Triage.terms <> n:289 var
+R33230:33230 Triage.terms <> n:289 var
+R33256:33268 Triage.terms <> minrec0_found thm
+R33256:33268 Triage.terms <> minrec0_found thm
+prf 33292:33302 <> minrec_next
+binder 33314:33314 <> f:290
+binder 33316:33317 <> xs:291
+binder 33319:33319 <> n:292
+R33355:33358 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33322:33326 Triage.terms <> t_red def
+R33347:33349 Triage.terms <> ::tree_scope:x_'@'_x not
+R33329:33337 Coq.Lists.List <> fold_left def
+R33346:33346 Triage.terms <> f:290 var
+R33343:33344 Triage.terms <> xs:291 var
+R33339:33341 Triage.terms <> App constr
+R33350:33350 Triage.terms <> n:292 var
+R33353:33354 Triage.terms <> ff def
+R33359:33363 Triage.terms <> t_red def
+R33377:33379 Triage.terms <> ::tree_scope:x_'@'_x not
+R33366:33371 Triage.terms <> minrec def
+R33373:33373 Triage.terms <> f:290 var
+R33375:33376 Triage.terms <> xs:291 var
+R33380:33380 Triage.terms <> n:292 var
+R33395:33398 Triage.terms <> ::tree_scope:x_'@'_x not
+R33408:33408 Triage.terms <> ::tree_scope:x_'@'_x not
+R33384:33389 Triage.terms <> minrec def
+R33391:33391 Triage.terms <> f:290 var
+R33393:33394 Triage.terms <> xs:291 var
+R33404:33406 Triage.terms <> ::tree_scope:x_'@'_x not
+R33399:33403 Triage.terms <> succ1 def
+R33407:33407 Triage.terms <> n:292 var
+R33434:33445 Triage.terms <> minrec0_next thm
+R33434:33445 Triage.terms <> minrec0_next thm
+def 33528:33541 <> prim_succ_plus
+R33546:33600 Triage.terms <> ::tree_scope:'\' not
+R33552:33599 Triage.terms <> ::tree_scope:'\' not
+R33563:33566 Triage.terms <> ::tree_scope:x_'@'_x not
+R33598:33598 Triage.terms <> ::tree_scope:x_'@'_x not
+R33558:33562 Triage.terms <> succ1 def
+R33588:33590 Triage.terms <> ::tree_scope:x_'@'_x not
+R33576:33579 Triage.terms <> ::tree_scope:x_'@'_x not
+R33587:33587 Triage.terms <> ::tree_scope:x_'@'_x not
+R33567:33575 Triage.terms <> prim_plus def
+R33580:33582 Triage.terms <> Ref constr
+R33591:33593 Triage.terms <> Ref constr
+def 33616:33624 <> size_loop
+R33631:33806 Triage.terms <> ::tree_scope:'\' not
+R33643:33648 Triage.terms <> triage def
+R33665:33667 Triage.terms <> ::tree_scope:x_'@'_x not
+R33660:33664 Triage.terms <> succ1 def
+R33668:33671 Triage.terms <> zero def
+R33684:33718 Triage.terms <> ::tree_scope:'\' not
+R33695:33698 Triage.terms <> ::tree_scope:x_'@'_x not
+R33717:33717 Triage.terms <> ::tree_scope:x_'@'_x not
+R33690:33694 Triage.terms <> succ1 def
+R33706:33709 Triage.terms <> ::tree_scope:x_'@'_x not
+R33699:33701 Triage.terms <> Ref constr
+R33710:33712 Triage.terms <> Ref constr
+R33731:33804 Triage.terms <> ::tree_scope:'\' not
+R33737:33803 Triage.terms <> ::tree_scope:'\' not
+R33780:33783 Triage.terms <> ::tree_scope:x_'@'_x not
+R33802:33802 Triage.terms <> ::tree_scope:x_'@'_x not
+R33757:33760 Triage.terms <> ::tree_scope:x_'@'_x not
+R33779:33779 Triage.terms <> ::tree_scope:x_'@'_x not
+R33743:33756 Triage.terms <> prim_succ_plus def
+R33768:33771 Triage.terms <> ::tree_scope:x_'@'_x not
+R33761:33763 Triage.terms <> Ref constr
+R33772:33774 Triage.terms <> Ref constr
+R33791:33794 Triage.terms <> ::tree_scope:x_'@'_x not
+R33784:33786 Triage.terms <> Ref constr
+R33795:33797 Triage.terms <> Ref constr
+def 33821:33824 <> size
+R33829:33829 Triage.terms <> Z def
+R33831:33839 Triage.terms <> size_loop def
+def 33872:33874 <> tag
+binder 33876:33876 <> t:293
+binder 33878:33878 <> i:294
+R33883:33886 Triage.terms <> wait def
+R33890:33892 Triage.terms <> ::tree_scope:x_'@'_x not
+R33889:33889 Triage.terms <> K def
+R33893:33893 Triage.terms <> t:293 var
+R33896:33896 Triage.terms <> i:294 var
+prf 33906:33922 <> tag_is_functional
+binder 33932:33932 <> t:295
+binder 33934:33934 <> i:296
+binder 33936:33936 <> x:297
+R33939:33943 Triage.terms <> t_red def
+R33953:33955 Triage.terms <> ::tree_scope:x_'@'_x not
+R33946:33948 Triage.terms <> tag def
+R33950:33950 Triage.terms <> t:295 var
+R33952:33952 Triage.terms <> i:296 var
+R33956:33956 Triage.terms <> x:297 var
+R33961:33962 Triage.terms <> ::tree_scope:x_'@'_x not
+R33960:33960 Triage.terms <> t:295 var
+R33963:33963 Triage.terms <> x:297 var
+def 34009:34013 <> untag
+R34020:34025 Triage.terms <> triage def
+R34027:34030 Triage.terms <> Node constr
+R34032:34035 Triage.terms <> Node constr
+R34047:34052 Triage.terms <> triage def
+R34054:34057 Triage.terms <> Node constr
+R34077:34082 Triage.terms <> triage def
+R34084:34087 Triage.terms <> Node constr
+R34089:34092 Triage.terms <> Node constr
+R34095:34100 Triage.terms <> triage def
+R34102:34105 Triage.terms <> Node constr
+R34107:34108 Triage.terms <> KI def
+R34110:34113 Triage.terms <> Node constr
+R34134:34137 Triage.terms <> Node constr
+prf 34148:34159 <> untag_untags
+binder 34169:34169 <> t:298
+binder 34171:34171 <> i:299
+R34174:34178 Triage.terms <> t_red def
+R34186:34189 Triage.terms <> ::tree_scope:x_'@'_x not
+R34197:34197 Triage.terms <> ::tree_scope:x_'@'_x not
+R34181:34185 Triage.terms <> untag def
+R34190:34192 Triage.terms <> tag def
+R34194:34194 Triage.terms <> t:298 var
+R34196:34196 Triage.terms <> i:299 var
+R34200:34200 Triage.terms <> i:299 var
+ind 34284:34293 <> factorable
+constr 34314:34328 <> factorable_leaf
+constr 34349:34363 <> factorable_stem
+constr 34399:34413 <> factorable_fork
+R34300:34303 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34296:34299 Triage.terms <> Tree ind
+R34332:34341 Triage.terms <> factorable:300 ind
+R34343:34345 Triage.terms <> ::tree_scope:'△' not
+binder 34373:34373 <> M:302
+R34376:34385 Triage.terms <> factorable:300 ind
+R34391:34393 Triage.terms <> ::tree_scope:x_'@'_x not
+R34388:34390 Triage.terms <> ::tree_scope:'△' not
+R34394:34394 Triage.terms <> M:302 var
+binder 34423:34423 <> M:303
+binder 34425:34425 <> N:304
+R34428:34437 Triage.terms <> factorable:300 ind
+R34447:34449 Triage.terms <> ::tree_scope:x_'@'_x not
+R34443:34445 Triage.terms <> ::tree_scope:x_'@'_x not
+R34440:34442 Triage.terms <> ::tree_scope:'△' not
+R34446:34446 Triage.terms <> M:303 var
+R34450:34450 Triage.terms <> N:304 var
+R34481:34490 Triage.terms <> factorable ind
+prf 34515:34531 <> factorable_or_not
+binder 34541:34541 <> M:305
+R34557:34560 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R34545:34554 Triage.terms <> factorable ind
+R34556:34556 Triage.terms <> M:305 var
+R34561:34563 Coq.Init.Logic <> ::type_scope:'~'_x not
+R34576:34576 Coq.Init.Logic <> ::type_scope:'~'_x not
+R34564:34573 Triage.terms <> factorable ind
+R34575:34575 Triage.terms <> M:305 var
+R34640:34649 Triage.terms <> factorable ind
+R34707:34716 Triage.terms <> factorable ind
+R34769:34778 Triage.terms <> factorable ind
+R34769:34778 Triage.terms <> factorable ind
+prf 34794:34816 <> programs_are_factorable
+binder 34826:34826 <> p:306
+R34838:34841 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34829:34835 Triage.terms <> program ind
+R34837:34837 Triage.terms <> p:306 var
+R34842:34851 Triage.terms <> factorable ind
+R34853:34853 Triage.terms <> p:306 var
+def 34917:34923 <> eager_s
+R34930:34935 Triage.terms <> triage def
+R34942:34962 Triage.terms <> ::tree_scope:'\' not
+R34955:34957 Triage.terms <> ::tree_scope:x_'@'_x not
+R34948:34950 Triage.terms <> Ref constr
+R34958:34961 Triage.terms <> Node constr
+R34970:35009 Triage.terms <> ::tree_scope:'\' not
+R34976:35008 Triage.terms <> ::tree_scope:'\' not
+R34989:34992 Triage.terms <> ::tree_scope:x_'@'_x not
+R35007:35007 Triage.terms <> ::tree_scope:x_'@'_x not
+R34982:34984 Triage.terms <> Ref constr
+R34997:34999 Triage.terms <> ::tree_scope:x_'@'_x not
+R34993:34996 Triage.terms <> Node constr
+R35000:35002 Triage.terms <> Ref constr
+R35017:35073 Triage.terms <> ::tree_scope:'\' not
+R35023:35072 Triage.terms <> ::tree_scope:'\' not
+R35029:35071 Triage.terms <> ::tree_scope:'\' not
+R35042:35045 Triage.terms <> ::tree_scope:x_'@'_x not
+R35070:35070 Triage.terms <> ::tree_scope:x_'@'_x not
+R35035:35037 Triage.terms <> Ref constr
+R35060:35062 Triage.terms <> ::tree_scope:x_'@'_x not
+R35050:35052 Triage.terms <> ::tree_scope:x_'@'_x not
+R35046:35049 Triage.terms <> Node constr
+R35053:35055 Triage.terms <> Ref constr
+R35063:35065 Triage.terms <> Ref constr
+prf 35085:35105 <> eager_s_of_factorable
+binder 35116:35116 <> M:307
+binder 35118:35118 <> N:308
+R35133:35136 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35121:35130 Triage.terms <> factorable ind
+R35132:35132 Triage.terms <> N:308 var
+R35137:35141 Triage.terms <> t_red def
+R35155:35157 Triage.terms <> ::tree_scope:x_'@'_x not
+R35151:35153 Triage.terms <> ::tree_scope:x_'@'_x not
+R35144:35150 Triage.terms <> eager_s def
+R35154:35154 Triage.terms <> N:308 var
+R35158:35158 Triage.terms <> M:307 var
+R35164:35166 Triage.terms <> ::tree_scope:x_'@'_x not
+R35163:35163 Triage.terms <> M:307 var
+R35167:35167 Triage.terms <> N:308 var
+def 35247:35251 <> eager
+R35256:35296 Triage.terms <> ::tree_scope:'\' not
+R35262:35295 Triage.terms <> ::tree_scope:'\' not
+R35285:35287 Triage.terms <> ::tree_scope:x_'@'_x not
+R35275:35277 Triage.terms <> ::tree_scope:x_'@'_x not
+R35268:35274 Triage.terms <> eager_s def
+R35278:35280 Triage.terms <> Ref constr
+R35288:35290 Triage.terms <> Ref constr
+prf 35308:35326 <> eager_of_factorable
+binder 35337:35337 <> M:309
+binder 35339:35339 <> N:310
+R35354:35357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35342:35351 Triage.terms <> factorable ind
+R35353:35353 Triage.terms <> N:310 var
+R35358:35362 Triage.terms <> t_red def
+R35374:35376 Triage.terms <> ::tree_scope:x_'@'_x not
+R35370:35372 Triage.terms <> ::tree_scope:x_'@'_x not
+R35365:35369 Triage.terms <> eager def
+R35373:35373 Triage.terms <> M:309 var
+R35377:35377 Triage.terms <> N:310 var
+R35383:35385 Triage.terms <> ::tree_scope:x_'@'_x not
+R35382:35382 Triage.terms <> M:309 var
+R35386:35386 Triage.terms <> N:310 var
+ind 35498:35514 <> branch_first_eval
+constr 35551:35556 <> e_leaf
+constr 35606:35611 <> e_stem
+constr 35673:35683 <> e_fork_leaf
+constr 35738:35748 <> e_fork_stem
+constr 35913:35928 <> e_fork_fork_leaf
+constr 35998:36013 <> e_fork_fork_stem
+constr 36132:36147 <> e_fork_fork_fork
+R35521:35524 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35517:35520 Triage.terms <> Tree ind
+R35529:35532 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35525:35528 Triage.terms <> Tree ind
+R35537:35540 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35533:35536 Triage.terms <> Tree ind
+binder 35567:35567 <> x:313
+R35570:35586 Triage.terms <> branch_first_eval:311 ind
+R35598:35600 Triage.terms <> ::tree_scope:x_'@'_x not
+R35595:35597 Triage.terms <> ::tree_scope:'△' not
+R35601:35601 Triage.terms <> x:313 var
+R35592:35592 Triage.terms <> x:313 var
+R35588:35590 Triage.terms <> ::tree_scope:'△' not
+binder 35622:35622 <> x:314
+binder 35624:35624 <> y:315
+R35627:35643 Triage.terms <> branch_first_eval:311 ind
 R35665:35667 Triage.terms <> ::tree_scope:x_'@'_x not
-R35662:35664 Triage.terms <> ::tree_scope:'△' not
-R35668:35670 Triage.terms <> ::tree_scope:'△' not
-R35674:35674 Triage.terms <> y:316 var
-binder 35703:35703 <> x:318
-binder 35705:35705 <> y:319
-binder 35707:35707 <> z:320
-binder 35709:35710 <> xz:321
-binder 35712:35713 <> yz:322
-binder 35715:35715 <> v:323
-R35746:35749 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35722:35738 Triage.terms <> branch_first_eval:311 ind
-R35744:35745 Triage.terms <> xz:321 var
-R35742:35742 Triage.terms <> z:320 var
-R35740:35740 Triage.terms <> x:318 var
-R35774:35777 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35750:35766 Triage.terms <> branch_first_eval:311 ind
-R35772:35773 Triage.terms <> yz:322 var
-R35770:35770 Triage.terms <> z:320 var
-R35768:35768 Triage.terms <> y:319 var
-R35803:35811 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35778:35794 Triage.terms <> branch_first_eval:311 ind
-R35802:35802 Triage.terms <> v:323 var
-R35799:35800 Triage.terms <> yz:322 var
-R35796:35797 Triage.terms <> xz:321 var
-R35812:35828 Triage.terms <> branch_first_eval:311 ind
-R35854:35854 Triage.terms <> v:323 var
-R35852:35852 Triage.terms <> z:320 var
-R35846:35848 Triage.terms <> ::tree_scope:x_'@'_x not
-R35834:35837 Triage.terms <> ::tree_scope:x_'@'_x not
-R35845:35845 Triage.terms <> ::tree_scope:x_'@'_x not
-R35831:35833 Triage.terms <> ::tree_scope:'△' not
-R35841:35843 Triage.terms <> ::tree_scope:x_'@'_x not
-R35838:35840 Triage.terms <> ::tree_scope:'△' not
-R35844:35844 Triage.terms <> x:318 var
-R35849:35849 Triage.terms <> y:319 var
-binder 35883:35883 <> w:324
-binder 35885:35885 <> x:325
-binder 35887:35887 <> y:326
-R35890:35906 Triage.terms <> branch_first_eval:311 ind
-R35939:35939 Triage.terms <> w:324 var
-R35934:35937 Triage.terms <> Node constr
-R35928:35930 Triage.terms <> ::tree_scope:x_'@'_x not
-R35912:35915 Triage.terms <> ::tree_scope:x_'@'_x not
-R35927:35927 Triage.terms <> ::tree_scope:x_'@'_x not
-R35909:35911 Triage.terms <> ::tree_scope:'△' not
-R35923:35925 Triage.terms <> ::tree_scope:x_'@'_x not
-R35919:35921 Triage.terms <> ::tree_scope:x_'@'_x not
-R35916:35918 Triage.terms <> ::tree_scope:'△' not
-R35922:35922 Triage.terms <> w:324 var
-R35926:35926 Triage.terms <> x:325 var
-R35931:35931 Triage.terms <> y:326 var
-binder 35968:35968 <> w:327
-binder 35970:35970 <> x:328
-binder 35972:35972 <> y:329
-binder 35974:35974 <> z:330
-binder 35976:35977 <> xz:331
-R36008:36016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R35984:36000 Triage.terms <> branch_first_eval:311 ind
-R36006:36007 Triage.terms <> xz:331 var
-R36004:36004 Triage.terms <> z:330 var
-R36002:36002 Triage.terms <> x:328 var
-R36017:36033 Triage.terms <> branch_first_eval:311 ind
-R36072:36073 Triage.terms <> xz:331 var
-R36066:36068 Triage.terms <> ::tree_scope:x_'@'_x not
-R36062:36065 Triage.terms <> Node constr
-R36069:36069 Triage.terms <> z:330 var
-R36055:36057 Triage.terms <> ::tree_scope:x_'@'_x not
-R36039:36042 Triage.terms <> ::tree_scope:x_'@'_x not
-R36054:36054 Triage.terms <> ::tree_scope:x_'@'_x not
-R36036:36038 Triage.terms <> ::tree_scope:'△' not
-R36050:36052 Triage.terms <> ::tree_scope:x_'@'_x not
-R36046:36048 Triage.terms <> ::tree_scope:x_'@'_x not
-R36043:36045 Triage.terms <> ::tree_scope:'△' not
-R36049:36049 Triage.terms <> w:327 var
-R36053:36053 Triage.terms <> x:328 var
-R36058:36058 Triage.terms <> y:329 var
-binder 36102:36102 <> w:332
-binder 36104:36104 <> x:333
-binder 36106:36106 <> y:334
-binder 36108:36108 <> z:335
-binder 36110:36110 <> u:336
-binder 36112:36113 <> yz:337
-binder 36115:36115 <> v:338
-R36146:36149 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36122:36138 Triage.terms <> branch_first_eval:311 ind
-R36144:36145 Triage.terms <> yz:337 var
-R36142:36142 Triage.terms <> z:335 var
-R36140:36140 Triage.terms <> y:334 var
-R36174:36182 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36150:36166 Triage.terms <> branch_first_eval:311 ind
-R36173:36173 Triage.terms <> v:338 var
-R36171:36171 Triage.terms <> u:336 var
-R36168:36169 Triage.terms <> yz:337 var
-R36183:36199 Triage.terms <> branch_first_eval:311 ind
-R36242:36242 Triage.terms <> v:338 var
-R36236:36238 Triage.terms <> ::tree_scope:x_'@'_x not
-R36232:36234 Triage.terms <> ::tree_scope:x_'@'_x not
-R36228:36231 Triage.terms <> Node constr
-R36235:36235 Triage.terms <> z:335 var
-R36239:36239 Triage.terms <> u:336 var
-R36221:36223 Triage.terms <> ::tree_scope:x_'@'_x not
-R36205:36208 Triage.terms <> ::tree_scope:x_'@'_x not
-R36220:36220 Triage.terms <> ::tree_scope:x_'@'_x not
-R36202:36204 Triage.terms <> ::tree_scope:'△' not
-R36216:36218 Triage.terms <> ::tree_scope:x_'@'_x not
-R36212:36214 Triage.terms <> ::tree_scope:x_'@'_x not
-R36209:36211 Triage.terms <> ::tree_scope:'△' not
-R36215:36215 Triage.terms <> w:332 var
-R36219:36219 Triage.terms <> x:333 var
-R36224:36224 Triage.terms <> y:334 var
-R36286:36302 Triage.terms <> branch_first_eval ind
-prf 36327:36346 <> branch_first_reduces
-binder 36356:36356 <> M:339
-binder 36358:36358 <> N:340
-binder 36360:36360 <> P:341
-R36386:36389 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36363:36379 Triage.terms <> branch_first_eval ind
-R36381:36381 Triage.terms <> M:339 var
-R36383:36383 Triage.terms <> N:340 var
-R36385:36385 Triage.terms <> P:341 var
-R36390:36394 Triage.terms <> t_red def
-R36398:36400 Triage.terms <> ::tree_scope:x_'@'_x not
-R36397:36397 Triage.terms <> M:339 var
-R36401:36401 Triage.terms <> N:340 var
-R36404:36404 Triage.terms <> P:341 var
-prf 36503:36522 <> branch_first_program
-binder 36535:36535 <> M:342
-binder 36537:36537 <> N:343
-binder 36539:36539 <> P:344
-R36565:36568 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36542:36558 Triage.terms <> branch_first_eval ind
-R36560:36560 Triage.terms <> M:342 var
-R36562:36562 Triage.terms <> N:343 var
-R36564:36564 Triage.terms <> P:344 var
-R36578:36581 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36569:36575 Triage.terms <> program ind
-R36577:36577 Triage.terms <> M:342 var
-R36591:36594 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36582:36588 Triage.terms <> program ind
-R36590:36590 Triage.terms <> N:343 var
-R36595:36601 Triage.terms <> program ind
-R36603:36603 Triage.terms <> P:344 var
-prf 36738:36766 <> branch_first_eval_program_red
-binder 36776:36776 <> M:345
-binder 36778:36778 <> N:346
-R36794:36797 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R36781:36787 Triage.terms <> program ind
-R36791:36791 Triage.terms <> ::tree_scope:x_'@'_x not
-R36790:36790 Triage.terms <> M:345 var
-R36792:36792 Triage.terms <> N:346 var
-R36798:36814 Triage.terms <> branch_first_eval ind
-R36816:36816 Triage.terms <> M:345 var
-R36818:36818 Triage.terms <> N:346 var
-R36822:36822 Triage.terms <> ::tree_scope:x_'@'_x not
-R36821:36821 Triage.terms <> M:345 var
-R36823:36823 Triage.terms <> N:346 var
-def 36888:36891 <> bffs
-R36938:37037 Triage.terms <> ::tree_scope:'\' not
-R36945:37036 Triage.terms <> ::tree_scope:'\' not
-R37014:37017 Triage.terms <> ::tree_scope:x_'@'_x not
-R37035:37035 Triage.terms <> ::tree_scope:x_'@'_x not
-R36952:36953 Triage.terms <> S1 def
-R36970:36973 Triage.terms <> ::tree_scope:x_'@'_x not
-R37012:37012 Triage.terms <> ::tree_scope:x_'@'_x not
-R36956:36957 Triage.terms <> S1 def
-R36961:36963 Triage.terms <> ::tree_scope:x_'@'_x not
-R36960:36960 Triage.terms <> K def
-R36964:36968 Triage.terms <> eager def
-R36990:36993 Triage.terms <> ::tree_scope:x_'@'_x not
-R37011:37011 Triage.terms <> ::tree_scope:x_'@'_x not
-R36974:36975 Triage.terms <> S1 def
-R36979:36981 Triage.terms <> ::tree_scope:x_'@'_x not
-R36978:36978 Triage.terms <> K def
-R36982:36984 Triage.terms <> Ref constr
-R37001:37003 Triage.terms <> ::tree_scope:x_'@'_x not
-R36994:36996 Triage.terms <> Ref constr
-R37004:37006 Triage.terms <> Ref constr
-R37025:37027 Triage.terms <> ::tree_scope:x_'@'_x not
-R37018:37020 Triage.terms <> Ref constr
-R37028:37030 Triage.terms <> Ref constr
-def 37051:37059 <> bfff_fork
-R37064:37108 Triage.terms <> ::tree_scope:'\' not
-R37086:37089 Triage.terms <> ::tree_scope:x_'@'_x not
-R37107:37107 Triage.terms <> ::tree_scope:x_'@'_x not
-R37070:37071 Triage.terms <> S1 def
-R37075:37077 Triage.terms <> ::tree_scope:x_'@'_x not
-R37074:37074 Triage.terms <> K def
-R37078:37080 Triage.terms <> Ref constr
-R37097:37099 Triage.terms <> ::tree_scope:x_'@'_x not
-R37090:37092 Triage.terms <> Ref constr
-R37100:37102 Triage.terms <> Ref constr
-def 37122:37125 <> bfff
-R37199:37353 Triage.terms <> ::tree_scope:'\' not
-R37208:37352 Triage.terms <> ::tree_scope:'\' not
-R37219:37351 Triage.terms <> ::tree_scope:'\' not
-R37232:37237 Triage.terms <> triage def
-R37255:37257 Triage.terms <> Ref constr
-R37287:37289 Triage.terms <> ::tree_scope:x_'@'_x not
-R37280:37282 Triage.terms <> Ref constr
-R37290:37292 Triage.terms <> Ref constr
-R37324:37326 Triage.terms <> ::tree_scope:x_'@'_x not
-R37315:37323 Triage.terms <> bfff_fork def
-R37327:37329 Triage.terms <> Ref constr
-def 37368:37370 <> bff
-R37376:37381 Triage.terms <> triage def
-R37383:37383 Triage.terms <> K def
-R37385:37388 Triage.terms <> bffs def
-R37390:37393 Triage.terms <> bfff def
-def 37407:37408 <> bf
-R37413:37413 Triage.terms <> Z def
-R37416:37443 Triage.terms <> ::tree_scope:'\' not
-R37423:37428 Triage.terms <> triage def
-R37430:37433 Triage.terms <> Node constr
-R37435:37438 Triage.terms <> Node constr
-R37440:37442 Triage.terms <> bff def
-prf 37457:37467 <> bf_leaf_red
-binder 37477:37477 <> p:347
-R37481:37485 Triage.terms <> t_red def
-R37496:37498 Triage.terms <> ::tree_scope:x_'@'_x not
-R37490:37492 Triage.terms <> ::tree_scope:x_'@'_x not
-R37488:37489 Triage.terms <> bf def
-R37493:37495 Triage.terms <> ::tree_scope:'△' not
-R37499:37499 Triage.terms <> p:347 var
-R37506:37507 Triage.terms <> ::tree_scope:x_'@'_x not
-R37503:37505 Triage.terms <> ::tree_scope:'△' not
-R37508:37508 Triage.terms <> p:347 var
-R37546:37550 Triage.terms <> Z_red thm
-R37569:37574 Triage.terms <> triage def
-R37546:37550 Triage.terms <> Z_red thm
-prf 37632:37642 <> bf_stem_red
-binder 37652:37652 <> x:348
-binder 37654:37654 <> y:349
-R37657:37661 Triage.terms <> t_red def
-R37678:37680 Triage.terms <> ::tree_scope:x_'@'_x not
-R37666:37669 Triage.terms <> ::tree_scope:x_'@'_x not
-R37677:37677 Triage.terms <> ::tree_scope:x_'@'_x not
-R37664:37665 Triage.terms <> bf def
-R37673:37675 Triage.terms <> ::tree_scope:x_'@'_x not
-R37670:37672 Triage.terms <> ::tree_scope:'△' not
-R37676:37676 Triage.terms <> x:348 var
-R37681:37681 Triage.terms <> y:349 var
-R37692:37694 Triage.terms <> ::tree_scope:x_'@'_x not
-R37688:37690 Triage.terms <> ::tree_scope:x_'@'_x not
-R37685:37687 Triage.terms <> ::tree_scope:'△' not
-R37691:37691 Triage.terms <> x:348 var
-R37695:37695 Triage.terms <> y:349 var
-R37733:37737 Triage.terms <> Z_red thm
-R37756:37761 Triage.terms <> triage def
-R37733:37737 Triage.terms <> Z_red thm
-prf 37827:37837 <> bf_fork_red
-binder 37849:37849 <> x:350
-binder 37851:37851 <> y:351
-R37854:37858 Triage.terms <> t_red def
-R37863:37866 Triage.terms <> ::tree_scope:x_'@'_x not
-R37878:37878 Triage.terms <> ::tree_scope:x_'@'_x not
-R37861:37862 Triage.terms <> bf def
-R37874:37876 Triage.terms <> ::tree_scope:x_'@'_x not
-R37870:37872 Triage.terms <> ::tree_scope:x_'@'_x not
-R37867:37869 Triage.terms <> ::tree_scope:'△' not
-R37873:37873 Triage.terms <> x:350 var
-R37877:37877 Triage.terms <> y:351 var
-R37909:37911 Triage.terms <> ::tree_scope:x_'@'_x not
-R37882:37882 Triage.terms <> ::tree_scope:x_'@'_x not
-R37904:37907 Triage.terms <> ::tree_scope:x_'@'_x not
-R37883:37892 Triage.terms <> substitute def
-R37894:37896 Triage.terms <> bff def
-R37902:37903 Triage.terms <> bf def
-R37908:37908 Triage.terms <> x:350 var
-R37912:37912 Triage.terms <> y:351 var
-R37950:37955 Triage.terms <> triage def
-R37936:37940 Triage.terms <> Z_red thm
-R37983:37991 Triage.terms <> star_beta thm
-prf 38010:38025 <> bf_fork_leaf_red
-binder 38036:38036 <> y:352
-binder 38038:38038 <> z:353
-R38041:38045 Triage.terms <> t_red def
-R38063:38065 Triage.terms <> ::tree_scope:x_'@'_x not
-R38049:38052 Triage.terms <> ::tree_scope:x_'@'_x not
-R38062:38062 Triage.terms <> ::tree_scope:x_'@'_x not
-R38047:38048 Triage.terms <> bf def
-R38060:38060 Triage.terms <> ::tree_scope:x_'@'_x not
-R38056:38056 Triage.terms <> ::tree_scope:x_'@'_x not
-R38053:38055 Triage.terms <> ::tree_scope:'△' not
-R38057:38059 Triage.terms <> ::tree_scope:'△' not
-R38061:38061 Triage.terms <> y:352 var
-R38066:38066 Triage.terms <> z:353 var
-R38069:38069 Triage.terms <> y:352 var
-R38102:38112 Triage.terms <> bf_fork_red thm
-R38102:38112 Triage.terms <> bf_fork_red thm
-prf 38151:38166 <> bf_fork_stem_red
-binder 38178:38178 <> x:354
-binder 38180:38180 <> y:355
-binder 38182:38182 <> z:356
-R38185:38189 Triage.terms <> t_red def
-R38213:38215 Triage.terms <> ::tree_scope:x_'@'_x not
-R38194:38197 Triage.terms <> ::tree_scope:x_'@'_x not
-R38212:38212 Triage.terms <> ::tree_scope:x_'@'_x not
-R38192:38193 Triage.terms <> bf def
-R38209:38210 Triage.terms <> ::tree_scope:x_'@'_x not
-R38201:38202 Triage.terms <> ::tree_scope:x_'@'_x not
-R38208:38208 Triage.terms <> ::tree_scope:x_'@'_x not
-R38198:38200 Triage.terms <> ::tree_scope:'△' not
-R38206:38206 Triage.terms <> ::tree_scope:x_'@'_x not
-R38203:38205 Triage.terms <> ::tree_scope:'△' not
-R38207:38207 Triage.terms <> x:354 var
-R38211:38211 Triage.terms <> y:355 var
-R38216:38216 Triage.terms <> z:356 var
-R38247:38250 Triage.terms <> ::tree_scope:x_'@'_x not
+R35661:35663 Triage.terms <> ::tree_scope:x_'@'_x not
+R35658:35660 Triage.terms <> ::tree_scope:'△' not
+R35664:35664 Triage.terms <> x:314 var
+R35668:35668 Triage.terms <> y:315 var
+R35655:35655 Triage.terms <> y:315 var
+R35649:35651 Triage.terms <> ::tree_scope:x_'@'_x not
+R35646:35648 Triage.terms <> ::tree_scope:'△' not
+R35652:35652 Triage.terms <> x:314 var
+binder 35693:35693 <> y:316
+binder 35695:35695 <> z:317
+R35698:35714 Triage.terms <> branch_first_eval:311 ind
+R35734:35734 Triage.terms <> y:316 var
+R35732:35732 Triage.terms <> z:317 var
+R35726:35728 Triage.terms <> ::tree_scope:x_'@'_x not
+R35720:35722 Triage.terms <> ::tree_scope:x_'@'_x not
+R35717:35719 Triage.terms <> ::tree_scope:'△' not
+R35723:35725 Triage.terms <> ::tree_scope:'△' not
+R35729:35729 Triage.terms <> y:316 var
+binder 35758:35758 <> x:318
+binder 35760:35760 <> y:319
+binder 35762:35762 <> z:320
+binder 35764:35765 <> xz:321
+binder 35767:35768 <> yz:322
+binder 35770:35770 <> v:323
+R35801:35804 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35777:35793 Triage.terms <> branch_first_eval:311 ind
+R35799:35800 Triage.terms <> xz:321 var
+R35797:35797 Triage.terms <> z:320 var
+R35795:35795 Triage.terms <> x:318 var
+R35829:35832 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35805:35821 Triage.terms <> branch_first_eval:311 ind
+R35827:35828 Triage.terms <> yz:322 var
+R35825:35825 Triage.terms <> z:320 var
+R35823:35823 Triage.terms <> y:319 var
+R35858:35866 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35833:35849 Triage.terms <> branch_first_eval:311 ind
+R35857:35857 Triage.terms <> v:323 var
+R35854:35855 Triage.terms <> yz:322 var
+R35851:35852 Triage.terms <> xz:321 var
+R35867:35883 Triage.terms <> branch_first_eval:311 ind
+R35909:35909 Triage.terms <> v:323 var
+R35907:35907 Triage.terms <> z:320 var
+R35901:35903 Triage.terms <> ::tree_scope:x_'@'_x not
+R35889:35892 Triage.terms <> ::tree_scope:x_'@'_x not
+R35900:35900 Triage.terms <> ::tree_scope:x_'@'_x not
+R35886:35888 Triage.terms <> ::tree_scope:'△' not
+R35896:35898 Triage.terms <> ::tree_scope:x_'@'_x not
+R35893:35895 Triage.terms <> ::tree_scope:'△' not
+R35899:35899 Triage.terms <> x:318 var
+R35904:35904 Triage.terms <> y:319 var
+binder 35938:35938 <> w:324
+binder 35940:35940 <> x:325
+binder 35942:35942 <> y:326
+R35945:35961 Triage.terms <> branch_first_eval:311 ind
+R35994:35994 Triage.terms <> w:324 var
+R35989:35992 Triage.terms <> Node constr
+R35983:35985 Triage.terms <> ::tree_scope:x_'@'_x not
+R35967:35970 Triage.terms <> ::tree_scope:x_'@'_x not
+R35982:35982 Triage.terms <> ::tree_scope:x_'@'_x not
+R35964:35966 Triage.terms <> ::tree_scope:'△' not
+R35978:35980 Triage.terms <> ::tree_scope:x_'@'_x not
+R35974:35976 Triage.terms <> ::tree_scope:x_'@'_x not
+R35971:35973 Triage.terms <> ::tree_scope:'△' not
+R35977:35977 Triage.terms <> w:324 var
+R35981:35981 Triage.terms <> x:325 var
+R35986:35986 Triage.terms <> y:326 var
+binder 36023:36023 <> w:327
+binder 36025:36025 <> x:328
+binder 36027:36027 <> y:329
+binder 36029:36029 <> z:330
+binder 36031:36032 <> xz:331
+R36063:36071 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36039:36055 Triage.terms <> branch_first_eval:311 ind
+R36061:36062 Triage.terms <> xz:331 var
+R36059:36059 Triage.terms <> z:330 var
+R36057:36057 Triage.terms <> x:328 var
+R36072:36088 Triage.terms <> branch_first_eval:311 ind
+R36127:36128 Triage.terms <> xz:331 var
+R36121:36123 Triage.terms <> ::tree_scope:x_'@'_x not
+R36117:36120 Triage.terms <> Node constr
+R36124:36124 Triage.terms <> z:330 var
+R36110:36112 Triage.terms <> ::tree_scope:x_'@'_x not
+R36094:36097 Triage.terms <> ::tree_scope:x_'@'_x not
+R36109:36109 Triage.terms <> ::tree_scope:x_'@'_x not
+R36091:36093 Triage.terms <> ::tree_scope:'△' not
+R36105:36107 Triage.terms <> ::tree_scope:x_'@'_x not
+R36101:36103 Triage.terms <> ::tree_scope:x_'@'_x not
+R36098:36100 Triage.terms <> ::tree_scope:'△' not
+R36104:36104 Triage.terms <> w:327 var
+R36108:36108 Triage.terms <> x:328 var
+R36113:36113 Triage.terms <> y:329 var
+binder 36157:36157 <> w:332
+binder 36159:36159 <> x:333
+binder 36161:36161 <> y:334
+binder 36163:36163 <> z:335
+binder 36165:36165 <> u:336
+binder 36167:36168 <> yz:337
+binder 36170:36170 <> v:338
+R36201:36204 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36177:36193 Triage.terms <> branch_first_eval:311 ind
+R36199:36200 Triage.terms <> yz:337 var
+R36197:36197 Triage.terms <> z:335 var
+R36195:36195 Triage.terms <> y:334 var
+R36229:36237 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36205:36221 Triage.terms <> branch_first_eval:311 ind
+R36228:36228 Triage.terms <> v:338 var
+R36226:36226 Triage.terms <> u:336 var
+R36223:36224 Triage.terms <> yz:337 var
+R36238:36254 Triage.terms <> branch_first_eval:311 ind
+R36297:36297 Triage.terms <> v:338 var
+R36291:36293 Triage.terms <> ::tree_scope:x_'@'_x not
+R36287:36289 Triage.terms <> ::tree_scope:x_'@'_x not
+R36283:36286 Triage.terms <> Node constr
+R36290:36290 Triage.terms <> z:335 var
+R36294:36294 Triage.terms <> u:336 var
+R36276:36278 Triage.terms <> ::tree_scope:x_'@'_x not
+R36260:36263 Triage.terms <> ::tree_scope:x_'@'_x not
+R36275:36275 Triage.terms <> ::tree_scope:x_'@'_x not
+R36257:36259 Triage.terms <> ::tree_scope:'△' not
+R36271:36273 Triage.terms <> ::tree_scope:x_'@'_x not
+R36267:36269 Triage.terms <> ::tree_scope:x_'@'_x not
+R36264:36266 Triage.terms <> ::tree_scope:'△' not
+R36270:36270 Triage.terms <> w:332 var
+R36274:36274 Triage.terms <> x:333 var
+R36279:36279 Triage.terms <> y:334 var
+R36341:36357 Triage.terms <> branch_first_eval ind
+prf 36382:36401 <> branch_first_reduces
+binder 36411:36411 <> M:339
+binder 36413:36413 <> N:340
+binder 36415:36415 <> P:341
+R36441:36444 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36418:36434 Triage.terms <> branch_first_eval ind
+R36436:36436 Triage.terms <> M:339 var
+R36438:36438 Triage.terms <> N:340 var
+R36440:36440 Triage.terms <> P:341 var
+R36445:36449 Triage.terms <> t_red def
+R36453:36455 Triage.terms <> ::tree_scope:x_'@'_x not
+R36452:36452 Triage.terms <> M:339 var
+R36456:36456 Triage.terms <> N:340 var
+R36459:36459 Triage.terms <> P:341 var
+prf 36558:36577 <> branch_first_program
+binder 36590:36590 <> M:342
+binder 36592:36592 <> N:343
+binder 36594:36594 <> P:344
+R36620:36623 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36597:36613 Triage.terms <> branch_first_eval ind
+R36615:36615 Triage.terms <> M:342 var
+R36617:36617 Triage.terms <> N:343 var
+R36619:36619 Triage.terms <> P:344 var
+R36633:36636 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36624:36630 Triage.terms <> program ind
+R36632:36632 Triage.terms <> M:342 var
+R36646:36649 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36637:36643 Triage.terms <> program ind
+R36645:36645 Triage.terms <> N:343 var
+R36650:36656 Triage.terms <> program ind
+R36658:36658 Triage.terms <> P:344 var
+prf 36793:36821 <> branch_first_eval_program_red
+binder 36831:36831 <> M:345
+binder 36833:36833 <> N:346
+R36849:36852 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36836:36842 Triage.terms <> program ind
+R36846:36846 Triage.terms <> ::tree_scope:x_'@'_x not
+R36845:36845 Triage.terms <> M:345 var
+R36847:36847 Triage.terms <> N:346 var
+R36853:36869 Triage.terms <> branch_first_eval ind
+R36871:36871 Triage.terms <> M:345 var
+R36873:36873 Triage.terms <> N:346 var
+R36877:36877 Triage.terms <> ::tree_scope:x_'@'_x not
+R36876:36876 Triage.terms <> M:345 var
+R36878:36878 Triage.terms <> N:346 var
+def 36943:36946 <> bffs
+R36993:37092 Triage.terms <> ::tree_scope:'\' not
+R37000:37091 Triage.terms <> ::tree_scope:'\' not
+R37069:37072 Triage.terms <> ::tree_scope:x_'@'_x not
+R37090:37090 Triage.terms <> ::tree_scope:x_'@'_x not
+R37007:37008 Triage.terms <> S1 def
+R37025:37028 Triage.terms <> ::tree_scope:x_'@'_x not
+R37067:37067 Triage.terms <> ::tree_scope:x_'@'_x not
+R37011:37012 Triage.terms <> S1 def
+R37016:37018 Triage.terms <> ::tree_scope:x_'@'_x not
+R37015:37015 Triage.terms <> K def
+R37019:37023 Triage.terms <> eager def
+R37045:37048 Triage.terms <> ::tree_scope:x_'@'_x not
+R37066:37066 Triage.terms <> ::tree_scope:x_'@'_x not
+R37029:37030 Triage.terms <> S1 def
+R37034:37036 Triage.terms <> ::tree_scope:x_'@'_x not
+R37033:37033 Triage.terms <> K def
+R37037:37039 Triage.terms <> Ref constr
+R37056:37058 Triage.terms <> ::tree_scope:x_'@'_x not
+R37049:37051 Triage.terms <> Ref constr
+R37059:37061 Triage.terms <> Ref constr
+R37080:37082 Triage.terms <> ::tree_scope:x_'@'_x not
+R37073:37075 Triage.terms <> Ref constr
+R37083:37085 Triage.terms <> Ref constr
+def 37106:37114 <> bfff_fork
+R37119:37163 Triage.terms <> ::tree_scope:'\' not
+R37141:37144 Triage.terms <> ::tree_scope:x_'@'_x not
+R37162:37162 Triage.terms <> ::tree_scope:x_'@'_x not
+R37125:37126 Triage.terms <> S1 def
+R37130:37132 Triage.terms <> ::tree_scope:x_'@'_x not
+R37129:37129 Triage.terms <> K def
+R37133:37135 Triage.terms <> Ref constr
+R37152:37154 Triage.terms <> ::tree_scope:x_'@'_x not
+R37145:37147 Triage.terms <> Ref constr
+R37155:37157 Triage.terms <> Ref constr
+def 37177:37180 <> bfff
+R37254:37408 Triage.terms <> ::tree_scope:'\' not
+R37263:37407 Triage.terms <> ::tree_scope:'\' not
+R37274:37406 Triage.terms <> ::tree_scope:'\' not
+R37287:37292 Triage.terms <> triage def
+R37310:37312 Triage.terms <> Ref constr
+R37342:37344 Triage.terms <> ::tree_scope:x_'@'_x not
+R37335:37337 Triage.terms <> Ref constr
+R37345:37347 Triage.terms <> Ref constr
+R37379:37381 Triage.terms <> ::tree_scope:x_'@'_x not
+R37370:37378 Triage.terms <> bfff_fork def
+R37382:37384 Triage.terms <> Ref constr
+def 37423:37425 <> bff
+R37431:37436 Triage.terms <> triage def
+R37438:37438 Triage.terms <> K def
+R37440:37443 Triage.terms <> bffs def
+R37445:37448 Triage.terms <> bfff def
+def 37462:37463 <> bf
+R37468:37468 Triage.terms <> Z def
+R37471:37498 Triage.terms <> ::tree_scope:'\' not
+R37478:37483 Triage.terms <> triage def
+R37485:37488 Triage.terms <> Node constr
+R37490:37493 Triage.terms <> Node constr
+R37495:37497 Triage.terms <> bff def
+prf 37512:37522 <> bf_leaf_red
+binder 37532:37532 <> p:347
+R37536:37540 Triage.terms <> t_red def
+R37551:37553 Triage.terms <> ::tree_scope:x_'@'_x not
+R37545:37547 Triage.terms <> ::tree_scope:x_'@'_x not
+R37543:37544 Triage.terms <> bf def
+R37548:37550 Triage.terms <> ::tree_scope:'△' not
+R37554:37554 Triage.terms <> p:347 var
+R37561:37562 Triage.terms <> ::tree_scope:x_'@'_x not
+R37558:37560 Triage.terms <> ::tree_scope:'△' not
+R37563:37563 Triage.terms <> p:347 var
+R37601:37605 Triage.terms <> Z_red thm
+R37624:37629 Triage.terms <> triage def
+R37601:37605 Triage.terms <> Z_red thm
+prf 37687:37697 <> bf_stem_red
+binder 37707:37707 <> x:348
+binder 37709:37709 <> y:349
+R37712:37716 Triage.terms <> t_red def
+R37733:37735 Triage.terms <> ::tree_scope:x_'@'_x not
+R37721:37724 Triage.terms <> ::tree_scope:x_'@'_x not
+R37732:37732 Triage.terms <> ::tree_scope:x_'@'_x not
+R37719:37720 Triage.terms <> bf def
+R37728:37730 Triage.terms <> ::tree_scope:x_'@'_x not
+R37725:37727 Triage.terms <> ::tree_scope:'△' not
+R37731:37731 Triage.terms <> x:348 var
+R37736:37736 Triage.terms <> y:349 var
+R37747:37749 Triage.terms <> ::tree_scope:x_'@'_x not
+R37743:37745 Triage.terms <> ::tree_scope:x_'@'_x not
+R37740:37742 Triage.terms <> ::tree_scope:'△' not
+R37746:37746 Triage.terms <> x:348 var
+R37750:37750 Triage.terms <> y:349 var
+R37788:37792 Triage.terms <> Z_red thm
+R37811:37816 Triage.terms <> triage def
+R37788:37792 Triage.terms <> Z_red thm
+prf 37882:37892 <> bf_fork_red
+binder 37904:37904 <> x:350
+binder 37906:37906 <> y:351
+R37909:37913 Triage.terms <> t_red def
+R37918:37921 Triage.terms <> ::tree_scope:x_'@'_x not
+R37933:37933 Triage.terms <> ::tree_scope:x_'@'_x not
+R37916:37917 Triage.terms <> bf def
+R37929:37931 Triage.terms <> ::tree_scope:x_'@'_x not
+R37925:37927 Triage.terms <> ::tree_scope:x_'@'_x not
+R37922:37924 Triage.terms <> ::tree_scope:'△' not
+R37928:37928 Triage.terms <> x:350 var
+R37932:37932 Triage.terms <> y:351 var
+R37964:37966 Triage.terms <> ::tree_scope:x_'@'_x not
+R37937:37937 Triage.terms <> ::tree_scope:x_'@'_x not
+R37959:37962 Triage.terms <> ::tree_scope:x_'@'_x not
+R37938:37947 Triage.terms <> substitute def
+R37949:37951 Triage.terms <> bff def
+R37957:37958 Triage.terms <> bf def
+R37963:37963 Triage.terms <> x:350 var
+R37967:37967 Triage.terms <> y:351 var
+R38005:38010 Triage.terms <> triage def
+R37991:37995 Triage.terms <> Z_red thm
+R38038:38046 Triage.terms <> star_beta thm
+prf 38065:38080 <> bf_fork_leaf_red
+binder 38091:38091 <> y:352
+binder 38093:38093 <> z:353
+R38096:38100 Triage.terms <> t_red def
+R38118:38120 Triage.terms <> ::tree_scope:x_'@'_x not
+R38104:38107 Triage.terms <> ::tree_scope:x_'@'_x not
+R38117:38117 Triage.terms <> ::tree_scope:x_'@'_x not
+R38102:38103 Triage.terms <> bf def
+R38115:38115 Triage.terms <> ::tree_scope:x_'@'_x not
+R38111:38111 Triage.terms <> ::tree_scope:x_'@'_x not
+R38108:38110 Triage.terms <> ::tree_scope:'△' not
+R38112:38114 Triage.terms <> ::tree_scope:'△' not
+R38116:38116 Triage.terms <> y:352 var
+R38121:38121 Triage.terms <> z:353 var
+R38124:38124 Triage.terms <> y:352 var
+R38157:38167 Triage.terms <> bf_fork_red thm
+R38157:38167 Triage.terms <> bf_fork_red thm
+prf 38206:38221 <> bf_fork_stem_red
+binder 38233:38233 <> x:354
+binder 38235:38235 <> y:355
+binder 38237:38237 <> z:356
+R38240:38244 Triage.terms <> t_red def
+R38268:38270 Triage.terms <> ::tree_scope:x_'@'_x not
+R38249:38252 Triage.terms <> ::tree_scope:x_'@'_x not
+R38267:38267 Triage.terms <> ::tree_scope:x_'@'_x not
+R38247:38248 Triage.terms <> bf def
+R38264:38265 Triage.terms <> ::tree_scope:x_'@'_x not
+R38256:38257 Triage.terms <> ::tree_scope:x_'@'_x not
+R38263:38263 Triage.terms <> ::tree_scope:x_'@'_x not
+R38253:38255 Triage.terms <> ::tree_scope:'△' not
 R38261:38261 Triage.terms <> ::tree_scope:x_'@'_x not
-R38225:38228 Triage.terms <> ::tree_scope:x_'@'_x not
-R38246:38246 Triage.terms <> ::tree_scope:x_'@'_x not
-R38220:38224 Triage.terms <> eager def
-R38231:38234 Triage.terms <> ::tree_scope:x_'@'_x not
-R38245:38245 Triage.terms <> ::tree_scope:x_'@'_x not
-R38229:38230 Triage.terms <> bf def
-R38241:38243 Triage.terms <> ::tree_scope:x_'@'_x not
-R38237:38239 Triage.terms <> ::tree_scope:x_'@'_x not
-R38235:38236 Triage.terms <> bf def
-R38240:38240 Triage.terms <> x:354 var
-R38244:38244 Triage.terms <> z:356 var
-R38257:38259 Triage.terms <> ::tree_scope:x_'@'_x not
-R38253:38255 Triage.terms <> ::tree_scope:x_'@'_x not
-R38251:38252 Triage.terms <> bf def
-R38256:38256 Triage.terms <> y:355 var
-R38260:38260 Triage.terms <> z:356 var
-R38308:38310 Triage.terms <> bff def
-R38313:38316 Triage.terms <> bffs def
-R38319:38324 Triage.terms <> triage def
-R38327:38327 Triage.terms <> K def
-R38393:38394 Triage.terms <> S1 def
-R38397:38397 Triage.terms <> K def
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38468:38482 Coq.Strings.String <> eqb_refl thm
-R38288:38298 Triage.terms <> bf_fork_red thm
-R38337:38346 Triage.terms <> substitute def
-R38407:38416 Triage.terms <> substitute def
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38431:38453 Triage.terms <> substitute_occurs_false thm
-R38468:38482 Coq.Strings.String <> eqb_refl thm
-R38468:38482 Coq.Strings.String <> eqb_refl thm
-R38468:38482 Coq.Strings.String <> eqb_refl thm
-prf 38524:38539 <> bf_fork_fork_red
-binder 38549:38549 <> w:357
-binder 38551:38551 <> x:358
-binder 38553:38553 <> y:359
-R38560:38564 Triage.terms <> t_red def
-R38569:38572 Triage.terms <> ::tree_scope:x_'@'_x not
-R38590:38590 Triage.terms <> ::tree_scope:x_'@'_x not
-R38567:38568 Triage.terms <> bf def
-R38587:38588 Triage.terms <> ::tree_scope:x_'@'_x not
-R38576:38577 Triage.terms <> ::tree_scope:x_'@'_x not
-R38586:38586 Triage.terms <> ::tree_scope:x_'@'_x not
-R38573:38575 Triage.terms <> ::tree_scope:'△' not
-R38583:38584 Triage.terms <> ::tree_scope:x_'@'_x not
-R38581:38581 Triage.terms <> ::tree_scope:x_'@'_x not
-R38578:38580 Triage.terms <> ::tree_scope:'△' not
-R38582:38582 Triage.terms <> w:357 var
-R38585:38585 Triage.terms <> x:358 var
-R38589:38589 Triage.terms <> y:359 var
-R38594:38599 Triage.terms <> triage def
-R38601:38601 Triage.terms <> w:357 var
-R38606:38608 Triage.terms <> ::tree_scope:x_'@'_x not
-R38604:38605 Triage.terms <> bf def
-R38609:38609 Triage.terms <> x:358 var
+R38258:38260 Triage.terms <> ::tree_scope:'△' not
+R38262:38262 Triage.terms <> x:354 var
+R38266:38266 Triage.terms <> y:355 var
+R38271:38271 Triage.terms <> z:356 var
+R38302:38305 Triage.terms <> ::tree_scope:x_'@'_x not
+R38316:38316 Triage.terms <> ::tree_scope:x_'@'_x not
+R38280:38283 Triage.terms <> ::tree_scope:x_'@'_x not
+R38301:38301 Triage.terms <> ::tree_scope:x_'@'_x not
+R38275:38279 Triage.terms <> eager def
+R38286:38289 Triage.terms <> ::tree_scope:x_'@'_x not
+R38300:38300 Triage.terms <> ::tree_scope:x_'@'_x not
+R38284:38285 Triage.terms <> bf def
+R38296:38298 Triage.terms <> ::tree_scope:x_'@'_x not
+R38292:38294 Triage.terms <> ::tree_scope:x_'@'_x not
+R38290:38291 Triage.terms <> bf def
+R38295:38295 Triage.terms <> x:354 var
+R38299:38299 Triage.terms <> z:356 var
+R38312:38314 Triage.terms <> ::tree_scope:x_'@'_x not
+R38308:38310 Triage.terms <> ::tree_scope:x_'@'_x not
+R38306:38307 Triage.terms <> bf def
+R38311:38311 Triage.terms <> y:355 var
+R38315:38315 Triage.terms <> z:356 var
+R38363:38365 Triage.terms <> bff def
+R38368:38371 Triage.terms <> bffs def
+R38374:38379 Triage.terms <> triage def
+R38382:38382 Triage.terms <> K def
+R38448:38449 Triage.terms <> S1 def
+R38452:38452 Triage.terms <> K def
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38523:38537 Coq.Strings.String <> eqb_refl thm
+R38343:38353 Triage.terms <> bf_fork_red thm
+R38392:38401 Triage.terms <> substitute def
+R38462:38471 Triage.terms <> substitute def
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38486:38508 Triage.terms <> substitute_occurs_false thm
+R38523:38537 Coq.Strings.String <> eqb_refl thm
+R38523:38537 Coq.Strings.String <> eqb_refl thm
+R38523:38537 Coq.Strings.String <> eqb_refl thm
+prf 38579:38594 <> bf_fork_fork_red
+binder 38604:38604 <> w:357
+binder 38606:38606 <> x:358
+binder 38608:38608 <> y:359
+R38615:38619 Triage.terms <> t_red def
 R38624:38627 Triage.terms <> ::tree_scope:x_'@'_x not
-R38634:38634 Triage.terms <> ::tree_scope:x_'@'_x not
-R38613:38614 Triage.terms <> S1 def
-R38618:38620 Triage.terms <> ::tree_scope:x_'@'_x not
-R38617:38617 Triage.terms <> K def
-R38621:38622 Triage.terms <> bf def
-R38630:38632 Triage.terms <> ::tree_scope:x_'@'_x not
-R38628:38629 Triage.terms <> bf def
-R38633:38633 Triage.terms <> y:359 var
-R38681:38683 Triage.terms <> bff def
-R38686:38689 Triage.terms <> bfff def
-R38692:38700 Triage.terms <> bfff_fork def
-R38703:38708 Triage.terms <> triage def
-R38711:38711 Triage.terms <> K def
-R38790:38791 Triage.terms <> S1 def
-R38794:38794 Triage.terms <> K def
-R38832:38854 Triage.terms <> substitute_occurs_false thm
-R38869:38883 Coq.Strings.String <> eqb_refl thm
-R38661:38671 Triage.terms <> bf_fork_red thm
-R38721:38730 Triage.terms <> substitute def
-R38804:38813 Triage.terms <> substitute def
-R38832:38854 Triage.terms <> substitute_occurs_false thm
-R38832:38854 Triage.terms <> substitute_occurs_false thm
-R38832:38854 Triage.terms <> substitute_occurs_false thm
-R38832:38854 Triage.terms <> substitute_occurs_false thm
-R38869:38883 Coq.Strings.String <> eqb_refl thm
-R38869:38883 Coq.Strings.String <> eqb_refl thm
-R38869:38883 Coq.Strings.String <> eqb_refl thm
-prf 38922:38942 <> bf_fork_fork_leaf_red
-binder 38952:38952 <> w:360
-binder 38954:38954 <> x:361
-binder 38956:38956 <> y:362
-R38960:38964 Triage.terms <> t_red def
-R38991:38993 Triage.terms <> ::tree_scope:x_'@'_x not
-R38969:38972 Triage.terms <> ::tree_scope:x_'@'_x not
-R38990:38990 Triage.terms <> ::tree_scope:x_'@'_x not
-R38967:38968 Triage.terms <> bf def
-R38987:38988 Triage.terms <> ::tree_scope:x_'@'_x not
-R38976:38977 Triage.terms <> ::tree_scope:x_'@'_x not
-R38986:38986 Triage.terms <> ::tree_scope:x_'@'_x not
-R38973:38975 Triage.terms <> ::tree_scope:'△' not
-R38983:38984 Triage.terms <> ::tree_scope:x_'@'_x not
-R38981:38981 Triage.terms <> ::tree_scope:x_'@'_x not
-R38978:38980 Triage.terms <> ::tree_scope:'△' not
-R38982:38982 Triage.terms <> w:360 var
-R38985:38985 Triage.terms <> x:361 var
-R38989:38989 Triage.terms <> y:362 var
-R38994:38997 Triage.terms <> Node constr
-R39000:39000 Triage.terms <> w:360 var
-R39051:39054 Triage.terms <> bfff def
-R39057:39062 Triage.terms <> triage def
-R39026:39041 Triage.terms <> bf_fork_fork_red thm
-prf 39146:39166 <> bf_fork_fork_stem_red
-binder 39176:39176 <> w:363
-binder 39178:39178 <> x:364
-binder 39180:39180 <> y:365
-binder 39182:39182 <> z:366
-R39186:39190 Triage.terms <> t_red def
-R39217:39220 Triage.terms <> ::tree_scope:x_'@'_x not
-R39229:39229 Triage.terms <> ::tree_scope:x_'@'_x not
-R39195:39198 Triage.terms <> ::tree_scope:x_'@'_x not
-R39216:39216 Triage.terms <> ::tree_scope:x_'@'_x not
-R39193:39194 Triage.terms <> bf def
-R39213:39214 Triage.terms <> ::tree_scope:x_'@'_x not
-R39202:39203 Triage.terms <> ::tree_scope:x_'@'_x not
-R39212:39212 Triage.terms <> ::tree_scope:x_'@'_x not
-R39199:39201 Triage.terms <> ::tree_scope:'△' not
-R39209:39210 Triage.terms <> ::tree_scope:x_'@'_x not
-R39207:39207 Triage.terms <> ::tree_scope:x_'@'_x not
-R39204:39206 Triage.terms <> ::tree_scope:'△' not
-R39208:39208 Triage.terms <> w:363 var
-R39211:39211 Triage.terms <> x:364 var
-R39215:39215 Triage.terms <> y:365 var
-R39225:39227 Triage.terms <> ::tree_scope:x_'@'_x not
-R39221:39224 Triage.terms <> Node constr
-R39228:39228 Triage.terms <> z:366 var
-R39239:39241 Triage.terms <> ::tree_scope:x_'@'_x not
-R39235:39237 Triage.terms <> ::tree_scope:x_'@'_x not
-R39233:39234 Triage.terms <> bf def
-R39238:39238 Triage.terms <> x:364 var
-R39242:39242 Triage.terms <> z:366 var
-R39294:39297 Triage.terms <> bfff def
-R39300:39305 Triage.terms <> triage def
-R39269:39284 Triage.terms <> bf_fork_fork_red thm
-prf 39389:39409 <> bf_fork_fork_fork_red
-binder 39421:39421 <> w:367
-binder 39423:39423 <> x:368
-binder 39425:39425 <> y:369
-binder 39427:39427 <> z:370
-binder 39429:39429 <> u:371
-R39433:39437 Triage.terms <> t_red def
-R39464:39467 Triage.terms <> ::tree_scope:x_'@'_x not
-R39480:39480 Triage.terms <> ::tree_scope:x_'@'_x not
-R39442:39445 Triage.terms <> ::tree_scope:x_'@'_x not
-R39463:39463 Triage.terms <> ::tree_scope:x_'@'_x not
-R39440:39441 Triage.terms <> bf def
-R39460:39461 Triage.terms <> ::tree_scope:x_'@'_x not
-R39449:39450 Triage.terms <> ::tree_scope:x_'@'_x not
-R39459:39459 Triage.terms <> ::tree_scope:x_'@'_x not
-R39446:39448 Triage.terms <> ::tree_scope:'△' not
-R39456:39457 Triage.terms <> ::tree_scope:x_'@'_x not
-R39454:39454 Triage.terms <> ::tree_scope:x_'@'_x not
-R39451:39453 Triage.terms <> ::tree_scope:'△' not
-R39455:39455 Triage.terms <> w:367 var
-R39458:39458 Triage.terms <> x:368 var
-R39462:39462 Triage.terms <> y:369 var
-R39476:39478 Triage.terms <> ::tree_scope:x_'@'_x not
-R39472:39474 Triage.terms <> ::tree_scope:x_'@'_x not
-R39468:39471 Triage.terms <> Node constr
-R39475:39475 Triage.terms <> z:370 var
-R39479:39479 Triage.terms <> u:371 var
-R39501:39503 Triage.terms <> ::tree_scope:x_'@'_x not
-R39486:39489 Triage.terms <> ::tree_scope:x_'@'_x not
-R39500:39500 Triage.terms <> ::tree_scope:x_'@'_x not
-R39484:39485 Triage.terms <> bf def
-R39496:39498 Triage.terms <> ::tree_scope:x_'@'_x not
-R39492:39494 Triage.terms <> ::tree_scope:x_'@'_x not
-R39490:39491 Triage.terms <> bf def
-R39495:39495 Triage.terms <> y:369 var
-R39499:39499 Triage.terms <> z:370 var
-R39504:39504 Triage.terms <> u:371 var
-R39554:39557 Triage.terms <> bfff def
-R39560:39565 Triage.terms <> triage def
-R39529:39544 Triage.terms <> bf_fork_fork_red thm
-prf 39685:39707 <> branch_first_eval_to_bf
-binder 39719:39719 <> M:372
-binder 39721:39721 <> N:373
-binder 39723:39723 <> P:374
-R39735:39738 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39726:39732 Triage.terms <> program ind
-R39734:39734 Triage.terms <> M:372 var
-R39748:39751 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39739:39745 Triage.terms <> program ind
-R39747:39747 Triage.terms <> N:373 var
-R39775:39778 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R39752:39768 Triage.terms <> branch_first_eval ind
-R39770:39770 Triage.terms <> M:372 var
-R39772:39772 Triage.terms <> N:373 var
-R39774:39774 Triage.terms <> P:374 var
-R39779:39783 Triage.terms <> t_red def
-R39789:39789 Triage.terms <> ::tree_scope:x_'@'_x not
-R39787:39787 Triage.terms <> ::tree_scope:x_'@'_x not
-R39785:39786 Triage.terms <> bf def
-R39788:39788 Triage.terms <> M:372 var
-R39790:39790 Triage.terms <> N:373 var
-R39793:39793 Triage.terms <> P:374 var
-R39879:39889 Triage.terms <> bf_leaf_red thm
-R39879:39889 Triage.terms <> bf_leaf_red thm
-R39902:39912 Triage.terms <> bf_stem_red thm
-R39902:39912 Triage.terms <> bf_stem_red thm
-R39923:39938 Triage.terms <> bf_fork_leaf_red thm
-R39923:39938 Triage.terms <> bf_fork_leaf_red thm
-R39987:40002 Triage.terms <> bf_fork_stem_red thm
-R40052:40070 Triage.terms <> eager_of_factorable thm
-R40080:40102 Triage.terms <> programs_are_factorable thm
-R40080:40102 Triage.terms <> programs_are_factorable thm
-R40114:40133 Triage.terms <> branch_first_program thm
-R40114:40133 Triage.terms <> branch_first_program thm
-R40179:40198 Triage.terms <> branch_first_program thm
-R40179:40198 Triage.terms <> branch_first_program thm
-R40179:40198 Triage.terms <> branch_first_program thm
-R40228:40248 Triage.terms <> bf_fork_fork_leaf_red thm
-R40228:40248 Triage.terms <> bf_fork_fork_leaf_red thm
-R40308:40328 Triage.terms <> bf_fork_fork_stem_red thm
-R40408:40428 Triage.terms <> bf_fork_fork_fork_red thm
-R40478:40497 Triage.terms <> branch_first_program thm
-R40478:40497 Triage.terms <> branch_first_program thm
-def 40581:40589 <> term_size
-binder 40591:40591 <> t:375
-R40604:40604 Triage.terms <> t:375 var
-R40615:40617 Triage.terms <> App constr
-R40640:40642 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R40628:40636 Triage.terms <> term_size:376 def
-R40643:40651 Triage.terms <> term_size:376 def
-prf 40684:40698 <> term_size_equal
-R40716:40718 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R40701:40709 Triage.terms <> term_size def
-R40711:40715 Triage.terms <> equal def
-prf 40757:40768 <> term_size_bf
-R40783:40785 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R40771:40779 Triage.terms <> term_size def
-R40781:40782 Triage.terms <> bf def
-def 40826:40843 <> program_to_ternary
-binder 40845:40845 <> p:378
-R40858:40858 Triage.terms <> p:378 var
-R40869:40871 Triage.terms <> Ref constr
-R40889:40892 Triage.terms <> Node constr
-R40909:40911 Triage.terms <> ::tree_scope:x_'@'_x not
-R40905:40908 Triage.terms <> Node constr
-R40921:40925 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R40947:40947 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R40926:40943 Triage.terms <> program_to_ternary:379 def
-R40962:40964 Triage.terms <> ::tree_scope:x_'@'_x not
-R40957:40959 Triage.terms <> ::tree_scope:x_'@'_x not
-R40953:40956 Triage.terms <> Node constr
-R40974:40978 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R40979:40979 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R41001:41007 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R41029:41029 Coq.Strings.String <> ::string_scope:x_'++'_x not
-R40980:40997 Triage.terms <> program_to_ternary:379 def
-R41008:41025 Triage.terms <> program_to_ternary:379 def
-R41036:41038 Triage.terms <> ::tree_scope:x_'@'_x not
-prf 41065:41073 <> ptt_equal
-R41100:41119 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R41076:41093 Triage.terms <> program_to_ternary def
-R41095:41099 Triage.terms <> equal def
-prf 41935:41940 <> ptt_bf
-R41964:41972 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R41943:41960 Triage.terms <> program_to_ternary def
-R41962:41963 Triage.terms <> bf def
+R38645:38645 Triage.terms <> ::tree_scope:x_'@'_x not
+R38622:38623 Triage.terms <> bf def
+R38642:38643 Triage.terms <> ::tree_scope:x_'@'_x not
+R38631:38632 Triage.terms <> ::tree_scope:x_'@'_x not
+R38641:38641 Triage.terms <> ::tree_scope:x_'@'_x not
+R38628:38630 Triage.terms <> ::tree_scope:'△' not
+R38638:38639 Triage.terms <> ::tree_scope:x_'@'_x not
+R38636:38636 Triage.terms <> ::tree_scope:x_'@'_x not
+R38633:38635 Triage.terms <> ::tree_scope:'△' not
+R38637:38637 Triage.terms <> w:357 var
+R38640:38640 Triage.terms <> x:358 var
+R38644:38644 Triage.terms <> y:359 var
+R38649:38654 Triage.terms <> triage def
+R38656:38656 Triage.terms <> w:357 var
+R38661:38663 Triage.terms <> ::tree_scope:x_'@'_x not
+R38659:38660 Triage.terms <> bf def
+R38664:38664 Triage.terms <> x:358 var
+R38679:38682 Triage.terms <> ::tree_scope:x_'@'_x not
+R38689:38689 Triage.terms <> ::tree_scope:x_'@'_x not
+R38668:38669 Triage.terms <> S1 def
+R38673:38675 Triage.terms <> ::tree_scope:x_'@'_x not
+R38672:38672 Triage.terms <> K def
+R38676:38677 Triage.terms <> bf def
+R38685:38687 Triage.terms <> ::tree_scope:x_'@'_x not
+R38683:38684 Triage.terms <> bf def
+R38688:38688 Triage.terms <> y:359 var
+R38736:38738 Triage.terms <> bff def
+R38741:38744 Triage.terms <> bfff def
+R38747:38755 Triage.terms <> bfff_fork def
+R38758:38763 Triage.terms <> triage def
+R38766:38766 Triage.terms <> K def
+R38845:38846 Triage.terms <> S1 def
+R38849:38849 Triage.terms <> K def
+R38887:38909 Triage.terms <> substitute_occurs_false thm
+R38924:38938 Coq.Strings.String <> eqb_refl thm
+R38716:38726 Triage.terms <> bf_fork_red thm
+R38776:38785 Triage.terms <> substitute def
+R38859:38868 Triage.terms <> substitute def
+R38887:38909 Triage.terms <> substitute_occurs_false thm
+R38887:38909 Triage.terms <> substitute_occurs_false thm
+R38887:38909 Triage.terms <> substitute_occurs_false thm
+R38887:38909 Triage.terms <> substitute_occurs_false thm
+R38924:38938 Coq.Strings.String <> eqb_refl thm
+R38924:38938 Coq.Strings.String <> eqb_refl thm
+R38924:38938 Coq.Strings.String <> eqb_refl thm
+prf 38977:38997 <> bf_fork_fork_leaf_red
+binder 39007:39007 <> w:360
+binder 39009:39009 <> x:361
+binder 39011:39011 <> y:362
+R39015:39019 Triage.terms <> t_red def
+R39046:39048 Triage.terms <> ::tree_scope:x_'@'_x not
+R39024:39027 Triage.terms <> ::tree_scope:x_'@'_x not
+R39045:39045 Triage.terms <> ::tree_scope:x_'@'_x not
+R39022:39023 Triage.terms <> bf def
+R39042:39043 Triage.terms <> ::tree_scope:x_'@'_x not
+R39031:39032 Triage.terms <> ::tree_scope:x_'@'_x not
+R39041:39041 Triage.terms <> ::tree_scope:x_'@'_x not
+R39028:39030 Triage.terms <> ::tree_scope:'△' not
+R39038:39039 Triage.terms <> ::tree_scope:x_'@'_x not
+R39036:39036 Triage.terms <> ::tree_scope:x_'@'_x not
+R39033:39035 Triage.terms <> ::tree_scope:'△' not
+R39037:39037 Triage.terms <> w:360 var
+R39040:39040 Triage.terms <> x:361 var
+R39044:39044 Triage.terms <> y:362 var
+R39049:39052 Triage.terms <> Node constr
+R39055:39055 Triage.terms <> w:360 var
+R39106:39109 Triage.terms <> bfff def
+R39112:39117 Triage.terms <> triage def
+R39081:39096 Triage.terms <> bf_fork_fork_red thm
+prf 39201:39221 <> bf_fork_fork_stem_red
+binder 39231:39231 <> w:363
+binder 39233:39233 <> x:364
+binder 39235:39235 <> y:365
+binder 39237:39237 <> z:366
+R39241:39245 Triage.terms <> t_red def
+R39272:39275 Triage.terms <> ::tree_scope:x_'@'_x not
+R39284:39284 Triage.terms <> ::tree_scope:x_'@'_x not
+R39250:39253 Triage.terms <> ::tree_scope:x_'@'_x not
+R39271:39271 Triage.terms <> ::tree_scope:x_'@'_x not
+R39248:39249 Triage.terms <> bf def
+R39268:39269 Triage.terms <> ::tree_scope:x_'@'_x not
+R39257:39258 Triage.terms <> ::tree_scope:x_'@'_x not
+R39267:39267 Triage.terms <> ::tree_scope:x_'@'_x not
+R39254:39256 Triage.terms <> ::tree_scope:'△' not
+R39264:39265 Triage.terms <> ::tree_scope:x_'@'_x not
+R39262:39262 Triage.terms <> ::tree_scope:x_'@'_x not
+R39259:39261 Triage.terms <> ::tree_scope:'△' not
+R39263:39263 Triage.terms <> w:363 var
+R39266:39266 Triage.terms <> x:364 var
+R39270:39270 Triage.terms <> y:365 var
+R39280:39282 Triage.terms <> ::tree_scope:x_'@'_x not
+R39276:39279 Triage.terms <> Node constr
+R39283:39283 Triage.terms <> z:366 var
+R39294:39296 Triage.terms <> ::tree_scope:x_'@'_x not
+R39290:39292 Triage.terms <> ::tree_scope:x_'@'_x not
+R39288:39289 Triage.terms <> bf def
+R39293:39293 Triage.terms <> x:364 var
+R39297:39297 Triage.terms <> z:366 var
+R39349:39352 Triage.terms <> bfff def
+R39355:39360 Triage.terms <> triage def
+R39324:39339 Triage.terms <> bf_fork_fork_red thm
+prf 39444:39464 <> bf_fork_fork_fork_red
+binder 39476:39476 <> w:367
+binder 39478:39478 <> x:368
+binder 39480:39480 <> y:369
+binder 39482:39482 <> z:370
+binder 39484:39484 <> u:371
+R39488:39492 Triage.terms <> t_red def
+R39519:39522 Triage.terms <> ::tree_scope:x_'@'_x not
+R39535:39535 Triage.terms <> ::tree_scope:x_'@'_x not
+R39497:39500 Triage.terms <> ::tree_scope:x_'@'_x not
+R39518:39518 Triage.terms <> ::tree_scope:x_'@'_x not
+R39495:39496 Triage.terms <> bf def
+R39515:39516 Triage.terms <> ::tree_scope:x_'@'_x not
+R39504:39505 Triage.terms <> ::tree_scope:x_'@'_x not
+R39514:39514 Triage.terms <> ::tree_scope:x_'@'_x not
+R39501:39503 Triage.terms <> ::tree_scope:'△' not
+R39511:39512 Triage.terms <> ::tree_scope:x_'@'_x not
+R39509:39509 Triage.terms <> ::tree_scope:x_'@'_x not
+R39506:39508 Triage.terms <> ::tree_scope:'△' not
+R39510:39510 Triage.terms <> w:367 var
+R39513:39513 Triage.terms <> x:368 var
+R39517:39517 Triage.terms <> y:369 var
+R39531:39533 Triage.terms <> ::tree_scope:x_'@'_x not
+R39527:39529 Triage.terms <> ::tree_scope:x_'@'_x not
+R39523:39526 Triage.terms <> Node constr
+R39530:39530 Triage.terms <> z:370 var
+R39534:39534 Triage.terms <> u:371 var
+R39556:39558 Triage.terms <> ::tree_scope:x_'@'_x not
+R39541:39544 Triage.terms <> ::tree_scope:x_'@'_x not
+R39555:39555 Triage.terms <> ::tree_scope:x_'@'_x not
+R39539:39540 Triage.terms <> bf def
+R39551:39553 Triage.terms <> ::tree_scope:x_'@'_x not
+R39547:39549 Triage.terms <> ::tree_scope:x_'@'_x not
+R39545:39546 Triage.terms <> bf def
+R39550:39550 Triage.terms <> y:369 var
+R39554:39554 Triage.terms <> z:370 var
+R39559:39559 Triage.terms <> u:371 var
+R39609:39612 Triage.terms <> bfff def
+R39615:39620 Triage.terms <> triage def
+R39584:39599 Triage.terms <> bf_fork_fork_red thm
+prf 39740:39762 <> branch_first_eval_to_bf
+binder 39774:39774 <> M:372
+binder 39776:39776 <> N:373
+binder 39778:39778 <> P:374
+R39790:39793 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39781:39787 Triage.terms <> program ind
+R39789:39789 Triage.terms <> M:372 var
+R39803:39806 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39794:39800 Triage.terms <> program ind
+R39802:39802 Triage.terms <> N:373 var
+R39830:39833 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39807:39823 Triage.terms <> branch_first_eval ind
+R39825:39825 Triage.terms <> M:372 var
+R39827:39827 Triage.terms <> N:373 var
+R39829:39829 Triage.terms <> P:374 var
+R39834:39838 Triage.terms <> t_red def
+R39844:39844 Triage.terms <> ::tree_scope:x_'@'_x not
+R39842:39842 Triage.terms <> ::tree_scope:x_'@'_x not
+R39840:39841 Triage.terms <> bf def
+R39843:39843 Triage.terms <> M:372 var
+R39845:39845 Triage.terms <> N:373 var
+R39848:39848 Triage.terms <> P:374 var
+R39925:39935 Triage.terms <> bf_leaf_red thm
+R39925:39935 Triage.terms <> bf_leaf_red thm
+R39950:39960 Triage.terms <> bf_stem_red thm
+R39950:39960 Triage.terms <> bf_stem_red thm
+R39973:39988 Triage.terms <> bf_fork_leaf_red thm
+R39973:39988 Triage.terms <> bf_fork_leaf_red thm
+R40136:40158 Triage.terms <> programs_are_factorable thm
+R40198:40217 Triage.terms <> branch_first_program thm
+R40025:40040 Triage.terms <> bf_fork_stem_red thm
+R40098:40116 Triage.terms <> eager_of_factorable thm
+R40136:40158 Triage.terms <> programs_are_factorable thm
+R40198:40217 Triage.terms <> branch_first_program thm
+R40198:40217 Triage.terms <> branch_first_program thm
+R40198:40217 Triage.terms <> branch_first_program thm
+R40238:40258 Triage.terms <> bf_fork_fork_leaf_red thm
+R40238:40258 Triage.terms <> bf_fork_fork_leaf_red thm
+R40314:40334 Triage.terms <> bf_fork_fork_stem_red thm
+R40484:40503 Triage.terms <> branch_first_program thm
+R40410:40430 Triage.terms <> bf_fork_fork_fork_red thm
+R40484:40503 Triage.terms <> branch_first_program thm
+def 40587:40595 <> term_size
+binder 40597:40597 <> t:375
+R40610:40610 Triage.terms <> t:375 var
+R40621:40623 Triage.terms <> App constr
+R40646:40648 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R40634:40642 Triage.terms <> term_size:376 def
+R40649:40657 Triage.terms <> term_size:376 def
+prf 40690:40704 <> term_size_equal
+R40722:40724 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40707:40715 Triage.terms <> term_size def
+R40717:40721 Triage.terms <> equal def
+prf 40763:40774 <> term_size_bf
+R40789:40791 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R40777:40785 Triage.terms <> term_size def
+R40787:40788 Triage.terms <> bf def
+def 40832:40849 <> program_to_ternary
+binder 40851:40851 <> p:378
+R40864:40864 Triage.terms <> p:378 var
+R40875:40877 Triage.terms <> Ref constr
+R40895:40898 Triage.terms <> Node constr
+R40915:40917 Triage.terms <> ::tree_scope:x_'@'_x not
+R40911:40914 Triage.terms <> Node constr
+R40927:40931 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R40953:40953 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R40932:40949 Triage.terms <> program_to_ternary:379 def
+R40968:40970 Triage.terms <> ::tree_scope:x_'@'_x not
+R40963:40965 Triage.terms <> ::tree_scope:x_'@'_x not
+R40959:40962 Triage.terms <> Node constr
+R40980:40984 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R40985:40985 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R41007:41013 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R41035:41035 Coq.Strings.String <> ::string_scope:x_'++'_x not
+R40986:41003 Triage.terms <> program_to_ternary:379 def
+R41014:41031 Triage.terms <> program_to_ternary:379 def
+R41042:41044 Triage.terms <> ::tree_scope:x_'@'_x not
+prf 41071:41079 <> ptt_equal
+R41106:41125 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41082:41099 Triage.terms <> program_to_ternary def
+R41101:41105 Triage.terms <> equal def
+prf 41941:41946 <> ptt_bf
+R41970:41978 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R41949:41966 Triage.terms <> program_to_ternary def
+R41968:41969 Triage.terms <> bf def

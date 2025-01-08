@@ -31,6 +31,9 @@
 (*                                                                    *)
 (**********************************************************************)
 
+(* Adapted from terms.v to support smaller programs for I, fixpoints and size,
+in the spirit of the book and Johannes Bader's implementation *)
+
 
 Require Import Arith Lia Bool List Nat Datatypes String.
 
@@ -80,7 +83,7 @@ Notation "x @ y" := (App x y) (at level 65, left associativity) : tree_scope.
 Definition K := △ @ △. 
 Definition S1 x := △ @ (△@x).
 Definition Sop := S1 (K @ Node) @ Node. 
-Definition I := S1 K @ K.
+Definition I := S1 K @ Node.
 Definition KI := K@I.
 
 Ltac unfold_op := unfold KI, I, K, S1.
@@ -770,39 +773,39 @@ Proposition compose0_red:
            (fold_left App (map (fun f => (fold_left App xs f)) fs) (fold_left App xs g)).
 Proof.
   induction fs; intros; simpl; auto.
-  - repeat trtac;  eapply fold_left_app_preserves_red; repeat trtac. 
-  - rewrite ! compose0_closed; rewrite ! compose1_closed; unfold orb;
-      eapply transitive_red; [
-        |
-          eapply transitive_red; [ eapply IHfs | eapply fold_left_app_preserves_red;  eapply compose1_red]];
-      eapply fold_left_app_preserves_red;
-      eapply fold_left_app_preserves_red;
-      rewrite (star_occurs_false _ "f"); [ | eapply compose0_closed];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
-      rewrite star_occurs_false; [ | simpl; eapply compose0_closed];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
-      rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_false; auto;
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_false; auto; 
-      rewrite star_occurs_false; [ | eapply compose1_closed];
-      rewrite star_id;
-      rewrite star_occurs_false; [ | auto];
-      trtac.
- Qed.
+  (* 2 *)
+  repeat trtac;  eapply fold_left_app_preserves_red; repeat trtac. 
+  (* 1 *)
+  rewrite ! compose0_closed. rewrite ! compose1_closed. unfold orb.  
+  eapply transitive_red. eapply fold_left_app_preserves_red. eapply fold_left_app_preserves_red.
+  rewrite (star_occurs_false _ "f"). 2: eapply compose0_closed.
+  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  rewrite star_occurs_false. 2: simpl; eapply compose0_closed. 
+  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  rewrite star_occurs_false. 2: auto. 
+  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto. 
+  rewrite star_occurs_false. 2: auto. 
+  rewrite star_occurs_false. 2: eapply compose1_closed.
+  rewrite star_id.
+  rewrite star_occurs_false. 2: auto. 
+  trtac.
+  eapply transitive_red. eapply IHfs. eapply fold_left_app_preserves_red. 
+  eapply compose1_red. 
+Qed.
 
 Theorem compose_red:
   forall fs xs g,
     t_red (fold_left App xs (fold_left App fs (compose (List.length fs) (List.length xs) @ g))) 
-      (fold_left App (map (fun f => (fold_left App xs f)) fs) g).
+          (fold_left App (map (fun f => (fold_left App xs f)) fs) g).
 Proof.
-  intros; unfold compose; eapply transitive_red; [
-      do 2 eapply fold_left_app_preserves_red; trtac |
-      eapply transitive_red; [
-        eapply compose0_red |   
-        eapply fold_left_app_preserves_red; eapply Kn_red]]. 
+  intros; unfold compose; eapply transitive_red. eapply fold_left_app_preserves_red.
+   eapply fold_left_app_preserves_red.
+   eapply transitive_red. trtac. trtac. 
+   eapply transitive_red. eapply compose0_red.    
+   eapply fold_left_app_preserves_red. eapply Kn_red. 
 Qed.
 
 
@@ -824,8 +827,8 @@ Definition num k := iter k (fun x => succ1 @ x) zero.
  
 Lemma num_iterates: forall m f x, t_red (num m @ f @ x) (iter m (App f) x).
 Proof.
-  induction m; intros; unfold num; fold num; simpl; eauto; repeat trtac; [ tree_red | 
-  unfold succ1 at 1; trtac; eapply preserves_appr_t_red; eapply IHm].
+  induction m; intros; unfold num; fold num; simpl; eauto; repeat trtac.    tree_red.
+  unfold succ1 at 1; trtac.  eapply preserves_appr_t_red; eapply IHm.
 Qed.
 
 
@@ -953,23 +956,26 @@ Lemma min_rec_abs_val :
    (△ @ (△ @ (△ @ △ @ △)) @
     (△ @ (△ @ (△ @ △ @ △)) @
      (△ @ (△ @ (△ @ △ @ (△ @ △))) @
-      (△ @ (△ @ (△ @ (△ @ (△ @ △ @ Ref "f")) @ (△ @ (△ @ (△ @ △)) @ (△ @ △)))) @
-       (△ @ (△ @ (△ @ △)) @ (△ @ △))))))) @
-  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ (△ @ △)))))) @ \ "r1" (K @ (succ1 @ (Ref "r1")))).
-
+      (△ @ (△ @ (△ @ (△ @ (△ @ △ @ Ref "f")) @ (△ @ (△ @ (△ @ △)) @ △))) @
+       (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ (△ @ △ @ succ1)) @ (△ @ (△ @ (△ @ △)) @ △)))).
 Proof.  unfold minrec_abs; repeat startac2. Qed. 
 
 
   
 
-Definition minrec0 f := Yop2   (  △ @
+Definition minrec0 f := Yop2   ( △ @
   (△ @
    (△ @ (△ @ (△ @ △ @ △)) @
     (△ @ (△ @ (△ @ △ @ △)) @
      (△ @ (△ @ (△ @ △ @ (△ @ △))) @
-      (△ @ (△ @ (△ @ (△ @ (△ @ △ @ f)) @ (△ @ (△ @ (△ @ △)) @ (△ @ △)))) @
-       (△ @ (△ @ (△ @ △)) @ (△ @ △))))))) @
-  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ (△ @ △)))))) @ \ "r1" (K @ (succ1 @ (Ref "r1"))))). 
+      (△ @ (△ @ (△ @ (△ @ (△ @ △ @ f)) @ (△ @ (△ @ (△ @ △)) @ △))) @
+       (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ (△ @ △ @ succ1)) @ (△ @ (△ @ (△ @ △)) @ △))))). 
 
   
 Lemma minrec0_found: forall f n, t_red (f @ n) tt -> t_red (minrec0 f @ n) n. 
@@ -1049,10 +1055,10 @@ Global Hint Constructors factorable :TreeHintDb.
 Lemma factorable_or_not: forall M,  factorable M \/ ~ (factorable M).
 Proof.
   induction M; intros; auto_t.
-  - right; intro; inv1 factorable. 
-  - case M1; intros; auto_t.
-    + right; intro; inv1 factorable.
-    + case t; intros; auto_t;  right; intro; inv1 factorable.
+  right; intro; inv1 factorable. 
+  case M1; intros; auto_t.
+  right; intro; inv1 factorable.
+  case t; intros; auto_t;  right; intro; inv1 factorable.
 Qed.
 
 
@@ -1188,20 +1194,26 @@ Theorem branch_first_eval_to_bf:
   forall M N P, program M -> program N -> branch_first_eval M N P -> t_red(bf@M@N) P. 
 Proof.
   intros M N P prM prN ev; induction ev; intros; subst.
-  - apply bf_leaf_red.  
-  - apply bf_stem_red.
-  - apply bf_fork_leaf_red.
-  - inv_out prM; inv_out H1; htac bf_fork_stem_red;
-      htac IHev1; auto; htac IHev2; eauto; 
-      htac eager_of_factorable; [
-        eapply programs_are_factorable |  eapply IHev3; eauto];
-      eapply branch_first_program; eauto.
-  - eapply bf_fork_fork_leaf_red.
-  - inv_out prM; inv_out prN; inv_out H1;
-      htac bf_fork_fork_stem_red; eapply IHev; eauto.
-  - inv_out prM; inv_out prN; inv_out H1;
-      htac bf_fork_fork_fork_red; htac IHev1; eauto;
-      htac IHev2; eauto; eapply branch_first_program; eauto.
+  (* 7 *) 
+  apply bf_leaf_red.  
+  apply bf_stem_red.
+  apply bf_fork_leaf_red.
+  (* 4 *) 
+  inv_out prM. inv_out H1. 
+  htac bf_fork_stem_red.
+  htac IHev1; auto. htac IHev2; eauto. 
+  htac eager_of_factorable. eapply programs_are_factorable.
+  eapply branch_first_program; eauto.  eapply IHev3; eauto.
+  1,2: eapply branch_first_program; eauto.
+  (* 3 *) 
+  eapply bf_fork_fork_leaf_red.
+  (* 2 *)
+  inv_out prM. inv_out prN. inv_out H1.
+  htac bf_fork_fork_stem_red; eapply IHev; eauto.
+  (* 1 *)
+  inv_out prM. inv_out prN. inv_out H1.
+  htac bf_fork_fork_fork_red. htac IHev1; eauto.
+  htac IHev2; eauto. eapply branch_first_program; eauto.
 Qed.
 
 (* the converse theorem is in rewriting_theorems.v *) 
@@ -1213,9 +1225,9 @@ Fixpoint term_size t :=
   end.
 
 
-Theorem term_size_equal: term_size equal = 780. Proof. cbv; auto. Qed. 
+Theorem term_size_equal: term_size equal = 754. Proof. cbv; auto. Qed. 
 
-Theorem term_size_bf: term_size bf = 877. Proof. cbv; auto. Qed. 
+Theorem term_size_bf: term_size bf = 846. Proof. cbv; auto. Qed. 
 
 
 Fixpoint program_to_ternary p :=
@@ -1228,11 +1240,11 @@ Fixpoint program_to_ternary p :=
   end.
 
 Lemma ptt_equal: program_to_ternary equal =
-                 "212121202120112110102121200212002120112002120112002121200212002120102120021200212120021200212010211010212010211010202120102110102020211010202120112110102121200212002120112002120112002121200212002120102120021200212120021200212010211010212010211010202120102110102020211010202120112220221020202110102020202110102121200212002120112002120112012021101021201121101021201021101020202020202110102120112011201220211010202021101021212002120021201120021201120021201120112002120112011200212011201120112002120112011201120021212002120021201021200212002120112002120112002120112011200212011201120021201120112010212120021200212011200212011200212011201021201121101021201021101020202110102021201120102121200212002120112002120112002120112010212011211010212010211010202021101020202020202021101010211010".
+                   "2121212021201121100212120021200212011200212011200212120021200212010212002120021212002120021201021100212010211002021201021100202021100202120112110021212002120021201120021201120021212002120021201021200212002121200212002120102110021201021100202120102110020202110020212011222022102020211002020202110021212002120021201120021201120120211002120112110021201021100202020202021100212011201120122021100202021100212120021200212011200212011200212011201120021201120112002120112011201120021201120112011200212120021200212010212002120021201120021201120021201120112002120112011200212011201120102121200212002120112002120112002120112010212011211002120102110020202110020212011201021212002120021201120021201120021201120102120112110021201021100202021100202020202020211001021100".
 Proof.  cbv; auto. Qed.
 
 Lemma ptt_bf: program_to_ternary bf =
-      "2121212021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201200212120021201102121200212002120112002120112002120112010212011200212011200212011201120212011212022212110102002120112110102120102120021101021201120112110102120112010212120021200212010212002110102021101021101021201021101021212002120021201021200212002120102110102121200212002120102110102021101021201021212002120021201021101020211010212120021200212011200212011200212011201120021201120112002120112011201021201120112002120112120021200212010212002110102120102121200212002120102110102021101021201021201021212002120021201021212002120021201021200212002120102110102121200212002120102110102021101020211010211010" .
+      "212121202120112110021212002120021201120021201120021212002120021201021200212002121200212002120102110021201021100202120102110020202110020212011211002121200212002120112002120112002121200212002120102120021200212120021200212010211002120102110020212010211002020211002021201200212120021201102121200212002120112002120112002120112010212011200212011200212011201120212011212022212110020021201121100212010212002110021201120112110021201120102121200212002120102120021100202110021100212010211002121200212002120102120021200212010211002121200212002120102110020211002120102121200212002120102110020211002121200212002120112002120112002120112011200212011201120021201120112010212011201120021201121200212002120102120021100212010212120021200212010211002021100212010212010212120021200212010212120021200212010212002120021201021100212120021200212010211002021100202110021100".
 Proof.  cbv; auto. Qed. 
 
 
