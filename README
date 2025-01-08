@@ -16,3 +16,6 @@ typed_lambda.v, typed_recursion.v, typed_triage.v, and typed_evaluator.v
 classify.v classifies subtyping according to the structure of the subtype 
 classify_derive.v classifies type derivations
 reduction_preserves_typing.v shows that reduction preserves typing
+
+
+25-01-09 has improved the style of all proofs by using more hooks. 
