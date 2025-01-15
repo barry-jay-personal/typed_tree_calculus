@@ -52,8 +52,7 @@ Proof.
       |
         eapply derive_app; [ eapply derive_node; eapply sub_leaf_fun | eapply derive_I]];
       eapply derive_node; eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac; sub_fork2_tac].
-  - eapply derive_S2; [ eapply derive_K1; eapply derive_K |];
-      eapply derive_S2; [ eapply derive_K1; eapply derive_node; eapply sub_leaf_fun | eapply derive_I].
+  - eapply derive_S2; [ eapply derive_K1; eapply derive_K |]; eapply derive_node; eapply sub_leaf_fun. 
   - eapply derive_K1; eapply derive_app; [
     |
       eapply derive_app; [ eapply derive_node; eapply sub_leaf_fun | eapply derive_K1];
@@ -66,15 +65,7 @@ Proof.
         |
           eapply derive_app; [eapply derive_node;  eapply sub_leaf_fun | eapply derive_K1; eapply derive_K]];
         eapply derive_node; eapply sub_trans; [ eapply subtype_leaf_fork |]; do 2 sub_fun_tac; sub_fork2_tac.
-    + eapply derive_S2.
-      * eapply derive_S2; [
-          | 
-            eapply derive_S2; [ eapply derive_K1; eapply derive_node; eapply sub_leaf_fun |]]; [
-            eapply derive_K1;  eapply derive_node; eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac; sub_fork2_tac] |];
-          eapply derive_S2; [ eapply derive_K1; eapply derive_K |]; 
-          eapply derive_S2; [ eapply derive_K1; eapply derive_node; eapply subtype_leaf_fork | eapply derive_I].
-      * eapply derive_K1; eapply derive_S2; eapply derive_K.
-  Unshelve. apply Leaf.
+    + eapply derive_node; eapply subtype_leaf_fork. 
 Qed. 
 
 
@@ -149,17 +140,20 @@ Qed.
              eapply derive_app; eapply derive_ref; simpl; eauto; [ subst_tac | eapply sub_zero]]] |
          eapply derive_app; eapply derive_ref; simpl; eauto; [ subst_tac | eapply sub_zero]].
    +    (* bfff *)
-     do 2 eapply derive_generalisation;   do 3 eapply derive_star;   eapply derive_subtype; [ 
+     do 2 eapply derive_generalisation; do 3 eapply derive_star; eapply derive_subtype; [ | eapply sub_bfff];
        eapply derive_app; [ 
          eapply derive_app; [ eapply derive_node; eapply subtype_leaf_fork |];
          eapply derive_app; [ 
            eapply derive_app; [ eapply derive_node; eapply subtype_leaf_fork |];
            eapply derive_ref; simpl; eauto; eapply sub_zero |
-           eapply derive_app; eapply derive_ref; simpl; eauto; [ cbv; subst_tac | eapply sub_zero]] |
-         eapply derive_app; [ | eapply derive_ref; simpl; eauto; eapply sub_zero];
-         eapply derive_star;   cbv; 
-         repeat eapply derive_app; (eapply derive_ref || eapply derive_node); simpl; eauto; try eapply sub_zero;
-         (eapply sub_zero || eapply sub_leaf_fun || eapply subtype_leaf_fork || subst_tac || idtac)] |
-       replace (Quant (Funty (Var 0) (Asf (Var 0)))) with eval_ty by (cbv; auto); eapply sub_bfff].
+           eapply derive_app; eapply derive_ref; simpl; eauto; [ cbv; subst_tac | eapply sub_zero]] | ]. 
+     eapply derive_app; eapply derive_app.
+     eapply derive_node; eapply subtype_leaf_fork.
+     eapply derive_app. eapply derive_node; eapply sub_leaf_fun.
+     repeat eapply derive_app. eapply derive_node; eapply subtype_leaf_fork.
+     auto_t.
+     eapply derive_ref; simpl; eauto; eapply sub_zero.
+     eapply derive_ref; simpl; eauto; subst_tac. rewrite relocate_greaterthan.  2: var_tac; lia. var_tac.
+    eapply derive_ref; simpl; eauto; eapply sub_zero.
  Qed.
  

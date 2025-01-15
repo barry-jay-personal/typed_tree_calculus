@@ -43,16 +43,54 @@ Set Default Proof Using "Type".
 
 (*** Subtyping *) 
 
-
-Definition omega21_ty := program_type omega21.
-Definition omega22_ty := program_type omega22. 
+(*
+Definition omega21_ty := program_type I.
+Definition omega22_ty := program_type I. 
 Definition omega2_ty := (Fork (Stem omega21_ty) omega22_ty).
+ *)
+
+Definition sak_ty := Eval cbv in program_type self_apply_k. 
+Definition wsak_ty := Eval cbv in program_type (wait1 self_apply_k). 
+Definition wsak2_ty uty vty :=
+  Eval cbv in
+    match wsak_ty with
+      | Stem ty => Fork ty (Fork Leaf
+          (Fork
+             (Stem
+                (Fork Leaf
+                   (Funty (Funty (Funty uty vty) (Funty uty vty))
+                      (Funty uty vty)))) wsak_ty))
+    | _ => Leaf
+    end.
+
 
 Definition eval_ty := quant 1 (Funty (Var 0) (Asf (Var 0))).
 Definition eager_ty := quant 2 (Funty (Funty (Var 0) (Var 1)) (Funty (Var 0) (Var 1))).
 
 Definition bfff_aug uty := Fork (Stem (Fork Leaf eval_ty)) (Asf uty).
 Definition bffs_aug uty := Fork (Stem (Fork Leaf eager_ty)) (bfff_aug uty). 
+
+Definition Zty k uty vty := Fork
+         (Stem
+            (Fork
+               (Stem
+                  (Fork Leaf
+                     (Stem
+                        (Stem
+                           (Fork (Stem (Fork (Stem (Stem Leaf)) Leaf))
+                              (Stem Leaf)))))) (Stem Leaf)))
+         (Fork Leaf
+            (Fork (Stem (Fork Leaf (Funty (quant k (Funty uty vty)) (quant k (Funty uty vty)))))
+               (Stem
+                  (Stem
+                     (Fork
+                        (Stem
+                           (Fork Leaf
+                              (Stem
+                                 (Stem
+                                    (Fork                                       (Stem (Fork (Stem (Stem Leaf)) Leaf))
+                                       (Stem Leaf)))))) 
+                        (Stem Leaf)))))).
 
 
 Inductive subtype : dtype -> dtype -> Prop :=
@@ -91,14 +129,13 @@ Inductive subtype : dtype -> dtype -> Prop :=
     forall uty vty wty1 wty2 wty3,
       subtype (Fork (Fork uty vty) (Funty wty1 (Funty wty2 wty3))) (Funty (Fork wty1 wty2) wty3)
 (* recursion *)
-| sub_recursion:
-    forall k uty vty,
-      subtype omega2_ty
-              (Funty
-                 omega2_ty
-                 (Funty
-                    (Funty (quant k (Funty uty vty)) (quant k (Funty uty vty)))
-                    (quant k (Funty uty vty)))) 
+| sub_recursion: (* for Z, what about Yop2?  *) 
+    forall k uty vty, subtype (Zty k uty vty) (quant k (Funty uty vty))
+    (* subtype (wsak2_ty uty vty) (Funty (Funty uty vty) (Funty uty vty)) *) 
+(*  subtype sak_ty
+        (Funty (Fork (Stem (Fork Leaf (Funty (Funty (Funty uty vty) (Funty uty vty)) (Funty uty vty))))
+                  wsak_ty)
+           (Funty uty vty)) *) 
 | sub_tree: forall ty uty,
     covariant ty -> 
     subtype (Fork
@@ -162,13 +199,13 @@ Lemma lift_rec_preserves_subtype:
   forall ty1 ty2, subtype ty1 ty2 -> forall n k, subtype (lift_rec ty1 n k) (lift_rec ty2 n k).
 Proof.
   intros ty1 ty2 s; induction s; intros; refold lift_rec; try relocate_tac;
-    unfold lift; rewrite ? lift_lift_rec; try lia; eauto 2 with TreeHintDb.  
+    unfold lift, Zty; simpl; rewrite ? lift_lift_rec; try lia; eauto 2 with TreeHintDb.  
   - subst_tac; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; var_tac. 
-  - replace (lift_rec omega2_ty n k0) with omega2_ty by (cbv; auto);
+(*   - replace (lift_rec omega21_ty n k) with omega21_ty by (cbv; auto);
       rewrite ! lift_rec_preserves_quant; eapply sub_recursion.
-  - var_tac;
-      eapply sub_trans; [
-        eapply sub_trans; [ | eapply sub_tree] |
+ *)
+  -  rewrite ! lift_rec_preserves_quant; eapply sub_recursion; auto.
+  - var_tac. eapply sub_trans; [ eapply sub_trans; [ | eapply sub_tree] |
         sub_funty_tac; unfold subst; replace n with (0+n) at 2 by lia; rewrite lift_rec_subst_rec; eapply sub_zero]; [
       |
         unfold covariant in *; simpl; replace 0 with (relocate 0 (S n) k) by auto;
@@ -191,10 +228,12 @@ Lemma subst_rec_preserves_subtype:
 Proof.
   intros ty1 ty2 s; induction s; intros; unfold lift;
     refold subst_rec; try insert_Var_tac; 
-    unfold lift; rewrite ? subst_rec_lift_rec1; try lia; eauto 2 with TreeHintDb.
+    unfold lift, Zty; simpl; rewrite ? subst_rec_lift_rec1; try lia; eauto 2 with TreeHintDb.
   - subst_tac; eapply sub_trans; [ | rewrite subst_rec_subst_rec; try lia]; eapply sub_zero. 
-  - replace (subst_rec omega2_ty ty k0) with omega2_ty by (cbv; auto);
-      rewrite ! subst_rec_preserves_quant; eapply sub_recursion.
+(*   - replace (subst_rec omega21_ty ty k0) with omega21_ty by (cbv; auto);
+      rewrite ! subst_rec_preserves_quant; apply sub_recursion.
+ *)
+  - rewrite ! subst_rec_quant; eapply sub_recursion; auto.
   - unfold subst; rewrite subst_rec_subst_rec; try lia;
       replace (k-0) with k by lia;
       eapply sub_trans; [ eapply sub_trans; [ | eapply sub_tree] |]; [
@@ -466,3 +505,160 @@ Qed.
 
 Lemma subtype_Kty: forall uty vty, subtype (Stem Leaf) (Funty uty (Funty vty uty)).
 Proof.  intros; auto_t. Qed. 
+
+
+
+Proposition variant_subst_rec_preserves_subtype:
+  forall ty k uty vty,  
+    (variant true k ty = true ->
+    subtype uty vty ->
+    subtype (subst_rec ty uty k) (subst_rec ty vty k))
+.
+
+Proof.
+   cut (forall ty k uty vty,
+    (variant true k ty = true ->
+    subtype uty vty ->
+    subtype (subst_rec ty uty k) (subst_rec ty vty k))
+    /\
+   (variant false k ty = true ->
+    subtype vty uty ->
+    subtype (subst_rec ty uty k) (subst_rec ty vty k)))
+ .
+ intros aux ty k uty vty cov s; eelim (aux ty k uty vty); intros H1 H2; eapply H1; auto.
+ induction ty; intros k uty vty; simpl in *; auto 10 with TreeHintDb.
+ - assert(k<n\/ k = n\/ k>n) by lia; disjunction_tac; subst; var_tac; split; intros; try eapply sub_zero;
+   eapply lift_rec_preserves_subtype; eauto; rewrite Nat.eqb_refl in *; discriminate.
+ - eelim (IHty (S k)); intros; split; intros; eapply sub_quant; eauto.
+ - intros; split; intros; rewrite ! andb_true_iff in *; split_all;  eapply sub_funty;
+     (eelim IHty1; intros; eauto; fail) || (eelim IHty2; intros; eauto).
+ - eelim (IHty k uty vty); intros; split; intros; eapply sub_stem; eauto. 
+ - eelim IHty1; eelim IHty2; intros; split; intros; rewrite ! andb_true_iff in *; split_all;  auto_t.  
+ - eelim (IHty k uty vty); intros; split; intros; eapply sub_asf; eauto. 
+Qed.
+
+
+(* bfff_aug *) 
+
+
+Lemma subtype_preserves_bfff_aug: forall ty1 ty2, subtype ty1 ty2 -> subtype (bfff_aug ty1) (bfff_aug ty2).
+Proof. intros; eapply sub_fork; [ eapply sub_zero | auto_t]. Qed. 
+  
+Lemma subtype_preserves_iter_bfff_aug:
+  forall n ty1 ty2, subtype ty1 ty2 -> subtype (iter n bfff_aug ty1) (iter n bfff_aug ty2).
+Proof. induction n; intros; simpl. eauto.
+       eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. eapply sub_zero.
+Qed.
+  
+
+
+Lemma subtype_quant_bfff_aug: forall n ty, subtype (quant n (bfff_aug ty)) (bfff_aug (quant n ty)).
+Proof.
+  intros; unfold bfff_aug.    
+  eapply sub_trans. eapply subtype_quant_fork. eapply sub_fork.
+  replace (Stem (Fork Leaf eval_ty)) with (lift n (Stem (Fork Leaf eval_ty))) by (cbv; auto). 
+  eapply subtype_lift2.
+  eapply subtype_quant_asf.
+Qed.
+
+Lemma subtype_quant_iter_bfff_aug:
+  forall k n ty, subtype (quant n (iter k bfff_aug ty)) (iter k bfff_aug (quant n ty)).
+Proof.
+  induction k; intros; simpl. eapply sub_zero.
+  eapply sub_trans. eapply subtype_quant_bfff_aug.
+  eapply sub_fork. eapply sub_zero. eapply sub_asf. auto. 
+Qed.
+
+
+Lemma bfff_aug_of_binary_fun :
+  forall uty vty wty, subtype (bfff_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
+Proof.  intros; unfold bfff_aug; repeat sub_fork2_tac. 2: auto_t. subst_tac; sub_fun_tac; auto_t. Qed. 
+
+
+Lemma iter_bfff_aug_of_binary_fun :
+  forall n uty vty wty, subtype (iter n bfff_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
+Proof.
+  induction n; intros; simpl. eapply sub_zero.
+  eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. eapply bfff_aug_of_binary_fun.
+Qed.     
+
+Lemma iter_bfff_aug_Quant: forall n ty, subtype (iter n bfff_aug (Quant ty)) (Quant (iter n bfff_aug ty)).
+Proof.
+  induction n; intros; simpl. eapply sub_zero. 
+  eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. 
+  unfold bfff_aug at 1 3.
+  eapply sub_trans. eapply sub_lift. eapply sub_quant. unfold lift; simpl; var_tac.
+  eapply sub_fork. eapply sub_zero. eapply sub_asf.
+  replace  (Quant (lift_rec (iter n bfff_aug ty) 1 1)) with
+      (lift 1 (quant 1 (iter n bfff_aug ty))) by (cbv; auto).
+  eapply subtype_lift3.
+Qed. 
+
+
+(* bffs_aug *) 
+
+
+Lemma subtype_preserves_bffs_aug: forall ty1 ty2, subtype ty1 ty2 -> subtype (bffs_aug ty1) (bffs_aug ty2).
+Proof. intros; eapply sub_fork; [ eapply sub_zero | eapply subtype_preserves_bfff_aug; auto_t]. Qed. 
+  
+Lemma subtype_preserves_iter_bffs_aug:
+  forall n ty1 ty2, subtype ty1 ty2 -> subtype (iter n bffs_aug ty1) (iter n bffs_aug ty2).
+Proof. induction n; intros; simpl. eauto.
+       eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. eapply sub_zero.
+Qed.
+  
+
+Lemma subtype_quant_bffs_aug: forall n ty, subtype (quant n (bffs_aug ty)) (bffs_aug (quant n ty)).
+Proof.
+  intros; unfold bffs_aug.    
+  eapply sub_trans. eapply subtype_quant_fork. eapply sub_fork.
+  replace (Stem (Fork Leaf eager_ty)) with (lift n (Stem (Fork Leaf eager_ty))) by (cbv; auto). 
+  eapply subtype_lift2.
+  eapply subtype_quant_bfff_aug.
+Qed.
+
+Lemma subtype_quant_iter_bffs_aug:
+  forall k n ty, subtype (quant n (iter k bffs_aug ty)) (iter k bffs_aug (quant n ty)).
+Proof.
+  induction k; intros; simpl. eapply sub_zero.
+  eapply sub_trans. eapply subtype_quant_bffs_aug.
+  eapply sub_fork. eapply sub_zero. eapply subtype_preserves_bfff_aug; auto. 
+Qed.
+
+
+Lemma iter_plus: forall m n f x, iter (m+n) f (x: dtype) = iter m f (iter n f x). 
+Proof.  induction m; intros; simpl; auto_t; f_equal; auto. Qed. 
+
+
+
+
+Lemma bffs_aug_of_binary_fun :
+  forall uty vty wty, subtype (bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
+Proof.
+  intros; eapply sub_trans; [ eapply sub_fork; [ eapply sub_zero | eapply bfff_aug_of_binary_fun] |
+  repeat sub_fork2_tac; do 2 subst_tac]. 
+Qed. 
+
+Lemma iter_bffs_aug_of_binary_fun :
+  forall n uty vty wty, subtype (iter n bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
+Proof.
+  induction n; intros; simpl. eapply sub_zero.
+  eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. eapply bffs_aug_of_binary_fun.
+Qed.     
+
+Lemma iter_bffs_aug_Quant: forall n ty, subtype (iter n bffs_aug (Quant ty)) (Quant (iter n bffs_aug ty)).
+Proof.
+  induction n; intros; simpl. eapply sub_zero. 
+  eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. 
+  unfold bffs_aug at 1 3.
+  eapply sub_trans. 2: eapply (fork_quant_commute 1). eapply sub_fork.
+  eapply sub_trans. eapply sub_lift. cbv; eapply sub_zero. eapply (iter_bfff_aug_Quant 1). 
+Qed. 
+
+
+
+
+Lemma iter_bffs_aug: forall n uty vty wty, subtype (iter n bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
+Proof. induction n; intros; simpl; auto_t;  eapply sub_trans; [eapply subtype_preserves_bffs_aug; eauto |  eapply bffs_aug_of_binary_fun]. Qed. 
+
+

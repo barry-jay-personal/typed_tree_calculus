@@ -412,37 +412,37 @@ Definition self_negation :=  \"h" (\"f" ((Ref "h")@ ((Ref "f") @ (Ref "f")) @ (o
 Theorem halting_problem_insoluble : forall h, ~(halting h).
 Proof.
   unfold halting; intro h; intro halt;
-    assert(h1: t_red (h @ K) K /\ valuable K \/ t_red (h @ K) KI /\ ~ valuable K) by   apply halt;
-    inversion h1 as [ (r&v) | (r &nv) ]; clear h1; [ |
-                                                     apply nv; unfold valuable; exists K; split; [zerotac | program_tac]]; 
+    assert(h1: t_red (h @ K) K /\ valuable K \/ t_red (h @ K) KI /\ ~ valuable K) by apply halt;
+    inversion h1 as [ (r&v) | (r &nv) ]; clear h1; [
+    |
+      apply nv; unfold valuable; exists K; split; [zerotac | program_tac]];
     assert(h2: t_red (h @ (omega @ omega)) K
                /\ valuable (omega @ omega) \/ t_red (h @ (omega @ omega)) KI
-                                              /\ ~ valuable (omega @ omega)) by   apply halt;
+                                              /\ ~ valuable (omega @ omega)) by apply halt;
     inversion h2 as [ (r2&v2) | (r2 &nv2) ]; clear h2; intros; [  
       apply  omega_omega_has_no_value; auto |]; 
     assert (h3: (t_red (h @ (self_negation @ h @ (self_negation @ h))) K /\ valuable (self_negation @ h @ (self_negation @ h)))
                 \/ (t_red (h @ (self_negation @ h @ (self_negation @ h))) KI /\ ~ (valuable (self_negation @ h @ (self_negation @ h))))) by 
     apply halt;
-    inversion h3 as [ (r3&v3) | (r3 &nv3) ]; clear h3; intros; [ 
-      assert(h4: t_red ((self_negation @ h @ (self_negation @ h))) (omega@omega))
-      by (unfold self_negation at 1; starstac ("f" :: "h" :: nil)); 
+    inversion h3 as [ (r3&v3) | (r3 &nv3) ]; clear h3; intros.
+  - assert(h4: t_red ((self_negation @ h @ (self_negation @ h))) (omega@omega))
+      by (unfold self_negation at 1; startac "f"; unfold star at 2; rewrite ! eqb_refl; simpl; trtac);      
       assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) KI)  
-        by (aptac; [ zerotac | eauto | eauto]);
+      by (aptac; [ zerotac | eauto | eauto]);
       assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red;
       elim h5; clear h5; intros Q (?&?);
       assert(Q = K) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
       assert(Q = KI) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
-      subst; discriminate
-    |
-      assert( t_red ((self_negation @ h @ (self_negation @ h))) K) by 
-      (unfold self_negation at 1; starstac ("f" :: "h" :: nil));
+      subst; discriminate.
+  - assert( t_red ((self_negation @ h @ (self_negation @ h))) K) by
+      (unfold self_negation at 1; startac "f"; unfold star at 2; rewrite ! eqb_refl; simpl; trtac; unfold KI; trtac);
       assert(t_red (h @  (self_negation @ h @ (self_negation @ h))) K) by 
-        (aptac; [ zerotac |  eauto | eauto]);
+      (aptac; [ zerotac |  eauto | eauto]);
       assert(h5: exists Q, t_red K Q /\ t_red KI Q) by eapply2 diamond_t_red;
       elim h5; intros Q (?&?);
       assert(Q = K) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
       assert(Q = KI) by (apply programs_are_stable2; [  apply t_red_to_s_red; auto | program_tac]);
-      subst; discriminate]. 
+      subst; discriminate. 
 Qed.
 
 
@@ -1354,7 +1354,7 @@ Qed.
 Lemma triage_needy: forall f0 f1 f2 M , needs (triage f0 f1 f2 @ M) M. 
 Proof. intros;  unfold triage;  repeat eexists; [ eapply t_red_to_s_red; trtac | auto_t]. Qed. 
 
-Lemma eager_needy:  forall M N, needs (eager @ M @N) N. 
+Lemma eager_s_needy:  forall M N, needs (eager_s @ M @N) M. 
 Proof. intros; cbv; repeat eexists; [ eapply t_red_to_s_red; trtac |  auto_t]. Qed. 
 
 Lemma bf_needy:  forall M N, needs (bf @ M @ N) M. 
@@ -1405,9 +1405,9 @@ Proof.
         assert(P1 = M1) by (apply programs_are_stable2; auto); subst; auto. 
     +  (*  fork of stem  *)
       (* the upper square in Figure 7.5 *) 
-      assert(bf1: t_red (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)))
-        by apply bf_fork_stem_red;
-        assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2) @ M1) @ N) (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N))) 
+      assert(bf1: t_red (bf @ (△ @ (△@ M2) @ M1) @ N) (eager_s @ (bf @ M1 @ N) @ (bf @ (bf @ M2 @ N))))
+        by (eapply transitive_red; [  apply bf_fork_stem_red | unfold eager; startac "x"; startac "f"; trtac]).
+        assert(mr1: exists n, multi_ranked t_red1 n (bf @ (△ @ (△@ M2) @ M1) @ N) (eager_s @ (bf @ M1 @ N) @ (bf @ (bf @ M2 @ N))))
         by (eapply multi_ranked_iff_multi_red; eauto);
         elim mr1; clear mr1; intros k mr2;
         caseEq k; intros; subst; [ inversion mr2 | inversion mr2 as [ | ? ? Q0 ? ? ?]]; clear mr2; subst;
@@ -1416,23 +1416,23 @@ Proof.
       * elim(program_application2_s_red1 _ _ H0 bf (△ @ (△ @ M2) @ M1) N);  intros; clear H0; eauto; subst; 
           [eapply2 IHn; program_tac |  | program_tac | program_tac];
           assert(Q0 = N0) by eapply2 hap1_functional; subst; 
-          assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (eager @ (bf @ (bf @ M2 @ N)) @ (bf @ M1 @ N)) Q); [  
+          assert(dp1: exists Q, s_red P Q /\ multi_ranked s_red1 h'  (eager_s @ (bf @ M1 @ N) @ (bf @ (bf @ M2 @ N))) Q); [  
             eapply diamond_multi_ranked; [ apply diamond_s_red1_s_red |
                                            eauto |
                                            apply t_red_to_s_red; apply multi_ranked_iff_multi_red; eauto] |];
           elim dp1; clear dp1; intros P1 (?&?);
-          assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red);
+          assert(factorable P1) by (eapply t_red_preserves_factorable; eauto; eapply2 s_red_to_t_red).
           (* the middle square in Figure 7.5 *) 
           assert(nd1: exists M3, multi_ranked s_red1 h' (bf @ M1 @ N) M3 /\ factorable M3) by
-          (eapply needy_s_red_factorable;  eauto; apply eager_needy);
+          (eapply needy_s_red_factorable;  eauto; apply eager_s_needy);
           elim nd1; clear nd1; intros P_MN (?&?);
           assert(eval1: exists Q : Tree, branch_first_eval M1 N Q /\ s_red P_MN Q) by (eapply2 IHn; lia);
           elim eval1; clear eval1; intros Q2 (?&?);
           assert(t_red (bf@M1 @ N) Q2) by eapply2 branch_first_eval_to_bf;
           assert(program Q2) by eapply2 branch_first_program; 
           assert(dp2: exists Q, s_red P1 Q /\ multi_ranked s_red1 h'  (bf @ (bf @ M2 @ N) @ Q2) Q); [
-            eapply diamond_multi_ranked; [apply diamond_s_red1_s_red | eauto | apply t_red_to_s_red];
-            aptac; [ trtac | eauto | apply eager_of_factorable; eapply2 programs_are_factorable] |];  
+              eapply diamond_multi_ranked; [apply diamond_s_red1_s_red | eauto | apply t_red_to_s_red];
+              htac H11;  apply eager_s_of_factorable; eapply programs_are_factorable; eauto |]; 
           elim dp2; clear dp2; intros P2 (?&?);
           assert(factorable P2) by (eapply t_red_preserves_factorable; [ apply s_red_to_t_red | ]; eauto);
           (* the lower square in Figure 7.5  *)
@@ -1543,3 +1543,56 @@ Proof.
     eapply programs_are_stable2; auto; eapply t_red_to_s_red; eauto.
 Qed.
  
+(* 
+(* A program for size *)
+
+Require Import Nat. 
+
+
+Lemma iter_plus: forall m n f x, iter (m+n) f (x: Tree) = iter m f (iter n f x). 
+Proof.  induction m; intros; simpl; auto_t; f_equal; auto. Qed.
+
+Lemma iter_app: forall n f x y, t_red x y -> t_red (iter n (App f) x) (iter n (App f) y).
+Proof.  induction n; intros; simpl; auto; eapply preserves_appr_t_red; eauto. Qed. 
+
+
+
+Definition size_loop :=
+  S1 (K @ (S1 (K @ (S1 (K @ succ1))))) @ triage
+         KI
+         (S1 (K @ (S1 I)) @ K)
+         (\"x" (\ "y" (\ "s" (S1 (K @ (Ref "s" @ Ref "x")) @ (Ref "s" @ Ref "y")))))
+           .
+
+Definition size := S1 (Yop2 size_loop) @ (K @ Node).
+
+
+
+Lemma iter_program: forall m n, program n -> program (iter m (App Node) n).
+Proof. induction m; intros; simpl; auto_t; eapply pr_stem; auto. Qed. 
+  
+
+Lemma size_sizes: forall p n , program p ->  program n -> t_red (Yop2 size_loop @ p @ n) (iter (term_size p) (App Node) n).
+Proof.
+  induction p; intros; inv1 program; htac Y2_red; unfold size_loop at 1; trtac. 
+  - htac IHp2.
+  - rewrite iter_plus. eapply preserves_appr_t_red.
+    htac IHp2; auto. 
+    assert(t_red (Yop2 size_loop @ (△ @ M) @ (iter (term_size p2) (App △) n)) (iter (term_size (△ @ M)) (App △) (iter (term_size p2) (App △) n))) .
+    eapply IHp1. program_tac. eapply iter_program; auto. 
+    assert(t_red (Yop2 size_loop @ (△ @ M) @ (iter (term_size p2) (App △) n)) (Node @ (Yop2 size_loop @ M @ (iter (term_size p2) (App △) n)))).
+    htac Y2_red; unfold size_loop at 1; unfold triage; trtac; subst.
+    assert(exists P, t_red (△ @ iter (term_size M) (App △) (iter (term_size p2) (App △) n)) P /\ t_red (△ @ (Yop2 size_loop @ M @ (iter (term_size p2) (App △) n))) P)
+    by (eapply diamond_t_red; eauto; split_all).
+    split_all.
+    eelim t_red_preserves_stems; intros; eauto. clear H6. 
+    eelim t_red_preserves_stems; intros; eauto. split_all.
+    inv_out H6.
+    assert(x0 =(iter (term_size M) (App △) (iter (term_size p2) (App △) n))).
+    eapply programs_are_stable2.
+    eapply t_red_to_s_red; eauto.
+    do 2 eapply iter_program; eauto.
+    subst; auto.
+Qed. 
+
+*) 

@@ -147,21 +147,12 @@ Lemma derive_prim_plus:
 Proof.
     intros; eapply derive_star; unfold prim_plus0;  eapply derive_primrec; simpl.
     - eapply derive_I. 
-    - do 2 eapply derive_K1; eapply derive_S2; [ | eapply derive_I]; eapply derive_K1;
-  eapply derive_subtype with (Quant (Funty  (Funty (Funty (Var 0) (Var 0)) (Funty (Var 0) (Var 0)))
-                                       (Funty (Funty (Var 0) (Var 0)) (Funty (Var 0) (Var 0))))); [ |
-        eapply sub_dist]; 
-      eapply derive_generalisation;
-      eapply derive_S1; eapply derive_S2; [ eapply derive_K1; eapply derive_node | ]; [ 
-      eapply sub_trans; [
-          eapply subtype_leaf_fork; apply sub_fork_stem |
-          do 2 sub_fun_tac]; sub_fork2_tac |]; 
-          eapply derive_S2; [
-            eapply derive_K1; eapply derive_node; eapply sub_leaf_fun |
-          eapply derive_K].
+    - do 2 eapply derive_K1; eapply derive_succ1.
     - eapply Forall_cons; [ | eapply Forall_nil]; eapply derive_ref; simpl; auto_t.
 Qed. 
-  
+
+
+
 Lemma derive_prim_succ_plus:
   forall gamma, derive gamma prim_succ_plus
                   (Funty (Quant (Funty (Funty (Var 0) (Var 0)) (Funty (Var 0) (Var 0))))
@@ -177,7 +168,7 @@ Qed.
 
 Theorem derive_size : forall gamma, derive gamma size (quant 1 (Funty (Var 0) Nat_ty)).
 Proof.
-  intros; eapply derive_Z; eapply derive_star; eapply derive_generalisation;
+  intros.  eapply derive_Z.  eapply derive_star; eapply derive_generalisation;
     replace Nat_ty with (lift 1 Nat_ty) by (cbv; auto);  eapply derive_query.
   - replace (lift 1 Nat_ty) with Nat_ty by (cbv; auto);
       eapply derive_app; [ eapply derive_succ1 |];
