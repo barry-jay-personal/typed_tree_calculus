@@ -40,152 +40,9 @@ Open Scope nat_scope.
 Set Default Proof Using "Type".
 
 
-
-
-Proposition variant_subst_rec_preserves_subtype:
-  forall ty k uty vty,  
-    (variant true k ty = true ->
-    subtype uty vty ->
-    subtype (subst_rec ty uty k) (subst_rec ty vty k))
-.
-
-Proof.
-   cut (forall ty k uty vty,
-    (variant true k ty = true ->
-    subtype uty vty ->
-    subtype (subst_rec ty uty k) (subst_rec ty vty k))
-    /\
-   (variant false k ty = true ->
-    subtype vty uty ->
-    subtype (subst_rec ty uty k) (subst_rec ty vty k)))
- .
- intros aux ty k uty vty cov s; eelim (aux ty k uty vty); intros H1 H2; eapply H1; auto.
- induction ty; intros k uty vty; simpl in *; auto 10 with TreeHintDb.
- - assert(k<n\/ k = n\/ k>n) by lia; disjunction_tac; subst; var_tac; split; intros; try eapply sub_zero;
-   eapply lift_rec_preserves_subtype; eauto; rewrite Nat.eqb_refl in *; discriminate.
- - eelim (IHty (S k)); intros; split; intros; eapply sub_quant; eauto.
- - intros; split; intros; rewrite ! andb_true_iff in *; split_all;  eapply sub_funty;
-     (eelim IHty1; intros; eauto; fail) || (eelim IHty2; intros; eauto).
- - eelim (IHty k uty vty); intros; split; intros; eapply sub_stem; eauto. 
- - eelim IHty1; eelim IHty2; intros; split; intros; rewrite ! andb_true_iff in *; split_all;  auto_t.  
- - eelim (IHty k uty vty); intros; split; intros; eapply sub_asf; eauto. 
-Qed.
-
-
-(* bfff_aug *) 
-
-
-Lemma subtype_preserves_bfff_aug: forall ty1 ty2, subtype ty1 ty2 -> subtype (bfff_aug ty1) (bfff_aug ty2).
-Proof. intros; eapply sub_fork; [ eapply sub_zero | auto_t]. Qed. 
-  
-Lemma subtype_preserves_iter_bfff_aug:
-  forall n ty1 ty2, subtype ty1 ty2 -> subtype (iter n bfff_aug ty1) (iter n bfff_aug ty2).
-Proof. induction n; intros; simpl. eauto.
-       eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. eapply sub_zero.
-Qed.
-  
-
-
-Lemma subtype_quant_bfff_aug: forall n ty, subtype (quant n (bfff_aug ty)) (bfff_aug (quant n ty)).
-Proof.
-  intros; unfold bfff_aug.    
-  eapply sub_trans. eapply subtype_quant_fork. eapply sub_fork.
-  replace (Stem (Fork Leaf eval_ty)) with (lift n (Stem (Fork Leaf eval_ty))) by (cbv; auto). 
-  eapply subtype_lift2.
-  eapply subtype_quant_asf.
-Qed.
-
-Lemma subtype_quant_iter_bfff_aug:
-  forall k n ty, subtype (quant n (iter k bfff_aug ty)) (iter k bfff_aug (quant n ty)).
-Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  eapply sub_trans. eapply subtype_quant_bfff_aug.
-  eapply sub_fork. eapply sub_zero. eapply sub_asf. auto. 
-Qed.
-
-
-Lemma bfff_aug_of_binary_fun :
-  forall uty vty wty, subtype (bfff_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
-Proof.  intros; unfold bfff_aug; repeat sub_fork2_tac. 2: auto_t. subst_tac; sub_fun_tac; auto_t. Qed. 
-
-
-Lemma iter_bfff_aug_of_binary_fun :
-  forall n uty vty wty, subtype (iter n bfff_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
-Proof.
-  induction n; intros; simpl. eapply sub_zero.
-  eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. eapply bfff_aug_of_binary_fun.
-Qed.     
-
-Lemma iter_bfff_aug_Quant: forall n ty, subtype (iter n bfff_aug (Quant ty)) (Quant (iter n bfff_aug ty)).
-Proof.
-  induction n; intros; simpl. eapply sub_zero. 
-  eapply sub_trans. eapply subtype_preserves_bfff_aug. eauto. 
-  unfold bfff_aug at 1 3.
-  eapply sub_trans. eapply sub_lift. eapply sub_quant. unfold lift; simpl; var_tac.
-  eapply sub_fork. eapply sub_zero. eapply sub_asf.
-  replace  (Quant (lift_rec (iter n bfff_aug ty) 1 1)) with
-      (lift 1 (quant 1 (iter n bfff_aug ty))) by (cbv; auto).
-  eapply subtype_lift3.
-Qed. 
-
-
-(* bffs_aug *) 
-
-
-Lemma subtype_preserves_bffs_aug: forall ty1 ty2, subtype ty1 ty2 -> subtype (bffs_aug ty1) (bffs_aug ty2).
-Proof. intros; eapply sub_fork; [ eapply sub_zero | eapply subtype_preserves_bfff_aug; auto_t]. Qed. 
-  
-Lemma subtype_preserves_iter_bffs_aug:
-  forall n ty1 ty2, subtype ty1 ty2 -> subtype (iter n bffs_aug ty1) (iter n bffs_aug ty2).
-Proof. induction n; intros; simpl. eauto.
-       eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. eapply sub_zero.
-Qed.
-  
-
-
-Lemma subtype_quant_bffs_aug: forall n ty, subtype (quant n (bffs_aug ty)) (bffs_aug (quant n ty)).
-Proof.
-  intros; unfold bffs_aug.    
-  eapply sub_trans. eapply subtype_quant_fork. eapply sub_fork.
-  replace (Stem (Fork Leaf eager_ty)) with (lift n (Stem (Fork Leaf eager_ty))) by (cbv; auto). 
-  eapply subtype_lift2.
-  eapply subtype_quant_bfff_aug.
-Qed.
-
-Lemma subtype_quant_iter_bffs_aug:
-  forall k n ty, subtype (quant n (iter k bffs_aug ty)) (iter k bffs_aug (quant n ty)).
-Proof.
-  induction k; intros; simpl. eapply sub_zero.
-  eapply sub_trans. eapply subtype_quant_bffs_aug.
-  eapply sub_fork. eapply sub_zero. eapply subtype_preserves_bfff_aug; auto. 
-Qed.
-
-
-Lemma bffs_aug_of_binary_fun :
-  forall uty vty wty, subtype (bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
-Proof.
-  intros; eapply sub_trans; [ eapply sub_fork; [ eapply sub_zero | eapply bfff_aug_of_binary_fun] |
-  repeat sub_fork2_tac; do 2 subst_tac]. 
-Qed. 
-
-Lemma iter_bffs_aug_of_binary_fun :
-  forall n uty vty wty, subtype (iter n bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
-Proof.
-  induction n; intros; simpl. eapply sub_zero.
-  eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. eapply bffs_aug_of_binary_fun.
-Qed.     
-
-Lemma iter_bffs_aug_Quant: forall n ty, subtype (iter n bffs_aug (Quant ty)) (Quant (iter n bffs_aug ty)).
-Proof.
-  induction n; intros; simpl. eapply sub_zero. 
-  eapply sub_trans. eapply subtype_preserves_bffs_aug. eauto. 
-  unfold bffs_aug at 1 3.
-  eapply sub_trans. 2: eapply (fork_quant_commute 1). eapply sub_fork.
-  eapply sub_trans. eapply sub_lift. cbv; eapply sub_zero. eapply (iter_bfff_aug_Quant 1). 
-Qed. 
-
-
 (* classification *)
+
+
 
 Inductive isLeafty : dtype -> Prop :=
 | leaf_isLeafty : isLeafty Leaf
@@ -303,6 +160,7 @@ Proof.
   intros ty1 ty2 s; induction s; intros; auto_t; try (inv_out H; auto_t; inv_out H1; auto_t; fail). 
   inv_out H; unfold subst; eapply subst_rec_preserves_funty; auto.
   unfold lift; eapply quant_is_funty; eapply lift_rec_preserves_funty; auto.
+(*   unfold Zty in *; inv_out H0. *) 
 Qed.
 
 
@@ -316,6 +174,7 @@ Proof.
   - inv_out H; eelim IHs; intros; eauto; split_all; auto_t.
   - inv_out H; left; unfold subst; eapply subst_rec_preserves_leafty; auto. 
   - left; eapply quant_is_leafty; unfold lift; eapply lift_rec_preserves_leafty; eauto.
+  (* - right; try eapply isFunty_quant; auto_t. *) 
 Qed.
 
 
@@ -326,6 +185,7 @@ Proof.
   - inv_out H; eelim IHs; intros; eauto; split_all; auto_t.
   - inv_out H; unfold subst; left; eapply subst_rec_preserves_stemty; auto.
   - unfold lift; left; eapply quant_is_stemty; eapply lift_rec_preserves_stemty; auto.
+  (* - right; eapply isFunty_quant; auto_t.*) 
 Qed.
 
 
@@ -336,6 +196,7 @@ Proof.
   - inv_out H; eelim IHs; intros; eauto; split_all; auto_t.
   - inv_out H; unfold subst; left; eapply subst_rec_preserves_forkty; auto.
   - unfold lift; left; eapply quant_is_forkty; eapply lift_rec_preserves_forkty; auto.
+  - right; eapply isFunty_quant; auto_t.
 Qed.
 
 
@@ -350,8 +211,9 @@ Proof.
   - eapply quant_not_funty; eapply lift_rec_preserves_not_funty; auto; eapply fork_not_funty; eauto. 
   - eapply quant_not_funty; eapply lift_rec_preserves_not_funty; auto_t.
   - eapply quant_not_funty; eapply lift_rec_preserves_not_funty; auto_t.
-  - inv_out H0; inv_out H1. 
-Qed.
+  - unfold Zty in *; inv_out H0; inv_out H1. 
+  (* - unfold Zty in *; inv_out H0; inv_out H1. *) 
+ Qed.
 
 
 Ltac not_funty_tac :=
@@ -530,6 +392,7 @@ Proof.
     eapply sub_trans. eapply sub_lift.
     unfold lift. rewrite lift_rec_preserves_quant.
     simpl. rewrite quant_succ. rewrite <- plus_n_O.  rewrite ! quant_succ; eapply sub_zero.
+  - eelim quant_mono2; intros; eauto; discriminate.     
     Unshelve.
     all: apply Leaf.
 Qed.
@@ -623,7 +486,7 @@ Proof.
       right; exists (S n0); repeat eexists; [
         rewrite subst_rec_preserves_quant; simpl; eauto | |];
       local_tac H0 H3.
-    
+   - eelim quant_mono2; intros; eauto; discriminate.     
     Unshelve.
     all: apply Leaf.
     (* !!!!  mgn (machine-generated names) *) 
@@ -787,6 +650,10 @@ Proof. induction sigma1; intros; simpl; auto; caseEq a; intros; auto. Qed.
   
 Lemma trim_quantf : forall p sigma ty, trim sigma (quantf p ty) = quantf p (trim sigma ty). 
 Proof. induction p; intros; simpl; auto; rewrite IHp; rewrite trim_asf; auto. Qed.
+
+
+Ltac quantf_tac := rewrite trim_quantf;  eapply sub_trans; [ eapply subtype_quant_quantf | ]; auto_t;
+            rewrite quantf_plus; eapply subtype_quantf; eauto. 
 
 
 
@@ -1144,7 +1011,7 @@ Proof.
         ty2 = quanta bs2 (Stem uty2) /\ subtype (quant p (trim sigma uty)) uty2 /\
         chip_count sigma (quant_count bs) (p + quant_count bs2))
     \/
-    subtype (quant (quant_count bs) (Quant (Funty (Var 0) (Fork (lift 1 uty) (Var 0))))) ty2); [
+      subtype (quant (quant_count bs) (Quant (Funty (Var 0) (Fork (lift 1 uty) (Var 0))))) ty2); [
   intros; eapply H; eauto |
   intros ty1 ty2 s; induction s; intros; subst; simpl in *; no_quanta; try discriminate;
     auto_t].
@@ -1217,7 +1084,7 @@ Proof.
         eapply chip_count_lift; [ | eapply chip_count_nil]];
       [ simpl; eapply sub_zero | lia]. 
   - inv_out H; right; simpl; subst_tac. 
-  - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H by (cbv; auto);  no_quanta.
+  - unfold Zty in *; no_quanta; inv_out H. 
   - left; repeat eexists; simpl; auto; [
         instantiate(2:= app bs (false :: nil)); rewrite quanta_app; simpl; eauto | |
         rewrite quant_count_app; simpl; rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil];
@@ -1264,6 +1131,7 @@ Proof.
       (eapply sub_trans; [
         eapply sub_lift |
         unfold lift; rewrite lift_rec_preserves_quant; simpl; eauto; rewrite quant_succ2; eapply sub_zero]).
+   -left; eapply isFunty_quant; auto_t.  
 Qed.
 
 
@@ -1319,8 +1187,8 @@ Proof.
         rewrite quant_count_app; simpl; instantiate(1:= 0);
         replace (quant_count bs + 1) with (S (quant_count bs)) by lia; simpl;
         eapply chip_count_lift; [ | eapply chip_count_nil ] | |]; try (simpl; eapply sub_zero); lia.
-  - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H by (cbv; auto); no_quanta.
-  - exists 0; exists (app bs (false :: nil)); repeat eexists; simpl; auto; [ 
+  - unfold Zty in *; no_quanta; inv_out H. 
+  -  exists 0; exists (app bs (false :: nil)); repeat eexists; simpl; auto; [ 
         rewrite quanta_app in *; simpl in *; eauto |
         rewrite quant_count_app; simpl; rewrite <- plus_n_O; eapply chip_count_nil | |];
       eapply sub_zero.  
@@ -1376,8 +1244,8 @@ Proof.
       left; unfold subst; rewrite subst_rec_preserves_quanta; simpl; eauto. 
   -   left;  exists (app bs (true :: nil)); repeat eexists; simpl; auto;
         rewrite quanta_app in *;  unfold lift; rewrite lift_rec_preserves_quanta; simpl; eauto. 
-  - right; subst_tac. 
-  - unfold omega2_ty in *; no_quanta.
+  - right; subst_tac.
+  - unfold Zty in *; no_quanta; inv_out H.
   - left;  exists (app bs (false :: nil)); repeat eexists; simpl; auto;  rewrite quanta_app in *; simpl in *; eauto.
   - eelim quanta_is_asf; intros; eauto; subst; simpl in *; split_all;  no_quanta.
  Qed.  
@@ -1459,8 +1327,8 @@ Proof.
   rewrite quant_count_app; simpl; eapply chip_count_lift; [
     |
       replace (quant_count bs + 1) with (S (quant_count bs)) by lia; eapply chip_count_nil] | |];
-    try (simpl; eapply sub_zero); lia. 
-  - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H by (cbv; auto);  no_quanta;   inv_out H; inv_out H0.
+      try (simpl; eapply sub_zero); lia.
+  - unfold Zty in *; no_quanta;  inv_out H; inv_out H0; inv_out H1. 
   - inv_out H0; inv_out H1.
   - exists 0; exists (app bs (false :: nil)); repeat eexists; [
         rewrite quanta_app; simpl; auto |
@@ -1544,7 +1412,7 @@ Proof.
         rewrite ? quant_count_app; simpl; replace (quant_count bs + 1) with (S (quant_count bs)) by lia; eapply chip_count_lift; auto_t; lia | |];
       simpl; rewrite plus_0_r; eapply sub_zero.
   -   inv_out H; right; subst_tac.
-  - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H by (cbv; auto);  no_quanta;  inv_out H; inv_out H0.
+  - unfold Zty in *; no_quanta; inv_out H; inv_out H0; inv_out H1.
   - inv_out H0; inv_out H1.
   - left; exists 0; exists (app bs (false :: nil)); repeat eexists; [
         rewrite quanta_app; simpl; eauto |
@@ -1564,17 +1432,20 @@ Proof.
     eapply sub_trans; eauto; eapply sub_trans; [ eapply (subtype_lift 1) | trim2_tac; eapply sub_zero].
 Qed.
 
-
+(* 
 
 Proposition subtype_omega21_ty:
   forall uty vty,
     subtype omega21_ty (Funty omega2_ty (Funty (Funty (Funty uty vty) uty) (Funty (Funty uty vty) vty))).
 Proof.
   intros; eapply sub_trans; [
-      cbv; eapply sub_zero |
-      repeat sub_fork2_tac; eapply sub_trans; [
+      cbv; eapply sub_zero | ]. 
+  sub_fork2_tac.
+2: auto_t. 
+
+  eapply sub_trans; [
         eapply sub_stem_fun |
-        sub_fun_tac; repeat sub_fork2_tac; eapply subtype_Kty]]. 
+        sub_fun_tac; repeat sub_fork2_tac]];  unfold K; try eapply subtype_Kty. 
 Qed.
 
 
@@ -1601,14 +1472,132 @@ Proof.
   Unshelve. apply Leaf.
 Qed.
 
-Lemma iter_plus: forall m n f x, iter (m+n) f (x: dtype) = iter m f (iter n f x). 
-Proof.  induction m; intros; simpl; auto_t; f_equal; auto. Qed. 
+ 
+
+Proposition subtype_omega21_ty:
+  forall k uty vty, exists ty, 
+     subtype omega21_ty
+    (Funty
+       (Fork
+          (Stem
+             (Fork Leaf (Funty (Funty (quant k (Funty uty vty)) (quant k (Funty uty vty))) (quant k (Funty uty vty)))))
+          omega2_ty) (Funty ty (quant k (Funty uty vty)))).
+Proof.
+  intros; eexists; eapply sub_trans; [
+      cbv; eapply sub_zero |]; 
+      repeat sub_fork2_tac; eapply sub_trans; [
+        eapply sub_stem_fun |
+      sub_fun_tac; repeat sub_fork2_tac]. 2:  eapply subtype_Kty.
+  eapply sub_trans. eapply subtype_Kty. do 2 sub_funty_tac. eapply sub_stem_fun.  sub_funty_tac. sub_fork2_tac.
+
+  all: cycle 1.
+
+ eapply sub_trans. eapply sub_stem_fun.  sub_funty_tac. sub_fork2_tac.
+
+ Eval cbv in omega2_ty. 
+  all: cycle 1.
 
 
-Ltac quantf_tac := rewrite trim_quantf;  eapply sub_trans; [ eapply subtype_quant_quantf | ]; auto_t;
-            rewrite quantf_plus; eapply subtype_quantf; eauto. 
+  ; eapply subtype_Kty]. 
+Qed.
+
+
+
+Proposition subtype_omega22_ty
+  : forall k uty vty,
+    subtype
+      omega22_ty
+      (Funty
+         omega2_ty
+         (Funty (Funty (quant k (Funty uty vty)) (quant k (Funty uty vty))) (quant k (Funty uty vty)))). 
+Proof.
+  intros; eapply sub_trans; [ cbv; eapply sub_zero | repeat sub_fork2_tac; try eapply subtype_Kty];
+    eapply sub_trans; [ eapply subtype_leaf_fork |];
+    do 2 sub_fun_tac;  repeat sub_fork2_tac; [ | eapply subtype_Kty];
+    eapply sub_trans; [ eapply subtype_leaf_fork |];
+    do 2 sub_fun_tac;
+    eapply sub_trans; [ eapply subtype_lift |]; eapply subtype_quant; unfold lift; refold lift_rec;   do 2 sub_fork2_tac; 
+    try eapply subtype_Kty; do 2 sub_fork2_tac;
+    replace (lift_rec omega2_ty 0 k) with omega2_ty by (cbv; auto);
+    rewrite lift_rec_preserves_quant; refold lift_rec;
+    eapply sub_trans; [ eapply sub_recursion |];
+    repeat sub_fun_tac; rewrite <- lift_rec_funty; rewrite <- plus_n_O; eapply subtype_lift4.
+  Unshelve. apply Leaf.
+Qed.
+ *)
+
+Lemma quanta_quant_to_quanta: forall n ty, quanta (quant_to_quanta n) ty = quant n ty.
+Proof.  induction n; intros; simpl; auto. Qed. 
+
+Definition Lift_n n := iter n (cons (Lift 0)) nil. 
+
+Lemma chip_count_Lift_n: forall n k, chip_count (Lift_n n) k (n+k).
+Proof.
+  induction n; intros; simpl; [ eapply chip_count_nil | eapply chip_count_lift; [lia | eapply chip_count_succ; eauto]]. 
+Qed.
+
+Lemma trim_Lift_n: forall n ty, trim (Lift_n n) ty = lift n ty.
+Proof.
+  induction n; intros; simpl.
+  - unfold lift; rewrite lift_rec_null; auto. 
+  - rewrite IHn; unfold lift; rewrite lift_rec_lift_rec; try lia; f_equal; lia.   
+Qed.
+
+Lemma  chip_lift_Lift_n: forall k n ty, trim (map (chip_lift n) (Lift_n k)) ty = lift_rec ty n k.
+Proof.
+  induction k; intros; simpl. 
+  - rewrite lift_rec_null; auto.
+  - rewrite IHk; rewrite lift_rec_lift_rec; try lia; f_equal; lia.
+Qed.
+
+
+(* 
+Definition omega2 := \"w" (\"f" (Ref "f" @ (wait (wait (Ref "w") (Ref "w")) (Ref "f")))).
+
+Definition Z2 f := wait (wait omega2 omega2) f.
+
+Eval cbv in (term_size (Z Node)).
+Eval cbv in (term_size (Z2 Node)).
+
+Print wait. 
+Print Z. 
+
+Definition wait2  w f := 
+Definition omega2 := \"w" (\"f" (S1 (K @ (Ref "w" @ Ref "w" @ Ref "f")) @ I)).
+
+Definition Z f := 
+
+S1 I @ (wait (Ref "w") (Ref "w"))).
+
+
+Lemma omega2_omega2: forall w f, t_red (omega2 @ w @ f) (f @ (wait w w @ f)).
+Proof.
+intros;  unfold omega2. unfold wait at 1; startac "w"; trtac. aptac. 
+eapply zero_red.
+unfold wait at 1; startac "w". trtac. . aptac. 
+aptac. 
+
+ *)
+(* 
+
+Lemma Zty_to_funty: forall k uty vty, subtype (Zty k uty vty) (Funty Leaf Leaf).
+Proof.
+  intros; unfold Zty.
+  repeat sub_fork2_tac. eapply sub_trans. eapply sub_stem_fun. sub_funty_tac. 
+  repeat sub_fork2_tac. eapply sub_trans. eapply sub_stem_fun. sub_funty_tac. 
+  repeat sub_fork2_tac.
+  all: cycle 1.
+  eapply sub_trans. eapply sub_stem_fun. sub_funty_tac.
+  eapply sub_trans. eapply sub_recursion.
+  
+  repeat sub_fork2_tac. eapply sub_trans. eapply sub_stem_fun. sub_funty_tac. 
+  repeat sub_fork2_tac. eapply sub_trans. eapply sub_stem_fun. sub_funty_tac. 
 
   
+*) 
+
+  
+
 Theorem subtype_from_fork_of_stem:
   forall ty1 ty2,
     subtype ty1 ty2 ->
@@ -1621,12 +1610,17 @@ Theorem subtype_from_fork_of_stem:
        subtype (quant p1 (trim sigma vty1)) (quantf k vty2) /\
        (ty2 = quanta bs2 (Fork (quant n2 (Stem uty2)) vty2) (* fold quantf k into bs2 *) 
         \/
-        exists u2 v2 w2,
-          n2 = 0 /\ 
-          uty2 = Funty u2 (Funty v2 w2) /\
-          vty2 = Funty u2 v2 /\ 
-          ty2 = quanta bs2 (Funty u2 w2)
-       )). 
+          (exists u2 v2 w2,
+              n2 = 0 /\ 
+                uty2 = Funty u2 (Funty v2 w2) /\
+                vty2 = Funty u2 v2 /\ 
+                ty2 = quanta bs2 (Funty u2 w2) )
+    (*     \/
+          (exists k3 uty3 vty3,
+              n2 = 0 /\
+                Fork (Stem uty2) vty2 = Zty k3 uty3 vty3 /\
+                subtype (quant bs2 (quant k3 (Funty uty3 vty3))) ty2 *) 
+      )).
 Proof.
   intros ty1 ty2 s; induction s; intros; subst; simpl in *; no_quanta; try discriminate; auto_t;
     try (inv_out H; no_quant);
@@ -1634,19 +1628,18 @@ Proof.
  - right; exists nil; exists 0; exists 0; repeat eexists; [ eapply chip_count_nil | | | left; auto]; eapply sub_zero.
  - eelim IHs1; intros; eauto; split_all; disjunction_tac; split_all.
    + left; eapply subtype_not_funty; eauto.
-   + eelim IHs2; intros; [ | | eauto]; auto; clear IHs1 IHs2; split_all; disjunction_tac; split_all; auto; [ 
+   + eelim IHs2; intros; [ | | eauto]; auto; clear IHs1 IHs2; split_all; disjunction_tac; split_all; auto.  
          right; repeat eexists; [ | | | left; eauto]; [ 
-           eapply chip_count_app2; eauto | | ]; trim5_tac; [
+           eapply chip_count_app2; eauto | | ]; trim5_tac; [ 
            rewrite trim_preserves_iter_bffs_aug;  eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug |];
-           eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto |];
-           instantiate(1:= x1 + x8); rewrite iter_plus; eapply sub_zero | 
-           quantf_tac] |
+           eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto |] |].
+           instantiate(1:= x1 + x8); rewrite iter_plus; eapply sub_zero .  
+           quantf_tac. 
          right; repeat eexists; [ | | | right; repeat eexists; eauto]; [ 
-           eapply chip_count_app2; eauto | | ]; trim5_tac; [
-           rewrite trim_preserves_iter_bffs_aug;  eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug |];
-           eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto |];
-           instantiate(2:= x1 + x8); rewrite iter_plus; eapply sub_zero | 
-           quantf_tac]].
+             eapply chip_count_app2; eauto | | ]; trim5_tac. 
+         rewrite trim_preserves_iter_bffs_aug;  eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug |];
+           eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto |]. rewrite iter_plus;  eapply sub_zero.
+         quantf_tac.
    + eelim subtype_from_quanta_funty; intros; [ | eapply s2 | eauto]; split_all;
        right; repeat eexists; [ | | | right; repeat eexists]; [ 
          eapply chip_count_app2; eauto | | ]; trim5_tac; [ 
@@ -1727,17 +1720,28 @@ Proof.
        instantiate(1:= 0); simpl; rewrite lift_rec_preserves_quant; eapply sub_zero | ]; [
        lia |
        simpl; eapply sub_zero].
- - right; repeat eexists; [ | | | right; repeat eexists; instantiate(3:= nil); eauto]; [ 
-       instantiate(1:= 0); eapply chip_count_nil |
-       instantiate(4:= 0);  simpl; eapply sub_zero |
-       eapply sub_zero |
-       eauto]. 
- - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H1; no_quanta; inv_out H1;  no_quant;
-     right; repeat eexists; [
-       | | | right; repeat eexists; instantiate(3:= nil); simpl; eauto]; [ 
- instantiate(1:= 0); simpl; eapply chip_count_nil |
-       instantiate(2:= 0); simpl; eapply subtype_omega21_ty |
-       eapply subtype_omega22_ty].
+ - right; repeat eexists; [ | | | right; repeat eexists; instantiate(3:= nil); simpl; eauto]; [
+       instantiate(1:= 0); eapply chip_count_nil | instantiate(2:= 0) |]; simpl; eapply sub_zero.
+ -  unfold Zty in *; no_quanta; inv_out H1;  no_quant; auto; right; repeat eexists.
+    4: right; repeat eexists; rewrite (quanta_quant_to_quanta); instantiate(3:= k); simpl; eauto. 
+    instantiate(1:= 0);  simpl. rewrite quant_count_quant_to_quanta.
+    all:     simpl; repeat trim_tac.
+    3: instantiate(2:= 0); simpl; eapply sub_fork_leaf.
+    all: cycle 1.
+    simpl.
+    sub_fork2_tac. 2: eapply sub_stem_fun. 
+    sub_fork2_tac. eapply sub_trans; [ eapply sub_stem_fun | sub_funty_tac]. 
+    sub_fork2_tac. 2: eapply sub_fork_leaf.
+    sub_fork2_tac. 2: eapply sub_stem_fun.
+    sub_fork2_tac. 2: eapply sub_leaf_fun.
+    eapply sub_trans. eapply sub_stem_fun. sub_funty_tac. 
+    eapply sub_trans. eapply sub_fork_leaf. sub_funty_tac. 
+    sub_fork2_tac. 2: eapply sub_stem_fun.
+    sub_fork2_tac. eapply sub_funty.
+    eapply sub_recursion.
+    instantiate(1:= Lift_n k).
+    2: replace k with (k+0) at 2 by lia; eapply chip_count_Lift_n.
+    rewrite ! chip_lift_Lift_n; eapply sub_trans; [ | eapply subtype_lift4]; simpl; eapply sub_zero. 
  - inv_out H0; no_quant.
  - right; repeat eexists; [
      | | | left; instantiate(4:= app bs1 (false :: nil)); rewrite quanta_app; simpl; eauto]; [
@@ -1754,154 +1758,6 @@ Proof.
 Qed.
 
   
-Theorem subtype_from_fork_of_stem2:
-  forall ty1 ty2,
-    subtype ty1 ty2 ->
-    forall bs1 n1 uty1 vty1,
-      ty1 = quanta bs1 (Fork (quant n1 (Stem uty1)) vty1) ->
-      not_funty ty2 \/
-      (exists sigma p1 k n2 bs2 uty2 vty2,
-       chip_count sigma (quant_count bs1) (p1 + (quant_count bs2)) /\
-       subtype (quant p1 (trim sigma (quant n1 uty1))) (iter k bffs_aug (quant n2 uty2)) /\
-       subtype (quant p1 (trim sigma vty1)) (quantf k vty2) /\
-       (ty2 = quanta bs2 (Fork (quant n2 (Stem uty2)) vty2) (* fold quantf k into bs2 *) 
-        \/
-        exists u2 v2 w2,
-          n2 = 0 /\ 
-          uty2 = Funty u2 (Funty v2 w2) /\
-          vty2 = Funty u2 v2 /\ 
-          ty2 = quanta bs2 (Funty u2 w2)
-       )). 
-Proof.
-  intros ty1 ty2 s; induction s; intros; subst; simpl in *; no_quanta; try discriminate; auto_t;
-    try (inv_out H; no_quant);
-    try (eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta; fail). 
-  - right; exists nil; exists 0; exists 0; repeat eexists; [ eapply chip_count_nil | | |]; try eapply sub_zero; left; auto.
-  - eelim IHs1; intros; eauto; split_all; disjunction_tac; split_all.
-    + left; eapply subtype_not_funty; eauto.
-    + eelim IHs2; intros; [ | | eauto]; auto; clear IHs1 IHs2; split_all; disjunction_tac; split_all; auto; [
-          right; repeat eexists; [ | | | left; eauto]; [
-            eapply chip_count_app2; eauto |
-            trim5_tac;
-            rewrite trim_preserves_iter_bffs_aug;
-            eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug |];
-            eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto | ];
-            instantiate(1:= x1 + x8);
-            replace (iter (x1 + x8) bffs_aug (quant x9 x11)) with (iter x1 bffs_aug (iter x8 bffs_aug (quant x9 x11)));
-            [ eapply sub_zero | rewrite iter_plus; auto] |
-            trim5_tac; 
-            rewrite quantf_plus; eapply sub_trans; [ | eapply subtype_quantf; eauto];
-            rewrite trim_quantf; eapply subtype_quant_quantf] |]; 
-        right; repeat eexists; [ | | | right; repeat eexists]; [
-          eapply chip_count_app2; eauto |
-          trim5_tac;
-          rewrite trim_preserves_iter_bffs_aug;
-          eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug | ];
-          eapply sub_trans; [ eapply subtype_preserves_iter_bffs_aug; eauto |];
-          instantiate(2:= x1 + x8); instantiate(1:= x14); simpl;
-          replace  (iter x1 bffs_aug (iter x8 bffs_aug (Funty x13 (Funty x14 x15))))
-            with (iter (x1 + x8) bffs_aug (Funty x13 (Funty x14 x15)));
-          [ eapply sub_zero | rewrite iter_plus; auto] |
-          trim5_tac; 
-          rewrite quantf_plus; eapply sub_trans; [ | eapply subtype_quantf; eauto]; 
-          rewrite trim_quantf; eapply subtype_quant_quantf].
-    + clear IHs1 IHs2.
-      eelim subtype_from_quanta_funty; intros; [ | eapply s2 | eauto]; split_all; 
-        right; repeat eexists; [ | | | right; repeat eexists]; [
-          eapply chip_count_app2; eauto |
-    trim5_tac;
-    rewrite trim_preserves_iter_bffs_aug;
-      eapply sub_trans; [ eapply subtype_quant_iter_bffs_aug |];
-      eapply subtype_preserves_iter_bffs_aug;  simpl; rewrite ! trim_funty; dist_tac; eauto; dist_tac; auto_t | 
-    trim3_tac;
-    eapply sub_trans;[eapply subtype_quant; eapply trim_preserves_subtype; eapply sub_trans; [ eauto | eapply subtype_from_asf]|];
-    rewrite trim_funty;
-    eapply sub_trans; [ | eapply subtype_to_asf]; dist_tac; auto_t]. 
-  - eelim subtype_from_stemty2; intros; [ | | eauto ]; [
-        left; eapply fork_not_funty; auto | 
-        split_all; right; exists nil; exists 0; exists 0;  eexists; exists nil; repeat eexists; simpl]; [
-        eapply chip_count_nil | | | left; f_equal ]; eauto.
-  - eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quant; eelim IHs; intros; eauto; [ left; auto_t |];
-      split_all; disjunction_tac; [
-        right; repeat eexists; [ 
-          rewrite quant_count_app; simpl; instantiate(1:= app x4 (false :: nil));
-          rewrite quant_count_app; simpl; rewrite <- ! plus_n_O; eauto |
-          eauto |
-          eauto |
-          left; rewrite quanta_app; simpl; eauto] |
-        split_all;  right; repeat eexists; [
-        | | |
-          right; repeat eexists; instantiate(3:= app x4 (false :: nil)); rewrite quanta_app; simpl; eauto]; [
-          rewrite ! quant_count_app; simpl; rewrite <- ! plus_n_O | |]; eauto].
-  - eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; eelim IHs; intros; eauto; [ left; auto_t |];
-      split_all; disjunction_tac; [
-    right; repeat eexists; [ 
-    rewrite quant_count_app; simpl; instantiate(1:= app x4 (true :: nil)); rewrite quant_count_app; simpl;
-      replace (quant_count x + 1) with (S (quant_count x)) by lia;
-      instantiate(1:= x1); replace (x1 + (quant_count x4 + 1)) with (S (x1 + quant_count x4)) by lia;
-      eapply chip_count_succ; eauto | | |
-    left; rewrite quanta_app; simpl]; eauto |
-    split_all;  right; repeat eexists; [  
-    | | | right; repeat eexists; instantiate(3:= app x4 (true :: nil)); rewrite quanta_app; simpl; eauto];
-    [rewrite ! quant_count_app; simpl; replace (quant_count x + 1) with (S (quant_count x)) by lia;
-      instantiate(1:= x1); replace (x1 + (quant_count x4 + 1)) with (S (x1 + quant_count x4)) by lia;
-      eapply chip_count_succ | | ]; eauto]. 
-  - eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta; inv_out H2; right; repeat eexists; [
-      | | | left; instantiate(4:= nil); simpl; rewrite quant_succ2; eauto]; [
-        simpl; rewrite <- plus_n_O; eapply chip_count_nil |
-        instantiate(1:= 0); simpl; rewrite quant_succ; eapply sub_zero |
-        eapply sub_zero].
-  - eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta;
-      eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quant; no_quanta;
-      right; repeat eexists; [
-      | | | left; instantiate(4:= app x0 (true :: false :: nil)); rewrite quanta_app; simpl; eauto]; [
-        rewrite ! quant_count_app; simpl; rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil |
-        instantiate(1:= 0); eapply sub_zero |
-        eapply sub_zero]. 
-  - eelim quanta_is_quant; intros; eauto; subst; simpl in *; no_quant; no_quanta; right; repeat eexists; [
-      | | |
-        left; unfold subst; rewrite subst_rec_preserves_quanta; simpl; rewrite subst_rec_preserves_quant; simpl; eauto]; [
-        instantiate(1:= 0); rewrite quant_count_app; simpl | |]; [ 
-       replace (quant_count x + 1) with (S (quant_count x)) by lia; eapply chip_count_inst; [ | eapply chip_count_nil] |
-        instantiate(1:= 0); simpl; rewrite subst_rec_preserves_quant; eapply sub_zero |]; [
-        lia |
-        simpl; eapply sub_zero].
-  - right; repeat eexists; [
-      | | | 
-        left; unfold lift; rewrite lift_rec_preserves_quanta; simpl; rewrite lift_rec_preserves_quant; simpl; eauto]; [
-        instantiate(1:= app bs1 (true :: nil)); rewrite quant_count_app; simpl | | |]; [ 
-       replace (quant_count bs1 + 1) with (S (quant_count bs1)) by lia; eapply chip_count_lift | | |]; [ 
-      | 
-        instantiate(1:= 0); simpl; eapply chip_count_nil |
-        instantiate(3:= 0); simpl; rewrite lift_rec_preserves_quant; eapply sub_zero |
-        simpl; eapply sub_zero |
-        rewrite quanta_app; simpl; eauto];
-      lia.
-  - right; repeat eexists; [ | | | right; repeat eexists; instantiate(3:= nil); eauto]; [
-    instantiate(1:= 0); eapply chip_count_nil |
-    instantiate(4:= 0);  simpl; eapply sub_zero |
-        eapply sub_zero |
-        eauto]. 
-  - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H1; no_quanta; inv_out H1; no_quant; right; repeat eexists; [
-        | | | right; repeat eexists; instantiate(3:= nil); simpl; eauto]; [ 
-        instantiate(1:= 0); simpl; eapply chip_count_nil |
-        instantiate(2:= 0); simpl; eapply subtype_omega21_ty |
-        eapply subtype_omega22_ty].
-  - inv_out H0; no_quant.
-  - right; repeat eexists; [ | | | left; instantiate(4:= app bs1 (false :: nil)); rewrite quanta_app; simpl; eauto]; [
-        rewrite quant_count_app; simpl; rewrite <- plus_n_O; instantiate(1:= 0); eapply chip_count_nil |
-        instantiate(1:= 0); simpl; eapply sub_zero |
-        eapply sub_zero].
-  - eelim quanta_is_asf; intros; eauto; subst; simpl in *; no_quant; no_quanta. 
-  - right; repeat eexists; [ | | | left; instantiate(4:= false :: nil); simpl; instantiate(3:= 0); simpl; eauto]; [
-        instantiate(1:= 0); eapply chip_count_nil |
-        instantiate(1:= 1); simpl; eapply sub_zero |
-        eapply sub_zero].
-Qed.
-
-Lemma iter_bffs_aug: forall n uty vty wty, subtype (iter n bffs_aug (Funty uty (Funty vty wty)))  (Funty uty (Funty vty wty)).
-Proof. induction n; intros; simpl; auto_t;  eapply sub_trans; [eapply subtype_preserves_bffs_aug; eauto |  eapply bffs_aug_of_binary_fun]. Qed. 
-
   
 Theorem subtype_from_fork_of_stem_to_funty:
   forall uty vty zty ty,  subtype (Fork (Stem uty) vty) (Funty zty ty) -> 
@@ -2124,7 +1980,7 @@ Proof.
         do 3 right; left; repeat eexists; [ instantiate(3:= nil); simpl; eauto; auto_t | ]]; [  
         instantiate(1:= 0); eapply chip_count_nil | 
       | instantiate(2:= 0) | |]; simpl; eapply sub_zero.
-   - replace omega2_ty with (Fork (Stem omega21_ty) omega22_ty) in H1; no_quanta; inv_out H1; no_quant.
+   - unfold Zty in *; no_quanta; try inv_out H1; no_quant; inv_out H0; no_quant. 
   - inv_out H0; no_quant; right; repeat eexists; [
       | | | |
         do 4 right; repeat eexists; eauto; instantiate(3:= nil); simpl; eauto; auto_t]; [ 

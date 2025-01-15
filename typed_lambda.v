@@ -31,7 +31,7 @@
 
 
 Require Import Arith Lia Bool List Nat Datatypes String.
-Require Import terms types subtypes derive.
+Require Import terms types subtypes derive classify.
 
 
 Set Default Proof Using "Type".
@@ -85,14 +85,38 @@ Proof.
   - eapply derive_K1; auto_t.
   - caseEq N; intros; subst.
     + caseEq (x=? s)%string; intros. 
-      * assert(x = s) by (eapply String.eqb_eq; eauto); subst;   assert(subtype uty u) by (eapply derive_ref_sub; eauto);
+      * assert(x = s) by (eapply String.eqb_eq; eauto); subst;
+          assert(subtype uty u) by (eapply derive_ref_sub; eauto).
           caseEq (occurs s M); intros; simpl; [
-            eapply derive_S2; eauto |
-            rewrite String.eqb_refl; eapply derive_S2; [ eapply derive_subtype; [ eapply IHd1; eauto |sub_funty_tac; auto_t] |
-                                                         eapply derive_subtype; [ eapply derive_I | sub_funty_tac; auto_t]]]. 
-      * caseEq (occurs x M); intros; simpl; rewrite H; [
-            eapply derive_S2; [ eauto | eapply derive_K1;  eapply derive_occurs_false; eauto] |]; 
-          eapply derive_K1; eapply derive_app; eauto; eapply derive_occurs_false; eauto.
+            eapply derive_S2; eauto | ]. 
+          eapply derive_subtype; [ eapply derive_I | auto_t].
+          assert(derive gamma0 (\ s M) (Funty uty (Funty u ty))) by (eapply IHd1; eauto).  
+          rewrite star_occurs_false in H2; auto. inv_out H2.
+          eapply derive_subtype; eauto.
+          inv_out H6; inv_out H5; inv_out H9.
+          eelim subtype_from_leafty2; intros.
+          3: instantiate(2:= nil); simpl; eapply sub_trans; [ eapply H2 | eapply sub_funty; eauto; eapply sub_zero].
+          split_all; no_quanta.
+          eelim subtype_from_quanta_funty; intros. 2: eapply H4. 
+          2: instantiate(3:= true :: nil); simpl; eauto.
+          split_all. no_quanta. inv_out H6. 
+          trim_tac.
+          eelim subtype_from_stemty3; intros.
+          3: instantiate(3:= nil); simpl; eapply sub_trans; [ eapply sub_stem; eapply H10 | eapply sub_trans; [ eapply stem_quant_commute | eauto]]. 
+          split_all; no_quanta.           
+          unfold lift in *; simpl in *.           
+          eelim subtype_from_quanta_funty; intros. 
+          2: eapply H6.
+          2: rewrite quanta_quant_to_quanta; eauto; instantiate(3:= 1); simpl; eauto. 
+          split_all; no_quanta. inv_out H11. trim_tac. trim_tac.
+          eapply sub_trans; eauto; eapply subtype_from_fork_of_leaf_to_fun.
+          eapply sub_trans.
+          eapply sub_fork. eapply subtype_lift. eapply sub_zero. eapply sub_trans. eapply fork_quant_commute. unfold lift; simpl.
+          eapply sub_trans; eauto.
+          do 2 sub_funty_tac; auto. 
+      * caseEq (occurs x M); intros; simpl.  
+        eapply derive_S2; [ eauto | eapply derive_K1;  eapply derive_occurs_false; eauto].
+        eapply derive_K1; eapply derive_app; eauto; eapply derive_occurs_false; eauto.
     + caseEq (occurs x M); intros; simpl; [ 
           eapply derive_S2; eauto; eapply derive_K1; eapply derive_occurs_false; eauto |
           eapply derive_K1; eapply derive_app; eapply derive_occurs_false; eauto].   

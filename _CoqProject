@@ -6,14 +6,15 @@ rewriting_theorems.v
 types.v
 subtypes.v
 derive.v
+classify.v
+classify_derive.v
+reduction_preserves_typing.v
 typed_lambda.v
 typed_recursion.v
 typed_triage.v
 typed_evaluator.v
-classify.v
-classify_derive.v
-reduction_preserves_typing.v
 
+to_tikz_2021.v
 
 #  coq_makefile -f _CoqProject -o CoqMakefile
 
