@@ -1,3 +1,5 @@
+Successor (2026): the paper "Typing Rules Become Programs in Tree Calculus" and its Rocq development are at https://github.com/barry-jay-personal/typing-rules-as-programs
+
 This directory contains the Coq verification of the theorems in the
 paper "Typed Program Analysis Without Encodings" written by Barry Jay.
 Theorem names are identical in the paper and this implementation.
