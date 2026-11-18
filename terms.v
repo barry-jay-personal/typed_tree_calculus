@@ -80,7 +80,7 @@ Notation "x @ y" := (App x y) (at level 65, left associativity) : tree_scope.
 Definition K := △ @ △. 
 Definition S1 x := △ @ (△@x).
 Definition Sop := S1 (K @ Node) @ Node. 
-Definition I := S1 K @ K.
+Definition I := S1 K @ Node.
 Definition KI := K@I.
 
 Ltac unfold_op := unfold KI, I, K, S1.
@@ -100,7 +100,8 @@ Ltac program_tac := cbv; repeat (apply pr_stem || apply pr_fork || apply pr_leaf
 (* Tree-reduction *)
 
 (* 
-This differs from the reduction of untyped tree calculus, using rules suggested by Johannes Bader. 
+This differs from the reduction of untyped tree calculus, using rules suggested by Johannes Bader.
+We have worked together on optimising many constructions below. 
 
 Node Node = K 
 Node (Node x) = S x 
@@ -291,59 +292,6 @@ Proof.
 Qed.
 
 
-(* star abstraction *)
-
-
-Ltac aptac := eapply transitive_red; [ eapply preserves_app_t_red |].
-
-Ltac htac r :=
-  ((eapply transitive_red; [ eapply r |]) ||
-     (aptac; [ htac r; trtac | trtac | trtac ]) ||
-     (aptac; [ trtac | htac r; trtac | trtac ]))
-   ; trtac.
-
-
-Fixpoint occurs x M :=
-  match M with
-  | Ref y => eqb x y 
-  | △ => false
-  | M1@ M2 => (occurs x M1) || (occurs x M2)
-  end.
-
-
-Lemma substitute_occurs_false: forall M x N, occurs x M = false -> substitute M x N = M. 
-Proof.
-  induction M; simpl; intros x N e; split_all;
-    [ rewrite e; auto | rewrite orb_false_iff in *; rewrite IHM1; try tauto; rewrite IHM2; tauto]. 
-Qed.
-
-
-Fixpoint star x M := (* no eta-contractions because argument types must be invariant *) 
-  match M with
-  | Ref y =>  if eqb x y then I else (K@ (Ref y))
-  | △ => K@ △
-  | App M1 M2 => if occurs x (M1 @ M2)
-                 then S1 (star x M1) @ (star x M2)
-                 else K@ (M1 @ M2)
-  end. 
-
-Notation "\" := star : tree_scope.
-
-
- 
-Theorem star_beta: forall M x N, t_red ((\x M) @ N) (substitute M x N).
-Proof.
-  induction M as [s | | M1 ? M2]; intros x N; simpl;  auto.
-  caseEq (x=?s); intros; tree_red . 
-  tree_red. 
-  unfold S1; caseEq (occurs x M1 || occurs x M2); intros; trtac.
-  htac IHM1; htac IHM2. 
-  rewrite orb_false_iff in *; split_all; rewrite ! substitute_occurs_false; auto; zerotac. 
-Qed.
-
-
-(* Recursion *)
-
 
 
 
@@ -354,7 +302,6 @@ match goal with
 | H: prop △ |- _ => inversion H; clear H; inv1 prop
 | _ => auto_t
  end.
-
 
 
 (* 4.2: Combinations versus Terms *)
@@ -386,6 +333,26 @@ Inductive normal : Tree -> Prop :=
 
 Ltac normal_tac := cbv; repeat (apply nf_stem || apply nf_fork || apply nf_leaf || apply nf_ref); auto.
 
+
+(* star abstraction *)
+
+
+Ltac aptac := eapply transitive_red; [ eapply preserves_app_t_red |].
+
+Ltac htac r :=
+  ((eapply transitive_red; [ eapply r |]) ||
+     (aptac; [ htac r; trtac | trtac | trtac ]) ||
+     (aptac; [ trtac | htac r; trtac | trtac ]))
+   ; trtac.
+
+
+Fixpoint occurs x M :=
+  match M with
+  | Ref y => eqb x y 
+  | △ => false
+  | M1@ M2 => (occurs x M1) || (occurs x M2)
+  end.
+
 Lemma occurs_combination: forall M x,  combination M -> occurs x M = false.
 Proof.
   induction M; simpl; split_all; inv1 combination; subst; auto; rewrite IHM1; auto; rewrite IHM2; auto.
@@ -400,6 +367,61 @@ Proof. auto. Qed.
 Lemma occurs_app: forall x M N, occurs x (M@ N) = occurs x M || occurs x N.
 Proof. auto. Qed. 
 
+Lemma substitute_occurs_false: forall M x N, occurs x M = false -> substitute M x N = M. 
+Proof.
+  induction M; simpl; intros x N e; split_all;
+    [ rewrite e; auto | rewrite orb_false_iff in *; rewrite IHM1; try tauto; rewrite IHM2; tauto]. 
+Qed.
+
+
+Fixpoint star x M := (* no eta-contractions because argument types must be invariant *) 
+  match M with
+  | Ref y =>  if eqb x y then I else (K@ Ref y)
+  | △ => K@ △
+  | App M1 M2 =>
+      match M2 with
+      | Ref y => if eqb x y
+                 then if occurs x M1
+                      then  S1 (star x M1) @ I
+                      else M1
+                 else if occurs x M1
+                      then  S1 (star x M1) @ (K @ Ref y)
+                      else K @ (M1 @ M2)
+      | _ => if occurs x (M1 @ M2)
+                 then S1 (star x M1) @ (star x M2)
+                 else K@ (M1 @ M2)
+      end
+  end.
+
+
+Notation "\" := star : tree_scope.
+
+
+
+Theorem star_beta: forall M x N, t_red ((\x M) @ N) (substitute M x N).
+Proof.
+  induction M as [s | | M1 ? M2]; intros x N; simpl;  auto; [
+      caseEq (x=?s); intros; tree_red |
+      tree_red | assert(t_red (\ x M2 @ N) (substitute M2 x N)) by auto; clear IHM2];
+    unfold S1; caseEq (occurs x M1 || occurs x M2); intros; trtac; caseEq M2; intros; subst; simpl in *.
+    - rewrite orb_true_iff in *; disjunction_tac; rewrite H1 in *; simpl.
+      + caseEq (x=?s); intros; trtac; htac IHM1. 
+      + caseEq (occurs x M1); intros; simpl; trtac; [
+          htac IHM1 |
+          rewrite ! substitute_occurs_false; auto; zerotac]. 
+    - rewrite orb_false_r in *; trtac; htac IHM1.
+    - trtac; htac IHM1; eapply preserves_appr_t_red; caseEq t0; intros; subst; simpl in *.
+      + caseEq (x=? s); intro aux; rewrite aux in *; simpl in *; auto.
+      + rewrite orb_false_r in *; caseEq (occurs x t); intros aux; rewrite aux in *; simpl in *; auto.
+      + caseEq (occurs x t || (occurs x t1 || occurs x t2)); intro aux; rewrite aux in *; simpl in *; htac H.
+    - caseEq (x=?s); intro aux; rewrite aux in *; simpl.
+      + caseEq (occurs x M1); intros aux2; rewrite aux2 in *; simpl in *; trtac; [
+            htac IHM1 |
+            rewrite substitute_occurs_false; auto; zerotac].
+      + rewrite orb_false_r in *; rewrite H0; trtac; rewrite substitute_occurs_false; auto; zerotac. 
+    - trtac; rewrite orb_false_r in *; rewrite substitute_occurs_false; auto; zerotac. 
+    - trtac; rewrite ! orb_false_iff in *; split_all; rewrite ! substitute_occurs_false; auto; zerotac. 
+Qed. 
 
 
 Lemma star_combination: forall M x, combination M -> \x M = K@ M. 
@@ -418,13 +440,23 @@ Lemma star_id: forall x, \x (Ref x) = I.
 Proof. intro; unfold star, occurs; rewrite eqb_refl; auto. Qed.
 
 Lemma star_occurs_false: forall M x, occurs x M = false -> \x M = K@ M. 
-Proof. induction M; simpl; intros x occ; rewrite ? occ; auto. Qed.
+Proof.
+  induction M; simpl; intros x occ; rewrite ? occ; auto; rewrite orb_false_iff in *; split_all;
+    caseEq M2; intros; subst; simpl in *; auto; rewrite H0; simpl; rewrite H; auto.
+Qed.
 
 
 Lemma star_occurs_true:
-  forall M1 M2 x, occurs x (M1@ M2) = true -> \x (M1@ M2) = S1 (\x M1) @ (star x M2).
-Proof.  intros M1 M2 x occ; unfold star at 1; fold star; rewrite occ; auto. Qed.
+  forall M1 M2 x, occurs x (M1@ M2) = true -> M2 <> Ref x -> \x (M1@ M2) = S1 (\x M1) @ (star x M2).
+Proof.
+  intros M1 M2 x occ; unfold star at 1; fold star; rewrite occ; auto; simpl in *; disjunction_tac; 
+    caseEq M2; intros; subst; simpl in *; auto;  caseEq (x=? s); intros aux; rewrite aux in *.
+  - assert(x = s) by (eapply eqb_eq; eauto); subst; congruence.
+  - rewrite orb_false_r in *; rewrite occ; auto.
+Qed.
 
+Lemma star_eta: forall M x, occurs x M = false -> \x (M @ Ref x) = M.
+Proof. intros M x H; simpl; rewrite eqb_refl; rewrite H; auto.  Qed. 
 
 
 Lemma occurs_substitute_true:
@@ -452,9 +484,9 @@ Ltac occurstac :=
 
 
 
-Ltac startac_true x := rewrite (star_occurs_true _ _ x); [| occurstac ]. 
+Ltac startac_true x := rewrite (star_occurs_true _ _ x); [| occurstac | discriminate ]. 
 Ltac startac_false x :=  rewrite (star_occurs_false _ x); [ | occurstac].
-Ltac startac x := unfold S1; repeat (startac_false x || startac_true x || rewrite star_id).
+Ltac startac x := unfold S1; repeat (startac_false x || startac_true x || (rewrite star_eta; [ | occurstac]) || rewrite star_id ).
 
 Ltac starstac1 xs :=
   match xs with
@@ -475,17 +507,72 @@ rewrite star_id
 
 (*** General Recursion *)
 
+(* Johannes Bader and I have optimised this by:
+replacing omega2 omega2 by self_apply omega2;
+replacing wait2 by wait;
+optimising wait;
+introducing wait1;
+introducing self_apply_k
 
+Such optimisation will require adjustment to the subtyping rule sub_recursion. 
+ *)
+
+
+
+
+(** waiting *)
+
+Definition wait M N := S1 (S1 (K @ (S1 M)) @ K) @  (K @ N).
+
+Theorem wait_red: forall M N x, t_red (wait M N @ x) (M @ N @ x). Proof. tree_red.  Qed. 
+
+Definition wait1 M := S1 (S1 (K @ (S1 M)) @ K) .
 
 
 (*** Self-application and fixfunctions *)
 
 
-Definition self_apply := Eval cbv in \"x" (Ref "x" @ (Ref "x")).
 
-Definition wait M N := S1 (S1 (K@ M) @ (K@ N)) @ I.
+Definition self_apply_k := Eval cbv in \"x" (Ref "x" @ (K @ (Ref "x"))).
 
-Theorem wait_red: forall M N x, t_red (wait M N @ x) (M @ N @ x). Proof. tree_red.  Qed. 
+
+Definition Z f := wait self_apply_k (S1 (K @ f) @ (wait1 self_apply_k)).
+
+Theorem Z_red: forall f x, t_red (Z f @ x) (f @ (Z f) @ x).
+Proof.
+  intros; unfold Z at 1; unfold self_apply_k at 1; htac wait_red;
+    eapply preserves_appl_t_red; eapply preserves_appr_t_red;
+    unfold wait at 1; refold star; simpl; trtac.
+Qed. 
+
+
+Theorem Z_program: forall f, program f -> program (Z f). 
+Proof. intros; program_tac. Qed.
+
+
+Definition swap f := S1 (K @ (S1 f)) @ K.
+
+Theorem swap_red: forall f x y, t_red (swap f @ x @ y) (f @ y @ x). Proof. tree_red. Qed. 
+
+
+Definition Yop2 f := Z (swap f).
+
+Theorem Y2_red: forall f, (program f -> program (Yop2 f)) /\ (forall x, t_red (Yop2 f @ x) (f @ x @ (Yop2 f))).
+Proof. intros; split; intro; [ program_tac | htac Z_red; htac swap_red]. Qed. 
+
+ Fixpoint term_size t :=
+  match t with
+  | App t1 t2 => term_size t1 + term_size t2
+  | _ => 1
+  end.
+
+ Lemma term_size_Z: term_size (Z Node) = 45.
+ Proof. cbv; auto. Qed. 
+
+ Lemma term_size_Y2: term_size (Yop2 Node) = 53.
+ Proof. cbv; auto. Qed. 
+
+ 
 
 Definition omega := \"w" (\"f" (Ref "f" @ (Ref "w" @ Ref "w" @ Ref "f"))).
 
@@ -494,7 +581,7 @@ Definition Yop := omega @ omega.
 Theorem Yop_red: forall f, t_red (Yop @ f) (f @ (Yop @ f)).
 Proof. intros; unfold Yop; unfold omega at 1; unfold star; simpl; unfold S1, I; trtac. Qed. 
 
-
+(* 
 Definition wait2 M N x :=  S1 (S1 (S1 (K @ M) @ (K @ N)) @ (K @ x)) @ I.
 
 
@@ -542,16 +629,10 @@ Proof.
 Qed.
 
 
-Definition swap f := S1 (K @ (S1 f)) @ K.
-
-Theorem swap_red: forall f x y, t_red (swap f @ x @ y) (f @ y @ x). Proof. tree_red. Qed. 
 
 Definition Yop2 f := Z (swap f).
 
-
-Theorem Y2_red: forall f, (program f -> program (Yop2 f)) /\ (forall x, t_red (Yop2 f @ x) (f @ x @ (Yop2 f))).
-Proof. intros; split; intro; [ program_tac | eapply transitive_red; [ eapply Z_red | eapply swap_red]]. Qed. 
-
+*) 
 
 (* generic equality *)
 
@@ -575,7 +656,7 @@ Lemma equal_leaf: t_red (equal @ Node @ Node) K.
 Proof. htac Y2_red;  tree_red. Qed.
 
 Lemma equal_stem: forall x y, t_red (equal @ (Node @ x) @ (Node @ y)) (equal @ x @ y).
-Proof. intros; htac Y2_red; unfold triage; trtac; startac "e"; startac "x"; trtac. Qed.
+Proof. intros; htac Y2_red; unfold triage; trtac. startac "e"; startac "x"; trtac. Qed.
 
 Lemma equal_fork:
   forall x1 x2 y1 y2, t_red (equal @ (Node @ x1 @ x2) @ (Node @ y1 @ y2))
@@ -585,9 +666,9 @@ Proof. intros; htac Y2_red; unfold triage; trtac; startac "y2"; startac "y1"; st
 Theorem equal_programs: forall M, program M -> t_red (equal @ M @ M) K.
 Proof.
   intros M pr; induction pr; intros. 
-  htac equal_leaf.
-  htac equal_stem. 
-  htac equal_fork; htac IHpr1. 
+  - htac equal_leaf.
+  - htac equal_stem. 
+  - htac equal_fork; htac IHpr1. 
 Qed.
 
 
@@ -686,18 +767,16 @@ Fixpoint compose0 m n := (* compose0 m n g fs xs = g xs (map fs xs) if length fs
 Definition compose m n := S1 (K @ compose0 m n) @ (Kn n) . (* \"x" (compose0 m n @ (Kn n @ Ref "x")).  *) 
 
 Lemma Kn_closed: forall n x, occurs x (Kn n) = false.
-Proof.
-  induction n; intros; simpl; auto; rewrite  IHn; simpl;
-         rewrite star_occurs_false; simpl; rewrite  IHn; auto.
-Qed. 
+Proof.  induction n; intros; simpl; auto; rewrite  IHn; simpl; auto. Qed. 
 
   
 Lemma Kn_red: forall xs g, t_red (fold_left App xs (Kn (List.length xs) @ g)) g. 
 Proof.
-  induction xs; intros; simpl; auto. repeat trtac. rewrite Kn_closed; simpl.  
-  eapply transitive_red. eapply fold_left_app_preserves_red. 
-  trtac. rewrite star_occurs_false; simpl.  2: eapply Kn_closed. trtac. 
-  eapply transitive_red. eapply fold_left_app_preserves_red. trtac. eapply IHxs. 
+  induction xs; intros; simpl; auto.
+  - repeat trtac; rewrite Kn_closed.
+  - simpl;   eapply transitive_red; [ eapply fold_left_app_preserves_red; trtac |];
+      rewrite star_occurs_false; simpl; rewrite ! Kn_closed; auto; simpl;
+      eapply transitive_red; [ eapply fold_left_app_preserves_red; trtac | eapply IHxs]. 
 Qed.
 
 
@@ -713,55 +792,26 @@ Proposition compose1_red:
   forall xs g f,
     t_red (fold_left App xs (compose1 (List.length xs) @ g @ f)) ((fold_left App xs g) @ (fold_left App xs f)).
 Proof.
-  induction xs; intros; simpl; auto. trtac.
-  rewrite compose1_closed.  refold orb. 
-  eapply transitive_red. eapply fold_left_app_preserves_red. 
-  rewrite (star_occurs_false _ "x"); eauto. 2: eapply compose1_closed. 
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  rewrite (star_occurs_false _ "f"). 2: simpl; rewrite compose1_closed; auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  rewrite (star_occurs_false). 2: auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  rewrite 2 (star_occurs_false). 2, 3: auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  rewrite (star_occurs_false). 2: auto.
-  unfold S1; rewrite star_occurs_true. 2: simpl; rewrite ! orb_true_r; auto.
-  rewrite (star_occurs_false). 2: simpl; eapply compose1_closed. 
-  unfold S1; rewrite star_occurs_true. 2: simpl; auto.
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite star_id.
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite (star_occurs_true). 2: auto. 
-  rewrite (star_occurs_false). 2: auto. 
-  rewrite star_id.
-  rewrite (star_occurs_false). 2: auto. 
-  trtac.
-  eapply transitive_red. eapply fold_left_app_preserves_red. trtac. 
-  eapply IHxs.
+  induction xs; intros; simpl; auto; [ trtac |];
+    rewrite compose1_closed; refold orb; eapply transitive_red.
+  -  eapply fold_left_app_preserves_red;
+       rewrite (star_occurs_false _ "x"); eauto; [ | eapply compose1_closed];
+       unfold S1; startac "f"; rewrite star_eta; [ | simpl; rewrite compose1_closed; auto]; trtac.
+  - startac "g"; trtac;  rewrite star_eta; [ | simpl; rewrite compose1_closed; auto];
+       eapply transitive_red; [ eapply fold_left_app_preserves_red; trtac | eapply IHxs].
 Qed. 
 
 
  Lemma compose0_closed: forall m n x, occurs x (compose0 m n) = false. 
 Proof.
-  induction m; intros; simpl; auto; rewrite ! orb_true_r. 
-  rewrite ! compose1_closed; simpl. rewrite ! compose1_closed; simpl.
-  rewrite star_occurs_false. 2: eauto.
-  simpl. rewrite IHm. simpl. rewrite ! IHm.
-  rewrite star_occurs_false; simpl; rewrite compose1_closed; auto. 
+  induction m; intros; simpl; auto; rewrite ! orb_true_r;
+    rewrite ! compose1_closed; simpl;
+    rewrite star_occurs_false; eauto; simpl;
+    rewrite IHm; simpl;
+    rewrite star_occurs_false; simpl;
+    rewrite compose1_closed; auto; simpl;
+    rewrite IHm; simpl; 
+    rewrite compose1_closed; auto. 
 Qed.
 
 Proposition compose0_red:
@@ -778,18 +828,9 @@ Proof.
       eapply fold_left_app_preserves_red;
       eapply fold_left_app_preserves_red;
       rewrite (star_occurs_false _ "f"); [ | eapply compose0_closed];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
+      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto | discriminate];
       rewrite star_occurs_false; [ | simpl; eapply compose0_closed];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto];
-      rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_false; auto;
-      unfold S1; rewrite star_occurs_true; [ | simpl; rewrite ! orb_true_r; auto]; 
-      rewrite star_occurs_false; auto; 
-      rewrite star_occurs_false; [ | eapply compose1_closed];
-      rewrite star_id;
-      rewrite star_occurs_false; [ | auto];
+      rewrite star_eta; [ | eapply compose1_closed];
       trtac.
  Qed.
 
@@ -804,8 +845,6 @@ Proof.
         eapply compose0_red |   
         eapply fold_left_app_preserves_red; eapply Kn_red]]. 
 Qed.
-
-
 
 
 (*** Zero, successor and numerals as iterators *) 
@@ -869,8 +908,196 @@ Proof. induction k; intros; repeat eexists; simpl; [ eapply zero_red | htac IHk;
  
 Theorem pred_red: forall k,  t_red (predN @ (num k)) (num (pred k)). 
 Proof.
-  intros; unfold predN; repeat startac2;  unfold fstL; repeat startac2;
-  trtac;  htac num_iterates; htac pred_aux; tree_red.  
+  intros; unfold predN.  startac "n". trtac. unfold fstL; trtac;
+    htac num_iterates; htac pred_aux; tree_red.  
+Qed.
+
+
+
+(*** Primitive Recursion *)
+
+
+
+Definition primrec0_abs :=
+  \"n"
+          (\"x"
+            (isZero @ (Ref "n")
+                    @ Ref "g"
+                    @ (Ref "h" @ (predN @ Ref "n") @ (Ref "x" @ (predN @ Ref "n")))                  
+          )).
+
+Lemma primrec0_val:
+  primrec0_abs = S1 (S1 (K @ △) @ (S1 (K @ △) @ (S1 (K @ K) @ (S1 isZero @ (K @ Ref "g"))))) @
+  (S1 (S1 (K @ △) @ (S1 (K @ △) @ (S1 (K @ K) @ (S1 (K @ Ref "h") @ predN)))) @
+   (S1 (K @ (△ @ (△ @ I))) @ (S1 (K @ K) @ predN))). 
+Proof.  cbv; auto.  Qed.
+
+
+Definition primrec0 g h :=
+    Yop2 ( S1 (S1 (K @ △) @ (S1 (K @ △) @ (S1 (K @ K) @ (S1 isZero @ (K @ g))))) @
+  (S1 (S1 (K @ △) @ (S1 (K @ △) @ (S1 (K @ K) @ (S1 (K @ h) @ predN)))) @
+   (S1 (K @ (△ @ (△ @ I))) @ (S1 (K @ K) @ predN)))). 
+
+
+Lemma primrec0_red_zero :
+  forall g h, t_red (primrec0 g h @ zero) g.
+Proof.  intros; unfold primrec0;  startac "y"; startac "x"; htac Y2_red; htac isZero_zero. Qed. 
+
+
+Lemma primrec0_red_succ :
+  forall k g h, t_red (primrec0 g h @ (num (S k))) (h @ (num k) @ (primrec0 g h @ (num k))).
+Proof. intros; unfold primrec0; startac "y"; startac "x"; htac Y2_red;  htac isZero_succ; htac ff_red; repeat htac pred_red. Qed.
+  
+
+Definition primrec g h xs := primrec0 (fold_left App xs g) (fold_left App xs h).
+
+
+Theorem primrec_red_zero:
+  forall xs g h, t_red (primrec g h xs @ zero) (fold_left App xs g). 
+Proof.  intros; eapply primrec0_red_zero. Qed. 
+
+
+Theorem primrec_red_succ:
+  forall xs g h k,
+    t_red (primrec g h xs @ (num (S k))) (fold_left App xs h @ (num k) @ (primrec g h xs @ (num k))). 
+Proof.  intros; simpl; auto; eapply primrec0_red_succ. Qed. 
+
+
+Definition prim_plus0 n := primrec I (K @ (K @ (\"z" (succ1 @ (Ref "z"))))) (n::nil). 
+
+Definition prim_plus := \"n" (prim_plus0 (Ref "n")). 
+
+Theorem prim_plus_zero: forall n, t_red (prim_plus @ n @ zero) n. 
+Proof.
+  intros; htac star_beta;
+  replace (substitute (prim_plus0 (Ref "n")) "n" n) with (prim_plus0 n) by (cbv; auto);
+  htac primrec_red_zero; tree_red.
+Qed.
+
+Theorem prim_plus0_succ1: forall m n, t_red (prim_plus0 m @ (num (S n))) (succ1 @ (prim_plus0 m @ (num n))). 
+Proof.  intros; htac primrec_red_succ; simpl; trtac. Qed. 
+  
+
+
+  
+(*** Minimisation *)
+
+
+Definition minrec_abs := \"r1" (\"r0" (Ref "f" @ Ref "r1" @ Ref "r1" @ (Ref "r0" @ (succ1 @ (Ref "r1"))))).
+
+Lemma min_rec_abs_val :
+  minrec_abs =   △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ Ref "f") @ (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+    (△ @ (△ @ (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ △)) @ (△ @ △))))))).
+Proof.  cbv; auto. Qed. 
+
+
+  
+
+Definition minrec0 f := Yop2   (  △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ f) @ (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+    (△ @ (△ @ (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ △)) @ (△ @ △)))))))). 
+
+  
+Lemma minrec0_found: forall f n, t_red (f @ n) tt -> t_red (minrec0 f @ n) n. 
+Proof.  intros f n H; htac Y2_red; htac H. Qed.
+
+
+Lemma minrec0_next: forall f n, t_red (f @ n) ff -> t_red (minrec0 f @ n) (minrec0 f @ (succ1 @ n)).
+Proof.  intros f n H; htac Y2_red; htac H; htac ff_red; eapply preserves_appr_t_red; tree_red. Qed.
+
+Definition minrec f xs := minrec0 (fold_left App xs f).
+
+
+Theorem minrec_found:
+  forall f xs n, t_red (fold_left App xs f @ n) tt -> t_red (minrec f xs @ n) n. 
+Proof. intros; eapply minrec0_found; eauto. Qed.
+
+Theorem minrec_next:
+  forall f xs n, t_red (fold_left App xs f @ n) ff -> t_red (minrec f xs @ n) (minrec f xs @ (succ1 @ n)).
+Proof. intros; eapply minrec0_next; eauto. Qed.
+
+
+
+(* This shows Turing completeness *)
+
+(* 
+
+(*** Zero, successor and numerals as iterators *) 
+
+Definition zero := KI.
+
+
+Definition succ1 := S1 (S1 (K @ Node) @ (S1 (K @ Node) @ K)).
+
+
+Theorem succ1_red: forall n f x, t_red (succ1 @ n @ f @ x) (f @ (n @ f @ x)).
+Proof.  tree_red. Qed. 
+  
+Definition num k := iter k (fun x => succ1 @ x) zero.
+
+ 
+Lemma num_iterates: forall m f x, t_red (num m @ f @ x) (iter m (App f) x).
+Proof.
+  induction m; intros; unfold num; fold num; simpl; eauto; repeat trtac; [ tree_red | 
+  unfold succ1 at 1; trtac; eapply preserves_appr_t_red; eapply IHm].
+Qed.
+
+
+Lemma num_succ_red: forall k, t_red (num (S k)) (succ1 @ (num k)).
+Proof. tree_red. Qed.  
+
+  
+(*** The zero test and conditionals *)
+
+
+Definition isZero := \"n" (Ref "n" @ (K @ ff) @ tt). 
+
+Theorem isZero_zero: t_red (isZero @ zero) tt.
+Proof.  tree_red. Qed.
+
+Theorem isZero_succ: forall n, t_red (isZero @ (succ1 @ n)) ff.
+Proof.  tree_red. Qed.
+
+Definition cond := I. 
+
+Theorem cond_false : forall x y, t_red (cond @ ff @ x @ y) y.
+Proof. tree_red. Qed. 
+
+Theorem cond_true : forall x y, t_red (cond @ tt @ x @ y) x.
+Proof. tree_red. Qed. 
+
+
+(*** The predecessor function  - underpinning primitive recursion *) 
+  
+Definition PZero := pairL zero zero.  (*   \ (Var 0 @ (num 0) @ (num 0)). *)  
+Definition PSucc := \"p" (pairL (sndL @ Ref "p") (succ1 @ (sndL @ Ref "p"))). 
+Definition predN := \"n" (fstL @ (Ref "n" @ PSucc @ PZero)).
+
+Lemma PSucc_red: forall m n,  t_red (PSucc @ (pairL m n)) (pairL n (succ1 @ n)).
+Proof. tree_red. Qed.
+
+
+Lemma pred_aux:  forall k, t_red (iter k (App PSucc) PZero) (pairL (num (Nat.pred k)) (num k)).
+Proof. induction k; intros; repeat eexists; simpl; [ eapply zero_red | htac IHk; htac PSucc_red]. Qed.
+
+ 
+Theorem pred_red: forall k,  t_red (predN @ (num k)) (num (pred k)). 
+Proof.
+  intros; unfold predN;  startac "n"; 
+  trtac. unfold fstL.  trtac. Search num. htac num_iterates; htac pred_aux; tree_red.  
 Qed.
 
 
@@ -994,6 +1221,176 @@ Proof. intros; eapply minrec0_next; eauto. Qed.
 
 (* This shows Turing completeness *)
 
+(* an alternative account 
+
+(*** Zero, successor and numerals as iterators *) 
+
+Definition zero := Node.
+Definition succ1 := Node. 
+Definition num k := iter k (App Node) Node.
+
+ 
+
+Lemma num_succ_red: forall k, t_red (num (S k)) (succ1 @ (num k)).
+Proof. tree_red. Qed.  
+
+  
+(*** The zero test and conditionals *)
+
+
+Definition isZero := triage K (K @ KI) (K @ (K @ K)). (* forks are zero *) 
+
+Theorem isZero_zero: t_red (isZero @ zero) tt.
+Proof.  tree_red. Qed.
+
+Theorem isZero_succ: forall n, t_red (isZero @ (succ1 @ n)) ff.
+Proof.  tree_red. Qed.
+
+Definition cond := I. 
+
+Theorem cond_false : forall x y, t_red (cond @ ff @ x @ y) y.
+Proof. tree_red. Qed. 
+
+Theorem cond_true : forall x y, t_red (cond @ tt @ x @ y) x.
+Proof. tree_red. Qed. 
+  
+Definition predN := triage Node I (K @ (K @ Node)) (* forks are zero *).
+ 
+Theorem pred_red: forall k,  t_red (predN @ (num k)) (num (pred k)). 
+Proof.  intros; caseEq k; intros; simpl; tree_red. Qed.
+
+
+(*** Primitive Recursion *)
+
+
+
+Definition primrec0_abs :=
+  \"n"
+          (\"x"
+            (isZero @ (Ref "n")
+                    @ Ref "g"
+                    @ (Ref "h" @ (predN @ Ref "n") @ (Ref "x" @ (predN @ Ref "n")))                  
+          )).
+
+Lemma primrec0_val:
+  primrec0_abs = △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ (△ @ (△ @ (△ @ △) @ (△ @ △ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)))) @ (△ @ △ @ (△ @ △ @ (△ @ △))))) @
+       (△ @ △ @ Ref "g")))))) @
+  (△ @
+   (△ @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ △)) @
+      (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+       (△ @ (△ @ (△ @ △ @ Ref "h")) @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △ @ (△ @ △ @ △)))))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+      (△ @ (△ @ (△ @ △ @ (△ @ △))) @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △ @ (△ @ △ @ △)))))) .
+Proof.  tree_red; f_equal. Qed. 
+
+
+Definition primrec0 g h :=
+    Yop2 ( △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+      (△ @ (△ @ (△ @ (△ @ (△ @ △) @ (△ @ △ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)))) @ (△ @ △ @ (△ @ △ @ (△ @ △))))) @
+       (△ @ △ @ g)))))) @
+  (△ @
+   (△ @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ △)) @
+      (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+       (△ @ (△ @ (△ @ △ @ h)) @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △ @ (△ @ △ @ △)))))))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+      (△ @ (△ @ (△ @ △ @ (△ @ △))) @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △ @ (△ @ △ @ △)))))) ).
+
+
+
+Lemma primrec0_red_zero :
+  forall g h, t_red (primrec0 g h @ zero) g.
+Proof.  intros; unfold primrec0; htac Y2_red; htac isZero_zero. Qed. 
+
+
+Lemma primrec0_red_succ :
+  forall k g h, t_red (primrec0 g h @ (num (S k))) (h @ (num k) @ (primrec0 g h @ (num k))).
+Proof. intros; unfold primrec0; htac Y2_red;  htac isZero_succ; htac ff_red; repeat htac pred_red. Qed.
+  
+
+Definition primrec g h xs := primrec0 (fold_left App xs g) (fold_left App xs h).
+
+
+Theorem primrec_red_zero:
+  forall xs g h, t_red (primrec g h xs @ zero) (fold_left App xs g). 
+Proof.  intros; eapply primrec0_red_zero. Qed. 
+
+
+Theorem primrec_red_succ:
+  forall xs g h k,
+    t_red (primrec g h xs @ (num (S k))) (fold_left App xs h @ (num k) @ (primrec g h xs @ (num k))). 
+Proof.  intros; simpl; auto; eapply primrec0_red_succ. Qed. 
+
+Definition comp g f := S1 (K @ g) @ f. 
+
+Definition prim_plus_abs := Eval cbv in triage KI (\"x" (\"p" (comp Node (Ref "p" @ Ref "x")))) (K @ (K @ KI)). 
+
+Definition prim_plus := Yop2 prim_plus_abs.
+
+Theorem prim_plus_zero: forall n, t_red (prim_plus @ zero @ n) n. 
+Proof.  intros; unfold prim_plus; htac Y2_red; unfold prim_plus_abs at 1; trtac. Qed. 
+
+Theorem prim_plus_succ1: forall m n, t_red (prim_plus @ (succ1 @ m) @ n) (succ1 @ (prim_plus @ m @ n)).
+Proof.  intros; unfold prim_plus; htac Y2_red; unfold prim_plus_abs at 1; trtac. Qed. 
+
+  
+(*** Minimisation *)
+
+
+Definition minrec_abs := \"r1" (\"r0" (Ref "f" @ Ref "r1" @ Ref "r1" @ (Ref "r0" @ (succ1 @ (Ref "r1"))))).
+
+Lemma min_rec_abs_val :
+  minrec_abs =  △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ (△ @ △))) @ (△ @ (△ @ Ref "f") @ (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @ (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △)).
+Proof.  tree_red; f_equal. Qed. 
+
+Definition minrec0 f := Yop2   (   △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ (△ @ △))) @ (△ @ (△ @ f) @ (△ @ (△ @ (△ @ △)) @ △)))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @ (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △))).   
+
+Lemma minrec0_found: forall f n, t_red (f @ n) tt -> t_red (minrec0 f @ n) n. 
+Proof.  intros f n H; htac Y2_red; htac H. Qed.
+
+
+Lemma minrec0_next: forall f n, t_red (f @ n) ff -> t_red (minrec0 f @ n) (minrec0 f @ (succ1 @ n)).
+Proof.  intros f n H; htac Y2_red; htac H; htac ff_red; eapply preserves_appr_t_red; tree_red. Qed.
+
+Definition minrec f xs := minrec0 (fold_left App xs f).
+
+
+Theorem minrec_found:
+  forall f xs n, t_red (fold_left App xs f @ n) tt -> t_red (minrec f xs @ n) n. 
+Proof. intros; eapply minrec0_found; eauto. Qed.
+
+Theorem minrec_next:
+  forall f xs n, t_red (fold_left App xs f @ n) ff -> t_red (minrec f xs @ n) (minrec f xs @ (succ1 @ n)).
+Proof. intros; eapply minrec0_next; eauto. Qed.
+
+
+
+(* This shows Turing completeness *)
+
+ *)
+ *)
+
+
 
 (* Triage *)
 
@@ -1011,6 +1408,8 @@ Definition size_loop :=
 Definition size := Z size_loop.
 
 
+
+
 (*** Tagging *)
 
 Definition tag t i := wait (K @ t) i.
@@ -1018,21 +1417,14 @@ Definition tag t i := wait (K @ t) i.
 Lemma tag_is_functional: forall t i x, t_red (tag t i @ x) (t@ x).
 Proof. intros; tree_red. Qed.
 
-Definition untag :=
-  triage Node Node
-         (triage Node
-                 (triage Node Node (triage Node KI Node))
-                 Node).
+Definition untag :=  triage Node Node (K @ (triage Node Node KI)).
 
 Lemma untag_untags: forall t i, t_red (untag @ (tag t i)) i.
 Proof. tree_red. Qed. 
 
 
 
-(* Evaluators *)
-
-
-
+(*** Evaluators *)
 
 (* eager evaluation *)
 
@@ -1078,7 +1470,6 @@ Proof.  intros M N fac1; inversion fac1; subst; tree_red. Qed.
 
 
 
-
 (* Branch-first evaluation *)
 
 Inductive branch_first_eval: Tree -> Tree -> Tree -> Prop :=
@@ -1115,20 +1506,27 @@ Proof. intros M N p; inversion p; auto_t. Qed.
 
 
 
+(* 377 
+
 Definition bffs := (* the function is a fork of a stem *) 
-  \ "x" (\ "y" (S1 (S1 (K @ eager) @ (S1 (K @ Ref "e") @ (Ref "e" @ Ref "x"))) @ (Ref "e" @ Ref "y"))).
-Definition bfff_fork := \"y" (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y")).
+  \ "x" (\"e" (\ "y" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
 Definition bfff := (* the function is a fork of a fork, so triage on the argument *) 
   \"w"
    (\"x"
-     (\"y"
+      (\"e" (\"y"
        (triage
                (Ref "w")
                (Ref "e" @ Ref "x")
-               (bfff_fork @ Ref "y")
-               ))). 
-Definition bff :=  triage K bffs bfff.
-Definition bf := Z (\ "e" (triage Node Node bff)). 
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   )))).
+Definition bff :=  \"e" (\"x" (triage (K@K) bffs bfff @ Ref "x" @ Ref "e")).
+Definition bf := Z (\ "e" (triage Node Node (bff @ Ref "e"))). 
+
+
+Eval cbv in (term_size bffs). (* 139 *) 
+Eval cbv in (term_size bfff). (* 172, up from 155  *) 
+
+
 
 Theorem bf_leaf_red: forall p,  t_red (bf @ △ @ p) (△@ p).  
 Proof.
@@ -1141,29 +1539,26 @@ Proof.
 Qed.
 
 Theorem bf_fork_red:
-  forall x y, t_red (bf @ (△ @ x @ y)) ((substitute bff "e" bf) @ x @ y).
-Proof. intros; htac Z_red; unfold triage; startac "e"; trtac; htac star_beta. Qed. 
+  forall x y, t_red (bf @ (△ @ x @ y)) ( bff @ bf @ x @ y).
+Proof. intros; htac Z_red; unfold triage; startac "e"; trtac. Qed. 
 
 
 Theorem bf_fork_leaf_red:  forall y z, t_red(bf @ (△@△@y) @ z) y.
-Proof. intros; aptac; [ apply bf_fork_red | trtac | tree_red]. Qed.
-
+Proof. intros; htac bf_fork_red; tree_red. Qed. 
 
 
 Theorem bf_fork_stem_red:
-  forall x y z, t_red (bf @ (△@(△@x) @y) @ z) (eager @ (bf @ (bf @ x @ z)) @ (bf @ y @ z)). 
-Proof.
-  intros; htac bf_fork_red; unfold bff, bffs, triage, K; refold substitute; trtac;
-    startac "y"; startac "x"; unfold S1, K; refold substitute;
-  rewrite ! substitute_occurs_false; [ rewrite ! String.eqb_refl;  trtac | |]; cbv; auto.
+  forall x y z, t_red (bf @ (△@(△@x) @y) @ z) (eager_s @ (bf @ y @ z) @ (bf @ (bf @ x @ z)) ). 
+Proof. intros; htac bf_fork_red.   unfold bff, bffs, triage; 
+    startac "z"; startac "y"; startac "e"; startac "x"; startac "e"; startac "x"; trtac. 
 Qed. 
 
 Theorem bf_fork_fork_red: forall w x y,
     t_red (bf @ (△@(△@w @x) @y)) (triage w (bf @ x) (S1 (K @ bf) @ (bf @ y))).
 Proof.
-  intros; htac bf_fork_red; unfold bff, bfff, bfff_fork, triage, K; refold substitute; trtac;
-    startac "y"; startac "x"; startac "w"; unfold S1, K; refold substitute;
-      rewrite ! substitute_occurs_false; [ rewrite ! String.eqb_refl;  trtac | cbv; auto].
+  intros; htac bf_fork_red; unfold bff, bfff, triage, K; refold substitute; trtac;
+    startac "y"; startac "e"; startac "x"; startac "w"; startac "e"; startac "x"; unfold S1, K; trtac;
+    startac "w"; startac "e"; trtac; unfold star; simpl; trtac. 
 Qed.
 
 
@@ -1192,6 +1587,471 @@ Proof.
   - apply bf_stem_red.
   - apply bf_fork_leaf_red.
   - inv_out prM; inv_out H1; htac bf_fork_stem_red;
+      htac IHev2; htac eager_s_of_factorable; [
+          eapply programs_are_factorable | aptac; [ aptac; [ | htac IHev1 |] |  | ]; zerotac; eapply IHev3; eauto];
+        eapply branch_first_program; eauto.
+  - eapply bf_fork_fork_leaf_red.
+  - inv_out prM; inv_out prN; inv_out H1;
+      htac bf_fork_fork_stem_red; eapply IHev; eauto.
+  - inv_out prM; inv_out prN; inv_out H1;
+      htac bf_fork_fork_fork_red; aptac; [ aptac; [ zerotac | eapply IHev1 | zerotac] | zerotac |zerotac]; eauto;
+      htac IHev2; eauto; eapply branch_first_program; eauto.
+Qed.
+
+(* the converse theorem is in rewriting_theorems.v *) 
+   
+
+
+
+Theorem term_size_equal: term_size equal = 406. Proof. cbv; auto. Qed. 
+
+Theorem term_size_bf: term_size bf = 376. Proof. cbv; auto. Qed. 
+
+*) 
+ 
+(* 
+Definition C x := S1 (K @ (S1 x)) @ K. 
+
+Definition bffs := (* the function is a fork of a stem *) 
+  \ "x" (\"e" (\ "y" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs). (* 139 *) 
+
+Definition bfff := (* the function is a fork of a fork, so triage on the argument *)
+
+\"w" ( match  ((\"e" (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+         )))) with
+              | M @ N => C (\"x" M) @ N
+              | _ => Node
+  end).
+
+Eval cbv in (term_size bfff). (* 192 *) 
+
+
+Print bfff. 
+
+  \"w"
+   (\"x"
+      (\"e" (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   )))).
+
+Eval cbv in (term_size bfff).
+
+Eval cbv in ((\"e" (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   )))). 
+
+Definition bff :=  triage K bffs bfff.
+Definition bf := Z (\ "e" (triage Node Node bff)). 
+
+ *)
+
+Definition bffs := (* the function is a fork of a stem *) 
+  \ "x" (\ "y" (\"z" (eager @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z"))  @ (Ref "e" @ Ref "y" @ Ref "z")))). 
+Definition bfff := (* the function is a fork of a fork, so triage on the argument *) 
+  \"w"
+   (\"x"
+      (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   ))).
+Definition bff :=  triage K bffs bfff.
+Definition bf := Z (\ "e" (triage Node Node bff)). 
+
+(* 
+Eval cbv in (term_size (\"e" bffs)). (* 155 *) 
+Eval cbv in (term_size (\"e" bfff)). (* 155 *) 
+ *)
+
+Set Printing Depth 200.
+
+Lemma bf_val : bf =  △ @
+  (△ @
+   (△ @
+    (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △)))))) @
+    (△ @ △))) @
+  (△ @ △ @
+   (△ @
+    (△ @
+     (△ @ △ @
+      (△ @ (△ @ (△ @ △ @ (△ @ (△ @ △ @ △)))) @
+       (△ @
+        (△ @
+         (△ @ (△ @ (△ @ △ @ △)) @
+          (△ @ (△ @ (△ @ △ @ (△ @ (△ @ △)))) @
+           (△ @
+            (△ @
+             (△ @ (△ @ (△ @ △ @ △)) @
+              (△ @ (△ @ (△ @ △ @ △)) @
+               (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+                (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+                 (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ △)))))) @
+                  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+                   (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+                    (△ @
+                     (△ @
+                      (△ @ △ @
+                       (△ @
+                        (△ @
+                         (△ @ △ @
+                          (△ @
+                           (△ @
+                            (△ @ △ @
+                             (△ @
+                              (△ @
+                               (△ @ △ @
+                                (△ @
+                                 (△ @
+                                  (△ @
+                                   (△ @
+                                    (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)) @
+                                     (△ @ △ @ △)) @
+                                    (△ @
+                                     (△ @
+                                      (△ @ △ @
+                                       (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+                                     (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △))) @
+                                   (△ @
+                                    (△ @
+                                     (△ @ △ @
+                                      (△ @
+                                       (△ @
+                                        (△ @ △ @
+                                         (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)))))))) @
+                                    (△ @
+                                     (△ @
+                                      (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ △)))))) @
+                                     △))))))) @ (△ @ △)))))))))) @
+                     (△ @
+                      (△ @
+                       (△ @ (△ @ (△ @ △ @ △)) @
+                        (△ @ (△ @ (△ @ △ @ △)) @
+                         (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+                          (△ @ (△ @ (△ @ △ @ △)) @
+                           (△ @ (△ @ (△ @ △ @ △)) @ (△ @ △))))))) @
+                      (△ @ (△ @ (△ @ △)) @ △))))))))))) @ 
+            (△ @ △))))) @
+        (△ @
+         (△ @
+          (△ @ (△ @ (△ @ △ @ △)) @
+           (△ @ (△ @ (△ @ △ @ △)) @
+            (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+             (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+              (△ @
+               (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △)))))))) @
+               (△ @
+                (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △)))))))) @
+                (△ @
+                 (△ @
+                  (△ @ △ @
+                   (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ △))))))))) @
+                 (△ @
+                  (△ @
+                   (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △)))))))) @
+                  (△ @
+                   (△ @
+                    (△ @ △ @
+                     (△ @
+                      (△ @
+                       (△ @ (△ @ (△ @ △ @ △)) @
+                        (△ @ (△ @ (△ @ △ @ △)) @
+                         (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △))))))) @ 
+                   (△ @ △))))))))))) @
+         (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+          (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+           (△ @
+            (△ @
+             (△ @ (△ @ (△ @ △ @ △)) @
+              (△ @ (△ @ (△ @ △ @ △)) @
+               (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+                (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ △)) @ (△ @ △))))))) @
+            (△ @ (△ @ (△ @ △)) @ △))))))))) @
+    (△ @
+     (△ @
+      (△ @
+       (△ @
+        (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △)))))) @
+       (△ @ △)))))).
+Proof. cbv; auto. Qed. 
+
+Theorem bf_leaf_red: forall p,  t_red (bf @ △ @ p) (△@ p).  
+Proof.
+  intros; aptac; [ apply Z_red | trtac | unfold triage at 1; startac "e"; startac "x"; trtac].  
+Qed.
+
+Theorem bf_stem_red: forall x y, t_red (bf @ (△ @ x) @ y) (△ @ x @ y).  
+Proof.
+  intros; aptac; [ apply Z_red | trtac | unfold triage at 1; startac "e"; startac "x"; trtac]; tree_red.
+Qed.
+
+Theorem bf_fork_red:
+  forall x y, t_red (bf @ (△ @ x @ y)) (substitute bff "e" bf @ x @ y).
+Proof.
+  intros; htac Z_red; unfold bff, triage; startac "e"; trtac; refold substitute; trtac;
+    htac star_beta; eapply preserves_appl_t_red;  eapply preserves_appl_t_red; eapply preserves_appr_t_red; eapply star_beta.
+Qed. 
+
+
+Theorem bf_fork_leaf_red:  forall y z, t_red(bf @ (△@△@y) @ z) y.
+Proof. intros; htac bf_fork_red; tree_red. Qed. 
+
+
+Theorem bf_fork_stem_red:
+  forall x y z, t_red (bf @ (△@(△@x) @y) @ z) (eager @ (bf @ (bf @ x @ z)) @ (bf @ y @ z)  ). 
+Proof. intros; htac bf_fork_red.   unfold bff, bffs, triage; 
+    startac "z"; startac "y"; startac "e"; startac "x"; unfold S1, K; refold substitute; trtac. 
+Qed. 
+
+Theorem bf_fork_fork_red: forall w x y,
+    t_red (bf @ (△@(△@w @x) @y)) (triage w (bf @ x) (S1 (K @ bf) @ (bf @ y))).
+Proof.
+  intros; htac bf_fork_red; unfold bff, bfff, triage, K; refold substitute; trtac.
+    startac "y"; startac "x"; startac "w"; unfold S1, K; unfold substitute; rewrite ! String.eqb_refl;  trtac.  
+Qed.
+
+
+Theorem bf_fork_fork_leaf_red: forall w x y,  t_red (bf @ (△@(△@w @x) @y) @ Node) w. 
+Proof.
+  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
+Qed. 
+
+Theorem bf_fork_fork_stem_red: forall w x y z,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z)) (bf @ x @ z). 
+Proof.
+  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
+Qed. 
+
+Theorem bf_fork_fork_fork_red:
+  forall w x y z u,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z @ u)) (bf @ (bf @ y @ z) @ u).
+Proof.  intros; htac bf_fork_fork_red; unfold bfff, triage; simpl;
+          startac "u"; startac "z"; startac "y"; startac "x"; startac "w"; startac "e"; trtac.
+Qed.
+
+
+Theorem branch_first_eval_to_bf:
+  forall M N P, program M -> program N -> branch_first_eval M N P -> t_red(bf@M@N) P. 
+Proof.
+  intros M N P prM prN ev; induction ev; intros; subst.
+  - apply bf_leaf_red.  
+  - apply bf_stem_red.
+  - apply bf_fork_leaf_red.
+  - inv_out prM; inv_out H1; htac bf_fork_stem_red;
+      htac IHev2; htac eager_of_factorable; [
+          eapply programs_are_factorable | aptac; [ aptac; [ | htac IHev1 |] |  | ]; zerotac; eapply IHev3; eauto];
+        eapply branch_first_program; eauto.
+  - eapply bf_fork_fork_leaf_red.
+  - inv_out prM; inv_out prN; inv_out H1;
+      htac bf_fork_fork_stem_red; eapply IHev; eauto.
+  - inv_out prM; inv_out prN; inv_out H1;
+      htac bf_fork_fork_fork_red; aptac; [ aptac; [ zerotac | eapply IHev1 | zerotac] | zerotac |zerotac]; eauto;
+      htac IHev2; eauto; eapply branch_first_program; eauto.
+Qed.
+
+(* the converse theorem is in rewriting_theorems.v *) 
+   
+
+
+
+Theorem term_size_equal: term_size equal = 406. Proof. cbv; auto. Qed. 
+
+Theorem term_size_bf: term_size bf = (* 376 *) 392. Proof. cbv; auto. Qed. 
+(*
+
+Set Printing Depth 200. 
+
+Lemma bffs_val : bffs =  △ @
+  (△ @
+   (△ @ △ @
+    (△ @
+     (△ @
+      (△ @ (△ @ (△ @ △ @ △)) @
+       (△ @ (△ @ (△ @ △ @ △)) @
+        (△ @
+         (△ @
+          (△ @ △ @
+           (△ @
+            (△ @
+             (△ @ △ @
+              (△ @
+               (△ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)) @ (△ @ △ @ △)) @
+                (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △))))) @
+                 (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △))) @
+               (△ @
+                (△ @
+                 (△ @ △ @
+                  (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ (△ @ (△ @ △)) @ △)))))))) @
+                (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ △)))))) @ △)))))))) @
+         Ref "e"))))))) @
+  (△ @ (△ @ (△ @ △ @ (△ @ △))) @
+   (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ Ref "e"))))) @ Ref "e")) .
+Proof. cbv; auto. Qed. 
+
+Lemma bfff_val : bfff =  △ @
+  (△ @
+   (△ @ (△ @ (△ @ △ @ △)) @
+    (△ @ (△ @ (△ @ △ @ △)) @
+     (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+      (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+       (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ △)))))) @
+        (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ △))))) @
+         (△ @
+          (△ @
+           (△ @ (△ @ (△ @ △ @ △)) @
+            (△ @ (△ @ (△ @ △ @ △)) @ (△ @ (△ @ (△ @ △ @ (△ @ △))) @ △)))) @
+          (△ @ △ @ Ref "e"))))))))) @
+  (△ @ △ @
+   (△ @ △ @ (△ @ (△ @ (△ @ △ @ (△ @ (△ @ (△ @ △ @ Ref "e"))))) @ Ref "e"))).
+Proof. cbv; auto. Qed.
+
+
+Eval cbv in (term_size eager_s). (* 56 *) 
+
+
+Definition bffs2 := (* the function is a fork of a stem *) 
+  \"e" (\ "x" (\ "y" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs2).  (* 155 *) 
+
+Definition bffs3 := (* the function is a fork of a stem *) 
+  \"e" (\ "y" (\ "x" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs3).  (* 163 *) 
+
+Definition bffs4 := (* the function is a fork of a stem *) 
+  \"x" (\ "e" (\ "y" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs4).  (* 139 *) 
+
+Definition bffs5 := (* the function is a fork of a stem *) 
+  \"x" (\ "y" (\ "e" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs5).  (* 152 *) 
+
+Definition bffs6 := (* the function is a fork of a stem *) 
+  \"y" (\ "e" (\ "x" (\"z" (eager_s @ (Ref "e" @ Ref "y" @ Ref "z") @ (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))))). 
+
+Eval cbv in (term_size bffs6).  (* 176 *) 
+
+Definition bfff2 := (* the function is a fork of a fork, so triage on the argument *) 
+  \"e" (
+      \"w"
+   (\"x"
+      (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   )))).
+
+Eval cbv in (term_size bfff2). (* 155 *)
+
+Definition bfff3 := (* the function is a fork of a fork, so triage on the argument *) 
+  \"w" (
+      \"x"
+   (\"e"
+      (\"y"
+       (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+   )))).
+
+Eval cbv in (term_size bfff3). (* 172 *)
+
+
+
+
+
+
+Fixpoint program_to_ternary p :=
+  match p with
+  | Ref _ => "fail"
+  | Node => "0"
+  | Node @ p1 => "1" ++ (program_to_ternary p1)
+  | Node @ p1 @ p2 => "2" ++  (program_to_ternary p1) ++  (program_to_ternary p2)
+  | _ @ _ => "fail"
+  end.
+
+Lemma ptt_equal: program_to_ternary equal =
+                    "2121201121211001010202120212011222022102020211002020202110021212002120021201120021201120120211002120112110010202020202021100212011201120122021100202021100212120021200212011200212011200212011201120021201120112002120112011201120021201120112011200212120021200212010212002120021201120021201120021201120112002120112011200212011201120102120112110010202120112010212011211001020202020202021100101121201121211001010" .
+Proof.  cbv; auto. Qed.
+
+Lemma ptt_bf: program_to_ternary bf =
+       "2121201121211001010202120212012002121200212011021212002120021201021200212002120112002120112001120112022212110020021201121100212010021201120112110021201120100212011201021212002120021201021200212001021100212120021200212011200212011200212011201120021201120112002120112011201021201120112002120112120021200212010010212010212010212120021200212010212002120010211001121201121211001010".
+Proof.  cbv; auto. Qed. 
+
+(* bf using Yop2 is longer !
+
+
+
+Definition bffs := (* the function is a fork of a stem *) 
+  \ "x" (\ "y" (\"e" (S1 (S1 (K @ eager) @ (S1 (K @ Ref "e") @ (Ref "e" @ Ref "x"))) @ (Ref "e" @ Ref "y")))).
+Definition bfff := (* the function is a fork of a fork, so triage on the argument *) 
+  \"w"
+   (\"x"
+     (\"y"
+       (\"e" (triage
+               (Ref "w")
+               (Ref "e" @ Ref "x")
+               (S1 (K @ Ref "e") @ (Ref "e" @ Ref "y"))
+               )))). 
+Definition bff :=  triage (S1 (K @ K) @ K) bffs bfff.
+Definition bf := Yop2 (triage (K @ Node) (S1 (K @ K) @ Node) bff). 
+
+Theorem bf_leaf_red: forall p,  t_red (bf @ △ @ p) (△@ p).  
+Proof. intros; htac Y2_red; tree_red. Qed.
+
+Theorem bf_stem_red: forall x y, t_red (bf @ (△ @ x) @ y) (△ @ x @ y).  
+Proof. intros; htac Y2_red; tree_red. Qed.
+
+Theorem bf_fork_red:
+  forall x y, t_red (bf @ (△ @ x @ y)) (bff @ x @ y @ bf).
+Proof. intros; htac Y2_red; tree_red. Qed.
+
+Theorem bf_fork_leaf_red:  forall y z, t_red(bf @ (△@△@y) @ z) y.
+Proof. intros; htac Y2_red; tree_red. Qed.
+
+Theorem bf_fork_stem_red:
+  forall x y z, t_red (bf @ (△@(△@x) @y) @ z) (eager @ (bf @ (bf @ x @ z)) @ (bf @ y @ z)). 
+Proof. intros; htac bf_fork_red; unfold bff, bffs, triage; trtac; startac "e"; startac "y"; startac "x"; trtac. Qed. 
+
+Theorem bf_fork_fork_red: forall w x y,
+    t_red (bf @ (△@(△@w @x) @y)) (triage w (bf @ x) (S1 (K @ bf) @ (bf @ y))).
+Proof. intros; htac bf_fork_red; unfold bff, bfff, triage; trtac; startac "e"; startac "y"; startac "x"; startac "w"; trtac. Qed. 
+
+
+Theorem bf_fork_fork_leaf_red: forall w x y,  t_red (bf @ (△@(△@w @x) @y) @ Node) w. 
+Proof.  intros; htac bf_fork_fork_red; tree_red. Qed. 
+
+Theorem bf_fork_fork_stem_red: forall w x y z,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z)) (bf @ x @ z). 
+Proof.  intros; htac bf_fork_fork_red; unfold triage; trtac. Qed. 
+
+Theorem bf_fork_fork_fork_red:
+  forall w x y z u,  t_red (bf @ (△@(△@w @x) @y) @ (Node @ z @ u)) (bf @ (bf @ y @ z) @ u).
+Proof.  intros; htac bf_fork_fork_red; unfold triage; trtac. Qed. 
+Qed.
+
+
+Theorem branch_first_eval_to_bf:
+  forall M N P, program M -> program N -> branch_first_eval M N P -> t_red(bf@M@N) P. 
+Proof.
+  intros M N P prM prN ev; induction ev; intros; subst.
+  - apply bf_leaf_red.  
+  - apply bf_stem_red.
+  - apply bf_fork_leaf_red.
+  - inv_out prM; inv_out H1; htac bf_fork_stem_red;
       htac IHev1; auto; htac IHev2; eauto; 
       htac eager_of_factorable; [
         eapply programs_are_factorable |  eapply IHev3; eauto];
@@ -1206,36 +2066,65 @@ Qed.
 
 (* the converse theorem is in rewriting_theorems.v *) 
    
-Fixpoint term_size t :=
-  match t with
-  | App t1 t2 => term_size t1 + term_size t2
-  | _ => 1
+
+*) 
+
+*) 
+(*
+Definition star1 x M := (* uses Sop instead of S1, for one level *) 
+  match M with
+  | Ref y =>  if eqb x y then I else (K @ Ref y)
+  | △ => K@ △
+  | App M1 M2 =>
+      match M2 with
+      | Ref y => if eqb x y
+                 then if occurs x M1
+                      then  Sop @ (star x M1) @ I
+                      else M1
+                 else if occurs x M1
+                      then  Sop @ (star x M1) @ (K @ Ref y)
+                      else K @ (M1 @ M2)
+      | _ => if occurs x (M1 @ M2)
+                 then Sop @ (star x M1) @ (star x M2)
+                 else K@ (M1 @ M2)
+      end
   end.
+Notation "\\" := star1 : tree_scope.
+Notation "\" := star : tree_scope.
+Definition self_apply_k := \ "x" (Ref "x" @ (K @ Ref "x")).
+Definition wait1 M := S1 (S1 (K @ (Node @ (Node @ M))) @ K).
+Definition Z' f := wait self_apply_k (S1 (K @ f) @ (wait1 self_apply_k)).
+Definition C1 a := \ "b" (S1 a @ (K @ Ref "b")).
+Definition eager_s' :=
+  triage
+    (\"f" (Ref "f" @ Node))
+    (\"x" (\"f" (Ref "f" @ (Node @ Ref "x"))))
+    (\"w" (\"x" (C1 I @ (Node @ Ref "w" @ Ref "x")))).
+Definition bffs' :=
+  (\ "x" (\ "e" (\ "y" (\\ "z"
+      ((eager_s' @ (Ref "e" @ Ref "y" @ Ref "z")) @
+       (Ref "e" @ (Ref "e" @ Ref "x" @ Ref "z")))
+  )))).
+Eval cbv in (term_size bffs'). (* 131 *)
+Definition triageOp := \ "a" (\ "b" (\ "c" (triage (Ref "a") (Ref "b") (Ref "c")))).
+Definition bfff' :=
+  \"w"
+   (\"x"
+     (\\"e"
+      (\\ "y"
+        ((triageOp 
+              @ (Ref "w") 
+              @ (Ref "e" @ Ref "x"))
+              @ (\ "z" (Ref "e" @ (Ref "e" @ Ref "y" @ Ref "z")))
+        )))). 
+Eval cbv in (term_size bfff'). (* 156 *)
+Definition bff' := \"e" (\"x" (triage (K @ K) bffs' bfff' @ Ref "x" @ Ref "e")).
+Eval cbv in (term_size bff'). (* 301 *)
+Definition bf' := Z' (\ "e" (triage Node Node (bff' @ Ref "e"))).
+Eval cbv in (term_size bf'). (* 353 *)
+Eval cbv in bf'.
 
-
-Theorem term_size_equal: term_size equal = 780. Proof. cbv; auto. Qed. 
-
-Theorem term_size_bf: term_size bf = 877. Proof. cbv; auto. Qed. 
-
-
-Fixpoint program_to_ternary p :=
-  match p with
-  | Ref _ => "fail"
-  | Node => "0"
-  | Node @ p1 => "1" ++ (program_to_ternary p1)
-  | Node @ p1 @ p2 => "2" ++  (program_to_ternary p1) ++  (program_to_ternary p2)
-  | _ @ _ => "fail"
-  end.
-
-Lemma ptt_equal: program_to_ternary equal =
-                 "212121202120112110102121200212002120112002120112002121200212002120102120021200212120021200212010211010212010211010202120102110102020211010202120112110102121200212002120112002120112002121200212002120102120021200212120021200212010211010212010211010202120102110102020211010202120112220221020202110102020202110102121200212002120112002120112012021101021201121101021201021101020202020202110102120112011201220211010202021101021212002120021201120021201120021201120112002120112011200212011201120112002120112011201120021212002120021201021200212002120112002120112002120112011200212011201120021201120112010212120021200212011200212011200212011201021201121101021201021101020202110102021201120102121200212002120112002120112002120112010212011211010212010211010202021101020202020202021101010211010".
-Proof.  cbv; auto. Qed.
-
-Lemma ptt_bf: program_to_ternary bf =
-      "2121212021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201121101021212002120021201120021201120021212002120021201021200212002121200212002120102110102120102110102021201021101020202110102021201200212120021201102121200212002120112002120112002120112010212011200212011200212011201120212011212022212110102002120112110102120102120021101021201120112110102120112010212120021200212010212002110102021101021101021201021101021212002120021201021200212002120102110102121200212002120102110102021101021201021212002120021201021101020211010212120021200212011200212011200212011201120021201120112002120112011201021201120112002120112120021200212010212002110102120102121200212002120102110102021101021201021201021212002120021201021212002120021201021200212002120102110102121200212002120102110102021101020211010211010" .
-Proof.  cbv; auto. Qed. 
-
-
+ *)
 
 Close Scope tree_scope.
 

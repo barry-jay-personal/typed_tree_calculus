@@ -49,28 +49,33 @@ Set Default Proof Using "Type".
 
 
 Theorem derive_Z:
-  forall k gamma f uty vty,
-    derive gamma f (Funty ((quant k (Funty uty vty))) ((quant k (Funty uty vty)))) -> 
+  forall gamma f k uty vty,
+    derive gamma f (Funty (quant k (Funty uty vty)) (quant k (Funty uty vty))) -> 
     derive gamma (Z f) (quant k (Funty uty vty)).
 Proof.
-  intros; eapply derive_generalisation_q; eapply derive_wait2; eauto; [ | |
-  eapply derive_generalisation2_q; eapply derive_subtype; eauto; eapply subtype_lift]; [
-    | eapply lift_rec_preserves_derive; eapply programs_have_types; program_tac];
-    eapply derive_subtype; [ eapply lift_rec_preserves_derive; eapply programs_have_types; program_tac |];
-    eapply sub_trans; [ | do 2 sub_fun_tac; eapply subtype_lift3];
-    unfold lift;  rewrite <- ! lift_rec_funty; eapply lift_rec_preserves_subtype;  eapply sub_recursion.
+  intros; eapply derive_subtype; [ | eapply sub_trans; [ | eapply sub_recursion; auto]; eapply sub_zero]; unfold Z, Zty, wait, S1.
+  eapply derive_app.
+  eapply derive_subtype; [ eapply programs_have_types; program_tac | cbv; eapply sub_stem_fun].
+  eapply derive_app. eapply derive_app; eapply derive_node; auto_t.
+  eapply derive_app. 2: eapply programs_have_types; program_tac.  
+  eapply derive_app. eapply derive_node.
+  eapply sub_trans. eapply subtype_leaf_fork. do 2 sub_funty_tac.
+  eapply sub_fork. eapply sub_zero. 
+  cbv; eapply sub_zero.
+  eapply derive_app. eapply derive_node. eapply sub_leaf_fun.
+  eapply derive_app. eapply derive_app; eapply derive_node; try eapply sub_zero; eapply subtype_leaf_fork.
+  auto.
 Qed.
 
 
-
-
+Lemma derive_swap: forall gamma f uty vty ty, derive gamma f (Funty uty (Funty vty ty)) -> derive gamma (swap f) (Funty vty (Funty uty ty)). 
+Proof.  intros; eapply derive_S2; [ eapply derive_K1; eapply derive_S1; eauto | eapply derive_K].  Qed. 
+  
 Theorem derive_Y2:
   forall gamma f uty vty,
     derive gamma f (Funty uty (Funty (Funty uty vty) vty)) ->
     derive gamma (Yop2 f) (Funty uty vty).
-Proof.
-  intros; eapply derive_subtype; [ eapply (derive_Z 0); eapply derive_swap; eauto | apply sub_zero].
-Qed. 
+Proof.  intros; eapply derive_subtype; [ eapply (derive_Z _ _ 0); eapply derive_swap; eauto | apply sub_zero]. Qed. 
 
 
 
@@ -95,8 +100,7 @@ Proof.
   induction utys; intros; simpl.
   - eapply derive_I.
   - rewrite orb_true_r; eapply derive_S2; [
-        eapply derive_K1; eapply derive_K |
-        eapply derive_S2; [ | eapply derive_I]; eapply derive_star; eauto]. 
+        eapply derive_K1; eapply derive_K | rewrite Kn_closed; auto]. 
 Qed.
 
 Lemma derive_compose1 :
@@ -110,9 +114,7 @@ Proof.
   induction utys; intros; simpl. 
   - eapply derive_I.
   - rewrite ! orb_true_r; do 2  eapply derive_star; eapply derive_S2; [ 
-    eapply derive_S2; [  eapply derive_star; eapply IHutys |] |
-        eapply derive_S2; [ eapply derive_K1; eapply derive_ref; simpl; eauto; eapply sub_zero | eapply derive_I]]; 
-      eapply derive_S2; [ eapply derive_K1; eapply derive_ref; simpl; eauto; eapply sub_zero | eapply derive_I]. 
+    eapply derive_S2; [  eapply derive_star; eapply IHutys |] | ]; eapply derive_ref; simpl; auto_t.  
 Qed.
 
 Lemma derive_compose0 : 
@@ -129,7 +131,6 @@ Proof.
   - rewrite ! orb_true_r;
       rewrite compose1_closed; unfold orb;
       eapply derive_star; eapply derive_S2.   eapply derive_star; eauto.
-    eapply derive_S2; [ | eapply derive_I];  eapply derive_K1;
       eapply derive_app; [ eapply derive_compose1 |
                            eapply derive_ref; simpl; eauto; eapply sub_zero].
 Qed.
@@ -171,7 +172,6 @@ Proof.
 Qed.
 
 
-
 Theorem derive_succ1: forall gamma, derive gamma succ1 (Funty Nat_ty Nat_ty).
 Proof.
   intros; eapply derive_subtype with
@@ -185,6 +185,7 @@ Proof.
         repeat eapply derive_S2; repeat eapply derive_K1; [ | | eapply derive_K]; eapply derive_node; eapply sub_leaf_fun]];
     eapply derive_node; eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac; repeat sub_fork2_tac; [ | subst_tac]; auto_t]. 
 Qed.
+
 
 
 
@@ -210,8 +211,7 @@ Qed.
 
 Theorem derive_cond: forall gamma ty, derive gamma cond (Funty Bool_ty (Funty ty (Funty ty ty))).
 Proof.
-  intros; eapply derive_S2; [ eapply derive_subtype; [ eapply derive_K | do 2 sub_fun_tac; subst_tac] | eapply derive_K].
-  Unshelve. apply Leaf.
+  intros; eapply derive_S2; [ eapply derive_subtype; [ eapply derive_K | do 2 sub_fun_tac; subst_tac] | auto_t]. 
 Qed.   
 
 
@@ -244,14 +244,20 @@ Proposition derive_primrec0:
   forall gamma g h, derive gamma g Nat_ty -> derive gamma h (Funty Nat_ty (Funty Nat_ty Nat_ty)) ->
                  derive gamma (primrec0 g h) (Funty Nat_ty Nat_ty). 
 Proof.
-  intros; unfold primrec0; eapply derive_Y2; repeat eapply derive_S2; try eapply derive_K1; eauto; try eapply derive_K;
-    try eapply derive_predN; [
-    | |
-      eapply derive_subtype; [ eapply derive_isZero | sub_fun_tac; subst_tac] | | |
-      eapply derive_app; [ | eapply derive_app; [ | eapply derive_I]; eapply derive_node; eapply sub_leaf_fun]];
-    eapply derive_node; try eapply sub_leaf_fun; try eapply subtype_leaf_fork;
-    eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac; auto_t].
-  Unshelve. all: apply Leaf. 
+  intros; unfold primrec0; eapply derive_Y2.
+  do 2 eapply derive_S2.  eapply derive_K1; eapply derive_node.
+  all: cycle 1.
+  eapply derive_S2. eapply derive_K1. eapply derive_node. eapply sub_leaf_fun.
+  eapply derive_S2. eapply derive_K1. eapply derive_K.
+  eapply derive_S2. eapply derive_subtype. eapply derive_isZero. sub_funty_tac. subst_tac.
+  eapply derive_K1. eauto.
+  eapply derive_S2. eapply derive_K1. eapply derive_node. eapply subtype_leaf_fork.
+  eapply derive_S2. eapply derive_K1. eapply derive_node. eapply sub_leaf_fun. 
+  eapply derive_S2. eapply derive_K1. eapply derive_K. 
+  eapply derive_S2. eapply derive_K1. eauto. eapply derive_predN. 
+  eapply derive_S2. eapply derive_K1. eapply derive_S1. eapply derive_I. 
+  eapply derive_S2. eapply derive_K1. eapply derive_K. eapply derive_predN. 
+  eapply sub_trans. eapply subtype_leaf_fork. do 2 sub_funty_tac.   repeat sub_fork2_tac. 
 Qed.
 
 
@@ -281,39 +287,13 @@ Proof.
       eapply derive_K |
       eapply derive_app; [
         eapply derive_node; eapply subtype_leaf_fork |
-        eapply derive_app; [  eapply derive_node; eapply sub_leaf_fun | eapply derive_I]]] |
-  eapply derive_star; eapply derive_app; [  eapply derive_K |
-  eapply derive_app; [ eapply derive_succ1 |]]; eapply derive_ref; simpl; eauto; eapply sub_zero]]; 
-    repeat eapply derive_app;
-    try eapply derive_node;
-    try eapply derive_ref;
-    try eapply sub_zero;
-    try eapply sub_leaf_stem;
-    try eapply sub_leaf_fork;
-    try eapply sub_leaf_fun;
-    try eapply subtype_leaf_fork;
-    eauto;
-    eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac];
-  eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [  
-  eapply sub_stem; eapply sub_trans; [ eapply sub_fork_leaf | sub_fun_tac];
-    eapply sub_trans; [ eapply subtype_leaf_fork | do 2 sub_fun_tac];
-    eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [  
-  eapply sub_stem; eapply sub_fork_leaf |
-  eapply sub_trans; [ eapply sub_fork |eapply sub_fork_stem]; eapply sub_zero] |];
-
-  eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [
-      eapply sub_stem; eapply sub_trans; [eapply sub_fork_leaf |]; sub_fun_tac;  eapply sub_leaf_fun |];
-    eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [ 
-  eapply sub_stem;  eapply sub_trans; [ eapply sub_fork_leaf | sub_fun_tac]; eapply sub_stem_fun |];
-  eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [ 
-  eapply sub_stem;  eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [
-      eapply sub_stem; eapply sub_trans; [ eapply sub_fork_leaf |  do 2 sub_fun_tac;  subst_tac] |];
-    eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [
-      eapply sub_stem; eapply sub_trans; [ eapply sub_stem_fun | sub_fun_tac];  eapply sub_fork_leaf |];
-    eapply sub_stem_fun |];
-  eapply sub_trans; [ eapply sub_fork | eapply sub_fork_stem]; [
-  eapply sub_stem; eapply sub_trans; [ eapply sub_stem_fun |  sub_fun_tac;  eapply sub_fork_leaf] |];
-  eapply sub_stem_fun. 
+        eapply derive_app; [  eapply derive_node; eapply sub_leaf_fun | eapply derive_I]]] | ]]. 
+  repeat eapply derive_S2; repeat eapply derive_K1; try eapply derive_K; try eapply derive_node.
+  2,4: eapply sub_leaf_fun.
+  eapply sub_trans. eapply subtype_leaf_fork. do 2 sub_funty_tac.   do 2 sub_fork2_tac.
+  eapply derive_subtype; eauto.   sub_funty_tac. subst_tac.
+  repeat eapply derive_S2; repeat eapply derive_K1; try eapply derive_K; try eapply derive_node.
+  eapply derive_succ1.
 Qed.
  
 Theorem derive_minrec:

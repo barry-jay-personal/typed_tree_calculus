@@ -1,4 +1,4 @@
-DIGEST 0bd3c507147eb1ac0028c4874a62abdb
+DIGEST 66d8285474e08cbc1e4cd020171d9a21
 FTriage.subtypes
 R2157:2162 Coq.Strings.String <> <> lib
 R2164:2168 Coq.Arith.Arith <> <> lib
@@ -8,1646 +8,2322 @@ R2179:2182 Coq.Lists.List <> <> lib
 R2184:2186 Coq.Init.Nat <> <> lib
 R2204:2208 Triage.terms <> <> lib
 R2210:2214 Triage.types <> <> lib
-def 2332:2341 <> omega21_ty
-R2346:2357 Triage.types <> program_type def
-R2359:2365 Triage.terms <> omega21 def
-def 2379:2388 <> omega22_ty
-R2393:2404 Triage.types <> program_type def
-R2406:2412 Triage.terms <> omega22 def
-def 2427:2435 <> omega2_ty
-R2441:2444 Triage.types <> Fork constr
-R2447:2450 Triage.types <> Stem constr
-R2452:2461 Triage.subtypes <> omega21_ty def
-R2464:2473 Triage.subtypes <> omega22_ty def
-def 2489:2495 <> eval_ty
-R2500:2504 Triage.types <> quant def
-R2509:2513 Triage.types <> Funty constr
-R2516:2518 Triage.types <> Var constr
-R2524:2526 Triage.types <> Asf constr
-R2529:2531 Triage.types <> Var constr
-def 2550:2557 <> eager_ty
-R2562:2566 Triage.types <> quant def
-R2571:2575 Triage.types <> Funty constr
-R2578:2582 Triage.types <> Funty constr
-R2585:2587 Triage.types <> Var constr
-R2593:2595 Triage.types <> Var constr
-R2602:2606 Triage.types <> Funty constr
-R2609:2611 Triage.types <> Var constr
-R2617:2619 Triage.types <> Var constr
-def 2639:2646 <> bfff_aug
-binder 2648:2650 <> uty:1
-R2655:2658 Triage.types <> Fork constr
-R2661:2664 Triage.types <> Stem constr
-R2667:2670 Triage.types <> Fork constr
-R2672:2675 Triage.types <> Leaf constr
-R2677:2683 Triage.subtypes <> eval_ty def
-R2688:2690 Triage.types <> Asf constr
-R2692:2694 Triage.subtypes <> uty:1 var
-def 2709:2716 <> bffs_aug
-binder 2718:2720 <> uty:2
-R2725:2728 Triage.types <> Fork constr
-R2731:2734 Triage.types <> Stem constr
-R2737:2740 Triage.types <> Fork constr
-R2742:2745 Triage.types <> Leaf constr
-R2747:2754 Triage.subtypes <> eager_ty def
-R2759:2766 Triage.subtypes <> bfff_aug def
-R2768:2770 Triage.subtypes <> uty:2 var
-ind 2787:2793 <> subtype
-constr 2846:2853 <> sub_zero
-constr 2884:2892 <> sub_trans
-constr 3039:3046 <> sub_stem
-constr 3123:3130 <> sub_fork
-constr 3289:3295 <> sub_asf
-constr 3370:3378 <> sub_funty
-constr 3540:3548 <> sub_quant
-constr 3665:3678 <> sub_quant_stem
-constr 3741:3754 <> sub_quant_fork
-constr 3837:3849 <> sub_quant_asf
-constr 3910:3917 <> sub_dist
-constr 4053:4060 <> sub_inst
-constr 4112:4119 <> sub_lift
-constr 4218:4229 <> sub_leaf_fun
-constr 4282:4293 <> sub_stem_fun
-constr 4382:4394 <> sub_fork_leaf
-constr 4455:4467 <> sub_fork_stem
-constr 4578:4595 <> sub_fork_fork_leaf
-constr 4675:4692 <> sub_fork_fork_stem
-constr 4806:4823 <> sub_fork_fork_fork
-constr 4976:4988 <> sub_recursion
-constr 5240:5247 <> sub_tree
-constr 5684:5693 <> sub_to_asf
-constr 5729:5740 <> sub_from_asf
-constr 5807:5814 <> sub_bffs
-constr 5910:5917 <> sub_bfff
-R2802:2805 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2797:2801 Triage.types <> dtype ind
-R2811:2814 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2806:2810 Triage.types <> dtype ind
-binder 2864:2865 <> ty:5
-R2868:2874 Triage.subtypes <> subtype:3 ind
-R2879:2880 Triage.subtypes <> ty:5 var
-R2876:2877 Triage.subtypes <> ty:5 var
-binder 2903:2905 <> ty1:6
-binder 2907:2909 <> ty2:7
-binder 2911:2913 <> ty3:8
-R2931:2934 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2916:2922 Triage.subtypes <> subtype:3 ind
-R2928:2930 Triage.subtypes <> ty2:7 var
-R2924:2926 Triage.subtypes <> ty1:6 var
-R2950:2953 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2935:2941 Triage.subtypes <> subtype:3 ind
-R2947:2949 Triage.subtypes <> ty3:8 var
-R2943:2945 Triage.subtypes <> ty2:7 var
-R2954:2960 Triage.subtypes <> subtype:3 ind
-R2966:2968 Triage.subtypes <> ty3:8 var
-R2962:2964 Triage.subtypes <> ty1:6 var
-binder 3057:3060 <> uty1:9
-binder 3062:3065 <> uty2:10
-R3085:3088 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3068:3074 Triage.subtypes <> subtype:3 ind
-R3081:3084 Triage.subtypes <> uty2:10 var
-R3076:3079 Triage.subtypes <> uty1:9 var
-R3089:3095 Triage.subtypes <> subtype:3 ind
-R3110:3113 Triage.types <> Stem constr
-R3115:3118 Triage.subtypes <> uty2:10 var
+def 2483:2488 <> sak_ty
+R2505:2516 Triage.types <> program_type def
+R2518:2529 Triage.terms <> self_apply_k def
+def 2544:2550 <> wsak_ty
+R2567:2578 Triage.types <> program_type def
+R2581:2585 Triage.terms <> wait1 def
+R2587:2598 Triage.terms <> self_apply_k def
+def 2614:2621 <> wsak2_ty
+binder 2623:2625 <> uty:1
+binder 2627:2629 <> vty:2
+R2658:2664 Triage.subtypes <> wsak_ty def
+R2679:2682 Triage.types <> Stem constr
+R2690:2693 Triage.types <> Fork constr
+R2699:2702 Triage.types <> Fork constr
+R2704:2707 Triage.types <> Leaf constr
+R2720:2723 Triage.types <> Fork constr
+R2739:2742 Triage.types <> Stem constr
+R2761:2764 Triage.types <> Fork constr
+R2766:2769 Triage.types <> Leaf constr
+R2791:2795 Triage.types <> Funty constr
+R2798:2802 Triage.types <> Funty constr
+R2805:2809 Triage.types <> Funty constr
+R2811:2813 Triage.subtypes <> uty:1 var
+R2815:2817 Triage.subtypes <> vty:2 var
+R2821:2825 Triage.types <> Funty constr
+R2827:2829 Triage.subtypes <> uty:1 var
+R2831:2833 Triage.subtypes <> vty:2 var
+R2860:2864 Triage.types <> Funty constr
+R2866:2868 Triage.subtypes <> uty:1 var
+R2870:2872 Triage.subtypes <> vty:2 var
+R2878:2884 Triage.subtypes <> wsak_ty def
+R2899:2902 Triage.types <> Leaf constr
+def 2926:2932 <> eval_ty
+R2937:2941 Triage.types <> quant def
+R2946:2950 Triage.types <> Funty constr
+R2953:2955 Triage.types <> Var constr
+R2961:2963 Triage.types <> Asf constr
+R2966:2968 Triage.types <> Var constr
+def 2987:2994 <> eager_ty
+R2999:3003 Triage.types <> quant def
+R3008:3012 Triage.types <> Funty constr
+R3015:3019 Triage.types <> Funty constr
+R3022:3024 Triage.types <> Var constr
+R3030:3032 Triage.types <> Var constr
+R3039:3043 Triage.types <> Funty constr
+R3046:3048 Triage.types <> Var constr
+R3054:3056 Triage.types <> Var constr
+def 3076:3083 <> bfff_aug
+binder 3085:3087 <> uty:3
+R3092:3095 Triage.types <> Fork constr
 R3098:3101 Triage.types <> Stem constr
-R3103:3106 Triage.subtypes <> uty1:9 var
-binder 3141:3144 <> uty1:11
-binder 3146:3149 <> uty2:12
-binder 3151:3154 <> vty1:13
-binder 3156:3159 <> vty2:14
-R3179:3182 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3162:3168 Triage.subtypes <> subtype:3 ind
-R3175:3178 Triage.subtypes <> uty2:12 var
-R3170:3173 Triage.subtypes <> uty1:11 var
-R3200:3244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3183:3189 Triage.subtypes <> subtype:3 ind
-R3196:3199 Triage.subtypes <> vty2:14 var
-R3191:3194 Triage.subtypes <> vty1:13 var
-R3245:3251 Triage.subtypes <> subtype:3 ind
-R3271:3274 Triage.types <> Fork constr
-R3276:3279 Triage.subtypes <> uty2:12 var
-R3281:3284 Triage.subtypes <> vty2:14 var
-R3254:3257 Triage.types <> Fork constr
-R3259:3262 Triage.subtypes <> uty1:11 var
-R3264:3267 Triage.subtypes <> vty1:13 var
-binder 3306:3309 <> uty1:15
-binder 3311:3314 <> uty2:16
-R3334:3337 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3317:3323 Triage.subtypes <> subtype:3 ind
-R3330:3333 Triage.subtypes <> uty2:16 var
-R3325:3328 Triage.subtypes <> uty1:15 var
-R3338:3344 Triage.subtypes <> subtype:3 ind
-R3358:3360 Triage.types <> Asf constr
-R3362:3365 Triage.subtypes <> uty2:16 var
-R3347:3349 Triage.types <> Asf constr
-R3351:3354 Triage.subtypes <> uty1:15 var
-binder 3389:3392 <> uty1:17
-binder 3394:3397 <> uty2:18
-binder 3399:3402 <> vty1:19
-binder 3404:3407 <> vty2:20
-R3427:3430 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3410:3416 Triage.subtypes <> subtype:3 ind
-R3423:3426 Triage.subtypes <> uty1:17 var
-R3418:3421 Triage.subtypes <> uty2:18 var
-R3448:3493 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3431:3437 Triage.subtypes <> subtype:3 ind
-R3444:3447 Triage.subtypes <> vty2:20 var
-R3439:3442 Triage.subtypes <> vty1:19 var
-R3494:3500 Triage.subtypes <> subtype:3 ind
-R3521:3525 Triage.types <> Funty constr
-R3527:3530 Triage.subtypes <> uty2:18 var
-R3532:3535 Triage.subtypes <> vty2:20 var
-R3503:3507 Triage.types <> Funty constr
-R3509:3512 Triage.subtypes <> uty1:17 var
-R3514:3517 Triage.subtypes <> vty1:19 var
-binder 3559:3562 <> vty1:21
-binder 3564:3567 <> vty2:22
-R3588:3591 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R3571:3577 Triage.subtypes <> subtype:3 ind
-R3584:3587 Triage.subtypes <> vty2:22 var
-R3579:3582 Triage.subtypes <> vty1:21 var
-R3592:3598 Triage.subtypes <> subtype:3 ind
-R3614:3618 Triage.types <> Quant constr
-R3620:3623 Triage.subtypes <> vty2:22 var
-R3601:3605 Triage.types <> Quant constr
-R3607:3610 Triage.subtypes <> vty1:21 var
-binder 3688:3690 <> uty:23
-R3693:3699 Triage.subtypes <> subtype:3 ind
-R3721:3724 Triage.types <> Stem constr
-R3727:3731 Triage.types <> Quant constr
-R3733:3735 Triage.subtypes <> uty:23 var
-R3702:3706 Triage.types <> Quant constr
-R3709:3712 Triage.types <> Stem constr
-R3714:3716 Triage.subtypes <> uty:23 var
-binder 3764:3766 <> uty:24
-binder 3768:3770 <> vty:25
-R3773:3779 Triage.subtypes <> subtype:3 ind
-R3805:3808 Triage.types <> Fork constr
-R3811:3815 Triage.types <> Quant constr
-R3817:3819 Triage.subtypes <> uty:24 var
-R3823:3827 Triage.types <> Quant constr
-R3829:3831 Triage.subtypes <> vty:25 var
-R3782:3786 Triage.types <> Quant constr
-R3789:3792 Triage.types <> Fork constr
-R3794:3796 Triage.subtypes <> uty:24 var
-R3798:3800 Triage.subtypes <> vty:25 var
-binder 3859:3861 <> uty:26
-R3864:3870 Triage.subtypes <> subtype:3 ind
-R3891:3893 Triage.types <> Asf constr
-R3896:3900 Triage.types <> Quant constr
-R3902:3904 Triage.subtypes <> uty:26 var
-R3873:3877 Triage.types <> Quant constr
-R3880:3882 Triage.types <> Asf constr
-R3884:3886 Triage.subtypes <> uty:26 var
-binder 3927:3929 <> uty:27
-binder 3931:3933 <> vty:28
-R3936:3942 Triage.subtypes <> subtype:3 ind
-R3969:3973 Triage.types <> Funty constr
-R3976:3980 Triage.types <> Quant constr
-R3982:3984 Triage.subtypes <> uty:27 var
-R3988:3992 Triage.types <> Quant constr
-R3994:3996 Triage.subtypes <> vty:28 var
-R3945:3949 Triage.types <> Quant constr
-R3952:3956 Triage.types <> Funty constr
-R3958:3960 Triage.subtypes <> uty:27 var
-R3962:3964 Triage.subtypes <> vty:28 var
-binder 4071:4072 <> ty:29
-binder 4074:4074 <> u:30
-R4078:4084 Triage.subtypes <> subtype:3 ind
-R4098:4102 Triage.types <> subst def
-R4104:4105 Triage.subtypes <> ty:29 var
-R4107:4107 Triage.subtypes <> u:30 var
-R4087:4091 Triage.types <> Quant constr
-R4093:4094 Triage.subtypes <> ty:29 var
-binder 4129:4130 <> ty:31
-R4133:4139 Triage.subtypes <> subtype:3 ind
-R4145:4149 Triage.types <> Quant constr
-R4152:4155 Triage.types <> lift def
-R4159:4160 Triage.subtypes <> ty:31 var
-R4141:4142 Triage.subtypes <> ty:31 var
-binder 4238:4240 <> uty:32
-R4244:4250 Triage.subtypes <> subtype:3 ind
-R4258:4262 Triage.types <> Funty constr
-R4264:4266 Triage.subtypes <> uty:32 var
-R4269:4272 Triage.types <> Stem constr
-R4274:4276 Triage.subtypes <> uty:32 var
-R4252:4255 Triage.types <> Leaf constr
-binder 4303:4305 <> uty:33
-binder 4307:4309 <> vty:34
-R4312:4318 Triage.subtypes <> subtype:3 ind
-R4332:4336 Triage.types <> Funty constr
-R4338:4340 Triage.subtypes <> vty:34 var
-R4343:4346 Triage.types <> Fork constr
-R4348:4350 Triage.subtypes <> uty:33 var
-R4352:4354 Triage.subtypes <> vty:34 var
-R4321:4324 Triage.types <> Stem constr
-R4326:4328 Triage.subtypes <> uty:33 var
-binder 4404:4406 <> uty:35
-binder 4408:4410 <> vty:36
-R4413:4419 Triage.subtypes <> subtype:3 ind
-R4438:4442 Triage.types <> Funty constr
-R4444:4446 Triage.subtypes <> vty:36 var
-R4448:4450 Triage.subtypes <> uty:35 var
-R4422:4425 Triage.types <> Fork constr
-R4427:4430 Triage.types <> Leaf constr
-R4432:4434 Triage.subtypes <> uty:35 var
-binder 4477:4479 <> uty:37
-binder 4481:4483 <> vty:38
-binder 4485:4487 <> wty:39
-R4494:4500 Triage.subtypes <> subtype:3 ind
-R4561:4565 Triage.types <> Funty constr
-R4567:4569 Triage.subtypes <> uty:37 var
-R4571:4573 Triage.subtypes <> wty:39 var
-R4503:4506 Triage.types <> Fork constr
-R4509:4512 Triage.types <> Stem constr
-R4515:4519 Triage.types <> Funty constr
-R4521:4523 Triage.subtypes <> uty:37 var
-R4526:4530 Triage.types <> Funty constr
-R4532:4534 Triage.subtypes <> vty:38 var
-R4536:4538 Triage.subtypes <> wty:39 var
-R4544:4548 Triage.types <> Funty constr
-R4550:4552 Triage.subtypes <> uty:37 var
-R4554:4556 Triage.subtypes <> vty:38 var
-binder 4605:4607 <> uty:40
-binder 4609:4611 <> vty:41
-binder 4613:4615 <> wty:42
-R4622:4628 Triage.subtypes <> subtype:3 ind
-R4657:4661 Triage.types <> Funty constr
-R4663:4666 Triage.types <> Leaf constr
-R4668:4670 Triage.subtypes <> uty:40 var
-R4631:4634 Triage.types <> Fork constr
-R4637:4640 Triage.types <> Fork constr
-R4642:4644 Triage.subtypes <> uty:40 var
-R4646:4648 Triage.subtypes <> vty:41 var
-R4651:4653 Triage.subtypes <> wty:42 var
-binder 4706:4708 <> uty:43
-binder 4710:4713 <> vty1:44
-binder 4715:4718 <> vty2:45
-binder 4720:4722 <> wty:46
-R4731:4737 Triage.subtypes <> subtype:3 ind
-R4780:4784 Triage.types <> Funty constr
-R4787:4790 Triage.types <> Stem constr
-R4792:4795 Triage.subtypes <> vty1:44 var
-R4798:4801 Triage.subtypes <> vty2:45 var
-R4740:4743 Triage.types <> Fork constr
-R4746:4749 Triage.types <> Fork constr
-R4751:4753 Triage.subtypes <> uty:43 var
-R4756:4760 Triage.types <> Funty constr
-R4762:4765 Triage.subtypes <> vty1:44 var
-R4767:4770 Triage.subtypes <> vty2:45 var
-R4774:4776 Triage.subtypes <> wty:46 var
-binder 4837:4839 <> uty:47
-binder 4841:4843 <> vty:48
-binder 4845:4848 <> wty1:49
-binder 4850:4853 <> wty2:50
-binder 4855:4858 <> wty3:51
-R4867:4873 Triage.subtypes <> subtype:3 ind
-R4929:4933 Triage.types <> Funty constr
-R4936:4939 Triage.types <> Fork constr
-R4941:4944 Triage.subtypes <> wty1:49 var
-R4946:4949 Triage.subtypes <> wty2:50 var
-R4952:4955 Triage.subtypes <> wty3:51 var
-R4876:4879 Triage.types <> Fork constr
-R4882:4885 Triage.types <> Fork constr
-R4887:4889 Triage.subtypes <> uty:47 var
-R4891:4893 Triage.subtypes <> vty:48 var
-R4897:4901 Triage.types <> Funty constr
-R4903:4906 Triage.subtypes <> wty1:49 var
-R4909:4913 Triage.types <> Funty constr
-R4915:4918 Triage.subtypes <> wty2:50 var
-R4920:4923 Triage.subtypes <> wty3:51 var
-binder 5002:5002 <> k:52
-binder 5004:5006 <> uty:53
-binder 5008:5010 <> vty:54
-R5019:5025 Triage.subtypes <> subtype:3 ind
-R5052:5056 Triage.types <> Funty constr
-R5075:5083 Triage.subtypes <> omega2_ty def
-R5103:5107 Triage.types <> Funty constr
-R5130:5134 Triage.types <> Funty constr
-R5137:5141 Triage.types <> quant def
-R5143:5143 Triage.subtypes <> k:52 var
-R5146:5150 Triage.types <> Funty constr
-R5152:5154 Triage.subtypes <> uty:53 var
-R5156:5158 Triage.subtypes <> vty:54 var
-R5163:5167 Triage.types <> quant def
-R5169:5169 Triage.subtypes <> k:52 var
-R5172:5176 Triage.types <> Funty constr
-R5178:5180 Triage.subtypes <> uty:53 var
-R5182:5184 Triage.subtypes <> vty:54 var
-R5210:5214 Triage.types <> quant def
-R5216:5216 Triage.subtypes <> k:52 var
-R5219:5223 Triage.types <> Funty constr
-R5225:5227 Triage.subtypes <> uty:53 var
-R5229:5231 Triage.subtypes <> vty:54 var
-R5027:5035 Triage.subtypes <> omega2_ty def
-binder 5257:5258 <> ty:55
-binder 5260:5262 <> uty:56
-R5281:5289 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R5269:5277 Triage.types <> covariant def
-R5279:5280 Triage.subtypes <> ty:55 var
-R5290:5296 Triage.subtypes <> subtype:3 ind
-R5656:5660 Triage.types <> Funty constr
-R5662:5664 Triage.subtypes <> uty:56 var
-R5667:5671 Triage.types <> subst def
-R5673:5674 Triage.subtypes <> ty:55 var
-R5676:5678 Triage.subtypes <> uty:56 var
-R5299:5302 Triage.types <> Fork constr
-R5320:5323 Triage.types <> Fork constr
-R5344:5348 Triage.types <> subst def
-R5350:5351 Triage.subtypes <> ty:55 var
-R5353:5356 Triage.types <> Leaf constr
-R5378:5382 Triage.types <> quant def
-R5387:5391 Triage.types <> Funty constr
-R5394:5396 Triage.types <> Var constr
-R5402:5406 Triage.types <> subst def
-R5409:5416 Triage.types <> lift_rec def
-R5418:5419 Triage.subtypes <> ty:55 var
-R5427:5430 Triage.types <> Stem constr
-R5433:5435 Triage.types <> Var constr
-R5461:5465 Triage.types <> quant def
-R5506:5510 Triage.types <> Funty constr
-R5534:5536 Triage.types <> Var constr
-R5563:5567 Triage.types <> Funty constr
-R5570:5572 Triage.types <> Var constr
-R5578:5582 Triage.types <> subst def
-R5585:5592 Triage.types <> lift_rec def
-R5594:5595 Triage.subtypes <> ty:55 var
-R5603:5606 Triage.types <> Fork constr
-R5609:5611 Triage.types <> Var constr
-R5617:5619 Triage.types <> Var constr
-binder 5703:5704 <> ty:57
-R5707:5713 Triage.subtypes <> subtype:3 ind
-R5719:5721 Triage.types <> Asf constr
-R5723:5724 Triage.subtypes <> ty:57 var
-R5715:5716 Triage.subtypes <> ty:57 var
-binder 5750:5752 <> uty:58
-binder 5754:5756 <> vty:59
-R5759:5765 Triage.subtypes <> subtype:3 ind
-R5790:5794 Triage.types <> Funty constr
-R5796:5798 Triage.subtypes <> uty:58 var
-R5800:5802 Triage.subtypes <> vty:59 var
-R5768:5770 Triage.types <> Asf constr
-R5773:5777 Triage.types <> Funty constr
-R5779:5781 Triage.subtypes <> uty:58 var
-R5783:5785 Triage.subtypes <> vty:59 var
-binder 5824:5826 <> uty:60
-binder 5828:5830 <> vty:61
-R5833:5839 Triage.subtypes <> subtype:3 ind
-R5881:5883 Triage.types <> Asf constr
-R5886:5889 Triage.types <> Fork constr
-R5892:5895 Triage.types <> Stem constr
-R5897:5899 Triage.subtypes <> uty:60 var
-R5902:5904 Triage.subtypes <> vty:61 var
-R5842:5845 Triage.types <> Fork constr
-R5848:5851 Triage.types <> Stem constr
-R5854:5861 Triage.subtypes <> bffs_aug def
-R5863:5865 Triage.subtypes <> uty:60 var
-R5870:5872 Triage.types <> Asf constr
-R5874:5876 Triage.subtypes <> vty:61 var
-binder 5928:5930 <> uty:62
-binder 5932:5934 <> vty:63
-binder 5936:5938 <> wty:64
-R5941:5947 Triage.subtypes <> subtype:3 ind
-R6034:6036 Triage.types <> Asf constr
-R6039:6042 Triage.types <> Fork constr
-R6045:6048 Triage.types <> Fork constr
-R6050:6052 Triage.subtypes <> uty:62 var
-R6054:6056 Triage.subtypes <> vty:63 var
-R6059:6061 Triage.subtypes <> wty:64 var
-R5950:5953 Triage.types <> Fork constr
-R5956:5959 Triage.types <> Fork constr
-R5961:5963 Triage.subtypes <> uty:62 var
-R5966:5968 Triage.types <> Asf constr
-R5970:5972 Triage.subtypes <> vty:63 var
-R5977:5984 Triage.subtypes <> bfff_aug def
-R5986:5988 Triage.subtypes <> wty:64 var
-R6094:6100 Triage.subtypes <> subtype ind
-R6143:6147 Triage.types <> subst def
-R6150:6153 Triage.types <> lift def
-R6209:6226 Triage.types <> subst_rec_lift_rec thm
-R6304:6307 Triage.types <> lift def
-R6320:6332 Triage.types <> lift_rec_null thm
-R6346:6353 Triage.subtypes <> sub_zero constr
-R6436:6444 Triage.subtypes <> sub_funty constr
-R6458:6465 Triage.subtypes <> sub_zero constr
-R6389:6397 Triage.subtypes <> sub_funty constr
-R6409:6416 Triage.subtypes <> sub_zero constr
-R6499:6507 Triage.subtypes <> sub_trans constr
-R6519:6526 Triage.subtypes <> sub_inst constr
-prf 6549:6561 <> subtype_quant
-binder 6573:6573 <> n:65
-binder 6575:6577 <> uty:66
-binder 6579:6581 <> vty:67
-R6600:6603 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6585:6591 Triage.subtypes <> subtype ind
-R6593:6595 Triage.subtypes <> uty:66 var
-R6597:6599 Triage.subtypes <> vty:67 var
-R6604:6610 Triage.subtypes <> subtype ind
-R6613:6617 Triage.types <> quant def
-R6619:6619 Triage.subtypes <> n:65 var
-R6621:6623 Triage.subtypes <> uty:66 var
-R6627:6631 Triage.types <> quant def
-R6633:6633 Triage.subtypes <> n:65 var
-R6635:6637 Triage.subtypes <> vty:67 var
-prf 6721:6734 <> subtype_quanta
-binder 6744:6745 <> bs:68
-binder 6747:6749 <> ty1:69
-binder 6751:6753 <> ty2:70
-R6771:6774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R6756:6762 Triage.subtypes <> subtype ind
-R6764:6766 Triage.subtypes <> ty1:69 var
-R6768:6770 Triage.subtypes <> ty2:70 var
-R6775:6781 Triage.subtypes <> subtype ind
-R6784:6789 Triage.types <> quanta def
-R6791:6792 Triage.subtypes <> bs:68 var
-R6794:6796 Triage.subtypes <> ty1:69 var
-R6800:6805 Triage.types <> quanta def
-R6807:6808 Triage.subtypes <> bs:68 var
-R6810:6812 Triage.subtypes <> ty2:70 var
-prf 6906:6917 <> subtype_dist
-binder 6927:6927 <> n:71
-binder 6929:6931 <> uty:72
-binder 6933:6935 <> vty:73
-R6939:6945 Triage.subtypes <> subtype ind
-R6948:6952 Triage.types <> quant def
-R6954:6954 Triage.subtypes <> n:71 var
-R6957:6961 Triage.types <> Funty constr
-R6963:6965 Triage.subtypes <> uty:72 var
-R6967:6969 Triage.subtypes <> vty:73 var
-R6974:6978 Triage.types <> Funty constr
-R6981:6985 Triage.types <> quant def
-R6987:6987 Triage.subtypes <> n:71 var
-R6989:6991 Triage.subtypes <> uty:72 var
-R6995:6999 Triage.types <> quant def
-R7001:7001 Triage.subtypes <> n:71 var
-R7003:7005 Triage.subtypes <> vty:73 var
-R7063:7070 Triage.subtypes <> sub_zero constr
-R7084:7092 Triage.subtypes <> sub_trans constr
-R7104:7116 Triage.subtypes <> subtype_quant thm
-R7126:7133 Triage.subtypes <> sub_dist constr
-R7063:7070 Triage.subtypes <> sub_zero constr
-R7063:7070 Triage.subtypes <> sub_zero constr
-R7084:7092 Triage.subtypes <> sub_trans constr
-R7104:7116 Triage.subtypes <> subtype_quant thm
-R7126:7133 Triage.subtypes <> sub_dist constr
-prf 7161:7183 <> subtype_quant_to_quanta
-binder 7193:7194 <> bs:74
-binder 7196:7197 <> ty:75
-R7201:7207 Triage.subtypes <> subtype ind
-R7210:7214 Triage.types <> quant def
-R7217:7227 Triage.types <> quant_count def
-R7229:7230 Triage.subtypes <> bs:74 var
-R7233:7234 Triage.subtypes <> ty:75 var
-R7238:7243 Triage.types <> quanta def
-R7245:7246 Triage.subtypes <> bs:74 var
-R7248:7249 Triage.subtypes <> ty:75 var
-R7348:7356 Triage.subtypes <> sub_trans constr
-R7368:7380 Triage.subtypes <> subtype_quant thm
-R7390:7399 Triage.subtypes <> sub_to_asf constr
-R7348:7356 Triage.subtypes <> sub_trans constr
-R7368:7380 Triage.subtypes <> subtype_quant thm
-R7390:7399 Triage.subtypes <> sub_to_asf constr
-prf 7425:7450 <> lift_rec_preserves_subtype
-binder 7462:7464 <> ty1:76
-binder 7466:7468 <> ty2:77
-R7486:7489 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R7471:7477 Triage.subtypes <> subtype ind
-R7479:7481 Triage.subtypes <> ty1:76 var
-R7483:7485 Triage.subtypes <> ty2:77 var
-binder 7497:7497 <> n:78
-binder 7499:7499 <> k:79
-R7502:7508 Triage.subtypes <> subtype ind
-R7511:7518 Triage.types <> lift_rec def
-R7520:7522 Triage.subtypes <> ty1:76 var
-R7524:7524 Triage.subtypes <> n:78 var
-R7526:7526 Triage.subtypes <> k:79 var
-R7530:7537 Triage.types <> lift_rec def
-R7539:7541 Triage.subtypes <> ty2:77 var
-R7543:7543 Triage.subtypes <> n:78 var
-R7545:7545 Triage.subtypes <> k:79 var
-R7643:7646 Triage.types <> lift def
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7604:7611 Triage.types <> lift_rec def
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7659:7671 Triage.types <> lift_lift_rec thm
-R7742:7742 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R7767:7784 Triage.types <> lift_rec_subst_rec thm
-R7742:7742 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R7767:7784 Triage.types <> lift_rec_subst_rec thm
-R7767:7784 Triage.types <> lift_rec_subst_rec thm
-R7810:7817 Triage.types <> lift_rec def
-R7819:7827 Triage.subtypes <> omega2_ty def
-R7840:7848 Triage.subtypes <> omega2_ty def
-R7882:7905 Triage.types <> lift_rec_preserves_quant thm
-R7915:7927 Triage.subtypes <> sub_recursion constr
-R7810:7817 Triage.types <> lift_rec def
-R7819:7827 Triage.subtypes <> omega2_ty def
-R7840:7848 Triage.subtypes <> omega2_ty def
-R7882:7905 Triage.types <> lift_rec_preserves_quant thm
-R7882:7905 Triage.types <> lift_rec_preserves_quant thm
-R7882:7905 Triage.types <> lift_rec_preserves_quant thm
-R7915:7927 Triage.subtypes <> sub_recursion constr
-R7956:7964 Triage.subtypes <> sub_trans constr
-R7984:7992 Triage.subtypes <> sub_trans constr
-R8006:8013 Triage.subtypes <> sub_tree constr
-R8048:8052 Triage.types <> subst def
-R8072:8072 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8097:8114 Triage.types <> lift_rec_subst_rec thm
-R8124:8131 Triage.subtypes <> sub_zero constr
-R8160:8168 Triage.types <> covariant def
-R8199:8206 Triage.types <> relocate def
-R8211:8211 Coq.Init.Datatypes <> S constr
-R8244:8269 Triage.types <> lift_rec_preserves_variant thm
-R8292:8299 Triage.subtypes <> sub_fork constr
-R8311:8318 Triage.subtypes <> sub_fork constr
-R8341:8345 Triage.types <> subst def
-R8365:8365 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8390:8407 Triage.types <> lift_rec_subst_rec thm
-R8417:8424 Triage.subtypes <> sub_zero constr
-R8455:8455 Coq.Init.Datatypes <> S constr
-R8467:8468 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8469:8469 Coq.Init.Datatypes <> S constr
-R8498:8515 Triage.types <> lift_rec_subst_rec thm
-R8545:8557 Triage.types <> lift_lift_rec thm
-R8593:8597 Triage.types <> subst def
-R8625:8625 Coq.Init.Datatypes <> S constr
-R8628:8628 Coq.Init.Datatypes <> S constr
-R8641:8642 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8643:8643 Coq.Init.Datatypes <> S constr
-R8646:8646 Coq.Init.Datatypes <> S constr
-R8680:8697 Triage.types <> lift_rec_subst_rec thm
-R8740:8740 Coq.Init.Datatypes <> S constr
-R8743:8743 Coq.Init.Datatypes <> S constr
-R8746:8746 Coq.Init.Datatypes <> S constr
-R8760:8762 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8763:8763 Coq.Init.Datatypes <> S constr
-R8785:8797 Triage.types <> lift_lift_rec thm
-R7956:7964 Triage.subtypes <> sub_trans constr
-R7984:7992 Triage.subtypes <> sub_trans constr
-R8006:8013 Triage.subtypes <> sub_tree constr
-R8072:8072 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8097:8114 Triage.types <> lift_rec_subst_rec thm
-R8097:8114 Triage.types <> lift_rec_subst_rec thm
-R8124:8131 Triage.subtypes <> sub_zero constr
-R8199:8206 Triage.types <> relocate def
-R8211:8211 Coq.Init.Datatypes <> S constr
-R8244:8269 Triage.types <> lift_rec_preserves_variant thm
-R8244:8269 Triage.types <> lift_rec_preserves_variant thm
-R8292:8299 Triage.subtypes <> sub_fork constr
-R8311:8318 Triage.subtypes <> sub_fork constr
-R8365:8365 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8390:8407 Triage.types <> lift_rec_subst_rec thm
-R8390:8407 Triage.types <> lift_rec_subst_rec thm
-R8417:8424 Triage.subtypes <> sub_zero constr
-R8455:8455 Coq.Init.Datatypes <> S constr
-R8467:8468 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8469:8469 Coq.Init.Datatypes <> S constr
-R8498:8515 Triage.types <> lift_rec_subst_rec thm
-R8498:8515 Triage.types <> lift_rec_subst_rec thm
-R8545:8557 Triage.types <> lift_lift_rec thm
-R8545:8557 Triage.types <> lift_lift_rec thm
-R8545:8557 Triage.types <> lift_lift_rec thm
-R8625:8625 Coq.Init.Datatypes <> S constr
-R8628:8628 Coq.Init.Datatypes <> S constr
-R8641:8642 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8643:8643 Coq.Init.Datatypes <> S constr
-R8646:8646 Coq.Init.Datatypes <> S constr
-R8680:8697 Triage.types <> lift_rec_subst_rec thm
-R8680:8697 Triage.types <> lift_rec_subst_rec thm
-R8740:8740 Coq.Init.Datatypes <> S constr
-R8743:8743 Coq.Init.Datatypes <> S constr
-R8746:8746 Coq.Init.Datatypes <> S constr
-R8760:8762 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R8763:8763 Coq.Init.Datatypes <> S constr
-R8785:8797 Triage.types <> lift_lift_rec thm
-R8785:8797 Triage.types <> lift_lift_rec thm
-R8785:8797 Triage.types <> lift_lift_rec thm
-R8830:8837 Triage.subtypes <> bffs_aug def
-R8840:8847 Triage.subtypes <> bfff_aug def
-R8874:8881 Triage.subtypes <> sub_bffs constr
-R8874:8881 Triage.subtypes <> sub_bffs constr
-R8895:8902 Triage.subtypes <> bffs_aug def
-R8905:8912 Triage.subtypes <> bfff_aug def
-R8939:8946 Triage.subtypes <> sub_bfff constr
-R8939:8946 Triage.subtypes <> sub_bfff constr
-prf 8962:8988 <> subst_rec_preserves_subtype
-binder 9000:9002 <> uty:80
-binder 9004:9006 <> vty:81
-R9024:9027 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9009:9015 Triage.subtypes <> subtype ind
-R9017:9019 Triage.subtypes <> uty:80 var
-R9021:9023 Triage.subtypes <> vty:81 var
-binder 9035:9036 <> ty:82
-binder 9038:9038 <> k:83
-R9041:9047 Triage.subtypes <> subtype ind
-R9050:9058 Triage.types <> subst_rec def
-R9060:9062 Triage.subtypes <> uty:80 var
-R9064:9065 Triage.subtypes <> ty:82 var
-R9067:9067 Triage.subtypes <> k:83 var
-R9071:9079 Triage.types <> subst_rec def
-R9081:9083 Triage.subtypes <> vty:81 var
-R9085:9086 Triage.subtypes <> ty:82 var
-R9088:9088 Triage.subtypes <> k:83 var
-R9147:9150 Triage.types <> lift def
-R9207:9210 Triage.types <> lift def
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9164:9172 Triage.types <> subst_rec def
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9223:9241 Triage.types <> subst_rec_lift_rec1 thm
-R9300:9308 Triage.subtypes <> sub_trans constr
-R9323:9341 Triage.types <> subst_rec_subst_rec thm
-R9361:9368 Triage.subtypes <> sub_zero constr
-R9300:9308 Triage.subtypes <> sub_trans constr
-R9323:9341 Triage.types <> subst_rec_subst_rec thm
-R9323:9341 Triage.types <> subst_rec_subst_rec thm
-R9323:9341 Triage.types <> subst_rec_subst_rec thm
-R9361:9368 Triage.subtypes <> sub_zero constr
-R9361:9368 Triage.subtypes <> sub_zero constr
-R9385:9393 Triage.types <> subst_rec def
-R9395:9403 Triage.subtypes <> omega2_ty def
-R9417:9425 Triage.subtypes <> omega2_ty def
-R9459:9483 Triage.types <> subst_rec_preserves_quant thm
-R9493:9505 Triage.subtypes <> sub_recursion constr
-R9385:9393 Triage.types <> subst_rec def
-R9395:9403 Triage.subtypes <> omega2_ty def
-R9417:9425 Triage.subtypes <> omega2_ty def
-R9459:9483 Triage.types <> subst_rec_preserves_quant thm
-R9459:9483 Triage.types <> subst_rec_preserves_quant thm
-R9459:9483 Triage.types <> subst_rec_preserves_quant thm
-R9493:9505 Triage.subtypes <> sub_recursion constr
-R9519:9523 Triage.types <> subst def
-R9534:9552 Triage.types <> subst_rec_subst_rec thm
-R9580:9580 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
-R9612:9620 Triage.subtypes <> sub_trans constr
-R9632:9640 Triage.subtypes <> sub_trans constr
-R9654:9661 Triage.subtypes <> sub_tree constr
-R9685:9692 Triage.subtypes <> sub_fork constr
-R9714:9721 Triage.subtypes <> sub_fork constr
-R9752:9759 Triage.subtypes <> sub_zero constr
-R9799:9817 Triage.types <> subst_rec_subst_rec thm
-R9865:9883 Triage.types <> subst_rec_lift_rec1 thm
-R9909:9916 Triage.subtypes <> sub_zero constr
-R9956:9974 Triage.types <> subst_rec_subst_rec thm
-R10019:10019 Coq.Init.Datatypes <> S constr
-R10022:10022 Coq.Init.Datatypes <> S constr
-R10025:10025 Coq.Init.Datatypes <> S constr
-R10039:10041 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10042:10042 Coq.Init.Datatypes <> S constr
-R10071:10089 Triage.types <> subst_rec_lift_rec1 thm
-R10115:10122 Triage.subtypes <> sub_zero constr
-R10142:10150 Triage.types <> covariant def
-R10175:10175 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10195:10216 Triage.types <> variant_subst_rec_miss thm
-R10256:10260 Triage.types <> subst def
-R10272:10290 Triage.types <> subst_rec_subst_rec thm
-R10327:10327 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
-R10353:10360 Triage.subtypes <> sub_zero constr
-R9534:9552 Triage.types <> subst_rec_subst_rec thm
-R9534:9552 Triage.types <> subst_rec_subst_rec thm
-R9534:9552 Triage.types <> subst_rec_subst_rec thm
-R9580:9580 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
-R9612:9620 Triage.subtypes <> sub_trans constr
-R9632:9640 Triage.subtypes <> sub_trans constr
-R9654:9661 Triage.subtypes <> sub_tree constr
-R9685:9692 Triage.subtypes <> sub_fork constr
-R9714:9721 Triage.subtypes <> sub_fork constr
-R9752:9759 Triage.subtypes <> sub_zero constr
-R9799:9817 Triage.types <> subst_rec_subst_rec thm
-R9799:9817 Triage.types <> subst_rec_subst_rec thm
-R9799:9817 Triage.types <> subst_rec_subst_rec thm
-R9865:9883 Triage.types <> subst_rec_lift_rec1 thm
-R9865:9883 Triage.types <> subst_rec_lift_rec1 thm
-R9865:9883 Triage.types <> subst_rec_lift_rec1 thm
-R9909:9916 Triage.subtypes <> sub_zero constr
-R9956:9974 Triage.types <> subst_rec_subst_rec thm
-R9956:9974 Triage.types <> subst_rec_subst_rec thm
-R9956:9974 Triage.types <> subst_rec_subst_rec thm
-R10019:10019 Coq.Init.Datatypes <> S constr
-R10022:10022 Coq.Init.Datatypes <> S constr
-R10025:10025 Coq.Init.Datatypes <> S constr
-R10039:10041 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10042:10042 Coq.Init.Datatypes <> S constr
-R10071:10089 Triage.types <> subst_rec_lift_rec1 thm
-R10071:10089 Triage.types <> subst_rec_lift_rec1 thm
-R10071:10089 Triage.types <> subst_rec_lift_rec1 thm
-R10115:10122 Triage.subtypes <> sub_zero constr
-R10175:10175 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10195:10216 Triage.types <> variant_subst_rec_miss thm
-R10195:10216 Triage.types <> variant_subst_rec_miss thm
-R10195:10216 Triage.types <> variant_subst_rec_miss thm
-R10272:10290 Triage.types <> subst_rec_subst_rec thm
-R10272:10290 Triage.types <> subst_rec_subst_rec thm
-R10272:10290 Triage.types <> subst_rec_subst_rec thm
-R10327:10327 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
-R10353:10360 Triage.subtypes <> sub_zero constr
-R10375:10382 Triage.subtypes <> bffs_aug def
-R10385:10392 Triage.subtypes <> bfff_aug def
-R10419:10426 Triage.subtypes <> sub_bffs constr
-R10419:10426 Triage.subtypes <> sub_bffs constr
-R10440:10447 Triage.subtypes <> bffs_aug def
-R10450:10457 Triage.subtypes <> bfff_aug def
-R10484:10491 Triage.subtypes <> sub_bfff constr
-R10484:10491 Triage.subtypes <> sub_bfff constr
-prf 10508:10519 <> subtype_lift
-binder 10529:10529 <> n:84
-binder 10531:10532 <> ty:85
-R10535:10541 Triage.subtypes <> subtype ind
-R10543:10544 Triage.subtypes <> ty:85 var
-R10547:10551 Triage.types <> quant def
-R10553:10553 Triage.subtypes <> n:84 var
-R10556:10559 Triage.types <> lift def
-R10561:10561 Triage.subtypes <> n:84 var
-R10563:10564 Triage.subtypes <> ty:85 var
-R10624:10627 Triage.types <> lift def
-R10638:10650 Triage.types <> lift_rec_null thm
-R10638:10650 Triage.types <> lift_rec_null thm
-R10638:10650 Triage.types <> lift_rec_null thm
-R10674:10674 Coq.Init.Datatypes <> S constr
-R10686:10686 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10706:10714 Triage.subtypes <> sub_trans constr
-R10734:10741 Triage.subtypes <> sub_lift constr
-R10763:10767 Triage.types <> quant def
-R10772:10776 Triage.types <> Quant constr
-R10779:10782 Triage.types <> lift def
-R10786:10786 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10802:10806 Triage.types <> quant def
-R10811:10814 Triage.types <> lift def
-R10819:10823 Triage.types <> Quant constr
-R10826:10829 Triage.types <> lift def
-R10880:10883 Triage.types <> lift def
-R10901:10917 Triage.types <> lift_rec_lift_rec thm
-R10674:10674 Coq.Init.Datatypes <> S constr
-R10686:10686 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10706:10714 Triage.subtypes <> sub_trans constr
-R10734:10741 Triage.subtypes <> sub_lift constr
-R10763:10767 Triage.types <> quant def
-R10772:10776 Triage.types <> Quant constr
-R10779:10782 Triage.types <> lift def
-R10786:10786 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R10802:10806 Triage.types <> quant def
-R10811:10814 Triage.types <> lift def
-R10819:10823 Triage.types <> Quant constr
-R10826:10829 Triage.types <> lift def
-R10901:10917 Triage.types <> lift_rec_lift_rec thm
-R10901:10917 Triage.types <> lift_rec_lift_rec thm
-R10901:10917 Triage.types <> lift_rec_lift_rec thm
-R10901:10917 Triage.types <> lift_rec_lift_rec thm
-prf 10965:10977 <> subtype_lift2
-binder 10988:10988 <> n:86
-binder 10990:10991 <> ty:87
-R10994:11000 Triage.subtypes <> subtype ind
-R11003:11007 Triage.types <> quant def
-R11009:11009 Triage.subtypes <> n:86 var
-R11012:11015 Triage.types <> lift def
-R11017:11017 Triage.subtypes <> n:86 var
-R11019:11020 Triage.subtypes <> ty:87 var
-R11024:11025 Triage.subtypes <> ty:87 var
-R11069:11072 Triage.types <> lift def
-R11083:11095 Triage.types <> lift_rec_null thm
-R11111:11118 Triage.subtypes <> sub_zero constr
-R11083:11095 Triage.types <> lift_rec_null thm
-R11083:11095 Triage.types <> lift_rec_null thm
-R11111:11118 Triage.subtypes <> sub_zero constr
-R11133:11136 Triage.types <> lift def
-R11155:11155 Coq.Init.Datatypes <> S constr
-R11167:11167 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11191:11207 Triage.types <> lift_rec_lift_rec thm
-R11155:11155 Coq.Init.Datatypes <> S constr
-R11167:11167 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11191:11207 Triage.types <> lift_rec_lift_rec thm
-R11191:11207 Triage.types <> lift_rec_lift_rec thm
-R11191:11207 Triage.types <> lift_rec_lift_rec thm
-R11191:11207 Triage.types <> lift_rec_lift_rec thm
-R11244:11252 Triage.subtypes <> sub_trans constr
-R11264:11276 Triage.subtypes <> subtype_quant thm
-R11286:11293 Triage.subtypes <> sub_inst constr
-R11314:11318 Triage.types <> subst def
-R11329:11346 Triage.types <> subst_rec_lift_rec thm
-R11244:11252 Triage.subtypes <> sub_trans constr
-R11264:11276 Triage.subtypes <> subtype_quant thm
-R11286:11293 Triage.subtypes <> sub_inst constr
-R11329:11346 Triage.types <> subst_rec_lift_rec thm
-R11329:11346 Triage.types <> subst_rec_lift_rec thm
-R11329:11346 Triage.types <> subst_rec_lift_rec thm
-R11329:11346 Triage.types <> subst_rec_lift_rec thm
-R11372:11384 Triage.types <> lift_rec_null thm
-R11372:11384 Triage.types <> lift_rec_null thm
-R11372:11384 Triage.types <> lift_rec_null thm
-R11440:11443 Triage.types <> Leaf constr
-R11440:11443 Triage.types <> Leaf constr
-prf 11459:11471 <> subtype_lift3
-R11486:11488 Coq.Init.Datatypes <> nat ind
-binder 11482:11482 <> n:88
-R11497:11501 Triage.types <> dtype ind
-binder 11492:11493 <> ty:89
-R11505:11511 Triage.subtypes <> subtype ind
-R11514:11517 Triage.types <> lift def
-R11519:11519 Triage.subtypes <> n:88 var
-R11522:11526 Triage.types <> quant def
-R11528:11528 Triage.subtypes <> n:88 var
-R11530:11531 Triage.subtypes <> ty:89 var
-R11535:11536 Triage.subtypes <> ty:89 var
-R11577:11580 Triage.types <> lift def
-R11602:11614 Triage.types <> lift_rec_null thm
-R11623:11630 Triage.subtypes <> sub_zero constr
-R11602:11614 Triage.types <> lift_rec_null thm
-R11602:11614 Triage.types <> lift_rec_null thm
-R11623:11630 Triage.subtypes <> sub_zero constr
-R11646:11646 Coq.Init.Datatypes <> S constr
-R11658:11658 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11688:11704 Triage.types <> lift_rec_lift_rec thm
-R11646:11646 Coq.Init.Datatypes <> S constr
-R11658:11658 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11688:11704 Triage.types <> lift_rec_lift_rec thm
-R11688:11704 Triage.types <> lift_rec_lift_rec thm
-R11688:11704 Triage.types <> lift_rec_lift_rec thm
-R11688:11704 Triage.types <> lift_rec_lift_rec thm
-R11723:11723 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11734:11734 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11754:11762 Triage.subtypes <> sub_trans constr
-R11784:11809 Triage.subtypes <> lift_rec_preserves_subtype thm
-R11723:11723 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11734:11734 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R11754:11762 Triage.subtypes <> sub_trans constr
-R11784:11809 Triage.subtypes <> lift_rec_preserves_subtype thm
-R11848:11856 Triage.subtypes <> sub_trans constr
-R11868:11875 Triage.subtypes <> sub_inst constr
-R11897:11901 Triage.types <> subst def
-R11919:11937 Triage.types <> subst_rec_lift_rec0 thm
-R11965:11977 Triage.types <> lift_rec_null thm
-R11986:11993 Triage.subtypes <> sub_zero constr
-R11848:11856 Triage.subtypes <> sub_trans constr
-R11868:11875 Triage.subtypes <> sub_inst constr
-R11919:11937 Triage.types <> subst_rec_lift_rec0 thm
-R11919:11937 Triage.types <> subst_rec_lift_rec0 thm
-R11965:11977 Triage.types <> lift_rec_null thm
-R11965:11977 Triage.types <> lift_rec_null thm
-R11986:11993 Triage.subtypes <> sub_zero constr
-prf 12030:12042 <> subtype_lift4
-binder 12053:12053 <> n:90
-binder 12055:12056 <> ty:91
-R12060:12066 Triage.subtypes <> subtype ind
-R12069:12073 Triage.types <> quant def
-R12075:12075 Triage.subtypes <> n:90 var
-R12078:12085 Triage.types <> lift_rec def
-R12087:12088 Triage.subtypes <> ty:91 var
-R12090:12090 Triage.subtypes <> n:90 var
-R12092:12092 Triage.subtypes <> n:90 var
-R12096:12097 Triage.subtypes <> ty:91 var
-R12130:12134 Triage.types <> quant def
-R12139:12146 Triage.types <> lift_rec def
-R12163:12166 Triage.types <> lift def
-R12171:12175 Triage.types <> quant def
-R12199:12202 Triage.types <> lift def
-R12213:12236 Triage.types <> lift_rec_preserves_quant thm
-R12274:12286 Triage.subtypes <> subtype_lift3 thm
-R12130:12134 Triage.types <> quant def
-R12139:12146 Triage.types <> lift_rec def
-R12163:12166 Triage.types <> lift def
-R12171:12175 Triage.types <> quant def
-R12213:12236 Triage.types <> lift_rec_preserves_quant thm
-R12213:12236 Triage.types <> lift_rec_preserves_quant thm
-R12274:12286 Triage.subtypes <> subtype_lift3 thm
-prf 12304:12321 <> subtype_quant_stem
-binder 12331:12331 <> k:92
-binder 12333:12335 <> uty:93
-R12338:12344 Triage.subtypes <> subtype ind
-R12347:12351 Triage.types <> quant def
-R12353:12353 Triage.subtypes <> k:92 var
-R12356:12359 Triage.types <> Stem constr
-R12361:12363 Triage.subtypes <> uty:93 var
-R12368:12371 Triage.types <> Stem constr
-R12374:12378 Triage.types <> quant def
-R12380:12380 Triage.subtypes <> k:92 var
-R12382:12384 Triage.subtypes <> uty:93 var
-R12438:12445 Triage.subtypes <> sub_zero constr
-R12438:12445 Triage.subtypes <> sub_zero constr
-R12459:12467 Triage.subtypes <> sub_trans constr
-R12479:12491 Triage.subtypes <> subtype_quant thm
-R12501:12514 Triage.subtypes <> sub_quant_stem constr
-R12459:12467 Triage.subtypes <> sub_trans constr
-R12479:12491 Triage.subtypes <> subtype_quant thm
-R12501:12514 Triage.subtypes <> sub_quant_stem constr
-prf 12539:12556 <> subtype_quant_fork
-binder 12568:12568 <> k:94
-binder 12570:12572 <> uty:95
-binder 12574:12576 <> vty:96
-R12580:12586 Triage.subtypes <> subtype ind
-R12589:12593 Triage.types <> quant def
-R12595:12595 Triage.subtypes <> k:94 var
-R12598:12601 Triage.types <> Fork constr
-R12603:12605 Triage.subtypes <> uty:95 var
-R12607:12609 Triage.subtypes <> vty:96 var
-R12614:12617 Triage.types <> Fork constr
-R12620:12624 Triage.types <> quant def
-R12626:12626 Triage.subtypes <> k:94 var
-R12628:12630 Triage.subtypes <> uty:95 var
-R12634:12638 Triage.types <> quant def
-R12640:12640 Triage.subtypes <> k:94 var
-R12642:12644 Triage.subtypes <> vty:96 var
-R12698:12705 Triage.subtypes <> sub_zero constr
-R12718:12726 Triage.subtypes <> sub_trans constr
-R12738:12750 Triage.subtypes <> subtype_quant thm
-R12760:12773 Triage.subtypes <> sub_quant_fork constr
-R12698:12705 Triage.subtypes <> sub_zero constr
-R12698:12705 Triage.subtypes <> sub_zero constr
-R12718:12726 Triage.subtypes <> sub_trans constr
-R12738:12750 Triage.subtypes <> subtype_quant thm
-R12760:12773 Triage.subtypes <> sub_quant_fork constr
-prf 12799:12815 <> asf_Quant_commute
-binder 12825:12826 <> ty:97
-R12829:12835 Triage.subtypes <> subtype ind
-R12838:12840 Triage.types <> Asf constr
-R12843:12847 Triage.types <> Quant constr
-R12849:12850 Triage.subtypes <> ty:97 var
-R12855:12859 Triage.types <> Quant constr
-R12862:12864 Triage.types <> Asf constr
-R12866:12867 Triage.subtypes <> ty:97 var
-R12897:12905 Triage.subtypes <> sub_trans constr
-R12917:12924 Triage.subtypes <> sub_lift constr
-R12941:12949 Triage.subtypes <> sub_quant constr
-R12959:12962 Triage.types <> lift def
-R12983:12989 Triage.subtypes <> sub_asf constr
-R12999:13007 Triage.subtypes <> sub_trans constr
-R13019:13026 Triage.subtypes <> sub_inst constr
-R13043:13047 Triage.types <> subst def
-R13067:13085 Triage.types <> subst_rec_lift_rec0 thm
-R13096:13108 Triage.types <> lift_rec_null thm
-R13118:13125 Triage.subtypes <> sub_zero constr
-R12897:12905 Triage.subtypes <> sub_trans constr
-R12917:12924 Triage.subtypes <> sub_lift constr
-R12941:12949 Triage.subtypes <> sub_quant constr
-R12983:12989 Triage.subtypes <> sub_asf constr
-R12999:13007 Triage.subtypes <> sub_trans constr
-R13019:13026 Triage.subtypes <> sub_inst constr
-R13067:13085 Triage.types <> subst_rec_lift_rec0 thm
-R13067:13085 Triage.types <> subst_rec_lift_rec0 thm
-R13096:13108 Triage.types <> lift_rec_null thm
-R13096:13108 Triage.types <> lift_rec_null thm
-R13118:13125 Triage.subtypes <> sub_zero constr
-prf 13141:13158 <> subtype_asf_quanta
-binder 13168:13169 <> bs:98
-binder 13171:13172 <> ty:99
-R13175:13181 Triage.subtypes <> subtype ind
-R13184:13186 Triage.types <> Asf constr
-R13189:13194 Triage.types <> quanta def
-R13196:13197 Triage.subtypes <> bs:98 var
-R13199:13200 Triage.subtypes <> ty:99 var
-R13205:13210 Triage.types <> quanta def
-R13212:13213 Triage.subtypes <> bs:98 var
-R13216:13218 Triage.types <> Asf constr
-R13220:13221 Triage.subtypes <> ty:99 var
-R13312:13320 Triage.subtypes <> sub_trans constr
-R13348:13361 Triage.subtypes <> subtype_quanta thm
-R13371:13387 Triage.subtypes <> asf_Quant_commute thm
-R13312:13320 Triage.subtypes <> sub_trans constr
-R13348:13361 Triage.subtypes <> subtype_quanta thm
-R13371:13387 Triage.subtypes <> asf_Quant_commute thm
-prf 13424:13441 <> subtype_quanta_asf
-binder 13451:13452 <> bs:100
-binder 13454:13455 <> ty:101
-R13458:13464 Triage.subtypes <> subtype ind
-R13467:13472 Triage.types <> quanta def
-R13474:13475 Triage.subtypes <> bs:100 var
-R13478:13480 Triage.types <> Asf constr
-R13482:13483 Triage.subtypes <> ty:101 var
-R13489:13491 Triage.types <> Asf constr
-R13494:13499 Triage.types <> quanta def
-R13501:13502 Triage.subtypes <> bs:100 var
-R13504:13505 Triage.subtypes <> ty:101 var
-R13597:13605 Triage.subtypes <> sub_trans constr
-R13633:13646 Triage.subtypes <> subtype_quanta thm
-R13656:13668 Triage.subtypes <> sub_quant_asf constr
-R13597:13605 Triage.subtypes <> sub_trans constr
-R13633:13646 Triage.subtypes <> subtype_quanta thm
-R13656:13668 Triage.subtypes <> sub_quant_asf constr
-prf 13705:13721 <> subtype_quant_asf
-binder 13731:13731 <> n:102
-binder 13733:13734 <> ty:103
-R13737:13743 Triage.subtypes <> subtype ind
-R13746:13750 Triage.types <> quant def
-R13752:13752 Triage.subtypes <> n:102 var
-R13755:13757 Triage.types <> Asf constr
-R13759:13760 Triage.subtypes <> ty:103 var
-R13766:13768 Triage.types <> Asf constr
-R13771:13775 Triage.types <> quant def
-R13777:13777 Triage.subtypes <> n:102 var
-R13779:13780 Triage.subtypes <> ty:103 var
-R13838:13846 Triage.subtypes <> sub_trans constr
-R13873:13885 Triage.subtypes <> subtype_quant thm
-R13895:13907 Triage.subtypes <> sub_quant_asf constr
-R13838:13846 Triage.subtypes <> sub_trans constr
-R13873:13885 Triage.subtypes <> subtype_quant thm
-R13895:13907 Triage.subtypes <> sub_quant_asf constr
-prf 13928:13956 <> subtype_quanta_to_quant_count
-binder 13968:13969 <> bs:104
-binder 13971:13973 <> bs2:105
-binder 13975:13977 <> uty:106
-binder 13979:13981 <> vty:107
-R13988:13994 Triage.subtypes <> subtype ind
-R13997:14002 Triage.types <> quanta def
-R14004:14005 Triage.subtypes <> bs:104 var
-R14008:14013 Triage.types <> quanta def
-R14015:14017 Triage.subtypes <> bs2:105 var
-R14020:14024 Triage.types <> Funty constr
-R14026:14028 Triage.subtypes <> uty:106 var
-R14030:14032 Triage.subtypes <> vty:107 var
-R14038:14042 Triage.types <> quant def
-R14045:14055 Triage.types <> quant_count def
-R14057:14058 Triage.subtypes <> bs:104 var
-R14062:14067 Triage.types <> quanta def
-R14069:14071 Triage.subtypes <> bs2:105 var
-R14074:14078 Triage.types <> Funty constr
-R14080:14082 Triage.subtypes <> uty:106 var
-R14084:14086 Triage.subtypes <> vty:107 var
-R14183:14187 Triage.types <> Quant constr
-R14190:14195 Triage.types <> quanta def
-R14202:14206 Triage.types <> Funty constr
-R14225:14230 Triage.types <> quanta def
-R14233:14235 Coq.Init.Datatypes <> app def
-R14246:14249 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14242:14245 Coq.Init.Datatypes <> true constr
-R14250:14252 Coq.Init.Datatypes <> nil constr
-R14257:14261 Triage.types <> Funty constr
-R14291:14300 Triage.types <> quanta_app thm
-R14183:14187 Triage.types <> Quant constr
-R14190:14195 Triage.types <> quanta def
-R14202:14206 Triage.types <> Funty constr
-R14225:14230 Triage.types <> quanta def
-R14233:14235 Coq.Init.Datatypes <> app def
-R14246:14249 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14242:14245 Coq.Init.Datatypes <> true constr
-R14250:14252 Coq.Init.Datatypes <> nil constr
-R14257:14261 Triage.types <> Funty constr
-R14291:14300 Triage.types <> quanta_app thm
-R14291:14300 Triage.types <> quanta_app thm
-R14343:14345 Triage.types <> Asf constr
-R14348:14353 Triage.types <> quanta def
-R14360:14364 Triage.types <> Funty constr
-R14383:14388 Triage.types <> quanta def
-R14391:14393 Coq.Init.Datatypes <> app def
-R14405:14408 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14400:14404 Coq.Init.Datatypes <> false constr
-R14409:14411 Coq.Init.Datatypes <> nil constr
-R14416:14420 Triage.types <> Funty constr
-R14450:14459 Triage.types <> quanta_app thm
-R14489:14497 Triage.subtypes <> sub_trans constr
-R14531:14543 Triage.subtypes <> subtype_quant thm
-R14554:14563 Triage.types <> quanta_app thm
-R14586:14594 Triage.subtypes <> sub_trans constr
-R14606:14623 Triage.subtypes <> subtype_asf_quanta thm
-R14634:14647 Triage.subtypes <> subtype_quanta thm
-R14343:14345 Triage.types <> Asf constr
-R14348:14353 Triage.types <> quanta def
-R14360:14364 Triage.types <> Funty constr
-R14383:14388 Triage.types <> quanta def
-R14391:14393 Coq.Init.Datatypes <> app def
-R14405:14408 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14400:14404 Coq.Init.Datatypes <> false constr
-R14409:14411 Coq.Init.Datatypes <> nil constr
-R14416:14420 Triage.types <> Funty constr
-R14450:14459 Triage.types <> quanta_app thm
-R14450:14459 Triage.types <> quanta_app thm
-R14489:14497 Triage.subtypes <> sub_trans constr
-R14531:14543 Triage.subtypes <> subtype_quant thm
-R14554:14563 Triage.types <> quanta_app thm
-R14554:14563 Triage.types <> quanta_app thm
-R14586:14594 Triage.subtypes <> sub_trans constr
-R14606:14623 Triage.subtypes <> subtype_asf_quanta thm
-R14634:14647 Triage.subtypes <> subtype_quanta thm
-prf 14672:14682 <> quanta_leaf
-binder 14692:14693 <> bs:108
-R14696:14702 Triage.subtypes <> subtype ind
-R14704:14707 Triage.types <> Leaf constr
-R14710:14715 Triage.types <> quanta def
-R14717:14718 Triage.subtypes <> bs:108 var
-R14720:14723 Triage.types <> Leaf constr
-R14781:14788 Triage.subtypes <> sub_zero constr
-R14781:14788 Triage.subtypes <> sub_zero constr
-R14828:14836 Triage.subtypes <> sub_trans constr
-R14862:14875 Triage.subtypes <> subtype_quanta thm
-R14828:14836 Triage.subtypes <> sub_trans constr
-R14862:14875 Triage.subtypes <> subtype_quanta thm
-R14828:14836 Triage.subtypes <> sub_trans constr
-R14862:14875 Triage.subtypes <> subtype_quanta thm
-R14894:14897 Triage.types <> Leaf constr
-R14905:14908 Triage.types <> lift def
-R14912:14915 Triage.types <> Leaf constr
-R14940:14947 Triage.subtypes <> sub_lift constr
-R14894:14897 Triage.types <> Leaf constr
-R14905:14908 Triage.types <> lift def
-R14912:14915 Triage.types <> Leaf constr
-R14940:14947 Triage.subtypes <> sub_lift constr
-prf 14977:15000 <> subtype_quant_to_quanta2
-binder 15010:15010 <> n:109
-binder 15012:15013 <> ty:110
-R15026:15028 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R15016:15020 Triage.types <> quant def
-R15022:15022 Triage.subtypes <> n:109 var
-R15024:15025 Triage.subtypes <> ty:110 var
-R15029:15034 Triage.types <> quanta def
-R15037:15040 Coq.Init.Nat <> iter def
-R15056:15058 Coq.Init.Datatypes <> nil constr
-R15045:15048 Coq.Init.Datatypes <> cons constr
-R15050:15053 Coq.Init.Datatypes <> true constr
-R15042:15042 Triage.subtypes <> n:109 var
-R15061:15062 Triage.subtypes <> ty:110 var
-prf 15121:15140 <> subtype_quant_quantf
-binder 15150:15150 <> m:111
-binder 15152:15152 <> n:112
-binder 15154:15155 <> ty:113
-R15159:15165 Triage.subtypes <> subtype ind
-R15168:15172 Triage.types <> quant def
-R15174:15174 Triage.subtypes <> m:111 var
-R15177:15182 Triage.types <> quantf def
-R15184:15184 Triage.subtypes <> n:112 var
-R15186:15187 Triage.subtypes <> ty:113 var
-R15192:15197 Triage.types <> quantf def
-R15199:15199 Triage.subtypes <> n:112 var
-R15202:15206 Triage.types <> quant def
-R15208:15208 Triage.subtypes <> m:111 var
-R15210:15211 Triage.subtypes <> ty:113 var
-R15269:15277 Triage.subtypes <> sub_trans constr
-R15308:15320 Triage.subtypes <> subtype_quant thm
-R15384:15394 Triage.types <> quantf_succ thm
-R15408:15416 Triage.subtypes <> sub_trans constr
-R15428:15440 Triage.subtypes <> sub_quant_asf constr
-R15451:15457 Triage.subtypes <> sub_asf constr
-R15269:15277 Triage.subtypes <> sub_trans constr
-R15308:15320 Triage.subtypes <> subtype_quant thm
-R15384:15394 Triage.types <> quantf_succ thm
-R15384:15394 Triage.types <> quantf_succ thm
-R15384:15394 Triage.types <> quantf_succ thm
-R15408:15416 Triage.subtypes <> sub_trans constr
-R15428:15440 Triage.subtypes <> sub_quant_asf constr
-R15451:15457 Triage.subtypes <> sub_asf constr
-prf 15481:15494 <> subtype_quantf
-binder 15504:15504 <> n:114
-binder 15506:15508 <> ty1:115
-binder 15510:15512 <> ty2:116
-R15530:15533 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R15515:15521 Triage.subtypes <> subtype ind
-R15523:15525 Triage.subtypes <> ty1:115 var
-R15527:15529 Triage.subtypes <> ty2:116 var
-R15534:15540 Triage.subtypes <> subtype ind
-R15543:15548 Triage.types <> quantf def
-R15550:15550 Triage.subtypes <> n:114 var
-R15552:15554 Triage.subtypes <> ty1:115 var
-R15558:15563 Triage.types <> quantf def
-R15565:15565 Triage.subtypes <> n:114 var
-R15567:15569 Triage.subtypes <> ty2:116 var
-prf 15632:15651 <> subtype_quantf_Quant
-binder 15661:15661 <> n:117
-binder 15663:15664 <> ty:118
-R15668:15674 Triage.subtypes <> subtype ind
-R15677:15682 Triage.types <> quantf def
-R15684:15684 Triage.subtypes <> n:117 var
-R15687:15691 Triage.types <> Quant constr
-R15694:15695 Triage.subtypes <> ty:118 var
-R15700:15704 Triage.types <> Quant constr
-R15707:15712 Triage.types <> quantf def
-R15714:15714 Triage.subtypes <> n:117 var
-R15716:15717 Triage.subtypes <> ty:118 var
-R15746:15754 Triage.subtypes <> sub_trans constr
-R15766:15773 Triage.subtypes <> sub_lift constr
-R15790:15798 Triage.subtypes <> sub_quant constr
-R15812:15815 Triage.types <> lift def
-R15826:15850 Triage.types <> lift_rec_preserves_quantf thm
-R15860:15873 Triage.subtypes <> subtype_quantf thm
-R15888:15892 Triage.types <> Quant constr
-R15900:15904 Triage.types <> quant def
-R15929:15941 Triage.subtypes <> subtype_lift3 thm
-R15746:15754 Triage.subtypes <> sub_trans constr
-R15766:15773 Triage.subtypes <> sub_lift constr
-R15790:15798 Triage.subtypes <> sub_quant constr
-R15826:15850 Triage.types <> lift_rec_preserves_quantf thm
-R15826:15850 Triage.types <> lift_rec_preserves_quantf thm
-R15860:15873 Triage.subtypes <> subtype_quantf thm
-R15888:15892 Triage.types <> Quant constr
-R15900:15904 Triage.types <> quant def
-R15929:15941 Triage.subtypes <> subtype_lift3 thm
-prf 15959:15975 <> subtype_leaf_fork
-binder 15987:15989 <> uty:119
-binder 15991:15993 <> vty:120
-R15996:16002 Triage.subtypes <> subtype ind
-R16004:16007 Triage.types <> Leaf constr
-R16010:16014 Triage.types <> Funty constr
-R16016:16018 Triage.subtypes <> uty:119 var
-R16021:16025 Triage.types <> Funty constr
-R16027:16029 Triage.subtypes <> vty:120 var
-R16032:16035 Triage.types <> Fork constr
-R16037:16039 Triage.subtypes <> uty:119 var
-R16041:16043 Triage.subtypes <> vty:120 var
-R16103:16111 Triage.subtypes <> sub_trans constr
-R16126:16138 Triage.subtypes <> sub_fork_leaf constr
-R16196:16204 Triage.subtypes <> sub_trans constr
-R16217:16224 Triage.subtypes <> sub_fork constr
-R16237:16244 Triage.subtypes <> sub_stem constr
-R16258:16270 Triage.subtypes <> sub_fork_stem constr
-R16304:16315 Triage.subtypes <> sub_stem_fun constr
-R16355:16366 Triage.subtypes <> sub_leaf_fun constr
-R16406:16422 Triage.subtypes <> subtype_leaf_fork thm
-R16471:16479 Triage.subtypes <> sub_trans constr
-R16491:16502 Triage.subtypes <> subtype_dist thm
-R16513:16521 Triage.subtypes <> sub_funty constr
-R16598:16606 Triage.subtypes <> sub_funty constr
-R16620:16627 Triage.subtypes <> sub_zero constr
-R16553:16561 Triage.subtypes <> sub_funty constr
-R16573:16580 Triage.subtypes <> sub_zero constr
-R16661:16669 Triage.subtypes <> sub_trans constr
-R16681:16693 Triage.subtypes <> subtype_quant thm
-R16704:16712 Triage.subtypes <> sub_trans constr
-R16724:16731 Triage.subtypes <> sub_lift constr
-R16742:16749 Triage.subtypes <> sub_zero constr
-R16812:16815 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R16812:16815 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R16862:16868 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R16870:16871 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R16862:16868 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R16870:16871 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R17147:17163 Triage.subtypes <> subtype_leaf_fork thm
-R17120:17131 Triage.subtypes <> sub_leaf_fun constr
-R17033:17040 Triage.subtypes <> sub_zero constr
-prf 17261:17278 <> stem_Quant_commute
-binder 17288:17289 <> ty:121
-R17292:17298 Triage.subtypes <> subtype ind
-R17301:17304 Triage.types <> Stem constr
-R17307:17311 Triage.types <> Quant constr
-R17313:17314 Triage.subtypes <> ty:121 var
-R17319:17323 Triage.types <> Quant constr
-R17326:17329 Triage.types <> Stem constr
-R17331:17332 Triage.subtypes <> ty:121 var
-R17362:17370 Triage.subtypes <> sub_trans constr
-R17382:17389 Triage.subtypes <> sub_lift constr
-R17406:17414 Triage.subtypes <> sub_quant constr
-R17424:17427 Triage.types <> lift def
-R17448:17455 Triage.subtypes <> sub_stem constr
-R17469:17477 Triage.subtypes <> sub_trans constr
-R17489:17496 Triage.subtypes <> sub_inst constr
-R17513:17517 Triage.types <> subst def
-R17536:17554 Triage.types <> subst_rec_lift_rec0 thm
-R17565:17577 Triage.types <> lift_rec_null thm
-R17586:17593 Triage.subtypes <> sub_zero constr
-R17362:17370 Triage.subtypes <> sub_trans constr
-R17382:17389 Triage.subtypes <> sub_lift constr
-R17406:17414 Triage.subtypes <> sub_quant constr
-R17448:17455 Triage.subtypes <> sub_stem constr
-R17469:17477 Triage.subtypes <> sub_trans constr
-R17489:17496 Triage.subtypes <> sub_inst constr
-R17536:17554 Triage.types <> subst_rec_lift_rec0 thm
-R17536:17554 Triage.types <> subst_rec_lift_rec0 thm
-R17565:17577 Triage.types <> lift_rec_null thm
-R17565:17577 Triage.types <> lift_rec_null thm
-R17586:17593 Triage.subtypes <> sub_zero constr
-prf 17610:17627 <> stem_quant_commute
-binder 17637:17637 <> k:122
-binder 17639:17640 <> ty:123
-R17643:17649 Triage.subtypes <> subtype ind
-R17652:17655 Triage.types <> Stem constr
-R17658:17662 Triage.types <> quant def
-R17664:17664 Triage.subtypes <> k:122 var
-R17666:17667 Triage.subtypes <> ty:123 var
-R17672:17676 Triage.types <> quant def
-R17678:17678 Triage.subtypes <> k:122 var
-R17681:17684 Triage.types <> Stem constr
-R17686:17687 Triage.subtypes <> ty:123 var
-R17741:17748 Triage.subtypes <> sub_zero constr
-R17765:17774 Triage.types <> quant_succ thm
-R17788:17796 Triage.subtypes <> sub_trans constr
-R17808:17825 Triage.subtypes <> stem_Quant_commute thm
-R17842:17850 Triage.subtypes <> sub_quant constr
-R17741:17748 Triage.subtypes <> sub_zero constr
-R17741:17748 Triage.subtypes <> sub_zero constr
-R17765:17774 Triage.types <> quant_succ thm
-R17765:17774 Triage.types <> quant_succ thm
-R17765:17774 Triage.types <> quant_succ thm
-R17765:17774 Triage.types <> quant_succ thm
-R17788:17796 Triage.subtypes <> sub_trans constr
-R17808:17825 Triage.subtypes <> stem_Quant_commute thm
-R17842:17850 Triage.subtypes <> sub_quant constr
-prf 17875:17891 <> asf_quant_commute
-binder 17901:17901 <> k:124
-binder 17903:17904 <> ty:125
-R17907:17913 Triage.subtypes <> subtype ind
-R17916:17918 Triage.types <> Asf constr
-R17921:17925 Triage.types <> quant def
-R17927:17927 Triage.subtypes <> k:124 var
-R17929:17930 Triage.subtypes <> ty:125 var
-R17935:17939 Triage.types <> quant def
-R17941:17941 Triage.subtypes <> k:124 var
-R17944:17946 Triage.types <> Asf constr
-R17948:17949 Triage.subtypes <> ty:125 var
-R18003:18010 Triage.subtypes <> sub_zero constr
-R18027:18036 Triage.types <> quant_succ thm
-R18050:18058 Triage.subtypes <> sub_trans constr
-R18070:18086 Triage.subtypes <> asf_Quant_commute thm
-R18103:18111 Triage.subtypes <> sub_quant constr
-R18003:18010 Triage.subtypes <> sub_zero constr
-R18003:18010 Triage.subtypes <> sub_zero constr
-R18027:18036 Triage.types <> quant_succ thm
-R18027:18036 Triage.types <> quant_succ thm
-R18027:18036 Triage.types <> quant_succ thm
-R18027:18036 Triage.types <> quant_succ thm
-R18050:18058 Triage.subtypes <> sub_trans constr
-R18070:18086 Triage.subtypes <> asf_Quant_commute thm
-R18103:18111 Triage.subtypes <> sub_quant constr
-prf 18136:18153 <> fork_Quant_commute
-binder 18163:18165 <> ty1:126
-binder 18167:18169 <> ty2:127
-R18172:18178 Triage.subtypes <> subtype ind
-R18181:18184 Triage.types <> Fork constr
-R18187:18191 Triage.types <> Quant constr
-R18193:18195 Triage.subtypes <> ty1:126 var
-R18199:18203 Triage.types <> Quant constr
-R18205:18207 Triage.subtypes <> ty2:127 var
-R18212:18216 Triage.types <> Quant constr
-R18219:18222 Triage.types <> Fork constr
-R18224:18226 Triage.subtypes <> ty1:126 var
-R18228:18230 Triage.subtypes <> ty2:127 var
-R18260:18268 Triage.subtypes <> sub_trans constr
-R18280:18287 Triage.subtypes <> sub_lift constr
-R18304:18312 Triage.subtypes <> sub_quant constr
-R18322:18325 Triage.types <> lift def
-R18344:18351 Triage.subtypes <> sub_fork constr
-R18362:18370 Triage.subtypes <> sub_trans constr
-R18382:18389 Triage.subtypes <> sub_inst constr
-R18402:18406 Triage.types <> subst def
-R18419:18437 Triage.types <> subst_rec_lift_rec0 thm
-R18448:18460 Triage.types <> lift_rec_null thm
-R18469:18476 Triage.subtypes <> sub_zero constr
-R18260:18268 Triage.subtypes <> sub_trans constr
-R18280:18287 Triage.subtypes <> sub_lift constr
-R18304:18312 Triage.subtypes <> sub_quant constr
-R18344:18351 Triage.subtypes <> sub_fork constr
-R18362:18370 Triage.subtypes <> sub_trans constr
-R18382:18389 Triage.subtypes <> sub_inst constr
-R18419:18437 Triage.types <> subst_rec_lift_rec0 thm
-R18419:18437 Triage.types <> subst_rec_lift_rec0 thm
-R18448:18460 Triage.types <> lift_rec_null thm
-R18448:18460 Triage.types <> lift_rec_null thm
-R18469:18476 Triage.subtypes <> sub_zero constr
-R18362:18370 Triage.subtypes <> sub_trans constr
-R18382:18389 Triage.subtypes <> sub_inst constr
-R18419:18437 Triage.types <> subst_rec_lift_rec0 thm
-R18419:18437 Triage.types <> subst_rec_lift_rec0 thm
-R18448:18460 Triage.types <> lift_rec_null thm
-R18448:18460 Triage.types <> lift_rec_null thm
-R18469:18476 Triage.subtypes <> sub_zero constr
-prf 18495:18512 <> fork_quant_commute
-binder 18524:18524 <> k:128
-binder 18526:18528 <> ty1:129
-binder 18530:18532 <> ty2:130
-R18535:18541 Triage.subtypes <> subtype ind
-R18544:18547 Triage.types <> Fork constr
-R18549:18553 Triage.types <> quant def
-R18555:18555 Triage.subtypes <> k:128 var
-R18557:18559 Triage.subtypes <> ty1:129 var
-R18562:18566 Triage.types <> quant def
-R18568:18568 Triage.subtypes <> k:128 var
-R18570:18572 Triage.subtypes <> ty2:130 var
-R18577:18581 Triage.types <> quant def
-R18583:18583 Triage.subtypes <> k:128 var
-R18586:18589 Triage.types <> Fork constr
-R18591:18593 Triage.subtypes <> ty1:129 var
-R18595:18597 Triage.subtypes <> ty2:130 var
-R18650:18657 Triage.subtypes <> sub_zero constr
-R18674:18683 Triage.types <> quant_succ thm
-R18699:18699 Coq.Init.Datatypes <> S constr
-R18703:18705 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18706:18706 Coq.Init.Datatypes <> S constr
-R18719:18722 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18726:18726 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18724:18724 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18748:18756 Triage.subtypes <> sub_trans constr
-R18768:18785 Triage.subtypes <> fork_Quant_commute thm
-R18803:18811 Triage.subtypes <> sub_quant constr
-R18650:18657 Triage.subtypes <> sub_zero constr
-R18650:18657 Triage.subtypes <> sub_zero constr
-R18674:18683 Triage.types <> quant_succ thm
-R18674:18683 Triage.types <> quant_succ thm
-R18674:18683 Triage.types <> quant_succ thm
-R18674:18683 Triage.types <> quant_succ thm
-R18674:18683 Triage.types <> quant_succ thm
-R18699:18699 Coq.Init.Datatypes <> S constr
-R18703:18705 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18706:18706 Coq.Init.Datatypes <> S constr
-R18719:18722 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18726:18726 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18724:18724 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18748:18756 Triage.subtypes <> sub_trans constr
-R18768:18785 Triage.subtypes <> fork_Quant_commute thm
-R18803:18811 Triage.subtypes <> sub_quant constr
-prf 18836:18853 <> subtype_quant_leaf
-binder 18863:18863 <> k:131
-R18866:18872 Triage.subtypes <> subtype ind
-R18875:18879 Triage.types <> quant def
-R18881:18881 Triage.subtypes <> k:131 var
-R18883:18886 Triage.types <> Leaf constr
-R18889:18892 Triage.types <> Leaf constr
-R18943:18950 Triage.subtypes <> sub_zero constr
-R18966:18966 Coq.Init.Datatypes <> S constr
-R18978:18978 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18997:19005 Triage.subtypes <> sub_trans constr
-R19017:19029 Triage.subtypes <> subtype_quant thm
-R19039:19046 Triage.subtypes <> sub_inst constr
-R19059:19063 Triage.types <> subst def
-R18943:18950 Triage.subtypes <> sub_zero constr
-R18943:18950 Triage.subtypes <> sub_zero constr
-R18966:18966 Coq.Init.Datatypes <> S constr
-R18978:18978 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R18997:19005 Triage.subtypes <> sub_trans constr
-R19017:19029 Triage.subtypes <> subtype_quant thm
-R19039:19046 Triage.subtypes <> sub_inst constr
-R19100:19103 Triage.types <> Leaf constr
-R19100:19103 Triage.types <> Leaf constr
-prf 19118:19135 <> subtype_leaf_quant
-binder 19145:19145 <> k:132
-R19148:19154 Triage.subtypes <> subtype ind
-R19156:19159 Triage.types <> Leaf constr
-R19162:19166 Triage.types <> quant def
-R19168:19168 Triage.subtypes <> k:132 var
-R19170:19173 Triage.types <> Leaf constr
-R19225:19232 Triage.subtypes <> sub_zero constr
-R19248:19248 Coq.Init.Datatypes <> S constr
-R19260:19260 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R19279:19287 Triage.subtypes <> sub_trans constr
-R19313:19325 Triage.subtypes <> subtype_quant thm
-R19338:19346 Triage.subtypes <> sub_trans constr
-R19358:19365 Triage.subtypes <> sub_lift constr
-R19376:19379 Triage.types <> lift def
-R19396:19403 Triage.subtypes <> sub_zero constr
-R19225:19232 Triage.subtypes <> sub_zero constr
-R19225:19232 Triage.subtypes <> sub_zero constr
-R19248:19248 Coq.Init.Datatypes <> S constr
-R19260:19260 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
-R19279:19287 Triage.subtypes <> sub_trans constr
-R19313:19325 Triage.subtypes <> subtype_quant thm
-R19338:19346 Triage.subtypes <> sub_trans constr
-R19358:19365 Triage.subtypes <> sub_lift constr
-R19396:19403 Triage.subtypes <> sub_zero constr
-prf 19423:19433 <> subtype_Kty
-binder 19443:19445 <> uty:133
-binder 19447:19449 <> vty:134
-R19452:19458 Triage.subtypes <> subtype ind
-R19461:19464 Triage.types <> Stem constr
-R19466:19469 Triage.types <> Leaf constr
-R19473:19477 Triage.types <> Funty constr
-R19479:19481 Triage.subtypes <> uty:133 var
-R19484:19488 Triage.types <> Funty constr
-R19490:19492 Triage.subtypes <> vty:134 var
-R19494:19496 Triage.subtypes <> uty:133 var
+R3104:3107 Triage.types <> Fork constr
+R3109:3112 Triage.types <> Leaf constr
+R3114:3120 Triage.subtypes <> eval_ty def
+R3125:3127 Triage.types <> Asf constr
+R3129:3131 Triage.subtypes <> uty:3 var
+def 3146:3153 <> bffs_aug
+binder 3155:3157 <> uty:4
+R3162:3165 Triage.types <> Fork constr
+R3168:3171 Triage.types <> Stem constr
+R3174:3177 Triage.types <> Fork constr
+R3179:3182 Triage.types <> Leaf constr
+R3184:3191 Triage.subtypes <> eager_ty def
+R3196:3203 Triage.subtypes <> bfff_aug def
+R3205:3207 Triage.subtypes <> uty:4 var
+def 3224:3226 <> Zty
+binder 3228:3228 <> k:5
+binder 3230:3232 <> uty:6
+binder 3234:3236 <> vty:7
+R3241:3244 Triage.types <> Fork constr
+R3256:3259 Triage.types <> Stem constr
+R3274:3277 Triage.types <> Fork constr
+R3295:3298 Triage.types <> Stem constr
+R3319:3322 Triage.types <> Fork constr
+R3324:3327 Triage.types <> Leaf constr
+R3351:3354 Triage.types <> Stem constr
+R3381:3384 Triage.types <> Stem constr
+R3414:3417 Triage.types <> Fork constr
+R3420:3423 Triage.types <> Stem constr
+R3426:3429 Triage.types <> Fork constr
+R3432:3435 Triage.types <> Stem constr
+R3438:3441 Triage.types <> Stem constr
+R3443:3446 Triage.types <> Leaf constr
+R3450:3453 Triage.types <> Leaf constr
+R3488:3491 Triage.types <> Stem constr
+R3493:3496 Triage.types <> Leaf constr
+R3505:3508 Triage.types <> Stem constr
+R3510:3513 Triage.types <> Leaf constr
+R3528:3531 Triage.types <> Fork constr
+R3533:3536 Triage.types <> Leaf constr
+R3551:3554 Triage.types <> Fork constr
+R3557:3560 Triage.types <> Stem constr
+R3563:3566 Triage.types <> Fork constr
+R3568:3571 Triage.types <> Leaf constr
+R3574:3578 Triage.types <> Funty constr
+R3581:3585 Triage.types <> quant def
+R3587:3587 Triage.subtypes <> k:5 var
+R3590:3594 Triage.types <> Funty constr
+R3596:3598 Triage.subtypes <> uty:6 var
+R3600:3602 Triage.subtypes <> vty:7 var
+R3607:3611 Triage.types <> quant def
+R3613:3613 Triage.subtypes <> k:5 var
+R3616:3620 Triage.types <> Funty constr
+R3622:3624 Triage.subtypes <> uty:6 var
+R3626:3628 Triage.subtypes <> vty:7 var
+R3651:3654 Triage.types <> Stem constr
+R3675:3678 Triage.types <> Stem constr
+R3702:3705 Triage.types <> Fork constr
+R3732:3735 Triage.types <> Stem constr
+R3765:3768 Triage.types <> Fork constr
+R3770:3773 Triage.types <> Leaf constr
+R3806:3809 Triage.types <> Stem constr
+R3845:3848 Triage.types <> Stem constr
+R3887:3890 Triage.types <> Fork constr
+R3931:3934 Triage.types <> Stem constr
+R3937:3940 Triage.types <> Fork constr
+R3943:3946 Triage.types <> Stem constr
+R3949:3952 Triage.types <> Stem constr
+R3954:3957 Triage.types <> Leaf constr
+R3961:3964 Triage.types <> Leaf constr
+R4008:4011 Triage.types <> Stem constr
+R4013:4016 Triage.types <> Leaf constr
+R4050:4053 Triage.types <> Stem constr
+R4055:4058 Triage.types <> Leaf constr
+ind 4079:4085 <> subtype
+constr 4138:4145 <> sub_zero
+constr 4176:4184 <> sub_trans
+constr 4331:4338 <> sub_stem
+constr 4415:4422 <> sub_fork
+constr 4581:4587 <> sub_asf
+constr 4662:4670 <> sub_funty
+constr 4832:4840 <> sub_quant
+constr 4957:4970 <> sub_quant_stem
+constr 5033:5046 <> sub_quant_fork
+constr 5129:5141 <> sub_quant_asf
+constr 5202:5209 <> sub_dist
+constr 5345:5352 <> sub_inst
+constr 5404:5411 <> sub_lift
+constr 5510:5521 <> sub_leaf_fun
+constr 5574:5585 <> sub_stem_fun
+constr 5674:5686 <> sub_fork_leaf
+constr 5747:5759 <> sub_fork_stem
+constr 5870:5887 <> sub_fork_fork_leaf
+constr 5967:5984 <> sub_fork_fork_stem
+constr 6098:6115 <> sub_fork_fork_fork
+constr 6268:6280 <> sub_recursion
+constr 6649:6656 <> sub_tree
+constr 7093:7102 <> sub_to_asf
+constr 7138:7149 <> sub_from_asf
+constr 7216:7223 <> sub_bffs
+constr 7319:7326 <> sub_bfff
+R4094:4097 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4089:4093 Triage.types <> dtype ind
+R4103:4106 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4098:4102 Triage.types <> dtype ind
+binder 4156:4157 <> ty:10
+R4160:4166 Triage.subtypes <> subtype:8 ind
+R4171:4172 Triage.subtypes <> ty:10 var
+R4168:4169 Triage.subtypes <> ty:10 var
+binder 4195:4197 <> ty1:11
+binder 4199:4201 <> ty2:12
+binder 4203:4205 <> ty3:13
+R4223:4226 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4208:4214 Triage.subtypes <> subtype:8 ind
+R4220:4222 Triage.subtypes <> ty2:12 var
+R4216:4218 Triage.subtypes <> ty1:11 var
+R4242:4245 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4227:4233 Triage.subtypes <> subtype:8 ind
+R4239:4241 Triage.subtypes <> ty3:13 var
+R4235:4237 Triage.subtypes <> ty2:12 var
+R4246:4252 Triage.subtypes <> subtype:8 ind
+R4258:4260 Triage.subtypes <> ty3:13 var
+R4254:4256 Triage.subtypes <> ty1:11 var
+binder 4349:4352 <> uty1:14
+binder 4354:4357 <> uty2:15
+R4377:4380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4360:4366 Triage.subtypes <> subtype:8 ind
+R4373:4376 Triage.subtypes <> uty2:15 var
+R4368:4371 Triage.subtypes <> uty1:14 var
+R4381:4387 Triage.subtypes <> subtype:8 ind
+R4402:4405 Triage.types <> Stem constr
+R4407:4410 Triage.subtypes <> uty2:15 var
+R4390:4393 Triage.types <> Stem constr
+R4395:4398 Triage.subtypes <> uty1:14 var
+binder 4433:4436 <> uty1:16
+binder 4438:4441 <> uty2:17
+binder 4443:4446 <> vty1:18
+binder 4448:4451 <> vty2:19
+R4471:4474 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4454:4460 Triage.subtypes <> subtype:8 ind
+R4467:4470 Triage.subtypes <> uty2:17 var
+R4462:4465 Triage.subtypes <> uty1:16 var
+R4492:4536 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4475:4481 Triage.subtypes <> subtype:8 ind
+R4488:4491 Triage.subtypes <> vty2:19 var
+R4483:4486 Triage.subtypes <> vty1:18 var
+R4537:4543 Triage.subtypes <> subtype:8 ind
+R4563:4566 Triage.types <> Fork constr
+R4568:4571 Triage.subtypes <> uty2:17 var
+R4573:4576 Triage.subtypes <> vty2:19 var
+R4546:4549 Triage.types <> Fork constr
+R4551:4554 Triage.subtypes <> uty1:16 var
+R4556:4559 Triage.subtypes <> vty1:18 var
+binder 4598:4601 <> uty1:20
+binder 4603:4606 <> uty2:21
+R4626:4629 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4609:4615 Triage.subtypes <> subtype:8 ind
+R4622:4625 Triage.subtypes <> uty2:21 var
+R4617:4620 Triage.subtypes <> uty1:20 var
+R4630:4636 Triage.subtypes <> subtype:8 ind
+R4650:4652 Triage.types <> Asf constr
+R4654:4657 Triage.subtypes <> uty2:21 var
+R4639:4641 Triage.types <> Asf constr
+R4643:4646 Triage.subtypes <> uty1:20 var
+binder 4681:4684 <> uty1:22
+binder 4686:4689 <> uty2:23
+binder 4691:4694 <> vty1:24
+binder 4696:4699 <> vty2:25
+R4719:4722 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4702:4708 Triage.subtypes <> subtype:8 ind
+R4715:4718 Triage.subtypes <> uty1:22 var
+R4710:4713 Triage.subtypes <> uty2:23 var
+R4740:4785 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4723:4729 Triage.subtypes <> subtype:8 ind
+R4736:4739 Triage.subtypes <> vty2:25 var
+R4731:4734 Triage.subtypes <> vty1:24 var
+R4786:4792 Triage.subtypes <> subtype:8 ind
+R4813:4817 Triage.types <> Funty constr
+R4819:4822 Triage.subtypes <> uty2:23 var
+R4824:4827 Triage.subtypes <> vty2:25 var
+R4795:4799 Triage.types <> Funty constr
+R4801:4804 Triage.subtypes <> uty1:22 var
+R4806:4809 Triage.subtypes <> vty1:24 var
+binder 4851:4854 <> vty1:26
+binder 4856:4859 <> vty2:27
+R4880:4883 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4863:4869 Triage.subtypes <> subtype:8 ind
+R4876:4879 Triage.subtypes <> vty2:27 var
+R4871:4874 Triage.subtypes <> vty1:26 var
+R4884:4890 Triage.subtypes <> subtype:8 ind
+R4906:4910 Triage.types <> Quant constr
+R4912:4915 Triage.subtypes <> vty2:27 var
+R4893:4897 Triage.types <> Quant constr
+R4899:4902 Triage.subtypes <> vty1:26 var
+binder 4980:4982 <> uty:28
+R4985:4991 Triage.subtypes <> subtype:8 ind
+R5013:5016 Triage.types <> Stem constr
+R5019:5023 Triage.types <> Quant constr
+R5025:5027 Triage.subtypes <> uty:28 var
+R4994:4998 Triage.types <> Quant constr
+R5001:5004 Triage.types <> Stem constr
+R5006:5008 Triage.subtypes <> uty:28 var
+binder 5056:5058 <> uty:29
+binder 5060:5062 <> vty:30
+R5065:5071 Triage.subtypes <> subtype:8 ind
+R5097:5100 Triage.types <> Fork constr
+R5103:5107 Triage.types <> Quant constr
+R5109:5111 Triage.subtypes <> uty:29 var
+R5115:5119 Triage.types <> Quant constr
+R5121:5123 Triage.subtypes <> vty:30 var
+R5074:5078 Triage.types <> Quant constr
+R5081:5084 Triage.types <> Fork constr
+R5086:5088 Triage.subtypes <> uty:29 var
+R5090:5092 Triage.subtypes <> vty:30 var
+binder 5151:5153 <> uty:31
+R5156:5162 Triage.subtypes <> subtype:8 ind
+R5183:5185 Triage.types <> Asf constr
+R5188:5192 Triage.types <> Quant constr
+R5194:5196 Triage.subtypes <> uty:31 var
+R5165:5169 Triage.types <> Quant constr
+R5172:5174 Triage.types <> Asf constr
+R5176:5178 Triage.subtypes <> uty:31 var
+binder 5219:5221 <> uty:32
+binder 5223:5225 <> vty:33
+R5228:5234 Triage.subtypes <> subtype:8 ind
+R5261:5265 Triage.types <> Funty constr
+R5268:5272 Triage.types <> Quant constr
+R5274:5276 Triage.subtypes <> uty:32 var
+R5280:5284 Triage.types <> Quant constr
+R5286:5288 Triage.subtypes <> vty:33 var
+R5237:5241 Triage.types <> Quant constr
+R5244:5248 Triage.types <> Funty constr
+R5250:5252 Triage.subtypes <> uty:32 var
+R5254:5256 Triage.subtypes <> vty:33 var
+binder 5363:5364 <> ty:34
+binder 5366:5366 <> u:35
+R5370:5376 Triage.subtypes <> subtype:8 ind
+R5390:5394 Triage.types <> subst def
+R5396:5397 Triage.subtypes <> ty:34 var
+R5399:5399 Triage.subtypes <> u:35 var
+R5379:5383 Triage.types <> Quant constr
+R5385:5386 Triage.subtypes <> ty:34 var
+binder 5421:5422 <> ty:36
+R5425:5431 Triage.subtypes <> subtype:8 ind
+R5437:5441 Triage.types <> Quant constr
+R5444:5447 Triage.types <> lift def
+R5451:5452 Triage.subtypes <> ty:36 var
+R5433:5434 Triage.subtypes <> ty:36 var
+binder 5530:5532 <> uty:37
+R5536:5542 Triage.subtypes <> subtype:8 ind
+R5550:5554 Triage.types <> Funty constr
+R5556:5558 Triage.subtypes <> uty:37 var
+R5561:5564 Triage.types <> Stem constr
+R5566:5568 Triage.subtypes <> uty:37 var
+R5544:5547 Triage.types <> Leaf constr
+binder 5595:5597 <> uty:38
+binder 5599:5601 <> vty:39
+R5604:5610 Triage.subtypes <> subtype:8 ind
+R5624:5628 Triage.types <> Funty constr
+R5630:5632 Triage.subtypes <> vty:39 var
+R5635:5638 Triage.types <> Fork constr
+R5640:5642 Triage.subtypes <> uty:38 var
+R5644:5646 Triage.subtypes <> vty:39 var
+R5613:5616 Triage.types <> Stem constr
+R5618:5620 Triage.subtypes <> uty:38 var
+binder 5696:5698 <> uty:40
+binder 5700:5702 <> vty:41
+R5705:5711 Triage.subtypes <> subtype:8 ind
+R5730:5734 Triage.types <> Funty constr
+R5736:5738 Triage.subtypes <> vty:41 var
+R5740:5742 Triage.subtypes <> uty:40 var
+R5714:5717 Triage.types <> Fork constr
+R5719:5722 Triage.types <> Leaf constr
+R5724:5726 Triage.subtypes <> uty:40 var
+binder 5769:5771 <> uty:42
+binder 5773:5775 <> vty:43
+binder 5777:5779 <> wty:44
+R5786:5792 Triage.subtypes <> subtype:8 ind
+R5853:5857 Triage.types <> Funty constr
+R5859:5861 Triage.subtypes <> uty:42 var
+R5863:5865 Triage.subtypes <> wty:44 var
+R5795:5798 Triage.types <> Fork constr
+R5801:5804 Triage.types <> Stem constr
+R5807:5811 Triage.types <> Funty constr
+R5813:5815 Triage.subtypes <> uty:42 var
+R5818:5822 Triage.types <> Funty constr
+R5824:5826 Triage.subtypes <> vty:43 var
+R5828:5830 Triage.subtypes <> wty:44 var
+R5836:5840 Triage.types <> Funty constr
+R5842:5844 Triage.subtypes <> uty:42 var
+R5846:5848 Triage.subtypes <> vty:43 var
+binder 5897:5899 <> uty:45
+binder 5901:5903 <> vty:46
+binder 5905:5907 <> wty:47
+R5914:5920 Triage.subtypes <> subtype:8 ind
+R5949:5953 Triage.types <> Funty constr
+R5955:5958 Triage.types <> Leaf constr
+R5960:5962 Triage.subtypes <> uty:45 var
+R5923:5926 Triage.types <> Fork constr
+R5929:5932 Triage.types <> Fork constr
+R5934:5936 Triage.subtypes <> uty:45 var
+R5938:5940 Triage.subtypes <> vty:46 var
+R5943:5945 Triage.subtypes <> wty:47 var
+binder 5998:6000 <> uty:48
+binder 6002:6005 <> vty1:49
+binder 6007:6010 <> vty2:50
+binder 6012:6014 <> wty:51
+R6023:6029 Triage.subtypes <> subtype:8 ind
+R6072:6076 Triage.types <> Funty constr
+R6079:6082 Triage.types <> Stem constr
+R6084:6087 Triage.subtypes <> vty1:49 var
+R6090:6093 Triage.subtypes <> vty2:50 var
+R6032:6035 Triage.types <> Fork constr
+R6038:6041 Triage.types <> Fork constr
+R6043:6045 Triage.subtypes <> uty:48 var
+R6048:6052 Triage.types <> Funty constr
+R6054:6057 Triage.subtypes <> vty1:49 var
+R6059:6062 Triage.subtypes <> vty2:50 var
+R6066:6068 Triage.subtypes <> wty:51 var
+binder 6129:6131 <> uty:52
+binder 6133:6135 <> vty:53
+binder 6137:6140 <> wty1:54
+binder 6142:6145 <> wty2:55
+binder 6147:6150 <> wty3:56
+R6159:6165 Triage.subtypes <> subtype:8 ind
+R6221:6225 Triage.types <> Funty constr
+R6228:6231 Triage.types <> Fork constr
+R6233:6236 Triage.subtypes <> wty1:54 var
+R6238:6241 Triage.subtypes <> wty2:55 var
+R6244:6247 Triage.subtypes <> wty3:56 var
+R6168:6171 Triage.types <> Fork constr
+R6174:6177 Triage.types <> Fork constr
+R6179:6181 Triage.subtypes <> uty:52 var
+R6183:6185 Triage.subtypes <> vty:53 var
+R6189:6193 Triage.types <> Funty constr
+R6195:6198 Triage.subtypes <> wty1:54 var
+R6201:6205 Triage.types <> Funty constr
+R6207:6210 Triage.subtypes <> wty2:55 var
+R6212:6215 Triage.subtypes <> wty3:56 var
+binder 6326:6326 <> k:57
+binder 6328:6330 <> uty:58
+binder 6332:6334 <> vty:59
+R6337:6343 Triage.subtypes <> subtype:8 ind
+R6362:6366 Triage.types <> quant def
+R6368:6368 Triage.subtypes <> k:57 var
+R6371:6375 Triage.types <> Funty constr
+R6377:6379 Triage.subtypes <> uty:58 var
+R6381:6383 Triage.subtypes <> vty:59 var
+R6346:6348 Triage.subtypes <> Zty def
+R6350:6350 Triage.subtypes <> k:57 var
+R6352:6354 Triage.subtypes <> uty:58 var
+R6356:6358 Triage.subtypes <> vty:59 var
+binder 6666:6667 <> ty:60
+binder 6669:6671 <> uty:61
+R6690:6698 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6678:6686 Triage.types <> covariant def
+R6688:6689 Triage.subtypes <> ty:60 var
+R6699:6705 Triage.subtypes <> subtype:8 ind
+R7065:7069 Triage.types <> Funty constr
+R7071:7073 Triage.subtypes <> uty:61 var
+R7076:7080 Triage.types <> subst def
+R7082:7083 Triage.subtypes <> ty:60 var
+R7085:7087 Triage.subtypes <> uty:61 var
+R6708:6711 Triage.types <> Fork constr
+R6729:6732 Triage.types <> Fork constr
+R6753:6757 Triage.types <> subst def
+R6759:6760 Triage.subtypes <> ty:60 var
+R6762:6765 Triage.types <> Leaf constr
+R6787:6791 Triage.types <> quant def
+R6796:6800 Triage.types <> Funty constr
+R6803:6805 Triage.types <> Var constr
+R6811:6815 Triage.types <> subst def
+R6818:6825 Triage.types <> lift_rec def
+R6827:6828 Triage.subtypes <> ty:60 var
+R6836:6839 Triage.types <> Stem constr
+R6842:6844 Triage.types <> Var constr
+R6870:6874 Triage.types <> quant def
+R6915:6919 Triage.types <> Funty constr
+R6943:6945 Triage.types <> Var constr
+R6972:6976 Triage.types <> Funty constr
+R6979:6981 Triage.types <> Var constr
+R6987:6991 Triage.types <> subst def
+R6994:7001 Triage.types <> lift_rec def
+R7003:7004 Triage.subtypes <> ty:60 var
+R7012:7015 Triage.types <> Fork constr
+R7018:7020 Triage.types <> Var constr
+R7026:7028 Triage.types <> Var constr
+binder 7112:7113 <> ty:62
+R7116:7122 Triage.subtypes <> subtype:8 ind
+R7128:7130 Triage.types <> Asf constr
+R7132:7133 Triage.subtypes <> ty:62 var
+R7124:7125 Triage.subtypes <> ty:62 var
+binder 7159:7161 <> uty:63
+binder 7163:7165 <> vty:64
+R7168:7174 Triage.subtypes <> subtype:8 ind
+R7199:7203 Triage.types <> Funty constr
+R7205:7207 Triage.subtypes <> uty:63 var
+R7209:7211 Triage.subtypes <> vty:64 var
+R7177:7179 Triage.types <> Asf constr
+R7182:7186 Triage.types <> Funty constr
+R7188:7190 Triage.subtypes <> uty:63 var
+R7192:7194 Triage.subtypes <> vty:64 var
+binder 7233:7235 <> uty:65
+binder 7237:7239 <> vty:66
+R7242:7248 Triage.subtypes <> subtype:8 ind
+R7290:7292 Triage.types <> Asf constr
+R7295:7298 Triage.types <> Fork constr
+R7301:7304 Triage.types <> Stem constr
+R7306:7308 Triage.subtypes <> uty:65 var
+R7311:7313 Triage.subtypes <> vty:66 var
+R7251:7254 Triage.types <> Fork constr
+R7257:7260 Triage.types <> Stem constr
+R7263:7270 Triage.subtypes <> bffs_aug def
+R7272:7274 Triage.subtypes <> uty:65 var
+R7279:7281 Triage.types <> Asf constr
+R7283:7285 Triage.subtypes <> vty:66 var
+binder 7337:7339 <> uty:67
+binder 7341:7343 <> vty:68
+binder 7345:7347 <> wty:69
+R7350:7356 Triage.subtypes <> subtype:8 ind
+R7443:7445 Triage.types <> Asf constr
+R7448:7451 Triage.types <> Fork constr
+R7454:7457 Triage.types <> Fork constr
+R7459:7461 Triage.subtypes <> uty:67 var
+R7463:7465 Triage.subtypes <> vty:68 var
+R7468:7470 Triage.subtypes <> wty:69 var
+R7359:7362 Triage.types <> Fork constr
+R7365:7368 Triage.types <> Fork constr
+R7370:7372 Triage.subtypes <> uty:67 var
+R7375:7377 Triage.types <> Asf constr
+R7379:7381 Triage.subtypes <> vty:68 var
+R7386:7393 Triage.subtypes <> bfff_aug def
+R7395:7397 Triage.subtypes <> wty:69 var
+R7503:7509 Triage.subtypes <> subtype ind
+R7552:7556 Triage.types <> subst def
+R7559:7562 Triage.types <> lift def
+R7618:7635 Triage.types <> subst_rec_lift_rec thm
+R7713:7716 Triage.types <> lift def
+R7729:7741 Triage.types <> lift_rec_null thm
+R7755:7762 Triage.subtypes <> sub_zero constr
+R7845:7853 Triage.subtypes <> sub_funty constr
+R7867:7874 Triage.subtypes <> sub_zero constr
+R7798:7806 Triage.subtypes <> sub_funty constr
+R7818:7825 Triage.subtypes <> sub_zero constr
+R7908:7916 Triage.subtypes <> sub_trans constr
+R7928:7935 Triage.subtypes <> sub_inst constr
+prf 7958:7970 <> subtype_quant
+binder 7982:7982 <> n:70
+binder 7984:7986 <> uty:71
+binder 7988:7990 <> vty:72
+R8009:8012 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7994:8000 Triage.subtypes <> subtype ind
+R8002:8004 Triage.subtypes <> uty:71 var
+R8006:8008 Triage.subtypes <> vty:72 var
+R8013:8019 Triage.subtypes <> subtype ind
+R8022:8026 Triage.types <> quant def
+R8028:8028 Triage.subtypes <> n:70 var
+R8030:8032 Triage.subtypes <> uty:71 var
+R8036:8040 Triage.types <> quant def
+R8042:8042 Triage.subtypes <> n:70 var
+R8044:8046 Triage.subtypes <> vty:72 var
+prf 8130:8143 <> subtype_quanta
+binder 8153:8154 <> bs:73
+binder 8156:8158 <> ty1:74
+binder 8160:8162 <> ty2:75
+R8180:8183 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8165:8171 Triage.subtypes <> subtype ind
+R8173:8175 Triage.subtypes <> ty1:74 var
+R8177:8179 Triage.subtypes <> ty2:75 var
+R8184:8190 Triage.subtypes <> subtype ind
+R8193:8198 Triage.types <> quanta def
+R8200:8201 Triage.subtypes <> bs:73 var
+R8203:8205 Triage.subtypes <> ty1:74 var
+R8209:8214 Triage.types <> quanta def
+R8216:8217 Triage.subtypes <> bs:73 var
+R8219:8221 Triage.subtypes <> ty2:75 var
+prf 8315:8326 <> subtype_dist
+binder 8336:8336 <> n:76
+binder 8338:8340 <> uty:77
+binder 8342:8344 <> vty:78
+R8348:8354 Triage.subtypes <> subtype ind
+R8357:8361 Triage.types <> quant def
+R8363:8363 Triage.subtypes <> n:76 var
+R8366:8370 Triage.types <> Funty constr
+R8372:8374 Triage.subtypes <> uty:77 var
+R8376:8378 Triage.subtypes <> vty:78 var
+R8383:8387 Triage.types <> Funty constr
+R8390:8394 Triage.types <> quant def
+R8396:8396 Triage.subtypes <> n:76 var
+R8398:8400 Triage.subtypes <> uty:77 var
+R8404:8408 Triage.types <> quant def
+R8410:8410 Triage.subtypes <> n:76 var
+R8412:8414 Triage.subtypes <> vty:78 var
+R8472:8479 Triage.subtypes <> sub_zero constr
+R8493:8501 Triage.subtypes <> sub_trans constr
+R8513:8525 Triage.subtypes <> subtype_quant thm
+R8535:8542 Triage.subtypes <> sub_dist constr
+R8472:8479 Triage.subtypes <> sub_zero constr
+R8472:8479 Triage.subtypes <> sub_zero constr
+R8493:8501 Triage.subtypes <> sub_trans constr
+R8513:8525 Triage.subtypes <> subtype_quant thm
+R8535:8542 Triage.subtypes <> sub_dist constr
+prf 8570:8592 <> subtype_quant_to_quanta
+binder 8602:8603 <> bs:79
+binder 8605:8606 <> ty:80
+R8610:8616 Triage.subtypes <> subtype ind
+R8619:8623 Triage.types <> quant def
+R8626:8636 Triage.types <> quant_count def
+R8638:8639 Triage.subtypes <> bs:79 var
+R8642:8643 Triage.subtypes <> ty:80 var
+R8647:8652 Triage.types <> quanta def
+R8654:8655 Triage.subtypes <> bs:79 var
+R8657:8658 Triage.subtypes <> ty:80 var
+R8757:8765 Triage.subtypes <> sub_trans constr
+R8777:8789 Triage.subtypes <> subtype_quant thm
+R8799:8808 Triage.subtypes <> sub_to_asf constr
+R8757:8765 Triage.subtypes <> sub_trans constr
+R8777:8789 Triage.subtypes <> subtype_quant thm
+R8799:8808 Triage.subtypes <> sub_to_asf constr
+prf 8834:8859 <> lift_rec_preserves_subtype
+binder 8871:8873 <> ty1:81
+binder 8875:8877 <> ty2:82
+R8895:8898 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8880:8886 Triage.subtypes <> subtype ind
+R8888:8890 Triage.subtypes <> ty1:81 var
+R8892:8894 Triage.subtypes <> ty2:82 var
+binder 8906:8906 <> n:83
+binder 8908:8908 <> k:84
+R8911:8917 Triage.subtypes <> subtype ind
+R8920:8927 Triage.types <> lift_rec def
+R8929:8931 Triage.subtypes <> ty1:81 var
+R8933:8933 Triage.subtypes <> n:83 var
+R8935:8935 Triage.subtypes <> k:84 var
+R8939:8946 Triage.types <> lift_rec def
+R8948:8950 Triage.subtypes <> ty2:82 var
+R8952:8952 Triage.subtypes <> n:83 var
+R8954:8954 Triage.subtypes <> k:84 var
+R9052:9055 Triage.types <> lift def
+R9058:9060 Triage.subtypes <> Zty def
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9013:9020 Triage.types <> lift_rec def
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9080:9092 Triage.types <> lift_lift_rec thm
+R9163:9163 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9188:9205 Triage.types <> lift_rec_subst_rec thm
+R9163:9163 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9188:9205 Triage.types <> lift_rec_subst_rec thm
+R9188:9205 Triage.types <> lift_rec_subst_rec thm
+R9374:9397 Triage.types <> lift_rec_preserves_quant thm
+R9407:9419 Triage.subtypes <> sub_recursion constr
+R9374:9397 Triage.types <> lift_rec_preserves_quant thm
+R9374:9397 Triage.types <> lift_rec_preserves_quant thm
+R9374:9397 Triage.types <> lift_rec_preserves_quant thm
+R9407:9419 Triage.subtypes <> sub_recursion constr
+R9448:9456 Triage.subtypes <> sub_trans constr
+R9468:9476 Triage.subtypes <> sub_trans constr
+R9490:9497 Triage.subtypes <> sub_tree constr
+R9532:9536 Triage.types <> subst def
+R9556:9556 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9581:9598 Triage.types <> lift_rec_subst_rec thm
+R9608:9615 Triage.subtypes <> sub_zero constr
+R9644:9652 Triage.types <> covariant def
+R9683:9690 Triage.types <> relocate def
+R9695:9695 Coq.Init.Datatypes <> S constr
+R9728:9753 Triage.types <> lift_rec_preserves_variant thm
+R9776:9783 Triage.subtypes <> sub_fork constr
+R9795:9802 Triage.subtypes <> sub_fork constr
+R9825:9829 Triage.types <> subst def
+R9849:9849 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9874:9891 Triage.types <> lift_rec_subst_rec thm
+R9901:9908 Triage.subtypes <> sub_zero constr
+R9939:9939 Coq.Init.Datatypes <> S constr
+R9951:9952 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9953:9953 Coq.Init.Datatypes <> S constr
+R9982:9999 Triage.types <> lift_rec_subst_rec thm
+R10029:10041 Triage.types <> lift_lift_rec thm
+R10077:10081 Triage.types <> subst def
+R10109:10109 Coq.Init.Datatypes <> S constr
+R10112:10112 Coq.Init.Datatypes <> S constr
+R10125:10126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R10127:10127 Coq.Init.Datatypes <> S constr
+R10130:10130 Coq.Init.Datatypes <> S constr
+R10164:10181 Triage.types <> lift_rec_subst_rec thm
+R10224:10224 Coq.Init.Datatypes <> S constr
+R10227:10227 Coq.Init.Datatypes <> S constr
+R10230:10230 Coq.Init.Datatypes <> S constr
+R10244:10246 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R10247:10247 Coq.Init.Datatypes <> S constr
+R10269:10281 Triage.types <> lift_lift_rec thm
+R9448:9456 Triage.subtypes <> sub_trans constr
+R9468:9476 Triage.subtypes <> sub_trans constr
+R9490:9497 Triage.subtypes <> sub_tree constr
+R9556:9556 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9581:9598 Triage.types <> lift_rec_subst_rec thm
+R9581:9598 Triage.types <> lift_rec_subst_rec thm
+R9608:9615 Triage.subtypes <> sub_zero constr
+R9683:9690 Triage.types <> relocate def
+R9695:9695 Coq.Init.Datatypes <> S constr
+R9728:9753 Triage.types <> lift_rec_preserves_variant thm
+R9728:9753 Triage.types <> lift_rec_preserves_variant thm
+R9776:9783 Triage.subtypes <> sub_fork constr
+R9795:9802 Triage.subtypes <> sub_fork constr
+R9849:9849 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9874:9891 Triage.types <> lift_rec_subst_rec thm
+R9874:9891 Triage.types <> lift_rec_subst_rec thm
+R9901:9908 Triage.subtypes <> sub_zero constr
+R9939:9939 Coq.Init.Datatypes <> S constr
+R9951:9952 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R9953:9953 Coq.Init.Datatypes <> S constr
+R9982:9999 Triage.types <> lift_rec_subst_rec thm
+R9982:9999 Triage.types <> lift_rec_subst_rec thm
+R10029:10041 Triage.types <> lift_lift_rec thm
+R10029:10041 Triage.types <> lift_lift_rec thm
+R10029:10041 Triage.types <> lift_lift_rec thm
+R10109:10109 Coq.Init.Datatypes <> S constr
+R10112:10112 Coq.Init.Datatypes <> S constr
+R10125:10126 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R10127:10127 Coq.Init.Datatypes <> S constr
+R10130:10130 Coq.Init.Datatypes <> S constr
+R10164:10181 Triage.types <> lift_rec_subst_rec thm
+R10164:10181 Triage.types <> lift_rec_subst_rec thm
+R10224:10224 Coq.Init.Datatypes <> S constr
+R10227:10227 Coq.Init.Datatypes <> S constr
+R10230:10230 Coq.Init.Datatypes <> S constr
+R10244:10246 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R10247:10247 Coq.Init.Datatypes <> S constr
+R10269:10281 Triage.types <> lift_lift_rec thm
+R10269:10281 Triage.types <> lift_lift_rec thm
+R10269:10281 Triage.types <> lift_lift_rec thm
+R10314:10321 Triage.subtypes <> bffs_aug def
+R10324:10331 Triage.subtypes <> bfff_aug def
+R10358:10365 Triage.subtypes <> sub_bffs constr
+R10358:10365 Triage.subtypes <> sub_bffs constr
+R10379:10386 Triage.subtypes <> bffs_aug def
+R10389:10396 Triage.subtypes <> bfff_aug def
+R10423:10430 Triage.subtypes <> sub_bfff constr
+R10423:10430 Triage.subtypes <> sub_bfff constr
+prf 10446:10472 <> subst_rec_preserves_subtype
+binder 10484:10486 <> uty:85
+binder 10488:10490 <> vty:86
+R10508:10511 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10493:10499 Triage.subtypes <> subtype ind
+R10501:10503 Triage.subtypes <> uty:85 var
+R10505:10507 Triage.subtypes <> vty:86 var
+binder 10519:10520 <> ty:87
+binder 10522:10522 <> k:88
+R10525:10531 Triage.subtypes <> subtype ind
+R10534:10542 Triage.types <> subst_rec def
+R10544:10546 Triage.subtypes <> uty:85 var
+R10548:10549 Triage.subtypes <> ty:87 var
+R10551:10551 Triage.subtypes <> k:88 var
+R10555:10563 Triage.types <> subst_rec def
+R10565:10567 Triage.subtypes <> vty:86 var
+R10569:10570 Triage.subtypes <> ty:87 var
+R10572:10572 Triage.subtypes <> k:88 var
+R10631:10634 Triage.types <> lift def
+R10691:10694 Triage.types <> lift def
+R10697:10699 Triage.subtypes <> Zty def
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10648:10656 Triage.types <> subst_rec def
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10719:10737 Triage.types <> subst_rec_lift_rec1 thm
+R10796:10804 Triage.subtypes <> sub_trans constr
+R10819:10837 Triage.types <> subst_rec_subst_rec thm
+R10857:10864 Triage.subtypes <> sub_zero constr
+R10796:10804 Triage.subtypes <> sub_trans constr
+R10819:10837 Triage.types <> subst_rec_subst_rec thm
+R10819:10837 Triage.types <> subst_rec_subst_rec thm
+R10819:10837 Triage.types <> subst_rec_subst_rec thm
+R10857:10864 Triage.subtypes <> sub_zero constr
+R10857:10864 Triage.subtypes <> sub_zero constr
+R11026:11040 Triage.types <> subst_rec_quant thm
+R11050:11062 Triage.subtypes <> sub_recursion constr
+R11026:11040 Triage.types <> subst_rec_quant thm
+R11026:11040 Triage.types <> subst_rec_quant thm
+R11026:11040 Triage.types <> subst_rec_quant thm
+R11050:11062 Triage.subtypes <> sub_recursion constr
+R11082:11086 Triage.types <> subst def
+R11097:11115 Triage.types <> subst_rec_subst_rec thm
+R11143:11143 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R11175:11183 Triage.subtypes <> sub_trans constr
+R11195:11203 Triage.subtypes <> sub_trans constr
+R11217:11224 Triage.subtypes <> sub_tree constr
+R11248:11255 Triage.subtypes <> sub_fork constr
+R11277:11284 Triage.subtypes <> sub_fork constr
+R11315:11322 Triage.subtypes <> sub_zero constr
+R11362:11380 Triage.types <> subst_rec_subst_rec thm
+R11428:11446 Triage.types <> subst_rec_lift_rec1 thm
+R11472:11479 Triage.subtypes <> sub_zero constr
+R11519:11537 Triage.types <> subst_rec_subst_rec thm
+R11582:11582 Coq.Init.Datatypes <> S constr
+R11585:11585 Coq.Init.Datatypes <> S constr
+R11588:11588 Coq.Init.Datatypes <> S constr
+R11602:11604 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R11605:11605 Coq.Init.Datatypes <> S constr
+R11634:11652 Triage.types <> subst_rec_lift_rec1 thm
+R11678:11685 Triage.subtypes <> sub_zero constr
+R11705:11713 Triage.types <> covariant def
+R11738:11738 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R11758:11779 Triage.types <> variant_subst_rec_miss thm
+R11819:11823 Triage.types <> subst def
+R11835:11853 Triage.types <> subst_rec_subst_rec thm
+R11890:11890 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R11916:11923 Triage.subtypes <> sub_zero constr
+R11097:11115 Triage.types <> subst_rec_subst_rec thm
+R11097:11115 Triage.types <> subst_rec_subst_rec thm
+R11097:11115 Triage.types <> subst_rec_subst_rec thm
+R11143:11143 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R11175:11183 Triage.subtypes <> sub_trans constr
+R11195:11203 Triage.subtypes <> sub_trans constr
+R11217:11224 Triage.subtypes <> sub_tree constr
+R11248:11255 Triage.subtypes <> sub_fork constr
+R11277:11284 Triage.subtypes <> sub_fork constr
+R11315:11322 Triage.subtypes <> sub_zero constr
+R11362:11380 Triage.types <> subst_rec_subst_rec thm
+R11362:11380 Triage.types <> subst_rec_subst_rec thm
+R11362:11380 Triage.types <> subst_rec_subst_rec thm
+R11428:11446 Triage.types <> subst_rec_lift_rec1 thm
+R11428:11446 Triage.types <> subst_rec_lift_rec1 thm
+R11428:11446 Triage.types <> subst_rec_lift_rec1 thm
+R11472:11479 Triage.subtypes <> sub_zero constr
+R11519:11537 Triage.types <> subst_rec_subst_rec thm
+R11519:11537 Triage.types <> subst_rec_subst_rec thm
+R11519:11537 Triage.types <> subst_rec_subst_rec thm
+R11582:11582 Coq.Init.Datatypes <> S constr
+R11585:11585 Coq.Init.Datatypes <> S constr
+R11588:11588 Coq.Init.Datatypes <> S constr
+R11602:11604 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R11605:11605 Coq.Init.Datatypes <> S constr
+R11634:11652 Triage.types <> subst_rec_lift_rec1 thm
+R11634:11652 Triage.types <> subst_rec_lift_rec1 thm
+R11634:11652 Triage.types <> subst_rec_lift_rec1 thm
+R11678:11685 Triage.subtypes <> sub_zero constr
+R11738:11738 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R11758:11779 Triage.types <> variant_subst_rec_miss thm
+R11758:11779 Triage.types <> variant_subst_rec_miss thm
+R11758:11779 Triage.types <> variant_subst_rec_miss thm
+R11835:11853 Triage.types <> subst_rec_subst_rec thm
+R11835:11853 Triage.types <> subst_rec_subst_rec thm
+R11835:11853 Triage.types <> subst_rec_subst_rec thm
+R11890:11890 Coq.Init.Nat <> ::nat_scope:x_'-'_x not
+R11916:11923 Triage.subtypes <> sub_zero constr
+R11938:11945 Triage.subtypes <> bffs_aug def
+R11948:11955 Triage.subtypes <> bfff_aug def
+R11982:11989 Triage.subtypes <> sub_bffs constr
+R11982:11989 Triage.subtypes <> sub_bffs constr
+R12003:12010 Triage.subtypes <> bffs_aug def
+R12013:12020 Triage.subtypes <> bfff_aug def
+R12047:12054 Triage.subtypes <> sub_bfff constr
+R12047:12054 Triage.subtypes <> sub_bfff constr
+prf 12071:12082 <> subtype_lift
+binder 12092:12092 <> n:89
+binder 12094:12095 <> ty:90
+R12098:12104 Triage.subtypes <> subtype ind
+R12106:12107 Triage.subtypes <> ty:90 var
+R12110:12114 Triage.types <> quant def
+R12116:12116 Triage.subtypes <> n:89 var
+R12119:12122 Triage.types <> lift def
+R12124:12124 Triage.subtypes <> n:89 var
+R12126:12127 Triage.subtypes <> ty:90 var
+R12187:12190 Triage.types <> lift def
+R12201:12213 Triage.types <> lift_rec_null thm
+R12201:12213 Triage.types <> lift_rec_null thm
+R12201:12213 Triage.types <> lift_rec_null thm
+R12237:12237 Coq.Init.Datatypes <> S constr
+R12249:12249 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12269:12277 Triage.subtypes <> sub_trans constr
+R12297:12304 Triage.subtypes <> sub_lift constr
+R12326:12330 Triage.types <> quant def
+R12335:12339 Triage.types <> Quant constr
+R12342:12345 Triage.types <> lift def
+R12349:12349 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12365:12369 Triage.types <> quant def
+R12374:12377 Triage.types <> lift def
+R12382:12386 Triage.types <> Quant constr
+R12389:12392 Triage.types <> lift def
+R12443:12446 Triage.types <> lift def
+R12464:12480 Triage.types <> lift_rec_lift_rec thm
+R12237:12237 Coq.Init.Datatypes <> S constr
+R12249:12249 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12269:12277 Triage.subtypes <> sub_trans constr
+R12297:12304 Triage.subtypes <> sub_lift constr
+R12326:12330 Triage.types <> quant def
+R12335:12339 Triage.types <> Quant constr
+R12342:12345 Triage.types <> lift def
+R12349:12349 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12365:12369 Triage.types <> quant def
+R12374:12377 Triage.types <> lift def
+R12382:12386 Triage.types <> Quant constr
+R12389:12392 Triage.types <> lift def
+R12464:12480 Triage.types <> lift_rec_lift_rec thm
+R12464:12480 Triage.types <> lift_rec_lift_rec thm
+R12464:12480 Triage.types <> lift_rec_lift_rec thm
+R12464:12480 Triage.types <> lift_rec_lift_rec thm
+prf 12528:12540 <> subtype_lift2
+binder 12551:12551 <> n:91
+binder 12553:12554 <> ty:92
+R12557:12563 Triage.subtypes <> subtype ind
+R12566:12570 Triage.types <> quant def
+R12572:12572 Triage.subtypes <> n:91 var
+R12575:12578 Triage.types <> lift def
+R12580:12580 Triage.subtypes <> n:91 var
+R12582:12583 Triage.subtypes <> ty:92 var
+R12587:12588 Triage.subtypes <> ty:92 var
+R12632:12635 Triage.types <> lift def
+R12646:12658 Triage.types <> lift_rec_null thm
+R12674:12681 Triage.subtypes <> sub_zero constr
+R12646:12658 Triage.types <> lift_rec_null thm
+R12646:12658 Triage.types <> lift_rec_null thm
+R12674:12681 Triage.subtypes <> sub_zero constr
+R12696:12699 Triage.types <> lift def
+R12718:12718 Coq.Init.Datatypes <> S constr
+R12730:12730 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12754:12770 Triage.types <> lift_rec_lift_rec thm
+R12718:12718 Coq.Init.Datatypes <> S constr
+R12730:12730 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R12754:12770 Triage.types <> lift_rec_lift_rec thm
+R12754:12770 Triage.types <> lift_rec_lift_rec thm
+R12754:12770 Triage.types <> lift_rec_lift_rec thm
+R12754:12770 Triage.types <> lift_rec_lift_rec thm
+R12807:12815 Triage.subtypes <> sub_trans constr
+R12827:12839 Triage.subtypes <> subtype_quant thm
+R12849:12856 Triage.subtypes <> sub_inst constr
+R12877:12881 Triage.types <> subst def
+R12892:12909 Triage.types <> subst_rec_lift_rec thm
+R12807:12815 Triage.subtypes <> sub_trans constr
+R12827:12839 Triage.subtypes <> subtype_quant thm
+R12849:12856 Triage.subtypes <> sub_inst constr
+R12892:12909 Triage.types <> subst_rec_lift_rec thm
+R12892:12909 Triage.types <> subst_rec_lift_rec thm
+R12892:12909 Triage.types <> subst_rec_lift_rec thm
+R12892:12909 Triage.types <> subst_rec_lift_rec thm
+R12935:12947 Triage.types <> lift_rec_null thm
+R12935:12947 Triage.types <> lift_rec_null thm
+R12935:12947 Triage.types <> lift_rec_null thm
+R13003:13006 Triage.types <> Leaf constr
+R13003:13006 Triage.types <> Leaf constr
+prf 13022:13034 <> subtype_lift3
+R13049:13051 Coq.Init.Datatypes <> nat ind
+binder 13045:13045 <> n:93
+R13060:13064 Triage.types <> dtype ind
+binder 13055:13056 <> ty:94
+R13068:13074 Triage.subtypes <> subtype ind
+R13077:13080 Triage.types <> lift def
+R13082:13082 Triage.subtypes <> n:93 var
+R13085:13089 Triage.types <> quant def
+R13091:13091 Triage.subtypes <> n:93 var
+R13093:13094 Triage.subtypes <> ty:94 var
+R13098:13099 Triage.subtypes <> ty:94 var
+R13140:13143 Triage.types <> lift def
+R13165:13177 Triage.types <> lift_rec_null thm
+R13186:13193 Triage.subtypes <> sub_zero constr
+R13165:13177 Triage.types <> lift_rec_null thm
+R13165:13177 Triage.types <> lift_rec_null thm
+R13186:13193 Triage.subtypes <> sub_zero constr
+R13209:13209 Coq.Init.Datatypes <> S constr
+R13221:13221 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13251:13267 Triage.types <> lift_rec_lift_rec thm
+R13209:13209 Coq.Init.Datatypes <> S constr
+R13221:13221 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13251:13267 Triage.types <> lift_rec_lift_rec thm
+R13251:13267 Triage.types <> lift_rec_lift_rec thm
+R13251:13267 Triage.types <> lift_rec_lift_rec thm
+R13251:13267 Triage.types <> lift_rec_lift_rec thm
+R13286:13286 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13297:13297 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13317:13325 Triage.subtypes <> sub_trans constr
+R13347:13372 Triage.subtypes <> lift_rec_preserves_subtype thm
+R13286:13286 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13297:13297 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R13317:13325 Triage.subtypes <> sub_trans constr
+R13347:13372 Triage.subtypes <> lift_rec_preserves_subtype thm
+R13411:13419 Triage.subtypes <> sub_trans constr
+R13431:13438 Triage.subtypes <> sub_inst constr
+R13460:13464 Triage.types <> subst def
+R13482:13500 Triage.types <> subst_rec_lift_rec0 thm
+R13528:13540 Triage.types <> lift_rec_null thm
+R13549:13556 Triage.subtypes <> sub_zero constr
+R13411:13419 Triage.subtypes <> sub_trans constr
+R13431:13438 Triage.subtypes <> sub_inst constr
+R13482:13500 Triage.types <> subst_rec_lift_rec0 thm
+R13482:13500 Triage.types <> subst_rec_lift_rec0 thm
+R13528:13540 Triage.types <> lift_rec_null thm
+R13528:13540 Triage.types <> lift_rec_null thm
+R13549:13556 Triage.subtypes <> sub_zero constr
+prf 13593:13605 <> subtype_lift4
+binder 13616:13616 <> n:95
+binder 13618:13619 <> ty:96
+R13623:13629 Triage.subtypes <> subtype ind
+R13632:13636 Triage.types <> quant def
+R13638:13638 Triage.subtypes <> n:95 var
+R13641:13648 Triage.types <> lift_rec def
+R13650:13651 Triage.subtypes <> ty:96 var
+R13653:13653 Triage.subtypes <> n:95 var
+R13655:13655 Triage.subtypes <> n:95 var
+R13659:13660 Triage.subtypes <> ty:96 var
+R13693:13697 Triage.types <> quant def
+R13702:13709 Triage.types <> lift_rec def
+R13726:13729 Triage.types <> lift def
+R13734:13738 Triage.types <> quant def
+R13762:13765 Triage.types <> lift def
+R13776:13799 Triage.types <> lift_rec_preserves_quant thm
+R13837:13849 Triage.subtypes <> subtype_lift3 thm
+R13693:13697 Triage.types <> quant def
+R13702:13709 Triage.types <> lift_rec def
+R13726:13729 Triage.types <> lift def
+R13734:13738 Triage.types <> quant def
+R13776:13799 Triage.types <> lift_rec_preserves_quant thm
+R13776:13799 Triage.types <> lift_rec_preserves_quant thm
+R13837:13849 Triage.subtypes <> subtype_lift3 thm
+prf 13867:13884 <> subtype_quant_stem
+binder 13894:13894 <> k:97
+binder 13896:13898 <> uty:98
+R13901:13907 Triage.subtypes <> subtype ind
+R13910:13914 Triage.types <> quant def
+R13916:13916 Triage.subtypes <> k:97 var
+R13919:13922 Triage.types <> Stem constr
+R13924:13926 Triage.subtypes <> uty:98 var
+R13931:13934 Triage.types <> Stem constr
+R13937:13941 Triage.types <> quant def
+R13943:13943 Triage.subtypes <> k:97 var
+R13945:13947 Triage.subtypes <> uty:98 var
+R14001:14008 Triage.subtypes <> sub_zero constr
+R14001:14008 Triage.subtypes <> sub_zero constr
+R14022:14030 Triage.subtypes <> sub_trans constr
+R14042:14054 Triage.subtypes <> subtype_quant thm
+R14064:14077 Triage.subtypes <> sub_quant_stem constr
+R14022:14030 Triage.subtypes <> sub_trans constr
+R14042:14054 Triage.subtypes <> subtype_quant thm
+R14064:14077 Triage.subtypes <> sub_quant_stem constr
+prf 14102:14119 <> subtype_quant_fork
+binder 14131:14131 <> k:99
+binder 14133:14135 <> uty:100
+binder 14137:14139 <> vty:101
+R14143:14149 Triage.subtypes <> subtype ind
+R14152:14156 Triage.types <> quant def
+R14158:14158 Triage.subtypes <> k:99 var
+R14161:14164 Triage.types <> Fork constr
+R14166:14168 Triage.subtypes <> uty:100 var
+R14170:14172 Triage.subtypes <> vty:101 var
+R14177:14180 Triage.types <> Fork constr
+R14183:14187 Triage.types <> quant def
+R14189:14189 Triage.subtypes <> k:99 var
+R14191:14193 Triage.subtypes <> uty:100 var
+R14197:14201 Triage.types <> quant def
+R14203:14203 Triage.subtypes <> k:99 var
+R14205:14207 Triage.subtypes <> vty:101 var
+R14261:14268 Triage.subtypes <> sub_zero constr
+R14281:14289 Triage.subtypes <> sub_trans constr
+R14301:14313 Triage.subtypes <> subtype_quant thm
+R14323:14336 Triage.subtypes <> sub_quant_fork constr
+R14261:14268 Triage.subtypes <> sub_zero constr
+R14261:14268 Triage.subtypes <> sub_zero constr
+R14281:14289 Triage.subtypes <> sub_trans constr
+R14301:14313 Triage.subtypes <> subtype_quant thm
+R14323:14336 Triage.subtypes <> sub_quant_fork constr
+prf 14362:14378 <> asf_Quant_commute
+binder 14388:14389 <> ty:102
+R14392:14398 Triage.subtypes <> subtype ind
+R14401:14403 Triage.types <> Asf constr
+R14406:14410 Triage.types <> Quant constr
+R14412:14413 Triage.subtypes <> ty:102 var
+R14418:14422 Triage.types <> Quant constr
+R14425:14427 Triage.types <> Asf constr
+R14429:14430 Triage.subtypes <> ty:102 var
+R14460:14468 Triage.subtypes <> sub_trans constr
+R14480:14487 Triage.subtypes <> sub_lift constr
+R14504:14512 Triage.subtypes <> sub_quant constr
+R14522:14525 Triage.types <> lift def
+R14546:14552 Triage.subtypes <> sub_asf constr
+R14562:14570 Triage.subtypes <> sub_trans constr
+R14582:14589 Triage.subtypes <> sub_inst constr
+R14606:14610 Triage.types <> subst def
+R14630:14648 Triage.types <> subst_rec_lift_rec0 thm
+R14659:14671 Triage.types <> lift_rec_null thm
+R14681:14688 Triage.subtypes <> sub_zero constr
+R14460:14468 Triage.subtypes <> sub_trans constr
+R14480:14487 Triage.subtypes <> sub_lift constr
+R14504:14512 Triage.subtypes <> sub_quant constr
+R14546:14552 Triage.subtypes <> sub_asf constr
+R14562:14570 Triage.subtypes <> sub_trans constr
+R14582:14589 Triage.subtypes <> sub_inst constr
+R14630:14648 Triage.types <> subst_rec_lift_rec0 thm
+R14630:14648 Triage.types <> subst_rec_lift_rec0 thm
+R14659:14671 Triage.types <> lift_rec_null thm
+R14659:14671 Triage.types <> lift_rec_null thm
+R14681:14688 Triage.subtypes <> sub_zero constr
+prf 14704:14721 <> subtype_asf_quanta
+binder 14731:14732 <> bs:103
+binder 14734:14735 <> ty:104
+R14738:14744 Triage.subtypes <> subtype ind
+R14747:14749 Triage.types <> Asf constr
+R14752:14757 Triage.types <> quanta def
+R14759:14760 Triage.subtypes <> bs:103 var
+R14762:14763 Triage.subtypes <> ty:104 var
+R14768:14773 Triage.types <> quanta def
+R14775:14776 Triage.subtypes <> bs:103 var
+R14779:14781 Triage.types <> Asf constr
+R14783:14784 Triage.subtypes <> ty:104 var
+R14875:14883 Triage.subtypes <> sub_trans constr
+R14911:14924 Triage.subtypes <> subtype_quanta thm
+R14934:14950 Triage.subtypes <> asf_Quant_commute thm
+R14875:14883 Triage.subtypes <> sub_trans constr
+R14911:14924 Triage.subtypes <> subtype_quanta thm
+R14934:14950 Triage.subtypes <> asf_Quant_commute thm
+prf 14987:15004 <> subtype_quanta_asf
+binder 15014:15015 <> bs:105
+binder 15017:15018 <> ty:106
+R15021:15027 Triage.subtypes <> subtype ind
+R15030:15035 Triage.types <> quanta def
+R15037:15038 Triage.subtypes <> bs:105 var
+R15041:15043 Triage.types <> Asf constr
+R15045:15046 Triage.subtypes <> ty:106 var
+R15052:15054 Triage.types <> Asf constr
+R15057:15062 Triage.types <> quanta def
+R15064:15065 Triage.subtypes <> bs:105 var
+R15067:15068 Triage.subtypes <> ty:106 var
+R15160:15168 Triage.subtypes <> sub_trans constr
+R15196:15209 Triage.subtypes <> subtype_quanta thm
+R15219:15231 Triage.subtypes <> sub_quant_asf constr
+R15160:15168 Triage.subtypes <> sub_trans constr
+R15196:15209 Triage.subtypes <> subtype_quanta thm
+R15219:15231 Triage.subtypes <> sub_quant_asf constr
+prf 15268:15284 <> subtype_quant_asf
+binder 15294:15294 <> n:107
+binder 15296:15297 <> ty:108
+R15300:15306 Triage.subtypes <> subtype ind
+R15309:15313 Triage.types <> quant def
+R15315:15315 Triage.subtypes <> n:107 var
+R15318:15320 Triage.types <> Asf constr
+R15322:15323 Triage.subtypes <> ty:108 var
+R15329:15331 Triage.types <> Asf constr
+R15334:15338 Triage.types <> quant def
+R15340:15340 Triage.subtypes <> n:107 var
+R15342:15343 Triage.subtypes <> ty:108 var
+R15401:15409 Triage.subtypes <> sub_trans constr
+R15436:15448 Triage.subtypes <> subtype_quant thm
+R15458:15470 Triage.subtypes <> sub_quant_asf constr
+R15401:15409 Triage.subtypes <> sub_trans constr
+R15436:15448 Triage.subtypes <> subtype_quant thm
+R15458:15470 Triage.subtypes <> sub_quant_asf constr
+prf 15491:15519 <> subtype_quanta_to_quant_count
+binder 15531:15532 <> bs:109
+binder 15534:15536 <> bs2:110
+binder 15538:15540 <> uty:111
+binder 15542:15544 <> vty:112
+R15551:15557 Triage.subtypes <> subtype ind
+R15560:15565 Triage.types <> quanta def
+R15567:15568 Triage.subtypes <> bs:109 var
+R15571:15576 Triage.types <> quanta def
+R15578:15580 Triage.subtypes <> bs2:110 var
+R15583:15587 Triage.types <> Funty constr
+R15589:15591 Triage.subtypes <> uty:111 var
+R15593:15595 Triage.subtypes <> vty:112 var
+R15601:15605 Triage.types <> quant def
+R15608:15618 Triage.types <> quant_count def
+R15620:15621 Triage.subtypes <> bs:109 var
+R15625:15630 Triage.types <> quanta def
+R15632:15634 Triage.subtypes <> bs2:110 var
+R15637:15641 Triage.types <> Funty constr
+R15643:15645 Triage.subtypes <> uty:111 var
+R15647:15649 Triage.subtypes <> vty:112 var
+R15746:15750 Triage.types <> Quant constr
+R15753:15758 Triage.types <> quanta def
+R15765:15769 Triage.types <> Funty constr
+R15788:15793 Triage.types <> quanta def
+R15796:15798 Coq.Init.Datatypes <> app def
+R15809:15812 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R15805:15808 Coq.Init.Datatypes <> true constr
+R15813:15815 Coq.Init.Datatypes <> nil constr
+R15820:15824 Triage.types <> Funty constr
+R15854:15863 Triage.types <> quanta_app thm
+R15746:15750 Triage.types <> Quant constr
+R15753:15758 Triage.types <> quanta def
+R15765:15769 Triage.types <> Funty constr
+R15788:15793 Triage.types <> quanta def
+R15796:15798 Coq.Init.Datatypes <> app def
+R15809:15812 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R15805:15808 Coq.Init.Datatypes <> true constr
+R15813:15815 Coq.Init.Datatypes <> nil constr
+R15820:15824 Triage.types <> Funty constr
+R15854:15863 Triage.types <> quanta_app thm
+R15854:15863 Triage.types <> quanta_app thm
+R15906:15908 Triage.types <> Asf constr
+R15911:15916 Triage.types <> quanta def
+R15923:15927 Triage.types <> Funty constr
+R15946:15951 Triage.types <> quanta def
+R15954:15956 Coq.Init.Datatypes <> app def
+R15968:15971 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R15963:15967 Coq.Init.Datatypes <> false constr
+R15972:15974 Coq.Init.Datatypes <> nil constr
+R15979:15983 Triage.types <> Funty constr
+R16013:16022 Triage.types <> quanta_app thm
+R16052:16060 Triage.subtypes <> sub_trans constr
+R16094:16106 Triage.subtypes <> subtype_quant thm
+R16117:16126 Triage.types <> quanta_app thm
+R16149:16157 Triage.subtypes <> sub_trans constr
+R16169:16186 Triage.subtypes <> subtype_asf_quanta thm
+R16197:16210 Triage.subtypes <> subtype_quanta thm
+R15906:15908 Triage.types <> Asf constr
+R15911:15916 Triage.types <> quanta def
+R15923:15927 Triage.types <> Funty constr
+R15946:15951 Triage.types <> quanta def
+R15954:15956 Coq.Init.Datatypes <> app def
+R15968:15971 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R15963:15967 Coq.Init.Datatypes <> false constr
+R15972:15974 Coq.Init.Datatypes <> nil constr
+R15979:15983 Triage.types <> Funty constr
+R16013:16022 Triage.types <> quanta_app thm
+R16013:16022 Triage.types <> quanta_app thm
+R16052:16060 Triage.subtypes <> sub_trans constr
+R16094:16106 Triage.subtypes <> subtype_quant thm
+R16117:16126 Triage.types <> quanta_app thm
+R16117:16126 Triage.types <> quanta_app thm
+R16149:16157 Triage.subtypes <> sub_trans constr
+R16169:16186 Triage.subtypes <> subtype_asf_quanta thm
+R16197:16210 Triage.subtypes <> subtype_quanta thm
+prf 16235:16245 <> quanta_leaf
+binder 16255:16256 <> bs:113
+R16259:16265 Triage.subtypes <> subtype ind
+R16267:16270 Triage.types <> Leaf constr
+R16273:16278 Triage.types <> quanta def
+R16280:16281 Triage.subtypes <> bs:113 var
+R16283:16286 Triage.types <> Leaf constr
+R16344:16351 Triage.subtypes <> sub_zero constr
+R16344:16351 Triage.subtypes <> sub_zero constr
+R16391:16399 Triage.subtypes <> sub_trans constr
+R16425:16438 Triage.subtypes <> subtype_quanta thm
+R16391:16399 Triage.subtypes <> sub_trans constr
+R16425:16438 Triage.subtypes <> subtype_quanta thm
+R16391:16399 Triage.subtypes <> sub_trans constr
+R16425:16438 Triage.subtypes <> subtype_quanta thm
+R16457:16460 Triage.types <> Leaf constr
+R16468:16471 Triage.types <> lift def
+R16475:16478 Triage.types <> Leaf constr
+R16503:16510 Triage.subtypes <> sub_lift constr
+R16457:16460 Triage.types <> Leaf constr
+R16468:16471 Triage.types <> lift def
+R16475:16478 Triage.types <> Leaf constr
+R16503:16510 Triage.subtypes <> sub_lift constr
+prf 16540:16563 <> subtype_quant_to_quanta2
+binder 16573:16573 <> n:114
+binder 16575:16576 <> ty:115
+R16589:16591 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16579:16583 Triage.types <> quant def
+R16585:16585 Triage.subtypes <> n:114 var
+R16587:16588 Triage.subtypes <> ty:115 var
+R16592:16597 Triage.types <> quanta def
+R16600:16603 Coq.Init.Nat <> iter def
+R16619:16621 Coq.Init.Datatypes <> nil constr
+R16608:16611 Coq.Init.Datatypes <> cons constr
+R16613:16616 Coq.Init.Datatypes <> true constr
+R16605:16605 Triage.subtypes <> n:114 var
+R16624:16625 Triage.subtypes <> ty:115 var
+prf 16684:16703 <> subtype_quant_quantf
+binder 16713:16713 <> m:116
+binder 16715:16715 <> n:117
+binder 16717:16718 <> ty:118
+R16722:16728 Triage.subtypes <> subtype ind
+R16731:16735 Triage.types <> quant def
+R16737:16737 Triage.subtypes <> m:116 var
+R16740:16745 Triage.types <> quantf def
+R16747:16747 Triage.subtypes <> n:117 var
+R16749:16750 Triage.subtypes <> ty:118 var
+R16755:16760 Triage.types <> quantf def
+R16762:16762 Triage.subtypes <> n:117 var
+R16765:16769 Triage.types <> quant def
+R16771:16771 Triage.subtypes <> m:116 var
+R16773:16774 Triage.subtypes <> ty:118 var
+R16832:16840 Triage.subtypes <> sub_trans constr
+R16871:16883 Triage.subtypes <> subtype_quant thm
+R16947:16957 Triage.types <> quantf_succ thm
+R16971:16979 Triage.subtypes <> sub_trans constr
+R16991:17003 Triage.subtypes <> sub_quant_asf constr
+R17014:17020 Triage.subtypes <> sub_asf constr
+R16832:16840 Triage.subtypes <> sub_trans constr
+R16871:16883 Triage.subtypes <> subtype_quant thm
+R16947:16957 Triage.types <> quantf_succ thm
+R16947:16957 Triage.types <> quantf_succ thm
+R16947:16957 Triage.types <> quantf_succ thm
+R16971:16979 Triage.subtypes <> sub_trans constr
+R16991:17003 Triage.subtypes <> sub_quant_asf constr
+R17014:17020 Triage.subtypes <> sub_asf constr
+prf 17044:17057 <> subtype_quantf
+binder 17067:17067 <> n:119
+binder 17069:17071 <> ty1:120
+binder 17073:17075 <> ty2:121
+R17093:17096 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17078:17084 Triage.subtypes <> subtype ind
+R17086:17088 Triage.subtypes <> ty1:120 var
+R17090:17092 Triage.subtypes <> ty2:121 var
+R17097:17103 Triage.subtypes <> subtype ind
+R17106:17111 Triage.types <> quantf def
+R17113:17113 Triage.subtypes <> n:119 var
+R17115:17117 Triage.subtypes <> ty1:120 var
+R17121:17126 Triage.types <> quantf def
+R17128:17128 Triage.subtypes <> n:119 var
+R17130:17132 Triage.subtypes <> ty2:121 var
+prf 17195:17214 <> subtype_quantf_Quant
+binder 17224:17224 <> n:122
+binder 17226:17227 <> ty:123
+R17231:17237 Triage.subtypes <> subtype ind
+R17240:17245 Triage.types <> quantf def
+R17247:17247 Triage.subtypes <> n:122 var
+R17250:17254 Triage.types <> Quant constr
+R17257:17258 Triage.subtypes <> ty:123 var
+R17263:17267 Triage.types <> Quant constr
+R17270:17275 Triage.types <> quantf def
+R17277:17277 Triage.subtypes <> n:122 var
+R17279:17280 Triage.subtypes <> ty:123 var
+R17309:17317 Triage.subtypes <> sub_trans constr
+R17329:17336 Triage.subtypes <> sub_lift constr
+R17353:17361 Triage.subtypes <> sub_quant constr
+R17375:17378 Triage.types <> lift def
+R17389:17413 Triage.types <> lift_rec_preserves_quantf thm
+R17423:17436 Triage.subtypes <> subtype_quantf thm
+R17451:17455 Triage.types <> Quant constr
+R17463:17467 Triage.types <> quant def
+R17492:17504 Triage.subtypes <> subtype_lift3 thm
+R17309:17317 Triage.subtypes <> sub_trans constr
+R17329:17336 Triage.subtypes <> sub_lift constr
+R17353:17361 Triage.subtypes <> sub_quant constr
+R17389:17413 Triage.types <> lift_rec_preserves_quantf thm
+R17389:17413 Triage.types <> lift_rec_preserves_quantf thm
+R17423:17436 Triage.subtypes <> subtype_quantf thm
+R17451:17455 Triage.types <> Quant constr
+R17463:17467 Triage.types <> quant def
+R17492:17504 Triage.subtypes <> subtype_lift3 thm
+prf 17522:17538 <> subtype_leaf_fork
+binder 17550:17552 <> uty:124
+binder 17554:17556 <> vty:125
+R17559:17565 Triage.subtypes <> subtype ind
+R17567:17570 Triage.types <> Leaf constr
+R17573:17577 Triage.types <> Funty constr
+R17579:17581 Triage.subtypes <> uty:124 var
+R17584:17588 Triage.types <> Funty constr
+R17590:17592 Triage.subtypes <> vty:125 var
+R17595:17598 Triage.types <> Fork constr
+R17600:17602 Triage.subtypes <> uty:124 var
+R17604:17606 Triage.subtypes <> vty:125 var
+R17666:17674 Triage.subtypes <> sub_trans constr
+R17689:17701 Triage.subtypes <> sub_fork_leaf constr
+R17759:17767 Triage.subtypes <> sub_trans constr
+R17780:17787 Triage.subtypes <> sub_fork constr
+R17800:17807 Triage.subtypes <> sub_stem constr
+R17821:17833 Triage.subtypes <> sub_fork_stem constr
+R17867:17878 Triage.subtypes <> sub_stem_fun constr
+R17918:17929 Triage.subtypes <> sub_leaf_fun constr
+R17969:17985 Triage.subtypes <> subtype_leaf_fork thm
+R18034:18042 Triage.subtypes <> sub_trans constr
+R18054:18065 Triage.subtypes <> subtype_dist thm
+R18076:18084 Triage.subtypes <> sub_funty constr
+R18161:18169 Triage.subtypes <> sub_funty constr
+R18183:18190 Triage.subtypes <> sub_zero constr
+R18116:18124 Triage.subtypes <> sub_funty constr
+R18136:18143 Triage.subtypes <> sub_zero constr
+R18224:18232 Triage.subtypes <> sub_trans constr
+R18244:18256 Triage.subtypes <> subtype_quant thm
+R18267:18275 Triage.subtypes <> sub_trans constr
+R18287:18294 Triage.subtypes <> sub_lift constr
+R18305:18312 Triage.subtypes <> sub_zero constr
+R18375:18378 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R18375:18378 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R18425:18431 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18433:18434 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18425:18431 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18433:18434 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18710:18726 Triage.subtypes <> subtype_leaf_fork thm
+R18683:18694 Triage.subtypes <> sub_leaf_fun constr
+R18596:18603 Triage.subtypes <> sub_zero constr
+prf 18824:18841 <> stem_Quant_commute
+binder 18851:18852 <> ty:126
+R18855:18861 Triage.subtypes <> subtype ind
+R18864:18867 Triage.types <> Stem constr
+R18870:18874 Triage.types <> Quant constr
+R18876:18877 Triage.subtypes <> ty:126 var
+R18882:18886 Triage.types <> Quant constr
+R18889:18892 Triage.types <> Stem constr
+R18894:18895 Triage.subtypes <> ty:126 var
+R18925:18933 Triage.subtypes <> sub_trans constr
+R18945:18952 Triage.subtypes <> sub_lift constr
+R18969:18977 Triage.subtypes <> sub_quant constr
+R18987:18990 Triage.types <> lift def
+R19011:19018 Triage.subtypes <> sub_stem constr
+R19032:19040 Triage.subtypes <> sub_trans constr
+R19052:19059 Triage.subtypes <> sub_inst constr
+R19076:19080 Triage.types <> subst def
+R19099:19117 Triage.types <> subst_rec_lift_rec0 thm
+R19128:19140 Triage.types <> lift_rec_null thm
+R19149:19156 Triage.subtypes <> sub_zero constr
+R18925:18933 Triage.subtypes <> sub_trans constr
+R18945:18952 Triage.subtypes <> sub_lift constr
+R18969:18977 Triage.subtypes <> sub_quant constr
+R19011:19018 Triage.subtypes <> sub_stem constr
+R19032:19040 Triage.subtypes <> sub_trans constr
+R19052:19059 Triage.subtypes <> sub_inst constr
+R19099:19117 Triage.types <> subst_rec_lift_rec0 thm
+R19099:19117 Triage.types <> subst_rec_lift_rec0 thm
+R19128:19140 Triage.types <> lift_rec_null thm
+R19128:19140 Triage.types <> lift_rec_null thm
+R19149:19156 Triage.subtypes <> sub_zero constr
+prf 19173:19190 <> stem_quant_commute
+binder 19200:19200 <> k:127
+binder 19202:19203 <> ty:128
+R19206:19212 Triage.subtypes <> subtype ind
+R19215:19218 Triage.types <> Stem constr
+R19221:19225 Triage.types <> quant def
+R19227:19227 Triage.subtypes <> k:127 var
+R19229:19230 Triage.subtypes <> ty:128 var
+R19235:19239 Triage.types <> quant def
+R19241:19241 Triage.subtypes <> k:127 var
+R19244:19247 Triage.types <> Stem constr
+R19249:19250 Triage.subtypes <> ty:128 var
+R19304:19311 Triage.subtypes <> sub_zero constr
+R19328:19337 Triage.types <> quant_succ thm
+R19351:19359 Triage.subtypes <> sub_trans constr
+R19371:19388 Triage.subtypes <> stem_Quant_commute thm
+R19405:19413 Triage.subtypes <> sub_quant constr
+R19304:19311 Triage.subtypes <> sub_zero constr
+R19304:19311 Triage.subtypes <> sub_zero constr
+R19328:19337 Triage.types <> quant_succ thm
+R19328:19337 Triage.types <> quant_succ thm
+R19328:19337 Triage.types <> quant_succ thm
+R19328:19337 Triage.types <> quant_succ thm
+R19351:19359 Triage.subtypes <> sub_trans constr
+R19371:19388 Triage.subtypes <> stem_Quant_commute thm
+R19405:19413 Triage.subtypes <> sub_quant constr
+prf 19438:19454 <> asf_quant_commute
+binder 19464:19464 <> k:129
+binder 19466:19467 <> ty:130
+R19470:19476 Triage.subtypes <> subtype ind
+R19479:19481 Triage.types <> Asf constr
+R19484:19488 Triage.types <> quant def
+R19490:19490 Triage.subtypes <> k:129 var
+R19492:19493 Triage.subtypes <> ty:130 var
+R19498:19502 Triage.types <> quant def
+R19504:19504 Triage.subtypes <> k:129 var
+R19507:19509 Triage.types <> Asf constr
+R19511:19512 Triage.subtypes <> ty:130 var
+R19566:19573 Triage.subtypes <> sub_zero constr
+R19590:19599 Triage.types <> quant_succ thm
+R19613:19621 Triage.subtypes <> sub_trans constr
+R19633:19649 Triage.subtypes <> asf_Quant_commute thm
+R19666:19674 Triage.subtypes <> sub_quant constr
+R19566:19573 Triage.subtypes <> sub_zero constr
+R19566:19573 Triage.subtypes <> sub_zero constr
+R19590:19599 Triage.types <> quant_succ thm
+R19590:19599 Triage.types <> quant_succ thm
+R19590:19599 Triage.types <> quant_succ thm
+R19590:19599 Triage.types <> quant_succ thm
+R19613:19621 Triage.subtypes <> sub_trans constr
+R19633:19649 Triage.subtypes <> asf_Quant_commute thm
+R19666:19674 Triage.subtypes <> sub_quant constr
+prf 19699:19716 <> fork_Quant_commute
+binder 19726:19728 <> ty1:131
+binder 19730:19732 <> ty2:132
+R19735:19741 Triage.subtypes <> subtype ind
+R19744:19747 Triage.types <> Fork constr
+R19750:19754 Triage.types <> Quant constr
+R19756:19758 Triage.subtypes <> ty1:131 var
+R19762:19766 Triage.types <> Quant constr
+R19768:19770 Triage.subtypes <> ty2:132 var
+R19775:19779 Triage.types <> Quant constr
+R19782:19785 Triage.types <> Fork constr
+R19787:19789 Triage.subtypes <> ty1:131 var
+R19791:19793 Triage.subtypes <> ty2:132 var
+R19823:19831 Triage.subtypes <> sub_trans constr
+R19843:19850 Triage.subtypes <> sub_lift constr
+R19867:19875 Triage.subtypes <> sub_quant constr
+R19885:19888 Triage.types <> lift def
+R19907:19914 Triage.subtypes <> sub_fork constr
+R19925:19933 Triage.subtypes <> sub_trans constr
+R19945:19952 Triage.subtypes <> sub_inst constr
+R19965:19969 Triage.types <> subst def
+R19982:20000 Triage.types <> subst_rec_lift_rec0 thm
+R20011:20023 Triage.types <> lift_rec_null thm
+R20032:20039 Triage.subtypes <> sub_zero constr
+R19823:19831 Triage.subtypes <> sub_trans constr
+R19843:19850 Triage.subtypes <> sub_lift constr
+R19867:19875 Triage.subtypes <> sub_quant constr
+R19907:19914 Triage.subtypes <> sub_fork constr
+R19925:19933 Triage.subtypes <> sub_trans constr
+R19945:19952 Triage.subtypes <> sub_inst constr
+R19982:20000 Triage.types <> subst_rec_lift_rec0 thm
+R19982:20000 Triage.types <> subst_rec_lift_rec0 thm
+R20011:20023 Triage.types <> lift_rec_null thm
+R20011:20023 Triage.types <> lift_rec_null thm
+R20032:20039 Triage.subtypes <> sub_zero constr
+R19925:19933 Triage.subtypes <> sub_trans constr
+R19945:19952 Triage.subtypes <> sub_inst constr
+R19982:20000 Triage.types <> subst_rec_lift_rec0 thm
+R19982:20000 Triage.types <> subst_rec_lift_rec0 thm
+R20011:20023 Triage.types <> lift_rec_null thm
+R20011:20023 Triage.types <> lift_rec_null thm
+R20032:20039 Triage.subtypes <> sub_zero constr
+prf 20058:20075 <> fork_quant_commute
+binder 20087:20087 <> k:133
+binder 20089:20091 <> ty1:134
+binder 20093:20095 <> ty2:135
+R20098:20104 Triage.subtypes <> subtype ind
+R20107:20110 Triage.types <> Fork constr
+R20112:20116 Triage.types <> quant def
+R20118:20118 Triage.subtypes <> k:133 var
+R20120:20122 Triage.subtypes <> ty1:134 var
+R20125:20129 Triage.types <> quant def
+R20131:20131 Triage.subtypes <> k:133 var
+R20133:20135 Triage.subtypes <> ty2:135 var
+R20140:20144 Triage.types <> quant def
+R20146:20146 Triage.subtypes <> k:133 var
+R20149:20152 Triage.types <> Fork constr
+R20154:20156 Triage.subtypes <> ty1:134 var
+R20158:20160 Triage.subtypes <> ty2:135 var
+R20213:20220 Triage.subtypes <> sub_zero constr
+R20237:20246 Triage.types <> quant_succ thm
+R20262:20262 Coq.Init.Datatypes <> S constr
+R20266:20268 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20269:20269 Coq.Init.Datatypes <> S constr
+R20282:20285 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20289:20289 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20287:20287 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20311:20319 Triage.subtypes <> sub_trans constr
+R20331:20348 Triage.subtypes <> fork_Quant_commute thm
+R20366:20374 Triage.subtypes <> sub_quant constr
+R20213:20220 Triage.subtypes <> sub_zero constr
+R20213:20220 Triage.subtypes <> sub_zero constr
+R20237:20246 Triage.types <> quant_succ thm
+R20237:20246 Triage.types <> quant_succ thm
+R20237:20246 Triage.types <> quant_succ thm
+R20237:20246 Triage.types <> quant_succ thm
+R20237:20246 Triage.types <> quant_succ thm
+R20262:20262 Coq.Init.Datatypes <> S constr
+R20266:20268 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20269:20269 Coq.Init.Datatypes <> S constr
+R20282:20285 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20289:20289 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20287:20287 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20311:20319 Triage.subtypes <> sub_trans constr
+R20331:20348 Triage.subtypes <> fork_Quant_commute thm
+R20366:20374 Triage.subtypes <> sub_quant constr
+prf 20399:20416 <> subtype_quant_leaf
+binder 20426:20426 <> k:136
+R20429:20435 Triage.subtypes <> subtype ind
+R20438:20442 Triage.types <> quant def
+R20444:20444 Triage.subtypes <> k:136 var
+R20446:20449 Triage.types <> Leaf constr
+R20452:20455 Triage.types <> Leaf constr
+R20506:20513 Triage.subtypes <> sub_zero constr
+R20529:20529 Coq.Init.Datatypes <> S constr
+R20541:20541 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20560:20568 Triage.subtypes <> sub_trans constr
+R20580:20592 Triage.subtypes <> subtype_quant thm
+R20602:20609 Triage.subtypes <> sub_inst constr
+R20622:20626 Triage.types <> subst def
+R20506:20513 Triage.subtypes <> sub_zero constr
+R20506:20513 Triage.subtypes <> sub_zero constr
+R20529:20529 Coq.Init.Datatypes <> S constr
+R20541:20541 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20560:20568 Triage.subtypes <> sub_trans constr
+R20580:20592 Triage.subtypes <> subtype_quant thm
+R20602:20609 Triage.subtypes <> sub_inst constr
+R20663:20666 Triage.types <> Leaf constr
+R20663:20666 Triage.types <> Leaf constr
+prf 20681:20698 <> subtype_leaf_quant
+binder 20708:20708 <> k:137
+R20711:20717 Triage.subtypes <> subtype ind
+R20719:20722 Triage.types <> Leaf constr
+R20725:20729 Triage.types <> quant def
+R20731:20731 Triage.subtypes <> k:137 var
+R20733:20736 Triage.types <> Leaf constr
+R20788:20795 Triage.subtypes <> sub_zero constr
+R20811:20811 Coq.Init.Datatypes <> S constr
+R20823:20823 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20842:20850 Triage.subtypes <> sub_trans constr
+R20876:20888 Triage.subtypes <> subtype_quant thm
+R20901:20909 Triage.subtypes <> sub_trans constr
+R20921:20928 Triage.subtypes <> sub_lift constr
+R20939:20942 Triage.types <> lift def
+R20959:20966 Triage.subtypes <> sub_zero constr
+R20788:20795 Triage.subtypes <> sub_zero constr
+R20788:20795 Triage.subtypes <> sub_zero constr
+R20811:20811 Coq.Init.Datatypes <> S constr
+R20823:20823 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R20842:20850 Triage.subtypes <> sub_trans constr
+R20876:20888 Triage.subtypes <> subtype_quant thm
+R20901:20909 Triage.subtypes <> sub_trans constr
+R20921:20928 Triage.subtypes <> sub_lift constr
+R20959:20966 Triage.subtypes <> sub_zero constr
+prf 20986:20996 <> subtype_Kty
+binder 21006:21008 <> uty:138
+binder 21010:21012 <> vty:139
+R21015:21021 Triage.subtypes <> subtype ind
+R21024:21027 Triage.types <> Stem constr
+R21029:21032 Triage.types <> Leaf constr
+R21036:21040 Triage.types <> Funty constr
+R21042:21044 Triage.subtypes <> uty:138 var
+R21047:21051 Triage.types <> Funty constr
+R21053:21055 Triage.subtypes <> vty:139 var
+R21057:21059 Triage.subtypes <> uty:138 var
+prf 21109:21143 <> variant_subst_rec_preserves_subtype
+binder 21155:21156 <> ty:140
+binder 21158:21158 <> k:141
+binder 21160:21162 <> uty:142
+binder 21164:21166 <> vty:143
+R21200:21207 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21193:21195 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21176:21182 Triage.types <> variant def
+R21184:21187 Coq.Init.Datatypes <> true constr
+R21189:21189 Triage.subtypes <> k:141 var
+R21191:21192 Triage.subtypes <> ty:140 var
+R21196:21199 Coq.Init.Datatypes <> true constr
+R21223:21230 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21208:21214 Triage.subtypes <> subtype ind
+R21216:21218 Triage.subtypes <> uty:142 var
+R21220:21222 Triage.subtypes <> vty:143 var
+R21231:21237 Triage.subtypes <> subtype ind
+R21240:21248 Triage.types <> subst_rec def
+R21250:21251 Triage.subtypes <> ty:140 var
+R21253:21255 Triage.subtypes <> uty:142 var
+R21257:21257 Triage.subtypes <> k:141 var
+R21261:21269 Triage.types <> subst_rec def
+R21271:21272 Triage.subtypes <> ty:140 var
+R21274:21276 Triage.subtypes <> vty:143 var
+R21278:21278 Triage.subtypes <> k:141 var
+binder 21307:21308 <> ty:144
+binder 21310:21310 <> k:145
+binder 21312:21314 <> uty:146
+binder 21316:21318 <> vty:147
+R21325:21325 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21430:21442 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21548:21548 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21350:21357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21343:21345 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21326:21332 Triage.types <> variant def
+R21334:21337 Coq.Init.Datatypes <> true constr
+R21339:21339 Triage.subtypes <> k:145 var
+R21341:21342 Triage.subtypes <> ty:144 var
+R21346:21349 Coq.Init.Datatypes <> true constr
+R21373:21380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21358:21364 Triage.subtypes <> subtype ind
+R21366:21368 Triage.subtypes <> uty:146 var
+R21370:21372 Triage.subtypes <> vty:147 var
+R21381:21387 Triage.subtypes <> subtype ind
+R21390:21398 Triage.types <> subst_rec def
+R21400:21401 Triage.subtypes <> ty:144 var
+R21403:21405 Triage.subtypes <> uty:146 var
+R21407:21407 Triage.subtypes <> k:145 var
+R21411:21419 Triage.types <> subst_rec def
+R21421:21422 Triage.subtypes <> ty:144 var
+R21424:21426 Triage.subtypes <> vty:147 var
+R21428:21428 Triage.subtypes <> k:145 var
+R21468:21475 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21461:21463 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21443:21449 Triage.types <> variant def
+R21451:21455 Coq.Init.Datatypes <> false constr
+R21457:21457 Triage.subtypes <> k:145 var
+R21459:21460 Triage.subtypes <> ty:144 var
+R21464:21467 Coq.Init.Datatypes <> true constr
+R21491:21498 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21476:21482 Triage.subtypes <> subtype ind
+R21484:21486 Triage.subtypes <> vty:147 var
+R21488:21490 Triage.subtypes <> uty:146 var
+R21499:21505 Triage.subtypes <> subtype ind
+R21508:21516 Triage.types <> subst_rec def
+R21518:21519 Triage.subtypes <> ty:144 var
+R21521:21523 Triage.subtypes <> uty:146 var
+R21525:21525 Triage.subtypes <> k:145 var
+R21529:21537 Triage.types <> subst_rec def
+R21539:21540 Triage.subtypes <> ty:144 var
+R21542:21544 Triage.subtypes <> vty:147 var
+R21546:21546 Triage.subtypes <> k:145 var
+binder 21307:21308 <> ty:148
+binder 21310:21310 <> k:149
+binder 21312:21314 <> uty:150
+binder 21316:21318 <> vty:151
+R21325:21325 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21430:21442 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21548:21548 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21350:21357 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21343:21345 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21326:21332 Triage.types <> variant def
+R21334:21337 Coq.Init.Datatypes <> true constr
+R21339:21339 Triage.subtypes <> k:149 var
+R21341:21342 Triage.subtypes <> ty:148 var
+R21346:21349 Coq.Init.Datatypes <> true constr
+R21373:21380 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21358:21364 Triage.subtypes <> subtype ind
+R21366:21368 Triage.subtypes <> uty:150 var
+R21370:21372 Triage.subtypes <> vty:151 var
+R21381:21387 Triage.subtypes <> subtype ind
+R21390:21398 Triage.types <> subst_rec def
+R21400:21401 Triage.subtypes <> ty:148 var
+R21403:21405 Triage.subtypes <> uty:150 var
+R21407:21407 Triage.subtypes <> k:149 var
+R21411:21419 Triage.types <> subst_rec def
+R21421:21422 Triage.subtypes <> ty:148 var
+R21424:21426 Triage.subtypes <> vty:151 var
+R21428:21428 Triage.subtypes <> k:149 var
+R21468:21475 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21461:21463 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21443:21449 Triage.types <> variant def
+R21451:21455 Coq.Init.Datatypes <> false constr
+R21457:21457 Triage.subtypes <> k:149 var
+R21459:21460 Triage.subtypes <> ty:148 var
+R21464:21467 Coq.Init.Datatypes <> true constr
+R21491:21498 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21476:21482 Triage.subtypes <> subtype ind
+R21484:21486 Triage.subtypes <> vty:151 var
+R21488:21490 Triage.subtypes <> uty:150 var
+R21499:21505 Triage.subtypes <> subtype ind
+R21508:21516 Triage.types <> subst_rec def
+R21518:21519 Triage.subtypes <> ty:148 var
+R21521:21523 Triage.subtypes <> uty:150 var
+R21525:21525 Triage.subtypes <> k:149 var
+R21529:21537 Triage.types <> subst_rec def
+R21539:21540 Triage.subtypes <> ty:148 var
+R21542:21544 Triage.subtypes <> vty:151 var
+R21546:21546 Triage.subtypes <> k:149 var
+R21726:21728 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R21724:21724 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R21734:21736 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R21730:21732 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21738:21738 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21829:21854 Triage.subtypes <> lift_rec_preserves_subtype thm
+R21872:21883 Coq.Arith.PeanoNat Nat eqb_refl thm
+R21726:21728 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R21724:21724 Coq.Init.Peano <> ::nat_scope:x_'<'_x not
+R21734:21736 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R21730:21732 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21738:21738 Coq.Init.Peano <> ::nat_scope:x_'>'_x not
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21809:21816 Triage.subtypes <> sub_zero constr
+R21829:21854 Triage.subtypes <> lift_rec_preserves_subtype thm
+R21829:21854 Triage.subtypes <> lift_rec_preserves_subtype thm
+R21872:21883 Coq.Arith.PeanoNat Nat eqb_refl thm
+R21872:21883 Coq.Arith.PeanoNat Nat eqb_refl thm
+R21921:21921 Coq.Init.Datatypes <> S constr
+R21958:21966 Triage.subtypes <> sub_quant constr
+R21921:21921 Coq.Init.Datatypes <> S constr
+R21958:21966 Triage.subtypes <> sub_quant constr
+R21958:21966 Triage.subtypes <> sub_quant constr
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22051:22059 Triage.subtypes <> sub_funty constr
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22012:22024 Coq.Bool.Bool <> andb_true_iff thm
+R22051:22059 Triage.subtypes <> sub_funty constr
+R22051:22059 Triage.subtypes <> sub_funty constr
+R22192:22199 Triage.subtypes <> sub_stem constr
+R22192:22199 Triage.subtypes <> sub_stem constr
+R22192:22199 Triage.subtypes <> sub_stem constr
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22272:22284 Coq.Bool.Bool <> andb_true_iff thm
+R22371:22377 Triage.subtypes <> sub_asf constr
+R22371:22377 Triage.subtypes <> sub_asf constr
+R22371:22377 Triage.subtypes <> sub_asf constr
+prf 22419:22444 <> subtype_preserves_bfff_aug
+binder 22454:22456 <> ty1:152
+binder 22458:22460 <> ty2:153
+R22478:22481 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22463:22469 Triage.subtypes <> subtype ind
+R22471:22473 Triage.subtypes <> ty1:152 var
+R22475:22477 Triage.subtypes <> ty2:153 var
+R22482:22488 Triage.subtypes <> subtype ind
+R22491:22498 Triage.subtypes <> bfff_aug def
+R22500:22502 Triage.subtypes <> ty1:152 var
+R22506:22513 Triage.subtypes <> bfff_aug def
+R22515:22517 Triage.subtypes <> ty2:153 var
+R22543:22550 Triage.subtypes <> sub_fork constr
+R22562:22569 Triage.subtypes <> sub_zero constr
+R22543:22550 Triage.subtypes <> sub_fork constr
+R22562:22569 Triage.subtypes <> sub_zero constr
+prf 22597:22627 <> subtype_preserves_iter_bfff_aug
+binder 22639:22639 <> n:154
+binder 22641:22643 <> ty1:155
+binder 22645:22647 <> ty2:156
+R22665:22668 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22650:22656 Triage.subtypes <> subtype ind
+R22658:22660 Triage.subtypes <> ty1:155 var
+R22662:22664 Triage.subtypes <> ty2:156 var
+R22669:22675 Triage.subtypes <> subtype ind
+R22678:22681 Coq.Init.Nat <> iter def
+R22694:22696 Triage.subtypes <> ty1:155 var
+R22685:22692 Triage.subtypes <> bfff_aug def
+R22683:22683 Triage.subtypes <> n:154 var
+R22700:22703 Coq.Init.Nat <> iter def
+R22716:22718 Triage.subtypes <> ty2:156 var
+R22707:22714 Triage.subtypes <> bfff_aug def
+R22705:22705 Triage.subtypes <> n:154 var
+R22778:22786 Triage.subtypes <> sub_trans constr
+R22778:22786 Triage.subtypes <> sub_trans constr
+R22796:22821 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R22796:22821 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R22838:22845 Triage.subtypes <> sub_zero constr
+R22838:22845 Triage.subtypes <> sub_zero constr
+prf 22864:22885 <> subtype_quant_bfff_aug
+binder 22895:22895 <> n:157
+binder 22897:22898 <> ty:158
+R22901:22907 Triage.subtypes <> subtype ind
+R22910:22914 Triage.types <> quant def
+R22916:22916 Triage.subtypes <> n:157 var
+R22919:22926 Triage.subtypes <> bfff_aug def
+R22928:22929 Triage.subtypes <> ty:158 var
+R22934:22941 Triage.subtypes <> bfff_aug def
+R22944:22948 Triage.types <> quant def
+R22950:22950 Triage.subtypes <> n:157 var
+R22952:22953 Triage.subtypes <> ty:158 var
+R22982:22989 Triage.subtypes <> bfff_aug def
+R23005:23013 Triage.subtypes <> sub_trans constr
+R23005:23013 Triage.subtypes <> sub_trans constr
+R23023:23040 Triage.subtypes <> subtype_quant_fork thm
+R23023:23040 Triage.subtypes <> subtype_quant_fork thm
+R23050:23057 Triage.subtypes <> sub_fork constr
+R23050:23057 Triage.subtypes <> sub_fork constr
+R23071:23074 Triage.types <> Stem constr
+R23077:23080 Triage.types <> Fork constr
+R23082:23085 Triage.types <> Leaf constr
+R23087:23093 Triage.subtypes <> eval_ty def
+R23103:23106 Triage.types <> lift def
+R23111:23114 Triage.types <> Stem constr
+R23117:23120 Triage.types <> Fork constr
+R23122:23125 Triage.types <> Leaf constr
+R23127:23133 Triage.subtypes <> eval_ty def
+R23071:23074 Triage.types <> Stem constr
+R23077:23080 Triage.types <> Fork constr
+R23082:23085 Triage.types <> Leaf constr
+R23087:23093 Triage.subtypes <> eval_ty def
+R23103:23106 Triage.types <> lift def
+R23111:23114 Triage.types <> Stem constr
+R23117:23120 Triage.types <> Fork constr
+R23122:23125 Triage.types <> Leaf constr
+R23127:23133 Triage.subtypes <> eval_ty def
+R23164:23176 Triage.subtypes <> subtype_lift2 thm
+R23164:23176 Triage.subtypes <> subtype_lift2 thm
+R23188:23204 Triage.subtypes <> subtype_quant_asf thm
+R23188:23204 Triage.subtypes <> subtype_quant_asf thm
+prf 23219:23245 <> subtype_quant_iter_bfff_aug
+binder 23257:23257 <> k:159
+binder 23259:23259 <> n:160
+binder 23261:23262 <> ty:161
+R23265:23271 Triage.subtypes <> subtype ind
+R23274:23278 Triage.types <> quant def
+R23280:23280 Triage.subtypes <> n:160 var
+R23283:23286 Coq.Init.Nat <> iter def
+R23299:23300 Triage.subtypes <> ty:161 var
+R23290:23297 Triage.subtypes <> bfff_aug def
+R23288:23288 Triage.subtypes <> k:159 var
+R23305:23308 Coq.Init.Nat <> iter def
+R23322:23326 Triage.types <> quant def
+R23328:23328 Triage.subtypes <> n:160 var
+R23330:23331 Triage.subtypes <> ty:161 var
+R23312:23319 Triage.subtypes <> bfff_aug def
+R23310:23310 Triage.subtypes <> k:159 var
+R23380:23387 Triage.subtypes <> sub_zero constr
+R23380:23387 Triage.subtypes <> sub_zero constr
+R23399:23407 Triage.subtypes <> sub_trans constr
+R23399:23407 Triage.subtypes <> sub_trans constr
+R23417:23438 Triage.subtypes <> subtype_quant_bfff_aug thm
+R23417:23438 Triage.subtypes <> subtype_quant_bfff_aug thm
+R23450:23457 Triage.subtypes <> sub_fork constr
+R23450:23457 Triage.subtypes <> sub_fork constr
+R23467:23474 Triage.subtypes <> sub_zero constr
+R23467:23474 Triage.subtypes <> sub_zero constr
+R23484:23490 Triage.subtypes <> sub_asf constr
+R23484:23490 Triage.subtypes <> sub_asf constr
+prf 23513:23534 <> bfff_aug_of_binary_fun
+binder 23547:23549 <> uty:162
+binder 23551:23553 <> vty:163
+binder 23555:23557 <> wty:164
+R23560:23566 Triage.subtypes <> subtype ind
+R23569:23576 Triage.subtypes <> bfff_aug def
+R23579:23583 Triage.types <> Funty constr
+R23585:23587 Triage.subtypes <> uty:162 var
+R23590:23594 Triage.types <> Funty constr
+R23596:23598 Triage.subtypes <> vty:163 var
+R23600:23602 Triage.subtypes <> wty:164 var
+R23609:23613 Triage.types <> Funty constr
+R23615:23617 Triage.subtypes <> uty:162 var
+R23620:23624 Triage.types <> Funty constr
+R23626:23628 Triage.subtypes <> vty:163 var
+R23630:23632 Triage.subtypes <> wty:164 var
+R23660:23667 Triage.subtypes <> bfff_aug def
+prf 23749:23775 <> iter_bfff_aug_of_binary_fun
+binder 23788:23788 <> n:165
+binder 23790:23792 <> uty:166
+binder 23794:23796 <> vty:167
+binder 23798:23800 <> wty:168
+R23803:23809 Triage.subtypes <> subtype ind
+R23812:23815 Coq.Init.Nat <> iter def
+R23829:23833 Triage.types <> Funty constr
+R23835:23837 Triage.subtypes <> uty:166 var
+R23840:23844 Triage.types <> Funty constr
+R23846:23848 Triage.subtypes <> vty:167 var
+R23850:23852 Triage.subtypes <> wty:168 var
+R23819:23826 Triage.subtypes <> bfff_aug def
+R23817:23817 Triage.subtypes <> n:165 var
+R23859:23863 Triage.types <> Funty constr
+R23865:23867 Triage.subtypes <> uty:166 var
+R23870:23874 Triage.types <> Funty constr
+R23876:23878 Triage.subtypes <> vty:167 var
+R23880:23882 Triage.subtypes <> wty:168 var
+R23931:23938 Triage.subtypes <> sub_zero constr
+R23931:23938 Triage.subtypes <> sub_zero constr
+R23950:23958 Triage.subtypes <> sub_trans constr
+R23950:23958 Triage.subtypes <> sub_trans constr
+R23968:23993 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R23968:23993 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R24010:24031 Triage.subtypes <> bfff_aug_of_binary_fun thm
+R24010:24031 Triage.subtypes <> bfff_aug_of_binary_fun thm
+prf 24051:24069 <> iter_bfff_aug_Quant
+binder 24079:24079 <> n:169
+binder 24081:24082 <> ty:170
+R24085:24091 Triage.subtypes <> subtype ind
+R24094:24097 Coq.Init.Nat <> iter def
+R24111:24115 Triage.types <> Quant constr
+R24117:24118 Triage.subtypes <> ty:170 var
+R24101:24108 Triage.subtypes <> bfff_aug def
+R24099:24099 Triage.subtypes <> n:169 var
+R24123:24127 Triage.types <> Quant constr
+R24130:24133 Coq.Init.Nat <> iter def
+R24146:24147 Triage.subtypes <> ty:170 var
+R24137:24144 Triage.subtypes <> bfff_aug def
+R24135:24135 Triage.subtypes <> n:169 var
+R24196:24203 Triage.subtypes <> sub_zero constr
+R24196:24203 Triage.subtypes <> sub_zero constr
+R24216:24224 Triage.subtypes <> sub_trans constr
+R24216:24224 Triage.subtypes <> sub_trans constr
+R24234:24259 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R24234:24259 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R24279:24286 Triage.subtypes <> bfff_aug def
+R24305:24313 Triage.subtypes <> sub_trans constr
+R24305:24313 Triage.subtypes <> sub_trans constr
+R24323:24330 Triage.subtypes <> sub_lift constr
+R24323:24330 Triage.subtypes <> sub_lift constr
+R24340:24348 Triage.subtypes <> sub_quant constr
+R24340:24348 Triage.subtypes <> sub_quant constr
+R24358:24361 Triage.types <> lift def
+R24389:24396 Triage.subtypes <> sub_fork constr
+R24389:24396 Triage.subtypes <> sub_fork constr
+R24406:24413 Triage.subtypes <> sub_zero constr
+R24406:24413 Triage.subtypes <> sub_zero constr
+R24423:24429 Triage.subtypes <> sub_asf constr
+R24423:24429 Triage.subtypes <> sub_asf constr
+R24444:24448 Triage.types <> Quant constr
+R24451:24458 Triage.types <> lift_rec def
+R24461:24464 Coq.Init.Nat <> iter def
+R24468:24475 Triage.subtypes <> bfff_aug def
+R24499:24502 Triage.types <> lift def
+R24507:24511 Triage.types <> quant def
+R24516:24519 Coq.Init.Nat <> iter def
+R24523:24530 Triage.subtypes <> bfff_aug def
+R24444:24448 Triage.types <> Quant constr
+R24451:24458 Triage.types <> lift_rec def
+R24461:24464 Coq.Init.Nat <> iter def
+R24468:24475 Triage.subtypes <> bfff_aug def
+R24499:24502 Triage.types <> lift def
+R24507:24511 Triage.types <> quant def
+R24516:24519 Coq.Init.Nat <> iter def
+R24523:24530 Triage.subtypes <> bfff_aug def
+R24563:24575 Triage.subtypes <> subtype_lift3 thm
+R24563:24575 Triage.subtypes <> subtype_lift3 thm
+prf 24610:24635 <> subtype_preserves_bffs_aug
+binder 24645:24647 <> ty1:171
+binder 24649:24651 <> ty2:172
+R24669:24672 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24654:24660 Triage.subtypes <> subtype ind
+R24662:24664 Triage.subtypes <> ty1:171 var
+R24666:24668 Triage.subtypes <> ty2:172 var
+R24673:24679 Triage.subtypes <> subtype ind
+R24682:24689 Triage.subtypes <> bffs_aug def
+R24691:24693 Triage.subtypes <> ty1:171 var
+R24697:24704 Triage.subtypes <> bffs_aug def
+R24706:24708 Triage.subtypes <> ty2:172 var
+R24734:24741 Triage.subtypes <> sub_fork constr
+R24753:24760 Triage.subtypes <> sub_zero constr
+R24771:24796 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R24734:24741 Triage.subtypes <> sub_fork constr
+R24753:24760 Triage.subtypes <> sub_zero constr
+R24771:24796 Triage.subtypes <> subtype_preserves_bfff_aug thm
+prf 24823:24853 <> subtype_preserves_iter_bffs_aug
+binder 24865:24865 <> n:173
+binder 24867:24869 <> ty1:174
+binder 24871:24873 <> ty2:175
+R24891:24894 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24876:24882 Triage.subtypes <> subtype ind
+R24884:24886 Triage.subtypes <> ty1:174 var
+R24888:24890 Triage.subtypes <> ty2:175 var
+R24895:24901 Triage.subtypes <> subtype ind
+R24904:24907 Coq.Init.Nat <> iter def
+R24920:24922 Triage.subtypes <> ty1:174 var
+R24911:24918 Triage.subtypes <> bffs_aug def
+R24909:24909 Triage.subtypes <> n:173 var
+R24926:24929 Coq.Init.Nat <> iter def
+R24942:24944 Triage.subtypes <> ty2:175 var
+R24933:24940 Triage.subtypes <> bffs_aug def
+R24931:24931 Triage.subtypes <> n:173 var
+R25004:25012 Triage.subtypes <> sub_trans constr
+R25004:25012 Triage.subtypes <> sub_trans constr
+R25022:25047 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R25022:25047 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R25064:25071 Triage.subtypes <> sub_zero constr
+R25064:25071 Triage.subtypes <> sub_zero constr
+prf 25089:25110 <> subtype_quant_bffs_aug
+binder 25120:25120 <> n:176
+binder 25122:25123 <> ty:177
+R25126:25132 Triage.subtypes <> subtype ind
+R25135:25139 Triage.types <> quant def
+R25141:25141 Triage.subtypes <> n:176 var
+R25144:25151 Triage.subtypes <> bffs_aug def
+R25153:25154 Triage.subtypes <> ty:177 var
+R25159:25166 Triage.subtypes <> bffs_aug def
+R25169:25173 Triage.types <> quant def
+R25175:25175 Triage.subtypes <> n:176 var
+R25177:25178 Triage.subtypes <> ty:177 var
+R25207:25214 Triage.subtypes <> bffs_aug def
+R25230:25238 Triage.subtypes <> sub_trans constr
+R25230:25238 Triage.subtypes <> sub_trans constr
+R25248:25265 Triage.subtypes <> subtype_quant_fork thm
+R25248:25265 Triage.subtypes <> subtype_quant_fork thm
+R25275:25282 Triage.subtypes <> sub_fork constr
+R25275:25282 Triage.subtypes <> sub_fork constr
+R25296:25299 Triage.types <> Stem constr
+R25302:25305 Triage.types <> Fork constr
+R25307:25310 Triage.types <> Leaf constr
+R25312:25319 Triage.subtypes <> eager_ty def
+R25329:25332 Triage.types <> lift def
+R25337:25340 Triage.types <> Stem constr
+R25343:25346 Triage.types <> Fork constr
+R25348:25351 Triage.types <> Leaf constr
+R25353:25360 Triage.subtypes <> eager_ty def
+R25296:25299 Triage.types <> Stem constr
+R25302:25305 Triage.types <> Fork constr
+R25307:25310 Triage.types <> Leaf constr
+R25312:25319 Triage.subtypes <> eager_ty def
+R25329:25332 Triage.types <> lift def
+R25337:25340 Triage.types <> Stem constr
+R25343:25346 Triage.types <> Fork constr
+R25348:25351 Triage.types <> Leaf constr
+R25353:25360 Triage.subtypes <> eager_ty def
+R25391:25403 Triage.subtypes <> subtype_lift2 thm
+R25391:25403 Triage.subtypes <> subtype_lift2 thm
+R25415:25436 Triage.subtypes <> subtype_quant_bfff_aug thm
+R25415:25436 Triage.subtypes <> subtype_quant_bfff_aug thm
+prf 25451:25477 <> subtype_quant_iter_bffs_aug
+binder 25489:25489 <> k:178
+binder 25491:25491 <> n:179
+binder 25493:25494 <> ty:180
+R25497:25503 Triage.subtypes <> subtype ind
+R25506:25510 Triage.types <> quant def
+R25512:25512 Triage.subtypes <> n:179 var
+R25515:25518 Coq.Init.Nat <> iter def
+R25531:25532 Triage.subtypes <> ty:180 var
+R25522:25529 Triage.subtypes <> bffs_aug def
+R25520:25520 Triage.subtypes <> k:178 var
+R25537:25540 Coq.Init.Nat <> iter def
+R25554:25558 Triage.types <> quant def
+R25560:25560 Triage.subtypes <> n:179 var
+R25562:25563 Triage.subtypes <> ty:180 var
+R25544:25551 Triage.subtypes <> bffs_aug def
+R25542:25542 Triage.subtypes <> k:178 var
+R25612:25619 Triage.subtypes <> sub_zero constr
+R25612:25619 Triage.subtypes <> sub_zero constr
+R25631:25639 Triage.subtypes <> sub_trans constr
+R25631:25639 Triage.subtypes <> sub_trans constr
+R25649:25670 Triage.subtypes <> subtype_quant_bffs_aug thm
+R25649:25670 Triage.subtypes <> subtype_quant_bffs_aug thm
+R25682:25689 Triage.subtypes <> sub_fork constr
+R25682:25689 Triage.subtypes <> sub_fork constr
+R25699:25706 Triage.subtypes <> sub_zero constr
+R25699:25706 Triage.subtypes <> sub_zero constr
+R25716:25741 Triage.subtypes <> subtype_preserves_bfff_aug thm
+R25716:25741 Triage.subtypes <> subtype_preserves_bfff_aug thm
+prf 25764:25772 <> iter_plus
+binder 25782:25782 <> m:181
+binder 25784:25784 <> n:182
+binder 25786:25786 <> f:183
+binder 25788:25788 <> x:184
+R25814:25816 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R25791:25794 Coq.Init.Nat <> iter def
+R25808:25812 Triage.types <> dtype ind
+R25805:25805 Triage.subtypes <> x:184 var
+R25802:25802 Triage.subtypes <> f:183 var
+R25798:25798 Coq.Init.Nat <> ::nat_scope:x_'+'_x not
+R25797:25797 Triage.subtypes <> m:181 var
+R25799:25799 Triage.subtypes <> n:182 var
+R25817:25820 Coq.Init.Nat <> iter def
+R25827:25830 Coq.Init.Nat <> iter def
+R25836:25836 Triage.subtypes <> x:184 var
+R25834:25834 Triage.subtypes <> f:183 var
+R25832:25832 Triage.subtypes <> n:182 var
+R25824:25824 Triage.subtypes <> f:183 var
+R25822:25822 Triage.subtypes <> m:181 var
+prf 25916:25937 <> bffs_aug_of_binary_fun
+binder 25950:25952 <> uty:185
+binder 25954:25956 <> vty:186
+binder 25958:25960 <> wty:187
+R25963:25969 Triage.subtypes <> subtype ind
+R25972:25979 Triage.subtypes <> bffs_aug def
+R25982:25986 Triage.types <> Funty constr
+R25988:25990 Triage.subtypes <> uty:185 var
+R25993:25997 Triage.types <> Funty constr
+R25999:26001 Triage.subtypes <> vty:186 var
+R26003:26005 Triage.subtypes <> wty:187 var
+R26012:26016 Triage.types <> Funty constr
+R26018:26020 Triage.subtypes <> uty:185 var
+R26023:26027 Triage.types <> Funty constr
+R26029:26031 Triage.subtypes <> vty:186 var
+R26033:26035 Triage.subtypes <> wty:187 var
+R26064:26072 Triage.subtypes <> sub_trans constr
+R26084:26091 Triage.subtypes <> sub_fork constr
+R26103:26110 Triage.subtypes <> sub_zero constr
+R26121:26142 Triage.subtypes <> bfff_aug_of_binary_fun thm
+R26064:26072 Triage.subtypes <> sub_trans constr
+R26084:26091 Triage.subtypes <> sub_fork constr
+R26103:26110 Triage.subtypes <> sub_zero constr
+R26121:26142 Triage.subtypes <> bfff_aug_of_binary_fun thm
+prf 26202:26228 <> iter_bffs_aug_of_binary_fun
+binder 26241:26241 <> n:188
+binder 26243:26245 <> uty:189
+binder 26247:26249 <> vty:190
+binder 26251:26253 <> wty:191
+R26256:26262 Triage.subtypes <> subtype ind
+R26265:26268 Coq.Init.Nat <> iter def
+R26282:26286 Triage.types <> Funty constr
+R26288:26290 Triage.subtypes <> uty:189 var
+R26293:26297 Triage.types <> Funty constr
+R26299:26301 Triage.subtypes <> vty:190 var
+R26303:26305 Triage.subtypes <> wty:191 var
+R26272:26279 Triage.subtypes <> bffs_aug def
+R26270:26270 Triage.subtypes <> n:188 var
+R26312:26316 Triage.types <> Funty constr
+R26318:26320 Triage.subtypes <> uty:189 var
+R26323:26327 Triage.types <> Funty constr
+R26329:26331 Triage.subtypes <> vty:190 var
+R26333:26335 Triage.subtypes <> wty:191 var
+R26384:26391 Triage.subtypes <> sub_zero constr
+R26384:26391 Triage.subtypes <> sub_zero constr
+R26403:26411 Triage.subtypes <> sub_trans constr
+R26403:26411 Triage.subtypes <> sub_trans constr
+R26421:26446 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R26421:26446 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R26463:26484 Triage.subtypes <> bffs_aug_of_binary_fun thm
+R26463:26484 Triage.subtypes <> bffs_aug_of_binary_fun thm
+prf 26504:26522 <> iter_bffs_aug_Quant
+binder 26532:26532 <> n:192
+binder 26534:26535 <> ty:193
+R26538:26544 Triage.subtypes <> subtype ind
+R26547:26550 Coq.Init.Nat <> iter def
+R26564:26568 Triage.types <> Quant constr
+R26570:26571 Triage.subtypes <> ty:193 var
+R26554:26561 Triage.subtypes <> bffs_aug def
+R26552:26552 Triage.subtypes <> n:192 var
+R26576:26580 Triage.types <> Quant constr
+R26583:26586 Coq.Init.Nat <> iter def
+R26599:26600 Triage.subtypes <> ty:193 var
+R26590:26597 Triage.subtypes <> bffs_aug def
+R26588:26588 Triage.subtypes <> n:192 var
+R26649:26656 Triage.subtypes <> sub_zero constr
+R26649:26656 Triage.subtypes <> sub_zero constr
+R26669:26677 Triage.subtypes <> sub_trans constr
+R26669:26677 Triage.subtypes <> sub_trans constr
+R26687:26712 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R26687:26712 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R26732:26739 Triage.subtypes <> bffs_aug def
+R26758:26766 Triage.subtypes <> sub_trans constr
+R26758:26766 Triage.subtypes <> sub_trans constr
+R26780:26797 Triage.subtypes <> fork_quant_commute thm
+R26780:26797 Triage.subtypes <> fork_quant_commute thm
+R26810:26817 Triage.subtypes <> sub_fork constr
+R26810:26817 Triage.subtypes <> sub_fork constr
+R26829:26837 Triage.subtypes <> sub_trans constr
+R26829:26837 Triage.subtypes <> sub_trans constr
+R26847:26854 Triage.subtypes <> sub_lift constr
+R26847:26854 Triage.subtypes <> sub_lift constr
+R26869:26876 Triage.subtypes <> sub_zero constr
+R26869:26876 Triage.subtypes <> sub_zero constr
+R26887:26905 Triage.subtypes <> iter_bfff_aug_Quant thm
+R26887:26905 Triage.subtypes <> iter_bfff_aug_Quant thm
+prf 26928:26940 <> iter_bffs_aug
+binder 26950:26950 <> n:194
+binder 26952:26954 <> uty:195
+binder 26956:26958 <> vty:196
+binder 26960:26962 <> wty:197
+R26965:26971 Triage.subtypes <> subtype ind
+R26974:26977 Coq.Init.Nat <> iter def
+R26991:26995 Triage.types <> Funty constr
+R26997:26999 Triage.subtypes <> uty:195 var
+R27002:27006 Triage.types <> Funty constr
+R27008:27010 Triage.subtypes <> vty:196 var
+R27012:27014 Triage.subtypes <> wty:197 var
+R26981:26988 Triage.subtypes <> bffs_aug def
+R26979:26979 Triage.subtypes <> n:194 var
+R27021:27025 Triage.types <> Funty constr
+R27027:27029 Triage.subtypes <> uty:195 var
+R27032:27036 Triage.types <> Funty constr
+R27038:27040 Triage.subtypes <> vty:196 var
+R27042:27044 Triage.subtypes <> wty:197 var
+R27100:27108 Triage.subtypes <> sub_trans constr
+R27119:27144 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R27163:27184 Triage.subtypes <> bffs_aug_of_binary_fun thm
+R27100:27108 Triage.subtypes <> sub_trans constr
+R27119:27144 Triage.subtypes <> subtype_preserves_bffs_aug thm
+R27163:27184 Triage.subtypes <> bffs_aug_of_binary_fun thm

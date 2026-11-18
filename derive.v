@@ -169,37 +169,28 @@ Proof.
 Qed.
 
 Theorem derive_I: forall gamma uty, derive gamma I (Funty uty uty). 
-Proof.  intros; eapply derive_S2; eapply derive_K.  Unshelve. apply Leaf. Qed. 
+Proof.  intros; eapply derive_S2; [eapply derive_K | auto_t].  Qed. 
 
   
-Theorem derive_swap:
-  forall gamma f u v w, derive gamma f (Funty u (Funty v w)) -> derive gamma (swap f) (Funty v (Funty u w)).
-Proof.
-  intros; unfold swap; eapply derive_S2; [ eapply derive_K1; eapply derive_S1; eauto | eapply derive_K]. 
-Qed.
 
 Theorem derive_wait:
   forall gamma M N uty k vty wty,
     derive gamma M (Funty uty (quant k (Funty vty wty))) -> derive gamma N uty -> 
     derive gamma (wait M N) (quant k (Funty vty wty)). 
 Proof.
-  intros; unfold wait; eapply derive_generalisation_q; eapply derive_S2; [ | eapply derive_I]; 
-    eapply derive_S2; eapply derive_K1; eapply derive_generalisation2_q;
-    eapply derive_subtype; eauto; [ |  eapply subtype_lift];
+  intros; unfold wait; eapply derive_generalisation_q; eapply derive_S2; [
+    |
+      eapply derive_K1;
+      eapply derive_generalisation2_q;
+      eapply derive_subtype; eauto; eapply subtype_lift];
+    eapply derive_S2; [ | eapply derive_K];
+    eapply derive_K1; eapply derive_S1; eapply derive_generalisation2_q;
+    eapply derive_subtype; eauto;
     eapply sub_trans; [ eapply subtype_lift |];
-    eapply subtype_quant; unfold lift; simpl; sub_fun_tac; eapply subtype_lift3. 
+    eapply subtype_quant; unfold lift; simpl; sub_fun_tac; eapply subtype_lift3.     
 Qed.
 
 
-
-Theorem derive_wait2:
-  forall gamma M N P u1 u2 u3 ty,
-    derive gamma M (Funty u1 (Funty u2 (Funty u3 ty))) ->
-    derive gamma N u1 -> derive gamma P u2 -> derive gamma (wait2 M N P) (Funty u3 ty).
-Proof.
-  intros; eapply derive_S2; [ | eapply derive_I]; 
-  repeat eapply derive_S2; eapply derive_K1; eauto.
-Qed.
 
 
 Theorem derive_basic:
@@ -207,16 +198,11 @@ Theorem derive_basic:
   (forall gamma uty vty wty,
       derive gamma Sop (Funty (Funty uty (Funty vty wty)) (Funty (Funty uty vty) (Funty uty wty)))) /\
   (forall gamma uty, derive gamma I (Funty uty uty)) /\ 
-  (forall gamma f u v w, derive gamma f (Funty u (Funty v w)) -> derive gamma (swap f) (Funty v (Funty u w))) /\
   (forall gamma M N uty k vty wty,
     derive gamma M (Funty uty (quant k (Funty vty wty))) -> derive gamma N uty -> 
-    derive gamma (wait M N) (quant k (Funty vty wty))) /\
-  (forall gamma M N P u1 u2 u3 ty,
-    derive gamma M (Funty u1 (Funty u2 (Funty u3 ty))) ->
-    derive gamma N u1 -> derive gamma P u2 -> derive gamma (wait2 M N P) (Funty u3 ty)).
+    derive gamma (wait M N) (quant k (Funty vty wty))).
 Proof.
-  repeat split;[ eapply derive_K | eapply derive_S | eapply derive_I | eapply derive_swap
-                 | eapply derive_wait | eapply derive_wait2].
+  repeat split;[ eapply derive_K | eapply derive_S | eapply derive_I | eapply derive_wait ].
 Qed.
 
   
